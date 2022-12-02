@@ -2,201 +2,209 @@
 <html lang="en" xml:lang="en">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" href="CSS/body.css">
-    <link rel="stylesheet" href="CSS/char.css">
+
+    <link href="CSS/body.css" rel="stylesheet" type="text/css" />
+    <link href="CSS/char.css" rel="stylesheet" type="text/css" />
+
+    <script src="JS/searchCharacter.js" type="text/javascript"></script>
+
 </head>
 
 <body>
+    <div class="CharacterSearch CharacterSearchShow">
+        <input id="character-search-id" onkeyup="searchCharacter();" placeholder="Search for Character..."
+            title="Type in a name" type="text">
+    </div>
     <div class="char_container">
-        <div class="char">
+        <div class="char" data-char="Goku">
             <img class="char_type_base" src="char_type_base/char_type_base_ssr_str.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000030_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_ssr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_super_str.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char="Vegeta">
             <img class="char_type_base" src="char_type_base/char_type_base_ssr_teq.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000040_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_ssr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_super_teq.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char="Cell (1st Form)">
             <img class="char_type_base" src="char_type_base/char_type_base_ssr_agl.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000070_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_ssr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_extreme_agl.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char="Gohan (Kid)">
             <img class="char_type_base" src="char_type_base/char_type_base_ssr_str.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000090_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_ssr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_super_str.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char="Trunks (Teen)">
             <img class="char_type_base" src="char_type_base/char_type_base_ssr_agl.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000100_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_ssr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_super_agl.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char="Krillin">
             <img class="char_type_base" src="char_type_base/char_type_base_ssr_teq.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000110_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_ssr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_super_teq.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char="Piccolo">
             <img class="char_type_base" src="char_type_base/char_type_base_ssr_agl.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000120_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_ssr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_super_agl.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char="Tien">
             <img class="char_type_base" src="char_type_base/char_type_base_ssr_teq.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000130_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_ssr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_super_teq.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char="Chiaotzu">
             <img class="char_type_base" src="char_type_base/char_type_base_ssr_int.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000140_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_ssr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_super_int.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char="Yamcha">
             <img class="char_type_base" src="char_type_base/char_type_base_ssr_agl.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000150_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_ssr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_super_agl.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char="Raditz">
             <img class="char_type_base" src="char_type_base/char_type_base_ssr_teq.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000160_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_ssr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_extreme_teq.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char="Nappa">
             <img class="char_type_base" src="char_type_base/char_type_base_ssr_str.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000170_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_ssr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_extreme_str.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char="Zarbon">
             <img class="char_type_base" src="char_type_base/char_type_base_ssr_int.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000180_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_ssr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_extreme_int.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char="Captain Ginyu">
             <img class="char_type_base" src="char_type_base/char_type_base_ssr_int.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000190_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_ssr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_extreme_int.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char="Android #19">
             <img class="char_type_base" src="char_type_base/char_type_base_ssr_phy.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000200_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_ssr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_extreme_phy.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char="Dr. Gero">
             <img class="char_type_base" src="char_type_base/char_type_base_ssr_int.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000210_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_ssr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_extreme_int.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char="Android #17">
             <img class="char_type_base" src="char_type_base/char_type_base_ssr_teq.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000220_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_ssr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_extreme_teq.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char="Android #18">
             <img class="char_type_base" src="char_type_base/char_type_base_ssr_str.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000230_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_ssr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_extreme_str.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char="Android #16">
             <img class="char_type_base" src="char_type_base/char_type_base_ssr_phy.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000240_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_ssr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_extreme_phy.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char="Master Roshi">
             <img class="char_type_base" src="char_type_base/char_type_base_ssr_str.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000250_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_ssr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_super_str.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char="Mercenary Tao">
             <img class="char_type_base" src="char_type_base/char_type_base_ssr_agl.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000260_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_ssr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_extreme_agl.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char="Gohan (Kid)">
             <img class="char_type_base" src="char_type_base/char_type_base_sr_int.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000270_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_sr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_super_int.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char="Trunks (Teen)">
             <img class="char_type_base" src="char_type_base/char_type_base_sr_agl.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000280_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_sr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_super_agl.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char="Krillin">
             <img class="char_type_base" src="char_type_base/char_type_base_sr_phy.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000290_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_sr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_super_phy.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char="Piccolo">
             <img class="char_type_base" src="char_type_base/char_type_base_sr_int.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000300_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_sr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_super_int.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char="Tien">
             <img class="char_type_base" src="char_type_base/char_type_base_sr_agl.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000310_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_sr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_super_agl.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char="Chiaotzu">
             <img class="char_type_base" src="char_type_base/char_type_base_sr_teq.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000320_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_sr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_super_teq.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char="Yamcha">
             <img class="char_type_base" src="char_type_base/char_type_base_sr_teq.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000330_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_sr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_super_teq.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char="Raditz">
             <img class="char_type_base" src="char_type_base/char_type_base_sr_agl.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000340_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_sr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_extreme_agl.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char="Nappa">
             <img class="char_type_base" src="char_type_base/char_type_base_sr_phy.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000350_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_sr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_extreme_phy.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char="Zarbon">
             <img class="char_type_base" src="char_type_base/char_type_base_sr_phy.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000360_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_sr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_extreme_phy.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char="Captain Ginyu">
             <img class="char_type_base" src="char_type_base/char_type_base_sr_str.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000370_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_sr.webp" loading="lazy" alt="">
