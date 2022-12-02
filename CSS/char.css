@@ -5,45 +5,37 @@
 
 .char {
     width: 140px;
-    height:170px;
+    height: 170px;
 }
 
 .char_type_base {
     width: 100px;
-    height:100px;
+    height: 100px;
     position: relative;
-    top:35px;
-    left:20px;
+    top: 35px;
+    left: 20px;
 }
 
 .char_thumb {
     width: 125px;
-    height:125px;
+    height: 125px;
     position: relative;
-    top:-85px;
-    left:8px;
+    top: -85px;
+    left: 8px;
 }
 
 .char_rarity {
     width: 60px;
-    height:60px;
+    height: 60px;
     position: relative;
-    top:-140px;
-    left:10px;
+    top: -140px;
+    left: 10px;
 }
 
 .char_type {
     width: 48.1px;
-    height:48.1px;
+    height: 48.1px;
     position: relative;
-    top:-225px;
-    left:20px;
-}
-
-.CategoriesSearch {
-	margin-top: 20px;
-}
-
-#character-search-id {
-	width: 25%;
+    top: -225px;
+    left: 20px;
 }
