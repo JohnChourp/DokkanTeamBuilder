@@ -4,7 +4,7 @@ function searchTitlesOptionYes() {
 	let buttonNo = document.getElementsByClassName("searchTitlesOptionNo").item(0);
 	buttonNo.style.backgroundColor = "white";
 	let characterSearchId = document.getElementById("char-search-id");
-	characterSearchId.onkeyup = function(){searchCharTitle()};
+	characterSearchId.onkeyup = function () { searchCharTitle() };
 }
 
 function searchTitlesOptionNo() {
@@ -13,12 +13,12 @@ function searchTitlesOptionNo() {
 	let buttonYes = document.getElementsByClassName("searchTitlesOptionYes").item(0);
 	buttonYes.style.backgroundColor = "white";
 	let characterSearchId = document.getElementById("char-search-id");
-	characterSearchId.onkeyup = function(){searchCharName()};
+	characterSearchId.onkeyup = function () { searchCharName() };
 }
 
 function searchCharName() {
 	let dataCharName = 'data-char-name';
-	let dataCharItems = document.querySelectorAll('[' + dataCharName + ']');
+	let dataCharNameItems = document.querySelectorAll('[' + dataCharName + ']');
 	let char = document.getElementsByClassName("char");
 	let characterSearchId = document.getElementById("char-search-id");
 
@@ -27,7 +27,7 @@ function searchCharName() {
 	}
 
 	for (let i = 0; i < char.length; i++) {
-		if (dataCharItems[i].getAttribute(dataCharName).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0) {
+		if (dataCharNameItems[i].getAttribute(dataCharName).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0) {
 			char.item(i).style.display = "inline-block";
 		} else {
 			char.item(i).style.display = "none";
@@ -37,7 +37,7 @@ function searchCharName() {
 
 function searchCharTitle() {
 	let dataCharTitle = 'data-char-title';
-	let dataCharItems = document.querySelectorAll('[' + dataCharTitle + ']');
+	let dataCharTitleItems = document.querySelectorAll('[' + dataCharTitle + ']');
 	let char = document.getElementsByClassName("char");
 	let characterSearchId = document.getElementById("char-search-id");
 
@@ -46,7 +46,7 @@ function searchCharTitle() {
 	}
 
 	for (let i = 0; i < char.length; i++) {
-		if (dataCharItems[i].getAttribute(dataCharTitle).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0) {
+		if (dataCharTitleItems[i].getAttribute(dataCharTitle).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0) {
 			char.item(i).style.display = "inline-block";
 		} else {
 			char.item(i).style.display = "none";

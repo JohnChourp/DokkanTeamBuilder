@@ -1,0 +1,29 @@
+.typeFilter {
+	display: flex;
+	flex-wrap: wrap;
+	width: 700px;
+}
+
+#agl {
+	background-color: #00AAEE;
+}
+
+#int {
+	background-color: #c953e0;
+}
+
+#phy {
+	background-color: #eec038;
+}
+
+#str {
+	background-color: #f77777;
+}
+
+#teq {
+	background-color: #3df05b;
+}
+
+.checkedTypeBtn {
+	background-color: #EEC310;
+}
