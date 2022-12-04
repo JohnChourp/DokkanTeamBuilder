@@ -24,15 +24,3 @@
     border: 2px solid #008CBA;
     transition-duration: 0.4s;
 }
-
-.searchTitlesOptionYes:hover {
-    background-color: #008CBA;
-    color: black;
-    border: 2px solid #008CBA;
-}
-
-.searchTitlesOptionNo:hover {
-    background-color: #008CBA;
-    color: black;
-    border: 2px solid #008CBA;
-}
