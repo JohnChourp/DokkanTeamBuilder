@@ -5,22 +5,32 @@
 }
 
 #agl {
+	cursor: pointer;
+	background-color: #00AAEE;
+}
+
+#agl:hover {
+	cursor: pointer;
 	background-color: #00AAEE;
 }
 
 #int {
+	cursor: pointer;
 	background-color: #c953e0;
 }
 
 #phy {
+	cursor: pointer;
 	background-color: #eec038;
 }
 
 #str {
+	cursor: pointer;
 	background-color: #f77777;
 }
 
 #teq {
+	cursor: pointer;
 	background-color: #3df05b;
 }
 

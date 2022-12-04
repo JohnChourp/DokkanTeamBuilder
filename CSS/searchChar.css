@@ -24,3 +24,11 @@
     border: 2px solid #008CBA;
     transition-duration: 0.4s;
 }
+
+.searchTitlesOptionYes:hover {
+    cursor: pointer;
+}
+
+.searchTitlesOptionNo:hover {
+    cursor: pointer;
+}

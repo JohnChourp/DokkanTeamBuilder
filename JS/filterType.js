@@ -1,4 +1,4 @@
-function typeFilter(char, dataCharTypeItems, type) {
+function typeFilter(dataCharType, dataCharTypeItems, char, type) {
 	for (let i = 0; i < char.length; i++) {
 		char.item(i).style.display = "none";
 	}
@@ -16,34 +16,34 @@ function aglFilter() {
 	let dataCharType = 'data-char-type';
 	let dataCharTypeItems = document.querySelectorAll('[' + dataCharType + ']');
 	let char = document.getElementsByClassName("char");
-	typeFilter(char, dataCharTypeItems, "agl");
+	typeFilter(dataCharType, dataCharTypeItems, char, "agl");
 }
 
 function intFilter() {
 	let dataCharType = 'data-char-type';
 	let dataCharTypeItems = document.querySelectorAll('[' + dataCharType + ']');
 	let char = document.getElementsByClassName("char");
-	typeFilter(char, dataCharTypeItems, "int");
+	typeFilter(dataCharType, dataCharTypeItems, char, "int");
 }
 
 function phyFilter() {
 	let dataCharType = 'data-char-type';
 	let dataCharTypeItems = document.querySelectorAll('[' + dataCharType + ']');
 	let char = document.getElementsByClassName("char");
-	typeFilter(char, dataCharTypeItems, "phy");
+	typeFilter(dataCharType, dataCharTypeItems, char, "phy");
 }
 
 function strFilter() {
 	let dataCharType = 'data-char-type';
 	let dataCharTypeItems = document.querySelectorAll('[' + dataCharType + ']');
 	let char = document.getElementsByClassName("char");
-	typeFilter(char, dataCharTypeItems, "str");
+	typeFilter(dataCharType, dataCharTypeItems, char, "str");
 }
 
 function teqFilter() {
 	let dataCharType = 'data-char-type';
 	let dataCharTypeItems = document.querySelectorAll('[' + dataCharType + ']');
 	let char = document.getElementsByClassName("char");
-	typeFilter(char, dataCharTypeItems, "teq");
+	typeFilter(dataCharType, dataCharTypeItems, char, "teq");
 }
 
