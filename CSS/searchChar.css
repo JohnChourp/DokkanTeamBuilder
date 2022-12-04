@@ -1,0 +1,26 @@
+.charSearch {
+    margin-top: 10px;
+}
+
+#char-search-id {
+    width: 25%;
+}
+
+.searchTitlesOptions {
+    color: white;
+    font-size: 20px;
+}
+
+.searchTitlesOptionYes {
+    background-color: white;
+    color: black;
+    border: 2px solid #008CBA;
+    transition-duration: 0.4s;
+}
+
+.searchTitlesOptionNo {
+    background-color: #33ccff;
+    color: black;
+    border: 2px solid #008CBA;
+    transition-duration: 0.4s;
+}

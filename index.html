@@ -2,201 +2,215 @@
 <html lang="en" xml:lang="en">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" href="CSS/body.css">
-    <link rel="stylesheet" href="CSS/char.css">
+
+    <link href="CSS/body.css" rel="stylesheet" type="text/css" />
+    <link href="CSS/char.css" rel="stylesheet" type="text/css" />
+    <link href="CSS/searchChar.css" rel="stylesheet" type="text/css" />
+
+    <script src="JS/searchChar.js" type="text/javascript"></script>
+
 </head>
 
 <body>
+    <div class="charSearch">
+        <input id="char-search-id" onkeyup="searchCharName();" placeholder="Search..."
+            title="Type in a name" type="text">
+        <div>
+            <p class="searchTitlesOptions">Search Titles</p>
+            <button onclick="searchTitlesOptionYes();" class="searchTitlesOptionYes" type="button">YES</button>
+            <button onclick="searchTitlesOptionNo();" class="searchTitlesOptionNo" type="button">NO</button>
+        </div>
+    </div>
     <div class="char_container">
-        <div class="char">
+        <div class="char" data-char-name="Goku" data-char-title="The Saiyan Among Us">
             <img class="char_type_base" src="char_type_base/char_type_base_ssr_str.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000030_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_ssr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_super_str.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char-name="Vegeta" data-char-title="Genius of War">
             <img class="char_type_base" src="char_type_base/char_type_base_ssr_teq.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000040_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_ssr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_super_teq.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char-name="Cell (1st Form)" data-char-title="Android Evolution">
             <img class="char_type_base" src="char_type_base/char_type_base_ssr_agl.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000070_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_ssr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_extreme_agl.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char-name="Gohan (Kid)" data-char-title="Unrelenting Fighter">
             <img class="char_type_base" src="char_type_base/char_type_base_ssr_str.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000090_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_ssr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_super_str.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char-name="Trunks (Teen)" data-char-title="Hawk Eyes">
             <img class="char_type_base" src="char_type_base/char_type_base_ssr_agl.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000100_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_ssr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_super_agl.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char-name="Krillin" data-char-title="Fruits of Labor">
             <img class="char_type_base" src="char_type_base/char_type_base_ssr_teq.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000110_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_ssr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_super_teq.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char-name="Piccolo" data-char-title="Stern Teacher">
             <img class="char_type_base" src="char_type_base/char_type_base_ssr_agl.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000120_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_ssr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_super_agl.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char-name="Tien" data-char-title="Aura Unleashed">
             <img class="char_type_base" src="char_type_base/char_type_base_ssr_teq.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000130_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_ssr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_super_teq.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char-name="Chiaotzu" data-char-title="The Gifted One">
             <img class="char_type_base" src="char_type_base/char_type_base_ssr_int.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000140_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_ssr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_super_int.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char-name="Yamcha" data-char-title="Secret Arts Unleashed">
             <img class="char_type_base" src="char_type_base/char_type_base_ssr_agl.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000150_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_ssr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_super_agl.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char-name="Raditz" data-char-title="Peerless Saiyan">
             <img class="char_type_base" src="char_type_base/char_type_base_ssr_teq.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000160_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_ssr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_extreme_teq.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char-name="Nappa" data-char-title="Elite Warrior's Rage">
             <img class="char_type_base" src="char_type_base/char_type_base_ssr_str.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000170_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_ssr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_extreme_str.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char-name="Zarbon" data-char-title="Hidden Strength">
             <img class="char_type_base" src="char_type_base/char_type_base_ssr_int.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000180_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_ssr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_extreme_int.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char-name="Captain Ginyu" data-char-title="Honorable Fighter">
             <img class="char_type_base" src="char_type_base/char_type_base_ssr_int.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000190_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_ssr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_extreme_int.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char-name="Android #19" data-char-title="Calculated Combat">
             <img class="char_type_base" src="char_type_base/char_type_base_ssr_phy.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000200_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_ssr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_extreme_phy.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char-name="Dr. Gero" data-char-title="Red Ribbon Army's Grudge">
             <img class="char_type_base" src="char_type_base/char_type_base_ssr_int.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000210_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_ssr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_extreme_int.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char-name="Android #17" data-char-title="Infinite Fighting Spirit">
             <img class="char_type_base" src="char_type_base/char_type_base_ssr_teq.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000220_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_ssr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_extreme_teq.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char-name="Android #18" data-char-title="Alluring Assassin">
             <img class="char_type_base" src="char_type_base/char_type_base_ssr_str.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000230_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_ssr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_extreme_str.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char-name="Android #16" data-char-title="Power Unleashed">
             <img class="char_type_base" src="char_type_base/char_type_base_ssr_phy.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000240_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_ssr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_extreme_phy.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char-name="Master Roshi" data-char-title="Secrets of the Turtle Style">
             <img class="char_type_base" src="char_type_base/char_type_base_ssr_str.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000250_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_ssr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_super_str.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char-name="Mercenary Tao" data-char-title="Unrivaled Assassin">
             <img class="char_type_base" src="char_type_base/char_type_base_ssr_agl.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000260_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_ssr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_extreme_agl.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char-name="Gohan (Kid)" data-char-title="Steely Determination">
             <img class="char_type_base" src="char_type_base/char_type_base_sr_int.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000270_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_sr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_super_int.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char-name="Trunks (Teen)" data-char-title="From Hell and Back">
             <img class="char_type_base" src="char_type_base/char_type_base_sr_agl.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000280_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_sr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_super_agl.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char-name="Krillin" data-char-title="Competitive Comrades">
             <img class="char_type_base" src="char_type_base/char_type_base_sr_phy.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000290_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_sr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_super_phy.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char-name="Piccolo" data-char-title="Aloof Warrior">
             <img class="char_type_base" src="char_type_base/char_type_base_sr_int.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000300_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_sr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_super_int.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char-name="Tien" data-char-title="Unfaltering Spirit">
             <img class="char_type_base" src="char_type_base/char_type_base_sr_agl.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000310_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_sr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_super_agl.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char-name="Chiaotzu" data-char-title="Trickster">
             <img class="char_type_base" src="char_type_base/char_type_base_sr_teq.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000320_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_sr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_super_teq.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char-name="Yamcha" data-char-title="The One and Only">
             <img class="char_type_base" src="char_type_base/char_type_base_sr_teq.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000330_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_sr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_super_teq.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char-name="Raditz" data-char-title="Menacing Alien Warrior">
             <img class="char_type_base" src="char_type_base/char_type_base_sr_agl.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000340_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_sr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_extreme_agl.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char-name="Nappa" data-char-title="Devastating Destruction">
             <img class="char_type_base" src="char_type_base/char_type_base_sr_phy.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000350_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_sr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_extreme_phy.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char-name="Zarbon" data-char-title="Confident Grin">
             <img class="char_type_base" src="char_type_base/char_type_base_sr_phy.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000360_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_sr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_extreme_phy.webp" loading="lazy" alt="">
         </div>
-        <div class="char">
+        <div class="char" data-char-name="Captain Ginyu" data-char-title="Captain's Merit">
             <img class="char_type_base" src="char_type_base/char_type_base_sr_str.webp" loading="lazy" alt="">
             <img class="char_thumb" src="char_thumb/char_1000370_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_sr.webp" loading="lazy" alt="">
