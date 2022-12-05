@@ -28,7 +28,7 @@
     width: 60px;
     height: 60px;
     position: relative;
-    top: -140px;
+    top: -144px;
     left: 10px;
 }
 
@@ -38,4 +38,12 @@
     position: relative;
     top: -225px;
     left: 20px;
+}
+
+.char_eza {
+    width: 25px;
+    height: 25px;
+    position: relative;
+    top: -195px;
+    left: 95px;
 }
