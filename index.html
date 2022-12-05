@@ -7,15 +7,16 @@
 
     <link href="CSS/body.css" rel="stylesheet" type="text/css" />
     <link href="CSS/char.css" rel="stylesheet" type="text/css" />
-    <link href="CSS/searchChar.css" rel="stylesheet" type="text/css" />
     <link href="CSS/filterType.css" rel="stylesheet" type="text/css" />
-
+    <link href="CSS/searchChar.css" rel="stylesheet" type="text/css" />
+    
+    <script src="JS/addChar.js" type="text/javascript"></script>
     <script src="JS/searchChar.js" type="text/javascript"></script>
     <script src="JS/filterType.js" type="text/javascript"></script>
 
 </head>
 
-<body>
+<body onload="addChar();">
     <div class="typeFilter">
         <button onclick="aglFilter();" class="type-btn" id="agl" type="button">AGL</button>
         <button onclick="intFilter();" class="type-btn" id="int" type="button">INT</button>
@@ -33,29 +34,29 @@
         </div>
     </div>
     <div class="char_container">
-        <div class="char" data-char-name="Goku" data-char-title="The Saiyan Among Us" data-char-type="str">
-            <img class="char_type_base" src="char_type_base/char_type_base_ssr_str.webp" loading="lazy" alt="">
-            <img class="char_thumb" src="char_thumb/char_1000030_thumb.png" loading="lazy" alt="">
-            <img class="char_rarity" src="char_rarity/char_rarity_ssr.webp" loading="lazy" alt="">
-            <img class="char_type" src="char_type/char_type_super_str.webp" loading="lazy" alt="">
+        <div class="char" data-char-name="Goku" data-char-title="The Saiyan Among Us" data-char-type="str" data-char-rarity="ssr" data-char-class="super">
+            <img class="char_type_base" src="" loading="lazy" alt="">
+            <img class="char_thumb" src="1000030" loading="lazy" alt="">
+            <img class="char_rarity" src="" loading="lazy" alt="">
+            <img class="char_type" src="" loading="lazy" alt="">
         </div>
-        <div class="char" data-char-name="Vegeta" data-char-title="Genius of War" data-char-type="teq">
-            <img class="char_type_base" src="char_type_base/char_type_base_ssr_teq.webp" loading="lazy" alt="">
-            <img class="char_thumb" src="char_thumb/char_1000040_thumb.png" loading="lazy" alt="">
-            <img class="char_rarity" src="char_rarity/char_rarity_ssr.webp" loading="lazy" alt="">
-            <img class="char_type" src="char_type/char_type_super_teq.webp" loading="lazy" alt="">
+        <div class="char" data-char-name="Vegeta" data-char-title="Genius of War" data-char-type="teq" data-char-rarity="ssr" data-char-class="super">
+            <img class="char_type_base" src="" loading="lazy" alt="">
+            <img class="char_thumb" src="1000040" loading="lazy" alt="">
+            <img class="char_rarity" src="" loading="lazy" alt="">
+            <img class="char_type" src="" loading="lazy" alt="">
         </div>
-        <div class="char" data-char-name="Cell (1st Form)" data-char-title="Android Evolution" data-char-type="agl">
-            <img class="char_type_base" src="char_type_base/char_type_base_ssr_agl.webp" loading="lazy" alt="">
-            <img class="char_thumb" src="char_thumb/char_1000070_thumb.png" loading="lazy" alt="">
-            <img class="char_rarity" src="char_rarity/char_rarity_ssr.webp" loading="lazy" alt="">
-            <img class="char_type" src="char_type/char_type_extreme_agl.webp" loading="lazy" alt="">
+        <div class="char" data-char-name="Cell (1st Form)" data-char-title="Android Evolution" data-char-type="agl" data-char-rarity="ssr" data-char-class="extreme">
+            <img class="char_type_base" src="" loading="lazy" alt="">
+            <img class="char_thumb" src="1000070" loading="lazy" alt="">
+            <img class="char_rarity" src="" loading="lazy" alt="">
+            <img class="char_type" src="" loading="lazy" alt="">
         </div>
-        <div class="char" data-char-name="Gohan (Kid)" data-char-title="Unrelenting Fighter" data-char-type="str">
-            <img class="char_type_base" src="char_type_base/char_type_base_ssr_str.webp" loading="lazy" alt="">
-            <img class="char_thumb" src="char_thumb/char_1000090_thumb.png" loading="lazy" alt="">
-            <img class="char_rarity" src="char_rarity/char_rarity_ssr.webp" loading="lazy" alt="">
-            <img class="char_type" src="char_type/char_type_super_str.webp" loading="lazy" alt="">
+        <div class="char" data-char-name="Gohan (Kid)" data-char-title="Unrelenting Fighter" data-char-type="str" data-char-rarity="ssr" data-char-class="super">
+            <img class="char_type_base" src="" loading="lazy" alt="">
+            <img class="char_thumb" src="1000090" loading="lazy" alt="">
+            <img class="char_rarity" src="" loading="lazy" alt="">
+            <img class="char_type" src="" loading="lazy" alt="">
         </div>
         <div class="char" data-char-name="Trunks (Teen)" data-char-title="Hawk Eyes" data-char-type="agl">
             <img class="char_type_base" src="char_type_base/char_type_base_ssr_agl.webp" loading="lazy" alt="">
@@ -1188,7 +1189,7 @@
             <img class="char_thumb" src="char_thumb/char_1003000_thumb.png" loading="lazy" alt="">
             <img class="char_rarity" src="char_rarity/char_rarity_ssr.webp" loading="lazy" alt="">
             <img class="char_type" src="char_type/char_type_super_str.webp" loading="lazy" alt="">
-        </div>
+        </div><!--page 6-->
     </div>
 
 </body>
