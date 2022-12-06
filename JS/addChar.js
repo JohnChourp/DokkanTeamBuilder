@@ -41,128 +41,150 @@ function addChar() {
 	}
 
 	for (let i = 0; i < dataCharTypeItems.length; i++) {
-		if (dataCharRarityItems[i].getAttribute(dataCharRarity) == "ur") {
+		if (dataCharRarityItems[i].getAttribute(dataCharRarity) == "lr") {
 			if (dataCharTypeItems[i].getAttribute(dataCharType) == "agl") {
-				char_type_base[i].src = "char_type_base/char_type_base_ssr_agl.webp";
-				char_rarity[i].src = "char_rarity/char_rarity_ur.webp";
+				char_type_base[i].src = "char_type_base/char_type_base_ssr_agl.png";
+				char_rarity[i].src = "char_rarity/char_rarity_lr.png";
 			}
 			if (dataCharTypeItems[i].getAttribute(dataCharType) == "int") {
-				char_type_base[i].src = "char_type_base/char_type_base_ssr_int.webp";
-				char_rarity[i].src = "char_rarity/char_rarity_ur.webp";
+				char_type_base[i].src = "char_type_base/char_type_base_ssr_int.png";
+				char_rarity[i].src = "char_rarity/char_rarity_lr.png";
 			}
 			if (dataCharTypeItems[i].getAttribute(dataCharType) == "phy") {
-				char_type_base[i].src = "char_type_base/char_type_base_ssr_phy.webp";
-				char_rarity[i].src = "char_rarity/char_rarity_ur.webp";
+				char_type_base[i].src = "char_type_base/char_type_base_ssr_phy.png";
+				char_rarity[i].src = "char_rarity/char_rarity_lr.png";
 			}
 			if (dataCharTypeItems[i].getAttribute(dataCharType) == "str") {
-				char_type_base[i].src = "char_type_base/char_type_base_ssr_str.webp";
-				char_rarity[i].src = "char_rarity/char_rarity_ur.webp";
+				char_type_base[i].src = "char_type_base/char_type_base_ssr_str.png";
+				char_rarity[i].src = "char_rarity/char_rarity_lr.png";
 			}
 			if (dataCharTypeItems[i].getAttribute(dataCharType) == "teq") {
-				char_type_base[i].src = "char_type_base/char_type_base_ssr_teq.webp";
-				char_rarity[i].src = "char_rarity/char_rarity_ur.webp";
+				char_type_base[i].src = "char_type_base/char_type_base_ssr_teq.png";
+				char_rarity[i].src = "char_rarity/char_rarity_lr.png";
+			}
+		}
+		if (dataCharRarityItems[i].getAttribute(dataCharRarity) == "ur") {
+			if (dataCharTypeItems[i].getAttribute(dataCharType) == "agl") {
+				char_type_base[i].src = "char_type_base/char_type_base_ssr_agl.png";
+				char_rarity[i].src = "char_rarity/char_rarity_ur.png";
+			}
+			if (dataCharTypeItems[i].getAttribute(dataCharType) == "int") {
+				char_type_base[i].src = "char_type_base/char_type_base_ssr_int.png";
+				char_rarity[i].src = "char_rarity/char_rarity_ur.png";
+			}
+			if (dataCharTypeItems[i].getAttribute(dataCharType) == "phy") {
+				char_type_base[i].src = "char_type_base/char_type_base_ssr_phy.png";
+				char_rarity[i].src = "char_rarity/char_rarity_ur.png";
+			}
+			if (dataCharTypeItems[i].getAttribute(dataCharType) == "str") {
+				char_type_base[i].src = "char_type_base/char_type_base_ssr_str.png";
+				char_rarity[i].src = "char_rarity/char_rarity_ur.png";
+			}
+			if (dataCharTypeItems[i].getAttribute(dataCharType) == "teq") {
+				char_type_base[i].src = "char_type_base/char_type_base_ssr_teq.png";
+				char_rarity[i].src = "char_rarity/char_rarity_ur.png";
 			}
 		}
 		if (dataCharRarityItems[i].getAttribute(dataCharRarity) == "ssr") {
 			if (dataCharTypeItems[i].getAttribute(dataCharType) == "agl") {
-				char_type_base[i].src = "char_type_base/char_type_base_ssr_agl.webp";
-				char_rarity[i].src = "char_rarity/char_rarity_ssr.webp";
+				char_type_base[i].src = "char_type_base/char_type_base_ssr_agl.png";
+				char_rarity[i].src = "char_rarity/char_rarity_ssr.png";
 			}
 			if (dataCharTypeItems[i].getAttribute(dataCharType) == "int") {
-				char_type_base[i].src = "char_type_base/char_type_base_ssr_int.webp";
-				char_rarity[i].src = "char_rarity/char_rarity_ssr.webp";
+				char_type_base[i].src = "char_type_base/char_type_base_ssr_int.png";
+				char_rarity[i].src = "char_rarity/char_rarity_ssr.png";
 			}
 			if (dataCharTypeItems[i].getAttribute(dataCharType) == "phy") {
-				char_type_base[i].src = "char_type_base/char_type_base_ssr_phy.webp";
-				char_rarity[i].src = "char_rarity/char_rarity_ssr.webp";
+				char_type_base[i].src = "char_type_base/char_type_base_ssr_phy.png";
+				char_rarity[i].src = "char_rarity/char_rarity_ssr.png";
 			}
 			if (dataCharTypeItems[i].getAttribute(dataCharType) == "str") {
-				char_type_base[i].src = "char_type_base/char_type_base_ssr_str.webp";
-				char_rarity[i].src = "char_rarity/char_rarity_ssr.webp";
+				char_type_base[i].src = "char_type_base/char_type_base_ssr_str.png";
+				char_rarity[i].src = "char_rarity/char_rarity_ssr.png";
 			}
 			if (dataCharTypeItems[i].getAttribute(dataCharType) == "teq") {
-				char_type_base[i].src = "char_type_base/char_type_base_ssr_teq.webp";
-				char_rarity[i].src = "char_rarity/char_rarity_ssr.webp";
+				char_type_base[i].src = "char_type_base/char_type_base_ssr_teq.png";
+				char_rarity[i].src = "char_rarity/char_rarity_ssr.png";
 			}
 		}
 		if (dataCharRarityItems[i].getAttribute(dataCharRarity) == "sr") {
 			if (dataCharTypeItems[i].getAttribute(dataCharType) == "agl") {
-				char_type_base[i].src = "char_type_base/char_type_base_sr_agl.webp";
-				char_rarity[i].src = "char_rarity/char_rarity_sr.webp";
+				char_type_base[i].src = "char_type_base/char_type_base_sr_agl.png";
+				char_rarity[i].src = "char_rarity/char_rarity_sr.png";
 			}
 			if (dataCharTypeItems[i].getAttribute(dataCharType) == "int") {
-				char_type_base[i].src = "char_type_base/char_type_base_sr_int.webp";
-				char_rarity[i].src = "char_rarity/char_rarity_sr.webp";
+				char_type_base[i].src = "char_type_base/char_type_base_sr_int.png";
+				char_rarity[i].src = "char_rarity/char_rarity_sr.png";
 			}
 			if (dataCharTypeItems[i].getAttribute(dataCharType) == "phy") {
-				char_type_base[i].src = "char_type_base/char_type_base_sr_phy.webp";
-				char_rarity[i].src = "char_rarity/char_rarity_sr.webp";
+				char_type_base[i].src = "char_type_base/char_type_base_sr_phy.png";
+				char_rarity[i].src = "char_rarity/char_rarity_sr.png";
 			}
 			if (dataCharTypeItems[i].getAttribute(dataCharType) == "str") {
-				char_type_base[i].src = "char_type_base/char_type_base_sr_str.webp";
-				char_rarity[i].src = "char_rarity/char_rarity_sr.webp";
+				char_type_base[i].src = "char_type_base/char_type_base_sr_str.png";
+				char_rarity[i].src = "char_rarity/char_rarity_sr.png";
 			}
 			if (dataCharTypeItems[i].getAttribute(dataCharType) == "teq") {
-				char_type_base[i].src = "char_type_base/char_type_base_sr_teq.webp";
-				char_rarity[i].src = "char_rarity/char_rarity_sr.webp";
+				char_type_base[i].src = "char_type_base/char_type_base_sr_teq.png";
+				char_rarity[i].src = "char_rarity/char_rarity_sr.png";
 			}
 		}
 		if (dataCharRarityItems[i].getAttribute(dataCharRarity) == "r") {
 			if (dataCharTypeItems[i].getAttribute(dataCharType) == "agl") {
-				char_type_base[i].src = "char_type_base/char_type_base_r_agl.webp";
-				char_rarity[i].src = "char_rarity/char_rarity_r.webp";
+				char_type_base[i].src = "char_type_base/char_type_base_r_agl.png";
+				char_rarity[i].src = "char_rarity/char_rarity_r.png";
 			}
 			if (dataCharTypeItems[i].getAttribute(dataCharType) == "int") {
-				char_type_base[i].src = "char_type_base/char_type_base_r_int.webp";
-				char_rarity[i].src = "char_rarity/char_rarity_r.webp";
+				char_type_base[i].src = "char_type_base/char_type_base_r_int.png";
+				char_rarity[i].src = "char_rarity/char_rarity_r.png";
 			}
 			if (dataCharTypeItems[i].getAttribute(dataCharType) == "phy") {
-				char_type_base[i].src = "char_type_base/char_type_base_r_phy.webp";
-				char_rarity[i].src = "char_rarity/char_rarity_r.webp";
+				char_type_base[i].src = "char_type_base/char_type_base_r_phy.png";
+				char_rarity[i].src = "char_rarity/char_rarity_r.png";
 			}
 			if (dataCharTypeItems[i].getAttribute(dataCharType) == "str") {
-				char_type_base[i].src = "char_type_base/char_type_base_r_str.webp";
-				char_rarity[i].src = "char_rarity/char_rarity_r.webp";
+				char_type_base[i].src = "char_type_base/char_type_base_r_str.png";
+				char_rarity[i].src = "char_rarity/char_rarity_r.png";
 			}
 			if (dataCharTypeItems[i].getAttribute(dataCharType) == "teq") {
-				char_type_base[i].src = "char_type_base/char_type_base_r_teq.webp";
-				char_rarity[i].src = "char_rarity/char_rarity_r.webp";
+				char_type_base[i].src = "char_type_base/char_type_base_r_teq.png";
+				char_rarity[i].src = "char_rarity/char_rarity_r.png";
 			}
 		}
 
 		if (dataCharClassItems[i].getAttribute(dataCharClass) == "super") {
 			if (dataCharTypeItems[i].getAttribute(dataCharType) == "agl") {
-				char_type[i].src = "char_type/char_type_super_agl.webp";
+				char_type[i].src = "char_type/char_type_super_agl.png";
 			}
 			if (dataCharTypeItems[i].getAttribute(dataCharType) == "int") {
-				char_type[i].src = "char_type/char_type_super_int.webp";
+				char_type[i].src = "char_type/char_type_super_int.png";
 			}
 			if (dataCharTypeItems[i].getAttribute(dataCharType) == "phy") {
-				char_type[i].src = "char_type/char_type_super_phy.webp";
+				char_type[i].src = "char_type/char_type_super_phy.png";
 			}
 			if (dataCharTypeItems[i].getAttribute(dataCharType) == "str") {
-				char_type[i].src = "char_type/char_type_super_str.webp";
+				char_type[i].src = "char_type/char_type_super_str.png";
 			}
 			if (dataCharTypeItems[i].getAttribute(dataCharType) == "teq") {
-				char_type[i].src = "char_type/char_type_super_teq.webp";
+				char_type[i].src = "char_type/char_type_super_teq.png";
 			}
 		}
 
 		if (dataCharClassItems[i].getAttribute(dataCharClass) == "extreme") {
 			if (dataCharTypeItems[i].getAttribute(dataCharType) == "agl") {
-				char_type[i].src = "char_type/char_type_extreme_agl.webp";
+				char_type[i].src = "char_type/char_type_extreme_agl.png";
 			}
 			if (dataCharTypeItems[i].getAttribute(dataCharType) == "int") {
-				char_type[i].src = "char_type/char_type_extreme_int.webp";
+				char_type[i].src = "char_type/char_type_extreme_int.png";
 			}
 			if (dataCharTypeItems[i].getAttribute(dataCharType) == "phy") {
-				char_type[i].src = "char_type/char_type_extreme_phy.webp";
+				char_type[i].src = "char_type/char_type_extreme_phy.png";
 			}
 			if (dataCharTypeItems[i].getAttribute(dataCharType) == "str") {
-				char_type[i].src = "char_type/char_type_extreme_str.webp";
+				char_type[i].src = "char_type/char_type_extreme_str.png";
 			}
 			if (dataCharTypeItems[i].getAttribute(dataCharType) == "teq") {
-				char_type[i].src = "char_type/char_type_extreme_teq.webp";
+				char_type[i].src = "char_type/char_type_extreme_teq.png";
 			}
 		}
 		
