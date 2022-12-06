@@ -151,6 +151,28 @@ function addChar() {
 				char_rarity[i].src = "char_rarity/char_rarity_r.png";
 			}
 		}
+		if (dataCharRarityItems[i].getAttribute(dataCharRarity) == "n") {
+			if (dataCharTypeItems[i].getAttribute(dataCharType) == "agl") {
+				char_type_base[i].src = "char_type_base/char_type_base_n_agl.png";
+				char_rarity[i].src = "char_rarity/char_rarity_n.png";
+			}
+			if (dataCharTypeItems[i].getAttribute(dataCharType) == "int") {
+				char_type_base[i].src = "char_type_base/char_type_base_n_int.png";
+				char_rarity[i].src = "char_rarity/char_rarity_n.png";
+			}
+			if (dataCharTypeItems[i].getAttribute(dataCharType) == "phy") {
+				char_type_base[i].src = "char_type_base/char_type_base_n_phy.png";
+				char_rarity[i].src = "char_rarity/char_rarity_n.png";
+			}
+			if (dataCharTypeItems[i].getAttribute(dataCharType) == "str") {
+				char_type_base[i].src = "char_type_base/char_type_base_n_str.png";
+				char_rarity[i].src = "char_rarity/char_rarity_n.png";
+			}
+			if (dataCharTypeItems[i].getAttribute(dataCharType) == "teq") {
+				char_type_base[i].src = "char_type_base/char_type_base_n_teq.png";
+				char_rarity[i].src = "char_rarity/char_rarity_n.png";
+			}
+		}
 
 		if (dataCharClassItems[i].getAttribute(dataCharClass) == "super") {
 			if (dataCharTypeItems[i].getAttribute(dataCharType) == "agl") {
