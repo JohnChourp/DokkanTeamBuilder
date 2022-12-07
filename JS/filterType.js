@@ -1,10 +1,10 @@
-function typeDisappearFilter(char) {
+function charDisappear(char) {
 	for (let i = 0; i < char.length; i++) {
 		char.item(i).style.display = "none";
 	}
 }
 
-function showCharAllFilter(char, dataCharTypeItems, dataCharType) {
+function showCharTypeFilter(char, dataCharTypeItems, dataCharType) {
 	if (document.getElementById("agl").classList.contains("checkedTypeBtn")) {
 		for (let i = 0; i < char.length; i++) {
 			if (dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "agl") {
@@ -46,9 +46,95 @@ function showCharAllFilter(char, dataCharTypeItems, dataCharType) {
 	}
 }
 
+function showCharTypeAndClassFilter(char, dataCharTypeItems, dataCharType, dataCharClass, dataCharClassItems) {
+	//filterClass Super
+	if ((document.getElementById("agl").classList.contains("checkedTypeBtn")) && (document.getElementById("super").classList.contains("checkedClassBtn"))) {
+		for (let i = 0; i < char.length; i++) {
+			if ((dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "agl") && (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "super")) {
+				char.item(i).style.display = "inline-block";
+			}
+		}
+	}
+
+	if ((document.getElementById("int").classList.contains("checkedTypeBtn")) && (document.getElementById("super").classList.contains("checkedClassBtn"))) {
+		for (let i = 0; i < char.length; i++) {
+			if ((dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "int") && (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "super")) {
+				char.item(i).style.display = "inline-block";
+			}
+		}
+	}
+
+	if ((document.getElementById("phy").classList.contains("checkedTypeBtn")) && (document.getElementById("super").classList.contains("checkedClassBtn"))) {
+		for (let i = 0; i < char.length; i++) {
+			if ((dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "phy") && (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "super")) {
+				char.item(i).style.display = "inline-block";
+			}
+		}
+	}
+
+	if ((document.getElementById("str").classList.contains("checkedTypeBtn")) && (document.getElementById("super").classList.contains("checkedClassBtn"))) {
+		for (let i = 0; i < char.length; i++) {
+			if ((dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "str") && (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "super")) {
+				char.item(i).style.display = "inline-block";
+			}
+		}
+	}
+
+	if ((document.getElementById("teq").classList.contains("checkedTypeBtn")) && (document.getElementById("super").classList.contains("checkedClassBtn"))) {
+		for (let i = 0; i < char.length; i++) {
+			if ((dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "teq") && (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "super")) {
+				char.item(i).style.display = "inline-block";
+			}
+		}
+	}
+
+	//filterClass Extreme
+	if ((document.getElementById("agl").classList.contains("checkedTypeBtn")) && (document.getElementById("extreme").classList.contains("checkedClassBtn"))) {
+		for (let i = 0; i < char.length; i++) {
+			if ((dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "agl") && (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "extreme")) {
+				char.item(i).style.display = "inline-block";
+			}
+		}
+	}
+
+	if ((document.getElementById("int").classList.contains("checkedTypeBtn")) && (document.getElementById("extreme").classList.contains("checkedClassBtn"))) {
+		for (let i = 0; i < char.length; i++) {
+			if ((dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "int") && (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "extreme")) {
+				char.item(i).style.display = "inline-block";
+			}
+		}
+	}
+
+	if ((document.getElementById("phy").classList.contains("checkedTypeBtn")) && (document.getElementById("extreme").classList.contains("checkedClassBtn"))) {
+		for (let i = 0; i < char.length; i++) {
+			if ((dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "phy") && (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "extreme")) {
+				char.item(i).style.display = "inline-block";
+			}
+		}
+	}
+
+	if ((document.getElementById("str").classList.contains("checkedTypeBtn")) && (document.getElementById("extreme").classList.contains("checkedClassBtn"))) {
+		for (let i = 0; i < char.length; i++) {
+			if ((dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "str") && (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "extreme")) {
+				char.item(i).style.display = "inline-block";
+			}
+		}
+	}
+
+	if ((document.getElementById("teq").classList.contains("checkedTypeBtn")) && (document.getElementById("extreme").classList.contains("checkedClassBtn"))) {
+		for (let i = 0; i < char.length; i++) {
+			if ((dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "teq") && (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "extreme")) {
+				char.item(i).style.display = "inline-block";
+			}
+		}
+	}
+}
+
 function aglFilter() {
 	let dataCharType = 'data-char-type';
+	let dataCharClass = 'data-char-class';
 	let dataCharTypeItems = document.querySelectorAll('[' + dataCharType + ']');
+	let dataCharClassItems = document.querySelectorAll('[' + dataCharClass + ']');
 	let char = document.getElementsByClassName("char");
 
 	if (document.getElementById("agl").classList.contains("checkedTypeBtn")) {
@@ -57,19 +143,50 @@ function aglFilter() {
 		document.getElementById("agl").classList.add("checkedTypeBtn");
 	}
 
-	typeDisappearFilter(char);
-	showCharAllFilter(char, dataCharTypeItems, dataCharType);
+	charDisappear(char);
 
-	if (document.getElementsByClassName("checkedTypeBtn").length == 0) {
+	//use filterType
+	if ((document.getElementsByClassName("checkedTypeBtn").length > 0) && (document.getElementsByClassName("checkedClassBtn").length == 0)) {
+		showCharTypeFilter(char, dataCharTypeItems, dataCharType);
+	}
+
+	//use filterType and filterClass
+	if ((document.getElementsByClassName("checkedTypeBtn").length > 0) && (document.getElementsByClassName("checkedClassBtn").length > 0)) {
+		showCharTypeAndClassFilter(char, dataCharTypeItems, dataCharType, dataCharClass, dataCharClassItems);
+	}
+
+	//no use filterType and filterClass
+	if ((document.getElementsByClassName("checkedTypeBtn").length == 0) && (document.getElementsByClassName("checkedClassBtn").length == 0)) {
 		for (let i = 0; i < char.length; i++) {
 			char.item(i).style.display = "inline-block";
+		}
+	}
+
+	//while using filterClass i uncheck all filterType
+	if ((document.getElementsByClassName("checkedTypeBtn").length == 0) && (document.getElementsByClassName("checkedClassBtn").length > 0)) {
+		if (document.getElementById("super").classList.contains("checkedClassBtn")) {
+			for (let i = 0; i < char.length; i++) {
+				if (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "super") {
+					char.item(i).style.display = "inline-block";
+				}
+			}
+		}
+
+		if (document.getElementById("extreme").classList.contains("checkedClassBtn")) {
+			for (let i = 0; i < char.length; i++) {
+				if (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "extreme") {
+					char.item(i).style.display = "inline-block";
+				}
+			}
 		}
 	}
 }
 
 function intFilter() {
 	let dataCharType = 'data-char-type';
+	let dataCharClass = 'data-char-class';
 	let dataCharTypeItems = document.querySelectorAll('[' + dataCharType + ']');
+	let dataCharClassItems = document.querySelectorAll('[' + dataCharClass + ']');
 	let char = document.getElementsByClassName("char");
 
 	if (document.getElementById("int").classList.contains("checkedTypeBtn")) {
@@ -78,19 +195,50 @@ function intFilter() {
 		document.getElementById("int").classList.add("checkedTypeBtn");
 	}
 
-	typeDisappearFilter(char);
-	showCharAllFilter(char, dataCharTypeItems, dataCharType);
-	
-	if (document.getElementsByClassName("checkedTypeBtn").length == 0) {
+	charDisappear(char);
+
+	//use filterType
+	if ((document.getElementsByClassName("checkedTypeBtn").length > 0) && (document.getElementsByClassName("checkedClassBtn").length == 0)) {
+		showCharTypeFilter(char, dataCharTypeItems, dataCharType);
+	}
+
+	//use filterType and filterClass
+	if ((document.getElementsByClassName("checkedTypeBtn").length > 0) && (document.getElementsByClassName("checkedClassBtn").length > 0)) {
+		showCharTypeAndClassFilter(char, dataCharTypeItems, dataCharType, dataCharClass, dataCharClassItems);
+	}
+
+	//no use filterType and filterClass
+	if ((document.getElementsByClassName("checkedTypeBtn").length == 0) && (document.getElementsByClassName("checkedClassBtn").length == 0)) {
 		for (let i = 0; i < char.length; i++) {
 			char.item(i).style.display = "inline-block";
+		}
+	}
+
+	//while using filterClass i will uncheck all filterType
+	if ((document.getElementsByClassName("checkedTypeBtn").length == 0) && (document.getElementsByClassName("checkedClassBtn").length > 0)) {
+		if (document.getElementById("super").classList.contains("checkedClassBtn")) {
+			for (let i = 0; i < char.length; i++) {
+				if (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "super") {
+					char.item(i).style.display = "inline-block";
+				}
+			}
+		}
+
+		if (document.getElementById("extreme").classList.contains("checkedClassBtn")) {
+			for (let i = 0; i < char.length; i++) {
+				if (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "extreme") {
+					char.item(i).style.display = "inline-block";
+				}
+			}
 		}
 	}
 }
 
 function phyFilter() {
 	let dataCharType = 'data-char-type';
+	let dataCharClass = 'data-char-class';
 	let dataCharTypeItems = document.querySelectorAll('[' + dataCharType + ']');
+	let dataCharClassItems = document.querySelectorAll('[' + dataCharClass + ']');
 	let char = document.getElementsByClassName("char");
 
 	if (document.getElementById("phy").classList.contains("checkedTypeBtn")) {
@@ -99,19 +247,50 @@ function phyFilter() {
 		document.getElementById("phy").classList.add("checkedTypeBtn");
 	}
 
-	typeDisappearFilter(char);
-	showCharAllFilter(char, dataCharTypeItems, dataCharType);
-	
-	if (document.getElementsByClassName("checkedTypeBtn").length == 0) {
+	charDisappear(char);
+
+	//use filterType
+	if ((document.getElementsByClassName("checkedTypeBtn").length > 0) && (document.getElementsByClassName("checkedClassBtn").length == 0)) {
+		showCharTypeFilter(char, dataCharTypeItems, dataCharType);
+	}
+
+	//use filterType and filterClass
+	if ((document.getElementsByClassName("checkedTypeBtn").length > 0) && (document.getElementsByClassName("checkedClassBtn").length > 0)) {
+		showCharTypeAndClassFilter(char, dataCharTypeItems, dataCharType, dataCharClass, dataCharClassItems);
+	}
+
+	//no use filterType and filterClass
+	if ((document.getElementsByClassName("checkedTypeBtn").length == 0) && (document.getElementsByClassName("checkedClassBtn").length == 0)) {
 		for (let i = 0; i < char.length; i++) {
 			char.item(i).style.display = "inline-block";
+		}
+	}
+
+	//while using filterClass i will uncheck all filterType
+	if ((document.getElementsByClassName("checkedTypeBtn").length == 0) && (document.getElementsByClassName("checkedClassBtn").length > 0)) {
+		if (document.getElementById("super").classList.contains("checkedClassBtn")) {
+			for (let i = 0; i < char.length; i++) {
+				if (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "super") {
+					char.item(i).style.display = "inline-block";
+				}
+			}
+		}
+
+		if (document.getElementById("extreme").classList.contains("checkedClassBtn")) {
+			for (let i = 0; i < char.length; i++) {
+				if (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "extreme") {
+					char.item(i).style.display = "inline-block";
+				}
+			}
 		}
 	}
 }
 
 function strFilter() {
 	let dataCharType = 'data-char-type';
+	let dataCharClass = 'data-char-class';
 	let dataCharTypeItems = document.querySelectorAll('[' + dataCharType + ']');
+	let dataCharClassItems = document.querySelectorAll('[' + dataCharClass + ']');
 	let char = document.getElementsByClassName("char");
 
 	if (document.getElementById("str").classList.contains("checkedTypeBtn")) {
@@ -120,19 +299,50 @@ function strFilter() {
 		document.getElementById("str").classList.add("checkedTypeBtn");
 	}
 
-	typeDisappearFilter(char);
-	showCharAllFilter(char, dataCharTypeItems, dataCharType);
-	
-	if (document.getElementsByClassName("checkedTypeBtn").length == 0) {
+	charDisappear(char);
+
+	//use filterType
+	if ((document.getElementsByClassName("checkedTypeBtn").length > 0) && (document.getElementsByClassName("checkedClassBtn").length == 0)) {
+		showCharTypeFilter(char, dataCharTypeItems, dataCharType);
+	}
+
+	//use filterType and filterClass
+	if ((document.getElementsByClassName("checkedTypeBtn").length > 0) && (document.getElementsByClassName("checkedClassBtn").length > 0)) {
+		showCharTypeAndClassFilter(char, dataCharTypeItems, dataCharType, dataCharClass, dataCharClassItems);
+	}
+
+	//no use filterType and filterClass
+	if ((document.getElementsByClassName("checkedTypeBtn").length == 0) && (document.getElementsByClassName("checkedClassBtn").length == 0)) {
 		for (let i = 0; i < char.length; i++) {
 			char.item(i).style.display = "inline-block";
+		}
+	}
+
+	//while using filterClass i will uncheck all filterType
+	if ((document.getElementsByClassName("checkedTypeBtn").length == 0) && (document.getElementsByClassName("checkedClassBtn").length > 0)) {
+		if (document.getElementById("super").classList.contains("checkedClassBtn")) {
+			for (let i = 0; i < char.length; i++) {
+				if (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "super") {
+					char.item(i).style.display = "inline-block";
+				}
+			}
+		}
+
+		if (document.getElementById("extreme").classList.contains("checkedClassBtn")) {
+			for (let i = 0; i < char.length; i++) {
+				if (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "extreme") {
+					char.item(i).style.display = "inline-block";
+				}
+			}
 		}
 	}
 }
 
 function teqFilter() {
 	let dataCharType = 'data-char-type';
+	let dataCharClass = 'data-char-class';
 	let dataCharTypeItems = document.querySelectorAll('[' + dataCharType + ']');
+	let dataCharClassItems = document.querySelectorAll('[' + dataCharClass + ']');
 	let char = document.getElementsByClassName("char");
 
 	if (document.getElementById("teq").classList.contains("checkedTypeBtn")) {
@@ -141,12 +351,41 @@ function teqFilter() {
 		document.getElementById("teq").classList.add("checkedTypeBtn");
 	}
 
-	typeDisappearFilter(char);
-	showCharAllFilter(char, dataCharTypeItems, dataCharType);
-	
-	if (document.getElementsByClassName("checkedTypeBtn").length == 0) {
+	charDisappear(char);
+
+	//use filterType
+	if ((document.getElementsByClassName("checkedTypeBtn").length > 0) && (document.getElementsByClassName("checkedClassBtn").length == 0)) {
+		showCharTypeFilter(char, dataCharTypeItems, dataCharType);
+	}
+
+	//use filterType and filterClass
+	if ((document.getElementsByClassName("checkedTypeBtn").length > 0) && (document.getElementsByClassName("checkedClassBtn").length > 0)) {
+		showCharTypeAndClassFilter(char, dataCharTypeItems, dataCharType, dataCharClass, dataCharClassItems);
+	}
+
+	//no use filterType and filterClass
+	if ((document.getElementsByClassName("checkedTypeBtn").length == 0) && (document.getElementsByClassName("checkedClassBtn").length == 0)) {
 		for (let i = 0; i < char.length; i++) {
 			char.item(i).style.display = "inline-block";
+		}
+	}
+
+	//while using filterClass i will uncheck all filterType
+	if ((document.getElementsByClassName("checkedTypeBtn").length == 0) && (document.getElementsByClassName("checkedClassBtn").length > 0)) {
+		if (document.getElementById("super").classList.contains("checkedClassBtn")) {
+			for (let i = 0; i < char.length; i++) {
+				if (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "super") {
+					char.item(i).style.display = "inline-block";
+				}
+			}
+		}
+
+		if (document.getElementById("extreme").classList.contains("checkedClassBtn")) {
+			for (let i = 0; i < char.length; i++) {
+				if (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "extreme") {
+					char.item(i).style.display = "inline-block";
+				}
+			}
 		}
 	}
 }
