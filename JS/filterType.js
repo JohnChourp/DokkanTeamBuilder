@@ -161,6 +161,25 @@ function aglFilter() {
 			char.item(i).style.display = "inline-block";
 		}
 	}
+
+	//while using filterClass i uncheck all filterType
+	if ((document.getElementsByClassName("checkedTypeBtn").length == 0) && (document.getElementsByClassName("checkedClassBtn").length > 0)) {
+		if (document.getElementById("super").classList.contains("checkedClassBtn")) {
+			for (let i = 0; i < char.length; i++) {
+				if (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "super") {
+					char.item(i).style.display = "inline-block";
+				}
+			}
+		}
+
+		if (document.getElementById("extreme").classList.contains("checkedClassBtn")) {
+			for (let i = 0; i < char.length; i++) {
+				if (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "extreme") {
+					char.item(i).style.display = "inline-block";
+				}
+			}
+		}
+	}
 }
 
 function intFilter() {
@@ -192,6 +211,25 @@ function intFilter() {
 	if ((document.getElementsByClassName("checkedTypeBtn").length == 0) && (document.getElementsByClassName("checkedClassBtn").length == 0)) {
 		for (let i = 0; i < char.length; i++) {
 			char.item(i).style.display = "inline-block";
+		}
+	}
+
+	//while using filterClass i will uncheck all filterType
+	if ((document.getElementsByClassName("checkedTypeBtn").length == 0) && (document.getElementsByClassName("checkedClassBtn").length > 0)) {
+		if (document.getElementById("super").classList.contains("checkedClassBtn")) {
+			for (let i = 0; i < char.length; i++) {
+				if (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "super") {
+					char.item(i).style.display = "inline-block";
+				}
+			}
+		}
+
+		if (document.getElementById("extreme").classList.contains("checkedClassBtn")) {
+			for (let i = 0; i < char.length; i++) {
+				if (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "extreme") {
+					char.item(i).style.display = "inline-block";
+				}
+			}
 		}
 	}
 }
@@ -227,6 +265,25 @@ function phyFilter() {
 			char.item(i).style.display = "inline-block";
 		}
 	}
+
+	//while using filterClass i will uncheck all filterType
+	if ((document.getElementsByClassName("checkedTypeBtn").length == 0) && (document.getElementsByClassName("checkedClassBtn").length > 0)) {
+		if (document.getElementById("super").classList.contains("checkedClassBtn")) {
+			for (let i = 0; i < char.length; i++) {
+				if (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "super") {
+					char.item(i).style.display = "inline-block";
+				}
+			}
+		}
+
+		if (document.getElementById("extreme").classList.contains("checkedClassBtn")) {
+			for (let i = 0; i < char.length; i++) {
+				if (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "extreme") {
+					char.item(i).style.display = "inline-block";
+				}
+			}
+		}
+	}
 }
 
 function strFilter() {
@@ -260,6 +317,25 @@ function strFilter() {
 			char.item(i).style.display = "inline-block";
 		}
 	}
+
+	//while using filterClass i will uncheck all filterType
+	if ((document.getElementsByClassName("checkedTypeBtn").length == 0) && (document.getElementsByClassName("checkedClassBtn").length > 0)) {
+		if (document.getElementById("super").classList.contains("checkedClassBtn")) {
+			for (let i = 0; i < char.length; i++) {
+				if (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "super") {
+					char.item(i).style.display = "inline-block";
+				}
+			}
+		}
+
+		if (document.getElementById("extreme").classList.contains("checkedClassBtn")) {
+			for (let i = 0; i < char.length; i++) {
+				if (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "extreme") {
+					char.item(i).style.display = "inline-block";
+				}
+			}
+		}
+	}
 }
 
 function teqFilter() {
@@ -291,6 +367,25 @@ function teqFilter() {
 	if ((document.getElementsByClassName("checkedTypeBtn").length == 0) && (document.getElementsByClassName("checkedClassBtn").length == 0)) {
 		for (let i = 0; i < char.length; i++) {
 			char.item(i).style.display = "inline-block";
+		}
+	}
+
+	//while using filterClass i will uncheck all filterType
+	if ((document.getElementsByClassName("checkedTypeBtn").length == 0) && (document.getElementsByClassName("checkedClassBtn").length > 0)) {
+		if (document.getElementById("super").classList.contains("checkedClassBtn")) {
+			for (let i = 0; i < char.length; i++) {
+				if (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "super") {
+					char.item(i).style.display = "inline-block";
+				}
+			}
+		}
+
+		if (document.getElementById("extreme").classList.contains("checkedClassBtn")) {
+			for (let i = 0; i < char.length; i++) {
+				if (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "extreme") {
+					char.item(i).style.display = "inline-block";
+				}
+			}
 		}
 	}
 }

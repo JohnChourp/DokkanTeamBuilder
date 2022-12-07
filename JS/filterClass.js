@@ -47,6 +47,49 @@ function showCharClassAndTypeFilter(char, dataCharClassItems, dataCharClass, dat
         }
     }
 }
+
+function showCharTypeFilter(char, dataCharTypeItems, dataCharType) {
+	if (document.getElementById("agl").classList.contains("checkedTypeBtn")) {
+		for (let i = 0; i < char.length; i++) {
+			if (dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "agl") {
+				char.item(i).style.display = "inline-block";
+			}
+		}
+	}
+
+	if (document.getElementById("int").classList.contains("checkedTypeBtn")) {
+		for (let i = 0; i < char.length; i++) {
+			if (dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "int") {
+				char.item(i).style.display = "inline-block";
+			}
+		}
+	}
+
+	if (document.getElementById("phy").classList.contains("checkedTypeBtn")) {
+		for (let i = 0; i < char.length; i++) {
+			if (dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "phy") {
+				char.item(i).style.display = "inline-block";
+			}
+		}
+	}
+
+	if (document.getElementById("str").classList.contains("checkedTypeBtn")) {
+		for (let i = 0; i < char.length; i++) {
+			if (dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "str") {
+				char.item(i).style.display = "inline-block";
+			}
+		}
+	}
+
+	if (document.getElementById("teq").classList.contains("checkedTypeBtn")) {
+		for (let i = 0; i < char.length; i++) {
+			if (dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "teq") {
+				char.item(i).style.display = "inline-block";
+			}
+		}
+	}
+}
+
 function superFilter() {
     let dataCharType = 'data-char-type';
 	let dataCharClass = 'data-char-class';
@@ -81,6 +124,11 @@ function superFilter() {
         for (let i = 0; i < char.length; i++) {
             char.item(i).style.display = "inline-block";
         }
+    }
+
+    //while using filterType i uncheck all filterClass
+    if ((document.getElementsByClassName("checkedTypeBtn").length > 0) && (document.getElementsByClassName("checkedClassBtn").length == 0)) {
+        showCharTypeFilter(char, dataCharTypeItems, dataCharType);
     }
 }
 
@@ -118,5 +166,10 @@ function extremeFilter() {
         for (let i = 0; i < char.length; i++) {
             char.item(i).style.display = "inline-block";
         }
+    }
+
+    //while using filterType i uncheck all filterClass
+    if ((document.getElementsByClassName("checkedTypeBtn").length > 0) && (document.getElementsByClassName("checkedClassBtn").length == 0)) {
+        showCharTypeFilter(char, dataCharTypeItems, dataCharType);
     }
 }
