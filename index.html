@@ -6,22 +6,26 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link href="CSS/body.css" rel="stylesheet" type="text/css" />
     <link href="CSS/char.css" rel="stylesheet" type="text/css" />
+    <link href="CSS/filterClass.css" rel="stylesheet" type="text/css" />
     <link href="CSS/filterType.css" rel="stylesheet" type="text/css" />
     <link href="CSS/searchChar.css" rel="stylesheet" type="text/css" />
 
     <script src="JS/addChar.js" type="text/javascript"></script>
     <script src="JS/searchChar.js" type="text/javascript"></script>
     <script src="JS/filterType.js" type="text/javascript"></script>
-    <title>HTML Elements Reference</title>
+    <script src="JS/filterClass.js" type="text/javascript"></script>
+    <title>Dokkan Link Tool</title>
 </head>
 
 <body onload="addChar();">
-    <div class="typeFilter">
+    <div class="filter">
         <button onclick="aglFilter();" class="type-btn" id="agl" type="button">AGL</button>
         <button onclick="intFilter();" class="type-btn" id="int" type="button">INT</button>
         <button onclick="phyFilter();" class="type-btn" id="phy" type="button">PHY</button>
         <button onclick="strFilter();" class="type-btn" id="str" type="button">STR</button>
         <button onclick="teqFilter();" class="type-btn" id="teq" type="button">TEQ</button>
+        <button onclick="superFilter();" class="class-btn" id="super" type="button">SUPER</button>
+        <button onclick="extremeFilter();" class="class-btn" id="extreme" type="button">EXTREME</button>
     </div>
     <div class="charSearch">
         <input id="char-search-id" onkeyup="searchCharName();" placeholder="Search..." title="Type in a name"
