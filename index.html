@@ -9,11 +9,12 @@
     <link href="CSS/filterClass.css" rel="stylesheet" type="text/css" />
     <link href="CSS/filterType.css" rel="stylesheet" type="text/css" />
     <link href="CSS/searchChar.css" rel="stylesheet" type="text/css" />
+    <link href="CSS/searchOptions.css" rel="stylesheet" type="text/css" />
 
     <script src="JS/addChar.js" type="text/javascript"></script>
-    <script src="JS/searchChar.js" type="text/javascript"></script>
-    <script src="JS/filterType.js" type="text/javascript"></script>
     <script src="JS/filterClass.js" type="text/javascript"></script>
+    <script src="JS/filterType.js" type="text/javascript"></script>
+    <script src="JS/searchChar.js" type="text/javascript"></script>
     <title>Dokkan Link Tool</title>
 </head>
 
@@ -30,7 +31,7 @@
     <div class="charSearch">
         <input id="char-search-id" onkeyup="searchCharName();" placeholder="Search..." title="Type in a name"
             type="text">
-        <div>
+        <div class="searchOptions">
             <p class="searchTitlesOptions">Search Titles</p>
             <button onclick="searchTitlesOptionYes();" class="searchTitlesOptionYes" type="button">YES</button>
             <button onclick="searchTitlesOptionNo();" class="searchTitlesOptionNo" type="button">NO</button>
