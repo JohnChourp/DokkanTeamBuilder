@@ -1,9 +1,3 @@
-function typeDisappearFilter(char) {
-	for (let i = 0; i < char.length; i++) {
-		char.item(i).style.display = "none";
-	}
-}
-
 function searchTitlesOptionYes() {
 	let buttonYes = document.getElementsByClassName("searchTitlesOptionYes").item(0);
 	buttonYes.style.backgroundColor = "#33ccff";
@@ -26,7 +20,7 @@ function searchCharName() {
 	let dataCharName = 'data-char-name';
 	let dataCharType = 'data-char-type';
 	let dataCharClass = 'data-char-class';
-	let charTypes = ["agl", "int", "phy", "str", "teq"];
+	let charTypes = ["agl", "teq", "int", "str", "phy"];
 	let charClass = ["super", "extreme"];
 	let dataCharNameItems = document.querySelectorAll('[' + dataCharName + ']');
 	let dataCharTypeItems = document.querySelectorAll('[' + dataCharType + ']');
@@ -34,7 +28,7 @@ function searchCharName() {
 	let char = document.getElementsByClassName("char");
 	let characterSearchId = document.getElementById("char-search-id");
 
-	typeDisappearFilter(char);
+	charDisappear(char);
 
 	//use filterType
 	if ((document.getElementsByClassName("checkedTypeBtn").length > 0) && (document.getElementsByClassName("checkedClassBtn").length == 0)) {
@@ -93,7 +87,7 @@ function searchCharTitle() {
 	let dataCharTitle = 'data-char-title';
 	let dataCharType = 'data-char-type';
 	let dataCharClass = 'data-char-class';
-	let charTypes = ["agl", "int", "phy", "str", "teq"];
+	let charTypes = ["agl", "teq", "int", "str", "phy"];
 	let charClass = ["super", "extreme"];
 	let dataCharTitleItems = document.querySelectorAll('[' + dataCharTitle + ']');
 	let dataCharTypeItems = document.querySelectorAll('[' + dataCharType + ']');
@@ -101,7 +95,7 @@ function searchCharTitle() {
 	let char = document.getElementsByClassName("char");
 	let characterSearchId = document.getElementById("char-search-id");
 
-	typeDisappearFilter(char);
+	charDisappear(char);
 
 	//use filterType
 	if ((document.getElementsByClassName("checkedTypeBtn").length > 0) && (document.getElementsByClassName("checkedClassBtn").length == 0)) {
@@ -123,6 +117,23 @@ function searchCharTitle() {
 				for (let i = 0; i < char.length; i++) {
 					if ((dataCharTitleItems[i].getAttribute(dataCharTitle).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0) && (dataCharClassItems[i].getAttribute(dataCharClass) == charClass[j])) {
 						char.item(i).style.display = "inline-block";
+					}
+				}
+			}
+		}
+	}
+
+	//use filterType and filterClass
+	if ((document.getElementsByClassName("checkedTypeBtn").length > 0) && (document.getElementsByClassName("checkedClassBtn").length > 0)) {
+		for (let k = 0; k < charClass.length; k++) {
+			if (document.getElementsByClassName("class-btn").item(k).classList.contains("checkedClassBtn")) {
+				for (let j = 0; j < charTypes.length; j++) {
+					if (document.getElementsByClassName("type-btn").item(j).classList.contains("checkedTypeBtn")) {
+						for (let i = 0; i < char.length; i++) {
+							if ((dataCharTitleItems[i].getAttribute(dataCharTitle).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0) && (dataCharTypeItems[i].getAttribute(dataCharType) == charTypes[j]) && (dataCharClassItems[i].getAttribute(dataCharClass) == charClass[k])) {
+								char.item(i).style.display = "inline-block";
+							}
+						}
 					}
 				}
 			}

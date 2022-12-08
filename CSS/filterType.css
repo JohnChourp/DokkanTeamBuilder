@@ -1,36 +1,41 @@
-.filter {
-	display: flex;
-	flex-wrap: wrap;
-}
-
 #agl {
 	cursor: pointer;
 	background-color: #00AAEE;
-}
-
-#agl:hover {
-	cursor: pointer;
-	background-color: #00AAEE;
-}
-
-#int {
-	cursor: pointer;
-	background-color: #c953e0;
-}
-
-#phy {
-	cursor: pointer;
-	background-color: #eec038;
-}
-
-#str {
-	cursor: pointer;
-	background-color: #f77777;
+	height:40px;
+	position: relative;
+	top:30px;
 }
 
 #teq {
 	cursor: pointer;
 	background-color: #3df05b;
+	height:40px;
+	position: relative;
+	top:30px;
+}
+
+#int {
+	cursor: pointer;
+	background-color: #c953e0;
+	height:40px;
+	position: relative;
+	top:30px;
+}
+
+#str {
+	cursor: pointer;
+	background-color: #f77777;
+	height:40px;
+	position: relative;
+	top:30px;
+}
+
+#phy {
+	cursor: pointer;
+	background-color: #eec038;
+	height:40px;
+	position: relative;
+	top:30px;
 }
 
 .checkedTypeBtn {
