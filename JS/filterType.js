@@ -1,13 +1,23 @@
-function charDisappear(char) {
-	for (let i = 0; i < char.length; i++) {
-		char.item(i).style.display = "none";
-	}
+function addTypeFilter(typeFilter) {
+    if (document.getElementById(typeFilter).classList.contains("checkedTypeBtn")) {
+        document.getElementById(typeFilter).classList.remove("checkedTypeBtn");
+    } else {
+        document.getElementById(typeFilter).classList.add("checkedTypeBtn");
+    }
 }
 
 function showCharTypeFilter(char, dataCharTypeItems, dataCharType) {
 	if (document.getElementById("agl").classList.contains("checkedTypeBtn")) {
 		for (let i = 0; i < char.length; i++) {
 			if (dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "agl") {
+				char.item(i).style.display = "inline-block";
+			}
+		}
+	}
+
+	if (document.getElementById("teq").classList.contains("checkedTypeBtn")) {
+		for (let i = 0; i < char.length; i++) {
+			if (dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "teq") {
 				char.item(i).style.display = "inline-block";
 			}
 		}
@@ -21,14 +31,6 @@ function showCharTypeFilter(char, dataCharTypeItems, dataCharType) {
 		}
 	}
 
-	if (document.getElementById("phy").classList.contains("checkedTypeBtn")) {
-		for (let i = 0; i < char.length; i++) {
-			if (dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "phy") {
-				char.item(i).style.display = "inline-block";
-			}
-		}
-	}
-
 	if (document.getElementById("str").classList.contains("checkedTypeBtn")) {
 		for (let i = 0; i < char.length; i++) {
 			if (dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "str") {
@@ -37,93 +39,52 @@ function showCharTypeFilter(char, dataCharTypeItems, dataCharType) {
 		}
 	}
 
-	if (document.getElementById("teq").classList.contains("checkedTypeBtn")) {
+	if (document.getElementById("phy").classList.contains("checkedTypeBtn")) {
 		for (let i = 0; i < char.length; i++) {
-			if (dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "teq") {
+			if (dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "phy") {
 				char.item(i).style.display = "inline-block";
 			}
 		}
 	}
 }
 
-function showCharTypeAndClassFilter(char, dataCharTypeItems, dataCharType, dataCharClass, dataCharClassItems) {
+function showCharTypeAndClassFilter(char, dataCharTypeItems, dataCharType, dataCharClass, dataCharClassItems, filterClass) {
 	//filterClass Super
-	if ((document.getElementById("agl").classList.contains("checkedTypeBtn")) && (document.getElementById("super").classList.contains("checkedClassBtn"))) {
+	if ((document.getElementById("agl").classList.contains("checkedTypeBtn")) && (document.getElementById(filterClass).classList.contains("checkedClassBtn"))) {
 		for (let i = 0; i < char.length; i++) {
-			if ((dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "agl") && (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "super")) {
+			if ((dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "agl") && (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == filterClass)) {
 				char.item(i).style.display = "inline-block";
 			}
 		}
 	}
 
-	if ((document.getElementById("int").classList.contains("checkedTypeBtn")) && (document.getElementById("super").classList.contains("checkedClassBtn"))) {
+	if ((document.getElementById("teq").classList.contains("checkedTypeBtn")) && (document.getElementById(filterClass).classList.contains("checkedClassBtn"))) {
 		for (let i = 0; i < char.length; i++) {
-			if ((dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "int") && (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "super")) {
+			if ((dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "teq") && (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == filterClass)) {
+				char.item(i).style.display = "inline-block";
+			}
+		}
+	}
+	
+	if ((document.getElementById("int").classList.contains("checkedTypeBtn")) && (document.getElementById(filterClass).classList.contains("checkedClassBtn"))) {
+		for (let i = 0; i < char.length; i++) {
+			if ((dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "int") && (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == filterClass)) {
 				char.item(i).style.display = "inline-block";
 			}
 		}
 	}
 
-	if ((document.getElementById("phy").classList.contains("checkedTypeBtn")) && (document.getElementById("super").classList.contains("checkedClassBtn"))) {
+	if ((document.getElementById("str").classList.contains("checkedTypeBtn")) && (document.getElementById(filterClass).classList.contains("checkedClassBtn"))) {
 		for (let i = 0; i < char.length; i++) {
-			if ((dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "phy") && (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "super")) {
+			if ((dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "str") && (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == filterClass)) {
 				char.item(i).style.display = "inline-block";
 			}
 		}
 	}
-
-	if ((document.getElementById("str").classList.contains("checkedTypeBtn")) && (document.getElementById("super").classList.contains("checkedClassBtn"))) {
+	
+	if ((document.getElementById("phy").classList.contains("checkedTypeBtn")) && (document.getElementById(filterClass).classList.contains("checkedClassBtn"))) {
 		for (let i = 0; i < char.length; i++) {
-			if ((dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "str") && (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "super")) {
-				char.item(i).style.display = "inline-block";
-			}
-		}
-	}
-
-	if ((document.getElementById("teq").classList.contains("checkedTypeBtn")) && (document.getElementById("super").classList.contains("checkedClassBtn"))) {
-		for (let i = 0; i < char.length; i++) {
-			if ((dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "teq") && (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "super")) {
-				char.item(i).style.display = "inline-block";
-			}
-		}
-	}
-
-	//filterClass Extreme
-	if ((document.getElementById("agl").classList.contains("checkedTypeBtn")) && (document.getElementById("extreme").classList.contains("checkedClassBtn"))) {
-		for (let i = 0; i < char.length; i++) {
-			if ((dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "agl") && (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "extreme")) {
-				char.item(i).style.display = "inline-block";
-			}
-		}
-	}
-
-	if ((document.getElementById("int").classList.contains("checkedTypeBtn")) && (document.getElementById("extreme").classList.contains("checkedClassBtn"))) {
-		for (let i = 0; i < char.length; i++) {
-			if ((dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "int") && (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "extreme")) {
-				char.item(i).style.display = "inline-block";
-			}
-		}
-	}
-
-	if ((document.getElementById("phy").classList.contains("checkedTypeBtn")) && (document.getElementById("extreme").classList.contains("checkedClassBtn"))) {
-		for (let i = 0; i < char.length; i++) {
-			if ((dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "phy") && (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "extreme")) {
-				char.item(i).style.display = "inline-block";
-			}
-		}
-	}
-
-	if ((document.getElementById("str").classList.contains("checkedTypeBtn")) && (document.getElementById("extreme").classList.contains("checkedClassBtn"))) {
-		for (let i = 0; i < char.length; i++) {
-			if ((dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "str") && (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "extreme")) {
-				char.item(i).style.display = "inline-block";
-			}
-		}
-	}
-
-	if ((document.getElementById("teq").classList.contains("checkedTypeBtn")) && (document.getElementById("extreme").classList.contains("checkedClassBtn"))) {
-		for (let i = 0; i < char.length; i++) {
-			if ((dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "teq") && (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "extreme")) {
+			if ((dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "phy") && (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == filterClass)) {
 				char.item(i).style.display = "inline-block";
 			}
 		}
@@ -131,262 +92,22 @@ function showCharTypeAndClassFilter(char, dataCharTypeItems, dataCharType, dataC
 }
 
 function aglFilter() {
-	let dataCharType = 'data-char-type';
-	let dataCharClass = 'data-char-class';
-	let dataCharTypeItems = document.querySelectorAll('[' + dataCharType + ']');
-	let dataCharClassItems = document.querySelectorAll('[' + dataCharClass + ']');
-	let char = document.getElementsByClassName("char");
-
-	if (document.getElementById("agl").classList.contains("checkedTypeBtn")) {
-		document.getElementById("agl").classList.remove("checkedTypeBtn");
-	} else {
-		document.getElementById("agl").classList.add("checkedTypeBtn");
-	}
-
-	charDisappear(char);
-
-	//use filterType
-	if ((document.getElementsByClassName("checkedTypeBtn").length > 0) && (document.getElementsByClassName("checkedClassBtn").length == 0)) {
-		showCharTypeFilter(char, dataCharTypeItems, dataCharType);
-	}
-
-	//use filterType and filterClass
-	if ((document.getElementsByClassName("checkedTypeBtn").length > 0) && (document.getElementsByClassName("checkedClassBtn").length > 0)) {
-		showCharTypeAndClassFilter(char, dataCharTypeItems, dataCharType, dataCharClass, dataCharClassItems);
-	}
-
-	//no use filterType and filterClass
-	if ((document.getElementsByClassName("checkedTypeBtn").length == 0) && (document.getElementsByClassName("checkedClassBtn").length == 0)) {
-		for (let i = 0; i < char.length; i++) {
-			char.item(i).style.display = "inline-block";
-		}
-	}
-
-	//while using filterClass i uncheck all filterType
-	if ((document.getElementsByClassName("checkedTypeBtn").length == 0) && (document.getElementsByClassName("checkedClassBtn").length > 0)) {
-		if (document.getElementById("super").classList.contains("checkedClassBtn")) {
-			for (let i = 0; i < char.length; i++) {
-				if (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "super") {
-					char.item(i).style.display = "inline-block";
-				}
-			}
-		}
-
-		if (document.getElementById("extreme").classList.contains("checkedClassBtn")) {
-			for (let i = 0; i < char.length; i++) {
-				if (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "extreme") {
-					char.item(i).style.display = "inline-block";
-				}
-			}
-		}
-	}
-}
-
-function intFilter() {
-	let dataCharType = 'data-char-type';
-	let dataCharClass = 'data-char-class';
-	let dataCharTypeItems = document.querySelectorAll('[' + dataCharType + ']');
-	let dataCharClassItems = document.querySelectorAll('[' + dataCharClass + ']');
-	let char = document.getElementsByClassName("char");
-
-	if (document.getElementById("int").classList.contains("checkedTypeBtn")) {
-		document.getElementById("int").classList.remove("checkedTypeBtn");
-	} else {
-		document.getElementById("int").classList.add("checkedTypeBtn");
-	}
-
-	charDisappear(char);
-
-	//use filterType
-	if ((document.getElementsByClassName("checkedTypeBtn").length > 0) && (document.getElementsByClassName("checkedClassBtn").length == 0)) {
-		showCharTypeFilter(char, dataCharTypeItems, dataCharType);
-	}
-
-	//use filterType and filterClass
-	if ((document.getElementsByClassName("checkedTypeBtn").length > 0) && (document.getElementsByClassName("checkedClassBtn").length > 0)) {
-		showCharTypeAndClassFilter(char, dataCharTypeItems, dataCharType, dataCharClass, dataCharClassItems);
-	}
-
-	//no use filterType and filterClass
-	if ((document.getElementsByClassName("checkedTypeBtn").length == 0) && (document.getElementsByClassName("checkedClassBtn").length == 0)) {
-		for (let i = 0; i < char.length; i++) {
-			char.item(i).style.display = "inline-block";
-		}
-	}
-
-	//while using filterClass i will uncheck all filterType
-	if ((document.getElementsByClassName("checkedTypeBtn").length == 0) && (document.getElementsByClassName("checkedClassBtn").length > 0)) {
-		if (document.getElementById("super").classList.contains("checkedClassBtn")) {
-			for (let i = 0; i < char.length; i++) {
-				if (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "super") {
-					char.item(i).style.display = "inline-block";
-				}
-			}
-		}
-
-		if (document.getElementById("extreme").classList.contains("checkedClassBtn")) {
-			for (let i = 0; i < char.length; i++) {
-				if (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "extreme") {
-					char.item(i).style.display = "inline-block";
-				}
-			}
-		}
-	}
-}
-
-function phyFilter() {
-	let dataCharType = 'data-char-type';
-	let dataCharClass = 'data-char-class';
-	let dataCharTypeItems = document.querySelectorAll('[' + dataCharType + ']');
-	let dataCharClassItems = document.querySelectorAll('[' + dataCharClass + ']');
-	let char = document.getElementsByClassName("char");
-
-	if (document.getElementById("phy").classList.contains("checkedTypeBtn")) {
-		document.getElementById("phy").classList.remove("checkedTypeBtn");
-	} else {
-		document.getElementById("phy").classList.add("checkedTypeBtn");
-	}
-
-	charDisappear(char);
-
-	//use filterType
-	if ((document.getElementsByClassName("checkedTypeBtn").length > 0) && (document.getElementsByClassName("checkedClassBtn").length == 0)) {
-		showCharTypeFilter(char, dataCharTypeItems, dataCharType);
-	}
-
-	//use filterType and filterClass
-	if ((document.getElementsByClassName("checkedTypeBtn").length > 0) && (document.getElementsByClassName("checkedClassBtn").length > 0)) {
-		showCharTypeAndClassFilter(char, dataCharTypeItems, dataCharType, dataCharClass, dataCharClassItems);
-	}
-
-	//no use filterType and filterClass
-	if ((document.getElementsByClassName("checkedTypeBtn").length == 0) && (document.getElementsByClassName("checkedClassBtn").length == 0)) {
-		for (let i = 0; i < char.length; i++) {
-			char.item(i).style.display = "inline-block";
-		}
-	}
-
-	//while using filterClass i will uncheck all filterType
-	if ((document.getElementsByClassName("checkedTypeBtn").length == 0) && (document.getElementsByClassName("checkedClassBtn").length > 0)) {
-		if (document.getElementById("super").classList.contains("checkedClassBtn")) {
-			for (let i = 0; i < char.length; i++) {
-				if (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "super") {
-					char.item(i).style.display = "inline-block";
-				}
-			}
-		}
-
-		if (document.getElementById("extreme").classList.contains("checkedClassBtn")) {
-			for (let i = 0; i < char.length; i++) {
-				if (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "extreme") {
-					char.item(i).style.display = "inline-block";
-				}
-			}
-		}
-	}
-}
-
-function strFilter() {
-	let dataCharType = 'data-char-type';
-	let dataCharClass = 'data-char-class';
-	let dataCharTypeItems = document.querySelectorAll('[' + dataCharType + ']');
-	let dataCharClassItems = document.querySelectorAll('[' + dataCharClass + ']');
-	let char = document.getElementsByClassName("char");
-
-	if (document.getElementById("str").classList.contains("checkedTypeBtn")) {
-		document.getElementById("str").classList.remove("checkedTypeBtn");
-	} else {
-		document.getElementById("str").classList.add("checkedTypeBtn");
-	}
-
-	charDisappear(char);
-
-	//use filterType
-	if ((document.getElementsByClassName("checkedTypeBtn").length > 0) && (document.getElementsByClassName("checkedClassBtn").length == 0)) {
-		showCharTypeFilter(char, dataCharTypeItems, dataCharType);
-	}
-
-	//use filterType and filterClass
-	if ((document.getElementsByClassName("checkedTypeBtn").length > 0) && (document.getElementsByClassName("checkedClassBtn").length > 0)) {
-		showCharTypeAndClassFilter(char, dataCharTypeItems, dataCharType, dataCharClass, dataCharClassItems);
-	}
-
-	//no use filterType and filterClass
-	if ((document.getElementsByClassName("checkedTypeBtn").length == 0) && (document.getElementsByClassName("checkedClassBtn").length == 0)) {
-		for (let i = 0; i < char.length; i++) {
-			char.item(i).style.display = "inline-block";
-		}
-	}
-
-	//while using filterClass i will uncheck all filterType
-	if ((document.getElementsByClassName("checkedTypeBtn").length == 0) && (document.getElementsByClassName("checkedClassBtn").length > 0)) {
-		if (document.getElementById("super").classList.contains("checkedClassBtn")) {
-			for (let i = 0; i < char.length; i++) {
-				if (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "super") {
-					char.item(i).style.display = "inline-block";
-				}
-			}
-		}
-
-		if (document.getElementById("extreme").classList.contains("checkedClassBtn")) {
-			for (let i = 0; i < char.length; i++) {
-				if (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "extreme") {
-					char.item(i).style.display = "inline-block";
-				}
-			}
-		}
-	}
+	addTypeFilter("agl");
 }
 
 function teqFilter() {
-	let dataCharType = 'data-char-type';
-	let dataCharClass = 'data-char-class';
-	let dataCharTypeItems = document.querySelectorAll('[' + dataCharType + ']');
-	let dataCharClassItems = document.querySelectorAll('[' + dataCharClass + ']');
-	let char = document.getElementsByClassName("char");
+	addTypeFilter("teq");
+}
 
-	if (document.getElementById("teq").classList.contains("checkedTypeBtn")) {
-		document.getElementById("teq").classList.remove("checkedTypeBtn");
-	} else {
-		document.getElementById("teq").classList.add("checkedTypeBtn");
-	}
+function intFilter() {
+	addTypeFilter("int");
+}
 
-	charDisappear(char);
+function strFilter() {
+	addTypeFilter("str");
+}
 
-	//use filterType
-	if ((document.getElementsByClassName("checkedTypeBtn").length > 0) && (document.getElementsByClassName("checkedClassBtn").length == 0)) {
-		showCharTypeFilter(char, dataCharTypeItems, dataCharType);
-	}
-
-	//use filterType and filterClass
-	if ((document.getElementsByClassName("checkedTypeBtn").length > 0) && (document.getElementsByClassName("checkedClassBtn").length > 0)) {
-		showCharTypeAndClassFilter(char, dataCharTypeItems, dataCharType, dataCharClass, dataCharClassItems);
-	}
-
-	//no use filterType and filterClass
-	if ((document.getElementsByClassName("checkedTypeBtn").length == 0) && (document.getElementsByClassName("checkedClassBtn").length == 0)) {
-		for (let i = 0; i < char.length; i++) {
-			char.item(i).style.display = "inline-block";
-		}
-	}
-
-	//while using filterClass i will uncheck all filterType
-	if ((document.getElementsByClassName("checkedTypeBtn").length == 0) && (document.getElementsByClassName("checkedClassBtn").length > 0)) {
-		if (document.getElementById("super").classList.contains("checkedClassBtn")) {
-			for (let i = 0; i < char.length; i++) {
-				if (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "super") {
-					char.item(i).style.display = "inline-block";
-				}
-			}
-		}
-
-		if (document.getElementById("extreme").classList.contains("checkedClassBtn")) {
-			for (let i = 0; i < char.length; i++) {
-				if (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "extreme") {
-					char.item(i).style.display = "inline-block";
-				}
-			}
-		}
-	}
+function phyFilter() {
+	addTypeFilter("phy");
 }
 
