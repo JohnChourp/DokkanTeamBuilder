@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="content-type" content-type="text/html' charset=utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
 
     <link href="CSS/body.css" rel="stylesheet" type="text/css" />
@@ -16,13 +16,14 @@
     <script src="JS/addChar.js" type="text/javascript"></script>
     <script src="JS/filterClass.js" type="text/javascript"></script>
     <script src="JS/filterOk.js" type="text/javascript"></script>
+    <script src="JS/filterSortDirection.js" type="text/javascript"></script>
     <script src="JS/filterType.js" type="text/javascript"></script>
     <script src="JS/searchChar.js" type="text/javascript"></script>
 
     <title>Dokkan Link Tool</title>
 </head>
 
-<body onload="addChar();">
+<body onload="addChar(); addSortDirectionOptionStyleColorBtn();">
     <div class="filter">
         <button onclick="aglFilter();" class="type-btn" id="agl" type="button">AGL</button>
         <button onclick="teqFilter();" class="type-btn" id="teq" type="button">TEQ</button>
@@ -40,6 +41,11 @@
             <p class="searchTitlesOptions">Search Titles</p>
             <button onclick="searchTitlesOptionYes();" class="searchTitlesOptionYes" type="button">YES</button>
             <button onclick="searchTitlesOptionNo();" class="searchTitlesOptionNo" type="button">NO</button>
+            <p class="searchSortDirectionOptions">Sort Direction</p>
+            <button onclick="searchSortDirectionOptionDown();" class="searchSortDirectionOptionDown"
+                type="button">Down</button>
+            <button onclick="searchSortDirectionOptionUp();" class="searchSortDirectionOptionUp"
+                type="button">Up</button>
         </div>
     </div>
     <div class="char_container">
@@ -107,7 +113,6 @@
             data-char-rarity="sr" data-char-class="extreme" data-char-id="1000360"></div>
         <div class="char" data-char-name="Captain Ginyu" data-char-title="Captain's Merit" data-char-type="str"
             data-char-rarity="sr" data-char-class="extreme" data-char-id="1000370"></div>
-        <!--page 1 -->
         <div class="char" data-char-name="Android #19" data-char-title="Cold-blooded Vandalism" data-char-type="phy"
             data-char-rarity="sr" data-char-class="extreme" data-char-id="1000380"></div>
         <div class="char" data-char-name="Dr. Gero" data-char-title="Mad Scientist's Revenge" data-char-type="teq"
@@ -172,7 +177,6 @@
             data-char-rarity="r" data-char-class="extreme" data-char-id="1000700"></div>
         <div class="char" data-char-name="Appule" data-char-title="Steadfast Soldier" data-char-type="str"
             data-char-rarity="r" data-char-class="extreme" data-char-id="1000710"></div>
-        <!--page 2-->
         <div class="char" data-char-name="Cui" data-char-title="Fierce Raider" data-char-type="str" data-char-rarity="r"
             data-char-class="extreme" data-char-id="1000720"></div>
         <div class="char" data-char-name="Babidi's Minion" data-char-title="Loyal Servant" data-char-type="int"
@@ -237,7 +241,6 @@
             data-char-rarity="ssr" data-char-class="extreme" data-char-id="1001050"></div>
         <div class="char" data-char-name="Recoome" data-char-title="Never-Ending Assault" data-char-type="phy"
             data-char-rarity="ssr" data-char-class="extreme" data-char-id="1001060"></div>
-        <!--page 3-->
         <div class="char" data-char-name="Guldo" data-char-title="Master of Magic" data-char-type="teq"
             data-char-rarity="ssr" data-char-class="extreme" data-char-id="1001070"></div>
         <div class="char" data-char-name="Burter" data-char-title="Speed Tactics" data-char-type="agl"
@@ -302,7 +305,6 @@
             data-char-rarity="ssr" data-char-class="extreme" data-char-id="1001420"></div>
         <div class="char" data-char-name="Raditz" data-char-title="Cocky Counter" data-char-type="phy"
             data-char-rarity="ssr" data-char-class="extreme" data-char-id="1001430"></div>
-        <!--page 4-->
         <div class="char" data-char-name="Yamcha" data-char-title="Burning Spirit" data-char-type="str"
             data-char-rarity="ssr" data-char-class="super" data-char-id="1001440"></div>
         <div class="char" data-char-name="Tien" data-char-title="Proud till the Last" data-char-type="phy"
@@ -367,7 +369,6 @@
             data-char-rarity="ssr" data-char-class="super" data-char-id="1002130"></div>
         <div class="char" data-char-name="Vegeta" data-char-title="Tireless Training" data-char-type="phy"
             data-char-rarity="ssr" data-char-class="super" data-char-id="1002140"></div>
-        <!--page 5-->
         <div class="char" data-char-name="Sorbet" data-char-title="3rd Stellar Region Officer" data-char-type="int"
             data-char-rarity="sr" data-char-class="extreme" data-char-id="1002160"></div>
         <div class="char" data-char-name="Tagoma" data-char-title="Underling's Devotion" data-char-type="teq"
@@ -432,9 +433,6 @@
             data-char-rarity="ssr" data-char-class="super" data-char-id="1002980"></div>
         <div class="char" data-char-name="Vegeta (GT)" data-char-title="Reignited Fighting Spirit" data-char-type="str"
             data-char-rarity="ssr" data-char-class="super" data-char-id="1003000"></div>
-        <!--page 6-->
     </div>
-
 </body>
-
 </html>

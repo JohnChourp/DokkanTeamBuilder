@@ -1,7 +1,7 @@
 .searchOptions {
     display: flex;
-	flex-wrap: wrap;
-    height:70px;
+    flex-wrap: wrap;
+    height: 70px;
 }
 
 .searchTitlesOptions {
@@ -14,9 +14,9 @@
     color: black;
     border: 2px solid #008CBA;
     transition-duration: 0.4s;
-    height:30px;
-    top:17px;
-    left:10px;
+    height: 30px;
+    top: 17px;
+    left: 10px;
     position: relative;
 }
 
@@ -25,9 +25,9 @@
     color: black;
     border: 2px solid #008CBA;
     transition-duration: 0.4s;
-    height:30px;
-    top:17px;
-    left:13px;
+    height: 30px;
+    top: 17px;
+    left: 13px;
     position: relative;
 }
 
@@ -36,5 +36,42 @@
 }
 
 .searchTitlesOptionNo:hover {
+    cursor: pointer;
+}
+
+.searchSortDirectionOptions {
+    color: white;
+    font-size: 20px;
+    position: relative;
+    left:30px;
+}
+
+.searchSortDirectionOptionDown {
+    background-color: white;
+    color: black;
+    border: 2px solid #008CBA;
+    transition-duration: 0.4s;
+    height: 30px;
+    top: 17px;
+    left: 40px;
+    position: relative;
+}
+
+.searchSortDirectionOptionUp {
+    background-color: #33ccff;
+    color: black;
+    border: 2px solid #008CBA;
+    transition-duration: 0.4s;
+    height: 30px;
+    top: 17px;
+    left: 43px;
+    position: relative;
+}
+
+.searchSortDirectionOptionDown:hover {
+    cursor: pointer;
+}
+
+.searchSortDirectionOptionUp:hover {
     cursor: pointer;
 }
