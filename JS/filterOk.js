@@ -18,6 +18,10 @@ function filterOk() {
 
 	//disappear all characters
 	charDisappear(char);
+	//if no filters used
+	if ((document.getElementsByClassName("checkedTypeBtn").length == 0) && (document.getElementsByClassName("checkedClassBtn").length == 0)) {
+		charAllAppear(char);
+	}
 	//if only filterType used
 	if ((document.getElementsByClassName("checkedTypeBtn").length > 0) && (document.getElementsByClassName("checkedClassBtn").length == 0)) {
 		showCharTypeFilter(char, dataCharTypeItems, dataCharType);
