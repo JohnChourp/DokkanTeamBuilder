@@ -1,0 +1,50 @@
+#rarity_n {
+	cursor: pointer;
+	background-color: #7d8e93;
+	height:40px;
+	position: relative;
+	top:30px;
+}
+
+#rarity_r {
+	cursor: pointer;
+	background-color: #7d8e93;
+	height:40px;
+	position: relative;
+	top:30px;
+}
+
+#rarity_sr {
+	cursor: pointer;
+	background-color: #7d8e93;
+	height:40px;
+	position: relative;
+	top:30px;
+}
+
+#rarity_ssr {
+	cursor: pointer;
+	background-color: #7d8e93;
+	height:40px;
+	position: relative;
+	top:30px;
+}
+
+#rarity_ur {
+	cursor: pointer;
+	background-color: #7d8e93;
+	height:40px;
+	position: relative;
+	top:30px;
+}
+
+#rarity_lr {
+	cursor: pointer;
+	background-color: #7d8e93;
+	height:40px;
+	position: relative;
+	top:30px;
+}
+.checkedClassBtn {
+	border: 5px solid #000000;
+}
