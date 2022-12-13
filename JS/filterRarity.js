@@ -14,25 +14,25 @@ function showCharRarity(char, dataCharRarityItems, dataCharRarity, rarityFilter)
 }
 
 function rarityNFilter() {
-   addClassFilter("n");
+    addRarityFilter("n");
 }
 
 function rarityRFilter() { 
-    addClassFilter("r");
+    addRarityFilter("r");
 }
 
 function raritySRFilter() { 
-    addClassFilter("sr");
+    addRarityFilter("sr");
 }
 
 function raritySSRFilter() { 
-    addClassFilter("ssr");
+    addRarityFilter("ssr");
 }
 
 function rarityURFilter() { 
-    addClassFilter("ur");
+    addRarityFilter("ur");
 }
 
 function rarityLRFilter() { 
-    addClassFilter("lr");
+    addRarityFilter("lr");
 }
