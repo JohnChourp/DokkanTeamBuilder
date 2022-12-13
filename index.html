@@ -2,504 +2,503 @@
 <html lang="en">
 
 <head>
-    <meta http-equiv="content-type" content-type="text/html' charset=utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta http-equiv="content-type" content-type="text/html' charset=utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
 
-    <link href="CSS/body.css" rel="stylesheet" type="text/css" />
-    <link href="CSS/char.css" rel="stylesheet" type="text/css" />
-    <link href="CSS/filterClass.css" rel="stylesheet" type="text/css" />
-    <link href="CSS/filterOptions.css" rel="stylesheet" type="text/css" />
-    <link href="CSS/filterType.css" rel="stylesheet" type="text/css" />
-    <link href="CSS/searchChar.css" rel="stylesheet" type="text/css" />
-    <link href="CSS/searchOptions.css" rel="stylesheet" type="text/css" />
+	<link href="CSS/body.css" rel="stylesheet" type="text/css" />
+	<link href="CSS/char.css" rel="stylesheet" type="text/css" />
+	<link href="CSS/filterClass.css" rel="stylesheet" type="text/css" />
+	<link href="CSS/filterOptions.css" rel="stylesheet" type="text/css" />
+	<link href="CSS/filterType.css" rel="stylesheet" type="text/css" />
+	<link href="CSS/searchChar.css" rel="stylesheet" type="text/css" />
+	<link href="CSS/searchOptions.css" rel="stylesheet" type="text/css" />
 
-    <script src="JS/addChar.js" type="text/javascript"></script>
-    <script src="JS/filterClass.js" type="text/javascript"></script>
-    <script src="JS/filterOk.js" type="text/javascript"></script>
-    <script src="JS/filterSortDirection.js" type="text/javascript"></script>
-    <script src="JS/filterType.js" type="text/javascript"></script>
-    <script src="JS/searchChar.js" type="text/javascript"></script>
+	<script src="JS/addChar.js" type="text/javascript"></script>
+	<script src="JS/filterClass.js" type="text/javascript"></script>
+	<script src="JS/filterOk.js" type="text/javascript"></script>
+	<script src="JS/filterSortDirection.js" type="text/javascript"></script>
+	<script src="JS/filterType.js" type="text/javascript"></script>
+	<script src="JS/searchChar.js" type="text/javascript"></script>
 
-    <title>Dokkan Link Tool</title>
+	<title>Dokkan Link Tool</title>
 </head>
 
 <body onload="addChar(); addSortDirectionOptionStyleColorBtn();">
-    <div class="filter">
-        <button onclick="aglFilter();" class="type-btn" id="agl" type="button">AGL</button>
-        <button onclick="teqFilter();" class="type-btn" id="teq" type="button">TEQ</button>
-        <button onclick="intFilter();" class="type-btn" id="int" type="button">INT</button>
-        <button onclick="strFilter();" class="type-btn" id="str" type="button">STR</button>
-        <button onclick="phyFilter();" class="type-btn" id="phy" type="button">PHY</button>
-        <button onclick="superFilter();" class="class-btn" id="super" type="button">SUPER</button>
-        <button onclick="extremeFilter();" class="class-btn" id="extreme" type="button">EXTREME</button>
-        <button onclick="filterOk();" class="filter-btn" id="ok" type="button">OK</button>
-    </div>
-    <div class="charSearch">
-        <input id="char-search-id" onkeyup="searchCharName();" placeholder="Search..." title="Type in a name"
-            type="text">
-        <div class="searchOptions">
-            <p class="searchTitlesOptions">Search Titles</p>
-            <button onclick="searchTitlesOptionYes();" class="searchTitlesOptionYes" type="button">YES</button>
-            <button onclick="searchTitlesOptionNo();" class="searchTitlesOptionNo" type="button">NO</button>
-            <p class="searchSortDirectionOptions">Sort Direction</p>
-            <button onclick="searchSortDirectionOptionDown();" class="searchSortDirectionOptionDown"
-                type="button">Down</button>
-            <button onclick="searchSortDirectionOptionUp();" class="searchSortDirectionOptionUp"
-                type="button">Up</button>
-        </div>
-    </div>
-    <div class="char_container">
-        <div class="char" data-char-name="Goku" data-char-title="The Saiyan Among Us" data-char-type="str"
-            data-char-rarity="ssr" data-char-class="super" data-char-id="1000030"></div>
-        <div class="char" data-char-name="Vegeta" data-char-title="Genius of War" data-char-type="teq"
-            data-char-rarity="ssr" data-char-class="super" data-char-id="1000040"></div>
-        <div class="char" data-char-name="Cell (1st Form)" data-char-title="Android Evolution" data-char-type="agl"
-            data-char-rarity="ssr" data-char-class="extreme" data-char-id="1000070"></div>
-        <div class="char" data-char-name="Gohan (Kid)" data-char-title="Unrelenting Fighter" data-char-type="str"
-            data-char-rarity="ssr" data-char-class="super" data-char-id="1000090"></div>
-        <div class="char" data-char-name="Trunks (Teen)" data-char-title="Hawk Eyes" data-char-type="agl"
-            data-char-rarity="ssr" data-char-class="super" data-char-id="1000100"></div>
-        <div class="char" data-char-name="Krillin" data-char-title="Fruits of Labor" data-char-type="teq"
-            data-char-rarity="ssr" data-char-class="super" data-char-id="1000110"></div>
-        <div class="char" data-char-name="Piccolo" data-char-title="Stern Teacher" data-char-type="agl"
-            data-char-rarity="ssr" data-char-class="super" data-char-id="1000120"></div>
-        <div class="char" data-char-name="Tien" data-char-title="Aura Unleashed" data-char-type="teq"
-            data-char-rarity="ssr" data-char-class="super" data-char-id="1000130"></div>
-        <div class="char" data-char-name="Chiaotzu" data-char-title="The Gifted One" data-char-type="int"
-            data-char-rarity="ssr" data-char-class="super" data-char-id="1000140"></div>
-        <div class="char" data-char-name="Yamcha" data-char-title="Secret Arts Unleashed" data-char-type="agl"
-            data-char-rarity="ssr" data-char-class="super" data-char-id="1000150"></div>
-        <div class="char" data-char-name="Raditz" data-char-title="Peerless Saiyan" data-char-type="teq"
-            data-char-rarity="ssr" data-char-class="extreme" data-char-id="1000160"></div>
-        <div class="char" data-char-name="Nappa" data-char-title="Elite Warrior's Rage" data-char-type="str"
-            data-char-rarity="ssr" data-char-class="extreme" data-char-id="1000170"></div>
-        <div class="char" data-char-name="Zarbon" data-char-title="Hidden Strength" data-char-type="int"
-            data-char-rarity="ssr" data-char-class="extreme" data-char-id="1000180"></div>
-        <div class="char" data-char-name="Captain Ginyu" data-char-title="Honorable Fighter" data-char-type="int"
-            data-char-rarity="ssr" data-char-class="extreme" data-char-id="1000190"></div>
-        <div class="char" data-char-name="Android #19" data-char-title="Calculated Combat" data-char-type="phy"
-            data-char-rarity="ssr" data-char-class="extreme" data-char-id="1000200"></div>
-        <div class="char" data-char-name="Dr. Gero" data-char-title="Red Ribbon Army's Grudge" data-char-type="int"
-            data-char-rarity="ssr" data-char-class="extreme" data-char-id="1000210"></div>
-        <div class="char" data-char-name="Android #17" data-char-title="Infinite Fighting Spirit" data-char-type="teq"
-            data-char-rarity="ssr" data-char-class="extreme" data-char-id="1000220"></div>
-        <div class="char" data-char-name="Android #18" data-char-title="Alluring Assassin" data-char-type="str"
-            data-char-rarity="ssr" data-char-class="extreme" data-char-id="1000230"></div>
-        <div class="char" data-char-name="Android #16" data-char-title="Power Unleashed" data-char-type="phy"
-            data-char-rarity="ssr" data-char-class="extreme" data-char-id="1000240"></div>
-        <div class="char" data-char-name="Master Roshi" data-char-title="Secrets of the Turtle Style"
-            data-char-type="str" data-char-rarity="ssr" data-char-class="super" data-char-id="1000250"></div>
-        <div class="char" data-char-name="Mercenary Tao" data-char-title="Unrivaled Assassin" data-char-type="agl"
-            data-char-rarity="ssr" data-char-class="extreme" data-char-id="1000260"></div>
-        <div class="char" data-char-name="Gohan (Kid)" data-char-title="Steely Determination" data-char-type="int"
-            data-char-rarity="sr" data-char-class="super" data-char-id="1000270"></div>
-        <div class="char" data-char-name="Trunks (Teen)" data-char-title="From Hell and Back" data-char-type="agl"
-            data-char-rarity="sr" data-char-class="super" data-char-id="1000280"></div>
-        <div class="char" data-char-name="Krillin" data-char-title="Competitive Comrades" data-char-type="phy"
-            data-char-rarity="sr" data-char-class="super" data-char-id="1000290"></div>
-        <div class="char" data-char-name="Piccolo" data-char-title="Aloof Warrior" data-char-type="int"
-            data-char-rarity="sr" data-char-class="super" data-char-id="1000300"></div>
-        <div class="char" data-char-name="Tien" data-char-title="Unfaltering Spirit" data-char-type="agl"
-            data-char-rarity="sr" data-char-class="super" data-char-id="1000310"></div>
-        <div class="char" data-char-name="Chiaotzu" data-char-title="Trickster" data-char-type="teq"
-            data-char-rarity="sr" data-char-class="super" data-char-id="1000320"></div>
-        <div class="char" data-char-name="Yamcha" data-char-title="The One and Only" data-char-type="teq"
-            data-char-rarity="sr" data-char-class="super" data-char-id="1000330"></div>
-        <div class="char" data-char-name="Raditz" data-char-title="Menacing Alien Warrior" data-char-type="agl"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1000340"></div>
-        <div class="char" data-char-name="Nappa" data-char-title="Devastating Destruction" data-char-type="phy"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1000350"></div>
-        <div class="char" data-char-name="Zarbon" data-char-title="Confident Grin" data-char-type="phy"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1000360"></div>
-        <div class="char" data-char-name="Captain Ginyu" data-char-title="Captain's Merit" data-char-type="str"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1000370"></div>
-        <div class="char" data-char-name="Android #19" data-char-title="Cold-blooded Vandalism" data-char-type="phy"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1000380"></div>
-        <div class="char" data-char-name="Dr. Gero" data-char-title="Mad Scientist's Revenge" data-char-type="teq"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1000390"></div>
-        <div class="char" data-char-name="Android #17" data-char-title="Escalating Threat" data-char-type="phy"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1000400"></div>
-        <div class="char" data-char-name="Android #18" data-char-title="Fancy Footwork" data-char-type="agl"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1000410"></div>
-        <div class="char" data-char-name="Android #16" data-char-title="Nature-loving Warrior" data-char-type="teq"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1000420"></div>
-        <div class="char" data-char-name="Mercenary Tao" data-char-title="Living Weapon" data-char-type="int"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1000440"></div>
-        <div class="char" data-char-name="Fusion Machine Pilaf" data-char-title="Unquenchable Ambition"
-            data-char-type="int" data-char-rarity="sr" data-char-class="extreme" data-char-id="1000450"></div>
-        <div class="char" data-char-name="Shen" data-char-title="Exquisite Technique" data-char-type="int"
-            data-char-rarity="sr" data-char-class="super" data-char-id="1000460"></div>
-        <div class="char" data-char-name="Tambourine" data-char-title="Ghoulish Burst" data-char-type="str"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1000470"></div>
-        <div class="char" data-char-name="Cymbal" data-char-title="Demon's Disciple" data-char-type="phy"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1000480"></div>
-        <div class="char" data-char-name="Drum" data-char-title="Terror's Descent" data-char-type="agl"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1000490"></div>
-        <div class="char" data-char-name="Dodoria" data-char-title="Obstacle Eliminator" data-char-type="str"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1000510"></div>
-        <div class="char" data-char-name="Recoome" data-char-title="Dazzling Destruction" data-char-type="phy"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1000520"></div>
-        <div class="char" data-char-name="Guldo" data-char-title="The Timestopper" data-char-type="int"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1000530"></div>
-        <div class="char" data-char-name="Burter" data-char-title="Unfathomable Speed" data-char-type="agl"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1000540"></div>
-        <div class="char" data-char-name="Jeice" data-char-title="Elite Squadron's Pride" data-char-type="str"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1000550"></div>
-        <div class="char" data-char-name="Yajirobe" data-char-title="A Moment's Chance" data-char-type="phy"
-            data-char-rarity="sr" data-char-class="super" data-char-id="1000560"></div>
-        <div class="char" data-char-name="Nail" data-char-title="Namek's Last Warrior" data-char-type="teq"
-            data-char-rarity="sr" data-char-class="super" data-char-id="1000570"></div>
-        <div class="char" data-char-name="Hercule" data-char-title="Champion's Honor" data-char-type="int"
-            data-char-rarity="sr" data-char-class="super" data-char-id="1000580"></div>
-        <div class="char" data-char-name="Videl" data-char-title="Buried Passion" data-char-type="str"
-            data-char-rarity="sr" data-char-class="super" data-char-id="1000590"></div>
-        <div class="char" data-char-name="Cell Jr." data-char-title="Tiny Terror" data-char-type="phy"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1000600"></div>
-        <div class="char" data-char-name="Spopovich" data-char-title="Savagery Unleashed" data-char-type="teq"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1000610"></div>
-        <div class="char" data-char-name="Yamu" data-char-title="Malicious Scheme" data-char-type="teq"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1000620"></div>
-        <div class="char" data-char-name="Yakon" data-char-title="Light-Devouring Beast" data-char-type="agl"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1000630"></div>
-        <div class="char" data-char-name="Hercule" data-char-title="Undisputed Champion" data-char-type="int"
-            data-char-rarity="r" data-char-class="super" data-char-id="1000640"></div>
-        <div class="char" data-char-name="Videl" data-char-title="Slayer of Evil" data-char-type="str"
-            data-char-rarity="r" data-char-class="super" data-char-id="1000650"></div>
-        <div class="char" data-char-name="Cell Jr." data-char-title="Simple-Minded Devil" data-char-type="phy"
-            data-char-rarity="r" data-char-class="extreme" data-char-id="1000660"></div>
-        <div class="char" data-char-name="Spopovich" data-char-title="Ominous Will" data-char-type="phy"
-            data-char-rarity="r" data-char-class="extreme" data-char-id="1000670"></div>
-        <div class="char" data-char-name="Yamu" data-char-title="Wicked of Heart" data-char-type="int"
-            data-char-rarity="r" data-char-class="extreme" data-char-id="1000680"></div>
-        <div class="char" data-char-name="Yakon" data-char-title="Assassin in the Shadows" data-char-type="agl"
-            data-char-rarity="r" data-char-class="extreme" data-char-id="1000690"></div>
-        <div class="char" data-char-name="Pui Pui" data-char-title="Warrior from Planet Voon" data-char-type="agl"
-            data-char-rarity="r" data-char-class="extreme" data-char-id="1000700"></div>
-        <div class="char" data-char-name="Appule" data-char-title="Steadfast Soldier" data-char-type="str"
-            data-char-rarity="r" data-char-class="extreme" data-char-id="1000710"></div>
-        <div class="char" data-char-name="Cui" data-char-title="Fierce Raider" data-char-type="str" data-char-rarity="r"
-            data-char-class="extreme" data-char-id="1000720"></div>
-        <div class="char" data-char-name="Babidi's Minion" data-char-title="Loyal Servant" data-char-type="int"
-            data-char-rarity="r" data-char-class="extreme" data-char-id="1000730"></div>
-        <div class="char" data-char-name="Pintar" data-char-title="Unarmed Power" data-char-type="agl"
-            data-char-rarity="r" data-char-class="super" data-char-id="1000740"></div>
-        <div class="char" data-char-name="Jewel" data-char-title="Capable in Love and War" data-char-type="teq"
-            data-char-rarity="r" data-char-class="super" data-char-id="1000750"></div>
-        <div class="char" data-char-name="Killa" data-char-title="Well-Trained Fist" data-char-type="str"
-            data-char-rarity="r" data-char-class="super" data-char-id="1000760"></div>
-        <div class="char" data-char-name="Pirate Robot" data-char-title="Deep Sea Guardsman" data-char-type="teq"
-            data-char-rarity="r" data-char-class="extreme" data-char-id="1000770"></div>
-        <div class="char" data-char-name="Saibaman" data-char-title="Earthborn Warrior" data-char-type="phy"
-            data-char-rarity="r" data-char-class="extreme" data-char-id="1000780"></div>
-        <div class="char" data-char-name="Frieza Soldier" data-char-title="Lethal Underling" data-char-type="teq"
-            data-char-rarity="r" data-char-class="extreme" data-char-id="1000790"></div>
-        <div class="char" data-char-name="Red Ribbon Soldier" data-char-title="Army of Infamy" data-char-type="teq"
-            data-char-rarity="r" data-char-class="extreme" data-char-id="1000800"></div>
-        <div class="char" data-char-name="Trunks (Teen)" data-char-title="Messenger from the Future"
-            data-char-type="int" data-char-rarity="ssr" data-char-class="super" data-char-id="1000810"></div>
-        <div class="char" data-char-name="Hercule" data-char-title="Hero Chosen by Earth" data-char-type="int"
-            data-char-rarity="ssr" data-char-class="super" data-char-id="1000820"></div>
-        <div class="char" data-char-name="Goku" data-char-title="Determined Defender" data-char-type="agl"
-            data-char-rarity="ssr" data-char-class="super" data-char-id="1000850"></div>
-        <div class="char" data-char-name="Vegeta" data-char-title="Extreme Elite's Pride" data-char-type="phy"
-            data-char-rarity="ssr" data-char-class="super" data-char-id="1000860"></div>
-        <div class="char" data-char-name="Gohan (Kid)" data-char-title="Exploding Rage" data-char-type="phy"
-            data-char-rarity="ssr" data-char-class="super" data-char-id="1000870"></div>
-        <div class="char" data-char-name="Trunks (Teen)" data-char-title="Blitz Blade" data-char-type="teq"
-            data-char-rarity="ssr" data-char-class="super" data-char-id="1000880"></div>
-        <div class="char" data-char-name="Krillin" data-char-title="Martial Stability" data-char-type="teq"
-            data-char-rarity="ssr" data-char-class="super" data-char-id="1000890"></div>
-        <div class="char" data-char-name="Piccolo" data-char-title="Demonic Pride" data-char-type="int"
-            data-char-rarity="ssr" data-char-class="super" data-char-id="1000900"></div>
-        <div class="char" data-char-name="Tien" data-char-title="Respect to the Strong" data-char-type="str"
-            data-char-rarity="ssr" data-char-class="super" data-char-id="1000910"></div>
-        <div class="char" data-char-name="Chiaotzu" data-char-title="Power at the Eleventh Hour" data-char-type="teq"
-            data-char-rarity="ssr" data-char-class="super" data-char-id="1000920"></div>
-        <div class="char" data-char-name="Yamcha" data-char-title="Indomitable Human Spirit " data-char-type="agl"
-            data-char-rarity="ssr" data-char-class="super" data-char-id="1000930"></div>
-        <div class="char" data-char-name="Zarbon" data-char-title="Evil Elegance" data-char-type="phy"
-            data-char-rarity="ssr" data-char-class="extreme" data-char-id="1000940"></div>
-        <div class="char" data-char-name="Captain Ginyu" data-char-title="Brilliant Battle Prowess" data-char-type="int"
-            data-char-rarity="ssr" data-char-class="extreme" data-char-id="1000950"></div>
-        <div class="char" data-char-name="Nappa" data-char-title="Saiyan Baptism" data-char-type="phy"
-            data-char-rarity="ssr" data-char-class="extreme" data-char-id="1000960"></div>
-        <div class="char" data-char-name="Android #19" data-char-title="Killer Instinct" data-char-type="phy"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1000970"></div>
-        <div class="char" data-char-name="Dr. Gero" data-char-title="Cunning Strategy" data-char-type="int"
-            data-char-rarity="ssr" data-char-class="extreme" data-char-id="1000980"></div>
-        <div class="char" data-char-name="Android #17" data-char-title="Dauntless Runner" data-char-type="agl"
-            data-char-rarity="ssr" data-char-class="extreme" data-char-id="1000990"></div>
-        <div class="char" data-char-name="Android #18" data-char-title="Beautiful but Deadly" data-char-type="agl"
-            data-char-rarity="ssr" data-char-class="extreme" data-char-id="1001000"></div>
-        <div class="char" data-char-name="Android #16" data-char-title="The Warrior Awakens" data-char-type="str"
-            data-char-rarity="ssr" data-char-class="extreme" data-char-id="1001010"></div>
-        <div class="char" data-char-name="Mercenary Tao" data-char-title="Professional Tactician" data-char-type="agl"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1001030"></div>
-        <div class="char" data-char-name="Chi-Chi" data-char-title="Heart of Innocence" data-char-type="str"
-            data-char-rarity="ssr" data-char-class="super" data-char-id="1001040"></div>
-        <div class="char" data-char-name="Dodoria" data-char-title="Reckless Rage" data-char-type="phy"
-            data-char-rarity="ssr" data-char-class="extreme" data-char-id="1001050"></div>
-        <div class="char" data-char-name="Recoome" data-char-title="Never-Ending Assault" data-char-type="phy"
-            data-char-rarity="ssr" data-char-class="extreme" data-char-id="1001060"></div>
-        <div class="char" data-char-name="Guldo" data-char-title="Master of Magic" data-char-type="teq"
-            data-char-rarity="ssr" data-char-class="extreme" data-char-id="1001070"></div>
-        <div class="char" data-char-name="Burter" data-char-title="Speed Tactics" data-char-type="agl"
-            data-char-rarity="ssr" data-char-class="extreme" data-char-id="1001080"></div>
-        <div class="char" data-char-name="Jeice" data-char-title="Maximum Firepower" data-char-type="str"
-            data-char-rarity="ssr" data-char-class="extreme" data-char-id="1001090"></div>
-        <div class="char" data-char-name="Nail" data-char-title="Call of Duty" data-char-type="int"
-            data-char-rarity="ssr" data-char-class="super" data-char-id="1001100"></div>
-        <div class="char" data-char-name="Cui" data-char-title="Imminent Showdown" data-char-type="str"
-            data-char-rarity="ssr" data-char-class="extreme" data-char-id="1001110"></div>
-        <div class="char" data-char-name="Raditz" data-char-title="Space Invader" data-char-type="teq"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1001130"></div>
-        <div class="char" data-char-name="Nappa" data-char-title="Inevitable Preemptive Strike" data-char-type="str"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1001140"></div>
-        <div class="char" data-char-name="Gohan (Kid)" data-char-title="Resistance of Tyranny" data-char-type="phy"
-            data-char-rarity="sr" data-char-class="super" data-char-id="1001150"></div>
-        <div class="char" data-char-name="Krillin" data-char-title="Passionate Friendship" data-char-type="str"
-            data-char-rarity="sr" data-char-class="super" data-char-id="1001160"></div>
-        <div class="char" data-char-name="Piccolo" data-char-title="Burdened by Destiny" data-char-type="teq"
-            data-char-rarity="sr" data-char-class="super" data-char-id="1001170"></div>
-        <div class="char" data-char-name="Tien" data-char-title="Lightning Onslaught" data-char-type="phy"
-            data-char-rarity="sr" data-char-class="super" data-char-id="1001180"></div>
-        <div class="char" data-char-name="Chiaotzu" data-char-title="Daring Interception" data-char-type="teq"
-            data-char-rarity="sr" data-char-class="super" data-char-id="1001190"></div>
-        <div class="char" data-char-name="Yamcha" data-char-title="Unwavering Confidence" data-char-type="agl"
-            data-char-rarity="sr" data-char-class="super" data-char-id="1001200"></div>
-        <div class="char" data-char-name="Zarbon" data-char-title="Display of Strength" data-char-type="str"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1001210"></div>
-        <div class="char" data-char-name="Captain Ginyu" data-char-title="Considerate Captain" data-char-type="int"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1001220"></div>
-        <div class="char" data-char-name="Android #19" data-char-title="Target Confirmed" data-char-type="str"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1001230"></div>
-        <div class="char" data-char-name="Dr. Gero" data-char-title="Precise Action" data-char-type="int"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1001240"></div>
-        <div class="char" data-char-name="Android #17" data-char-title="Free at Last" data-char-type="agl"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1001250"></div>
-        <div class="char" data-char-name="Android #18" data-char-title="Cold Analytics" data-char-type="phy"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1001260"></div>
-        <div class="char" data-char-name="Android #16" data-char-title="Ironclad Intentions" data-char-type="phy"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1001270"></div>
-        <div class="char" data-char-name="Dodoria" data-char-title="Storm of Destruction" data-char-type="phy"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1001290"></div>
-        <div class="char" data-char-name="Recoome" data-char-title="Death Sentence" data-char-type="str"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1001300"></div>
-        <div class="char" data-char-name="Guldo" data-char-title="Well-Played Trump Card" data-char-type="teq"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1001310"></div>
-        <div class="char" data-char-name="Burter" data-char-title="Speed Impulse" data-char-type="agl"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1001320"></div>
-        <div class="char" data-char-name="Jeice" data-char-title="Lesson in Fear" data-char-type="teq"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1001330"></div>
-        <div class="char" data-char-name="Yajirobe" data-char-title="Cowardly Savior" data-char-type="phy"
-            data-char-rarity="sr" data-char-class="super" data-char-id="1001340"></div>
-        <div class="char" data-char-name="Nail" data-char-title="Facing Fate" data-char-type="int" data-char-rarity="sr"
-            data-char-class="super" data-char-id="1001350"></div>
-        <div class="char" data-char-name="Cui" data-char-title="Craving of Battle" data-char-type="int"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1001360"></div>
-        <div class="char" data-char-name="Videl" data-char-title="Paragon of Justice" data-char-type="agl"
-            data-char-rarity="sr" data-char-class="super" data-char-id="1001370"></div>
-        <div class="char" data-char-name="Master Shen" data-char-title="Crane School's Prestige" data-char-type="int"
-            data-char-rarity="ssr" data-char-class="extreme" data-char-id="1001380"></div>
-        <div class="char" data-char-name="Nappa" data-char-title="Cruel Tactics" data-char-type="teq"
-            data-char-rarity="ssr" data-char-class="extreme" data-char-id="1001420"></div>
-        <div class="char" data-char-name="Raditz" data-char-title="Cocky Counter" data-char-type="phy"
-            data-char-rarity="ssr" data-char-class="extreme" data-char-id="1001430"></div>
-        <div class="char" data-char-name="Yamcha" data-char-title="Burning Spirit" data-char-type="str"
-            data-char-rarity="ssr" data-char-class="super" data-char-id="1001440"></div>
-        <div class="char" data-char-name="Tien" data-char-title="Proud till the Last" data-char-type="phy"
-            data-char-rarity="ssr" data-char-class="super" data-char-id="1001450"></div>
-        <div class="char" data-char-name="Chiaotzu" data-char-title="Eternal Bond" data-char-type="str"
-            data-char-rarity="ssr" data-char-class="super" data-char-id="1001460"></div>
-        <div class="char" data-char-name="Fasha" data-char-title="Warrior of Daring" data-char-type="agl"
-            data-char-rarity="ssr" data-char-class="super" data-char-id="1001500"></div>
-        <div class="char" data-char-name="Tora" data-char-title="Warrior of Conviction" data-char-type="int"
-            data-char-rarity="sr" data-char-class="super" data-char-id="1001540"></div>
-        <div class="char" data-char-name="Borgos" data-char-title="Warrior of Few Words" data-char-type="str"
-            data-char-rarity="sr" data-char-class="super" data-char-id="1001550"></div>
-        <div class="char" data-char-name="Shugesh" data-char-title="Warrior of Ferocity" data-char-type="phy"
-            data-char-rarity="sr" data-char-class="super" data-char-id="1001560"></div>
-        <div class="char" data-char-name="Nail" data-char-title="Ultimate Sacrifice" data-char-type="agl"
-            data-char-rarity="sr" data-char-class="super" data-char-id="1001570"></div>
-        <div class="char" data-char-name="Gohan (Kid)" data-char-title="Furious Impact" data-char-type="agl"
-            data-char-rarity="ssr" data-char-class="super" data-char-id="1001620"></div>
-        <div class="char" data-char-name="Guldo" data-char-title="Technician of Time" data-char-type="phy"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1001670"></div>
-        <div class="char" data-char-name="Krillin" data-char-title="Wisdom and Experience" data-char-type="agl"
-            data-char-rarity="sr" data-char-class="super" data-char-id="1001680"></div>
-        <div class="char" data-char-name="Cell (Perfect Form)" data-char-title="Perfect Power" data-char-type="phy"
-            data-char-rarity="ssr" data-char-class="extreme" data-char-id="1001720"></div>
-        <div class="char" data-char-name="Android #17 (Future)" data-char-title="A Future Forsaken" data-char-type="phy"
-            data-char-rarity="ssr" data-char-class="extreme" data-char-id="1001730"></div>
-        <div class="char" data-char-name="Android #18 (Future)" data-char-title="Dastardly Demoness"
-            data-char-type="int" data-char-rarity="ssr" data-char-class="extreme" data-char-id="1001740"></div>
-        <div class="char" data-char-name="Goku" data-char-title="Miraculous Return" data-char-type="phy"
-            data-char-rarity="sr" data-char-class="super" data-char-id="1001750"></div>
-        <div class="char" data-char-name="Trunks (Kid)" data-char-title="Elite Offspring" data-char-type="teq"
-            data-char-rarity="ssr" data-char-class="super" data-char-id="1001760"></div>
-        <div class="char" data-char-name="Tien" data-char-title="The True Value of Master Shen" data-char-type="agl"
-            data-char-rarity="ssr" data-char-class="extreme" data-char-id="1001770"></div>
-        <div class="char" data-char-name="Android #19" data-char-title="Engineered Evil" data-char-type="str"
-            data-char-rarity="ssr" data-char-class="extreme" data-char-id="1001830"></div>
-        <div class="char" data-char-name="Dr. Gero" data-char-title="Pure Corruption" data-char-type="phy"
-            data-char-rarity="ssr" data-char-class="extreme" data-char-id="1001840"></div>
-        <div class="char" data-char-name="Trunks (Teen)" data-char-title="Honed for Battle" data-char-type="phy"
-            data-char-rarity="ssr" data-char-class="super" data-char-id="1001860"></div>
-        <div class="char" data-char-name="Yamcha" data-char-title="Wolf of the Gale" data-char-type="teq"
-            data-char-rarity="r" data-char-class="super" data-char-id="1001890"></div>
-        <div class="char" data-char-name="Tien" data-char-title="The Way of Battle" data-char-type="str"
-            data-char-rarity="r" data-char-class="super" data-char-id="1001900"></div>
-        <div class="char" data-char-name="Chiaotzu" data-char-title="Anticipated Telekinesis" data-char-type="int"
-            data-char-rarity="r" data-char-class="super" data-char-id="1001910"></div>
-        <div class="char" data-char-name="Dabura" data-char-title="Demonic Lord of Darkness" data-char-type="agl"
-            data-char-rarity="ssr" data-char-class="extreme" data-char-id="1001980"></div>
-        <div class="char" data-char-name="Goten (Kid)" data-char-title="Fighting Prodigy" data-char-type="agl"
-            data-char-rarity="sr" data-char-class="super" data-char-id="1002000"></div>
-        <div class="char" data-char-name="Uub (Youth)" data-char-title="Infinite Potential" data-char-type="str"
-            data-char-rarity="ssr" data-char-class="super" data-char-id="1002030"></div>
-        <div class="char" data-char-name="Pan (Kid)" data-char-title="Bursting with Power" data-char-type="phy"
-            data-char-rarity="sr" data-char-class="super" data-char-id="1002040"></div>
-        <div class="char" data-char-name="Babidi" data-char-title="Malevolent Magician" data-char-type="int"
-            data-char-rarity="ssr" data-char-class="extreme" data-char-id="1002050"></div>
-        <div class="char" data-char-name="Yakon" data-char-title="Twin-Clawed Terror" data-char-type="str"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1002060"></div>
-        <div class="char" data-char-name="Pui Pui" data-char-title="Confident Sentry" data-char-type="agl"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1002070"></div>
-        <div class="char" data-char-name="Goku" data-char-title="Top-Tier Training" data-char-type="teq"
-            data-char-rarity="ssr" data-char-class="super" data-char-id="1002130"></div>
-        <div class="char" data-char-name="Vegeta" data-char-title="Tireless Training" data-char-type="phy"
-            data-char-rarity="ssr" data-char-class="super" data-char-id="1002140"></div>
-        <div class="char" data-char-name="Sorbet" data-char-title="3rd Stellar Region Officer" data-char-type="int"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1002160"></div>
-        <div class="char" data-char-name="Tagoma" data-char-title="Underling's Devotion" data-char-type="teq"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1002170"></div>
-        <div class="char" data-char-name="Krillin (Police Officer)" data-char-title="Protector of the Peace"
-            data-char-type="phy" data-char-rarity="sr" data-char-class="super" data-char-id="1002180"></div>
-        <div class="char" data-char-name="Gohan (Teen)" data-char-title="Hasty Charge" data-char-type="teq"
-            data-char-rarity="sr" data-char-class="super" data-char-id="1002190"> </div>
-        <div class="char" data-char-name="Super Saiyan Gohan (Teen)" data-char-title="Indomitable Sense of Justice"
-            data-char-type="phy" data-char-rarity="ssr" data-char-class="super" data-char-id="1002220"></div>
-        <div class="char" data-char-name="Jaco" data-char-title="Galactic Patrolman" data-char-type="int"
-            data-char-rarity="ssr" data-char-class="super" data-char-id="1002210"></div>
-        <div class="char" data-char-name="Master Roshi (Max Power)" data-char-title="Miraculous Frontline Return"
-            data-char-type="str" data-char-rarity="ssr" data-char-class="super" data-char-id="1002220"></div>
-        <div class="char" data-char-name="Goku (Youth)" data-char-title="Innocent Challenger" data-char-type="agl"
-            data-char-rarity="ssr" data-char-class="super" data-char-id="1002240"></div>
-        <div class="char" data-char-name="Piccolo Jr." data-char-title="Heir to the Evil King" data-char-type="phy"
-            data-char-rarity="ssr" data-char-class="extreme" data-char-id="1002280"></div>
-        <div class="char" data-char-name="Murasaki" data-char-title="Impressive Ninja Skills" data-char-type="agl"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1002300"></div>
-        <div class="char" data-char-name="General Blue" data-char-title="Deep Blue Gaze" data-char-type="int"
-            data-char-rarity="ssr" data-char-class="extreme" data-char-id="1002310"></div>
-        <div class="char" data-char-name="Chi-Chi (Youth)" data-char-title="A Girl's Rage" data-char-type="str"
-            data-char-rarity="ssr" data-char-class="super" data-char-id="1002320"></div>
-        <div class="char" data-char-name="Yamcha" data-char-title="Marauding Bandit of the Wild" data-char-type="phy"
-            data-char-rarity="ssr" data-char-class="super" data-char-id="1002330"></div>
-        <div class="char" data-char-name="Krillin" data-char-title="Boundless Ambition" data-char-type="str"
-            data-char-rarity="ssr" data-char-class="super" data-char-id="1002340"></div>
-        <div class="char" data-char-name="Master Roshi (Max Power)" data-char-title="Masterful Technique"
-            data-char-type="teq" data-char-rarity="ur" data-char-class="super" data-char-id="1002350"></div>
-        <div class="char" data-char-name="Devilman" data-char-title="Devilish Deception" data-char-type="agl"
-            data-char-rarity="ssr" data-char-class="extreme" data-char-id="1002360"></div>
-        <div class="char" data-char-name="Bandages" data-char-title="Bone-Dry Battle" data-char-type="agl"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1002370"></div>
-        <div class="char" data-char-name="Dracula Man" data-char-title="Unusual Battle Skills" data-char-type="str"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1002380"></div>
-        <div class="char" data-char-name="Super Saiyan God SS Goku" data-char-title="Divine Evolution"
-            data-char-type="int" data-char-rarity="ssr" data-char-class="super" data-char-id="1002420"></div>
-        <div class="char" data-char-name="Goku" data-char-title="Full Strength" data-char-type="str"
-            data-char-rarity="ssr" data-char-class="super" data-char-id="1002430"></div>
-        <div class="char" data-char-name="Cooler (Final Form)" data-char-title="Overwhelming Fear" data-char-type="int"
-            data-char-rarity="ur" data-char-class="extreme" data-char-id="1002480"></div>
-        <div class="char" data-char-name="Doure" data-char-title="Decimating Power" data-char-type="teq"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1002500"></div>
-        <div class="char" data-char-name="Naise" data-char-title="Astonishing Strategy" data-char-type="phy"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1002510"></div>
-        <div class="char" data-char-name="Super Saiyan Trunks (Kid)" data-char-title="Talented Son" data-char-type="str"
-            data-char-rarity="ssr" data-char-class="super" data-char-id="1002570"></div>
-        <div class="char" data-char-name="Super Saiyan Goten (Kid)" data-char-title="Promising Son" data-char-type="agl"
-            data-char-rarity="ssr" data-char-class="super" data-char-id="1002580"></div>
-        <div class="char" data-char-name="Shisami" data-char-title="Crimson Rush" data-char-type="str"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1002590"></div>
-        <div class="char" data-char-name="Tien" data-char-title="Strength of Trust" data-char-type="int"
-            data-char-rarity="ssr" data-char-class="super" data-char-id="1002600"></div>
-        <div class="char" data-char-name="Piccolo" data-char-title="Seasoned Warrior" data-char-type="str"
-            data-char-rarity="sr" data-char-class="super" data-char-id="1002610"></div>
-        <div class="char" data-char-name="Great Saiyaman" data-char-title="Hero of Love and Justice"
-            data-char-type="str" data-char-rarity="ssr" data-char-class="super" data-char-id="1002940"></div>
-        <div class="char" data-char-name="Great Saiyaman 2" data-char-title="Goddess of Peace" data-char-type="teq"
-            data-char-rarity="ur" data-char-class="super" data-char-id="1002950"></div>
-        <div class="char" data-char-name="Pan (GT)" data-char-title="Curiosity for the Unknown" data-char-type="int"
-            data-char-rarity="ssr" data-char-class="super" data-char-id="1002980"></div>
-        <div class="char" data-char-name="Vegeta (GT)" data-char-title="Reignited Fighting Spirit" data-char-type="str"
-            data-char-rarity="ssr" data-char-class="super" data-char-id="1003000"></div>
-
-
-        <div class="char" data-char-name="Hercule (GT)" data-char-title="Symbol of Peace" data-char-type="phy"
-            data-char-rarity="sr" data-char-class="super" data-char-id="1003060"></div>
-            <div class="char" data-char-name="Super Saiyan Gohan (GT)" data-char-title="Proof of a Warrior" data-char-type="teq"
-            data-char-rarity="ssr" data-char-class="super" data-char-id="1003130"></div>
-            <div class="char" data-char-name="King Chappa" data-char-title="The Will of the Victorious" data-char-type="agl"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1003150"></div>
-            <div class="char" data-char-name="Oolong" data-char-title="Mutating Monster" data-char-type="teq"
-            data-char-rarity="ssr" data-char-class="super" data-char-id="1003160"></div>
-            <div class="char" data-char-name="Super Saiyan Vegeta" data-char-title="Last Minute Technique" data-char-type="int"
-            data-char-rarity="ssr" data-char-class="extreme" data-char-id="1003220"></div>
-            <div class="char" data-char-name="Super Saiyan Trunks (Teen)" data-char-title="A Slash of Respect" data-char-type="agl"
-            data-char-rarity="ssr" data-char-class="super" data-char-id="1003280"></div>
-            <div class="char" data-char-name="Mr. Buu" data-char-title="Beyond Human Intellect" data-char-type="int"
-            data-char-rarity="ssr" data-char-class="super" data-char-id="1003330"></div>
-            <div class="char" data-char-name="Piccolo" data-char-title="Cultivated Technique" data-char-type="str"
-            data-char-rarity="ssr" data-char-class="super" data-char-id="1003510"></div>
-            <div class="char" data-char-name="Yamcha" data-char-title="Heightened Intuition" data-char-type="int"
-            data-char-rarity="sr" data-char-class="super" data-char-id="1003520"></div>
-            <div class="char" data-char-name="Master Roshi (Max Power)" data-char-title="Masterful Technique" data-char-type="agl"
-            data-char-rarity="ur" data-char-class="super" data-char-id="1003530"></div>
-            <div class="char" data-char-name="Chi-Chi (Youth)" data-char-title="A Girl's Rage" data-char-type="int"
-            data-char-rarity="ssr" data-char-class="super" data-char-id="1003540"></div>
-            <div class="char" data-char-name="Great Saiyaman" data-char-title="Hero of Love and Justice" data-char-type="agl"
-            data-char-rarity="ur" data-char-class="super" data-char-id="1003580"></div>
-            <div class="char" data-char-name="Great Saiyaman 2" data-char-title="Goddess of Peace" data-char-type="str"
-            data-char-rarity="ur" data-char-class="super" data-char-id="1003590"></div>
-            <div class="char" data-char-name="Cyclopian Guard" data-char-title="Fighting Machine" data-char-type="phy"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1003650"></div>
-            <div class="char" data-char-name="Legendary Super Saiyan Broly" data-char-title="Super Warrior of Destruction" data-char-type="str"
-            data-char-rarity="ur" data-char-class="extreme" data-char-id="1003800"></div>
-            <div class="char" data-char-name="Dabura" data-char-title="Evil Wizardry" data-char-type="str"
-            data-char-rarity="ssr" data-char-class="extreme" data-char-id="1003820"></div>
-            <div class="char" data-char-name="Vegeta" data-char-title="Never-Ending Battle" data-char-type="int"
-            data-char-rarity="ssr" data-char-class="super" data-char-id="1003870"></div>
-            <div class="char" data-char-name="Bulma" data-char-title="Audacious Adventurer" data-char-type="int"
-            data-char-rarity="sr" data-char-class="super" data-char-id="1003880"></div>
-            <div class="char" data-char-name="Beerus" data-char-title="In Pursuit of a Formidable Foe" data-char-type="agl"
-            data-char-rarity="ssr" data-char-class="super" data-char-id="1003900"></div>
-            <div class="char" data-char-name="Cacao" data-char-title="Dangerous Cyborg Fighter" data-char-type="agl"
-            data-char-rarity="ssr" data-char-class="extreme" data-char-id="1003920"></div>
-            <div class="char" data-char-name="Daiz" data-char-title="Daring Charger" data-char-type="phy"
-            data-char-rarity="ssr" data-char-class="extreme" data-char-id="1003930"></div>
-            <div class="char" data-char-name="Amond" data-char-title="Ferocious Physique" data-char-type="str"
-            data-char-rarity="ssr" data-char-class="extreme" data-char-id="1003940"></div>
-            <div class="char" data-char-name="Rasin" data-char-title="Mindpower Destruction" data-char-type="teq"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1003950"></div>
-            <div class="char" data-char-name="Lakasei" data-char-title="Twin Blitzer" data-char-type="teq"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1003960"></div>
-            <div class="char" data-char-name="Launch" data-char-title="Dual Personality" data-char-type="str"
-            data-char-rarity="ssr" data-char-class="super" data-char-id="1004190"></div>
-            <div class="char" data-char-name="Super Saiyan Vegeta" data-char-title="Inherited Honor" data-char-type="teq"
-            data-char-rarity="ssr" data-char-class="super" data-char-id="1004280"></div>
-            <div class="char" data-char-name="Super Saiyan Trunks (Kid)" data-char-title="Talent from Dad" data-char-type="agl"
-            data-char-rarity="ssr" data-char-class="super" data-char-id="1004440"></div>
-            <div class="char" data-char-name="Giran" data-char-title="Winged Beast" data-char-type="agl"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1004660"></div>
-            <div class="char" data-char-name="Staff Officer Black" data-char-title="Fulfilled Dreams" data-char-type="phy"
-            data-char-rarity="sr" data-char-class="extreme" data-char-id="1004670"></div>
-            <div class="char" data-char-name="Gohan (Kid)" data-char-title="Slumbering Strength" data-char-type="teq"
-            data-char-rarity="sr" data-char-class="super" data-char-id="2000020"></div>
-            <div class="char" data-char-name="Vegeta (Kid)" data-char-title="Prince of Destiny" data-char-type="int"
-            data-char-rarity="ssr" data-char-class="extreme" data-char-id="2000050"></div>
-            <div class="char" data-char-name="Trunks (Xeno)" data-char-title="For the Future" data-char-type="str"
-            data-char-rarity="ssr" data-char-class="super" data-char-id="2000160"></div>
-    </div>
+	<div class="filter">
+		<button onclick="aglFilter();" class="type-btn" id="agl" type="button">AGL</button>
+		<button onclick="teqFilter();" class="type-btn" id="teq" type="button">TEQ</button>
+		<button onclick="intFilter();" class="type-btn" id="int" type="button">INT</button>
+		<button onclick="strFilter();" class="type-btn" id="str" type="button">STR</button>
+		<button onclick="phyFilter();" class="type-btn" id="phy" type="button">PHY</button>
+		<button onclick="superFilter();" class="class-btn" id="super" type="button">SUPER</button>
+		<button onclick="extremeFilter();" class="class-btn" id="extreme" type="button">EXTREME</button>
+		<button onclick="filterOk();" class="filter-btn" id="ok" type="button">OK</button>
+	</div>
+	<div class="charSearch">
+		<input id="char-search-id" onkeyup="searchCharName();" placeholder="Search..." title="Type in a name"
+			type="text">
+		<div class="searchOptions">
+			<p class="searchTitlesOptions">Search Titles</p>
+			<button onclick="searchTitlesOptionYes();" class="searchTitlesOptionYes" type="button">YES</button>
+			<button onclick="searchTitlesOptionNo();" class="searchTitlesOptionNo" type="button">NO</button>
+			<p class="searchSortDirectionOptions">Sort Direction</p>
+			<button onclick="searchSortDirectionOptionDown();" class="searchSortDirectionOptionDown"
+				type="button">Down</button>
+			<button onclick="searchSortDirectionOptionUp();" class="searchSortDirectionOptionUp"
+				type="button">Up</button>
+		</div>
+	</div>
+	<div class="char_container">
+		<div class="char" data-char-name="Goku" data-char-title="The Saiyan Among Us" data-char-type="str"
+			data-char-rarity="ssr" data-char-class="super" data-char-id="1000030"></div>
+		<div class="char" data-char-name="Vegeta" data-char-title="Genius of War" data-char-type="teq"
+			data-char-rarity="ssr" data-char-class="super" data-char-id="1000040"></div>
+		<div class="char" data-char-name="Cell (1st Form)" data-char-title="Android Evolution" data-char-type="agl"
+			data-char-rarity="ssr" data-char-class="extreme" data-char-id="1000070"></div>
+		<div class="char" data-char-name="Gohan (Kid)" data-char-title="Unrelenting Fighter" data-char-type="str"
+			data-char-rarity="ssr" data-char-class="super" data-char-id="1000090"></div>
+		<div class="char" data-char-name="Trunks (Teen)" data-char-title="Hawk Eyes" data-char-type="agl"
+			data-char-rarity="ssr" data-char-class="super" data-char-id="1000100"></div>
+		<div class="char" data-char-name="Krillin" data-char-title="Fruits of Labor" data-char-type="teq"
+			data-char-rarity="ssr" data-char-class="super" data-char-id="1000110"></div>
+		<div class="char" data-char-name="Piccolo" data-char-title="Stern Teacher" data-char-type="agl"
+			data-char-rarity="ssr" data-char-class="super" data-char-id="1000120"></div>
+		<div class="char" data-char-name="Tien" data-char-title="Aura Unleashed" data-char-type="teq"
+			data-char-rarity="ssr" data-char-class="super" data-char-id="1000130"></div>
+		<div class="char" data-char-name="Chiaotzu" data-char-title="The Gifted One" data-char-type="int"
+			data-char-rarity="ssr" data-char-class="super" data-char-id="1000140"></div>
+		<div class="char" data-char-name="Yamcha" data-char-title="Secret Arts Unleashed" data-char-type="agl"
+			data-char-rarity="ssr" data-char-class="super" data-char-id="1000150"></div>
+		<div class="char" data-char-name="Raditz" data-char-title="Peerless Saiyan" data-char-type="teq"
+			data-char-rarity="ssr" data-char-class="extreme" data-char-id="1000160"></div>
+		<div class="char" data-char-name="Nappa" data-char-title="Elite Warrior's Rage" data-char-type="str"
+			data-char-rarity="ssr" data-char-class="extreme" data-char-id="1000170"></div>
+		<div class="char" data-char-name="Zarbon" data-char-title="Hidden Strength" data-char-type="int"
+			data-char-rarity="ssr" data-char-class="extreme" data-char-id="1000180"></div>
+		<div class="char" data-char-name="Captain Ginyu" data-char-title="Honorable Fighter" data-char-type="int"
+			data-char-rarity="ssr" data-char-class="extreme" data-char-id="1000190"></div>
+		<div class="char" data-char-name="Android #19" data-char-title="Calculated Combat" data-char-type="phy"
+			data-char-rarity="ssr" data-char-class="extreme" data-char-id="1000200"></div>
+		<div class="char" data-char-name="Dr. Gero" data-char-title="Red Ribbon Army's Grudge" data-char-type="int"
+			data-char-rarity="ssr" data-char-class="extreme" data-char-id="1000210"></div>
+		<div class="char" data-char-name="Android #17" data-char-title="Infinite Fighting Spirit" data-char-type="teq"
+			data-char-rarity="ssr" data-char-class="extreme" data-char-id="1000220"></div>
+		<div class="char" data-char-name="Android #18" data-char-title="Alluring Assassin" data-char-type="str"
+			data-char-rarity="ssr" data-char-class="extreme" data-char-id="1000230"></div>
+		<div class="char" data-char-name="Android #16" data-char-title="Power Unleashed" data-char-type="phy"
+			data-char-rarity="ssr" data-char-class="extreme" data-char-id="1000240"></div>
+		<div class="char" data-char-name="Master Roshi" data-char-title="Secrets of the Turtle Style"
+			data-char-type="str" data-char-rarity="ssr" data-char-class="super" data-char-id="1000250"></div>
+		<div class="char" data-char-name="Mercenary Tao" data-char-title="Unrivaled Assassin" data-char-type="agl"
+			data-char-rarity="ssr" data-char-class="extreme" data-char-id="1000260"></div>
+		<div class="char" data-char-name="Gohan (Kid)" data-char-title="Steely Determination" data-char-type="int"
+			data-char-rarity="sr" data-char-class="super" data-char-id="1000270"></div>
+		<div class="char" data-char-name="Trunks (Teen)" data-char-title="From Hell and Back" data-char-type="agl"
+			data-char-rarity="sr" data-char-class="super" data-char-id="1000280"></div>
+		<div class="char" data-char-name="Krillin" data-char-title="Competitive Comrades" data-char-type="phy"
+			data-char-rarity="sr" data-char-class="super" data-char-id="1000290"></div>
+		<div class="char" data-char-name="Piccolo" data-char-title="Aloof Warrior" data-char-type="int"
+			data-char-rarity="sr" data-char-class="super" data-char-id="1000300"></div>
+		<div class="char" data-char-name="Tien" data-char-title="Unfaltering Spirit" data-char-type="agl"
+			data-char-rarity="sr" data-char-class="super" data-char-id="1000310"></div>
+		<div class="char" data-char-name="Chiaotzu" data-char-title="Trickster" data-char-type="teq"
+			data-char-rarity="sr" data-char-class="super" data-char-id="1000320"></div>
+		<div class="char" data-char-name="Yamcha" data-char-title="The One and Only" data-char-type="teq"
+			data-char-rarity="sr" data-char-class="super" data-char-id="1000330"></div>
+		<div class="char" data-char-name="Raditz" data-char-title="Menacing Alien Warrior" data-char-type="agl"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1000340"></div>
+		<div class="char" data-char-name="Nappa" data-char-title="Devastating Destruction" data-char-type="phy"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1000350"></div>
+		<div class="char" data-char-name="Zarbon" data-char-title="Confident Grin" data-char-type="phy"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1000360"></div>
+		<div class="char" data-char-name="Captain Ginyu" data-char-title="Captain's Merit" data-char-type="str"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1000370"></div>
+		<div class="char" data-char-name="Android #19" data-char-title="Cold-blooded Vandalism" data-char-type="phy"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1000380"></div>
+		<div class="char" data-char-name="Dr. Gero" data-char-title="Mad Scientist's Revenge" data-char-type="teq"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1000390"></div>
+		<div class="char" data-char-name="Android #17" data-char-title="Escalating Threat" data-char-type="phy"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1000400"></div>
+		<div class="char" data-char-name="Android #18" data-char-title="Fancy Footwork" data-char-type="agl"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1000410"></div>
+		<div class="char" data-char-name="Android #16" data-char-title="Nature-loving Warrior" data-char-type="teq"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1000420"></div>
+		<div class="char" data-char-name="Mercenary Tao" data-char-title="Living Weapon" data-char-type="int"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1000440"></div>
+		<div class="char" data-char-name="Fusion Machine Pilaf" data-char-title="Unquenchable Ambition"
+			data-char-type="int" data-char-rarity="sr" data-char-class="extreme" data-char-id="1000450"></div>
+		<div class="char" data-char-name="Shen" data-char-title="Exquisite Technique" data-char-type="int"
+			data-char-rarity="sr" data-char-class="super" data-char-id="1000460"></div>
+		<div class="char" data-char-name="Tambourine" data-char-title="Ghoulish Burst" data-char-type="str"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1000470"></div>
+		<div class="char" data-char-name="Cymbal" data-char-title="Demon's Disciple" data-char-type="phy"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1000480"></div>
+		<div class="char" data-char-name="Drum" data-char-title="Terror's Descent" data-char-type="agl"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1000490"></div>
+		<div class="char" data-char-name="Dodoria" data-char-title="Obstacle Eliminator" data-char-type="str"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1000510"></div>
+		<div class="char" data-char-name="Recoome" data-char-title="Dazzling Destruction" data-char-type="phy"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1000520"></div>
+		<div class="char" data-char-name="Guldo" data-char-title="The Timestopper" data-char-type="int"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1000530"></div>
+		<div class="char" data-char-name="Burter" data-char-title="Unfathomable Speed" data-char-type="agl"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1000540"></div>
+		<div class="char" data-char-name="Jeice" data-char-title="Elite Squadron's Pride" data-char-type="str"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1000550"></div>
+		<div class="char" data-char-name="Yajirobe" data-char-title="A Moment's Chance" data-char-type="phy"
+			data-char-rarity="sr" data-char-class="super" data-char-id="1000560"></div>
+		<div class="char" data-char-name="Nail" data-char-title="Namek's Last Warrior" data-char-type="teq"
+			data-char-rarity="sr" data-char-class="super" data-char-id="1000570"></div>
+		<div class="char" data-char-name="Hercule" data-char-title="Champion's Honor" data-char-type="int"
+			data-char-rarity="sr" data-char-class="super" data-char-id="1000580"></div>
+		<div class="char" data-char-name="Videl" data-char-title="Buried Passion" data-char-type="str"
+			data-char-rarity="sr" data-char-class="super" data-char-id="1000590"></div>
+		<div class="char" data-char-name="Cell Jr." data-char-title="Tiny Terror" data-char-type="phy"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1000600"></div>
+		<div class="char" data-char-name="Spopovich" data-char-title="Savagery Unleashed" data-char-type="teq"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1000610"></div>
+		<div class="char" data-char-name="Yamu" data-char-title="Malicious Scheme" data-char-type="teq"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1000620"></div>
+		<div class="char" data-char-name="Yakon" data-char-title="Light-Devouring Beast" data-char-type="agl"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1000630"></div>
+		<div class="char" data-char-name="Hercule" data-char-title="Undisputed Champion" data-char-type="int"
+			data-char-rarity="r" data-char-class="super" data-char-id="1000640"></div>
+		<div class="char" data-char-name="Videl" data-char-title="Slayer of Evil" data-char-type="str"
+			data-char-rarity="r" data-char-class="super" data-char-id="1000650"></div>
+		<div class="char" data-char-name="Cell Jr." data-char-title="Simple-Minded Devil" data-char-type="phy"
+			data-char-rarity="r" data-char-class="extreme" data-char-id="1000660"></div>
+		<div class="char" data-char-name="Spopovich" data-char-title="Ominous Will" data-char-type="phy"
+			data-char-rarity="r" data-char-class="extreme" data-char-id="1000670"></div>
+		<div class="char" data-char-name="Yamu" data-char-title="Wicked of Heart" data-char-type="int"
+			data-char-rarity="r" data-char-class="extreme" data-char-id="1000680"></div>
+		<div class="char" data-char-name="Yakon" data-char-title="Assassin in the Shadows" data-char-type="agl"
+			data-char-rarity="r" data-char-class="extreme" data-char-id="1000690"></div>
+		<div class="char" data-char-name="Pui Pui" data-char-title="Warrior from Planet Voon" data-char-type="agl"
+			data-char-rarity="r" data-char-class="extreme" data-char-id="1000700"></div>
+		<div class="char" data-char-name="Appule" data-char-title="Steadfast Soldier" data-char-type="str"
+			data-char-rarity="r" data-char-class="extreme" data-char-id="1000710"></div>
+		<div class="char" data-char-name="Cui" data-char-title="Fierce Raider" data-char-type="str" data-char-rarity="r"
+			data-char-class="extreme" data-char-id="1000720"></div>
+		<div class="char" data-char-name="Babidi's Minion" data-char-title="Loyal Servant" data-char-type="int"
+			data-char-rarity="r" data-char-class="extreme" data-char-id="1000730"></div>
+		<div class="char" data-char-name="Pintar" data-char-title="Unarmed Power" data-char-type="agl"
+			data-char-rarity="r" data-char-class="super" data-char-id="1000740"></div>
+		<div class="char" data-char-name="Jewel" data-char-title="Capable in Love and War" data-char-type="teq"
+			data-char-rarity="r" data-char-class="super" data-char-id="1000750"></div>
+		<div class="char" data-char-name="Killa" data-char-title="Well-Trained Fist" data-char-type="str"
+			data-char-rarity="r" data-char-class="super" data-char-id="1000760"></div>
+		<div class="char" data-char-name="Pirate Robot" data-char-title="Deep Sea Guardsman" data-char-type="teq"
+			data-char-rarity="r" data-char-class="extreme" data-char-id="1000770"></div>
+		<div class="char" data-char-name="Saibaman" data-char-title="Earthborn Warrior" data-char-type="phy"
+			data-char-rarity="r" data-char-class="extreme" data-char-id="1000780"></div>
+		<div class="char" data-char-name="Frieza Soldier" data-char-title="Lethal Underling" data-char-type="teq"
+			data-char-rarity="r" data-char-class="extreme" data-char-id="1000790"></div>
+		<div class="char" data-char-name="Red Ribbon Soldier" data-char-title="Army of Infamy" data-char-type="teq"
+			data-char-rarity="r" data-char-class="extreme" data-char-id="1000800"></div>
+		<div class="char" data-char-name="Trunks (Teen)" data-char-title="Messenger from the Future"
+			data-char-type="int" data-char-rarity="ssr" data-char-class="super" data-char-id="1000810"></div>
+		<div class="char" data-char-name="Hercule" data-char-title="Hero Chosen by Earth" data-char-type="int"
+			data-char-rarity="ssr" data-char-class="super" data-char-id="1000820"></div>
+		<div class="char" data-char-name="Goku" data-char-title="Determined Defender" data-char-type="agl"
+			data-char-rarity="ssr" data-char-class="super" data-char-id="1000850"></div>
+		<div class="char" data-char-name="Vegeta" data-char-title="Extreme Elite's Pride" data-char-type="phy"
+			data-char-rarity="ssr" data-char-class="super" data-char-id="1000860"></div>
+		<div class="char" data-char-name="Gohan (Kid)" data-char-title="Exploding Rage" data-char-type="phy"
+			data-char-rarity="ssr" data-char-class="super" data-char-id="1000870"></div>
+		<div class="char" data-char-name="Trunks (Teen)" data-char-title="Blitz Blade" data-char-type="teq"
+			data-char-rarity="ssr" data-char-class="super" data-char-id="1000880"></div>
+		<div class="char" data-char-name="Krillin" data-char-title="Martial Stability" data-char-type="teq"
+			data-char-rarity="ssr" data-char-class="super" data-char-id="1000890"></div>
+		<div class="char" data-char-name="Piccolo" data-char-title="Demonic Pride" data-char-type="int"
+			data-char-rarity="ssr" data-char-class="super" data-char-id="1000900"></div>
+		<div class="char" data-char-name="Tien" data-char-title="Respect to the Strong" data-char-type="str"
+			data-char-rarity="ssr" data-char-class="super" data-char-id="1000910"></div>
+		<div class="char" data-char-name="Chiaotzu" data-char-title="Power at the Eleventh Hour" data-char-type="teq"
+			data-char-rarity="ssr" data-char-class="super" data-char-id="1000920"></div>
+		<div class="char" data-char-name="Yamcha" data-char-title="Indomitable Human Spirit " data-char-type="agl"
+			data-char-rarity="ssr" data-char-class="super" data-char-id="1000930"></div>
+		<div class="char" data-char-name="Zarbon" data-char-title="Evil Elegance" data-char-type="phy"
+			data-char-rarity="ssr" data-char-class="extreme" data-char-id="1000940"></div>
+		<div class="char" data-char-name="Captain Ginyu" data-char-title="Brilliant Battle Prowess" data-char-type="int"
+			data-char-rarity="ssr" data-char-class="extreme" data-char-id="1000950"></div>
+		<div class="char" data-char-name="Nappa" data-char-title="Saiyan Baptism" data-char-type="phy"
+			data-char-rarity="ssr" data-char-class="extreme" data-char-id="1000960"></div>
+		<div class="char" data-char-name="Android #19" data-char-title="Killer Instinct" data-char-type="phy"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1000970"></div>
+		<div class="char" data-char-name="Dr. Gero" data-char-title="Cunning Strategy" data-char-type="int"
+			data-char-rarity="ssr" data-char-class="extreme" data-char-id="1000980"></div>
+		<div class="char" data-char-name="Android #17" data-char-title="Dauntless Runner" data-char-type="agl"
+			data-char-rarity="ssr" data-char-class="extreme" data-char-id="1000990"></div>
+		<div class="char" data-char-name="Android #18" data-char-title="Beautiful but Deadly" data-char-type="agl"
+			data-char-rarity="ssr" data-char-class="extreme" data-char-id="1001000"></div>
+		<div class="char" data-char-name="Android #16" data-char-title="The Warrior Awakens" data-char-type="str"
+			data-char-rarity="ssr" data-char-class="extreme" data-char-id="1001010"></div>
+		<div class="char" data-char-name="Mercenary Tao" data-char-title="Professional Tactician" data-char-type="agl"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1001030"></div>
+		<div class="char" data-char-name="Chi-Chi" data-char-title="Heart of Innocence" data-char-type="str"
+			data-char-rarity="ssr" data-char-class="super" data-char-id="1001040"></div>
+		<div class="char" data-char-name="Dodoria" data-char-title="Reckless Rage" data-char-type="phy"
+			data-char-rarity="ssr" data-char-class="extreme" data-char-id="1001050"></div>
+		<div class="char" data-char-name="Recoome" data-char-title="Never-Ending Assault" data-char-type="phy"
+			data-char-rarity="ssr" data-char-class="extreme" data-char-id="1001060"></div>
+		<div class="char" data-char-name="Guldo" data-char-title="Master of Magic" data-char-type="teq"
+			data-char-rarity="ssr" data-char-class="extreme" data-char-id="1001070"></div>
+		<div class="char" data-char-name="Burter" data-char-title="Speed Tactics" data-char-type="agl"
+			data-char-rarity="ssr" data-char-class="extreme" data-char-id="1001080"></div>
+		<div class="char" data-char-name="Jeice" data-char-title="Maximum Firepower" data-char-type="str"
+			data-char-rarity="ssr" data-char-class="extreme" data-char-id="1001090"></div>
+		<div class="char" data-char-name="Nail" data-char-title="Call of Duty" data-char-type="int"
+			data-char-rarity="ssr" data-char-class="super" data-char-id="1001100"></div>
+		<div class="char" data-char-name="Cui" data-char-title="Imminent Showdown" data-char-type="str"
+			data-char-rarity="ssr" data-char-class="extreme" data-char-id="1001110"></div>
+		<div class="char" data-char-name="Raditz" data-char-title="Space Invader" data-char-type="teq"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1001130"></div>
+		<div class="char" data-char-name="Nappa" data-char-title="Inevitable Preemptive Strike" data-char-type="str"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1001140"></div>
+		<div class="char" data-char-name="Gohan (Kid)" data-char-title="Resistance of Tyranny" data-char-type="phy"
+			data-char-rarity="sr" data-char-class="super" data-char-id="1001150"></div>
+		<div class="char" data-char-name="Krillin" data-char-title="Passionate Friendship" data-char-type="str"
+			data-char-rarity="sr" data-char-class="super" data-char-id="1001160"></div>
+		<div class="char" data-char-name="Piccolo" data-char-title="Burdened by Destiny" data-char-type="teq"
+			data-char-rarity="sr" data-char-class="super" data-char-id="1001170"></div>
+		<div class="char" data-char-name="Tien" data-char-title="Lightning Onslaught" data-char-type="phy"
+			data-char-rarity="sr" data-char-class="super" data-char-id="1001180"></div>
+		<div class="char" data-char-name="Chiaotzu" data-char-title="Daring Interception" data-char-type="teq"
+			data-char-rarity="sr" data-char-class="super" data-char-id="1001190"></div>
+		<div class="char" data-char-name="Yamcha" data-char-title="Unwavering Confidence" data-char-type="agl"
+			data-char-rarity="sr" data-char-class="super" data-char-id="1001200"></div>
+		<div class="char" data-char-name="Zarbon" data-char-title="Display of Strength" data-char-type="str"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1001210"></div>
+		<div class="char" data-char-name="Captain Ginyu" data-char-title="Considerate Captain" data-char-type="int"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1001220"></div>
+		<div class="char" data-char-name="Android #19" data-char-title="Target Confirmed" data-char-type="str"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1001230"></div>
+		<div class="char" data-char-name="Dr. Gero" data-char-title="Precise Action" data-char-type="int"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1001240"></div>
+		<div class="char" data-char-name="Android #17" data-char-title="Free at Last" data-char-type="agl"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1001250"></div>
+		<div class="char" data-char-name="Android #18" data-char-title="Cold Analytics" data-char-type="phy"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1001260"></div>
+		<div class="char" data-char-name="Android #16" data-char-title="Ironclad Intentions" data-char-type="phy"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1001270"></div>
+		<div class="char" data-char-name="Dodoria" data-char-title="Storm of Destruction" data-char-type="phy"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1001290"></div>
+		<div class="char" data-char-name="Recoome" data-char-title="Death Sentence" data-char-type="str"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1001300"></div>
+		<div class="char" data-char-name="Guldo" data-char-title="Well-Played Trump Card" data-char-type="teq"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1001310"></div>
+		<div class="char" data-char-name="Burter" data-char-title="Speed Impulse" data-char-type="agl"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1001320"></div>
+		<div class="char" data-char-name="Jeice" data-char-title="Lesson in Fear" data-char-type="teq"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1001330"></div>
+		<div class="char" data-char-name="Yajirobe" data-char-title="Cowardly Savior" data-char-type="phy"
+			data-char-rarity="sr" data-char-class="super" data-char-id="1001340"></div>
+		<div class="char" data-char-name="Nail" data-char-title="Facing Fate" data-char-type="int" data-char-rarity="sr"
+			data-char-class="super" data-char-id="1001350"></div>
+		<div class="char" data-char-name="Cui" data-char-title="Craving of Battle" data-char-type="int"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1001360"></div>
+		<div class="char" data-char-name="Videl" data-char-title="Paragon of Justice" data-char-type="agl"
+			data-char-rarity="sr" data-char-class="super" data-char-id="1001370"></div>
+		<div class="char" data-char-name="Master Shen" data-char-title="Crane School's Prestige" data-char-type="int"
+			data-char-rarity="ssr" data-char-class="extreme" data-char-id="1001380"></div>
+		<div class="char" data-char-name="Nappa" data-char-title="Cruel Tactics" data-char-type="teq"
+			data-char-rarity="ssr" data-char-class="extreme" data-char-id="1001420"></div>
+		<div class="char" data-char-name="Raditz" data-char-title="Cocky Counter" data-char-type="phy"
+			data-char-rarity="ssr" data-char-class="extreme" data-char-id="1001430"></div>
+		<div class="char" data-char-name="Yamcha" data-char-title="Burning Spirit" data-char-type="str"
+			data-char-rarity="ssr" data-char-class="super" data-char-id="1001440"></div>
+		<div class="char" data-char-name="Tien" data-char-title="Proud till the Last" data-char-type="phy"
+			data-char-rarity="ssr" data-char-class="super" data-char-id="1001450"></div>
+		<div class="char" data-char-name="Chiaotzu" data-char-title="Eternal Bond" data-char-type="str"
+			data-char-rarity="ssr" data-char-class="super" data-char-id="1001460"></div>
+		<div class="char" data-char-name="Fasha" data-char-title="Warrior of Daring" data-char-type="agl"
+			data-char-rarity="ssr" data-char-class="super" data-char-id="1001500"></div>
+		<div class="char" data-char-name="Tora" data-char-title="Warrior of Conviction" data-char-type="int"
+			data-char-rarity="sr" data-char-class="super" data-char-id="1001540"></div>
+		<div class="char" data-char-name="Borgos" data-char-title="Warrior of Few Words" data-char-type="str"
+			data-char-rarity="sr" data-char-class="super" data-char-id="1001550"></div>
+		<div class="char" data-char-name="Shugesh" data-char-title="Warrior of Ferocity" data-char-type="phy"
+			data-char-rarity="sr" data-char-class="super" data-char-id="1001560"></div>
+		<div class="char" data-char-name="Nail" data-char-title="Ultimate Sacrifice" data-char-type="agl"
+			data-char-rarity="sr" data-char-class="super" data-char-id="1001570"></div>
+		<div class="char" data-char-name="Gohan (Kid)" data-char-title="Furious Impact" data-char-type="agl"
+			data-char-rarity="ssr" data-char-class="super" data-char-id="1001620"></div>
+		<div class="char" data-char-name="Guldo" data-char-title="Technician of Time" data-char-type="phy"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1001670"></div>
+		<div class="char" data-char-name="Krillin" data-char-title="Wisdom and Experience" data-char-type="agl"
+			data-char-rarity="sr" data-char-class="super" data-char-id="1001680"></div>
+		<div class="char" data-char-name="Cell (Perfect Form)" data-char-title="Perfect Power" data-char-type="phy"
+			data-char-rarity="ssr" data-char-class="extreme" data-char-id="1001720"></div>
+		<div class="char" data-char-name="Android #17 (Future)" data-char-title="A Future Forsaken" data-char-type="phy"
+			data-char-rarity="ssr" data-char-class="extreme" data-char-id="1001730"></div>
+		<div class="char" data-char-name="Android #18 (Future)" data-char-title="Dastardly Demoness"
+			data-char-type="int" data-char-rarity="ssr" data-char-class="extreme" data-char-id="1001740"></div>
+		<div class="char" data-char-name="Goku" data-char-title="Miraculous Return" data-char-type="phy"
+			data-char-rarity="sr" data-char-class="super" data-char-id="1001750"></div>
+		<div class="char" data-char-name="Trunks (Kid)" data-char-title="Elite Offspring" data-char-type="teq"
+			data-char-rarity="ssr" data-char-class="super" data-char-id="1001760"></div>
+		<div class="char" data-char-name="Tien" data-char-title="The True Value of Master Shen" data-char-type="agl"
+			data-char-rarity="ssr" data-char-class="extreme" data-char-id="1001770"></div>
+		<div class="char" data-char-name="Android #19" data-char-title="Engineered Evil" data-char-type="str"
+			data-char-rarity="ssr" data-char-class="extreme" data-char-id="1001830"></div>
+		<div class="char" data-char-name="Dr. Gero" data-char-title="Pure Corruption" data-char-type="phy"
+			data-char-rarity="ssr" data-char-class="extreme" data-char-id="1001840"></div>
+		<div class="char" data-char-name="Trunks (Teen)" data-char-title="Honed for Battle" data-char-type="phy"
+			data-char-rarity="ssr" data-char-class="super" data-char-id="1001860"></div>
+		<div class="char" data-char-name="Yamcha" data-char-title="Wolf of the Gale" data-char-type="teq"
+			data-char-rarity="r" data-char-class="super" data-char-id="1001890"></div>
+		<div class="char" data-char-name="Tien" data-char-title="The Way of Battle" data-char-type="str"
+			data-char-rarity="r" data-char-class="super" data-char-id="1001900"></div>
+		<div class="char" data-char-name="Chiaotzu" data-char-title="Anticipated Telekinesis" data-char-type="int"
+			data-char-rarity="r" data-char-class="super" data-char-id="1001910"></div>
+		<div class="char" data-char-name="Dabura" data-char-title="Demonic Lord of Darkness" data-char-type="agl"
+			data-char-rarity="ssr" data-char-class="extreme" data-char-id="1001980"></div>
+		<div class="char" data-char-name="Goten (Kid)" data-char-title="Fighting Prodigy" data-char-type="agl"
+			data-char-rarity="sr" data-char-class="super" data-char-id="1002000"></div>
+		<div class="char" data-char-name="Uub (Youth)" data-char-title="Infinite Potential" data-char-type="str"
+			data-char-rarity="ssr" data-char-class="super" data-char-id="1002030"></div>
+		<div class="char" data-char-name="Pan (Kid)" data-char-title="Bursting with Power" data-char-type="phy"
+			data-char-rarity="sr" data-char-class="super" data-char-id="1002040"></div>
+		<div class="char" data-char-name="Babidi" data-char-title="Malevolent Magician" data-char-type="int"
+			data-char-rarity="ssr" data-char-class="extreme" data-char-id="1002050"></div>
+		<div class="char" data-char-name="Yakon" data-char-title="Twin-Clawed Terror" data-char-type="str"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1002060"></div>
+		<div class="char" data-char-name="Pui Pui" data-char-title="Confident Sentry" data-char-type="agl"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1002070"></div>
+		<div class="char" data-char-name="Goku" data-char-title="Top-Tier Training" data-char-type="teq"
+			data-char-rarity="ssr" data-char-class="super" data-char-id="1002130"></div>
+		<div class="char" data-char-name="Vegeta" data-char-title="Tireless Training" data-char-type="phy"
+			data-char-rarity="ssr" data-char-class="super" data-char-id="1002140"></div>
+		<div class="char" data-char-name="Sorbet" data-char-title="3rd Stellar Region Officer" data-char-type="int"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1002160"></div>
+		<div class="char" data-char-name="Tagoma" data-char-title="Underling's Devotion" data-char-type="teq"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1002170"></div>
+		<div class="char" data-char-name="Krillin (Police Officer)" data-char-title="Protector of the Peace"
+			data-char-type="phy" data-char-rarity="sr" data-char-class="super" data-char-id="1002180"></div>
+		<div class="char" data-char-name="Gohan (Teen)" data-char-title="Hasty Charge" data-char-type="teq"
+			data-char-rarity="sr" data-char-class="super" data-char-id="1002190"> </div>
+		<div class="char" data-char-name="Super Saiyan Gohan (Teen)" data-char-title="Indomitable Sense of Justice"
+			data-char-type="phy" data-char-rarity="ssr" data-char-class="super" data-char-id="1002220"></div>
+		<div class="char" data-char-name="Jaco" data-char-title="Galactic Patrolman" data-char-type="int"
+			data-char-rarity="ssr" data-char-class="super" data-char-id="1002210"></div>
+		<div class="char" data-char-name="Master Roshi (Max Power)" data-char-title="Miraculous Frontline Return"
+			data-char-type="str" data-char-rarity="ssr" data-char-class="super" data-char-id="1002220"></div>
+		<div class="char" data-char-name="Goku (Youth)" data-char-title="Innocent Challenger" data-char-type="agl"
+			data-char-rarity="ssr" data-char-class="super" data-char-id="1002240"></div>
+		<div class="char" data-char-name="Piccolo Jr." data-char-title="Heir to the Evil King" data-char-type="phy"
+			data-char-rarity="ssr" data-char-class="extreme" data-char-id="1002280"></div>
+		<div class="char" data-char-name="Murasaki" data-char-title="Impressive Ninja Skills" data-char-type="agl"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1002300"></div>
+		<div class="char" data-char-name="General Blue" data-char-title="Deep Blue Gaze" data-char-type="int"
+			data-char-rarity="ssr" data-char-class="extreme" data-char-id="1002310"></div>
+		<div class="char" data-char-name="Chi-Chi (Youth)" data-char-title="A Girl's Rage" data-char-type="str"
+			data-char-rarity="ssr" data-char-class="super" data-char-id="1002320"></div>
+		<div class="char" data-char-name="Yamcha" data-char-title="Marauding Bandit of the Wild" data-char-type="phy"
+			data-char-rarity="ssr" data-char-class="super" data-char-id="1002330"></div>
+		<div class="char" data-char-name="Krillin" data-char-title="Boundless Ambition" data-char-type="str"
+			data-char-rarity="ssr" data-char-class="super" data-char-id="1002340"></div>
+		<div class="char" data-char-name="Master Roshi (Max Power)" data-char-title="Masterful Technique"
+			data-char-type="teq" data-char-rarity="ur" data-char-class="super" data-char-id="1002350"></div>
+		<div class="char" data-char-name="Devilman" data-char-title="Devilish Deception" data-char-type="agl"
+			data-char-rarity="ssr" data-char-class="extreme" data-char-id="1002360"></div>
+		<div class="char" data-char-name="Bandages" data-char-title="Bone-Dry Battle" data-char-type="agl"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1002370"></div>
+		<div class="char" data-char-name="Dracula Man" data-char-title="Unusual Battle Skills" data-char-type="str"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1002380"></div>
+		<div class="char" data-char-name="Super Saiyan God SS Goku" data-char-title="Divine Evolution"
+			data-char-type="int" data-char-rarity="ssr" data-char-class="super" data-char-id="1002420"></div>
+		<div class="char" data-char-name="Goku" data-char-title="Full Strength" data-char-type="str"
+			data-char-rarity="ssr" data-char-class="super" data-char-id="1002430"></div>
+		<div class="char" data-char-name="Cooler (Final Form)" data-char-title="Overwhelming Fear" data-char-type="int"
+			data-char-rarity="ur" data-char-class="extreme" data-char-id="1002480"></div>
+		<div class="char" data-char-name="Doure" data-char-title="Decimating Power" data-char-type="teq"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1002500"></div>
+		<div class="char" data-char-name="Naise" data-char-title="Astonishing Strategy" data-char-type="phy"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1002510"></div>
+		<div class="char" data-char-name="Super Saiyan Trunks (Kid)" data-char-title="Talented Son" data-char-type="str"
+			data-char-rarity="ssr" data-char-class="super" data-char-id="1002570"></div>
+		<div class="char" data-char-name="Super Saiyan Goten (Kid)" data-char-title="Promising Son" data-char-type="agl"
+			data-char-rarity="ssr" data-char-class="super" data-char-id="1002580"></div>
+		<div class="char" data-char-name="Shisami" data-char-title="Crimson Rush" data-char-type="str"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1002590"></div>
+		<div class="char" data-char-name="Tien" data-char-title="Strength of Trust" data-char-type="int"
+			data-char-rarity="ssr" data-char-class="super" data-char-id="1002600"></div>
+		<div class="char" data-char-name="Piccolo" data-char-title="Seasoned Warrior" data-char-type="str"
+			data-char-rarity="sr" data-char-class="super" data-char-id="1002610"></div>
+		<div class="char" data-char-name="Great Saiyaman" data-char-title="Hero of Love and Justice"
+			data-char-type="str" data-char-rarity="ssr" data-char-class="super" data-char-id="1002940"></div>
+		<div class="char" data-char-name="Great Saiyaman 2" data-char-title="Goddess of Peace" data-char-type="teq"
+			data-char-rarity="ur" data-char-class="super" data-char-id="1002950"></div>
+		<div class="char" data-char-name="Pan (GT)" data-char-title="Curiosity for the Unknown" data-char-type="int"
+			data-char-rarity="ssr" data-char-class="super" data-char-id="1002980"></div>
+		<div class="char" data-char-name="Vegeta (GT)" data-char-title="Reignited Fighting Spirit" data-char-type="str"
+			data-char-rarity="ssr" data-char-class="super" data-char-id="1003000"></div>
+		<div class="char" data-char-name="Hercule (GT)" data-char-title="Symbol of Peace" data-char-type="phy"
+			data-char-rarity="sr" data-char-class="super" data-char-id="1003060"></div>
+		<div class="char" data-char-name="Super Saiyan Gohan (GT)" data-char-title="Proof of a Warrior"
+			data-char-type="teq" data-char-rarity="ssr" data-char-class="super" data-char-id="1003130"></div>
+		<div class="char" data-char-name="King Chappa" data-char-title="The Will of the Victorious" data-char-type="agl"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1003150"></div>
+		<div class="char" data-char-name="Oolong" data-char-title="Mutating Monster" data-char-type="teq"
+			data-char-rarity="ssr" data-char-class="super" data-char-id="1003160"></div>
+		<div class="char" data-char-name="Super Saiyan Vegeta" data-char-title="Last Minute Technique"
+			data-char-type="int" data-char-rarity="ssr" data-char-class="extreme" data-char-id="1003220"></div>
+		<div class="char" data-char-name="Super Saiyan Trunks (Teen)" data-char-title="A Slash of Respect"
+			data-char-type="agl" data-char-rarity="ssr" data-char-class="super" data-char-id="1003280"></div>
+		<div class="char" data-char-name="Mr. Buu" data-char-title="Beyond Human Intellect" data-char-type="int"
+			data-char-rarity="ssr" data-char-class="super" data-char-id="1003330"></div>
+		<div class="char" data-char-name="Piccolo" data-char-title="Cultivated Technique" data-char-type="str"
+			data-char-rarity="ssr" data-char-class="super" data-char-id="1003510"></div>
+		<div class="char" data-char-name="Yamcha" data-char-title="Heightened Intuition" data-char-type="int"
+			data-char-rarity="sr" data-char-class="super" data-char-id="1003520"></div>
+		<div class="char" data-char-name="Master Roshi (Max Power)" data-char-title="Masterful Technique"
+			data-char-type="agl" data-char-rarity="ur" data-char-class="super" data-char-id="1003530"></div>
+		<div class="char" data-char-name="Chi-Chi (Youth)" data-char-title="A Girl's Rage" data-char-type="int"
+			data-char-rarity="ssr" data-char-class="super" data-char-id="1003540"></div>
+		<div class="char" data-char-name="Great Saiyaman" data-char-title="Hero of Love and Justice"
+			data-char-type="agl" data-char-rarity="ur" data-char-class="super" data-char-id="1003580"></div>
+		<div class="char" data-char-name="Great Saiyaman 2" data-char-title="Goddess of Peace" data-char-type="str"
+			data-char-rarity="ur" data-char-class="super" data-char-id="1003590"></div>
+		<div class="char" data-char-name="Cyclopian Guard" data-char-title="Fighting Machine" data-char-type="phy"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1003650"></div>
+		<div class="char" data-char-name="Legendary Super Saiyan Broly" data-char-title="Super Warrior of Destruction"
+			data-char-type="str" data-char-rarity="ur" data-char-class="extreme" data-char-eza="eza"
+			data-char-id="1003800"></div>
+		<div class="char" data-char-name="Dabura" data-char-title="Evil Wizardry" data-char-type="str"
+			data-char-rarity="ssr" data-char-class="extreme" data-char-id="1003820"></div>
+		<div class="char" data-char-name="Vegeta" data-char-title="Never-Ending Battle" data-char-type="int"
+			data-char-rarity="ssr" data-char-class="super" data-char-id="1003870"></div>
+		<div class="char" data-char-name="Bulma" data-char-title="Audacious Adventurer" data-char-type="int"
+			data-char-rarity="sr" data-char-class="super" data-char-id="1003880"></div>
+		<div class="char" data-char-name="Beerus" data-char-title="In Pursuit of a Formidable Foe" data-char-type="agl"
+			data-char-rarity="ssr" data-char-class="super" data-char-id="1003900"></div>
+		<div class="char" data-char-name="Cacao" data-char-title="Dangerous Cyborg Fighter" data-char-type="agl"
+			data-char-rarity="ssr" data-char-class="extreme" data-char-id="1003920"></div>
+		<div class="char" data-char-name="Daiz" data-char-title="Daring Charger" data-char-type="phy"
+			data-char-rarity="ssr" data-char-class="extreme" data-char-id="1003930"></div>
+		<div class="char" data-char-name="Amond" data-char-title="Ferocious Physique" data-char-type="str"
+			data-char-rarity="ssr" data-char-class="extreme" data-char-id="1003940"></div>
+		<div class="char" data-char-name="Rasin" data-char-title="Mindpower Destruction" data-char-type="teq"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1003950"></div>
+		<div class="char" data-char-name="Lakasei" data-char-title="Twin Blitzer" data-char-type="teq"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1003960"></div>
+		<div class="char" data-char-name="Launch" data-char-title="Dual Personality" data-char-type="str"
+			data-char-rarity="ssr" data-char-class="super" data-char-id="1004190"></div>
+		<div class="char" data-char-name="Super Saiyan Vegeta" data-char-title="Inherited Honor" data-char-type="teq"
+			data-char-rarity="ssr" data-char-class="super" data-char-id="1004280"></div>
+		<div class="char" data-char-name="Super Saiyan Trunks (Kid)" data-char-title="Talent from Dad"
+			data-char-type="agl" data-char-rarity="ssr" data-char-class="super" data-char-id="1004440"></div>
+		<div class="char" data-char-name="Giran" data-char-title="Winged Beast" data-char-type="agl"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1004660"></div>
+		<div class="char" data-char-name="Staff Officer Black" data-char-title="Fulfilled Dreams" data-char-type="phy"
+			data-char-rarity="sr" data-char-class="extreme" data-char-id="1004670"></div>
+		<div class="char" data-char-name="Gohan (Kid)" data-char-title="Slumbering Strength" data-char-type="teq"
+			data-char-rarity="sr" data-char-class="super" data-char-id="2000020"></div>
+		<div class="char" data-char-name="Vegeta (Kid)" data-char-title="Prince of Destiny" data-char-type="int"
+			data-char-rarity="ssr" data-char-class="extreme" data-char-id="2000050"></div>
+		<div class="char" data-char-name="Trunks (Xeno)" data-char-title="For the Future" data-char-type="str"
+			data-char-rarity="ssr" data-char-class="super" data-char-id="2000160"></div>
+	</div>
 </body>
 
 </html>
