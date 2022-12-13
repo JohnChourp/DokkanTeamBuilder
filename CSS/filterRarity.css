@@ -1,4 +1,4 @@
-#rarity_n {
+#n {
 	cursor: pointer;
 	background-color: #7d8e93;
 	height:40px;
@@ -6,7 +6,7 @@
 	top:30px;
 }
 
-#rarity_r {
+#r {
 	cursor: pointer;
 	background-color: #7d8e93;
 	height:40px;
@@ -14,7 +14,7 @@
 	top:30px;
 }
 
-#rarity_sr {
+#sr {
 	cursor: pointer;
 	background-color: #7d8e93;
 	height:40px;
@@ -22,7 +22,7 @@
 	top:30px;
 }
 
-#rarity_ssr {
+#ssr {
 	cursor: pointer;
 	background-color: #7d8e93;
 	height:40px;
@@ -30,7 +30,7 @@
 	top:30px;
 }
 
-#rarity_ur {
+#ur {
 	cursor: pointer;
 	background-color: #7d8e93;
 	height:40px;
@@ -38,13 +38,14 @@
 	top:30px;
 }
 
-#rarity_lr {
+#lr {
 	cursor: pointer;
 	background-color: #7d8e93;
 	height:40px;
 	position: relative;
 	top:30px;
 }
+
 .checkedClassBtn {
 	border: 5px solid #000000;
 }
