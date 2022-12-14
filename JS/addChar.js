@@ -2,37 +2,39 @@ function addChar() {
 	let dataCharType = 'data-char-type';
 	let dataCharRarity = 'data-char-rarity';
 	let dataCharClass = 'data-char-class';
+	let dataCharEza = 'data-char-eza';
 	let dataCharId = 'data-char-id';
 
 	let dataCharTypeItems = document.querySelectorAll('[' + dataCharType + ']');
 	let dataCharRarityItems = document.querySelectorAll('[' + dataCharRarity + ']');
 	let dataCharClassItems = document.querySelectorAll('[' + dataCharClass + ']');
+	let dataCharEzaItems = document.querySelectorAll('[' + dataCharEza + ']');
 	let dataCharIdItems = document.querySelectorAll('[' + dataCharId + ']');
 
+	let char_class = document.getElementsByClassName("char");
 	let char_type_base = document.getElementsByClassName("char_type_base");
 	let char_thumb = document.getElementsByClassName("char_thumb");
 	let char_rarity = document.getElementsByClassName("char_rarity");
 	let char_type = document.getElementsByClassName("char_type");
+	let char_eza = document.getElementsByClassName("char_eza");
 
 	for (let i = 0; i < dataCharTypeItems.length; i++) {
-		let char_class = document.getElementsByClassName("char");
-	
 		let char_type_base_img = document.createElement("img");
 		char_type_base_img.classList.add("char_type_base");
-		char_type_base_img.loading ="lazy";
+		char_type_base_img.loading = "lazy";
 
 		let char_thumb_img = document.createElement("img");
 		char_thumb_img.classList.add("char_thumb");
-		char_thumb_img.loading ="lazy";
+		char_thumb_img.loading = "lazy";
 		char_thumb_img.src = dataCharIdItems[i].getAttribute(dataCharId).toLowerCase();
 
 		let char_rarity_img = document.createElement("img");
 		char_rarity_img.classList.add("char_rarity");
-		char_rarity_img.loading ="lazy";
+		char_rarity_img.loading = "lazy";
 
 		let char_type_img = document.createElement("img");
 		char_type_img.classList.add("char_type");
-		char_type_img.loading ="lazy";
+		char_type_img.loading = "lazy";
 
 		char_class.item(i).appendChild(char_type_base_img);
 		char_class.item(i).appendChild(char_thumb_img);
@@ -40,7 +42,7 @@ function addChar() {
 		char_class.item(i).appendChild(char_type_img);
 	}
 
-	for (let i = 0; i < dataCharTypeItems.length; i++) {
+	for (let i = 0; i < char_class.length; i++) {
 		if (dataCharRarityItems[i].getAttribute(dataCharRarity) == "lr") {
 			if (dataCharTypeItems[i].getAttribute(dataCharType) == "agl") {
 				char_type_base[i].src = "char_type_base/char_type_base_ssr_agl.png";
@@ -209,8 +211,21 @@ function addChar() {
 				char_type[i].src = "char_type/char_type_extreme_teq.png";
 			}
 		}
-		
+
 		charId = char_thumb[i].src;
 		char_thumb[i].src = "char_thumb/char_" + charId.slice(-7) + "_thumb.png";
+	}
+
+	for (let i = 0; i < char_class.length; i++) {
+		if (char_class.item(i).hasAttribute("data-char-eza")) {
+			let char_eza_img = document.createElement("img");
+			char_eza_img.classList.add("char_eza");
+			char_eza_img.loading = "lazy";
+			char_class.item(i).appendChild(char_eza_img);
+		}
+	}
+
+	for (let j = 0; j < dataCharEzaItems.length; j++) {
+		char_eza[j].src = "char_eza/eza.png";
 	}
 }

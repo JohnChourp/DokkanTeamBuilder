@@ -1,0 +1,51 @@
+#n {
+	cursor: pointer;
+	background-color: #7d8e93;
+	height:40px;
+	position: relative;
+	top:30px;
+}
+
+#r {
+	cursor: pointer;
+	background-color: #7d8e93;
+	height:40px;
+	position: relative;
+	top:30px;
+}
+
+#sr {
+	cursor: pointer;
+	background-color: #7d8e93;
+	height:40px;
+	position: relative;
+	top:30px;
+}
+
+#ssr {
+	cursor: pointer;
+	background-color: #7d8e93;
+	height:40px;
+	position: relative;
+	top:30px;
+}
+
+#ur {
+	cursor: pointer;
+	background-color: #7d8e93;
+	height:40px;
+	position: relative;
+	top:30px;
+}
+
+#lr {
+	cursor: pointer;
+	background-color: #7d8e93;
+	height:40px;
+	position: relative;
+	top:30px;
+}
+
+.checkedRarityBtn {
+	border: 5px solid #000000;
+}
