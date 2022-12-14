@@ -8,18 +8,7 @@ function charAllAppear(char) {
 		char.item(i).style.display = "inline-block";
 	}
 }
-
-function showCharTypeAndClassFilter(char, dataCharTypeItems, dataCharType, dataCharClass, dataCharClassItems) {
-	let filterClass;
-
-	if (document.getElementById("super").classList.contains("checkedClassBtn")) {
-		filterClass = "super";
-	}
-
-	if (document.getElementById("extreme").classList.contains("checkedClassBtn")) {
-		filterClass = "extreme";
-	}
-
+function showCharTypeAndClassFilter(char, dataCharTypeItems, dataCharType, dataCharClass, dataCharClassItems, filterClass) {
 	if ((document.getElementById("agl").classList.contains("checkedTypeBtn")) && (document.getElementById(filterClass).classList.contains("checkedClassBtn"))) {
 		for (let i = 0; i < char.length; i++) {
 			if ((dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "agl") && (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == filterClass)) {
@@ -60,6 +49,47 @@ function showCharTypeAndClassFilter(char, dataCharTypeItems, dataCharType, dataC
 		}
 	}
 }
+function showCharTypeAndRarityFilter(char, dataCharTypeItems, dataCharType, dataCharRarity, dataCharRarityItems, filterRarity) {
+	if ((document.getElementById("agl").classList.contains("checkedTypeBtn")) && (document.getElementById(filterRarity).classList.contains("checkedRarityBtn"))) {
+		for (let i = 0; i < char.length; i++) {
+			if ((dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "agl") && (dataCharRarityItems[i].getAttribute(dataCharRarity).toLowerCase() == filterRarity)) {
+				char.item(i).style.display = "inline-block";
+			}
+		}
+	}
+
+	if ((document.getElementById("teq").classList.contains("checkedTypeBtn")) && (document.getElementById(filterRarity).classList.contains("checkedRarityBtn"))) {
+		for (let i = 0; i < char.length; i++) {
+			if ((dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "teq") && (dataCharRarityItems[i].getAttribute(dataCharRarity).toLowerCase() == filterRarity)) {
+				char.item(i).style.display = "inline-block";
+			}
+		}
+	}
+
+	if ((document.getElementById("int").classList.contains("checkedTypeBtn")) && (document.getElementById(filterRarity).classList.contains("checkedRarityBtn"))) {
+		for (let i = 0; i < char.length; i++) {
+			if ((dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "int") && (dataCharRarityItems[i].getAttribute(dataCharRarity).toLowerCase() == filterRarity)) {
+				char.item(i).style.display = "inline-block";
+			}
+		}
+	}
+
+	if ((document.getElementById("str").classList.contains("checkedTypeBtn")) && (document.getElementById(filterRarity).classList.contains("checkedRarityBtn"))) {
+		for (let i = 0; i < char.length; i++) {
+			if ((dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "str") && (dataCharRarityItems[i].getAttribute(dataCharRarity).toLowerCase() == filterRarity)) {
+				char.item(i).style.display = "inline-block";
+			}
+		}
+	}
+
+	if ((document.getElementById("phy").classList.contains("checkedTypeBtn")) && (document.getElementById(filterRarity).classList.contains("checkedRarityBtn"))) {
+		for (let i = 0; i < char.length; i++) {
+			if ((dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "phy") && (dataCharRarityItems[i].getAttribute(dataCharRarity).toLowerCase() == filterRarity)) {
+				char.item(i).style.display = "inline-block";
+			}
+		}
+	}
+}
 
 function filterOk() {
 	let dataCharType = 'data-char-type';
@@ -85,11 +115,21 @@ function filterOk() {
 		showCharClass(char, dataCharClassItems, dataCharClass);
 	}
 	//filterRarity
-	if ((document.getElementsByClassName("checkedRarityBtn").length > 0) && (document.getElementsByClassName("checkedTypeBtn").length == 0) && (document.getElementsByClassName("checkedClassBtn").length == 0)) {
+	if ((document.getElementsByClassName("checkedTypeBtn").length == 0) && (document.getElementsByClassName("checkedClassBtn").length == 0) && (document.getElementsByClassName("checkedRarityBtn").length > 0)) {
 		showCharRarity(char, dataCharRarityItems, dataCharRarity);
 	}
 	//filterType,filterClass
 	if ((document.getElementsByClassName("checkedTypeBtn").length > 0) && (document.getElementsByClassName("checkedClassBtn").length > 0) && (document.getElementsByClassName("checkedRarityBtn").length == 0)) {
-		showCharTypeAndClassFilter(char, dataCharTypeItems, dataCharType, dataCharClass, dataCharClassItems);
+		showCharTypeAndClassFilter(char, dataCharTypeItems, dataCharType, dataCharClass, dataCharClassItems, "super");
+		showCharTypeAndClassFilter(char, dataCharTypeItems, dataCharType, dataCharClass, dataCharClassItems, "extreme");
+	}
+	//filterType,filterRarity
+	if ((document.getElementsByClassName("checkedTypeBtn").length > 0) && (document.getElementsByClassName("checkedClassBtn").length == 0) && (document.getElementsByClassName("checkedRarityBtn").length > 0)) {
+		showCharTypeAndRarityFilter(char, dataCharTypeItems, dataCharType, dataCharRarity, dataCharRarityItems, "n");
+		showCharTypeAndRarityFilter(char, dataCharTypeItems, dataCharType, dataCharRarity, dataCharRarityItems, "r");
+		showCharTypeAndRarityFilter(char, dataCharTypeItems, dataCharType, dataCharRarity, dataCharRarityItems, "sr");
+		showCharTypeAndRarityFilter(char, dataCharTypeItems, dataCharType, dataCharRarity, dataCharRarityItems, "ssr");
+		showCharTypeAndRarityFilter(char, dataCharTypeItems, dataCharType, dataCharRarity, dataCharRarityItems, "ur");
+		showCharTypeAndRarityFilter(char, dataCharTypeItems, dataCharType, dataCharRarity, dataCharRarityItems, "lr");
 	}
 }
