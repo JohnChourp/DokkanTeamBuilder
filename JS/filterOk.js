@@ -72,23 +72,23 @@ function filterOk() {
 
 	//disappear all characters
 	charDisappear(char);
-	//if no filters used
+	//no filters
 	if ((document.getElementsByClassName("checkedTypeBtn").length == 0) && (document.getElementsByClassName("checkedClassBtn").length == 0) && (document.getElementsByClassName("checkedRarityBtn").length == 0)) {
 		charAllAppear(char);
 	}
-	//if only filterType used
+	//filterType
 	if ((document.getElementsByClassName("checkedTypeBtn").length > 0) && (document.getElementsByClassName("checkedClassBtn").length == 0) && (document.getElementsByClassName("checkedRarityBtn").length == 0)) {
 		showCharTypeFilter(char, dataCharTypeItems, dataCharType);
 	}
-	//if only filterClass used
+	//filterClass
 	if ((document.getElementsByClassName("checkedTypeBtn").length == 0) && (document.getElementsByClassName("checkedClassBtn").length > 0) && (document.getElementsByClassName("checkedRarityBtn").length == 0)) {
 		showCharClass(char, dataCharClassItems, dataCharClass);
 	}
-	//if only filterRarity used
+	//filterRarity
 	if ((document.getElementsByClassName("checkedRarityBtn").length > 0) && (document.getElementsByClassName("checkedTypeBtn").length == 0) && (document.getElementsByClassName("checkedClassBtn").length == 0)) {
 		showCharRarity(char, dataCharRarityItems, dataCharRarity);
 	}
-	//if both filterType and filterClass are used
+	//filterType,filterClass
 	if ((document.getElementsByClassName("checkedTypeBtn").length > 0) && (document.getElementsByClassName("checkedClassBtn").length > 0) && (document.getElementsByClassName("checkedRarityBtn").length == 0)) {
 		showCharTypeAndClassFilter(char, dataCharTypeItems, dataCharType, dataCharClass, dataCharClassItems);
 	}
