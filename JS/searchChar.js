@@ -125,6 +125,26 @@ function searchCharName() {
 			}
 		}
 	}
+	//filterType,filterClass,filterRarity
+	if ((document.getElementsByClassName("checkedTypeBtn").length > 0) && (document.getElementsByClassName("checkedClassBtn").length > 0) && (document.getElementsByClassName("checkedRarityBtn").length > 0)) {
+		for (let l = 0; l < charRarity.length; l++) {
+			if (document.getElementsByClassName("rarity-btn").item(l).classList.contains("checkedRarityBtn")) {
+				for (let k = 0; k < charClass.length; k++) {
+					if (document.getElementsByClassName("class-btn").item(k).classList.contains("checkedClassBtn")) {
+						for (let j = 0; j < charType.length; j++) {
+							if (document.getElementsByClassName("type-btn").item(j).classList.contains("checkedTypeBtn")) {
+								for (let i = 0; i < char.length; i++) {
+									if ((dataCharNameItems[i].getAttribute(dataCharName).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0) && (dataCharTypeItems[i].getAttribute(dataCharType) == charType[j]) && (dataCharClassItems[i].getAttribute(dataCharClass) == charClass[k]) && (dataCharRarityItems[i].getAttribute(dataCharRarity) == charRarity[l])) {
+										char.item(i).style.display = "inline-block";
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 function searchCharTitle() {
@@ -132,7 +152,7 @@ function searchCharTitle() {
 	let dataCharType = 'data-char-type';
 	let dataCharClass = 'data-char-class';
 	let dataCharRarity = 'data-char-rarity';
-	let charTypes = ["agl", "teq", "int", "str", "phy"];
+	let charType = ["agl", "teq", "int", "str", "phy"];
 	let charClass = ["super", "extreme"];
 	let charRarity = ["n", "r", "sr", "ssr", "ur", "lr"];
 	let dataCharTitleItems = document.querySelectorAll('[' + dataCharTitle + ']');
@@ -154,10 +174,10 @@ function searchCharTitle() {
 	}
 	//filterType
 	if ((document.getElementsByClassName("checkedTypeBtn").length > 0) && (document.getElementsByClassName("checkedClassBtn").length == 0) && (document.getElementsByClassName("checkedRarityBtn").length == 0)) {
-		for (let j = 0; j < charTypes.length; j++) {
+		for (let j = 0; j < charType.length; j++) {
 			if (document.getElementsByClassName("type-btn").item(j).classList.contains("checkedTypeBtn")) {
 				for (let i = 0; i < char.length; i++) {
-					if ((dataCharTitleItems[i].getAttribute(dataCharTitle).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0) && (dataCharTypeItems[i].getAttribute(dataCharType) == charTypes[j])) {
+					if ((dataCharTitleItems[i].getAttribute(dataCharTitle).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0) && (dataCharTypeItems[i].getAttribute(dataCharType) == charType[j])) {
 						char.item(i).style.display = "inline-block";
 					}
 				}
@@ -192,10 +212,10 @@ function searchCharTitle() {
 	if ((document.getElementsByClassName("checkedTypeBtn").length > 0) && (document.getElementsByClassName("checkedClassBtn").length > 0) && (document.getElementsByClassName("checkedRarityBtn").length == 0)) {
 		for (let k = 0; k < charClass.length; k++) {
 			if (document.getElementsByClassName("class-btn").item(k).classList.contains("checkedClassBtn")) {
-				for (let j = 0; j < charTypes.length; j++) {
+				for (let j = 0; j < charType.length; j++) {
 					if (document.getElementsByClassName("type-btn").item(j).classList.contains("checkedTypeBtn")) {
 						for (let i = 0; i < char.length; i++) {
-							if ((dataCharTitleItems[i].getAttribute(dataCharTitle).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0) && (dataCharTypeItems[i].getAttribute(dataCharType) == charTypes[j]) && (dataCharClassItems[i].getAttribute(dataCharClass) == charClass[k])) {
+							if ((dataCharTitleItems[i].getAttribute(dataCharTitle).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0) && (dataCharTypeItems[i].getAttribute(dataCharType) == charType[j]) && (dataCharClassItems[i].getAttribute(dataCharClass) == charClass[k])) {
 								char.item(i).style.display = "inline-block";
 							}
 						}
@@ -208,10 +228,10 @@ function searchCharTitle() {
 	if ((document.getElementsByClassName("checkedTypeBtn").length > 0) && (document.getElementsByClassName("checkedClassBtn").length == 0) && (document.getElementsByClassName("checkedRarityBtn").length > 0)) {
 		for (let k = 0; k < charRarity.length; k++) {
 			if (document.getElementsByClassName("rarity-btn").item(k).classList.contains("checkedRarityBtn")) {
-				for (let j = 0; j < charTypes.length; j++) {
+				for (let j = 0; j < charType.length; j++) {
 					if (document.getElementsByClassName("type-btn").item(j).classList.contains("checkedTypeBtn")) {
 						for (let i = 0; i < char.length; i++) {
-							if ((dataCharTitleItems[i].getAttribute(dataCharTitle).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0) && (dataCharTypeItems[i].getAttribute(dataCharType) == charTypes[j]) && (dataCharRarityItems[i].getAttribute(dataCharRarity) == charRarity[k])) {
+							if ((dataCharTitleItems[i].getAttribute(dataCharTitle).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0) && (dataCharTypeItems[i].getAttribute(dataCharType) == charType[j]) && (dataCharRarityItems[i].getAttribute(dataCharRarity) == charRarity[k])) {
 								char.item(i).style.display = "inline-block";
 							}
 						}
@@ -229,6 +249,26 @@ function searchCharTitle() {
 						for (let i = 0; i < char.length; i++) {
 							if ((dataCharTitleItems[i].getAttribute(dataCharTitle).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0) && (dataCharClassItems[i].getAttribute(dataCharClass) == charClass[j]) && (dataCharRarityItems[i].getAttribute(dataCharRarity) == charRarity[k])) {
 								char.item(i).style.display = "inline-block";
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	//filterType,filterClass,filterRarity
+	if ((document.getElementsByClassName("checkedTypeBtn").length > 0) && (document.getElementsByClassName("checkedClassBtn").length > 0) && (document.getElementsByClassName("checkedRarityBtn").length > 0)) {
+		for (let l = 0; l < charRarity.length; l++) {
+			if (document.getElementsByClassName("rarity-btn").item(l).classList.contains("checkedRarityBtn")) {
+				for (let k = 0; k < charClass.length; k++) {
+					if (document.getElementsByClassName("class-btn").item(k).classList.contains("checkedClassBtn")) {
+						for (let j = 0; j < charType.length; j++) {
+							if (document.getElementsByClassName("type-btn").item(j).classList.contains("checkedTypeBtn")) {
+								for (let i = 0; i < char.length; i++) {
+									if ((dataCharTitleItems[i].getAttribute(dataCharTitle).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0) && (dataCharTypeItems[i].getAttribute(dataCharType) == charType[j]) && (dataCharClassItems[i].getAttribute(dataCharClass) == charClass[k]) && (dataCharRarityItems[i].getAttribute(dataCharRarity) == charRarity[l])) {
+										char.item(i).style.display = "inline-block";
+									}
+								}
 							}
 						}
 					}
