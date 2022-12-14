@@ -5,18 +5,27 @@ function addClassFilter(classFilter) {
         document.getElementById(classFilter).classList.add("checkedClassBtn");
     }
 }
-function showCharClass(char, dataCharClassItems, dataCharClass, classFilter) {
-    for (let i = 0; i < char.length; i++) {
-        if (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == classFilter) {
-            char.item(i).style.display = "inline-block";
+function showCharClass(char, dataCharClassItems, dataCharClass) {
+    if (document.getElementById("super").classList.contains("checkedClassBtn")) {
+        for (let i = 0; i < char.length; i++) {
+            if (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "super") {
+                char.item(i).style.display = "inline-block";
+            }
+        }
+    }
+    if (document.getElementById("extreme").classList.contains("checkedClassBtn")) {
+        for (let i = 0; i < char.length; i++) {
+            if (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "extreme") {
+                char.item(i).style.display = "inline-block";
+            }
         }
     }
 }
 
 function superFilter() {
-   addClassFilter("super");
+    addClassFilter("super");
 }
 
-function extremeFilter() { 
+function extremeFilter() {
     addClassFilter("extreme");
 }

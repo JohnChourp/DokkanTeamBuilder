@@ -48,49 +48,6 @@ function showCharTypeFilter(char, dataCharTypeItems, dataCharType) {
 	}
 }
 
-function showCharTypeAndClassFilter(char, dataCharTypeItems, dataCharType, dataCharClass, dataCharClassItems, filterClass) {
-	//filterClass Super
-	if ((document.getElementById("agl").classList.contains("checkedTypeBtn")) && (document.getElementById(filterClass).classList.contains("checkedClassBtn"))) {
-		for (let i = 0; i < char.length; i++) {
-			if ((dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "agl") && (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == filterClass)) {
-				char.item(i).style.display = "inline-block";
-			}
-		}
-	}
-
-	if ((document.getElementById("teq").classList.contains("checkedTypeBtn")) && (document.getElementById(filterClass).classList.contains("checkedClassBtn"))) {
-		for (let i = 0; i < char.length; i++) {
-			if ((dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "teq") && (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == filterClass)) {
-				char.item(i).style.display = "inline-block";
-			}
-		}
-	}
-	
-	if ((document.getElementById("int").classList.contains("checkedTypeBtn")) && (document.getElementById(filterClass).classList.contains("checkedClassBtn"))) {
-		for (let i = 0; i < char.length; i++) {
-			if ((dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "int") && (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == filterClass)) {
-				char.item(i).style.display = "inline-block";
-			}
-		}
-	}
-
-	if ((document.getElementById("str").classList.contains("checkedTypeBtn")) && (document.getElementById(filterClass).classList.contains("checkedClassBtn"))) {
-		for (let i = 0; i < char.length; i++) {
-			if ((dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "str") && (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == filterClass)) {
-				char.item(i).style.display = "inline-block";
-			}
-		}
-	}
-	
-	if ((document.getElementById("phy").classList.contains("checkedTypeBtn")) && (document.getElementById(filterClass).classList.contains("checkedClassBtn"))) {
-		for (let i = 0; i < char.length; i++) {
-			if ((dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "phy") && (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == filterClass)) {
-				char.item(i).style.display = "inline-block";
-			}
-		}
-	}
-}
-
 function aglFilter() {
 	addTypeFilter("agl");
 }
