@@ -188,4 +188,20 @@ function searchCharTitle() {
 			}
 		}
 	}
+	//filterType,filterRarity
+	if ((document.getElementsByClassName("checkedTypeBtn").length > 0) && (document.getElementsByClassName("checkedClassBtn").length == 0) && (document.getElementsByClassName("checkedRarityBtn").length > 0)) {
+		for (let k = 0; k < charRarity.length; k++) {
+			if (document.getElementsByClassName("rarity-btn").item(k).classList.contains("checkedRarityBtn")) {
+				for (let j = 0; j < charTypes.length; j++) {
+					if (document.getElementsByClassName("type-btn").item(j).classList.contains("checkedTypeBtn")) {
+						for (let i = 0; i < char.length; i++) {
+							if ((dataCharTitleItems[i].getAttribute(dataCharTitle).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0) && (dataCharTypeItems[i].getAttribute(dataCharType) == charTypes[j]) && (dataCharRarityItems[i].getAttribute(dataCharRarity) == charRarity[k])) {
+								char.item(i).style.display = "inline-block";
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }
