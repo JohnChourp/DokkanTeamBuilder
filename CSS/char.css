@@ -13,7 +13,7 @@
     height: 100px;
     position: relative;
     top: 35px;
-    left: 20px;
+    left: 25px;
 }
 
 .char_thumb {
@@ -21,7 +21,7 @@
     height: 125px;
     position: relative;
     top: -85px;
-    left: 8px;
+    left: 13px;
 }
 
 .char_rarity {
@@ -29,7 +29,7 @@
     height: 60px;
     position: relative;
     top: -144px;
-    left: 10px;
+    left: 13px;
 }
 
 .char_type {
@@ -37,7 +37,7 @@
     height: 48.1px;
     position: relative;
     top: -225px;
-    left: 20px;
+    left: 23px;
 }
 
 .char_eza {
@@ -45,5 +45,5 @@
     height: 20px;
     position: relative;
     top: -165px;
-    left: -10px;
+    left: -13px;
 }
