@@ -36,6 +36,8 @@ function addDropdownClass(filterDisplay) {
 	let dataCharAttack = 'data-char-attack';
 	let dataCharDefense = 'data-char-defense';
 	let dataCharCost = 'data-char-cost';
+	let dataCharMaxLevel = 'data-char-max-level';
+	let dataCharSuperAtkLevel = 'data-char-super-atk-level';
 	let dataCharRecruit = 'data-char-recruit';
 	let dataCharRelease = 'data-char-release';
 	let dataCharNameItems = document.querySelectorAll('[' + dataCharName + ']');
@@ -45,6 +47,8 @@ function addDropdownClass(filterDisplay) {
 	let dataCharAttackItems = document.querySelectorAll('[' + dataCharAttack + ']');
 	let dataCharDefenseItems = document.querySelectorAll('[' + dataCharDefense + ']');
 	let dataCharCostItems = document.querySelectorAll('[' + dataCharCost + ']');
+	let dataCharMaxLevelItems = document.querySelectorAll('[' + dataCharMaxLevel + ']');
+	let dataCharSuperAtkLevelItems = document.querySelectorAll('[' + dataCharSuperAtkLevel + ']');
 	let dataCharRecruitItems = document.querySelectorAll('[' + dataCharRecruit + ']');
 	let dataCharReleaseItems = document.querySelectorAll('[' + dataCharRelease + ']');
 	let char_display = document.getElementsByClassName("char_display");
@@ -86,10 +90,20 @@ function addDropdownClass(filterDisplay) {
 	}
 	if (filterDisplay == 7) {
 		for (let i = 0; i < char_display.length; i++) {
-			char_display.item(i).innerHTML = dataCharRecruitItems[i].getAttribute(dataCharRecruit);
+			char_display.item(i).innerHTML = dataCharMaxLevelItems[i].getAttribute(dataCharMaxLevel);
 		}
 	}
 	if (filterDisplay == 8) {
+		for (let i = 0; i < char_display.length; i++) {
+			char_display.item(i).innerHTML = dataCharSuperAtkLevelItems[i].getAttribute(dataCharSuperAtkLevel);
+		}
+	}
+	if (filterDisplay == 9) {
+		for (let i = 0; i < char_display.length; i++) {
+			char_display.item(i).innerHTML = dataCharRecruitItems[i].getAttribute(dataCharRecruit);
+		}
+	}
+	if (filterDisplay == 10) {
 		for (let i = 0; i < char_display.length; i++) {
 			char_display.item(i).innerHTML = dataCharReleaseItems[i].getAttribute(dataCharRelease);
 		}
