@@ -38,7 +38,6 @@ function addDropdownClass(filterDisplay) {
 	let dataCharCost = 'data-char-cost';
 	let dataCharMaxLevel = 'data-char-max-level';
 	let dataCharSuperAtkLevel = 'data-char-super-atk-level';
-	let dataCharRecruit = 'data-char-recruit';
 	let dataCharRelease = 'data-char-release';
 	let dataCharLinks = 'data-char-links';
 	let dataCharNameItems = document.querySelectorAll('[' + dataCharName + ']');
@@ -50,7 +49,6 @@ function addDropdownClass(filterDisplay) {
 	let dataCharCostItems = document.querySelectorAll('[' + dataCharCost + ']');
 	let dataCharMaxLevelItems = document.querySelectorAll('[' + dataCharMaxLevel + ']');
 	let dataCharSuperAtkLevelItems = document.querySelectorAll('[' + dataCharSuperAtkLevel + ']');
-	let dataCharRecruitItems = document.querySelectorAll('[' + dataCharRecruit + ']');
 	let dataCharReleaseItems = document.querySelectorAll('[' + dataCharRelease + ']');
 	let dataCharLinksItems = document.querySelectorAll('[' + dataCharLinks + ']');
 	let char = document.getElementsByClassName("char");
@@ -61,7 +59,7 @@ function addDropdownClass(filterDisplay) {
 	let char_eza = document.getElementsByClassName("char_eza");
 	let char_display = document.getElementsByClassName("char_display");
 
-	if ((filterDisplay > -1) && (filterDisplay < 11)) {
+	if ((filterDisplay > -1) && (filterDisplay < 10)) {
 		for (let i = 0; i < char.length; i++) {
 			char.item(i).style.width = "140px";
 
@@ -132,15 +130,10 @@ function addDropdownClass(filterDisplay) {
 	}
 	if (filterDisplay == 9) {
 		for (let i = 0; i < char_display.length; i++) {
-			char_display.item(i).innerHTML = dataCharRecruitItems[i].getAttribute(dataCharRecruit);
-		}
-	}
-	if (filterDisplay == 10) {
-		for (let i = 0; i < char_display.length; i++) {
 			char_display.item(i).innerHTML = dataCharReleaseItems[i].getAttribute(dataCharRelease);
 		}
 	}
-	if (filterDisplay == 11) {
+	if (filterDisplay == 10) {
 		for (let i = 0; i < char_display.length; i++) {
 			char.item(i).style.width = "300px";
 			char.item(i).style.height = "270px";
