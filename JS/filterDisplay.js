@@ -40,6 +40,7 @@ function addDropdownClass(filterDisplay) {
 	let dataCharSuperAtkLevel = 'data-char-super-atk-level';
 	let dataCharRecruit = 'data-char-recruit';
 	let dataCharRelease = 'data-char-release';
+	let dataCharLinks = 'data-char-links';
 	let dataCharNameItems = document.querySelectorAll('[' + dataCharName + ']');
 	let dataCharTitleItems = document.querySelectorAll('[' + dataCharTitle + ']');
 	let dataCharIdItems = document.querySelectorAll('[' + dataCharId + ']');
@@ -51,8 +52,39 @@ function addDropdownClass(filterDisplay) {
 	let dataCharSuperAtkLevelItems = document.querySelectorAll('[' + dataCharSuperAtkLevel + ']');
 	let dataCharRecruitItems = document.querySelectorAll('[' + dataCharRecruit + ']');
 	let dataCharReleaseItems = document.querySelectorAll('[' + dataCharRelease + ']');
+	let dataCharLinksItems = document.querySelectorAll('[' + dataCharLinks + ']');
+	let char = document.getElementsByClassName("char");
+	let char_type_base = document.getElementsByClassName("char_type_base");
+	let char_thumb = document.getElementsByClassName("char_thumb");
+	let char_rarity = document.getElementsByClassName("char_rarity");
+	let char_type = document.getElementsByClassName("char_type");
+	let char_eza = document.getElementsByClassName("char_eza");
 	let char_display = document.getElementsByClassName("char_display");
 
+	if ((filterDisplay > -1) && (filterDisplay < 11)) {
+		for (let i = 0; i < char.length; i++) {
+			char.item(i).style.width = "140px";
+
+			char_type_base.item(i).style.top = "35px";
+			char_type_base.item(i).style.left = "25px";
+
+			char_thumb.item(i).style.top = "-85px";
+			char_thumb.item(i).style.left = "13px";
+
+			char_rarity.item(i).style.top = "-144px";
+			char_rarity.item(i).style.left = "13px";
+
+			char_type.item(i).style.top = "-225px";
+			char_type.item(i).style.left = "23px";
+
+			char_display.item(i).style.top = "-150px";
+			char_display.item(i).style.width = "120px";
+		}
+		for (let i = 0; i < char_eza.length; i++) {
+			char_eza.item(i).style.top = "-80px";
+			char_eza.item(i).style.left = "115px";
+		}
+	}
 	if (filterDisplay == 0) {
 		for (let i = 0; i < char_display.length; i++) {
 			char_display.item(i).innerHTML = dataCharNameItems[i].getAttribute(dataCharName);
@@ -108,4 +140,35 @@ function addDropdownClass(filterDisplay) {
 			char_display.item(i).innerHTML = dataCharReleaseItems[i].getAttribute(dataCharRelease);
 		}
 	}
+	if (filterDisplay == 11) {
+		for (let i = 0; i < char_display.length; i++) {
+			char.item(i).style.width = "300px";
+			char.item(i).style.height = "270px";
+			
+			char_type_base.item(i).style.top = "-20px";
+			char_type_base.item(i).style.left = "95px";
+
+			char_thumb.item(i).style.top = "-12px";
+			char_thumb.item(i).style.left = "-18px";
+
+			char_rarity.item(i).style.top = "-5px";
+			char_rarity.item(i).style.left = "-145px";
+
+			char_type.item(i).style.top = "-145px";
+			char_type.item(i).style.left = "165px";
+
+			char_display.item(i).style.top = "-70px";
+			char_display.item(i).style.width = "250px";
+
+			let formattedString = dataCharLinksItems[i].getAttribute(dataCharLinks).split(",").join("<br/>");
+			char_display.item(i).innerHTML = formattedString;
+		}
+		
+		for (let i = 0; i < char_eza.length; i++) {
+			char_eza.item(i).style.top = "-80px";
+			char_eza.item(i).style.left = "115px";
+		}
+	}
+
+
 }
