@@ -58,7 +58,7 @@ function addDropdownClass(filterDisplay) {
 	let char_type = document.getElementsByClassName("char_type");
 	let char_eza = document.getElementsByClassName("char_eza");
 	let char_display = document.getElementsByClassName("char_display");
-
+	let listLinks = [];
 	if ((filterDisplay > -1) && (filterDisplay < 10)) {
 		for (let i = 0; i < char.length; i++) {
 			char.item(i).style.width = "140px";
@@ -155,6 +155,7 @@ function addDropdownClass(filterDisplay) {
 			char_display.item(i).style.width = "250px";
 			char_display.item(i).style.height = "130px";
 
+			listLinks[i] = dataCharLinksItems[i].getAttribute(dataCharLinks).split(",");
 			let formattedString = dataCharLinksItems[i].getAttribute(dataCharLinks).split(",").join("<br/>");
 			char_display.item(i).innerHTML = formattedString;
 		}
@@ -165,5 +166,5 @@ function addDropdownClass(filterDisplay) {
 		}
 	}
 
-
+	//console.log(listLinks);
 }
