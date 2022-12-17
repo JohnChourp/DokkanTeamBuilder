@@ -156,7 +156,7 @@ function addDropdownClass(filterDisplay) {
 			char_display.item(i).style.height = "130px";
 
 			listLinks[i] = dataCharLinksItems[i].getAttribute(dataCharLinks).split(",");
-			let formattedString = dataCharLinksItems[i].getAttribute(dataCharLinks).split(",").join("<br/>");
+			let formattedString = listLinks[i].join("<br/>");
 			char_display.item(i).innerHTML = formattedString;
 		}
 		
