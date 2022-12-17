@@ -77,10 +77,11 @@ function addDropdownClass(filterDisplay) {
 
 			char_display.item(i).style.top = "-150px";
 			char_display.item(i).style.width = "120px";
+			char_display.item(i).style.height = "75px";
 		}
 		for (let i = 0; i < char_eza.length; i++) {
-			char_eza.item(i).style.top = "-80px";
-			char_eza.item(i).style.left = "115px";
+			char_eza.item(i).style.top = "-165px";
+			char_eza.item(i).style.left = "-13px";
 		}
 	}
 	if (filterDisplay == 0) {
@@ -152,14 +153,15 @@ function addDropdownClass(filterDisplay) {
 
 			char_display.item(i).style.top = "-70px";
 			char_display.item(i).style.width = "250px";
+			char_display.item(i).style.height = "130px";
 
 			let formattedString = dataCharLinksItems[i].getAttribute(dataCharLinks).split(",").join("<br/>");
 			char_display.item(i).innerHTML = formattedString;
 		}
 		
 		for (let i = 0; i < char_eza.length; i++) {
-			char_eza.item(i).style.top = "-80px";
-			char_eza.item(i).style.left = "115px";
+			char_eza.item(i).style.top = "-82px";
+			char_eza.item(i).style.left = "113px";
 		}
 	}
 
