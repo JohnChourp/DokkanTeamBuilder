@@ -39,7 +39,9 @@ function addDropdownClass(filterDisplay) {
 	let dataCharMaxLevel = 'data-char-max-level';
 	let dataCharSuperAtkLevel = 'data-char-super-atk-level';
 	let dataCharRelease = 'data-char-release';
+	let dataCharSuperAtkType = 'data-char-super-atk-type';
 	let dataCharLinks = 'data-char-links';
+	let dataCharCategories = 'data-char-categories';
 	let dataCharNameItems = document.querySelectorAll('[' + dataCharName + ']');
 	let dataCharTitleItems = document.querySelectorAll('[' + dataCharTitle + ']');
 	let dataCharIdItems = document.querySelectorAll('[' + dataCharId + ']');
@@ -50,7 +52,9 @@ function addDropdownClass(filterDisplay) {
 	let dataCharMaxLevelItems = document.querySelectorAll('[' + dataCharMaxLevel + ']');
 	let dataCharSuperAtkLevelItems = document.querySelectorAll('[' + dataCharSuperAtkLevel + ']');
 	let dataCharReleaseItems = document.querySelectorAll('[' + dataCharRelease + ']');
+	let dataCharSuperAtkTypeItems = document.querySelectorAll('[' + dataCharSuperAtkType + ']');
 	let dataCharLinksItems = document.querySelectorAll('[' + dataCharLinks + ']');
+	let dataCharCategoriesItems = document.querySelectorAll('[' + dataCharCategories + ']');
 	let char = document.getElementsByClassName("char");
 	let char_type_base = document.getElementsByClassName("char_type_base");
 	let char_thumb = document.getElementsByClassName("char_thumb");
@@ -58,10 +62,26 @@ function addDropdownClass(filterDisplay) {
 	let char_type = document.getElementsByClassName("char_type");
 	let char_eza = document.getElementsByClassName("char_eza");
 	let char_display = document.getElementsByClassName("char_display");
-	let listLinks = [];
+	let listLinks = [], listCategories = [], listSuperAtkType = [];
+	let listLinksFormattedString = [], listCategoriesFormattedString = [], listSuperAtkTypeFormattedString = [];
+
+	for (let i = 0; i < char_display.length; i++) {
+		listLinks[i] = dataCharLinksItems[i].getAttribute(dataCharLinks).split(",");
+		listLinksFormattedString[i] = listLinks[i].join("<br/>");
+	}
+	for (let i = 0; i < dataCharCategoriesItems.length; i++) {
+		listCategories[i] = dataCharCategoriesItems[i].getAttribute(dataCharCategories).split(",");
+		listCategoriesFormattedString[i] = listCategories[i].join("<br/>");
+	}
+	for (let i = 0; i < dataCharCategoriesItems.length; i++) {
+		listSuperAtkType[i] = dataCharSuperAtkTypeItems[i].getAttribute(dataCharSuperAtkType).split(",");
+		listSuperAtkTypeFormattedString[i] = listSuperAtkType[i].join("<br/>");
+	}
+
 	if ((filterDisplay > -1) && (filterDisplay < 10)) {
-		for (let i = 0; i < char.length; i++) {
+		for (let i = 0; i < char_display.length; i++) {
 			char.item(i).style.width = "140px";
+			char.item(i).style.height = "230px";
 
 			char_type_base.item(i).style.top = "35px";
 			char_type_base.item(i).style.left = "25px";
@@ -126,45 +146,95 @@ function addDropdownClass(filterDisplay) {
 	}
 	if (filterDisplay == 8) {
 		for (let i = 0; i < char_display.length; i++) {
-			char_display.item(i).innerHTML = dataCharSuperAtkLevelItems[i].getAttribute(dataCharSuperAtkLevel);
+			char_display.item(i).innerHTML = dataCharReleaseItems[i].getAttribute(dataCharRelease);
 		}
 	}
 	if (filterDisplay == 9) {
 		for (let i = 0; i < char_display.length; i++) {
-			char_display.item(i).innerHTML = dataCharReleaseItems[i].getAttribute(dataCharRelease);
+			char_display.item(i).innerHTML = dataCharSuperAtkLevelItems[i].getAttribute(dataCharSuperAtkLevel);
 		}
 	}
 	if (filterDisplay == 10) {
 		for (let i = 0; i < char_display.length; i++) {
-			char.item(i).style.width = "300px";
-			char.item(i).style.height = "270px";
-			
-			char_type_base.item(i).style.top = "-20px";
+			char.item(i).style.width = "170px";
+			char.item(i).style.height = "230px";
+			char_type_base.item(i).style.top = "35px";
+			char_type_base.item(i).style.left = "40px";
+
+			char_thumb.item(i).style.top = "-86px";
+			char_thumb.item(i).style.left = "28px";
+
+			char_rarity.item(i).style.top = "-145px";
+			char_rarity.item(i).style.left = "26px";
+
+			char_type.item(i).style.top = "-231px";
+			char_type.item(i).style.left = "47px";
+
+			char_display.item(i).style.top = "-149px";
+			char_display.item(i).style.width = "150px";
+			char_display.item(i).style.height = "74px";
+
+			char_display.item(i).innerHTML = listSuperAtkTypeFormattedString[i];
+		}
+		for (let i = 0; i < char_eza.length; i++) {
+			char_eza.item(i).style.top = "-198px";
+			char_eza.item(i).style.left = "2px";
+		}
+	}
+	if (filterDisplay == 11) {
+		for (let i = 0; i < char_display.length; i++) {
+			char.item(i).style.width = "270px";
+			char.item(i).style.height = "280px";
+
+			char_type_base.item(i).style.top = "10px";
 			char_type_base.item(i).style.left = "95px";
 
-			char_thumb.item(i).style.top = "-12px";
+			char_thumb.item(i).style.top = "18px";
 			char_thumb.item(i).style.left = "-18px";
 
-			char_rarity.item(i).style.top = "-5px";
-			char_rarity.item(i).style.left = "-145px";
+			char_rarity.item(i).style.top = "-40px";
+			char_rarity.item(i).style.left = "83px";
 
-			char_type.item(i).style.top = "-145px";
-			char_type.item(i).style.left = "165px";
+			char_type.item(i).style.top = "-129px";
+			char_type.item(i).style.left = "103px";
 
-			char_display.item(i).style.top = "-70px";
+			char_display.item(i).style.top = "-45px";
 			char_display.item(i).style.width = "250px";
 			char_display.item(i).style.height = "130px";
 
-			listLinks[i] = dataCharLinksItems[i].getAttribute(dataCharLinks).split(",");
-			let formattedString = listLinks[i].join("<br/>");
-			char_display.item(i).innerHTML = formattedString;
+			char_display.item(i).innerHTML = listLinksFormattedString[i];
 		}
-		
 		for (let i = 0; i < char_eza.length; i++) {
 			char_eza.item(i).style.top = "-82px";
 			char_eza.item(i).style.left = "113px";
 		}
 	}
+	if (filterDisplay == 12) {
+		for (let i = 0; i < char_display.length; i++) {
+			char.item(i).style.width = "270px";
+			char.item(i).style.height = "350px";
 
-	//console.log(listLinks);
+			char_type_base.item(i).style.top = "10px";
+			char_type_base.item(i).style.left = "95px";
+
+			char_thumb.item(i).style.top = "18px";
+			char_thumb.item(i).style.left = "-18px";
+
+			char_rarity.item(i).style.top = "-40px";
+			char_rarity.item(i).style.left = "83px";
+
+			char_type.item(i).style.top = "-129px";
+			char_type.item(i).style.left = "103px";
+
+			char_display.item(i).style.top = "-45px";
+			char_display.item(i).style.width = "250px";
+			char_display.item(i).style.height = "203px";
+
+			char_display.item(i).innerHTML = listCategoriesFormattedString[i];
+		}
+		for (let i = 0; i < char_eza.length; i++) {
+			char_eza.item(i).style.top = "-82px";
+			char_eza.item(i).style.left = "113px";
+		}
+	}
 }
