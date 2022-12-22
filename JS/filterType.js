@@ -1,9 +1,9 @@
 function addTypeFilter(typeFilter) {
-    if (document.getElementById(typeFilter).classList.contains("checkedTypeBtn")) {
-        document.getElementById(typeFilter).classList.remove("checkedTypeBtn");
-    } else {
-        document.getElementById(typeFilter).classList.add("checkedTypeBtn");
-    }
+	if (document.getElementById(typeFilter).classList.contains("checkedTypeBtn")) {
+		document.getElementById(typeFilter).classList.remove("checkedTypeBtn");
+	} else {
+		document.getElementById(typeFilter).classList.add("checkedTypeBtn");
+	}
 }
 
 function showCharTypeFilter(char, dataCharTypeItems, dataCharType) {

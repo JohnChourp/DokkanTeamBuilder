@@ -134,7 +134,7 @@ function showCharClassAndRarityFilter(char, dataCharClassItems, dataCharClass, d
 		}
 	}
 }
-function showCharTypeAndClassAndRarityFilter(char, dataCharTypeItems, dataCharType, dataCharClass, dataCharClassItems, dataCharRarity, dataCharRarityItems,filterClass,filterRarity) {
+function showCharTypeAndClassAndRarityFilter(char, dataCharTypeItems, dataCharType, dataCharClass, dataCharClassItems, dataCharRarity, dataCharRarityItems, filterClass, filterRarity) {
 	if ((document.getElementById("agl").classList.contains("checkedTypeBtn")) && (document.getElementById(filterClass).classList.contains("checkedClassBtn")) && (document.getElementById(filterRarity).classList.contains("checkedRarityBtn"))) {
 		for (let i = 0; i < char.length; i++) {
 			if ((dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "agl") && (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == filterClass) && (dataCharRarityItems[i].getAttribute(dataCharRarity).toLowerCase() == filterRarity)) {
@@ -224,17 +224,17 @@ function filterOk() {
 	}
 	//filterType,filterClass,filterRarity
 	if ((document.getElementsByClassName("checkedTypeBtn").length > 0) && (document.getElementsByClassName("checkedClassBtn").length > 0) && (document.getElementsByClassName("checkedRarityBtn").length > 0)) {
-		showCharTypeAndClassAndRarityFilter(char, dataCharTypeItems, dataCharType, dataCharClass, dataCharClassItems, dataCharRarity, dataCharRarityItems,"super","n");
-		showCharTypeAndClassAndRarityFilter(char, dataCharTypeItems, dataCharType, dataCharClass, dataCharClassItems, dataCharRarity, dataCharRarityItems,"super","r");
-		showCharTypeAndClassAndRarityFilter(char, dataCharTypeItems, dataCharType, dataCharClass, dataCharClassItems, dataCharRarity, dataCharRarityItems,"super","sr");
-		showCharTypeAndClassAndRarityFilter(char, dataCharTypeItems, dataCharType, dataCharClass, dataCharClassItems, dataCharRarity, dataCharRarityItems,"super","ssr");
-		showCharTypeAndClassAndRarityFilter(char, dataCharTypeItems, dataCharType, dataCharClass, dataCharClassItems, dataCharRarity, dataCharRarityItems,"super","ur");
-		showCharTypeAndClassAndRarityFilter(char, dataCharTypeItems, dataCharType, dataCharClass, dataCharClassItems, dataCharRarity, dataCharRarityItems,"super","lr");
-		showCharTypeAndClassAndRarityFilter(char, dataCharTypeItems, dataCharType, dataCharClass, dataCharClassItems, dataCharRarity, dataCharRarityItems,"extreme","n");
-		showCharTypeAndClassAndRarityFilter(char, dataCharTypeItems, dataCharType, dataCharClass, dataCharClassItems, dataCharRarity, dataCharRarityItems,"extreme","r");
-		showCharTypeAndClassAndRarityFilter(char, dataCharTypeItems, dataCharType, dataCharClass, dataCharClassItems, dataCharRarity, dataCharRarityItems,"extreme","sr");
-		showCharTypeAndClassAndRarityFilter(char, dataCharTypeItems, dataCharType, dataCharClass, dataCharClassItems, dataCharRarity, dataCharRarityItems,"extreme","ssr");
-		showCharTypeAndClassAndRarityFilter(char, dataCharTypeItems, dataCharType, dataCharClass, dataCharClassItems, dataCharRarity, dataCharRarityItems,"extreme","ur");
-		showCharTypeAndClassAndRarityFilter(char, dataCharTypeItems, dataCharType, dataCharClass, dataCharClassItems, dataCharRarity, dataCharRarityItems,"extreme","lr");
+		showCharTypeAndClassAndRarityFilter(char, dataCharTypeItems, dataCharType, dataCharClass, dataCharClassItems, dataCharRarity, dataCharRarityItems, "super", "n");
+		showCharTypeAndClassAndRarityFilter(char, dataCharTypeItems, dataCharType, dataCharClass, dataCharClassItems, dataCharRarity, dataCharRarityItems, "super", "r");
+		showCharTypeAndClassAndRarityFilter(char, dataCharTypeItems, dataCharType, dataCharClass, dataCharClassItems, dataCharRarity, dataCharRarityItems, "super", "sr");
+		showCharTypeAndClassAndRarityFilter(char, dataCharTypeItems, dataCharType, dataCharClass, dataCharClassItems, dataCharRarity, dataCharRarityItems, "super", "ssr");
+		showCharTypeAndClassAndRarityFilter(char, dataCharTypeItems, dataCharType, dataCharClass, dataCharClassItems, dataCharRarity, dataCharRarityItems, "super", "ur");
+		showCharTypeAndClassAndRarityFilter(char, dataCharTypeItems, dataCharType, dataCharClass, dataCharClassItems, dataCharRarity, dataCharRarityItems, "super", "lr");
+		showCharTypeAndClassAndRarityFilter(char, dataCharTypeItems, dataCharType, dataCharClass, dataCharClassItems, dataCharRarity, dataCharRarityItems, "extreme", "n");
+		showCharTypeAndClassAndRarityFilter(char, dataCharTypeItems, dataCharType, dataCharClass, dataCharClassItems, dataCharRarity, dataCharRarityItems, "extreme", "r");
+		showCharTypeAndClassAndRarityFilter(char, dataCharTypeItems, dataCharType, dataCharClass, dataCharClassItems, dataCharRarity, dataCharRarityItems, "extreme", "sr");
+		showCharTypeAndClassAndRarityFilter(char, dataCharTypeItems, dataCharType, dataCharClass, dataCharClassItems, dataCharRarity, dataCharRarityItems, "extreme", "ssr");
+		showCharTypeAndClassAndRarityFilter(char, dataCharTypeItems, dataCharType, dataCharClass, dataCharClassItems, dataCharRarity, dataCharRarityItems, "extreme", "ur");
+		showCharTypeAndClassAndRarityFilter(char, dataCharTypeItems, dataCharType, dataCharClass, dataCharClassItems, dataCharRarity, dataCharRarityItems, "extreme", "lr");
 	}
 }
