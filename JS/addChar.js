@@ -1,10 +1,12 @@
 function addChar() {
+	let dataCharName = 'data-char-name';
 	let dataCharType = 'data-char-type';
 	let dataCharRarity = 'data-char-rarity';
 	let dataCharClass = 'data-char-class';
 	let dataCharEza = 'data-char-eza';
 	let dataCharId = 'data-char-id';
 
+	let dataCharNameItems = document.querySelectorAll('[' + dataCharName + ']');
 	let dataCharTypeItems = document.querySelectorAll('[' + dataCharType + ']');
 	let dataCharRarityItems = document.querySelectorAll('[' + dataCharRarity + ']');
 	let dataCharClassItems = document.querySelectorAll('[' + dataCharClass + ']');
@@ -22,23 +24,22 @@ function addChar() {
 		let char_type_base_img = document.createElement("img");
 		char_type_base_img.classList.add("char_type_base");
 		char_type_base_img.loading = "lazy";
+		char_class.item(i).appendChild(char_type_base_img);
 
 		let char_thumb_img = document.createElement("img");
 		char_thumb_img.classList.add("char_thumb");
 		char_thumb_img.loading = "lazy";
 		char_thumb_img.src = dataCharIdItems[i].getAttribute(dataCharId).toLowerCase();
+		char_class.item(i).appendChild(char_thumb_img);
 
 		let char_rarity_img = document.createElement("img");
 		char_rarity_img.classList.add("char_rarity");
 		char_rarity_img.loading = "lazy";
+		char_class.item(i).appendChild(char_rarity_img);
 
 		let char_type_img = document.createElement("img");
 		char_type_img.classList.add("char_type");
 		char_type_img.loading = "lazy";
-
-		char_class.item(i).appendChild(char_type_base_img);
-		char_class.item(i).appendChild(char_thumb_img);
-		char_class.item(i).appendChild(char_rarity_img);
 		char_class.item(i).appendChild(char_type_img);
 	}
 
@@ -228,4 +229,31 @@ function addChar() {
 	for (let j = 0; j < dataCharEzaItems.length; j++) {
 		char_eza[j].src = "char_eza/eza.png";
 	}
+
+	for (let i = 0; i < dataCharTypeItems.length; i++) {
+		let char_display_div = document.createElement("div");
+		char_display_div.classList.add("char_display");
+		char_display_div.innerHTML = dataCharNameItems[i].getAttribute(dataCharName);
+		char_class.item(i).appendChild(char_display_div);
+	}
+
+	let char_display_add_color = document.getElementsByClassName("char_display");
+	for (let i = 0; i < char_class.length; i++) {
+		if (dataCharTypeItems[i].getAttribute(dataCharType) == "agl") {
+			char_display_add_color.item(i).style.backgroundColor = "#00AAEE";
+		}
+		if (dataCharTypeItems[i].getAttribute(dataCharType) == "teq") {
+			char_display_add_color.item(i).style.backgroundColor = "#3df05b";
+		}
+		if (dataCharTypeItems[i].getAttribute(dataCharType) == "int") {
+			char_display_add_color.item(i).style.backgroundColor = "#c953e0";
+		}
+		if (dataCharTypeItems[i].getAttribute(dataCharType) == "str") {
+			char_display_add_color.item(i).style.backgroundColor = "#f77777";
+		}
+		if (dataCharTypeItems[i].getAttribute(dataCharType) == "phy") {
+			char_display_add_color.item(i).style.backgroundColor = "#eec038";
+		}
+	}
+
 }

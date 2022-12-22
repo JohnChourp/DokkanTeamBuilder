@@ -1,4 +1,4 @@
-function addSortDirectionOptionStyleColorBtn(){
+function addSortDirectionOptionStyleColorBtn() {
 	let buttonDown = document.getElementsByClassName("searchSortDirectionOptionDown").item(0);
 	let buttonUp = document.getElementsByClassName("searchSortDirectionOptionUp").item(0);
 	buttonDown.style.backgroundColor = "white";
