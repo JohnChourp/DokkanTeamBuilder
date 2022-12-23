@@ -1,4 +1,4 @@
-function addTypeFilter(typeFilter) {
+function addType(typeFilter) {
 	if (document.getElementById(typeFilter).classList.contains("checkedTypeBtn")) {
 		document.getElementById(typeFilter).classList.remove("checkedTypeBtn");
 	} else {
@@ -6,7 +6,7 @@ function addTypeFilter(typeFilter) {
 	}
 }
 
-function showCharTypeFilter(char, dataCharTypeItems, dataCharType) {
+function showType(char, dataCharTypeItems, dataCharType) {
 	if (document.getElementById("agl").classList.contains("checkedTypeBtn")) {
 		for (let i = 0; i < char.length; i++) {
 			if (dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "agl") {
@@ -49,22 +49,22 @@ function showCharTypeFilter(char, dataCharTypeItems, dataCharType) {
 }
 
 function aglFilter() {
-	addTypeFilter("agl");
+	addType("agl");
 }
 
 function teqFilter() {
-	addTypeFilter("teq");
+	addType("teq");
 }
 
 function intFilter() {
-	addTypeFilter("int");
+	addType("int");
 }
 
 function strFilter() {
-	addTypeFilter("str");
+	addType("str");
 }
 
 function phyFilter() {
-	addTypeFilter("phy");
+	addType("phy");
 }
 

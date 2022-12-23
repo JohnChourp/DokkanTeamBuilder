@@ -6,7 +6,6 @@ function searchTitlesOptionYes() {
 	let characterSearchId = document.getElementById("char-search-id");
 	characterSearchId.onkeyup = function () { searchCharTitle() };
 }
-
 function searchTitlesOptionNo() {
 	let buttonNo = document.getElementsByClassName("searchTitlesOptionNo").item(0);
 	buttonNo.style.backgroundColor = "#33ccff";

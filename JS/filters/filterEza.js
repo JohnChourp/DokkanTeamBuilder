@@ -1,11 +1,11 @@
-function addEzaFilter(ezaFilter) {
+function addEza(ezaFilter) {
     if (document.getElementById(ezaFilter).classList.contains("checkedEzaBtn")) {
         document.getElementById(ezaFilter).classList.remove("checkedEzaBtn");
     } else {
         document.getElementById(ezaFilter).classList.add("checkedEzaBtn");
     }
 }
-function showCharEza(dataCharEzaItems, dataCharEza) {
+function showEza(dataCharEzaItems, dataCharEza) {
     if (document.getElementById("eza").classList.contains("checkedEzaBtn")) {
         for (let i = 0; i < dataCharEzaItems.length; i++) {
             if (dataCharEzaItems[i].getAttribute(dataCharEza).toLowerCase() == "eza") {
@@ -16,5 +16,5 @@ function showCharEza(dataCharEzaItems, dataCharEza) {
 }
 
 function ezaFilter() {
-    addEzaFilter("eza");
+    addEza("eza");
 }

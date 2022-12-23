@@ -1,11 +1,11 @@
-function addClassFilter(classFilter) {
+function addClass(classFilter) {
     if (document.getElementById(classFilter).classList.contains("checkedClassBtn")) {
         document.getElementById(classFilter).classList.remove("checkedClassBtn");
     } else {
         document.getElementById(classFilter).classList.add("checkedClassBtn");
     }
 }
-function showCharClass(char, dataCharClassItems, dataCharClass) {
+function showClass(char, dataCharClassItems, dataCharClass) {
     if (document.getElementById("super").classList.contains("checkedClassBtn")) {
         for (let i = 0; i < char.length; i++) {
             if (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "super") {
@@ -23,9 +23,9 @@ function showCharClass(char, dataCharClassItems, dataCharClass) {
 }
 
 function superFilter() {
-    addClassFilter("super");
+    addClass("super");
 }
 
 function extremeFilter() {
-    addClassFilter("extreme");
+    addClass("extreme");
 }

@@ -10,8 +10,7 @@ function charAllAppear(char) {
 }
 
 //-----------------------filterType + other filter-------------------
-//filterType,filterRarity
-function showCharTypeAndRarityFilter(char, dataCharTypeItems, dataCharType, filterType, dataCharRarityItems, dataCharRarity, filterRarity) {
+function showTypeRarity(char, dataCharTypeItems, dataCharType, filterType, dataCharRarityItems, dataCharRarity, filterRarity) {
 	for (let k = 0; k < filterRarity.length; k++) {
 		for (let j = 0; j < filterType.length; j++) {
 			if ((document.getElementById(filterType[j]).classList.contains("checkedTypeBtn")) && (document.getElementById(filterRarity[k]).classList.contains("checkedRarityBtn"))) {
@@ -24,8 +23,7 @@ function showCharTypeAndRarityFilter(char, dataCharTypeItems, dataCharType, filt
 		}
 	}
 }
-//filterType,filterClass
-function showCharTypeAndClassFilter(char, dataCharTypeItems, dataCharType, filterType, dataCharClassItems, dataCharClass, filterClass) {
+function showTypeClass(char, dataCharTypeItems, dataCharType, filterType, dataCharClassItems, dataCharClass, filterClass) {
 	for (let k = 0; k < filterClass.length; k++) {
 		for (let j = 0; j < filterType.length; j++) {
 			if ((document.getElementById(filterType[j]).classList.contains("checkedTypeBtn")) && (document.getElementById(filterClass[k]).classList.contains("checkedClassBtn"))) {
@@ -38,8 +36,7 @@ function showCharTypeAndClassFilter(char, dataCharTypeItems, dataCharType, filte
 		}
 	}
 }
-//filterType,filterEza
-function showCharTypeAndEzaFilter(dataCharType, filterType, dataCharEzaItems, dataCharEza, filterEza) {
+function showTypeEza(dataCharType, filterType, dataCharEzaItems, dataCharEza, filterEza) {
 	for (let j = 0; j < filterType.length; j++) {
 		if (document.getElementById(filterType[j]).classList.contains("checkedTypeBtn")) {
 			for (let i = 0; i < dataCharEzaItems.length; i++) {
@@ -53,8 +50,7 @@ function showCharTypeAndEzaFilter(dataCharType, filterType, dataCharEzaItems, da
 //-----------------------filterType + other filter-------------------
 
 //-----------------------filterClass + other filter-------------------
-//filterClass,filterRarity
-function showCharClassAndRarityFilter(char, dataCharClassItems, dataCharClass, filterClass, dataCharRarityItems, dataCharRarity, filterRarity) {
+function showClassRarity(char, dataCharClassItems, dataCharClass, filterClass, dataCharRarityItems, dataCharRarity, filterRarity) {
 	for (let k = 0; k < filterClass.length; k++) {
 		for (let j = 0; j < filterRarity.length; j++) {
 			if ((document.getElementById(filterRarity[j]).classList.contains("checkedRarityBtn")) && (document.getElementById(filterClass[k]).classList.contains("checkedClassBtn"))) {
@@ -67,8 +63,7 @@ function showCharClassAndRarityFilter(char, dataCharClassItems, dataCharClass, f
 		}
 	}
 }
-//filterClass,filterEza
-function showCharClassAndEzaFilter(dataCharClass, filterClass, dataCharEzaItems, dataCharEza, filterEza) {
+function showClassEza(dataCharClass, filterClass, dataCharEzaItems, dataCharEza, filterEza) {
 	for (let j = 0; j < filterClass.length; j++) {
 		if (document.getElementById(filterClass[j]).classList.contains("checkedClassBtn")) {
 			for (let i = 0; i < dataCharEzaItems.length; i++) {
@@ -82,8 +77,7 @@ function showCharClassAndEzaFilter(dataCharClass, filterClass, dataCharEzaItems,
 //-----------------------filterClass + other filter-------------------
 
 //-----------------------filterRarity + other filter-------------------
-//filteRarity,filterEza
-function showCharRarityAndEzaFilter(dataCharRarity, filterRarity, dataCharEzaItems, dataCharEza, filterEza) {
+function showRarityEza(dataCharRarity, filterRarity, dataCharEzaItems, dataCharEza, filterEza) {
 	for (let j = 0; j < filterRarity.length; j++) {
 		if (document.getElementById(filterRarity[j]).classList.contains("checkedRarityBtn")) {
 			for (let i = 0; i < dataCharEzaItems.length; i++) {
@@ -97,8 +91,7 @@ function showCharRarityAndEzaFilter(dataCharRarity, filterRarity, dataCharEzaIte
 //-----------------------filterRarity + other filter-------------------
 
 //----------3 filters used----------
-//filterType,filterRarity,filterClass
-function showCharTypeAndClassAndRarityFilter(char, dataCharTypeItems, dataCharType, filterType, dataCharClassItems, dataCharClass, filterClass, dataCharRarityItems, dataCharRarity, filterRarity) {
+function showTypeClassRarity(char, dataCharTypeItems, dataCharType, filterType, dataCharClassItems, dataCharClass, filterClass, dataCharRarityItems, dataCharRarity, filterRarity) {
 	for (let l = 0; l < filterClass.length; l++) {
 		for (let k = 0; k < filterRarity.length; k++) {
 			for (let j = 0; j < filterType.length; j++) {
@@ -113,8 +106,7 @@ function showCharTypeAndClassAndRarityFilter(char, dataCharTypeItems, dataCharTy
 		}
 	}
 }
-//filterType,filterRarity,filterEza
-function showCharTypeAndRarityAndEzaFilter(dataCharType, filterType, dataCharRarity, filterRarity, dataCharEzaItems, dataCharEza, filterEza) {
+function showTypeRarityEza(dataCharType, filterType, dataCharRarity, filterRarity, dataCharEzaItems, dataCharEza, filterEza) {
 	for (let l = 0; l < filterRarity.length; l++) {
 		for (let j = 0; j < filterType.length; j++) {
 			if ((document.getElementById(filterType[j]).classList.contains("checkedTypeBtn")) && (document.getElementById(filterRarity[l]).classList.contains("checkedRarityBtn"))) {
@@ -127,8 +119,7 @@ function showCharTypeAndRarityAndEzaFilter(dataCharType, filterType, dataCharRar
 		}
 	}
 }
-//filterType,filterClass,filterEza
-function showCharTypeAndClassAndEzaFilter(dataCharType, filterType, dataCharClass, filterClass, dataCharEzaItems, dataCharEza, filterEza) {
+function showTypeClassEza(dataCharType, filterType, dataCharClass, filterClass, dataCharEzaItems, dataCharEza, filterEza) {
 	for (let l = 0; l < filterClass.length; l++) {
 		for (let j = 0; j < filterType.length; j++) {
 			if ((document.getElementById(filterType[j]).classList.contains("checkedTypeBtn")) && (document.getElementById(filterClass[l]).classList.contains("checkedClassBtn"))) {
@@ -141,8 +132,7 @@ function showCharTypeAndClassAndEzaFilter(dataCharType, filterType, dataCharClas
 		}
 	}
 }
-//filterRarity,filterClass,filterEza
-function showCharRarityAndClassAndEzaFilter(dataCharRarity, filterRarity, dataCharClass, filterClass, dataCharEzaItems, dataCharEza, filterEza) {
+function showRarityClassEza(dataCharRarity, filterRarity, dataCharClass, filterClass, dataCharEzaItems, dataCharEza, filterEza) {
 	for (let k = 0; k < filterClass.length; k++) {
 		for (let j = 0; j < filterRarity.length; j++) {
 			if ((document.getElementById(filterRarity[j]).classList.contains("checkedRarityBtn")) && (document.getElementById(filterClass[k]).classList.contains("checkedClassBtn"))) {
@@ -158,7 +148,7 @@ function showCharRarityAndClassAndEzaFilter(dataCharRarity, filterRarity, dataCh
 //----------3 filters used----------
 
 //----------4 filters used----------
-function showCharTypeAndRarityAndClassAndEzaFilter(dataCharType, filterType, dataCharRarity, filterRarity, dataCharClass, filterClass, dataCharEzaItems, dataCharEza, filterEza) {
+function showTypeRarityClassEza(dataCharType, filterType, dataCharRarity, filterRarity, dataCharClass, filterClass, dataCharEzaItems, dataCharEza, filterEza) {
 	for (let l = 0; l < filterClass.length; l++) {
 		for (let k = 0; k < filterRarity.length; k++) {
 			for (let j = 0; j < filterType.length; j++) {
@@ -201,80 +191,65 @@ function filterOk() {
 	}
 
 	//------------------------choose one filter only---------------------
-	//filterType
 	if ((checkedTypeBtn.length > 0) && (checkedRarityBtn.length == 0) && (checkedClassBtn.length == 0) && (checkedEzaBtn.length == 0)) {
-		showCharTypeFilter(char, dataCharTypeItems, dataCharType);
+		showType(char, dataCharTypeItems, dataCharType);
 	}
-	//filterRarity
 	if ((checkedTypeBtn.length == 0) && (checkedRarityBtn.length > 0) && (checkedClassBtn.length == 0) && (checkedEzaBtn.length == 0)) {
-		showCharRarity(char, dataCharRarityItems, dataCharRarity);
+		showRarity(char, dataCharRarityItems, dataCharRarity);
 	}
-	//filterClass
 	if ((checkedTypeBtn.length == 0) && (checkedRarityBtn.length == 0) && (checkedClassBtn.length > 0) && (checkedEzaBtn.length == 0)) {
-		showCharClass(char, dataCharClassItems, dataCharClass);
+		showClass(char, dataCharClassItems, dataCharClass);
 	}
-	//filterEza
 	if ((checkedTypeBtn.length == 0) && (checkedRarityBtn.length == 0) && (checkedClassBtn.length == 0) && (checkedEzaBtn.length > 0)) {
-		showCharEza(char, dataCharEzaItems, dataCharEza);
+		showEza(char, dataCharEzaItems, dataCharEza);
 	}
 	//------------------------choose one filter only---------------------
 
 	//-----------------------filterType + other filter-------------------
-	//filterType,filterRarity
 	if ((checkedTypeBtn.length > 0) && (checkedRarityBtn.length > 0) && (checkedClassBtn.length == 0) && (checkedEzaBtn.length == 0)) {
-		showCharTypeAndRarityFilter(char, dataCharTypeItems, dataCharType, filterType, dataCharRarityItems, dataCharRarity, filterRarity);
+		showTypeRarity(char, dataCharTypeItems, dataCharType, filterType, dataCharRarityItems, dataCharRarity, filterRarity);
 	}
-	//filterType,filterClass
 	if ((checkedTypeBtn.length > 0) && (checkedRarityBtn.length == 0) && (checkedClassBtn.length > 0) && (checkedEzaBtn.length == 0)) {
-		showCharTypeAndClassFilter(char, dataCharTypeItems, dataCharType, filterType, dataCharClassItems, dataCharClass, filterClass);
+		showTypeClass(char, dataCharTypeItems, dataCharType, filterType, dataCharClassItems, dataCharClass, filterClass);
 	}
-	//filterType,filterEza
 	if ((checkedTypeBtn.length > 0) && (checkedRarityBtn.length == 0) && (checkedClassBtn.length == 0) && (checkedEzaBtn.length > 0)) {
-		showCharTypeAndEzaFilter(dataCharType, filterType, dataCharEzaItems, dataCharEza, filterEza);
+		showTypeEza(dataCharType, filterType, dataCharEzaItems, dataCharEza, filterEza);
 	}
 	//-----------------------filterType + other filter-------------------
 
 	//-----------------------filterClass + other filter-------------------
-	//filterClass,filterRarity
 	if ((checkedTypeBtn.length == 0) && (checkedRarityBtn.length > 0) && (checkedClassBtn.length > 0) && (checkedEzaBtn.length == 0)) {
-		showCharClassAndRarityFilter(char, dataCharClassItems, dataCharClass, filterClass, dataCharRarityItems, dataCharRarity, filterRarity);
+		showClassRarity(char, dataCharClassItems, dataCharClass, filterClass, dataCharRarityItems, dataCharRarity, filterRarity);
 	}
-	//filterClass,filterEza
 	if ((checkedTypeBtn.length == 0) && (checkedRarityBtn.length == 0) && (checkedClassBtn.length > 0) && (checkedEzaBtn.length > 0)) {
-		showCharClassAndEzaFilter(dataCharClass, filterClass, dataCharEzaItems, dataCharEza, filterEza);
+		showClassEza(dataCharClass, filterClass, dataCharEzaItems, dataCharEza, filterEza);
 	}
 	//-----------------------filterClass + other filter-------------------
 
 	//-----------------------filterRarity + other filter-------------------
-	//filteRarity,filterEza
 	if ((checkedTypeBtn.length == 0) && (checkedRarityBtn.length > 0) && (checkedClassBtn.length == 0) && (checkedEzaBtn.length > 0)) {
-		showCharRarityAndEzaFilter(dataCharRarity, filterRarity, dataCharEzaItems, dataCharEza, filterEza);
+		showRarityEza(dataCharRarity, filterRarity, dataCharEzaItems, dataCharEza, filterEza);
 	}
 	//-----------------------filterRarity + other filter-------------------
 
 	//----------3 filters used----------
-	//filterType,filterRarity,filterClass
 	if ((checkedTypeBtn.length > 0) && (checkedRarityBtn.length > 0) && (checkedClassBtn.length > 0) && (checkedEzaBtn.length == 0)) {
-		showCharTypeAndClassAndRarityFilter(char, dataCharTypeItems, dataCharType, filterType, dataCharClassItems, dataCharClass, filterClass, dataCharRarityItems, dataCharRarity, filterRarity);
+		showTypeClassRarity(char, dataCharTypeItems, dataCharType, filterType, dataCharClassItems, dataCharClass, filterClass, dataCharRarityItems, dataCharRarity, filterRarity);
 	}
-	//filterType,filterRarity,filterEza
 	if ((checkedTypeBtn.length > 0) && (checkedRarityBtn.length > 0) && (checkedClassBtn.length == 0) && (checkedEzaBtn.length > 0)) {
-		showCharTypeAndRarityAndEzaFilter(dataCharType, filterType, dataCharRarity, filterRarity, dataCharEzaItems, dataCharEza, filterEza);
+		showTypeRarityEza(dataCharType, filterType, dataCharRarity, filterRarity, dataCharEzaItems, dataCharEza, filterEza);
 	}
-	//filterType,filterClass,filterEza
 	if ((checkedTypeBtn.length > 0) && (checkedRarityBtn.length == 0) && (checkedClassBtn.length > 0) && (checkedEzaBtn.length > 0)) {
-		showCharTypeAndClassAndEzaFilter(dataCharType, filterType, dataCharClass, filterClass, dataCharEzaItems, dataCharEza, filterEza);
+		showTypeClassEza(dataCharType, filterType, dataCharClass, filterClass, dataCharEzaItems, dataCharEza, filterEza);
 	}
-	//filterRarity,filterClass,filterEza
 	if ((checkedTypeBtn.length == 0) && (checkedRarityBtn.length > 0) && (checkedClassBtn.length > 0) && (checkedEzaBtn.length > 0)) {
-		showCharRarityAndClassAndEzaFilter(dataCharRarity, filterRarity, dataCharClass, filterClass, dataCharEzaItems, dataCharEza, filterEza);
+		showRarityClassEza(dataCharRarity, filterRarity, dataCharClass, filterClass, dataCharEzaItems, dataCharEza, filterEza);
 	}
 	//----------3 filters used----------
 
 	//----------4 filters used----------
-	//filterType,filterRarity,filterClass,filterEza
 	if ((checkedTypeBtn.length > 0) && (checkedRarityBtn.length > 0) && (checkedClassBtn.length > 0) && (checkedEzaBtn.length > 0)) {
-		showCharTypeAndRarityAndClassAndEzaFilter(dataCharType, filterType, dataCharRarity, filterRarity, dataCharClass, filterClass, dataCharEzaItems, dataCharEza, filterEza);
+		showTypeRarityClassEza(dataCharType, filterType, dataCharRarity, filterRarity, dataCharClass, filterClass, dataCharEzaItems, dataCharEza, filterEza);
 	}
 	//----------4 filters used----------
 }

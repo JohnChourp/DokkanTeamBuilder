@@ -1,11 +1,11 @@
-function addRarityFilter(rarityFilter) {
+function addRarity(rarityFilter) {
     if (document.getElementById(rarityFilter).classList.contains("checkedRarityBtn")) {
         document.getElementById(rarityFilter).classList.remove("checkedRarityBtn");
     } else {
         document.getElementById(rarityFilter).classList.add("checkedRarityBtn");
     }
 }
-function showCharRarity(char, dataCharRarityItems, dataCharRarity) {
+function showRarity(char, dataCharRarityItems, dataCharRarity) {
     if (document.getElementById("n").classList.contains("checkedRarityBtn")) {
         for (let i = 0; i < char.length; i++) {
             if (dataCharRarityItems[i].getAttribute(dataCharRarity).toLowerCase() == "n") {
@@ -51,25 +51,25 @@ function showCharRarity(char, dataCharRarityItems, dataCharRarity) {
 }
 
 function rarityNFilter() {
-    addRarityFilter("n");
+    addRarity("n");
 }
 
 function rarityRFilter() {
-    addRarityFilter("r");
+    addRarity("r");
 }
 
 function raritySRFilter() {
-    addRarityFilter("sr");
+    addRarity("sr");
 }
 
 function raritySSRFilter() {
-    addRarityFilter("ssr");
+    addRarity("ssr");
 }
 
 function rarityURFilter() {
-    addRarityFilter("ur");
+    addRarity("ur");
 }
 
 function rarityLRFilter() {
-    addRarityFilter("lr");
+    addRarity("lr");
 }
