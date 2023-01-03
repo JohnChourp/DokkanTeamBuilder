@@ -1,4 +1,4 @@
-.char_container {
+#char_container {
     display: flex;
     flex-wrap: wrap;
 }
