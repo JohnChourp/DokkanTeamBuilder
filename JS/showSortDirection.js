@@ -10,17 +10,17 @@ function searchSortDirectionOptionDown() {
 	let buttonUp = document.getElementsByClassName("searchSortDirectionOptionUp").item(0);
 
 	if (buttonDown.style.backgroundColor == "white") {
-		let char_container = document.getElementsByClassName("char_container");
+		let char_container = document.getElementById("char_container");
 		let char = document.getElementsByClassName("char");
 		let temp_char = [];
 		let charLength = char.length;
 		for (let i = 0; i < charLength; i++) {
 			temp_char[i] = char.item(i);
 		}
-		char_container.item(0).innerHTML = "";
+		char_container.innerHTML = "";
 		decrease_char_length = charLength - 1;
 		for (let i = 0; i < charLength; i++) {
-			char_container.item(0).appendChild(temp_char[decrease_char_length]);
+			char_container.appendChild(temp_char[decrease_char_length]);
 			decrease_char_length = decrease_char_length - 1;
 		}
 
@@ -35,17 +35,17 @@ function searchSortDirectionOptionUp() {
 	let buttonDown = document.getElementsByClassName("searchSortDirectionOptionDown").item(0);
 
 	if (buttonUp.style.backgroundColor == "white") {
-		let char_container = document.getElementsByClassName("char_container");
+		let char_container = document.getElementById("char_container");
 		let char = document.getElementsByClassName("char");
 		let temp_char = [];
 		let charLength = char.length;
 		for (let i = 0; i < charLength; i++) {
 			temp_char[i] = char.item(i);
 		}
-		char_container.item(0).innerHTML = "";
+		char_container.innerHTML = "";
 		decrease_char_length = charLength - 1;
 		for (let i = 0; i < charLength; i++) {
-			char_container.item(0).appendChild(temp_char[decrease_char_length]);
+			char_container.appendChild(temp_char[decrease_char_length]);
 			decrease_char_length = decrease_char_length - 1;
 		}
 	}

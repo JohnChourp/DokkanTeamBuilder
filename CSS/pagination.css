@@ -1,8 +1,9 @@
-.pagination {
+#pagination {
     display: inline-block;
+    align-content: center;
 }
 
-.pagination a {
+#pagination a {
     position:relative;
     color: white;
     float: left;
@@ -13,12 +14,12 @@
     border: 1px solid #ddd;
 }
 
-.pagination a.checkedPagiantionBtn {
+#pagination a.checkedPagiantionBtn {
     background-color: #4CAF50;
     color: white;
     border: 1px solid #4CAF50;
 }
 
-.pagination a:hover:not(.checkedPagiantionBtn) {
+#pagination a:hover:not(.checkedPagiantionBtn) {
     background-color: #ddd;
 }
