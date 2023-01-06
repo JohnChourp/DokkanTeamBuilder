@@ -148,6 +148,8 @@
     height: 40px;
     font-size: 18px;
     background-color: #df8611;
+    font-weight: 800;
+    color: aliceblue;
 }
 
 .checkedEzaBtn {
