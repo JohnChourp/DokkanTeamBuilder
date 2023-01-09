@@ -5,7 +5,7 @@ function addSortDirectionOptionStyleColorBtn() {
 	buttonUp.style.backgroundColor = "#33ccff";
 }
 
-function searchSortDirectionOptionDown() {
+function showSortDirectionOptionDown() {
 	let buttonDown = document.getElementsByClassName("searchSortDirectionOptionDown").item(0);
 	let buttonUp = document.getElementsByClassName("searchSortDirectionOptionUp").item(0);
 
@@ -30,7 +30,7 @@ function searchSortDirectionOptionDown() {
 	buttonUp.style.backgroundColor = "white";
 }
 
-function searchSortDirectionOptionUp() {
+function showSortDirectionOptionUp() {
 	let buttonUp = document.getElementsByClassName("searchSortDirectionOptionUp").item(0);
 	let buttonDown = document.getElementsByClassName("searchSortDirectionOptionDown").item(0);
 

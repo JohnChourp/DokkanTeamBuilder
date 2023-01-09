@@ -135,14 +135,21 @@
     display: flex;
     justify-content: center;
     flex-direction: row;
-
 }
 
-#eza,
+#eza{
+    cursor: pointer;
+    height: 40px;
+    font-size: 18px;
+}
+
 #ok {
     cursor: pointer;
     height: 40px;
     font-size: 18px;
+    background-color: #df8611;
+    font-weight: 800;
+    color: aliceblue;
 }
 
 .checkedEzaBtn {
@@ -165,6 +172,3 @@
     inherits: false;
 }
 
-#ok {
-    background-color: #c3d0d4;
-}

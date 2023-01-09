@@ -15,6 +15,7 @@ function filterOk() {
 	let charList_dataCharMaxLevelItems = JSON.parse(localStorage.getItem('charList_dataCharMaxLevelItems'));
 	let charList_dataCharSuperAtkLevelItems = JSON.parse(localStorage.getItem('charList_dataCharSuperAtkLevelItems'));
 	let charList_dataCharRecruitItems = JSON.parse(localStorage.getItem('charList_dataCharRecruitItems'));
+	let charList_dataCharAwakenItems = JSON.parse(localStorage.getItem('charList_dataCharAwakenItems'));
 	let charList_dataCharReleaseItems = JSON.parse(localStorage.getItem('charList_dataCharReleaseItems'));
 	let charList_dataCharSuperAtkTypeItems = JSON.parse(localStorage.getItem('charList_dataCharSuperAtkTypeItems'));
 	let charList_dataCharLinksItems = JSON.parse(localStorage.getItem('charList_dataCharLinksItems'));
@@ -39,6 +40,7 @@ function filterOk() {
 			"data-char-max-level", charList_dataCharMaxLevelItems[i],
 			"data-char-super-atk-level", charList_dataCharSuperAtkLevelItems[i],
 			"data-char-recruit", charList_dataCharRecruitItems[i],
+			"data-char-awaken", charList_dataCharAwakenItems[i],
 			"data-char-release", charList_dataCharReleaseItems[i],
 			"data-char-super-atk-type", charList_dataCharSuperAtkTypeItems[i],
 			"data-char-links", charList_dataCharLinksItems[i],
@@ -58,10 +60,12 @@ function filterOk() {
 	let dataCharClass = 'data-char-class';
 	let dataCharRarity = 'data-char-rarity';
 	let dataCharEza = 'data-char-eza';
+	let dataCharAwaken = 'data-char-awaken';
 	let dataCharTypeItems = document.querySelectorAll('[' + dataCharType + ']');
 	let dataCharClassItems = document.querySelectorAll('[' + dataCharClass + ']');
 	let dataCharRarityItems = document.querySelectorAll('[' + dataCharRarity + ']');
 	let dataCharEzaItems = document.querySelectorAll('[' + dataCharEza + ']');
+	let dataCharAwakenItems = document.querySelectorAll('[' + dataCharAwaken + ']');
 	let char = document.getElementsByClassName("char");
 	let filterType = ["agl", "teq", "int", "str", "phy"];
 	let filterRarity = ["n", "r", "sr", "ssr", "ur", "lr"];
@@ -71,6 +75,7 @@ function filterOk() {
 	let checkedClassBtn = document.getElementsByClassName("checkedClassBtn");
 	let checkedRarityBtn = document.getElementsByClassName("checkedRarityBtn");
 	let checkedEzaBtn = document.getElementsByClassName("checkedEzaBtn");
+	let checkedAwakenBtn = document.getElementsByClassName("checkedAwakenBtn");
 	let charList = [];
 
 	//disappear all characters
@@ -314,8 +319,8 @@ function filterOk() {
 		}
 	}
 	//------------------------------2 filters used------------------------------
-
-
+	
+	
 	//------------------------------3 filters used------------------------------
 	//type,rarity,class
 	if ((checkedTypeBtn.length > 0) && (checkedRarityBtn.length > 0) && (checkedClassBtn.length > 0) && (checkedEzaBtn.length == 0)) {
@@ -393,8 +398,8 @@ function filterOk() {
 		}
 	}
 	//------------------------------3 filters used------------------------------
-
-
+	
+	
 	//------------------------------4 filters used------------------------------
 	//type,rarity,class,eza
 	if ((checkedTypeBtn.length > 0) && (checkedRarityBtn.length > 0) && (checkedClassBtn.length > 0) && (checkedEzaBtn.length > 0)) {
@@ -419,6 +424,95 @@ function filterOk() {
 		}
 	}
 	//------------------------------4 filters used------------------------------
+	
+	
+	//eza
+	if (checkedEzaBtn.length == 1) {
+		if (document.getElementById(filterEza).classList.contains("checkedEzaBtn")) {
+			for (let i = 0; i < char.length; i++) {
+				if ((char.item(i).style.display == "inline-block") && (dataCharEzaItems[i].getAttribute(dataCharEza).toLowerCase() == filterEza)) {
+					charList[i] = char.item(i);
+				} else {
+					delete charList[i];
+				}
+			}
+		}
+	}
+	//dokkan-awakened
+	if ((checkedAwakenBtn.length == 1)) {
+		if (document.getElementById("notDokkanAwakened").classList.contains("checkedAwakenBtn")) {
+			for (let i = 0; i < char.length; i++) {
+				if ((char.item(i).style.display == "inline-block") && (dataCharAwakenItems[i].getAttribute(dataCharAwaken).toLowerCase() == "not-dokkan-awakened")) {
+					char.item(i).style.display = "inline-block";
+					charList[i] = char.item(i);
+				} else {
+					delete charList[i];
+				}
+			}
+		}
+
+		if (document.getElementById("preDokkanAwakened").classList.contains("checkedAwakenBtn")) {
+			for (let i = 0; i < char.length; i++) {
+				if ((char.item(i).style.display == "inline-block") && (dataCharAwakenItems[i].getAttribute(dataCharAwaken).toLowerCase() == "pre-dokkan-awakened")) {
+					char.item(i).style.display = "inline-block";
+					charList[i] = char.item(i);
+				} else {
+					delete charList[i];
+				}
+			}
+		}
+
+		if (document.getElementById("dokkanAwakened").classList.contains("checkedAwakenBtn")) {
+			for (let i = 0; i < char.length; i++) {
+				if ((char.item(i).style.display == "inline-block") && (dataCharAwakenItems[i].getAttribute(dataCharAwaken).toLowerCase() == "dokkan-awakened")) {
+					char.item(i).style.display = "inline-block";
+					charList[i] = char.item(i);
+				} else {
+					delete charList[i];
+				}
+			}
+		}
+	}
+	if ((checkedAwakenBtn.length == 2)) {
+		if (document.getElementById("notDokkanAwakened").classList.contains("checkedAwakenBtn") && document.getElementById("preDokkanAwakened").classList.contains("checkedAwakenBtn")) {
+			for (let i = 0; i < char.length; i++) {
+				if ((char.item(i).style.display == "inline-block")
+					&& ((dataCharAwakenItems[i].getAttribute(dataCharAwaken).toLowerCase() == "not-dokkan-awakened")
+						|| (dataCharAwakenItems[i].getAttribute(dataCharAwaken).toLowerCase() == "pre-dokkan-awakened"))) {
+					char.item(i).style.display = "inline-block";
+					charList[i] = char.item(i);
+				} else {
+					delete charList[i];
+				}
+			}
+		}
+
+		if (document.getElementById("notDokkanAwakened").classList.contains("checkedAwakenBtn") && document.getElementById("dokkanAwakened").classList.contains("checkedAwakenBtn")) {
+			for (let i = 0; i < char.length; i++) {
+				if ((char.item(i).style.display == "inline-block")
+					&& ((dataCharAwakenItems[i].getAttribute(dataCharAwaken).toLowerCase() == "not-dokkan-awakened")
+						|| (dataCharAwakenItems[i].getAttribute(dataCharAwaken).toLowerCase() == "dokkan-awakened"))) {
+					char.item(i).style.display = "inline-block";
+					charList[i] = char.item(i);
+				} else {
+					delete charList[i];
+				}
+			}
+		}
+
+		if (document.getElementById("preDokkanAwakened").classList.contains("checkedAwakenBtn") && document.getElementById("dokkanAwakened").classList.contains("checkedAwakenBtn")) {
+			for (let i = 0; i < char.length; i++) {
+				if ((char.item(i).style.display == "inline-block")
+					&& ((dataCharAwakenItems[i].getAttribute(dataCharAwaken).toLowerCase() == "pre-dokkan-awakened")
+						|| (dataCharAwakenItems[i].getAttribute(dataCharAwaken).toLowerCase() == "dokkan-awakened"))) {
+					char.item(i).style.display = "inline-block";
+					charList[i] = char.item(i);
+				} else {
+					delete charList[i];
+				}
+			}
+		}
+	}
 	charList.clean(undefined);
 	createFilterPagination(charList);
 }

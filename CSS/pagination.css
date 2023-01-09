@@ -23,3 +23,7 @@
 #pagination a:hover:not(.checkedPagiantionBtn) {
     background-color: #ddd;
 }
+
+#charResults {
+    -webkit-user-select:text;
+}

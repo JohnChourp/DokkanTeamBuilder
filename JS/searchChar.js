@@ -34,6 +34,7 @@ function searchChar(NameOrTitle) {
 			let charList_dataCharMaxLevelItems = JSON.parse(localStorage.getItem('charList_dataCharMaxLevelItems'));
 			let charList_dataCharSuperAtkLevelItems = JSON.parse(localStorage.getItem('charList_dataCharSuperAtkLevelItems'));
 			let charList_dataCharRecruitItems = JSON.parse(localStorage.getItem('charList_dataCharRecruitItems'));
+			let charList_dataCharAwakenItems = JSON.parse(localStorage.getItem('charList_dataCharAwakenItems'));
 			let charList_dataCharReleaseItems = JSON.parse(localStorage.getItem('charList_dataCharReleaseItems'));
 			let charList_dataCharSuperAtkTypeItems = JSON.parse(localStorage.getItem('charList_dataCharSuperAtkTypeItems'));
 			let charList_dataCharLinksItems = JSON.parse(localStorage.getItem('charList_dataCharLinksItems'));
@@ -58,6 +59,7 @@ function searchChar(NameOrTitle) {
 					"data-char-max-level", charList_dataCharMaxLevelItems[i],
 					"data-char-super-atk-level", charList_dataCharSuperAtkLevelItems[i],
 					"data-char-recruit", charList_dataCharRecruitItems[i],
+					"data-char-awaken", charList_dataCharAwakenItems[i],
 					"data-char-release", charList_dataCharReleaseItems[i],
 					"data-char-super-atk-type", charList_dataCharSuperAtkTypeItems[i],
 					"data-char-links", charList_dataCharLinksItems[i],
@@ -80,11 +82,13 @@ function searchChar(NameOrTitle) {
 			let dataCharClass = 'data-char-class';
 			let dataCharRarity = 'data-char-rarity';
 			let dataCharEza = 'data-char-eza';
+			let dataCharAwaken = 'data-char-awaken';
 
 			let filterType = ["agl", "teq", "int", "str", "phy"];
 			let filterClass = ["super", "extreme"];
 			let filterRarity = ["n", "r", "sr", "ssr", "ur", "lr"];
 			let filterEza = "eza";
+			let filterAwaken = ["not-dokkan-awaken", "pre-dokkan-awaken","dokkan-awaken"];
 
 			let dataCharNameItems = document.querySelectorAll('[' + dataCharName + ']');
 			let dataCharTitleItems = document.querySelectorAll('[' + dataCharTitle + ']');
@@ -92,6 +96,7 @@ function searchChar(NameOrTitle) {
 			let dataCharClassItems = document.querySelectorAll('[' + dataCharClass + ']');
 			let dataCharRarityItems = document.querySelectorAll('[' + dataCharRarity + ']');
 			let dataCharEzaItems = document.querySelectorAll('[' + dataCharEza + ']');
+			let dataCharAwakenItems = document.querySelectorAll('[' + dataCharAwaken + ']');
 
 			let char = document.getElementsByClassName("char");
 			let characterSearchId = document.getElementById("char-search-id");
@@ -100,6 +105,7 @@ function searchChar(NameOrTitle) {
 			let checkedClassBtn = document.getElementsByClassName("checkedClassBtn");
 			let checkedRarityBtn = document.getElementsByClassName("checkedRarityBtn");
 			let checkedEzaBtn = document.getElementsByClassName("checkedEzaBtn");
+			let checkedAwakenBtn = document.getElementsByClassName("checkedAwakenBtn");
 
 			let dataCharNameOrTitleItems, dataCharNameOrTitle;
 			let charList = [];

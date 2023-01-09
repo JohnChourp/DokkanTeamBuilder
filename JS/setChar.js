@@ -10,7 +10,6 @@ function addChar() {
 	let dataCharTypeItems = document.querySelectorAll('[' + dataCharType + ']');
 	let dataCharRarityItems = document.querySelectorAll('[' + dataCharRarity + ']');
 	let dataCharClassItems = document.querySelectorAll('[' + dataCharClass + ']');
-	let dataCharEzaItems = document.querySelectorAll('[' + dataCharEza + ']');
 	let dataCharIdItems = document.querySelectorAll('[' + dataCharId + ']');
 
 	let char = document.getElementsByClassName("char");
@@ -217,7 +216,7 @@ function addChar() {
 	}
 
 	for (let i = 0; i < char.length; i++) {
-		if (char.item(i).getAttribute("data-char-eza") == "eza") {
+		if (char.item(i).getAttribute(dataCharEza) == "eza") {
 			let char_eza_img = document.createElement("img");
 			char_eza_img.classList.add("char_eza");
 			char_eza_img.loading = "lazy";
@@ -251,14 +250,13 @@ function addChar() {
 			char_display_add_color.item(i).style.backgroundColor = "#eec038";
 		}
 	}
-
 }
 function saveCharList() {
 	let charList_dataCharNameItems = [], charList_dataCharTitleItems = [], charList_dataCharTypeItems = [],
 		charList_dataCharRarityItems = [], charList_dataCharClassItems = [], charList_dataCharEzaItems = [],
 		charList_dataCharidItems = [], charList_dataCharHpItems = [], charList_dataCharAttackItems = [],
 		charList_dataCharDefenseItems = [], charList_dataCharCostItems = [], charList_dataCharMaxLevelItems = [],
-		charList_dataCharSuperAtkLevelItems = [], charList_dataCharRecruitItems = [], charList_dataCharReleaseItems = [],
+		charList_dataCharSuperAtkLevelItems = [], charList_dataCharRecruitItems = [], charList_dataCharAwakenItems = [], charList_dataCharReleaseItems = [],
 		charList_dataCharSuperAtkTypeItems = [], charList_dataCharLinksItems = [], charList_dataCharCategoriesItems = [];
 	let char = document.getElementsByClassName("char");
 	for (let i = 0; i < char.length; i++) {
@@ -276,6 +274,7 @@ function saveCharList() {
 		charList_dataCharMaxLevelItems[i] = char.item(i).getAttribute("data-char-max-level");
 		charList_dataCharSuperAtkLevelItems[i] = char.item(i).getAttribute("data-char-super-atk-level");
 		charList_dataCharRecruitItems[i] = char.item(i).getAttribute("data-char-recruit");
+		charList_dataCharAwakenItems[i] = char.item(i).getAttribute("data-char-awaken");
 		charList_dataCharReleaseItems[i] = char.item(i).getAttribute("data-char-release");
 		charList_dataCharSuperAtkTypeItems[i] = char.item(i).getAttribute("data-char-super-atk-type");
 		charList_dataCharLinksItems[i] = char.item(i).getAttribute("data-char-links");
@@ -295,6 +294,7 @@ function saveCharList() {
 	localStorage.setItem("charList_dataCharMaxLevelItems", JSON.stringify(charList_dataCharMaxLevelItems));
 	localStorage.setItem("charList_dataCharSuperAtkLevelItems", JSON.stringify(charList_dataCharSuperAtkLevelItems));
 	localStorage.setItem("charList_dataCharRecruitItems", JSON.stringify(charList_dataCharRecruitItems));
+	localStorage.setItem("charList_dataCharAwakenItems", JSON.stringify(charList_dataCharAwakenItems));
 	localStorage.setItem("charList_dataCharReleaseItems", JSON.stringify(charList_dataCharReleaseItems));
 	localStorage.setItem("charList_dataCharSuperAtkTypeItems", JSON.stringify(charList_dataCharSuperAtkTypeItems));
 	localStorage.setItem("charList_dataCharLinksItems", JSON.stringify(charList_dataCharLinksItems));

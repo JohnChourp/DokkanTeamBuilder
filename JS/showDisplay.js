@@ -13,7 +13,7 @@ window.onclick = function (event) {
 }
 
 // When the user clicks on the button, toggle between hiding and showing the dropdown content
-function searchDisplayOptions() {
+function showDisplayOptions() {
 	document.getElementsByClassName("dropdown-options").item(0).classList.toggle("show");
 	//add class when clicked
 }
@@ -87,11 +87,11 @@ function addDropdownClass(filterDisplay) {
 			char_thumb.item(i).style.top = "-85px";
 			char_thumb.item(i).style.left = "13px";
 
-			char_rarity.item(i).style.top = "-144px";
+			char_rarity.item(i).style.top = "-143px";
 			char_rarity.item(i).style.left = "13px";
 
-			char_type.item(i).style.top = "-225px";
-			char_type.item(i).style.left = "23px";
+			char_type.item(i).style.top = "-230px";
+			char_type.item(i).style.left = "35px";
 
 			char_display.item(i).style.top = "-150px";
 			char_display.item(i).style.width = "120px";
@@ -156,7 +156,7 @@ function addDropdownClass(filterDisplay) {
 	if (filterDisplay == 10) {
 		for (let i = 0; i < char_display.length; i++) {
 			char.item(i).style.width = "170px";
-			char.item(i).style.height = "230px";
+			char.item(i).style.height = "270px";
 
 			char_type_base.item(i).style.top = "35px";
 			char_type_base.item(i).style.left = "40px";
@@ -168,7 +168,7 @@ function addDropdownClass(filterDisplay) {
 			char_rarity.item(i).style.left = "26px";
 
 			char_type.item(i).style.top = "-231px";
-			char_type.item(i).style.left = "47px";
+			char_type.item(i).style.left = "52px";
 
 			char_display.item(i).style.top = "-149px";
 			char_display.item(i).style.width = "150px";
