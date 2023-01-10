@@ -1,6 +1,6 @@
 // Close the dropdown menu if the user clicks outside of it
 window.onclick = function (event) {
-	if (!event.target.matches('.selected-dropdown')) {
+	if (!event.target.matches('#selected-dropdown')) {
 		var dropdowns = document.getElementsByClassName("dropdown-options");
 		var i;
 		for (i = 0; i < dropdowns.length; i++) {
@@ -19,7 +19,7 @@ function showDisplayOptions() {
 }
 
 function addDropdownClass(filterDisplay) {
-	let selecteddropdown_btn = document.getElementsByClassName("selected-dropdown").item(0);
+	let selecteddropdown_btn = document.getElementById("selected-dropdown");
 	let dropdownOptionsValue = document.getElementsByClassName("dropdown-options-value");
 	dropdownOptionsValue.item(filterDisplay).classList.add("checkedDisplayBtn");
 	selecteddropdown_btn.innerHTML = dropdownOptionsValue.item(filterDisplay).innerHTML;
