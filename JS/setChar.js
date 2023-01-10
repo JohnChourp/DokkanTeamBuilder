@@ -17,7 +17,7 @@ function addChar() {
 	let char_thumb = document.getElementsByClassName("char_thumb");
 	let char_rarity = document.getElementsByClassName("char_rarity");
 	let char_type = document.getElementsByClassName("char_type");
-	
+
 	for (let i = 0; i < dataCharTypeItems.length; i++) {
 		let char_type_base_img = document.createElement("img");
 		char_type_base_img.classList.add("char_type_base");

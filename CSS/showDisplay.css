@@ -1,20 +1,19 @@
-.showDisplayOptions {
+#showDisplayOptions {
 	color: white;
 	font-size: 20px;
 	position: relative;
-	left: 60px;
 }
 
 /* The container <div> - needed to position the dropdown content */
-.show-display-options-dropdown {
+#show-display-options-dropdown {
 	position: relative;
 	display: inline-block;
-	left: 70px;
-	top: 10px;
+	left: 10px;
+	top: 15px;
 }
 
 /* Dropdown Button */
-.selected-dropdown {
+#selected-dropdown {
 	background-color: #3498DB;
 	color: white;
 	padding: 8px;
@@ -23,12 +22,11 @@
 	cursor: pointer;
 	width: 140px;
 	position: relative;
-	top: 2px;
 }
 
 /* Dropdown button on hover & focus */
-.selected-dropdown:hover,
-.selected-dropdown:focus {
+#selected-dropdown:hover,
+#selected-dropdown:focus {
 	background-color: #2980B9;
 }
 

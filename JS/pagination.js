@@ -7,6 +7,7 @@ Array.prototype.clean = function (deleteValue) {
 	}
 	return this;
 };
+
 function setAttributes(elem) {
 	for (var i = 1; i < arguments.length; i += 2) {
 		elem.setAttribute(arguments[i], arguments[i + 1]);
@@ -20,7 +21,7 @@ function createPagination() {
 	let pageSum = Math.ceil(char.length / 32);
 
 	let pagePrevious = document.createElement("a");
-	pagePrevious.onclick = function () { paginationFilterPrevious(pageSum); }
+	pagePrevious.onclick = function () { paginationPrevious(pageSum); }
 	pagePrevious.href = "#";
 	pagePrevious.setAttribute("draggable", "false");
 	pagePrevious.innerHTML = "&laquo;";
@@ -29,7 +30,7 @@ function createPagination() {
 	for (let i = 1; i <= pageSum; i++) {
 		if (i == 1) {
 			let page = document.createElement("a");
-			page.onclick = function () { pagination_filter_page((i - 1) * 32, i * 32, pageSum, i); };
+			page.onclick = function () { pagination_page((i - 1) * 32, i * 32, pageSum, i); };
 			page.href = "#";
 			page.setAttribute("draggable", "false");
 			page.innerHTML = i;
@@ -37,7 +38,7 @@ function createPagination() {
 			paginationDiv.appendChild(page);
 		} else {
 			let page = document.createElement("a");
-			page.onclick = function () { pagination_filter_page((i - 1) * 32, i * 32, pageSum, i); };
+			page.onclick = function () { pagination_page((i - 1) * 32, i * 32, pageSum, i); };
 			page.href = "#";
 			page.setAttribute("draggable", "false");
 			page.innerHTML = i;
@@ -61,7 +62,7 @@ function createPagination() {
 
 	pageResults.innerHTML = "Showing 1 to 32 of " + char.length + " Characters";
 	paginationDiv.appendChild(pageResults);
-	pagination_filter_page(0, 32, pageSum, 1);
+	pagination_page(0, 32, pageSum, 1);
 }
 
 function createFilterPagination(charList) {
@@ -77,7 +78,7 @@ function createFilterPagination(charList) {
 	let pageSum = Math.ceil(char.length / 32);
 
 	let pagePrevious = document.createElement("a");
-	pagePrevious.onclick = function () { paginationFilterPrevious(pageSum); }
+	pagePrevious.onclick = function () { paginationPrevious(pageSum); }
 	pagePrevious.href = "#";
 	pagePrevious.setAttribute("draggable", "false");
 	pagePrevious.innerHTML = "&laquo;";
@@ -86,7 +87,7 @@ function createFilterPagination(charList) {
 	for (let i = 1; i <= pageSum; i++) {
 		if (i == 1) {
 			let page = document.createElement("a");
-			page.onclick = function () { pagination_filter_page((i - 1) * 32, i * 32, pageSum, 1); };
+			page.onclick = function () { pagination_page((i - 1) * 32, i * 32, pageSum, 1); };
 			page.href = "#";
 			page.setAttribute("draggable", "false");
 			page.innerHTML = i;
@@ -94,7 +95,7 @@ function createFilterPagination(charList) {
 			paginationDiv.appendChild(page);
 		} else {
 			let page = document.createElement("a");
-			page.onclick = function () { pagination_filter_page((i - 1) * 32, i * 32, pageSum, i); };
+			page.onclick = function () { pagination_page((i - 1) * 32, i * 32, pageSum, i); };
 			page.href = "#";
 			page.setAttribute("draggable", "false");
 			page.innerHTML = i;
@@ -119,14 +120,15 @@ function createFilterPagination(charList) {
 	if (char.length < 32) {
 		pageResults.innerHTML = "Showing 1 to " + char.length + " of " + char.length + " Characters";
 		paginationDiv.appendChild(pageResults);
-		pagination_filter_page(0, char.length, pageSum, 1);
+		pagination_page(0, char.length, pageSum, 1);
 	} else {
 		pageResults.innerHTML = "Showing 1 to 32 of " + char.length + " Characters";
 		paginationDiv.appendChild(pageResults);
-		pagination_filter_page(0, 32, pageSum, 1);
+		pagination_page(0, 32, pageSum, 1);
 	}
 }
-function pagination_filter_page(start, end, pageSum, pageNum) {
+
+function pagination_page(start, end, pageSum, pageNum) {
 	let char = document.getElementsByClassName("char");
 	for (let i = 0; i < char.length; i++) {
 		char.item(i).style.display = "none";
@@ -156,7 +158,8 @@ function pagination_filter_page(start, end, pageSum, pageNum) {
 	}
 	addFilterPaginationClass(pageNum, pageSum);
 }
-function paginationFilterPrevious(pageSum) {
+
+function paginationPrevious(pageSum) {
 	let pagination_id = document.getElementById("pagination");
 	for (i = 1; i <= pageSum; i++) {
 		if (pagination_id.children.item(i + 1).classList.contains("checkedPagiantionBtn")) {
@@ -164,10 +167,11 @@ function paginationFilterPrevious(pageSum) {
 			pagination_id.children.item(i).style.border = "1px solid #4CAF50";
 			pagination_id.children.item(i + 1).classList.remove("checkedPagiantionBtn");
 			pagination_id.children.item(i + 1).style.border = "1px solid #ddd";
-			pagination_filter_page((i - 1) * 32, i * 32, pageSum, i);
+			pagination_page((i - 1) * 32, i * 32, pageSum, i);
 		}
 	}
 }
+
 function paginationFilterNext(pageSum) {
 	let char = document.getElementsByClassName("char");
 	let pagination_id = document.getElementById("pagination");
@@ -178,13 +182,14 @@ function paginationFilterNext(pageSum) {
 			pagination_id.children.item(i - 1).classList.remove("checkedPagiantionBtn");
 			pagination_id.children.item(i - 1).style.border = "1px solid #ddd";
 			if (i == 1) {
-				pagination_filter_page((i - 1) * 32, char.length, pageSum, i);
+				pagination_page((i - 1) * 32, char.length, pageSum, i);
 			} else {
-				pagination_filter_page((i - 1) * 32, i * 32, pageSum, i);
+				pagination_page((i - 1) * 32, i * 32, pageSum, i);
 			}
 		}
 	}
 }
+
 function addFilterPaginationClass(pageNum, pageSum) {
 	let pagination_id = document.getElementById("pagination");
 	if (!pagination_id.children.item(pageNum).classList.contains("checkedPagiantionBtn")) {

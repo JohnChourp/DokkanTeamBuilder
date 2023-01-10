@@ -55,6 +55,19 @@ function filterOk() {
 		char_container.appendChild(charListSaved[j]);
 	}
 	addChar();
+	let char = document.getElementsByClassName("char");
+	let checkedDirectionBtn = document.getElementsByClassName("checkedDirectionBtn");
+	if (checkedDirectionBtn.length == 1) {
+		let temp_char = [];
+		for (let i = 0; i < char.length; i++) {
+			temp_char[i] = char.item(i);
+		}
+		let charLength = char.length;
+		char_container.innerHTML = "";
+		for (let i = charLength - 1; i > -1; i--) {
+			char_container.appendChild(temp_char[i]);
+		}
+	}
 
 	let dataCharType = 'data-char-type';
 	let dataCharClass = 'data-char-class';
@@ -66,7 +79,6 @@ function filterOk() {
 	let dataCharRarityItems = document.querySelectorAll('[' + dataCharRarity + ']');
 	let dataCharEzaItems = document.querySelectorAll('[' + dataCharEza + ']');
 	let dataCharAwakenItems = document.querySelectorAll('[' + dataCharAwaken + ']');
-	let char = document.getElementsByClassName("char");
 	let filterType = ["agl", "teq", "int", "str", "phy"];
 	let filterRarity = ["n", "r", "sr", "ssr", "ur", "lr"];
 	let filterClass = ["super", "extreme"];
@@ -90,7 +102,6 @@ function filterOk() {
 			charList[i] = char.item(i);
 		}
 	}
-
 
 	//-------------------------------1 filter used-------------------------------
 	//type
@@ -319,8 +330,8 @@ function filterOk() {
 		}
 	}
 	//------------------------------2 filters used------------------------------
-	
-	
+
+
 	//------------------------------3 filters used------------------------------
 	//type,rarity,class
 	if ((checkedTypeBtn.length > 0) && (checkedRarityBtn.length > 0) && (checkedClassBtn.length > 0) && (checkedEzaBtn.length == 0)) {
@@ -398,8 +409,8 @@ function filterOk() {
 		}
 	}
 	//------------------------------3 filters used------------------------------
-	
-	
+
+
 	//------------------------------4 filters used------------------------------
 	//type,rarity,class,eza
 	if ((checkedTypeBtn.length > 0) && (checkedRarityBtn.length > 0) && (checkedClassBtn.length > 0) && (checkedEzaBtn.length > 0)) {
@@ -424,8 +435,8 @@ function filterOk() {
 		}
 	}
 	//------------------------------4 filters used------------------------------
-	
-	
+
+
 	//eza
 	if (checkedEzaBtn.length == 1) {
 		if (document.getElementById(filterEza).classList.contains("checkedEzaBtn")) {
@@ -513,6 +524,19 @@ function filterOk() {
 			}
 		}
 	}
+
 	charList.clean(undefined);
 	createFilterPagination(charList);
+
+	let characterSearchId = document.getElementById("char-search-id");
+	if (characterSearchId.value.length > 0) {
+		let buttonYes = document.getElementById("searchTitlesOptionYes");
+		if (buttonYes.classList.contains("checkedTitlesnBtn")) {
+			searchCharNameOrTitle(2);
+			searchCharName(2);
+		} else {
+			searchCharNameOrTitle(1);
+			searchCharName(1);
+		}
+	}
 }
