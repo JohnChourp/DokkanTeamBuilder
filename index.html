@@ -10,7 +10,7 @@
 	<link href="CSS/body.css" rel="stylesheet" type="text/css" />
 	<link href="CSS/char.css" rel="stylesheet" type="text/css" />
 	<link href="CSS/pagination.css" rel="stylesheet" type="text/css" />
-	
+
 	<link href="CSS/filters/filterAwakenedInfo.css" rel="stylesheet" type="text/css" />
 	<link href="CSS/filters/filterClass.css" rel="stylesheet" type="text/css" />
 	<link href="CSS/filters/filterEza.css" rel="stylesheet" type="text/css" />
@@ -41,19 +41,19 @@
 	<script src="JS/filters/filterSortDirection.js" type="text/javascript"></script>
 	<script src="JS/filters/filterType.js" type="text/javascript"></script>
 	<script src="JS/filters/applyFilters.js" type="text/javascript"></script>
-	
+
 	<script src="JS/search/searchChar.js" type="text/javascript"></script>
 	<script src="JS/search/searchTitles.js" type="text/javascript"></script>
-	
+
 	<script src="JS/show/showCharsPerPage.js" type="text/javascript"></script>
 	<script src="JS/show/showDisplay.js" type="text/javascript"></script>
 	<!--Javascript Files-->
 
-	
+
 	<title>Dokkan Link Tool</title>
 </head>
 
-<body onload="addChar(); saveCharList(); charsPerPage(1);  searchCharName(1);">
+<body onload="addChar(); saveCharList(); charsPerPage(1);  searchCharName(1); charsPerPageTextBox();">
 	<div id="mySidenav">
 		<a href="javascript:void(0)" class="closebtn" onclick="closeNav();">&times;</a>
 		<p id="filter_text_select">Filter Select</p>
@@ -282,7 +282,9 @@
 				</div>
 			</div>
 		</div>
-		<p id="charsPerPageOptions">Characters Per Page</p>
+		<p id="charsPerPageOptions">Characters Per Page
+			<input id="chars-per-page-id" placeholder="Type Number..." title="Type in a number" type="text" />
+		</p>
 		<div id="char_setting">
 			<button onclick="charsPerPage(0);" class="charsPerPage" type="button">
 				16

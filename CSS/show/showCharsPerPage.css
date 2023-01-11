@@ -1,15 +1,22 @@
+#charsPerPageOptions {
+	color: white;
+	font-size: 20px;
+	position: relative;
+	top:-20px;
+}
+
+#chars-per-page-id{
+	position: relative;
+	top:-2px;
+	width:95px;
+}
+
 #char_setting {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	position: relative;
 	top:-30px;
-}
-#charsPerPageOptions {
-	color: white;
-	font-size: 20px;
-	position: relative;
-	top:-20px;
 }
 
 .charsPerPage {
