@@ -11,6 +11,7 @@
     text-decoration: none;
     transition: background-color .3s;
     border: 1px solid #ddd;
+    top:-30px;
 }
 
 #pagination a.checkedPagiantionBtn {
@@ -25,4 +26,5 @@
 
 #charResults {
     -webkit-user-select:text;
+    user-select:text;
 }
