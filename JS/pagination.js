@@ -14,14 +14,14 @@ function setAttributes(elem) {
 	}
 }
 
-function createPagination() {
+function createPagination(charsPerPageNum) {
 	let paginationDiv = document.getElementById("pagination");
 	paginationDiv.innerHTML = "";
 	let char = document.getElementsByClassName("char");
-	let pageSum = Math.ceil(char.length / 32);
+	let pageSum = Math.ceil(char.length / charsPerPageNum);
 
 	let pagePrevious = document.createElement("a");
-	pagePrevious.onclick = function () { paginationPrevious(pageSum); }
+	pagePrevious.onclick = function () { paginationPrevious(pageSum, charsPerPageNum); }
 	pagePrevious.href = "#";
 	pagePrevious.setAttribute("draggable", "false");
 	pagePrevious.innerHTML = "&laquo;";
@@ -30,7 +30,7 @@ function createPagination() {
 	for (let i = 1; i <= pageSum; i++) {
 		if (i == 1) {
 			let page = document.createElement("a");
-			page.onclick = function () { pagination_page((i - 1) * 32, i * 32, pageSum, i); };
+			page.onclick = function () { pagination_page((i - 1) * charsPerPageNum, i * charsPerPageNum, pageSum, i); };
 			page.href = "#";
 			page.setAttribute("draggable", "false");
 			page.innerHTML = i;
@@ -38,7 +38,7 @@ function createPagination() {
 			paginationDiv.appendChild(page);
 		} else {
 			let page = document.createElement("a");
-			page.onclick = function () { pagination_page((i - 1) * 32, i * 32, pageSum, i); };
+			page.onclick = function () { pagination_page((i - 1) * charsPerPageNum, i * charsPerPageNum, pageSum, i); };
 			page.href = "#";
 			page.setAttribute("draggable", "false");
 			page.innerHTML = i;
@@ -47,7 +47,7 @@ function createPagination() {
 	}
 
 	let pageNext = document.createElement("a");
-	pageNext.onclick = function () { paginationFilterNext(pageSum); }
+	pageNext.onclick = function () { paginationFilterNext(pageSum, charsPerPageNum); }
 	pageNext.href = "#";
 	pageNext.setAttribute("draggable", "false");
 	pageNext.innerHTML = "&raquo;";
@@ -60,12 +60,12 @@ function createPagination() {
 	pageResults.setAttribute("draggable", "false");
 	pageResults.setAttribute('id', 'charResults');
 
-	pageResults.innerHTML = "Showing 1 to 32 of " + char.length + " Characters";
+	pageResults.innerHTML = "Showing 1 to " + charsPerPageNum + " of " + char.length + " Characters";
 	paginationDiv.appendChild(pageResults);
-	pagination_page(0, 32, pageSum, 1);
+	pagination_page(0, charsPerPageNum, pageSum, 1);
 }
 
-function createFilterPagination(charList) {
+function createFilterPagination(charList, charsPerPageNum) {
 	let char_container = document.getElementById("char_container");
 	char_container.innerHTML = "";
 	for (let j = 0; j < charList.length; j++) {
@@ -75,10 +75,10 @@ function createFilterPagination(charList) {
 	let paginationDiv = document.getElementById("pagination");
 	paginationDiv.innerHTML = "";
 	let char = document.getElementsByClassName("char");
-	let pageSum = Math.ceil(char.length / 32);
+	let pageSum = Math.ceil(char.length / charsPerPageNum);
 
 	let pagePrevious = document.createElement("a");
-	pagePrevious.onclick = function () { paginationPrevious(pageSum); }
+	pagePrevious.onclick = function () { paginationPrevious(pageSum, charsPerPageNum); }
 	pagePrevious.href = "#";
 	pagePrevious.setAttribute("draggable", "false");
 	pagePrevious.innerHTML = "&laquo;";
@@ -87,7 +87,7 @@ function createFilterPagination(charList) {
 	for (let i = 1; i <= pageSum; i++) {
 		if (i == 1) {
 			let page = document.createElement("a");
-			page.onclick = function () { pagination_page((i - 1) * 32, i * 32, pageSum, 1); };
+			page.onclick = function () { pagination_page((i - 1) * charsPerPageNum, i * charsPerPageNum, pageSum, 1, charsPerPageNum); };
 			page.href = "#";
 			page.setAttribute("draggable", "false");
 			page.innerHTML = i;
@@ -95,7 +95,7 @@ function createFilterPagination(charList) {
 			paginationDiv.appendChild(page);
 		} else {
 			let page = document.createElement("a");
-			page.onclick = function () { pagination_page((i - 1) * 32, i * 32, pageSum, i); };
+			page.onclick = function () { pagination_page((i - 1) * charsPerPageNum, i * charsPerPageNum, pageSum, i, charsPerPageNum); };
 			page.href = "#";
 			page.setAttribute("draggable", "false");
 			page.innerHTML = i;
@@ -104,7 +104,7 @@ function createFilterPagination(charList) {
 	}
 
 	let pageNext = document.createElement("a");
-	pageNext.onclick = function () { paginationFilterNext(pageSum); }
+	pageNext.onclick = function () { paginationFilterNext(pageSum, charsPerPageNum); }
 	pageNext.href = "#";
 	pageNext.setAttribute("draggable", "false");
 	pageNext.innerHTML = "&raquo;";
@@ -117,18 +117,18 @@ function createFilterPagination(charList) {
 	pageResults.setAttribute("draggable", "false");
 	pageResults.setAttribute('id', 'charResults');
 
-	if (char.length < 32) {
+	if (char.length < charsPerPageNum) {
 		pageResults.innerHTML = "Showing 1 to " + char.length + " of " + char.length + " Characters";
 		paginationDiv.appendChild(pageResults);
-		pagination_page(0, char.length, pageSum, 1);
+		pagination_page(0, char.length, pageSum, 1, charsPerPageNum);
 	} else {
-		pageResults.innerHTML = "Showing 1 to 32 of " + char.length + " Characters";
+		pageResults.innerHTML = "Showing 1 to " + charsPerPageNum + " of " + char.length + " Characters";
 		paginationDiv.appendChild(pageResults);
-		pagination_page(0, 32, pageSum, 1);
+		pagination_page(0, charsPerPageNum, pageSum, 1, charsPerPageNum);
 	}
 }
 
-function pagination_page(start, end, pageSum, pageNum) {
+function pagination_page(start, end, pageSum, pageNum, charsPerPageNum) {
 	let char = document.getElementsByClassName("char");
 	for (let i = 0; i < char.length; i++) {
 		char.item(i).style.display = "none";
@@ -149,17 +149,17 @@ function pagination_page(start, end, pageSum, pageNum) {
 	}
 
 	let pagination_id = document.getElementById("pagination");
-	if (char.length < 32) {
+	if (char.length < charsPerPageNum) {
 		pagination_id.children.item(pageSum + 2).innerHTML = "Showing 1 to " + char.length + " of " + char.length + " Characters";
 	} else if (pageSum == pageNum) {
 		pagination_id.children.item(pageSum + 2).innerHTML = "Showing " + (start + 1) + " to " + char.length + " of " + char.length + " Characters";
 	} else {
-		pagination_id.children.item(pageSum + 2).innerHTML = "Showing " + (start + 1) + " to " + (pageNum * 32) + " of " + char.length + " Characters";
+		pagination_id.children.item(pageSum + 2).innerHTML = "Showing " + (start + 1) + " to " + (pageNum * charsPerPageNum) + " of " + char.length + " Characters";
 	}
 	addFilterPaginationClass(pageNum, pageSum);
 }
 
-function paginationPrevious(pageSum) {
+function paginationPrevious(pageSum, charsPerPageNum) {
 	let pagination_id = document.getElementById("pagination");
 	for (i = 1; i <= pageSum; i++) {
 		if (pagination_id.children.item(i + 1).classList.contains("checkedPagiantionBtn")) {
@@ -167,12 +167,12 @@ function paginationPrevious(pageSum) {
 			pagination_id.children.item(i).style.border = "1px solid #4CAF50";
 			pagination_id.children.item(i + 1).classList.remove("checkedPagiantionBtn");
 			pagination_id.children.item(i + 1).style.border = "1px solid #ddd";
-			pagination_page((i - 1) * 32, i * 32, pageSum, i);
+			pagination_page((i - 1) * charsPerPageNum, i * charsPerPageNum, pageSum, i, charsPerPageNum);
 		}
 	}
 }
 
-function paginationFilterNext(pageSum) {
+function paginationFilterNext(pageSum, charsPerPageNum) {
 	let char = document.getElementsByClassName("char");
 	let pagination_id = document.getElementById("pagination");
 	for (i = pageSum; i > 0; i--) {
@@ -182,9 +182,9 @@ function paginationFilterNext(pageSum) {
 			pagination_id.children.item(i - 1).classList.remove("checkedPagiantionBtn");
 			pagination_id.children.item(i - 1).style.border = "1px solid #ddd";
 			if (i == 1) {
-				pagination_page((i - 1) * 32, char.length, pageSum, i);
+				pagination_page((i - 1) * charsPerPageNum, char.length, pageSum, i, charsPerPageNum);
 			} else {
-				pagination_page((i - 1) * 32, i * 32, pageSum, i);
+				pagination_page((i - 1) * charsPerPageNum, i * charsPerPageNum, pageSum, i, charsPerPageNum);
 			}
 		}
 	}

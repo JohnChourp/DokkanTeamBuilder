@@ -1,0 +1,35 @@
+#charsPerPageOptions {
+	color: white;
+	font-size: 20px;
+	position: relative;
+	top:-20px;
+}
+
+#chars-per-page-id{
+	position: relative;
+	top:-2px;
+	width:95px;
+}
+
+#char_setting {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	position: relative;
+	top:-30px;
+}
+
+.charsPerPage {
+	background-color: white;
+	border: 2px solid #008CBA;
+	cursor: pointer;
+	position: relative;
+	height: 30px;
+	width:40px;
+	margin: 0px 4px 20px 4px;
+}
+
+.checkedCharsPerPageBtn {
+	background-color: #33ccff;
+	border: 2px solid #008CBA;
+}
