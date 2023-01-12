@@ -476,7 +476,7 @@ function applyFilters() {
 
 	let characterSearchId = document.getElementById("char-search-id");
 	if (characterSearchId.value.length > 0) {
-		let buttonYes = document.getElementById("searchTitlesOptionYes");
+		let buttonYes = document.getElementsByClassName("searchTitles").item(0);
 		if (buttonYes.classList.contains("checkedTitlesnBtn")) {
 			searchCharNameOrTitle(2);
 			searchCharName(2);

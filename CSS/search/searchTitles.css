@@ -1,10 +1,26 @@
+#searchTitleOptions {
+    position: relative;
+    top: -98px;
+    left:240px;
+    height:30px;
+}
+
+#searchTitleOptionsText {
+    color: white;
+    font-size: 20px;
+    position: relative;
+    left:-10px;
+}
+
 .searchTitles {
-    background-color: #ddd;
+    background-color: white;
     color: black;
     border: 2px solid #008CBA;
     transition-duration: 0.4s;
     height: 30px;
-    margin: 0px 5px 0px 5px;
+    margin: 0px 2px 5px 2px;
+    top: -47px;
+    left: 100px;
     position: relative;
 }
 
@@ -12,30 +28,6 @@
     cursor: pointer;
 }
 
-#searchTitlesOptionYes {
-    background-color: white;
-    color: black;
-    border: 2px solid #008CBA;
-    transition-duration: 0.4s;
-    height: 30px;
-    margin: 0px 5px 0px 5px;
-    position: relative;
-}
-
-#searchTitlesOptionYes:hover {
-    cursor: pointer;
-}
-
-#searchTitlesOptionNo {
+.checkedTitlesnBtn {
     background-color: #33ccff;
-    color: black;
-    border: 2px solid #008CBA;
-    transition-duration: 0.4s;
-    height: 30px;
-    margin: 0px 5px 0px 5px;
-    position: relative;
-}
-
-#searchTitlesOptionNo:hover {
-    cursor: pointer;
 }

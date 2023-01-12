@@ -1,6 +1,8 @@
 #pagination {
     display: inline-block;
     align-content: center;
+    position: relative;
+    
 }
 
 #pagination a {
@@ -11,7 +13,6 @@
     text-decoration: none;
     transition: background-color .3s;
     border: 1px solid #ddd;
-    top: -30px;
 }
 
 #pagination a.checkedPagiantionBtn {
