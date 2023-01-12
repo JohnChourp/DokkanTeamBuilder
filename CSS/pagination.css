@@ -4,14 +4,14 @@
 }
 
 #pagination a {
-    position:relative;
+    position: relative;
     color: white;
     float: left;
     padding: 8px 16px;
     text-decoration: none;
     transition: background-color .3s;
     border: 1px solid #ddd;
-    top:-30px;
+    top: -30px;
 }
 
 #pagination a.checkedPagiantionBtn {
@@ -25,6 +25,6 @@
 }
 
 #charResults {
-    -webkit-user-select:text;
-    user-select:text;
+    -webkit-user-select: text;
+    user-select: text;
 }

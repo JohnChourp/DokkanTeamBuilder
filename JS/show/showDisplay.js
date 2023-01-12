@@ -62,20 +62,33 @@ function addDropdownClass(filterDisplay) {
 	let char_type = document.getElementsByClassName("char_type");
 	let char_eza = document.getElementsByClassName("char_eza");
 	let char_display = document.getElementsByClassName("char_display");
-	let listLinks = [], listCategories = [], listSuperAtkType = [];
-	let listLinksFormattedString = [], listCategoriesFormattedString = [], listSuperAtkTypeFormattedString = [];
+	let listLinks = [], listCategories = [], listSuperAtkType = [], listRelease = [];
+	let listLinksFormattedString = [], listCategoriesFormattedString = [], listSuperAtkTypeFormattedString = [],
+		listReleaseFormattedString = [];
 
 	for (let i = 0; i < char_display.length; i++) {
 		listLinks[i] = dataCharLinksItems[i].getAttribute(dataCharLinks).split(",");
 		listLinksFormattedString[i] = listLinks[i].join("<br/>");
+
 		listSuperAtkType[i] = dataCharSuperAtkTypeItems[i].getAttribute(dataCharSuperAtkType).split(",");
 		listSuperAtkTypeFormattedString[i] = listSuperAtkType[i].join("<br/>");
+
+		if (dataCharReleaseItems[i].getAttribute(dataCharRelease).length == 25) {
+			let a = dataCharReleaseItems[i].getAttribute(dataCharRelease);
+			let b = "After EZA:.";
+			let position = 13;
+			let temp = [a.slice(0, position), b, a.slice(position)].join('');
+			temp = "Before EZA:." + temp;
+			listRelease[i] = temp.split(".");
+		} else {
+			listRelease[i] = dataCharReleaseItems[i].getAttribute(dataCharRelease).split(".");
+		}
+		listReleaseFormattedString[i] = listRelease[i].join("<br/>");
 	}
 	for (let i = 0; i < dataCharCategoriesItems.length; i++) {
 		listCategories[i] = dataCharCategoriesItems[i].getAttribute(dataCharCategories).split(",");
 		listCategoriesFormattedString[i] = listCategories[i].join("<br/>");
 	}
-	console.log(listCategories);
 	if ((filterDisplay > -1) && (filterDisplay < 10)) {
 		for (let i = 0; i < char_display.length; i++) {
 			char.item(i).style.width = "140px";
@@ -142,9 +155,10 @@ function addDropdownClass(filterDisplay) {
 			char_display.item(i).innerHTML = dataCharMaxLevelItems[i].getAttribute(dataCharMaxLevel);
 		}
 	}
+	//Release Date
 	if (filterDisplay == 8) {
 		for (let i = 0; i < char_display.length; i++) {
-			char_display.item(i).innerHTML = dataCharReleaseItems[i].getAttribute(dataCharRelease);
+			char_display.item(i).innerHTML = listReleaseFormattedString[i];
 		}
 	}
 	if (filterDisplay == 9) {

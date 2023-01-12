@@ -137,7 +137,7 @@
     flex-direction: row;
 }
 
-#eza{
+#eza {
     cursor: pointer;
     height: 40px;
     font-size: 18px;
@@ -172,4 +172,3 @@
     initial-value: 0deg;
     inherits: false;
 }
-
