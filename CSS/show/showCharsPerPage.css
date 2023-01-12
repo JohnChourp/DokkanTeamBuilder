@@ -1,22 +1,21 @@
+#char_setting {
+	display: flex;
+	flex-direction: row;
+	position: relative;
+}
+
 #charsPerPageOptions {
 	color: white;
 	font-size: 20px;
 	position: relative;
-	top: -20px;
+	top:-10px;
+	height:20px;
 }
 
 #chars-per-page-id {
 	position: relative;
 	top: -2px;
 	width: 95px;
-}
-
-#char_setting {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	position: relative;
-	top: -30px;
 }
 
 .charsPerPage {
@@ -26,7 +25,8 @@
 	position: relative;
 	height: 30px;
 	width: 40px;
-	margin: 0px 4px 20px 4px;
+	margin: 0px 4px 0px 4px;
+	top:-15px;
 }
 
 .checkedCharsPerPageBtn {
