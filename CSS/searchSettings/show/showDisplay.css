@@ -1,21 +1,39 @@
-#box-diplay-id {
+#box-diplay-id,#character-diplay-id,
+#search-titles-id,#characters-per-page-id {
 	height: 40px;
-	width:260px;
+}
+
+#box-diplay-id {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
 }
 
 #character-diplay-id {
-	height: 40px;
-	width:400px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
 }
 
 #search-titles-id {
-	height: 40px;
-	width:220px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
 }
 
-#characters-per-page-id {
-	height: 40px;
-	width:310px;
+#search-settings-text-box-diplay-id {
+	position: relative;
+	top:-16px;
+}
+
+#search-settings-text-character-id {
+	position: relative;
+	top:-16px;
+}
+
+#search-settings-text-search-titles-id {
+	position: relative;
+	top:-16px;
 }
 
 /* Dropdown Button */
@@ -29,8 +47,7 @@
 	width: 150px;
 	height: 30px;
 	position: relative;
-	top:-55px;
-	left:100px;
+	margin-left:10px;
 }
 
 /* Dropdown button on hover & focus */
@@ -44,10 +61,9 @@
 	display: none;
 	background-color: #f1f1f1;
 	width: 150px;
+	height:200px;
 	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 	position: relative;
-	top:-55px;
-	left:100px;
 	z-index: 1;
 	overflow: auto;
 }
