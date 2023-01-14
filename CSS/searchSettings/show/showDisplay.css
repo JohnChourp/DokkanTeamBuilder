@@ -21,6 +21,12 @@
 	flex-wrap: nowrap;
 }
 
+#characters-per-page-id {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+}
+
 #search-settings-text-box-diplay-id {
 	position: relative;
 	top:-16px;
@@ -32,6 +38,11 @@
 }
 
 #search-settings-text-search-titles-id {
+	position: relative;
+	top:-16px;
+}
+
+#search-settings-text-characters-per-page-id {
 	position: relative;
 	top:-16px;
 }
