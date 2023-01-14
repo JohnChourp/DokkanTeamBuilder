@@ -1,6 +1,7 @@
 function applyFilters() {
 	getCharList();
 	//sortDirection
+	let char_container_id = document.getElementById("char-container-id");
 	let char = document.getElementsByClassName("char");
 	let checkedDirectionBtn = document.getElementsByClassName("checkedDirectionBtn");
 	if (checkedDirectionBtn.length == 1) {
@@ -9,9 +10,9 @@ function applyFilters() {
 			temp_char[i] = char.item(i);
 		}
 		let charLength = char.length;
-		char_container.innerHTML = "";
+		char_container_id.innerHTML = "";
 		for (let i = charLength - 1; i > -1; i--) {
-			char_container.appendChild(temp_char[i]);
+			char_container_id.appendChild(temp_char[i]);
 		}
 	}
 

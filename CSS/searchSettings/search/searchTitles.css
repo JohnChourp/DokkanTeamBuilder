@@ -1,3 +1,15 @@
+#search-titles-id {
+    height: 40px;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+}
+
+#search-settings-text-search-titles-id {
+	position: relative;
+	top:-16px;
+}
+
 .searchTitles {
     background-color: white;
     color: black;

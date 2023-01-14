@@ -1,15 +1,13 @@
-#search-one-char-options-dropdown {
-	display: inline-block;
+#character-diplay-id {
+	height: 40px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
 }
 
-#search-one-char-hint-id {
-	color: white;
-	font-size: 15px;
-	font-family: Georgia, 'Times New Roman', Times, serif;
+#search-settings-text-character-id {
 	position: relative;
-	white-space: nowrap;
-	margin-left:10px;
-	top:-6px;
+	top:-16px;
 }
 
 #search-one-char-selected-dropdown {
@@ -41,7 +39,6 @@
 	
 }
 
-/* Links inside the dropdown */
 .search-one-char-dropdown-options a {
 	color: black;
 	padding: 5px 16px;
@@ -49,12 +46,20 @@
 	display: block;
 }
 
-/* Change color of dropdown links on hover */
 .search-one-char-dropdown-options a:hover {
 	background-color: #ddd;
 }
 
-/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+#search-one-char-hint-id {
+	color: white;
+	font-size: 15px;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	position: relative;
+	white-space: nowrap;
+	margin-left:10px;
+	top:-6px;
+}
+
 .showOneCharName {
 	display: block;
 }

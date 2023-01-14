@@ -15,7 +15,7 @@ function setAttributes(elem) {
 }
 
 function createPagination(charsPerPageNum) {
-	let paginationDiv = document.getElementById("pagination");
+	let paginationDiv = document.getElementById("pagination-id");
 	paginationDiv.innerHTML = "";
 	let char = document.getElementsByClassName("char");
 	let pageSum = Math.ceil(char.length / charsPerPageNum);
@@ -66,13 +66,13 @@ function createPagination(charsPerPageNum) {
 }
 
 function createFilterPagination(charList, charsPerPageNum) {
-	let char_container = document.getElementById("char_container");
-	char_container.innerHTML = "";
+	let char_container_id = document.getElementById("char-container-id");
+	char_container_id.innerHTML = "";
 	for (let j = 0; j < charList.length; j++) {
-		char_container.appendChild(charList[j]);
+		char_container_id.appendChild(charList[j]);
 	}
 
-	let paginationDiv = document.getElementById("pagination");
+	let paginationDiv = document.getElementById("pagination-id");
 	paginationDiv.innerHTML = "";
 	let char = document.getElementsByClassName("char");
 	let pageSum = Math.ceil(char.length / charsPerPageNum);
@@ -130,7 +130,7 @@ function createFilterPagination(charList, charsPerPageNum) {
 
 function createSearchOneCharPagination(charsPerPageNum) {
 
-	let paginationDiv = document.getElementById("pagination");
+	let paginationDiv = document.getElementById("pagination-id");
 	paginationDiv.innerHTML = "";
 	let char = document.getElementsByClassName("char");
 	let pageSum = Math.ceil(char.length / charsPerPageNum);
@@ -205,7 +205,7 @@ function pagination_page(start, end, pageSum, pageNum, charsPerPageNum) {
 		}
 	}
 
-	let pagination_id = document.getElementById("pagination");
+	let pagination_id = document.getElementById("pagination-id");
 	if (char.length < charsPerPageNum) {
 		pagination_id.children.item(pageSum + 2).innerHTML = "Showing 1 to " + char.length + " of " + char.length + " Characters";
 	} else if (pageSum == pageNum) {
@@ -217,7 +217,7 @@ function pagination_page(start, end, pageSum, pageNum, charsPerPageNum) {
 }
 
 function paginationPrevious(pageSum, charsPerPageNum) {
-	let pagination_id = document.getElementById("pagination");
+	let pagination_id = document.getElementById("pagination-id");
 	for (i = 1; i <= pageSum; i++) {
 		if (pagination_id.children.item(i + 1).classList.contains("checkedPagiantionBtn")) {
 			pagination_id.children.item(i).classList.add("checkedPagiantionBtn");
@@ -231,7 +231,7 @@ function paginationPrevious(pageSum, charsPerPageNum) {
 
 function paginationFilterNext(pageSum, charsPerPageNum) {
 	let char = document.getElementsByClassName("char");
-	let pagination_id = document.getElementById("pagination");
+	let pagination_id = document.getElementById("pagination-id");
 	for (i = pageSum; i > 0; i--) {
 		if (pagination_id.children.item(i - 1).classList.contains("checkedPagiantionBtn")) {
 			pagination_id.children.item(i).classList.add("checkedPagiantionBtn");
@@ -248,7 +248,7 @@ function paginationFilterNext(pageSum, charsPerPageNum) {
 }
 
 function addFilterPaginationClass(pageNum, pageSum) {
-	let pagination_id = document.getElementById("pagination");
+	let pagination_id = document.getElementById("pagination-id");
 	if (!pagination_id.children.item(pageNum).classList.contains("checkedPagiantionBtn")) {
 		for (i = 1; i <= pageSum; i++) {
 			pagination_id.children.item(i).classList.remove("checkedPagiantionBtn");

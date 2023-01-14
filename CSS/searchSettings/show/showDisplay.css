@@ -1,27 +1,5 @@
-#box-diplay-id,#character-diplay-id,
-#search-titles-id,#characters-per-page-id {
-	height: 40px;
-}
-
 #box-diplay-id {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-}
-
-#character-diplay-id {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-}
-
-#search-titles-id {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-}
-
-#characters-per-page-id {
+	height: 40px;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
@@ -32,22 +10,6 @@
 	top:-16px;
 }
 
-#search-settings-text-character-id {
-	position: relative;
-	top:-16px;
-}
-
-#search-settings-text-search-titles-id {
-	position: relative;
-	top:-16px;
-}
-
-#search-settings-text-characters-per-page-id {
-	position: relative;
-	top:-16px;
-}
-
-/* Dropdown Button */
 #selected-dropdown {
 	background-color: #3498DB;
 	color: white;
@@ -61,13 +23,11 @@
 	margin-left:10px;
 }
 
-/* Dropdown button on hover & focus */
 #selected-dropdown:hover,
 #selected-dropdown:focus {
 	background-color: #2980B9;
 }
 
-/* Dropdown Content (Hidden by Default) */
 .dropdown-options {
 	display: none;
 	background-color: #f1f1f1;
@@ -79,7 +39,6 @@
 	overflow: auto;
 }
 
-/* Links inside the dropdown */
 .dropdown-options a {
 	color: black;
 	padding: 5px 16px;
@@ -87,14 +46,8 @@
 	display: block;
 }
 
-/* Change color of dropdown links on hover */
 .dropdown-options a:hover {
 	background-color: #ddd;
-}
-
-/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-.show {
-	display: block;
 }
 
 .char_display {
@@ -109,4 +62,8 @@
 	vertical-align: middle;
 	text-align: center;
 	border: 4px solid #000000;
+}
+
+.show {
+	display: block;
 }
