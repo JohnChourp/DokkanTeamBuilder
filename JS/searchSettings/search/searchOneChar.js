@@ -121,4 +121,5 @@ function addSearchOneCharDropdownClass(charNamePos) {
 	addChar();
 
 	createSearchOneCharPagination(localStorage.getItem("charsPerPageNumItem"));
+	addDropdownClass(localStorage.getItem("filterDisplay"));
 }

@@ -1,4 +1,4 @@
-.filter-rarity-container {
+.filter-rarity-container-class {
 	position: relative;
 	width: 60px;
 	height: 30px;
@@ -96,7 +96,7 @@
 	transform: rotate(100deg);
 }
 
-.filter-rarity-container-text {
+.filter-rarity-container-text-class {
 	position: relative;
 	color: white;
 	top: -23px;
