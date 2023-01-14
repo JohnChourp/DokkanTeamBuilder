@@ -20,6 +20,7 @@
 	<link href="CSS/filters/filterType.css" rel="stylesheet" type="text/css" />
 
 	<link href="CSS/search/searchChar.css" rel="stylesheet" type="text/css" />
+	<link href="CSS/search/searchOneChar.css" rel="stylesheet" type="text/css" />
 	<link href="CSS/search/searchOptions.css" rel="stylesheet" type="text/css" />
 	<link href="CSS/search/searchTitles.css" rel="stylesheet" type="text/css" />
 
@@ -43,6 +44,7 @@
 	<script src="JS/filters/applyFilters.js" type="text/javascript"></script>
 
 	<script src="JS/search/searchChar.js" type="text/javascript"></script>
+	<script src="JS/search/searchOneChar.js" type="text/javascript"></script>
 	<script src="JS/search/searchTitles.js" type="text/javascript"></script>
 
 	<script src="JS/show/showCharsPerPage.js" type="text/javascript"></script>
@@ -54,7 +56,7 @@
 </head>
 
 <body
-	onload="addChar(); saveCharList(); charsPerPage(1);  searchCharName(1); charsPerPageTextBox(); closeNavWhenClickedOutside();">
+	onload="addChar(); saveCharList(); charsPerPage(1);  searchCharName(1); charsPerPageTextBox(); closeNavWhenClickedOutside(); addAllCharNames();">
 	<div id="mySidenav">
 		<a href="javascript:void(0)" class="closebtn" onclick="closeNav();">&times;</a>
 		<p id="filter_text_select">Filter Select</p>
@@ -249,8 +251,9 @@
 			<span>Filter Select</span>
 		</button>
 		<div class="charSearch">
-			<input id="char-search-id" placeholder="Search..." title="Type in a name" type="text" inputmode="search" />
-			<p id="showDisplayOptions">Box Info</p>
+			<input id="char-search-id" placeholder="Search Character Name..." title="Type in a name" type="text"
+				inputmode="search" />
+			<p id="showDisplayOptions">Box Diplay</p>
 			<div id="show-display-options-dropdown">
 				<button onclick="showDisplayOptions();" id="selected-dropdown">
 					Name
@@ -271,6 +274,14 @@
 					<a onclick="addDropdownClass(12);" class="dropdown-options-value" href="#">Categories</a>
 				</div>
 			</div>
+			<p id="searchOneChar">Character</p>
+			<div id="search-one-char-options-dropdown">
+				<button onclick="searchOneCharOptions();" id="search-one-char-selected-dropdown">
+					All
+				</button>
+				<div class="search-one-char-dropdown-options"></div>
+			</div>
+			<p id="searchOneCharHint">*Use this filter before &laquo;Filter Select&raquo;</p>
 			<div id="searchTitleOptions">
 				<p id="searchTitleOptionsText">Search Titles</p>
 				<button onclick="searchTitlesYes();" class="searchTitles" type="button">
@@ -286,7 +297,6 @@
 				inputmode="search" />
 		</p>
 		<div id="char_setting">
-			
 			<button onclick="charsPerPage(0);" class="charsPerPage" type="button">
 				16
 			</button>

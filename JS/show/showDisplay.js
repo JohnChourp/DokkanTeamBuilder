@@ -2,8 +2,7 @@
 window.onclick = function (event) {
 	if (!event.target.matches('#selected-dropdown')) {
 		var dropdowns = document.getElementsByClassName("dropdown-options");
-		var i;
-		for (i = 0; i < dropdowns.length; i++) {
+		for (let i = 0; i < dropdowns.length; i++) {
 			var openDropdown = dropdowns[i];
 			if (openDropdown.classList.contains('show')) {
 				openDropdown.classList.remove('show');
@@ -14,16 +13,18 @@ window.onclick = function (event) {
 
 // When the user clicks on the button, toggle between hiding and showing the dropdown content
 function showDisplayOptions() {
-	document.getElementsByClassName("dropdown-options").item(0).classList.toggle("show");
+	document.getElementsByClassName("dropdown-options").item(0).classList.toggle('show');
 	//add class when clicked
 }
 
 function addDropdownClass(filterDisplay) {
-	localStorage.setItem("filterDisplay",filterDisplay);
+	localStorage.setItem("filterDisplay", filterDisplay);
 	let selecteddropdown_btn = document.getElementById("selected-dropdown");
 	let dropdownOptionsValue = document.getElementsByClassName("dropdown-options-value");
-	dropdownOptionsValue.item(filterDisplay).classList.add("checkedDisplayBtn");
+
 	selecteddropdown_btn.innerHTML = dropdownOptionsValue.item(filterDisplay).innerHTML;
+	dropdownOptionsValue.item(filterDisplay).classList.add("checkedDisplayBtn");
+
 	for (let i = 0; i < dropdownOptionsValue.length; i++) {
 		if (i != filterDisplay) {
 			dropdownOptionsValue.item(i).classList.remove("checkedDisplayBtn");

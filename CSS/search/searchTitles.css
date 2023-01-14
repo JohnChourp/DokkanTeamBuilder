@@ -1,15 +1,15 @@
 #searchTitleOptions {
     position: relative;
-    top: -98px;
-    left:240px;
-    height:30px;
+    top: -204px;
+    left: 290px;
+    height: 30px;
 }
 
 #searchTitleOptionsText {
     color: white;
     font-size: 20px;
     position: relative;
-    left:-10px;
+    left: -10px;
 }
 
 .searchTitles {
