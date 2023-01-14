@@ -1,5 +1,5 @@
 /* The side navigation menu */
-#mySidenav {
+#left-sidenav-id {
     height: 100%;
     /* 100% Full-height */
     width: 0;
@@ -22,7 +22,7 @@
 }
 
 /* The navigation menu links */
-#mySidenav a {
+#left-sidenav-id a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
@@ -32,12 +32,12 @@
 }
 
 /* When you mouse over the navigation links, change their color */
-#mySidenav a:hover {
+#left-sidenav-id a:hover {
     color: #f1f1f1;
 }
 
 /* Position and style the close button (top right corner) */
-#mySidenav .closebtn {
+#left-sidenav-id #close-left-sidenav-btn-id {
     position: absolute;
     top: 0;
     right: 25px;
@@ -53,11 +53,11 @@
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
-    #mySidenav {
+    #left-sidenav-id {
         padding-top: 15px;
     }
 
-    #mySidenav a {
+    #left-sidenav-id a {
         font-size: 18px;
     }
 }
@@ -71,7 +71,7 @@
 
 
 /*filter select button*/
-#filter_select {
+#filter-select-id {
     border-radius: 4px;
     background-color: #f4511e;
     border: none;
@@ -84,14 +84,14 @@
     cursor: pointer;
 }
 
-#filter_select span {
+#filter-select-id span {
     cursor: pointer;
     display: inline-block;
     position: relative;
     transition: 0.5s;
 }
 
-#filter_select span:after {
+#filter-select-id span:after {
     content: '\00ab';
     position: absolute;
     opacity: 0;
@@ -100,38 +100,24 @@
     transition: 0.5s;
 }
 
-#filter_select:hover span {
+#filter-select-id:hover span {
     padding-left: 25px;
 }
 
-#filter_select:hover span:after {
+#filter-select-id:hover span:after {
     opacity: 1;
     left: 0;
 }
 
 /*filter select button*/
 
-
-
-
-
-
-
-
-
-#filter_text_select {
-    font-size: 30px;
-    color: white;
-    text-align: center;
-}
-
-.filter_text_options {
+.filter-options-text-class {
     font-size: 20px;
     color: rgb(233, 100, 12);
     text-align: center;
 }
 
-.filter {
+.filter-class {
     display: flex;
     justify-content: center;
     flex-direction: row;

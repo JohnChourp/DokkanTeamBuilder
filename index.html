@@ -11,20 +11,23 @@
 	<link href="CSS/char.css" rel="stylesheet" type="text/css" />
 	<link href="CSS/pagination.css" rel="stylesheet" type="text/css" />
 
-	<link href="CSS/filters/filterAwakenedInfo.css" rel="stylesheet" type="text/css" />
-	<link href="CSS/filters/filterClass.css" rel="stylesheet" type="text/css" />
-	<link href="CSS/filters/filterEza.css" rel="stylesheet" type="text/css" />
-	<link href="CSS/filters/filterRarity.css" rel="stylesheet" type="text/css" />
-	<link href="CSS/filters/filterSideNav.css" rel="stylesheet" type="text/css" />
-	<link href="CSS/filters/filterSortDirection.css" rel="stylesheet" type="text/css" />
-	<link href="CSS/filters/filterType.css" rel="stylesheet" type="text/css" />
+	<link href="CSS/searchSettings/searchSettings.css" rel="stylesheet" type="text/css" />
 
-	<link href="CSS/search/searchChar.css" rel="stylesheet" type="text/css" />
-	<link href="CSS/search/searchOptions.css" rel="stylesheet" type="text/css" />
-	<link href="CSS/search/searchTitles.css" rel="stylesheet" type="text/css" />
+	<link href="CSS/searchSettings/filters/filterAwakenedInfo.css" rel="stylesheet" type="text/css" />
+	<link href="CSS/searchSettings/filters/filterClass.css" rel="stylesheet" type="text/css" />
+	<link href="CSS/searchSettings/filters/filterEza.css" rel="stylesheet" type="text/css" />
+	<link href="CSS/searchSettings/filters/filterRarity.css" rel="stylesheet" type="text/css" />
+	<link href="CSS/searchSettings/filters/filterSideNav.css" rel="stylesheet" type="text/css" />
+	<link href="CSS/searchSettings/filters/filterSortDirection.css" rel="stylesheet" type="text/css" />
+	<link href="CSS/searchSettings/filters/filterType.css" rel="stylesheet" type="text/css" />
 
-	<link href="CSS/show/showCharsPerPage.css" rel="stylesheet" type="text/css" />
-	<link href="CSS/show/showDisplay.css" rel="stylesheet" type="text/css" />
+	<link href="CSS/searchSettings/search/searchChar.css" rel="stylesheet" type="text/css" />
+	<link href="CSS/searchSettings/search/searchOneChar.css" rel="stylesheet" type="text/css" />
+	<link href="CSS/searchSettings/search/searchOptions.css" rel="stylesheet" type="text/css" />
+	<link href="CSS/searchSettings/search/searchTitles.css" rel="stylesheet" type="text/css" />
+
+	<link href="CSS/searchSettings/show/showCharsPerPage.css" rel="stylesheet" type="text/css" />
+	<link href="CSS/searchSettings/show/showDisplay.css" rel="stylesheet" type="text/css" />
 	<!--CSS Files-->
 
 
@@ -33,20 +36,21 @@
 	<script src="JS/pagination.js" type="text/javascript"></script>
 	<script src="JS/saveCharList.js" type="text/javascript"></script>
 
-	<script src="JS/filters/filterAwakenInfo.js" type="text/javascript"></script>
-	<script src="JS/filters/filterClass.js" type="text/javascript"></script>
-	<script src="JS/filters/filterEza.js" type="text/javascript"></script>
-	<script src="JS/filters/filterRarity.js" type="text/javascript"></script>
-	<script src="JS/filters/filterSideNav.js" type="text/javascript"></script>
-	<script src="JS/filters/filterSortDirection.js" type="text/javascript"></script>
-	<script src="JS/filters/filterType.js" type="text/javascript"></script>
-	<script src="JS/filters/applyFilters.js" type="text/javascript"></script>
+	<script src="JS/searchSettings/filters/filterAwakenInfo.js" type="text/javascript"></script>
+	<script src="JS/searchSettings/filters/filterClass.js" type="text/javascript"></script>
+	<script src="JS/searchSettings/filters/filterEza.js" type="text/javascript"></script>
+	<script src="JS/searchSettings/filters/filterRarity.js" type="text/javascript"></script>
+	<script src="JS/searchSettings/filters/filterSideNav.js" type="text/javascript"></script>
+	<script src="JS/searchSettings/filters/filterSortDirection.js" type="text/javascript"></script>
+	<script src="JS/searchSettings/filters/filterType.js" type="text/javascript"></script>
+	<script src="JS/searchSettings/filters/applyFilters.js" type="text/javascript"></script>
 
-	<script src="JS/search/searchChar.js" type="text/javascript"></script>
-	<script src="JS/search/searchTitles.js" type="text/javascript"></script>
+	<script src="JS/searchSettings/search/searchChar.js" type="text/javascript"></script>
+	<script src="JS/searchSettings/search/searchOneChar.js" type="text/javascript"></script>
+	<script src="JS/searchSettings/search/searchTitles.js" type="text/javascript"></script>
 
-	<script src="JS/show/showCharsPerPage.js" type="text/javascript"></script>
-	<script src="JS/show/showDisplay.js" type="text/javascript"></script>
+	<script src="JS/searchSettings/show/showCharsPerPage.js" type="text/javascript"></script>
+	<script src="JS/searchSettings/show/showDisplay.js" type="text/javascript"></script>
 	<!--Javascript Files-->
 
 
@@ -54,22 +58,23 @@
 </head>
 
 <body
-	onload="addChar(); saveCharList(); charsPerPage(1);  searchCharName(1); charsPerPageTextBox(); closeNavWhenClickedOutside();">
-	<div id="mySidenav">
-		<a href="javascript:void(0)" class="closebtn" onclick="closeNav();">&times;</a>
-		<p id="filter_text_select">Filter Select</p>
-		<p class="filter_text_options">Sort Direction</p>
-		<div class="filter">
-			<button onclick="filterDirectionDown();" id="filterDirectionDown" class="filterDirection" type="button">
+	onload="addChar(); saveCharList(); charsPerPage(1);  searchCharName(1); charsPerPageTextBox(); closeNavWhenClickedOutside(); addAllCharNames();">
+	<div id="left-sidenav-id">
+		<a href="javascript:void(0)" id="close-left-sidenav-btn-id" onclick="closeNav();">&times;</a>
+		<p class="filter-options-text-class">Sort Direction</p>
+		<div class="filter-class">
+			<button onclick="filterDirectionDown();" id="filter-direction-down-id" class="filter-direction-class"
+				type="button">
 				Descending Order
 			</button>
-			<button onclick="filterDirectionUp();" id="filterDirectionUp" class="filterDirection" type="button">
+			<button onclick="filterDirectionUp();" id="filter-direction-up-id" class="filter-direction-class"
+				type="button">
 				Ascending Order
 			</button>
 		</div>
-		<p class="filter_text_options">Rarity</p>
-		<div class="filter">
-			<div onclick="rarityNFilter();" id="n" class="filter-rarity-container">
+		<p class="filter-options-text-class">Rarity</p>
+		<div class="filter-class">
+			<div onclick="rarityNFilter();" id="n" class="filter-rarity-container-class">
 				<div class="top-half-bg-color"></div>
 				<div class="bottom-half-bg-color"></div>
 				<div class="top-line"></div>
@@ -78,9 +83,9 @@
 				<div class="bottom-line"></div>
 				<div class="bottom-left-line-rotated"></div>
 				<div class="bottom-right-line-rotated"></div>
-				<div class="filter-rarity-container-text">N</div>
+				<div class="filter-rarity-container-text-class">N</div>
 			</div>
-			<div onclick="rarityRFilter();" id="r" class="filter-rarity-container">
+			<div onclick="rarityRFilter();" id="r" class="filter-rarity-container-class">
 				<div class="top-half-bg-color"></div>
 				<div class="bottom-half-bg-color"></div>
 				<div class="top-line"></div>
@@ -89,9 +94,9 @@
 				<div class="bottom-line"></div>
 				<div class="bottom-left-line-rotated"></div>
 				<div class="bottom-right-line-rotated"></div>
-				<div class="filter-rarity-container-text">R</div>
+				<div class="filter-rarity-container-text-class">R</div>
 			</div>
-			<div onclick="raritySRFilter();" id="sr" class="filter-rarity-container">
+			<div onclick="raritySRFilter();" id="sr" class="filter-rarity-container-class">
 				<div class="top-half-bg-color"></div>
 				<div class="bottom-half-bg-color"></div>
 				<div class="top-line"></div>
@@ -100,9 +105,9 @@
 				<div class="bottom-line"></div>
 				<div class="bottom-left-line-rotated"></div>
 				<div class="bottom-right-line-rotated"></div>
-				<div class="filter-rarity-container-text">SR</div>
+				<div class="filter-rarity-container-text-class">SR</div>
 			</div>
-			<div onclick="raritySSRFilter();" id="ssr" class="filter-rarity-container">
+			<div onclick="raritySSRFilter();" id="ssr" class="filter-rarity-container-class">
 				<div class="top-half-bg-color"></div>
 				<div class="bottom-half-bg-color"></div>
 				<div class="top-line"></div>
@@ -111,9 +116,9 @@
 				<div class="bottom-line"></div>
 				<div class="bottom-left-line-rotated"></div>
 				<div class="bottom-right-line-rotated"></div>
-				<div class="filter-rarity-container-text">SSR</div>
+				<div class="filter-rarity-container-text-class">SSR</div>
 			</div>
-			<div onclick="rarityURFilter();" id="ur" class="filter-rarity-container">
+			<div onclick="rarityURFilter();" id="ur" class="filter-rarity-container-class">
 				<div class="top-half-bg-color"></div>
 				<div class="bottom-half-bg-color"></div>
 				<div class="top-line"></div>
@@ -122,9 +127,9 @@
 				<div class="bottom-line"></div>
 				<div class="bottom-left-line-rotated"></div>
 				<div class="bottom-right-line-rotated"></div>
-				<div class="filter-rarity-container-text">UR</div>
+				<div class="filter-rarity-container-text-class">UR</div>
 			</div>
-			<div onclick="rarityLRFilter();" id="lr" class="filter-rarity-container">
+			<div onclick="rarityLRFilter();" id="lr" class="filter-rarity-container-class">
 				<div class="top-half-bg-color"></div>
 				<div class="bottom-half-bg-color"></div>
 				<div class="top-line"></div>
@@ -133,11 +138,11 @@
 				<div class="bottom-line"></div>
 				<div class="bottom-left-line-rotated"></div>
 				<div class="bottom-right-line-rotated"></div>
-				<div class="filter-rarity-container-text">LR</div>
+				<div class="filter-rarity-container-text-class">LR</div>
 			</div>
 		</div>
-		<p class="filter_text_options">Type</p>
-		<div class="filter">
+		<p class="filter-options-text-class">Type</p>
+		<div class="filter-class">
 			<div onclick="aglFilter();" id="agl" class="filter-type-container">
 				<div class="top-half-bg-color-type"></div>
 				<div class="bottom-half-bg-color-type"></div>
@@ -194,8 +199,8 @@
 				<div class="filter-type-container-text">PHY</div>
 			</div>
 		</div>
-		<p class="filter_text_options">Class</p>
-		<div class="filter">
+		<p class="filter-options-text-class">Class</p>
+		<div class="filter-class">
 			<div onclick="superFilter();" id="super" class="filter-class-container">
 				<div class="top-half-bg-color-class"></div>
 				<div class="bottom-half-bg-color-class"></div>
@@ -219,12 +224,12 @@
 				<div class="filter-class-container-text">EXTREME</div>
 			</div>
 		</div>
-		<p class="filter_text_options">Eza</p>
-		<div class="filter">
+		<p class="filter-options-text-class">Eza</p>
+		<div class="filter-class">
 			<button onclick="ezaFilter();" id="eza" type="button">EZA</button>
 		</div>
-		<p class="filter_text_options">Filter Awakened</p>
-		<div class="filter">
+		<p class="filter-options-text-class">Filter Awakened</p>
+		<div class="filter-class">
 			<button onclick="filterNotDokkanAwakened();" id="notDokkanAwakened" class="filterDokkanAwakened"
 				type="button">
 				Not-Dokkan
@@ -237,42 +242,55 @@
 				Dokkan
 			</button>
 		</div>
-		<p class="filter_text_options">Apply Filters</p>
-		<div class="filter">
+		<p class="filter-options-text-class">Apply Filters</p>
+		<div class="filter-class">
 			<button onclick="applyFilters(); closeNav();" id="ok" type="button">
 				OK
 			</button>
 		</div>
 	</div>
-	<div id="mainPage">
-		<button onclick="openNav();" id="filter_select">
+	<div id="main-page-id">
+		<button onclick="openNav();" id="filter-select-id">
 			<span>Filter Select</span>
 		</button>
-		<div class="charSearch">
-			<input id="char-search-id" placeholder="Search..." title="Type in a name" type="text" inputmode="search" />
-			<p id="showDisplayOptions">Box Info</p>
-			<div id="show-display-options-dropdown">
-				<button onclick="showDisplayOptions();" id="selected-dropdown">
-					Name
-				</button>
-				<div class="dropdown-options">
-					<a onclick="addDropdownClass(0);" class="dropdown-options-value" href="#">Name</a>
-					<a onclick="addDropdownClass(1);" class="dropdown-options-value" href="#">Title</a>
-					<a onclick="addDropdownClass(2);" class="dropdown-options-value" href="#">Char ID</a>
-					<a onclick="addDropdownClass(3);" class="dropdown-options-value" href="#">HP</a>
-					<a onclick="addDropdownClass(4);" class="dropdown-options-value" href="#">Attack</a>
-					<a onclick="addDropdownClass(5);" class="dropdown-options-value" href="#">Defense</a>
-					<a onclick="addDropdownClass(6);" class="dropdown-options-value" href="#">Cost</a>
-					<a onclick="addDropdownClass(7);" class="dropdown-options-value" href="#">Max Level</a>
-					<a onclick="addDropdownClass(8);" class="dropdown-options-value" href="#">Release Date</a>
-					<a onclick="addDropdownClass(9);" class="dropdown-options-value" href="#">Super ATK Level</a>
-					<a onclick="addDropdownClass(10);" class="dropdown-options-value" href="#">Super ATK Type</a>
-					<a onclick="addDropdownClass(11);" class="dropdown-options-value" href="#">Links</a>
-					<a onclick="addDropdownClass(12);" class="dropdown-options-value" href="#">Categories</a>
+		<div id="search-settings-id">
+			<input id="char-search-id" placeholder="Enter Character Name..." title="Type in a name" type="text"
+				inputmode="search" />
+			<div id="box-diplay-id">
+				<p class="search-settings-text-class">Box Diplay</p>
+				<div id="show-display-options-dropdown">
+					<button onclick="showDisplayOptions();" id="selected-dropdown">
+						Name
+					</button>
+					<div class="dropdown-options">
+						<a onclick="addDropdownClass(0);" class="dropdown-options-value" href="#">Name</a>
+						<a onclick="addDropdownClass(1);" class="dropdown-options-value" href="#">Title</a>
+						<a onclick="addDropdownClass(2);" class="dropdown-options-value" href="#">Char ID</a>
+						<a onclick="addDropdownClass(3);" class="dropdown-options-value" href="#">HP</a>
+						<a onclick="addDropdownClass(4);" class="dropdown-options-value" href="#">Attack</a>
+						<a onclick="addDropdownClass(5);" class="dropdown-options-value" href="#">Defense</a>
+						<a onclick="addDropdownClass(6);" class="dropdown-options-value" href="#">Cost</a>
+						<a onclick="addDropdownClass(7);" class="dropdown-options-value" href="#">Max Level</a>
+						<a onclick="addDropdownClass(8);" class="dropdown-options-value" href="#">Release Date</a>
+						<a onclick="addDropdownClass(9);" class="dropdown-options-value" href="#">Super ATK Level</a>
+						<a onclick="addDropdownClass(10);" class="dropdown-options-value" href="#">Super ATK Type</a>
+						<a onclick="addDropdownClass(11);" class="dropdown-options-value" href="#">Links</a>
+						<a onclick="addDropdownClass(12);" class="dropdown-options-value" href="#">Categories</a>
+					</div>
 				</div>
 			</div>
-			<div id="searchTitleOptions">
-				<p id="searchTitleOptionsText">Search Titles</p>
+			<div id="character-diplay-id">
+				<p class="search-settings-text-class">Character</p>
+				<div id="search-one-char-options-dropdown">
+					<button onclick="searchOneCharOptions();" id="search-one-char-selected-dropdown">
+						All
+					</button>
+					<div class="search-one-char-dropdown-options"></div>
+				</div>
+				<p id="search-one-char-hint-id">*Use this filter before &laquo;Filter Select&raquo;</p>
+			</div>
+			<div id="search-titles-id">
+				<p class="search-settings-text-class">Search Titles</p>
 				<button onclick="searchTitlesYes();" class="searchTitles" type="button">
 					YES
 				</button>
@@ -280,31 +298,31 @@
 					NO
 				</button>
 			</div>
-		</div>
-		<p id="charsPerPageOptions">Characters Per Page
-			<input id="chars-per-page-id" placeholder="Type Number..." title="Type in a number" type="text"
-				inputmode="search" />
-		</p>
-		<div id="char_setting">
-			
-			<button onclick="charsPerPage(0);" class="charsPerPage" type="button">
-				16
-			</button>
-			<button onclick="charsPerPage(1);" class="charsPerPage checkedCharsPerPageBtn" type="button">
-				32
-			</button>
-			<button onclick="charsPerPage(2);" class="charsPerPage" type="button">
-				64
-			</button>
-			<button onclick="charsPerPage(3);" class="charsPerPage" type="button">
-				128
-			</button>
-			<button onclick="charsPerPage(4);" class="charsPerPage" type="button">
-				256
-			</button>
-			<button onclick="charsPerPage(5);" class="charsPerPage" type="button">
-				512
-			</button>
+			<div id="characters-per-page-id">
+				<p class="search-settings-text-class">Characters Per Page</p>
+				<input id="chars-per-page-id" placeholder="Number..." title="Type in a number" type="text"
+					inputmode="search" />
+				<div id="characters-per-page-pages-id">
+					<button onclick="charsPerPage(0);" class="charsPerPage" type="button">
+						16
+					</button>
+					<button onclick="charsPerPage(1);" class="charsPerPage checkedCharsPerPageBtn" type="button">
+						32
+					</button>
+					<button onclick="charsPerPage(2);" class="charsPerPage" type="button">
+						64
+					</button>
+					<button onclick="charsPerPage(3);" class="charsPerPage" type="button">
+						128
+					</button>
+					<button onclick="charsPerPage(4);" class="charsPerPage" type="button">
+						256
+					</button>
+					<button onclick="charsPerPage(5);" class="charsPerPage" type="button">
+						512
+					</button>
+				</div>
+			</div>
 		</div>
 		<div id="pagination"></div>
 		<div id="char_container">

@@ -1,4 +1,4 @@
-.filterDirection {
+.filter-direction-class {
     background-color: #ddd;
     color: black;
     border: 2px solid #008CBA;
@@ -8,11 +8,11 @@
     position: relative;
 }
 
-.filterDirection:hover {
+.filter-direction-class:hover {
     cursor: pointer;
 }
 
-#filterDirectionDown {
+#filter-direction-down-id {
     background-color: white;
     color: black;
     border: 2px solid #008CBA;
@@ -21,11 +21,11 @@
     position: relative;
 }
 
-#filterDirectionDown:hover {
+#filter-direction-down-id:hover {
     cursor: pointer;
 }
 
-#filterDirectionUp {
+#filter-direction-up-id {
     background-color: #33ccff;
     color: black;
     border: 2px solid #008CBA;
@@ -34,6 +34,6 @@
     position: relative;
 }
 
-#filterDirectionUp:hover {
+#filter-direction-up-id:hover {
     cursor: pointer;
 }

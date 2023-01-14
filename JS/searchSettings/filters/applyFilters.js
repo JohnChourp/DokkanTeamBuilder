@@ -15,6 +15,14 @@ function applyFilters() {
 		}
 	}
 
+	//select one char
+	let searchOneCharDropdownValue = document.getElementsByClassName("search-one-char-dropdown-options-value");
+	for (let i = 0; i < searchOneCharDropdownValue.length; i++) {
+		if (searchOneCharDropdownValue.item(i).classList.contains("checkedSearchOneCharBtn")) {
+			addSearchOneCharDropdownClass(i);
+		}
+	}
+
 	let dataCharType = 'data-char-type';
 	let dataCharClass = 'data-char-class';
 	let dataCharRarity = 'data-char-rarity';
