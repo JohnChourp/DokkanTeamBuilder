@@ -1,17 +1,17 @@
 #box-diplay-id {
-	height:30px;
+	height: 30px;
 }
 
 #character-diplay-id {
-	height:30px;
+	height: 30px;
 }
 
 #search-titles-id {
-	height:30px;
+	height: 30px;
 }
 
 #characters-per-page-id {
-	height:30px;
+	height: 30px;
 }
 
 /* The container <div> - needed to position the dropdown content */
@@ -19,8 +19,8 @@
 	display: inline-block;
 	position: relative;
 	z-index: 1;
-	left:100px;
-	top:-55px;
+	left: 100px;
+	top: -55px;
 	height: 30px;
 }
 

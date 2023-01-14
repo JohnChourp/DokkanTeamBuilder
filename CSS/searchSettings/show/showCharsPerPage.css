@@ -2,15 +2,15 @@
 	display: flex;
 	flex-direction: row;
 	position: relative;
-	top:-50px;
+	top: -50px;
 }
 
 #chars-per-page-id {
 	width: 110px;
-	height:25px;
+	height: 25px;
 	position: relative;
-	left:170px;
-	top:-55px;
+	left: 170px;
+	top: -55px;
 	font-size: 20px;
 }
 
@@ -23,7 +23,7 @@
 	margin: 0px 4px 0px 4px;
 	font-size: 15px;
 	position: relative;
-	top:5px;
+	top: 5px;
 }
 
 .checkedCharsPerPageBtn {
