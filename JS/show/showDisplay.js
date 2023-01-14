@@ -19,6 +19,7 @@ function showDisplayOptions() {
 }
 
 function addDropdownClass(filterDisplay) {
+	localStorage.setItem("filterDisplay",filterDisplay);
 	let selecteddropdown_btn = document.getElementById("selected-dropdown");
 	let dropdownOptionsValue = document.getElementsByClassName("dropdown-options-value");
 	dropdownOptionsValue.item(filterDisplay).classList.add("checkedDisplayBtn");

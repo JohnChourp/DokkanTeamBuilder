@@ -485,4 +485,5 @@ function applyFilters() {
 			searchCharName(1);
 		}
 	}
+	addDropdownClass(localStorage.getItem("filterDisplay"));
 }
