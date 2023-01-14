@@ -254,10 +254,10 @@
 			<span>Filter Select</span>
 		</button>
 		<input id="char-search-id" placeholder="Enter Character Name..." title="Type in a name" type="text"
-				inputmode="search" />
+			inputmode="search" />
 		<div id="search-settings-id">
 			<div id="box-diplay-id">
-				<p class="search-settings-text-class">Box Diplay</p>
+				<p id="search-settings-text-box-diplay-id" class="search-settings-text-class">Box Diplay</p>
 				<button onclick="showDisplayOptions();" id="selected-dropdown">Name</button>
 				<div class="dropdown-options">
 					<a onclick="addDropdownClass(0);" class="dropdown-options-value" href="#">Name</a>
@@ -276,15 +276,15 @@
 				</div>
 			</div>
 			<div id="character-diplay-id">
-				<p class="search-settings-text-class">Character</p>
-					<button onclick="searchOneCharOptions();" id="search-one-char-selected-dropdown">
-						All
-					</button>
-					<div class="search-one-char-dropdown-options"></div>
+				<p id="search-settings-text-character-id" class="search-settings-text-class">Character</p>
+				<button onclick="searchOneCharOptions();" id="search-one-char-selected-dropdown">
+					All
+				</button>
+				<div class="search-one-char-dropdown-options"></div>
 				<p id="search-one-char-hint-id">*Use this filter before &laquo;Filter Select&raquo;</p>
 			</div>
 			<div id="search-titles-id">
-				<p class="search-settings-text-class">Search Titles</p>
+				<p id="search-settings-text-search-titles-id" class="search-settings-text-class">Search Titles</p>
 				<button onclick="searchTitlesYes();" class="searchTitles" type="button">
 					YES
 				</button>
@@ -293,7 +293,7 @@
 				</button>
 			</div>
 			<div id="characters-per-page-id">
-				<p class="search-settings-text-class">Characters Per Page</p>
+				<p id="search-settings-text-characters-per-page-id" class="search-settings-text-class">Characters Per Page</p>
 				<input id="chars-per-page-id" placeholder="Number..." title="Type in a number" type="text"
 					inputmode="search" />
 				<div id="characters-per-page-pages-id">
@@ -318,8 +318,8 @@
 				</div>
 			</div>
 		</div>
-		<div id="pagination"></div>
-		<div id="char_container">
+		<div id="pagination-id"></div>
+		<div id="char-container-id">
 			<div class="char" data-char-name="Goku" data-char-title="The Saiyan Among Us" data-char-type="str"
 				data-char-rarity="ssr" data-char-class="super" data-char-eza="noeza" data-char-id="1000030"
 				data-char-hp="6,696" data-char-attack="6,192" data-char-defense="3,361" data-char-cost="14"

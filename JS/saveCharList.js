@@ -99,10 +99,10 @@ function getCharList() {
 		charListSaved[i] = char_div;
 	}
 	//add all characters
-	let char_container = document.getElementById("char_container");
-	char_container.innerHTML = "";
+	let char_container_id = document.getElementById("char-container-id");
+	char_container_id.innerHTML = "";
 	for (let j = 0; j < charListSaved.length; j++) {
-		char_container.appendChild(charListSaved[j]);
+		char_container_id.appendChild(charListSaved[j]);
 	}
 	addChar();
 }

@@ -4,6 +4,7 @@ function searchCharName(nameOrTitle) {
 		// If the user presses the "Enter" key on the keyboard
 		if (event.key === "Enter") {
 			getCharList();
+			let char_container_id = document.getElementById("char-container-id");
 			let char = document.getElementsByClassName("char");
 			let checkedDirectionBtn = document.getElementsByClassName("checkedDirectionBtn");
 			if (checkedDirectionBtn.length == 1) {
@@ -12,9 +13,9 @@ function searchCharName(nameOrTitle) {
 					temp_char[i] = char.item(i);
 				}
 				let charLength = char.length;
-				char_container.innerHTML = "";
+				char_container_id.innerHTML = "";
 				for (let i = charLength - 1; i > -1; i--) {
-					char_container.appendChild(temp_char[i]);
+					char_container_id.appendChild(temp_char[i]);
 				}
 			}
 			let dataCharName = 'data-char-name';
@@ -423,6 +424,7 @@ function searchCharName(nameOrTitle) {
 
 function searchCharNameOrTitle(nameOrTitle) {
 	getCharList();
+	let char_container_id = document.getElementById("char-container-id");
 	let char = document.getElementsByClassName("char");
 	let checkedDirectionBtn = document.getElementsByClassName("checkedDirectionBtn");
 	if (checkedDirectionBtn.length == 1) {
@@ -431,9 +433,9 @@ function searchCharNameOrTitle(nameOrTitle) {
 			temp_char[i] = char.item(i);
 		}
 		let charLength = char.length;
-		char_container.innerHTML = "";
+		char_container_id.innerHTML = "";
 		for (let i = charLength - 1; i > -1; i--) {
-			char_container.appendChild(temp_char[i]);
+			char_container_id.appendChild(temp_char[i]);
 		}
 	}
 	let dataCharName = 'data-char-name';

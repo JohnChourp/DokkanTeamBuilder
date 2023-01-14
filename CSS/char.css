@@ -1,4 +1,4 @@
-#char_container {
+#char-container-id {
     display: flex;
     flex-wrap: wrap;
     position: relative;

@@ -1,18 +1,27 @@
-#characters-per-page-pages-id {
+#characters-per-page-id {
+	height: 40px;
 	display: flex;
 	flex-direction: row;
+	flex-wrap: nowrap;
+}
+
+#search-settings-text-characters-per-page-id {
 	position: relative;
-	top: -50px;
-	width:320px;
+	top:-16px;
 }
 
 #chars-per-page-id {
-	width: 110px;
+	width: 90px;
 	height: 25px;
-	position: relative;
-	left: 180px;
-	top: -55px;
 	font-size: 20px;
+	margin-left: 10px;
+}
+
+#characters-per-page-pages-id {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	margin-left:10px;
 }
 
 .charsPerPage {
@@ -23,8 +32,6 @@
 	width: 40px;
 	margin: 0px 4px 0px 4px;
 	font-size: 15px;
-	position: relative;
-	top: 5px;
 }
 
 .checkedCharsPerPageBtn {
