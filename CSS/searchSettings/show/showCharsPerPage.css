@@ -3,6 +3,7 @@
 	flex-direction: row;
 	position: relative;
 	top: -50px;
+	width:320px;
 }
 
 #chars-per-page-id {

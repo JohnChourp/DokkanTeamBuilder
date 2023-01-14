@@ -1,17 +1,21 @@
 #box-diplay-id {
-	height: 30px;
+	height: 40px;
+	width:260px;
 }
 
 #character-diplay-id {
-	height: 30px;
+	height: 40px;
+	width:400px;
 }
 
 #search-titles-id {
-	height: 30px;
+	height: 40px;
+	width:220px;
 }
 
 #characters-per-page-id {
-	height: 30px;
+	height: 40px;
+	width:310px;
 }
 
 /* Dropdown Button */
