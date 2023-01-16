@@ -1,8 +1,7 @@
 #pagination-id {
     display: inline-block;
     align-content: center;
-    position: relative;
-    top: 20px;
+    margin-top:10px;
 }
 
 #pagination-id a {

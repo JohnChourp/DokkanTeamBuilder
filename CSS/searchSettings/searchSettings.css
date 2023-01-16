@@ -2,6 +2,7 @@
     margin-top: 10px;
     height:160px;
     width:640px;
+    display: none;
 }
 
 .search-settings-text-class {
