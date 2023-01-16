@@ -1,0 +1,32 @@
+#char-search-id {
+    height: 55px;
+    font-size: 30px;
+    width: 350px;
+}
+
+#search-bar-with-settings-id {
+    display: flex;
+    flex-direction: row;
+    margin-top:10px;
+}
+
+#search-settings-btn-id {
+    cursor: pointer;
+}
+
+#search-settings-image-id {
+    width:50px;
+}
+
+.checkedSettingsBtn {
+    animation: rotation 3s linear infinite;
+}
+
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }

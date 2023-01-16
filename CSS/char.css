@@ -1,8 +1,6 @@
 #char-container-id {
     display: flex;
     flex-wrap: wrap;
-    position: relative;
-    top: 20px;
 }
 
 .char {
