@@ -1,4 +1,3 @@
-// Close the dropdown menu if the user clicks outside of it
 window.onclick = function (event) {
 	if (!event.target.matches('#selected-dropdown')) {
 		var dropdowns = document.getElementsByClassName("dropdown-options");
@@ -11,10 +10,8 @@ window.onclick = function (event) {
 	}
 }
 
-// When the user clicks on the button, toggle between hiding and showing the dropdown content
 function showDisplayOptions() {
 	document.getElementsByClassName("dropdown-options").item(0).classList.toggle('show');
-	//add class when clicked
 }
 
 function addDropdownClass(filterDisplay) {

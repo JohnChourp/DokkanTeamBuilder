@@ -1,7 +1,6 @@
 function searchCharName(nameOrTitle) {
 	let characterSearchId = document.getElementById("char-search-id");
 	characterSearchId.addEventListener("keypress", function (event) {
-		// If the user presses the "Enter" key on the keyboard
 		if (event.key === "Enter") {
 			getCharList();
 			let char_container_id = document.getElementById("char-container-id");
@@ -50,7 +49,7 @@ function searchCharName(nameOrTitle) {
 			let dataCharNameOrTitleItems, dataCharNameOrTitle;
 			let charList = [];
 
-			// Cancel the default action, if needed
+			
 			event.preventDefault();
 			if (nameOrTitle == 1) {
 				dataCharNameOrTitleItems = dataCharNameItems;
