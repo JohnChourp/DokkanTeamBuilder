@@ -2,12 +2,11 @@
 	height: 40px;
 	display: flex;
 	flex-direction: row;
-	flex-wrap: nowrap;
+	flex-wrap: wrap;
 }
 
 #search-settings-text-characters-per-page-id {
-	position: relative;
-	top:-16px;
+	margin-top: 4px;
 }
 
 #chars-per-page-id {
@@ -20,7 +19,7 @@
 #characters-per-page-pages-id {
 	display: flex;
 	flex-direction: row;
-	flex-wrap: nowrap;
+	flex-wrap: wrap;
 	margin-left:10px;
 }
 

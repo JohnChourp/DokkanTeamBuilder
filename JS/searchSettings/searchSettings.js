@@ -6,6 +6,6 @@ function searchSettings(){
 		searchSettingsId.setAttribute("style", "display:none;");
 	}else{
 		searchSettingsImageId.classList.add("checkedSettingsBtn");
-		searchSettingsId.setAttribute("style", "display:block;");
+		searchSettingsId.setAttribute("style", "display:flex;");
 	}
 }

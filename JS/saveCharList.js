@@ -51,7 +51,7 @@ function saveCharList() {
 
 function getCharList() {
 	let charListSaved = [];
-	//retreive characters from local storage
+	
 	let charList_dataCharNameItems = JSON.parse(localStorage.getItem('charList_dataCharNameItems'));
 	let charList_dataCharTitleItems = JSON.parse(localStorage.getItem('charList_dataCharTitleItems'));
 	let charList_dataCharTypeItems = JSON.parse(localStorage.getItem('charList_dataCharTypeItems'));
@@ -72,7 +72,6 @@ function getCharList() {
 	let charList_dataCharLinksItems = JSON.parse(localStorage.getItem('charList_dataCharLinksItems'));
 	let charList_dataCharCategoriesItems = JSON.parse(localStorage.getItem('charList_dataCharCategoriesItems'));
 
-	//put characters in temporary charList
 	for (let i = 0; i < charList_dataCharNameItems.length; i++) {
 		let char_div = document.createElement("div");
 		char_div.classList.add("char");
@@ -98,7 +97,7 @@ function getCharList() {
 			"data-char-categories", charList_dataCharCategoriesItems[i]);
 		charListSaved[i] = char_div;
 	}
-	//add all characters
+	
 	let char_container_id = document.getElementById("char-container-id");
 	char_container_id.innerHTML = "";
 	for (let j = 0; j < charListSaved.length; j++) {

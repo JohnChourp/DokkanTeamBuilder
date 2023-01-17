@@ -3,14 +3,12 @@ function removeDuplicates(arr) {
 		index) => arr.indexOf(item) === index);
 }
 
-// When the user clicks on the button, toggle between hiding and showing the dropdown content
 function searchOneCharOptions() {
 	document.getElementsByClassName("search-one-char-dropdown-options").item(0).classList.toggle("showOneCharName");
-	//add class when clicked
+
 }
 
 function addAllCharNames() {
-	// Close the dropdown menu if the user clicks outside of it
 	document.addEventListener('click', function (event) {
 		if (!event.target.matches('#search-one-char-selected-dropdown')) {
 			var dropdowns = document.getElementsByClassName("search-one-char-dropdown-options");
@@ -22,6 +20,7 @@ function addAllCharNames() {
 			}
 		}
 	});
+
 	let CharListDiv = document.getElementsByClassName("search-one-char-dropdown-options").item(0);
 	let charList_dataCharNameItems = JSON.parse(localStorage.getItem('charList_dataCharNameItems'));
 	let SortedFormattedcharList = removeDuplicates(charList_dataCharNameItems).sort();
@@ -39,6 +38,7 @@ function addSearchOneCharDropdownClass(charNamePos) {
 	let searchOneCharDropdown_btn = document.getElementById("search-one-char-selected-dropdown");
 	let searchOneCharDropdownValue = document.getElementsByClassName("search-one-char-dropdown-options-value");
 	let selectedCharName = searchOneCharDropdownValue.item(charNamePos).innerHTML;
+
 	searchOneCharDropdown_btn.innerHTML = searchOneCharDropdownValue.item(charNamePos).innerHTML;
 	searchOneCharDropdownValue.item(charNamePos).classList.add("checkedSearchOneCharBtn");
 
@@ -47,23 +47,9 @@ function addSearchOneCharDropdownClass(charNamePos) {
 			searchOneCharDropdownValue.item(i).classList.remove("checkedSearchOneCharBtn");
 		}
 	}
-	let dataCharName = 'data-char-name';
-	let dataCharNameItems = document.querySelectorAll('[' + dataCharName + ']');
-	let char = document.getElementsByClassName("char");
-	//disappear all characters
-	for (let i = 0; i < char.length; i++) {
-		char.item(i).style.display = "none";
-	}
-	//appear one type of chosen character
-	for (let i = 0; i < char.length; i++) {
-		if (dataCharNameItems[i].getAttribute(dataCharName) == selectedCharName) {
-			char.item(i).style.display = "inline-block";
-		}
-	}
 
 	let charListSaved = [];
 
-	//retreive characters from local storage
 	let charList_dataCharNameItems = JSON.parse(localStorage.getItem('charList_dataCharNameItems'));
 	let charList_dataCharTitleItems = JSON.parse(localStorage.getItem('charList_dataCharTitleItems'));
 	let charList_dataCharTypeItems = JSON.parse(localStorage.getItem('charList_dataCharTypeItems'));
@@ -84,7 +70,6 @@ function addSearchOneCharDropdownClass(charNamePos) {
 	let charList_dataCharLinksItems = JSON.parse(localStorage.getItem('charList_dataCharLinksItems'));
 	let charList_dataCharCategoriesItems = JSON.parse(localStorage.getItem('charList_dataCharCategoriesItems'));
 
-	//put characters in temporary charList
 	for (let i = 0; i < charList_dataCharNameItems.length; i++) {
 		let char_div = document.createElement("div");
 		char_div.classList.add("char");
@@ -110,12 +95,65 @@ function addSearchOneCharDropdownClass(charNamePos) {
 			"data-char-categories", charList_dataCharCategoriesItems[i]);
 		charListSaved[i] = char_div;
 	}
-	//add all characters
+
 	let char_container_id = document.getElementById("char-container-id");
 	char_container_id.innerHTML = "";
-	for (let j = 0; j < charListSaved.length; j++) {
-		if (charList_dataCharNameItems[j] == selectedCharName) {
-			char_container_id.appendChild(charListSaved[j]);
+
+	let tempPos = selectedCharName.indexOf("&");
+	if (tempPos == -1) {
+		for (let j = 0; j < charListSaved.length; j++) {
+			let temp = charList_dataCharNameItems[j];
+			if (temp == selectedCharName) {
+				char_container_id.appendChild(charListSaved[j]);
+			}
+		}
+	}
+	if (tempPos == 13) {
+		for (let j = 0; j < charListSaved.length; j++) {
+			let temp = charList_dataCharNameItems[j];
+			temp = temp.split('');
+			temp[tempPos] = 'and1 ';
+			temp = temp.join('');
+
+			selectedCharName = selectedCharName.split('');
+			selectedCharName[tempPos + 4] = ' ';
+			selectedCharName[tempPos + 3] = ' ';
+			selectedCharName[tempPos + 2] = ' ';
+			selectedCharName[tempPos + 1] = ' ';
+			selectedCharName[tempPos] = 'and1';
+			selectedCharName[tempPos + 1] = ' ';
+			selectedCharName[tempPos + 2] = '';
+			selectedCharName[tempPos + 3] = '';
+			selectedCharName[tempPos + 4] = '';
+			selectedCharName = selectedCharName.join('');
+
+			if (temp == selectedCharName) {
+				char_container_id.appendChild(charListSaved[j]);
+			}
+		}
+	}
+	if (tempPos == 17) {
+		for (let j = 0; j < charListSaved.length; j++) {
+			let temp = charList_dataCharNameItems[j];
+			temp = temp.split('');
+			temp[tempPos] = 'and1 ';
+			temp = temp.join('');
+
+			selectedCharName = selectedCharName.split('');
+			selectedCharName[tempPos + 4] = ' ';
+			selectedCharName[tempPos + 3] = ' ';
+			selectedCharName[tempPos + 2] = ' ';
+			selectedCharName[tempPos + 1] = ' ';
+			selectedCharName[tempPos] = 'and1';
+			selectedCharName[tempPos + 1] = ' ';
+			selectedCharName[tempPos + 2] = '';
+			selectedCharName[tempPos + 3] = '';
+			selectedCharName[tempPos + 4] = '';
+			selectedCharName = selectedCharName.join('');
+
+			if (temp == selectedCharName) {
+				char_container_id.appendChild(charListSaved[j]);
+			}
 		}
 	}
 	addChar();
