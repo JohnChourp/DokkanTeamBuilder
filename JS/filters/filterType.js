@@ -32,3 +32,12 @@ function phyFilter() {
 	addType("phy");
 }
 
+function removeAllType() {
+	let filterType = ["agl", "teq", "int", "str", "phy"];
+	for (let i = 0; i < filterType.length; i++) {
+		document.getElementById(filterType[i]).classList.remove("checkedTypeBtn");
+		document.getElementById(filterType[i]).children.item(0).style.backgroundColor = "#6B6B67";
+		document.getElementById(filterType[i]).children.item(1).style.backgroundColor = "#555555";
+		document.getElementById(filterType[i]).children.item(8).style.backgroundImage = 'linear-gradient(180deg, #B6B6B6, #948D87)';
+	}
+}

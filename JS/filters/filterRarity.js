@@ -35,3 +35,13 @@ function rarityURFilter() {
 function rarityLRFilter() {
     addRarity("lr");
 }
+
+function removeAllRarity() {
+    let filterRarity = ["n", "r", "sr", "ssr", "ur", "lr"];
+    for (let i = 0; i < filterRarity.length; i++) {
+        document.getElementById(filterRarity[i]).classList.remove("checkedRarityBtn");
+        document.getElementById(filterRarity[i]).children.item(0).style.backgroundColor = "#6B6B67";
+        document.getElementById(filterRarity[i]).children.item(1).style.backgroundColor = "#555555";
+        document.getElementById(filterRarity[i]).children.item(8).style.backgroundImage = 'linear-gradient(180deg, #B6B6B6, #948D87)';
+    }
+}

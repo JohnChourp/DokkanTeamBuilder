@@ -1,11 +1,16 @@
 #char-container-id {
     display: flex;
     flex-wrap: wrap;
+    background-color:#3b3a3a;
 }
 
 .char {
     width: 140px;
     height: 230px;
+}
+
+.char:hover {
+    background-color: #2e2d2d;
 }
 
 .char_type_base {

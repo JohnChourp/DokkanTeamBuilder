@@ -15,8 +15,6 @@
     /* Black*/
     overflow-x: hidden;
     /* Disable horizontal scroll */
-    padding-top: 60px;
-    /* Place content 60px from the top */
     transition: 0.5s;
     /* 0.5 second transition effect to slide in the sidenav */
 }
@@ -36,15 +34,6 @@
     color: #f1f1f1;
 }
 
-/* Position and style the close button (top right corner) */
-#left-sidenav-id #close-left-sidenav-btn-id {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-}
-
 #left-sidenav-filters-id {
     height: 100%;
     /* 100% Full-height */
@@ -61,11 +50,10 @@
     /* Black*/
     overflow-x: hidden;
     /* Disable horizontal scroll */
-    padding-top: 60px;
-    /* Place content 60px from the top */
     transition: 0.5s;
     /* 0.5 second transition effect to slide in the sidenav */
 }
+
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 
 #main {
@@ -145,6 +133,33 @@
     flex-direction: row;
 }
 
+#apply-filters-bg-id {
+    z-index: 1;
+    width: 0;
+    height: 110px;
+    position: fixed;
+    bottom: 0;
+    background-color: #494141;
+    opacity: 0.8;
+    transition: 0.5s;
+}
+
+#apply-filters-id {
+    z-index: 1;
+    width: 0;
+    height: 110px;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s;
+}
+
+#apply-filters-text-id {
+    position: relative;
+    left: -60px;
+}
+
 #ok {
     cursor: pointer;
     height: 40px;
@@ -154,32 +169,18 @@
     font-weight: 800;
     color: aliceblue;
     position: relative;
-    left:-30px;
+    left: -30px;
 }
 
-#apply-filters-bg-id {
-    z-index: 1;
-    width:0;
-    height:110px;
-    position: fixed;
-    bottom:0;
-    background-color: #494141;
-    opacity: 0.8;
-    transition: 0.5s;
-}
-
-#apply-filters-id {
-    z-index: 1;
-    width:0;
-    height:110px;
-    position: fixed;
-    bottom:0;
-    display: flex;
-    flex-direction: column;
-    transition: 0.5s;
-}
-
-#apply-filters-text-id {
+#remove-all-id {
+    cursor: pointer;
+    height: 40px;
+    width: 130px;
+    font-size: 18px;
+    background-color: #df8611;
+    font-weight: 800;
+    color: aliceblue;
     position: relative;
-    left:-50px;
+    margin-left: 20px;
+    left: -80px;
 }

@@ -11,8 +11,6 @@
 	<link href="CSS/char.css" rel="stylesheet" type="text/css" />
 	<link href="CSS/pagination.css" rel="stylesheet" type="text/css" />
 
-	<link href="CSS/searchSettings/searchSettings.css" rel="stylesheet" type="text/css" />
-	<link href="CSS/searchSettings/searchBar.css" rel="stylesheet" type="text/css" />
 
 	<link href="CSS/filters/filterAwakenedInfo.css" rel="stylesheet" type="text/css" />
 	<link href="CSS/filters/filterClass.css" rel="stylesheet" type="text/css" />
@@ -21,6 +19,9 @@
 	<link href="CSS/filters/filterSideNav.css" rel="stylesheet" type="text/css" />
 	<link href="CSS/filters/filterSortDirection.css" rel="stylesheet" type="text/css" />
 	<link href="CSS/filters/filterType.css" rel="stylesheet" type="text/css" />
+
+	<link href="CSS/searchSettings/searchSettings.css" rel="stylesheet" type="text/css" />
+	<link href="CSS/searchSettings/searchBar.css" rel="stylesheet" type="text/css" />
 
 	<link href="CSS/searchSettings/search/searchOneChar.css" rel="stylesheet" type="text/css" />
 	<link href="CSS/searchSettings/search/searchOptions.css" rel="stylesheet" type="text/css" />
@@ -36,6 +37,7 @@
 	<script src="JS/pagination.js" type="text/javascript"></script>
 	<script src="JS/saveCharList.js" type="text/javascript"></script>
 
+	<script src="JS/filters/applyFilters.js" type="text/javascript"></script>
 	<script src="JS/filters/filterAwakenInfo.js" type="text/javascript"></script>
 	<script src="JS/filters/filterClass.js" type="text/javascript"></script>
 	<script src="JS/filters/filterEza.js" type="text/javascript"></script>
@@ -43,7 +45,7 @@
 	<script src="JS/filters/filterSideNav.js" type="text/javascript"></script>
 	<script src="JS/filters/filterSortDirection.js" type="text/javascript"></script>
 	<script src="JS/filters/filterType.js" type="text/javascript"></script>
-	<script src="JS/filters/applyFilters.js" type="text/javascript"></script>
+	<script src="JS/filters/removeAllFilters.js" type="text/javascript"></script>
 
 	<script src="JS/searchSettings/search/searchChar.js" type="text/javascript"></script>
 	<script src="JS/searchSettings/search/searchOneChar.js" type="text/javascript"></script>
@@ -60,10 +62,9 @@
 </head>
 
 <body
-	onload="addChar(); saveCharList(); charsPerPage(1);  searchChar(1); charsPerPageTextBox(); closeNavWhenClickedOutside(); addAllCharNames();">
+	onload="addChar(); saveCharList(); charsPerPage(1);  searchChar(1); charsPerPageTextBox(); closeNavWhenClickedOutside(); addAllCharNames(); removeAllFilters();">
 	<div id="left-sidenav-id">
 		<div id="left-sidenav-filters-id">
-			<a href="javascript:void(0)" id="close-left-sidenav-btn-id" onclick="closeNav();">&times;</a>
 			<p class="filter-options-text-class">Sort Direction</p>
 			<div class="filter-class">
 				<button onclick="filterDirectionDown();" id="filter-direction-down-id" class="filter-direction-class"
@@ -232,7 +233,7 @@
 				<button onclick="ezaFilter();" id="eza" type="button">EZA</button>
 				<button onclick="ezaNoFilter();" id="noeza" type="button">NO EZA</button>
 			</div>
-			<p class="filter-options-text-class">Filter Awakened</p>
+			<p class="filter-options-text-class">Awaken</p>
 			<div class="filter-class">
 				<button onclick="filterNotDokkanAwakened();" id="notDokkanAwakened" class="filterDokkanAwakened"
 					type="button">
@@ -255,6 +256,9 @@
 			<div class="filter-class">
 				<button onclick="applyFilters(); closeNav();" id="ok" type="button">
 					OK
+				</button>
+				<button id="remove-all-id" type="button">
+					Remove All
 				</button>
 			</div>
 		</div>

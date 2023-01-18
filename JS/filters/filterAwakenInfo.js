@@ -30,3 +30,14 @@ function filterDokkanAwakened() {
         dokkanAwakenedBtn.style.backgroundColor = "#33ccff";
     }
 }
+
+function removeAllDokkanAwaken() {
+    let filterAwakenId = ["notDokkanAwakened", "preDokkanAwakened", "dokkanAwakened"];
+    for (let i = 0; i < filterAwakenId.length; i++) {
+        document.getElementById(filterAwakenId[i]).classList.remove("checkedAwakenBtn");
+        document.getElementById(filterAwakenId[i]).style.backgroundColor = "#ddd";
+        document.getElementById(filterAwakenId[i]).style.cursor = "pointer";
+        document.getElementById(filterAwakenId[i]).style.color = "black";
+        document.getElementById(filterAwakenId[i]).removeAttribute("disabled");
+    }
+}
