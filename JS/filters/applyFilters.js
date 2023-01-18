@@ -1,3 +1,4 @@
+
 function applyFilters() {
 	getCharList();
 	//sortDirection
@@ -24,283 +25,295 @@ function applyFilters() {
 		}
 	}
 
-	let dataCharType = 'data-char-type';
-	let dataCharClass = 'data-char-class';
-	let dataCharRarity = 'data-char-rarity';
-	let dataCharEza = 'data-char-eza';
-	let dataCharAwaken = 'data-char-awaken';
+	let dataCharType = 'data-char-type', dataCharRarity = 'data-char-rarity', dataCharClass = 'data-char-class',
+		dataCharEza = 'data-char-eza', dataCharAwaken = 'data-char-awaken';
+	let filterType = [], filterRarity = [], filterClass = [], filterEza = [],
+		filterAwakenId = [], filterAwakenValue = [], charList = [];
+
 	let dataCharTypeItems = document.querySelectorAll('[' + dataCharType + ']');
 	let dataCharClassItems = document.querySelectorAll('[' + dataCharClass + ']');
 	let dataCharRarityItems = document.querySelectorAll('[' + dataCharRarity + ']');
 	let dataCharEzaItems = document.querySelectorAll('[' + dataCharEza + ']');
 	let dataCharAwakenItems = document.querySelectorAll('[' + dataCharAwaken + ']');
-	let filterType = ["agl", "teq", "int", "str", "phy"];
-	let filterRarity = ["n", "r", "sr", "ssr", "ur", "lr"];
-	let filterClass = ["super", "extreme"];
-	let filterEza = "eza";
-	let checkedTypeBtn = document.getElementsByClassName("checkedTypeBtn");
-	let checkedClassBtn = document.getElementsByClassName("checkedClassBtn");
-	let checkedRarityBtn = document.getElementsByClassName("checkedRarityBtn");
-	let checkedEzaBtn = document.getElementsByClassName("checkedEzaBtn");
-	let checkedAwakenBtn = document.getElementsByClassName("checkedAwakenBtn");
-	let charList = [];
 
-	//disappear all characters
-	for (let i = 0; i < char.length; i++) {
-		char.item(i).style.display = "none";
+	let A = document.getElementsByClassName("checkedTypeBtn");
+	let B = document.getElementsByClassName("checkedRarityBtn");
+	let C = document.getElementsByClassName("checkedClassBtn");
+	let D = document.getElementsByClassName("checkedEzaBtn");
+	let E = document.getElementsByClassName("checkedAwakenBtn");
+
+	//filterType
+	let filterTypeTemp = ["agl", "teq", "int", "str", "phy"];
+	let filterTypeLength = filterTypeTemp.length;
+	for (let i = 0; i < filterTypeLength; i++) {
+		if (document.getElementById(filterTypeTemp[i]).classList.contains("checkedTypeBtn")) {
+			filterType[i] = filterTypeTemp[i];
+		}
+	}
+	filterType.clean(undefined);
+
+	//filterRarity
+	let filterRarityTemp = ["n", "r", "sr", "ssr", "ur", "lr"];
+	let filterRarityLength = filterRarityTemp.length;
+	for (let i = 0; i < filterRarityLength; i++) {
+		if (document.getElementById(filterRarityTemp[i]).classList.contains("checkedRarityBtn")) {
+			filterRarity[i] = filterRarityTemp[i];
+		}
+	}
+	filterRarity.clean(undefined);
+
+	//filterClass
+	let filterClassTemp = ["super", "extreme"];
+	let filterClassLength = filterClassTemp.length;
+	for (let i = 0; i < filterClassLength; i++) {
+		if (document.getElementById(filterClassTemp[i]).classList.contains("checkedClassBtn")) {
+			filterClass[i] = filterClassTemp[i];
+		}
+	}
+	filterClass.clean(undefined);
+
+	//filterEza
+	let filterEzaTemp = ["eza", "noeza"];
+	let filterEzaLength = filterEzaTemp.length;
+	for (let i = 0; i < filterEzaLength; i++) {
+		if (document.getElementById(filterEzaTemp[i]).classList.contains("checkedEzaBtn")) {
+			filterEza[i] = filterEzaTemp[i];
+		}
+	}
+	filterEza.clean(undefined);
+
+	//filterAwaken
+	let filterAwakenIdTemp = ["notDokkanAwakened", "preDokkanAwakened", "dokkanAwakened"];
+	let filterAwakenValueTemp = ["not-dokkan-awakened", "pre-dokkan-awakened", "dokkan-awakened"];
+	let filterAwakenIdLength = filterAwakenIdTemp.length;
+	for (let i = 0; i < filterAwakenIdLength; i++) {
+		if (document.getElementById(filterAwakenIdTemp[i]).classList.contains("checkedAwakenBtn")) {
+			filterAwakenId[i] = filterAwakenIdTemp[i];
+			filterAwakenValue[i] = filterAwakenValueTemp[i];
+		}
+	}
+	filterAwakenId.clean(undefined);
+	filterAwakenValue.clean(undefined);
+
+	let filtersUsed = [filterType.length, filterRarity.length, filterClass.length, filterEza.length, filterAwakenId.length];
+	let sumFilterUsed = 0;
+	//check how many filter are used
+	for (let i = 0; i < filtersUsed.length; i++) {
+		if (filtersUsed[i] > 0) {
+			sumFilterUsed = sumFilterUsed + 1;
+		}
 	}
 
-	//no filters
-	if ((checkedTypeBtn.length == 0) && (checkedRarityBtn.length == 0) && (checkedClassBtn.length == 0) && (checkedEzaBtn.length == 0)) {
+	if (sumFilterUsed == 0) {
 		for (let i = 0; i < char.length; i++) {
-			char.item(i).style.display = "inline-block";
 			charList[i] = char.item(i);
 		}
 	}
-
-	//-------------------------------1 filter used-------------------------------
-	//type
-	if ((checkedTypeBtn.length > 0) && (checkedRarityBtn.length == 0) && (checkedClassBtn.length == 0) && (checkedEzaBtn.length == 0)) {
-		if (document.getElementById("agl").classList.contains("checkedTypeBtn")) {
-			for (let i = 0; i < char.length; i++) {
-				if (dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "agl") {
-					char.item(i).style.display = "inline-block";
-					charList[i] = char.item(i);
-				}
-			}
-		}
-
-		if (document.getElementById("teq").classList.contains("checkedTypeBtn")) {
-			for (let i = 0; i < char.length; i++) {
-				if (dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "teq") {
-					char.item(i).style.display = "inline-block";
-					charList[i] = char.item(i);
-				}
-			}
-		}
-
-		if (document.getElementById("int").classList.contains("checkedTypeBtn")) {
-			for (let i = 0; i < char.length; i++) {
-				if (dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "int") {
-					char.item(i).style.display = "inline-block";
-					charList[i] = char.item(i);
-				}
-			}
-		}
-
-		if (document.getElementById("str").classList.contains("checkedTypeBtn")) {
-			for (let i = 0; i < char.length; i++) {
-				if (dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "str") {
-					char.item(i).style.display = "inline-block";
-					charList[i] = char.item(i);
-				}
-			}
-		}
-
-		if (document.getElementById("phy").classList.contains("checkedTypeBtn")) {
-			for (let i = 0; i < char.length; i++) {
-				if (dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == "phy") {
-					char.item(i).style.display = "inline-block";
-					charList[i] = char.item(i);
-				}
-			}
-		}
-	}
-	//rarity
-	if ((checkedTypeBtn.length == 0) && (checkedRarityBtn.length > 0) && (checkedClassBtn.length == 0) && (checkedEzaBtn.length == 0)) {
-		if (document.getElementById("n").classList.contains("checkedRarityBtn")) {
-			for (let i = 0; i < char.length; i++) {
-				if (dataCharRarityItems[i].getAttribute(dataCharRarity).toLowerCase() == "n") {
-					char.item(i).style.display = "inline-block";
-					charList[i] = char.item(i);
-				}
-			}
-		}
-		if (document.getElementById("r").classList.contains("checkedRarityBtn")) {
-			for (let i = 0; i < char.length; i++) {
-				if (dataCharRarityItems[i].getAttribute(dataCharRarity).toLowerCase() == "r") {
-					char.item(i).style.display = "inline-block";
-					charList[i] = char.item(i);
-				}
-			}
-		}
-		if (document.getElementById("sr").classList.contains("checkedRarityBtn")) {
-			for (let i = 0; i < char.length; i++) {
-				if (dataCharRarityItems[i].getAttribute(dataCharRarity).toLowerCase() == "sr") {
-					char.item(i).style.display = "inline-block";
-					charList[i] = char.item(i);
-				}
-			}
-		}
-		if (document.getElementById("ssr").classList.contains("checkedRarityBtn")) {
-			for (let i = 0; i < char.length; i++) {
-				if (dataCharRarityItems[i].getAttribute(dataCharRarity).toLowerCase() == "ssr") {
-					char.item(i).style.display = "inline-block";
-					charList[i] = char.item(i);
-				}
-			}
-		}
-		if (document.getElementById("ur").classList.contains("checkedRarityBtn")) {
-			for (let i = 0; i < char.length; i++) {
-				if (dataCharRarityItems[i].getAttribute(dataCharRarity).toLowerCase() == "ur") {
-					char.item(i).style.display = "inline-block";
-					charList[i] = char.item(i);
-				}
-			}
-		}
-		if (document.getElementById("lr").classList.contains("checkedRarityBtn")) {
-			for (let i = 0; i < char.length; i++) {
-				if (dataCharRarityItems[i].getAttribute(dataCharRarity).toLowerCase() == "lr") {
-					char.item(i).style.display = "inline-block";
-					charList[i] = char.item(i);
-				}
-			}
-		}
-	}
-	//class
-	if ((checkedTypeBtn.length == 0) && (checkedRarityBtn.length == 0) && (checkedClassBtn.length > 0) && (checkedEzaBtn.length == 0)) {
-		if (document.getElementById("super").classList.contains("checkedClassBtn")) {
-			for (let i = 0; i < char.length; i++) {
-				if (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "super") {
-					char.item(i).style.display = "inline-block";
-					charList[i] = char.item(i);
-				}
-			}
-		}
-		if (document.getElementById("extreme").classList.contains("checkedClassBtn")) {
-			for (let i = 0; i < char.length; i++) {
-				if (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == "extreme") {
-					char.item(i).style.display = "inline-block";
-					charList[i] = char.item(i);
-				}
-			}
-		}
-	}
-	//eza
-	if ((checkedTypeBtn.length == 0) && (checkedRarityBtn.length == 0) && (checkedClassBtn.length == 0) && (checkedEzaBtn.length > 0)) {
-		if (document.getElementById("eza").classList.contains("checkedEzaBtn")) {
-			for (let i = 0; i < char.length; i++) {
-				if (dataCharEzaItems[i].getAttribute(dataCharEza).toLowerCase() == "eza") {
-					char.item(i).style.display = "inline-block";
-					charList[i] = char.item(i);
-				}
-			}
-		}
-	}
-	//-------------------------------1 filter used-------------------------------
-
-
-	//------------------------------2 filters used------------------------------
-	//type,rarity
-	if ((checkedTypeBtn.length > 0) && (checkedRarityBtn.length > 0) && (checkedClassBtn.length == 0) && (checkedEzaBtn.length == 0)) {
-		for (let k = 0; k < filterRarity.length; k++) {
+	if (sumFilterUsed == 1) {
+		//type//A,rarity//B,class//C,eza//D,dokkan//E
+		//A B C D E
+		//-------------------------------1 filter used-------------------------------
+		//type//A
+		if ((A.length > 0) && (B.length == 0) && (C.length == 0) && (D.length == 0) && (E.length == 0)) {
 			for (let j = 0; j < filterType.length; j++) {
-				if ((document.getElementById(filterType[j]).classList.contains("checkedTypeBtn"))
-					&& (document.getElementById(filterRarity[k]).classList.contains("checkedRarityBtn"))) {
+				for (let i = 0; i < char.length; i++) {
+					if (dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == filterType[j]) {
+						charList[i] = char.item(i);
+					}
+				}
+			}
+		}
+		//rarity//B
+		if ((A.length == 0) && (B.length > 0) && (C.length == 0) && (D.length == 0) && (E.length == 0)) {
+			for (let j = 0; j < filterRarity.length; j++) {
+				for (let i = 0; i < char.length; i++) {
+					if (dataCharRarityItems[i].getAttribute(dataCharRarity).toLowerCase() == filterRarity[j]) {
+						charList[i] = char.item(i);
+					}
+				}
+			}
+		}
+		//class//C
+		if ((A.length == 0) && (B.length == 0) && (C.length > 0) && (D.length == 0) && (E.length == 0)) {
+			for (let j = 0; j < filterClass.length; j++) {
+				for (let i = 0; i < char.length; i++) {
+					if (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == filterClass[j]) {
+						charList[i] = char.item(i);
+					}
+				}
+			}
+		}
+		//eza//D
+		if ((A.length == 0) && (B.length == 0) && (C.length == 0) && (D.length > 0) && (E.length == 0)) {
+			for (let j = 0; j < filterEza.length; j++) {
+				for (let i = 0; i < char.length; i++) {
+					if (dataCharEzaItems[i].getAttribute(dataCharEza).toLowerCase() == filterEza[j]) {
+						charList[i] = char.item(i);
+					}
+				}
+			}
+		}
+		//dokkan//E
+		if ((A.length == 0) && (B.length == 0) && (C.length == 0) && (D.length == 0) && (E.length > 0)) {
+			for (let j = 0; j < filterAwakenId.length; j++) {
+				for (let i = 0; i < char.length; i++) {
+					if (dataCharAwakenItems[i].getAttribute(dataCharAwaken).toLowerCase() == filterAwakenValue[j]) {
+						charList[i] = char.item(i);
+					}
+				}
+			}
+		}
+		//-------------------------------1 filter used-------------------------------
+	}
+	if (sumFilterUsed == 2) {
+		//type//A,rarity//B,class//C,eza//D,dokkan//E
+		//AB AC AD AE BC BD BE CD CE DE
+		//------------------------------2 filters used------------------------------
+		//type,rarity//AB
+		if ((A.length > 0) && (B.length > 0) && (C.length == 0) && (D.length == 0) && (E.length == 0)) {
+			for (let k = 0; k < filterRarity.length; k++) {
+				for (let j = 0; j < filterType.length; j++) {
 					for (let i = 0; i < char.length; i++) {
 						if ((dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == filterType[j])
 							&& (dataCharRarityItems[i].getAttribute(dataCharRarity).toLowerCase() == filterRarity[k])) {
-							char.item(i).style.display = "inline-block";
 							charList[i] = char.item(i);
 						}
 					}
 				}
 			}
 		}
-	}
-	//type,class
-	if ((checkedTypeBtn.length > 0) && (checkedRarityBtn.length == 0) && (checkedClassBtn.length > 0) && (checkedEzaBtn.length == 0)) {
-		for (let k = 0; k < filterClass.length; k++) {
-			for (let j = 0; j < filterType.length; j++) {
-				if ((document.getElementById(filterType[j]).classList.contains("checkedTypeBtn"))
-					&& (document.getElementById(filterClass[k]).classList.contains("checkedClassBtn"))) {
+		//type,class//AC
+		if ((A.length > 0) && (B.length == 0) && (C.length > 0) && (D.length == 0) && (E.length == 0)) {
+			for (let k = 0; k < filterClass.length; k++) {
+				for (let j = 0; j < filterType.length; j++) {
 					for (let i = 0; i < char.length; i++) {
 						if ((dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == filterType[j])
 							&& (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == filterClass[k])) {
-							char.item(i).style.display = "inline-block";
 							charList[i] = char.item(i);
 						}
 					}
 				}
 			}
 		}
-	}
-	//type,eza
-	if ((checkedTypeBtn.length > 0) && (checkedRarityBtn.length == 0) && (checkedClassBtn.length == 0) && (checkedEzaBtn.length > 0)) {
-		for (let j = 0; j < filterType.length; j++) {
-			if (document.getElementById(filterType[j]).classList.contains("checkedTypeBtn")) {
-				for (let i = 0; i < dataCharEzaItems.length; i++) {
-					if ((dataCharEzaItems[i].getAttribute(dataCharType).toLowerCase() == filterType[j])
-						&& (dataCharEzaItems[i].getAttribute(dataCharEza).toLowerCase() == filterEza)) {
-						char.item(i).style.display = "inline-block";
-						charList[i] = char.item(i);
+		//type,eza//AD
+		if ((A.length > 0) && (B.length == 0) && (C.length == 0) && (D.length > 0) && (E.length == 0)) {
+			for (let k = 0; k < filterEza.length; k++) {
+				for (let j = 0; j < filterType.length; j++) {
+					for (let i = 0; i < char.length; i++) {
+						if ((dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == filterType[j])
+							&& (dataCharEzaItems[i].getAttribute(dataCharEza).toLowerCase() == filterEza[k])) {
+							charList[i] = char.item(i);
+						}
 					}
 				}
 			}
 		}
-	}
-	//rarity,class
-	if ((checkedTypeBtn.length == 0) && (checkedRarityBtn.length > 0) && (checkedClassBtn.length > 0) && (checkedEzaBtn.length == 0)) {
-		for (let k = 0; k < filterClass.length; k++) {
-			for (let j = 0; j < filterRarity.length; j++) {
-				if ((document.getElementById(filterRarity[j]).classList.contains("checkedRarityBtn"))
-					&& (document.getElementById(filterClass[k]).classList.contains("checkedClassBtn"))) {
+		//type,dokkan//AE
+		if ((A.length > 0) && (B.length == 0) && (C.length == 0) && (D.length == 0) && (E.length > 0)) {
+			for (let k = 0; k < filterAwakenId.length; k++) {
+				for (let j = 0; j < filterType.length; j++) {
+					for (let i = 0; i < char.length; i++) {
+						if ((dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == filterType[j])
+							&& (dataCharAwakenItems[i].getAttribute(dataCharAwaken).toLowerCase() == filterAwakenValue[k])) {
+							charList[i] = char.item(i);
+						}
+					}
+				}
+			}
+		}
+		//rarity,class//BC
+		if ((A.length == 0) && (B.length > 0) && (C.length > 0) && (D.length == 0) && (E.length == 0)) {
+			for (let k = 0; k < filterClass.length; k++) {
+				for (let j = 0; j < filterRarity.length; j++) {
 					for (let i = 0; i < char.length; i++) {
 						if ((dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == filterClass[k])
 							&& (dataCharRarityItems[i].getAttribute(dataCharRarity).toLowerCase() == filterRarity[j])) {
-							char.item(i).style.display = "inline-block";
 							charList[i] = char.item(i);
 						}
 					}
 				}
 			}
 		}
-	}
-	//rarity,eza
-	if ((checkedTypeBtn.length == 0) && (checkedRarityBtn.length > 0) && (checkedClassBtn.length == 0) && (checkedEzaBtn.length > 0)) {
-		for (let j = 0; j < filterRarity.length; j++) {
-			if (document.getElementById(filterRarity[j]).classList.contains("checkedRarityBtn")) {
-				for (let i = 0; i < dataCharEzaItems.length; i++) {
-					if ((dataCharEzaItems[i].getAttribute(dataCharRarity).toLowerCase() == filterRarity[j])
-						&& (dataCharEzaItems[i].getAttribute(dataCharEza).toLowerCase() == filterEza)) {
-						char.item(i).style.display = "inline-block";
-						charList[i] = char.item(i);
+		//rarity,eza//BD
+		if ((A.length == 0) && (B.length > 0) && (C.length == 0) && (D.length > 0) && (E.length == 0)) {
+			for (let k = 0; k < filterEza.length; k++) {
+				for (let j = 0; j < filterRarity.length; j++) {
+					for (let i = 0; i < char.length; i++) {
+						if ((dataCharRarityItems[i].getAttribute(dataCharRarity).toLowerCase() == filterRarity[j])
+							&& (dataCharEzaItems[i].getAttribute(dataCharEza).toLowerCase() == filterEza[k])) {
+							charList[i] = char.item(i);
+						}
 					}
 				}
 			}
 		}
-	}
-	//class,eza
-	if ((checkedTypeBtn.length == 0) && (checkedRarityBtn.length == 0) && (checkedClassBtn.length > 0) && (checkedEzaBtn.length > 0)) {
-		for (let j = 0; j < filterClass.length; j++) {
-			if (document.getElementById(filterClass[j]).classList.contains("checkedClassBtn")) {
-				for (let i = 0; i < dataCharEzaItems.length; i++) {
-					if ((dataCharEzaItems[i].getAttribute(dataCharClass).toLowerCase() == filterClass[j])
-						&& (dataCharEzaItems[i].getAttribute(dataCharEza).toLowerCase() == filterEza)) {
-						char.item(i).style.display = "inline-block";
-						charList[i] = char.item(i);
+		//rarity,dokkan//BE
+		if ((A.length == 0) && (B.length > 0) && (C.length == 0) && (D.length == 0) && (E.length > 0)) {
+			for (let k = 0; k < filterAwakenId.length; k++) {
+				for (let j = 0; j < filterRarity.length; j++) {
+					for (let i = 0; i < char.length; i++) {
+						if ((dataCharRarityItems[i].getAttribute(dataCharRarity).toLowerCase() == filterRarity[j])
+							&& (dataCharAwakenItems[i].getAttribute(dataCharAwaken).toLowerCase() == filterAwakenValue[k])) {
+							charList[i] = char.item(i);
+						}
 					}
 				}
 			}
 		}
+		//class,eza//CD
+		if ((A.length == 0) && (B.length == 0) && (C.length > 0) && (D.length > 0) && (E.length == 0)) {
+			for (let k = 0; k < filterEza.length; k++) {
+				for (let j = 0; j < filterClass.length; j++) {
+					for (let i = 0; i < char.length; i++) {
+						if ((dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == filterClass[j])
+							&& (dataCharEzaItems[i].getAttribute(dataCharEza).toLowerCase() == filterEza[k])) {
+							charList[i] = char.item(i);
+						}
+					}
+				}
+			}
+		}
+		//class,dokkan//CE
+		if ((A.length == 0) && (B.length == 0) && (C.length > 0) && (D.length == 0) && (E.length > 0)) {
+			for (let k = 0; k < filterAwakenId.length; k++) {
+				for (let j = 0; j < filterClass.length; j++) {
+					for (let i = 0; i < char.length; i++) {
+						if ((dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == filterClass[j])
+							&& (dataCharAwakenItems[i].getAttribute(dataCharAwaken).toLowerCase() == filterAwakenValue[k])) {
+							charList[i] = char.item(i);
+						}
+					}
+				}
+			}
+		}
+		//eza,dokkan//DE
+		if ((A.length == 0) && (B.length == 0) && (C.length == 0) && (D.length > 0) && (E.length > 0)) {
+			for (let k = 0; k < filterAwakenId.length; k++) {
+				for (let j = 0; j < filterEza.length; j++) {
+					for (let i = 0; i < char.length; i++) {
+						if ((dataCharEzaItems[i].getAttribute(dataCharEza).toLowerCase() == filterEza[j])
+							&& (dataCharAwakenItems[i].getAttribute(dataCharAwaken).toLowerCase() == filterAwakenValue[k])) {
+							charList[i] = char.item(i);
+						}
+					}
+				}
+			}
+		}
+		//------------------------------2 filters used------------------------------
 	}
-	//------------------------------2 filters used------------------------------
-
-
-	//------------------------------3 filters used------------------------------
-	//type,rarity,class
-	if ((checkedTypeBtn.length > 0) && (checkedRarityBtn.length > 0) && (checkedClassBtn.length > 0) && (checkedEzaBtn.length == 0)) {
-		for (let l = 0; l < filterClass.length; l++) {
-			for (let k = 0; k < filterRarity.length; k++) {
-				for (let j = 0; j < filterType.length; j++) {
-					if ((document.getElementById(filterType[j]).classList.contains("checkedTypeBtn"))
-						&& (document.getElementById(filterClass[l]).classList.contains("checkedClassBtn"))
-						&& (document.getElementById(filterRarity[k]).classList.contains("checkedRarityBtn"))) {
+	if (sumFilterUsed == 3) {
+		//type//A,rarity//B,class//C,eza//D,dokkan//E
+		//ABC ABD ABE ACD ACE ADE BCD BCE BDE CDE
+		//------------------------------3 filters used------------------------------
+		//type,rarity,class//ABC
+		if ((A.length > 0) && (B.length > 0) && (C.length > 0) && (D.length == 0) && (E.length == 0)) {
+			for (let l = 0; l < filterClass.length; l++) {
+				for (let k = 0; k < filterRarity.length; k++) {
+					for (let j = 0; j < filterType.length; j++) {
 						for (let i = 0; i < char.length; i++) {
 							if ((dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == filterType[j])
 								&& (dataCharRarityItems[i].getAttribute(dataCharRarity).toLowerCase() == filterRarity[k])
 								&& (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == filterClass[l])) {
-								char.item(i).style.display = "inline-block";
 								charList[i] = char.item(i);
 							}
 						}
@@ -308,79 +321,15 @@ function applyFilters() {
 				}
 			}
 		}
-	}
-	//type,rarity,eza
-	if ((checkedTypeBtn.length > 0) && (checkedRarityBtn.length > 0) && (checkedClassBtn.length == 0) && (checkedEzaBtn.length > 0)) {
-		for (let l = 0; l < filterRarity.length; l++) {
-			for (let j = 0; j < filterType.length; j++) {
-				if ((document.getElementById(filterType[j]).classList.contains("checkedTypeBtn"))
-					&& (document.getElementById(filterRarity[l]).classList.contains("checkedRarityBtn"))) {
-					for (let i = 0; i < dataCharEzaItems.length; i++) {
-						if ((dataCharEzaItems[i].getAttribute(dataCharType).toLowerCase() == filterType[j])
-							&& (dataCharEzaItems[i].getAttribute(dataCharRarity).toLowerCase() == filterRarity[l])
-							&& (dataCharEzaItems[i].getAttribute(dataCharEza).toLowerCase() == filterEza)) {
-							char.item(i).style.display = "inline-block";
-							charList[i] = char.item(i);
-						}
-					}
-				}
-			}
-		}
-	}
-	//type,class,eza
-	if ((checkedTypeBtn.length > 0) && (checkedRarityBtn.length == 0) && (checkedClassBtn.length > 0) && (checkedEzaBtn.length > 0)) {
-		for (let l = 0; l < filterClass.length; l++) {
-			for (let j = 0; j < filterType.length; j++) {
-				if ((document.getElementById(filterType[j]).classList.contains("checkedTypeBtn"))
-					&& (document.getElementById(filterClass[l]).classList.contains("checkedClassBtn"))) {
-					for (let i = 0; i < dataCharEzaItems.length; i++) {
-						if ((dataCharEzaItems[i].getAttribute(dataCharType).toLowerCase() == filterType[j])
-							&& (dataCharEzaItems[i].getAttribute(dataCharClass).toLowerCase() == filterClass[l])
-							&& (dataCharEzaItems[i].getAttribute(dataCharEza).toLowerCase() == filterEza)) {
-							char.item(i).style.display = "inline-block";
-							charList[i] = char.item(i);
-						}
-					}
-				}
-			}
-		}
-	}
-	//rarity,class,eza
-	if ((checkedTypeBtn.length == 0) && (checkedRarityBtn.length > 0) && (checkedClassBtn.length > 0) && (checkedEzaBtn.length > 0)) {
-		for (let k = 0; k < filterClass.length; k++) {
-			for (let j = 0; j < filterRarity.length; j++) {
-				if ((document.getElementById(filterRarity[j]).classList.contains("checkedRarityBtn"))
-					&& (document.getElementById(filterClass[k]).classList.contains("checkedClassBtn"))) {
-					for (let i = 0; i < dataCharEzaItems.length; i++) {
-						if ((dataCharEzaItems[i].getAttribute(dataCharRarity).toLowerCase() == filterRarity[j])
-							&& (dataCharEzaItems[i].getAttribute(dataCharClass).toLowerCase() == filterClass[k])
-							&& (dataCharEzaItems[i].getAttribute(dataCharEza).toLowerCase() == filterEza)) {
-							char.item(i).style.display = "inline-block";
-							charList[i] = char.item(i);
-						}
-					}
-				}
-			}
-		}
-	}
-	//------------------------------3 filters used------------------------------
-
-
-	//------------------------------4 filters used------------------------------
-	//type,rarity,class,eza
-	if ((checkedTypeBtn.length > 0) && (checkedRarityBtn.length > 0) && (checkedClassBtn.length > 0) && (checkedEzaBtn.length > 0)) {
-		for (let l = 0; l < filterClass.length; l++) {
-			for (let k = 0; k < filterRarity.length; k++) {
-				for (let j = 0; j < filterType.length; j++) {
-					if ((document.getElementById(filterType[j]).classList.contains("checkedTypeBtn"))
-						&& (document.getElementById(filterRarity[k]).classList.contains("checkedRarityBtn"))
-						&& (document.getElementById(filterClass[l]).classList.contains("checkedClassBtn"))) {
-						for (let i = 0; i < dataCharEzaItems.length; i++) {
-							if ((dataCharEzaItems[i].getAttribute(dataCharType).toLowerCase() == filterType[j])
-								&& (dataCharEzaItems[i].getAttribute(dataCharRarity).toLowerCase() == filterRarity[k])
-								&& (dataCharEzaItems[i].getAttribute(dataCharClass).toLowerCase() == filterClass[l])
-								&& (dataCharEzaItems[i].getAttribute(dataCharEza).toLowerCase() == filterEza)) {
-								char.item(i).style.display = "inline-block";
+		//type,rarity,eza//ABD
+		if ((A.length > 0) && (B.length > 0) && (C.length == 0) && (D.length > 0) && (E.length == 0)) {
+			for (let k = 0; k < filterEza.length; k++) {
+				for (let l = 0; l < filterRarity.length; l++) {
+					for (let j = 0; j < filterType.length; j++) {
+						for (let i = 0; i < char.length; i++) {
+							if ((dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == filterType[j])
+								&& (dataCharRarityItems[i].getAttribute(dataCharRarity).toLowerCase() == filterRarity[l])
+								&& (dataCharEzaItems[i].getAttribute(dataCharEza).toLowerCase() == filterEza[k])) {
 								charList[i] = char.item(i);
 							}
 						}
@@ -388,96 +337,264 @@ function applyFilters() {
 				}
 			}
 		}
+		//type,rarity,dokkan//ABE
+		if ((A.length > 0) && (B.length > 0) && (C.length == 0) && (D.length == 0) && (E.length > 0)) {
+			for (let k = 0; k < filterAwakenId.length; k++) {
+				for (let l = 0; l < filterRarity.length; l++) {
+					for (let j = 0; j < filterType.length; j++) {
+						for (let i = 0; i < char.length; i++) {
+							if ((dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == filterType[j])
+								&& (dataCharRarityItems[i].getAttribute(dataCharRarity).toLowerCase() == filterRarity[l])
+								&& (dataCharAwakenItems[i].getAttribute(dataCharAwaken).toLowerCase() == filterAwakenValue[k])) {
+								charList[i] = char.item(i);
+							}
+						}
+					}
+				}
+			}
+		}
+		//type,class,eza//ACD
+		if ((A.length > 0) && (B.length == 0) && (C.length > 0) && (D.length > 0) && (E.length == 0)) {
+			for (let k = 0; k < filterEza.length; k++) {
+				for (let l = 0; l < filterClass.length; l++) {
+					for (let j = 0; j < filterType.length; j++) {
+						for (let i = 0; i < char.length; i++) {
+							if ((dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == filterType[j])
+								&& (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == filterClass[l])
+								&& (dataCharEzaItems[i].getAttribute(dataCharEza).toLowerCase() == filterEza[k])) {
+								charList[i] = char.item(i);
+							}
+						}
+					}
+				}
+			}
+		}
+		//type,class,dokkan//ACE
+		if ((A.length > 0) && (B.length == 0) && (C.length > 0) && (D.length == 0) && (E.length > 0)) {
+			for (let k = 0; k < filterAwakenId.length; k++) {
+				for (let l = 0; l < filterClass.length; l++) {
+					for (let j = 0; j < filterType.length; j++) {
+						for (let i = 0; i < char.length; i++) {
+							if ((dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == filterType[j])
+								&& (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == filterClass[l])
+								&& (dataCharAwakenItems[i].getAttribute(dataCharAwaken).toLowerCase() == filterAwakenValue[k])) {
+								charList[i] = char.item(i);
+							}
+						}
+					}
+				}
+			}
+		}
+		//type,eza,dokkan//ADE
+		if ((A.length > 0) && (B.length == 0) && (C.length == 0) && (D.length > 0) && (E.length > 0)) {
+			for (let l = 0; l < filterAwakenId.length; l++) {
+				for (let k = 0; k < filterEza.length; k++) {
+					for (let j = 0; j < filterType.length; j++) {
+						for (let i = 0; i < char.length; i++) {
+							if ((dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == filterType[j])
+								&& (dataCharEzaItems[i].getAttribute(dataCharEza).toLowerCase() == filterEza[k])
+								&& (dataCharAwakenItems[i].getAttribute(dataCharAwaken).toLowerCase() == filterAwakenValue[l])) {
+								charList[i] = char.item(i);
+							}
+						}
+					}
+				}
+			}
+		}
+		//rarity,class,eza//BCD
+		if ((A.length == 0) && (B.length > 0) && (C.length > 0) && (D.length > 0) && (E.length == 0)) {
+			for (let l = 0; l < filterEza.length; l++) {
+				for (let k = 0; k < filterClass.length; k++) {
+					for (let j = 0; j < filterRarity.length; j++) {
+						for (let i = 0; i < char.length; i++) {
+							if ((dataCharRarityItems[i].getAttribute(dataCharRarity).toLowerCase() == filterRarity[j])
+								&& (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == filterClass[k])
+								&& (dataCharEzaItems[i].getAttribute(dataCharEza).toLowerCase() == filterEza[l])) {
+								charList[i] = char.item(i);
+							}
+						}
+					}
+				}
+			}
+		}
+		//rarity,class,dokkan//BCE
+		if ((A.length == 0) && (B.length > 0) && (C.length > 0) && (D.length == 0) && (E.length > 0)) {
+			for (let l = 0; l < filterAwakenId.length; l++) {
+				for (let k = 0; k < filterClass.length; k++) {
+					for (let j = 0; j < filterRarity.length; j++) {
+						for (let i = 0; i < char.length; i++) {
+							if ((dataCharRarityItems[i].getAttribute(dataCharRarity).toLowerCase() == filterRarity[j])
+								&& (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == filterClass[k])
+								&& (dataCharAwakenItems[i].getAttribute(dataCharAwaken).toLowerCase() == filterAwakenValue[l])) {
+								charList[i] = char.item(i);
+							}
+						}
+					}
+				}
+			}
+		}
+		//rarity,eza,dokkan//BDE
+		if ((A.length == 0) && (B.length > 0) && (C.length == 0) && (D.length > 0) && (E.length > 0)) {
+			for (let l = 0; l < filterAwakenId.length; l++) {
+				for (let k = 0; k < filterEza.length; k++) {
+					for (let j = 0; j < filterRarity.length; j++) {
+						for (let i = 0; i < char.length; i++) {
+							if ((dataCharRarityItems[i].getAttribute(dataCharRarity).toLowerCase() == filterRarity[j])
+								&& (dataCharEzaItems[i].getAttribute(dataCharEza).toLowerCase() == filterEza[k])
+								&& (dataCharAwakenItems[i].getAttribute(dataCharAwaken).toLowerCase() == filterAwakenValue[l])) {
+								charList[i] = char.item(i);
+							}
+						}
+					}
+				}
+			}
+		}
+		//class,eza,dokkan//CDE
+		if ((A.length == 0) && (B.length == 0) && (C.length > 0) && (D.length > 0) && (E.length > 0)) {
+			for (let l = 0; l < filterAwakenId.length; l++) {
+				for (let k = 0; k < filterEza.length; k++) {
+					for (let j = 0; j < filterClass.length; j++) {
+						for (let i = 0; i < char.length; i++) {
+							if ((dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == filterClass[j])
+								&& (dataCharEzaItems[i].getAttribute(dataCharEza).toLowerCase() == filterEza[k])
+								&& (dataCharAwakenItems[i].getAttribute(dataCharAwaken).toLowerCase() == filterAwakenValue[l])) {
+								charList[i] = char.item(i);
+							}
+						}
+					}
+				}
+			}
+		}
+		//------------------------------3 filters used------------------------------
 	}
-	//------------------------------4 filters used------------------------------
-
-
-	//eza
-	if (checkedEzaBtn.length == 1) {
-		if (document.getElementById(filterEza).classList.contains("checkedEzaBtn")) {
-			for (let i = 0; i < char.length; i++) {
-				if ((char.item(i).style.display == "inline-block") && (dataCharEzaItems[i].getAttribute(dataCharEza).toLowerCase() == filterEza)) {
-					charList[i] = char.item(i);
-				} else {
-					delete charList[i];
+	if (sumFilterUsed == 4) {
+		//type//A,rarity//B,class//C,eza//D,dokkan//E
+		//ABCD ABCE ABDE ACDE BCDE
+		//------------------------------4 filters used------------------------------
+		//type,rarity,class,eza//ABCD
+		if ((A.length > 0) && (B.length > 0) && (C.length > 0) && (D.length > 0) && (E.length == 0)) {
+			for (let p = 0; p < filterEza.length; p++) {
+				for (let l = 0; l < filterClass.length; l++) {
+					for (let k = 0; k < filterRarity.length; k++) {
+						for (let j = 0; j < filterType.length; j++) {
+							for (let i = 0; i < char.length; i++) {
+								if ((dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == filterType[j])
+									&& (dataCharRarityItems[i].getAttribute(dataCharRarity).toLowerCase() == filterRarity[k])
+									&& (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == filterClass[l])
+									&& (dataCharEzaItems[i].getAttribute(dataCharEza).toLowerCase() == filterEza[p])) {
+									charList[i] = char.item(i);
+								}
+							}
+						}
+					}
 				}
 			}
 		}
+		//type,rarity,class,dokkan//ABCE
+		if ((A.length > 0) && (B.length > 0) && (C.length > 0) && (D.length == 0) && (E.length > 0)) {
+			for (let p = 0; p < filterAwakenId.length; p++) {
+				for (let l = 0; l < filterClass.length; l++) {
+					for (let k = 0; k < filterRarity.length; k++) {
+						for (let j = 0; j < filterType.length; j++) {
+							for (let i = 0; i < dataCharEzaItems.length; i++) {
+								if ((dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == filterType[j])
+									&& (dataCharRarityItems[i].getAttribute(dataCharRarity).toLowerCase() == filterRarity[k])
+									&& (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == filterClass[l])
+									&& (dataCharAwakenItems[i].getAttribute(dataCharAwaken).toLowerCase() == filterAwakenValue[p])) {
+									charList[i] = char.item(i);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		//type,rarity,eza,dokkan//ABDE
+		if ((A.length > 0) && (B.length > 0) && (C.length == 0) && (D.length > 0) && (E.length > 0)) {
+			for (let p = 0; p < filterAwakenId.length; p++) {
+				for (let l = 0; l < filterEza.length; l++) {
+					for (let k = 0; k < filterRarity.length; k++) {
+						for (let j = 0; j < filterType.length; j++) {
+							for (let i = 0; i < char.length; i++) {
+								if ((dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == filterType[j])
+									&& (dataCharRarityItems[i].getAttribute(dataCharRarity).toLowerCase() == filterRarity[k])
+									&& (dataCharEzaItems[i].getAttribute(dataCharEza).toLowerCase() == filterEza[l])
+									&& (dataCharAwakenItems[i].getAttribute(dataCharAwaken).toLowerCase() == filterAwakenValue[p])) {
+									charList[i] = char.item(i);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		//type,class,eza,dokkan//ACDE
+		if ((A.length > 0) && (B.length == 0) && (C.length > 0) && (D.length > 0) && (E.length > 0)) {
+			for (let p = 0; p < filterAwakenId.length; p++) {
+				for (let l = 0; l < filterEza.length; l++) {
+					for (let k = 0; k < filterClass.length; k++) {
+						for (let j = 0; j < filterType.length; j++) {
+							for (let i = 0; i < char.length; i++) {
+								if ((dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == filterType[j])
+									&& (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == filterClass[k])
+									&& (dataCharEzaItems[i].getAttribute(dataCharEza).toLowerCase() == filterEza[l])
+									&& (dataCharAwakenItems[i].getAttribute(dataCharAwaken).toLowerCase() == filterAwakenValue[p])) {
+									charList[i] = char.item(i);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		//rarity,class,eza,dokkan//BCDE
+		if ((A.length == 0) && (B.length > 0) && (C.length > 0) && (D.length > 0) && (E.length > 0)) {
+			for (let p = 0; p < filterAwakenId.length; p++) {
+				for (let l = 0; l < filterEza.length; l++) {
+					for (let k = 0; k < filterClass.length; k++) {
+						for (let j = 0; j < filterRarity.length; j++) {
+							for (let i = 0; i < char.length; i++) {
+								if ((dataCharRarityItems[i].getAttribute(dataCharRarity).toLowerCase() == filterRarity[j])
+									&& (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == filterClass[k])
+									&& (dataCharEzaItems[i].getAttribute(dataCharEza).toLowerCase() == filterEza[l])
+									&& (dataCharAwakenItems[i].getAttribute(dataCharAwaken).toLowerCase() == filterAwakenValue[p])) {
+									charList[i] = char.item(i);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		//------------------------------4 filters used------------------------------
 	}
-	//dokkan-awakened
-	if ((checkedAwakenBtn.length == 1)) {
-		if (document.getElementById("notDokkanAwakened").classList.contains("checkedAwakenBtn")) {
-			for (let i = 0; i < char.length; i++) {
-				if ((char.item(i).style.display == "inline-block") && (dataCharAwakenItems[i].getAttribute(dataCharAwaken).toLowerCase() == "not-dokkan-awakened")) {
-					char.item(i).style.display = "inline-block";
-					charList[i] = char.item(i);
-				} else {
-					delete charList[i];
+	if (sumFilterUsed == 5) {
+		//type//A,rarity//B,class//C,eza//D,dokkan//E
+		//ABCDE
+		//------------------------------5 filters used------------------------------
+		//type,rarity,class,eza,dokkan//ABCDE
+		if ((A.length > 0) && (B.length > 0) && (C.length > 0) && (D.length > 0) && (E.length > 0)) {
+			for (let o = 0; o < filterAwakenId.length; o++) {
+				for (let p = 0; p < filterEza.length; p++) {
+					for (let l = 0; l < filterClass.length; l++) {
+						for (let k = 0; k < filterRarity.length; k++) {
+							for (let j = 0; j < filterType.length; j++) {
+								for (let i = 0; i < char.length; i++) {
+									if ((dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == filterType[j])
+										&& (dataCharRarityItems[i].getAttribute(dataCharRarity).toLowerCase() == filterRarity[k])
+										&& (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == filterClass[l])
+										&& (dataCharEzaItems[i].getAttribute(dataCharEza).toLowerCase() == filterEza[p])
+										&& (dataCharAwakenItems[i].getAttribute(dataCharAwaken).toLowerCase() == filterAwakenValue[o])) {
+										charList[i] = char.item(i);
+									}
+								}
+							}
+						}
+					}
 				}
 			}
 		}
-
-		if (document.getElementById("preDokkanAwakened").classList.contains("checkedAwakenBtn")) {
-			for (let i = 0; i < char.length; i++) {
-				if ((char.item(i).style.display == "inline-block") && (dataCharAwakenItems[i].getAttribute(dataCharAwaken).toLowerCase() == "pre-dokkan-awakened")) {
-					char.item(i).style.display = "inline-block";
-					charList[i] = char.item(i);
-				} else {
-					delete charList[i];
-				}
-			}
-		}
-
-		if (document.getElementById("dokkanAwakened").classList.contains("checkedAwakenBtn")) {
-			for (let i = 0; i < char.length; i++) {
-				if ((char.item(i).style.display == "inline-block") && (dataCharAwakenItems[i].getAttribute(dataCharAwaken).toLowerCase() == "dokkan-awakened")) {
-					char.item(i).style.display = "inline-block";
-					charList[i] = char.item(i);
-				} else {
-					delete charList[i];
-				}
-			}
-		}
-	}
-	if ((checkedAwakenBtn.length == 2)) {
-		if (document.getElementById("notDokkanAwakened").classList.contains("checkedAwakenBtn") && document.getElementById("preDokkanAwakened").classList.contains("checkedAwakenBtn")) {
-			for (let i = 0; i < char.length; i++) {
-				if ((char.item(i).style.display == "inline-block")
-					&& ((dataCharAwakenItems[i].getAttribute(dataCharAwaken).toLowerCase() == "not-dokkan-awakened")
-						|| (dataCharAwakenItems[i].getAttribute(dataCharAwaken).toLowerCase() == "pre-dokkan-awakened"))) {
-					char.item(i).style.display = "inline-block";
-					charList[i] = char.item(i);
-				} else {
-					delete charList[i];
-				}
-			}
-		}
-
-		if (document.getElementById("notDokkanAwakened").classList.contains("checkedAwakenBtn") && document.getElementById("dokkanAwakened").classList.contains("checkedAwakenBtn")) {
-			for (let i = 0; i < char.length; i++) {
-				if ((char.item(i).style.display == "inline-block")
-					&& ((dataCharAwakenItems[i].getAttribute(dataCharAwaken).toLowerCase() == "not-dokkan-awakened")
-						|| (dataCharAwakenItems[i].getAttribute(dataCharAwaken).toLowerCase() == "dokkan-awakened"))) {
-					char.item(i).style.display = "inline-block";
-					charList[i] = char.item(i);
-				} else {
-					delete charList[i];
-				}
-			}
-		}
-
-		if (document.getElementById("preDokkanAwakened").classList.contains("checkedAwakenBtn") && document.getElementById("dokkanAwakened").classList.contains("checkedAwakenBtn")) {
-			for (let i = 0; i < char.length; i++) {
-				if ((char.item(i).style.display == "inline-block")
-					&& ((dataCharAwakenItems[i].getAttribute(dataCharAwaken).toLowerCase() == "pre-dokkan-awakened")
-						|| (dataCharAwakenItems[i].getAttribute(dataCharAwaken).toLowerCase() == "dokkan-awakened"))) {
-					char.item(i).style.display = "inline-block";
-					charList[i] = char.item(i);
-				} else {
-					delete charList[i];
-				}
-			}
-		}
+		//------------------------------5 filters used------------------------------
 	}
 
 	charList.clean(undefined);
@@ -485,14 +602,7 @@ function applyFilters() {
 
 	let characterSearchId = document.getElementById("char-search-id");
 	if (characterSearchId.value.length > 0) {
-		let buttonYes = document.getElementsByClassName("searchTitles").item(0);
-		if (buttonYes.classList.contains("checkedTitlesnBtn")) {
-			searchCharNameOrTitle(2);
-			searchCharName(2);
-		} else {
-			searchCharNameOrTitle(1);
-			searchCharName(1);
-		}
+		characterSearchId.value = "";
 	}
 	addDropdownClass(localStorage.getItem("filterDisplay"));
 }

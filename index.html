@@ -60,197 +60,205 @@
 </head>
 
 <body
-	onload="addChar(); saveCharList(); charsPerPage(1);  searchCharName(1); charsPerPageTextBox(); closeNavWhenClickedOutside(); addAllCharNames();">
+	onload="addChar(); saveCharList(); charsPerPage(1);  searchChar(1); charsPerPageTextBox(); closeNavWhenClickedOutside(); addAllCharNames();">
 	<div id="left-sidenav-id">
-		<a href="javascript:void(0)" id="close-left-sidenav-btn-id" onclick="closeNav();">&times;</a>
-		<p class="filter-options-text-class">Sort Direction</p>
-		<div class="filter-class">
-			<button onclick="filterDirectionDown();" id="filter-direction-down-id" class="filter-direction-class"
-				type="button">
-				Descending Order
-			</button>
-			<button onclick="filterDirectionUp();" id="filter-direction-up-id" class="filter-direction-class"
-				type="button">
-				Ascending Order
-			</button>
+		<div id="left-sidenav-filters-id">
+			<a href="javascript:void(0)" id="close-left-sidenav-btn-id" onclick="closeNav();">&times;</a>
+			<p class="filter-options-text-class">Sort Direction</p>
+			<div class="filter-class">
+				<button onclick="filterDirectionDown();" id="filter-direction-down-id" class="filter-direction-class"
+					type="button">
+					Descending Order
+				</button>
+				<button onclick="filterDirectionUp();" id="filter-direction-up-id" class="filter-direction-class"
+					type="button">
+					Ascending Order
+				</button>
+			</div>
+			<p class="filter-options-text-class">Rarity</p>
+			<div class="filter-class">
+				<div onclick="rarityNFilter();" id="n" class="filter-rarity-container-class">
+					<div class="top-half-bg-color"></div>
+					<div class="bottom-half-bg-color"></div>
+					<div class="top-line"></div>
+					<div class="top-left-line-rotated"></div>
+					<div class="top-right-line-rotated"></div>
+					<div class="bottom-line"></div>
+					<div class="bottom-left-line-rotated"></div>
+					<div class="bottom-right-line-rotated"></div>
+					<div class="filter-rarity-container-text-class">N</div>
+				</div>
+				<div onclick="rarityRFilter();" id="r" class="filter-rarity-container-class">
+					<div class="top-half-bg-color"></div>
+					<div class="bottom-half-bg-color"></div>
+					<div class="top-line"></div>
+					<div class="top-left-line-rotated"></div>
+					<div class="top-right-line-rotated"></div>
+					<div class="bottom-line"></div>
+					<div class="bottom-left-line-rotated"></div>
+					<div class="bottom-right-line-rotated"></div>
+					<div class="filter-rarity-container-text-class">R</div>
+				</div>
+				<div onclick="raritySRFilter();" id="sr" class="filter-rarity-container-class">
+					<div class="top-half-bg-color"></div>
+					<div class="bottom-half-bg-color"></div>
+					<div class="top-line"></div>
+					<div class="top-left-line-rotated"></div>
+					<div class="top-right-line-rotated"></div>
+					<div class="bottom-line"></div>
+					<div class="bottom-left-line-rotated"></div>
+					<div class="bottom-right-line-rotated"></div>
+					<div class="filter-rarity-container-text-class">SR</div>
+				</div>
+				<div onclick="raritySSRFilter();" id="ssr" class="filter-rarity-container-class">
+					<div class="top-half-bg-color"></div>
+					<div class="bottom-half-bg-color"></div>
+					<div class="top-line"></div>
+					<div class="top-left-line-rotated"></div>
+					<div class="top-right-line-rotated"></div>
+					<div class="bottom-line"></div>
+					<div class="bottom-left-line-rotated"></div>
+					<div class="bottom-right-line-rotated"></div>
+					<div class="filter-rarity-container-text-class">SSR</div>
+				</div>
+				<div onclick="rarityURFilter();" id="ur" class="filter-rarity-container-class">
+					<div class="top-half-bg-color"></div>
+					<div class="bottom-half-bg-color"></div>
+					<div class="top-line"></div>
+					<div class="top-left-line-rotated"></div>
+					<div class="top-right-line-rotated"></div>
+					<div class="bottom-line"></div>
+					<div class="bottom-left-line-rotated"></div>
+					<div class="bottom-right-line-rotated"></div>
+					<div class="filter-rarity-container-text-class">UR</div>
+				</div>
+				<div onclick="rarityLRFilter();" id="lr" class="filter-rarity-container-class">
+					<div class="top-half-bg-color"></div>
+					<div class="bottom-half-bg-color"></div>
+					<div class="top-line"></div>
+					<div class="top-left-line-rotated"></div>
+					<div class="top-right-line-rotated"></div>
+					<div class="bottom-line"></div>
+					<div class="bottom-left-line-rotated"></div>
+					<div class="bottom-right-line-rotated"></div>
+					<div class="filter-rarity-container-text-class">LR</div>
+				</div>
+			</div>
+			<p class="filter-options-text-class">Type</p>
+			<div class="filter-class">
+				<div onclick="aglFilter();" id="agl" class="filter-type-container">
+					<div class="top-half-bg-color-type"></div>
+					<div class="bottom-half-bg-color-type"></div>
+					<div class="top-line-type"></div>
+					<div class="top-left-line-rotated-type"></div>
+					<div class="top-right-line-rotated-type"></div>
+					<div class="bottom-line-type"></div>
+					<div class="bottom-left-line-rotated-type"></div>
+					<div class="bottom-right-line-rotated-type"></div>
+					<div class="filter-type-container-text">AGL</div>
+				</div>
+				<div onclick="teqFilter();" id="teq" class="filter-type-container">
+					<div class="top-half-bg-color-type"></div>
+					<div class="bottom-half-bg-color-type"></div>
+					<div class="top-line-type"></div>
+					<div class="top-left-line-rotated-type"></div>
+					<div class="top-right-line-rotated-type"></div>
+					<div class="bottom-line-type"></div>
+					<div class="bottom-left-line-rotated-type"></div>
+					<div class="bottom-right-line-rotated-type"></div>
+					<div class="filter-type-container-text">TEQ</div>
+				</div>
+				<div onclick="intFilter();" id="int" class="filter-type-container">
+					<div class="top-half-bg-color-type"></div>
+					<div class="bottom-half-bg-color-type"></div>
+					<div class="top-line-type"></div>
+					<div class="top-left-line-rotated-type"></div>
+					<div class="top-right-line-rotated-type"></div>
+					<div class="bottom-line-type"></div>
+					<div class="bottom-left-line-rotated-type"></div>
+					<div class="bottom-right-line-rotated-type"></div>
+					<div class="filter-type-container-text">INT</div>
+				</div>
+				<div onclick="strFilter();" id="str" class="filter-type-container">
+					<div class="top-half-bg-color-type"></div>
+					<div class="bottom-half-bg-color-type"></div>
+					<div class="top-line-type"></div>
+					<div class="top-left-line-rotated-type"></div>
+					<div class="top-right-line-rotated-type"></div>
+					<div class="bottom-line-type"></div>
+					<div class="bottom-left-line-rotated-type"></div>
+					<div class="bottom-right-line-rotated-type"></div>
+					<div class="filter-type-container-text">STR</div>
+				</div>
+				<div onclick="phyFilter();" id="phy" class="filter-type-container">
+					<div class="top-half-bg-color-type"></div>
+					<div class="bottom-half-bg-color-type"></div>
+					<div class="top-line-type"></div>
+					<div class="top-left-line-rotated-type"></div>
+					<div class="top-right-line-rotated-type"></div>
+					<div class="bottom-line-type"></div>
+					<div class="bottom-left-line-rotated-type"></div>
+					<div class="bottom-right-line-rotated-type"></div>
+					<div class="filter-type-container-text">PHY</div>
+				</div>
+			</div>
+			<p class="filter-options-text-class">Class</p>
+			<div class="filter-class">
+				<div onclick="superFilter();" id="super" class="filter-class-container">
+					<div class="top-half-bg-color-class"></div>
+					<div class="bottom-half-bg-color-class"></div>
+					<div class="top-line-class"></div>
+					<div class="top-left-line-rotated-class"></div>
+					<div class="top-right-line-rotated-class"></div>
+					<div class="bottom-line-class"></div>
+					<div class="bottom-left-line-rotated-class"></div>
+					<div class="bottom-right-line-rotated-class"></div>
+					<div class="filter-class-container-text">SUPER</div>
+				</div>
+				<div onclick="extremeFilter();" id="extreme" class="filter-class-container">
+					<div class="top-half-bg-color-class"></div>
+					<div class="bottom-half-bg-color-class"></div>
+					<div class="top-line-class"></div>
+					<div class="top-left-line-rotated-class"></div>
+					<div class="top-right-line-rotated-class"></div>
+					<div class="bottom-line-class"></div>
+					<div class="bottom-left-line-rotated-class"></div>
+					<div class="bottom-right-line-rotated-class"></div>
+					<div class="filter-class-container-text">EXTREME</div>
+				</div>
+			</div>
+			<p class="filter-options-text-class">Eza</p>
+			<div class="filter-class">
+				<button onclick="ezaFilter();" id="eza" type="button">EZA</button>
+				<button onclick="ezaNoFilter();" id="noeza" type="button">NO EZA</button>
+			</div>
+			<p class="filter-options-text-class">Filter Awakened</p>
+			<div class="filter-class">
+				<button onclick="filterNotDokkanAwakened();" id="notDokkanAwakened" class="filterDokkanAwakened"
+					type="button">
+					Not-Dokkan
+				</button>
+				<button onclick="filterPreDokkanAwakened();" id="preDokkanAwakened" class="filterDokkanAwakened"
+					type="button">
+					Pre-Dokkan
+				</button>
+				<button onclick="filterDokkanAwakened();" id="dokkanAwakened" class="filterDokkanAwakened"
+					type="button">
+					Dokkan
+				</button>
+			</div>
 		</div>
-		<p class="filter-options-text-class">Rarity</p>
-		<div class="filter-class">
-			<div onclick="rarityNFilter();" id="n" class="filter-rarity-container-class">
-				<div class="top-half-bg-color"></div>
-				<div class="bottom-half-bg-color"></div>
-				<div class="top-line"></div>
-				<div class="top-left-line-rotated"></div>
-				<div class="top-right-line-rotated"></div>
-				<div class="bottom-line"></div>
-				<div class="bottom-left-line-rotated"></div>
-				<div class="bottom-right-line-rotated"></div>
-				<div class="filter-rarity-container-text-class">N</div>
-			</div>
-			<div onclick="rarityRFilter();" id="r" class="filter-rarity-container-class">
-				<div class="top-half-bg-color"></div>
-				<div class="bottom-half-bg-color"></div>
-				<div class="top-line"></div>
-				<div class="top-left-line-rotated"></div>
-				<div class="top-right-line-rotated"></div>
-				<div class="bottom-line"></div>
-				<div class="bottom-left-line-rotated"></div>
-				<div class="bottom-right-line-rotated"></div>
-				<div class="filter-rarity-container-text-class">R</div>
-			</div>
-			<div onclick="raritySRFilter();" id="sr" class="filter-rarity-container-class">
-				<div class="top-half-bg-color"></div>
-				<div class="bottom-half-bg-color"></div>
-				<div class="top-line"></div>
-				<div class="top-left-line-rotated"></div>
-				<div class="top-right-line-rotated"></div>
-				<div class="bottom-line"></div>
-				<div class="bottom-left-line-rotated"></div>
-				<div class="bottom-right-line-rotated"></div>
-				<div class="filter-rarity-container-text-class">SR</div>
-			</div>
-			<div onclick="raritySSRFilter();" id="ssr" class="filter-rarity-container-class">
-				<div class="top-half-bg-color"></div>
-				<div class="bottom-half-bg-color"></div>
-				<div class="top-line"></div>
-				<div class="top-left-line-rotated"></div>
-				<div class="top-right-line-rotated"></div>
-				<div class="bottom-line"></div>
-				<div class="bottom-left-line-rotated"></div>
-				<div class="bottom-right-line-rotated"></div>
-				<div class="filter-rarity-container-text-class">SSR</div>
-			</div>
-			<div onclick="rarityURFilter();" id="ur" class="filter-rarity-container-class">
-				<div class="top-half-bg-color"></div>
-				<div class="bottom-half-bg-color"></div>
-				<div class="top-line"></div>
-				<div class="top-left-line-rotated"></div>
-				<div class="top-right-line-rotated"></div>
-				<div class="bottom-line"></div>
-				<div class="bottom-left-line-rotated"></div>
-				<div class="bottom-right-line-rotated"></div>
-				<div class="filter-rarity-container-text-class">UR</div>
-			</div>
-			<div onclick="rarityLRFilter();" id="lr" class="filter-rarity-container-class">
-				<div class="top-half-bg-color"></div>
-				<div class="bottom-half-bg-color"></div>
-				<div class="top-line"></div>
-				<div class="top-left-line-rotated"></div>
-				<div class="top-right-line-rotated"></div>
-				<div class="bottom-line"></div>
-				<div class="bottom-left-line-rotated"></div>
-				<div class="bottom-right-line-rotated"></div>
-				<div class="filter-rarity-container-text-class">LR</div>
+		<div id="apply-filters-bg-id">
+		</div>
+		<div id="apply-filters-id">
+			<p id="apply-filters-text-id" class="filter-options-text-class">Apply Filters</p>
+			<div class="filter-class">
+				<button onclick="applyFilters(); closeNav();" id="ok" type="button">
+					OK
+				</button>
 			</div>
 		</div>
-		<p class="filter-options-text-class">Type</p>
-		<div class="filter-class">
-			<div onclick="aglFilter();" id="agl" class="filter-type-container">
-				<div class="top-half-bg-color-type"></div>
-				<div class="bottom-half-bg-color-type"></div>
-				<div class="top-line-type"></div>
-				<div class="top-left-line-rotated-type"></div>
-				<div class="top-right-line-rotated-type"></div>
-				<div class="bottom-line-type"></div>
-				<div class="bottom-left-line-rotated-type"></div>
-				<div class="bottom-right-line-rotated-type"></div>
-				<div class="filter-type-container-text">AGL</div>
-			</div>
-			<div onclick="teqFilter();" id="teq" class="filter-type-container">
-				<div class="top-half-bg-color-type"></div>
-				<div class="bottom-half-bg-color-type"></div>
-				<div class="top-line-type"></div>
-				<div class="top-left-line-rotated-type"></div>
-				<div class="top-right-line-rotated-type"></div>
-				<div class="bottom-line-type"></div>
-				<div class="bottom-left-line-rotated-type"></div>
-				<div class="bottom-right-line-rotated-type"></div>
-				<div class="filter-type-container-text">TEQ</div>
-			</div>
-			<div onclick="intFilter();" id="int" class="filter-type-container">
-				<div class="top-half-bg-color-type"></div>
-				<div class="bottom-half-bg-color-type"></div>
-				<div class="top-line-type"></div>
-				<div class="top-left-line-rotated-type"></div>
-				<div class="top-right-line-rotated-type"></div>
-				<div class="bottom-line-type"></div>
-				<div class="bottom-left-line-rotated-type"></div>
-				<div class="bottom-right-line-rotated-type"></div>
-				<div class="filter-type-container-text">INT</div>
-			</div>
-			<div onclick="strFilter();" id="str" class="filter-type-container">
-				<div class="top-half-bg-color-type"></div>
-				<div class="bottom-half-bg-color-type"></div>
-				<div class="top-line-type"></div>
-				<div class="top-left-line-rotated-type"></div>
-				<div class="top-right-line-rotated-type"></div>
-				<div class="bottom-line-type"></div>
-				<div class="bottom-left-line-rotated-type"></div>
-				<div class="bottom-right-line-rotated-type"></div>
-				<div class="filter-type-container-text">STR</div>
-			</div>
-			<div onclick="phyFilter();" id="phy" class="filter-type-container">
-				<div class="top-half-bg-color-type"></div>
-				<div class="bottom-half-bg-color-type"></div>
-				<div class="top-line-type"></div>
-				<div class="top-left-line-rotated-type"></div>
-				<div class="top-right-line-rotated-type"></div>
-				<div class="bottom-line-type"></div>
-				<div class="bottom-left-line-rotated-type"></div>
-				<div class="bottom-right-line-rotated-type"></div>
-				<div class="filter-type-container-text">PHY</div>
-			</div>
-		</div>
-		<p class="filter-options-text-class">Class</p>
-		<div class="filter-class">
-			<div onclick="superFilter();" id="super" class="filter-class-container">
-				<div class="top-half-bg-color-class"></div>
-				<div class="bottom-half-bg-color-class"></div>
-				<div class="top-line-class"></div>
-				<div class="top-left-line-rotated-class"></div>
-				<div class="top-right-line-rotated-class"></div>
-				<div class="bottom-line-class"></div>
-				<div class="bottom-left-line-rotated-class"></div>
-				<div class="bottom-right-line-rotated-class"></div>
-				<div class="filter-class-container-text">SUPER</div>
-			</div>
-			<div onclick="extremeFilter();" id="extreme" class="filter-class-container">
-				<div class="top-half-bg-color-class"></div>
-				<div class="bottom-half-bg-color-class"></div>
-				<div class="top-line-class"></div>
-				<div class="top-left-line-rotated-class"></div>
-				<div class="top-right-line-rotated-class"></div>
-				<div class="bottom-line-class"></div>
-				<div class="bottom-left-line-rotated-class"></div>
-				<div class="bottom-right-line-rotated-class"></div>
-				<div class="filter-class-container-text">EXTREME</div>
-			</div>
-		</div>
-		<p class="filter-options-text-class">Eza</p>
-		<div class="filter-class">
-			<button onclick="ezaFilter();" id="eza" type="button">EZA</button>
-		</div>
-		<p class="filter-options-text-class">Filter Awakened</p>
-		<div class="filter-class">
-			<button onclick="filterNotDokkanAwakened();" id="notDokkanAwakened" class="filterDokkanAwakened"
-				type="button">
-				Not-Dokkan
-			</button>
-			<button onclick="filterPreDokkanAwakened();" id="preDokkanAwakened" class="filterDokkanAwakened"
-				type="button">
-				Pre-Dokkan
-			</button>
-			<button onclick="filterDokkanAwakened();" id="dokkanAwakened" class="filterDokkanAwakened" type="button">
-				Dokkan
-			</button>
-		</div>
-		<p class="filter-options-text-class">Apply Filters</p>
-		<div class="filter-class">
-			<button onclick="applyFilters(); closeNav();" id="ok" type="button">
-				OK
-			</button>
-		</div>
-	</div>          
+	</div>
 	<div id="main-page-id">
 		<button onclick="openNav();" id="filter-select-id">
 			<span>Filter Select</span>
@@ -2672,7 +2680,7 @@
 				data-char-rarity="ur" data-char-class="extreme" data-char-eza="noeza" data-char-id="1004410"
 				data-char-hp="10,590" data-char-attack="10,167" data-char-defense="6,422" data-char-cost="26"
 				data-char-max-level="100" data-char-super-atk-level="10" data-char-recruit="Summonable"
-				data-char-awaken="not-dokkan-awakened" data-char-release="Apr 06, 2016"
+				data-char-awaken="dokkan-awakened" data-char-release="Apr 06, 2016"
 				data-char-super-atk-type="Super Attack (12 Ki),Ki Blast"
 				data-char-links="Majin,Brutal Beatdown,The Innocents,Metamorphosis,Infinite Regeneration,Formidable Enemy,The Wall Standing Tall"
 				data-char-categories="Majin Buu Saga,Artificial Life Forms,Transformation Boost,Power Absorption,Majin Power,Sworn Enemies,Resurrected Warriors,Time Travelers,Heavenly Events,Worldwide Chaos">
@@ -3327,7 +3335,7 @@
 				data-char-type="phy" data-char-rarity="ur" data-char-class="extreme" data-char-eza="noeza"
 				data-char-id="1006310" data-char-hp="11,800" data-char-attack="9,867" data-char-defense="7,176"
 				data-char-cost="18" data-char-max-level="100" data-char-super-atk-level="10"
-				data-char-recruit="Summonable" data-char-awaken="not-dokkan-awakened" data-char-release="Oct 11, 2016"
+				data-char-recruit="Summonable" data-char-awaken="dokkan-awakened" data-char-release="Oct 11, 2016"
 				data-char-super-atk-type="Super Attack (12 Ki),Ki Blast"
 				data-char-links="Thirst for Conquest,Coward,GT,Hatred of Saiyans,Loyalty,Super Saiyan,Kamehameha"
 				data-char-categories="Hybrid Saiyans,Super Saiyans,Kamehameha,Corroded Body and Mind,Terrifying Conquerors">
@@ -3522,7 +3530,7 @@
 				data-char-rarity="ur" data-char-class="super" data-char-eza="eza" data-char-id="1008430"
 				data-char-hp="17,449" data-char-attack="15,719" data-char-defense="11,791" data-char-cost="42"
 				data-char-max-level="140" data-char-super-atk-level="15" data-char-recruit="Summonable"
-				data-char-awaken="not-dokkan-awakened" data-char-release="Nov 02, 2016.Apr 14, 2022"
+				data-char-awaken="dokkan-awakened" data-char-release="Nov 02, 2016.Apr 14, 2022"
 				data-char-super-atk-type="Super Attack (12 Ki),Ki Blast"
 				data-char-links="Saiyan Warrior Race,Brainiacs,Prepared for Battle,Power Bestowed by God,Fused Fighter,Fierce Battle"
 				data-char-categories="Majin Buu Saga,Potara,Fused Fighters,Final Trump Card,Battle of Wits"></div>
@@ -3640,7 +3648,7 @@
 				data-char-type="int" data-char-rarity="ur" data-char-class="super" data-char-eza="noeza"
 				data-char-id="1007210" data-char-hp="10,494" data-char-attack="10,048" data-char-defense="6,814"
 				data-char-cost="26" data-char-max-level="100" data-char-super-atk-level="10"
-				data-char-recruit="Summonable" data-char-awaken="not-dokkan-awakened" data-char-release="Nov 24, 2016"
+				data-char-recruit="Summonable" data-char-awaken="dokkan-awakened" data-char-release="Nov 24, 2016"
 				data-char-super-atk-type="Super Attack (12 Ki),Ki Blast"
 				data-char-links="Golden Warrior,Super Saiyan,Prepared for Battle,The Innocents,Fused Fighter,Formidable Enemy"
 				data-char-categories="Majin Buu Saga,Hybrid Saiyans,Youth,Super Saiyans,Fusion,Fused Fighters,Rapid Growth,Time Limit,Gifted Warriors,Connected Hope,Entrusted Will,Heavenly Events,Special Pose">

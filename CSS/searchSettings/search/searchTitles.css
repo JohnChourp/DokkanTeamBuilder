@@ -1,13 +1,13 @@
 #search-titles-id {
     height: 40px;
     display: flex;
-	flex-direction: row;
+    flex-direction: row;
     flex-wrap: wrap;
 }
 
 #search-settings-text-search-titles-id {
-	position: relative;
-	top:-16px;
+    position: relative;
+    top: -16px;
 }
 
 .searchTitles {

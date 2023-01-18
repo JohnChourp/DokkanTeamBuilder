@@ -1,10 +1,10 @@
 #search-settings-id {
     margin-top: 10px;
-    height:175px;
-    width:640px;
+    height: 175px;
+    width: 640px;
     display: none;
     flex-direction: column;
-    border:2px solid cyan;
+    border: 2px solid cyan;
 }
 
 .search-settings-text-class {
@@ -12,5 +12,5 @@
     font-size: 20px;
     height: 30px;
     white-space: nowrap;
-    margin-left:10px;
+    margin-left: 10px;
 }

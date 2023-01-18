@@ -45,7 +45,29 @@
     margin-left: 50px;
 }
 
+#left-sidenav-filters-id {
+    height: 100%;
+    /* 100% Full-height */
+    width: 0;
+    /* 0 width - change this with JavaScript */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Stay on top */
+    top: 0;
+    /* Stay at the top */
+    left: 0;
+    background-color: #111;
+    /* Black*/
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    padding-top: 60px;
+    /* Place content 60px from the top */
+    transition: 0.5s;
+    /* 0.5 second transition effect to slide in the sidenav */
+}
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+
 #main {
     transition: margin-left .5s;
     padding: 20px;
@@ -123,38 +145,41 @@
     flex-direction: row;
 }
 
-#eza {
-    cursor: pointer;
-    height: 40px;
-    font-size: 18px;
-}
-
 #ok {
     cursor: pointer;
     height: 40px;
-    margin-bottom: 80px;
+    width: 50px;
     font-size: 18px;
     background-color: #df8611;
     font-weight: 800;
     color: aliceblue;
+    position: relative;
+    left:-30px;
 }
 
-.checkedEzaBtn {
-    --angle: 0deg;
-    height: 45px;
-    border: 5px solid;
-    border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
-    animation: 5s rotate linear infinite;
+#apply-filters-bg-id {
+    z-index: 1;
+    width:0;
+    height:110px;
+    position: fixed;
+    bottom:0;
+    background-color: #494141;
+    opacity: 0.8;
+    transition: 0.5s;
 }
 
-@keyframes rotate {
-    to {
-        --angle: 360deg;
-    }
+#apply-filters-id {
+    z-index: 1;
+    width:0;
+    height:110px;
+    position: fixed;
+    bottom:0;
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s;
 }
 
-@property --angle {
-    syntax: '<angle>';
-    initial-value: 0deg;
-    inherits: false;
+#apply-filters-text-id {
+    position: relative;
+    left:-50px;
 }
