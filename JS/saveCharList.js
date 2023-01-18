@@ -51,7 +51,7 @@ function saveCharList() {
 
 function getCharList() {
 	let charListSaved = [];
-	
+
 	let charList_dataCharNameItems = JSON.parse(localStorage.getItem('charList_dataCharNameItems'));
 	let charList_dataCharTitleItems = JSON.parse(localStorage.getItem('charList_dataCharTitleItems'));
 	let charList_dataCharTypeItems = JSON.parse(localStorage.getItem('charList_dataCharTypeItems'));
@@ -97,7 +97,7 @@ function getCharList() {
 			"data-char-categories", charList_dataCharCategoriesItems[i]);
 		charListSaved[i] = char_div;
 	}
-	
+
 	let char_container_id = document.getElementById("char-container-id");
 	char_container_id.innerHTML = "";
 	for (let j = 0; j < charListSaved.length; j++) {

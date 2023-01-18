@@ -1,3 +1,27 @@
-#eza {
-	background-color: #7d8e93;
+#eza,
+#noeza {
+    background-color: #7d8e93;
+    cursor: pointer;
+    height: 40px;
+    font-size: 18px;
+}
+
+.checkedEzaBtn {
+    --angle: 0deg;
+    height: 45px;
+    border: 5px solid;
+    border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+    animation: 5s rotate linear infinite;
+}
+
+@keyframes rotate {
+    to {
+        --angle: 360deg;
+    }
+}
+
+@property --angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
 }

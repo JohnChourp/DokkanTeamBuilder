@@ -1,3 +1,7 @@
+function ezaFilter() {
+    addEza("eza");
+}
+
 function addEza(ezaFilter) {
     if (document.getElementById(ezaFilter).classList.contains("checkedEzaBtn")) {
         document.getElementById(ezaFilter).classList.remove("checkedEzaBtn");
@@ -41,6 +45,14 @@ function addEza(ezaFilter) {
     }
 }
 
-function ezaFilter() {
-    addEza("eza");
+function ezaNoFilter() {
+    addNoEza("noeza");
+}
+
+function addNoEza(ezaNoFilter) {
+    if (document.getElementById(ezaNoFilter).classList.contains("checkedEzaBtn")) {
+        document.getElementById(ezaNoFilter).classList.remove("checkedEzaBtn");
+    } else {
+        document.getElementById(ezaNoFilter).classList.add("checkedEzaBtn");
+    }
 }
