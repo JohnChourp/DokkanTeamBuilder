@@ -56,3 +56,10 @@ function addNoEza(ezaNoFilter) {
         document.getElementById(ezaNoFilter).classList.add("checkedEzaBtn");
     }
 }
+
+function removeAllEza() {
+    let filterEza = ["eza", "noeza"];
+    for (let i = 0; i < filterEza.length; i++) {
+        document.getElementById(filterEza[i]).classList.remove("checkedEzaBtn");
+    }
+}

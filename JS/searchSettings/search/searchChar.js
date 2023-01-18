@@ -639,9 +639,10 @@ function searchChar(nameOrTitle) {
 				}
 				//------------------------------5 filters used------------------------------
 			}
-			
+
 			charList.clean(undefined);
 			createFilterPagination(charList, localStorage.getItem("charsPerPageNumItem"));
+			addDropdownClass(localStorage.getItem("filterDisplay"));
 		}
 	});
 }

@@ -19,3 +19,13 @@ function superFilter() {
 function extremeFilter() {
     addClass("extreme");
 }
+
+function removeAllClass() {
+    let filterClass = ["super", "extreme"];
+    for (let i = 0; i < filterClass.length; i++) {
+        document.getElementById(filterClass[i]).classList.remove("checkedClassBtn");
+        document.getElementById(filterClass[i]).children.item(0).style.backgroundColor = "#6B6B67";
+        document.getElementById(filterClass[i]).children.item(1).style.backgroundColor = "#555555";
+        document.getElementById(filterClass[i]).children.item(8).style.backgroundImage = 'linear-gradient(180deg, #B6B6B6, #948D87)';
+    }
+}
