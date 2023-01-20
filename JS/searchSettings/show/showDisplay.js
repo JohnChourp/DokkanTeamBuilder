@@ -41,6 +41,7 @@ function addDropdownClass(filterDisplay) {
 	let dataCharSuperAtkType = 'data-char-super-atk-type';
 	let dataCharLinks = 'data-char-links';
 	let dataCharCategories = 'data-char-categories';
+	
 	let dataCharNameItems = document.querySelectorAll('[' + dataCharName + ']');
 	let dataCharTitleItems = document.querySelectorAll('[' + dataCharTitle + ']');
 	let dataCharIdItems = document.querySelectorAll('[' + dataCharId + ']');
@@ -54,13 +55,16 @@ function addDropdownClass(filterDisplay) {
 	let dataCharSuperAtkTypeItems = document.querySelectorAll('[' + dataCharSuperAtkType + ']');
 	let dataCharLinksItems = document.querySelectorAll('[' + dataCharLinks + ']');
 	let dataCharCategoriesItems = document.querySelectorAll('[' + dataCharCategories + ']');
+	
 	let char = document.getElementsByClassName("char");
+	let charDivClass = document.getElementsByClassName("char-div-class");
+	let char_display = document.getElementsByClassName("char_display");
 	let char_type_base = document.getElementsByClassName("char_type_base");
 	let char_thumb = document.getElementsByClassName("char_thumb");
 	let char_rarity = document.getElementsByClassName("char_rarity");
 	let char_type = document.getElementsByClassName("char_type");
 	let char_eza = document.getElementsByClassName("char_eza");
-	let char_display = document.getElementsByClassName("char_display");
+	
 	let listLinks = [], listCategories = [], listSuperAtkType = [], listRelease = [];
 	let listLinksFormattedString = [], listCategoriesFormattedString = [], listSuperAtkTypeFormattedString = [],
 		listReleaseFormattedString = [];
@@ -90,28 +94,21 @@ function addDropdownClass(filterDisplay) {
 	}
 	if ((filterDisplay > -1) && (filterDisplay < 10)) {
 		for (let i = 0; i < char_display.length; i++) {
-			char.item(i).style.width = "140px";
-			char.item(i).style.height = "230px";
+			char.item(i).style.width = "142px";
+			charDivClass.item(i).style.width = "135px";
 
-			char_type_base.item(i).style.top = "35px";
-			char_type_base.item(i).style.left = "25px";
-
-			char_thumb.item(i).style.top = "-85px";
-			char_thumb.item(i).style.left = "13px";
-
-			char_rarity.item(i).style.top = "-143px";
-			char_rarity.item(i).style.left = "13px";
-
+			char_type_base.item(i).style.left = "17px";
+			char_thumb.item(i).style.left = "5px";
+			char_rarity.item(i).style.left = "5px";
+			char_rarity.item(i).style.top = "-142px";
+			char_type.item(i).style.left = "26px";
 			char_type.item(i).style.top = "-230px";
-			char_type.item(i).style.left = "35px";
-
-			char_display.item(i).style.top = "-150px";
-			char_display.item(i).style.width = "120px";
-			char_display.item(i).style.height = "75px";
-		}
-		for (let i = 0; i < char_eza.length; i++) {
-			char_eza.item(i).style.top = "-165px";
-			char_eza.item(i).style.left = "-13px";
+			for (let i = 0; i < char_eza.length; i++) {
+				char_eza.item(i).style.left = "-23px";
+				char_eza.item(i).style.top = "-162px";
+			}
+			char_display.item(i).style.width = "127px";
+			char_display.item(i).style.display = "table-cell";
 		}
 	}
 	if (filterDisplay == 0) {
@@ -154,7 +151,6 @@ function addDropdownClass(filterDisplay) {
 			char_display.item(i).innerHTML = dataCharMaxLevelItems[i].getAttribute(dataCharMaxLevel);
 		}
 	}
-	//Release Date
 	if (filterDisplay == 8) {
 		for (let i = 0; i < char_display.length; i++) {
 			char_display.item(i).innerHTML = listReleaseFormattedString[i];
@@ -168,88 +164,65 @@ function addDropdownClass(filterDisplay) {
 	//Super ATK Type
 	if (filterDisplay == 10) {
 		for (let i = 0; i < char_display.length; i++) {
-			char.item(i).style.width = "170px";
-			char.item(i).style.height = "270px";
+			char.item(i).style.width = "165px";
+			charDivClass.item(i).style.width = "158px";
 
-			char_type_base.item(i).style.top = "35px";
-			char_type_base.item(i).style.left = "40px";
-
-			char_thumb.item(i).style.top = "-86px";
-			char_thumb.item(i).style.left = "28px";
-
-			char_rarity.item(i).style.top = "-145px";
-			char_rarity.item(i).style.left = "26px";
-
-			char_type.item(i).style.top = "-231px";
-			char_type.item(i).style.left = "52px";
-
-			char_display.item(i).style.top = "-149px";
+			char_type_base.item(i).style.left = "30px";
+			char_thumb.item(i).style.left = "18px";
+			char_rarity.item(i).style.left = "18px";
+			char_rarity.item(i).style.top = "-142px";
+			char_type.item(i).style.left = "39px";
+			char_type.item(i).style.top = "-230px";
+			for (let i = 0; i < char_eza.length; i++) {
+				char_eza.item(i).style.left = "-10px";
+				char_eza.item(i).style.top = "-162px";
+			}
 			char_display.item(i).style.width = "150px";
-			char_display.item(i).style.height = "74px";
-
+			char_display.item(i).style.display = "table-cell";
 			char_display.item(i).innerHTML = listSuperAtkTypeFormattedString[i];
-		}
-		for (let i = 0; i < char_eza.length; i++) {
-			char_eza.item(i).style.top = "-165px";
-			char_eza.item(i).style.left = "1px";
 		}
 	}
 	//Links
 	if (filterDisplay == 11) {
 		for (let i = 0; i < char_display.length; i++) {
-			char.item(i).style.width = "270px";
-			char.item(i).style.height = "280px";
+			char.item(i).style.width = "215px";
+			charDivClass.item(i).style.width = "208px";
 
-			char_type_base.item(i).style.top = "10px";
-			char_type_base.item(i).style.left = "95px";
+			char_type_base.item(i).style.left = "50px";
+			char_thumb.item(i).style.left = "38px";
+			char_rarity.item(i).style.left = "-90px";
+			char_rarity.item(i).style.top = "-78px";
+			char_type.item(i).style.left = "120px";
+			char_type.item(i).style.top = "-220px";
 
-			char_thumb.item(i).style.top = "18px";
-			char_thumb.item(i).style.left = "-18px";
-
-			char_rarity.item(i).style.top = "-40px";
-			char_rarity.item(i).style.left = "83px";
-
-			char_type.item(i).style.top = "-129px";
-			char_type.item(i).style.left = "103px";
-
-			char_display.item(i).style.top = "-45px";
-			char_display.item(i).style.width = "250px";
-			char_display.item(i).style.height = "130px";
-
+			for (let i = 0; i < char_eza.length; i++) {
+				char_eza.item(i).style.left = "69px";
+				char_eza.item(i).style.top = "-152px";
+			}
+			char_display.item(i).style.width = "200px";
+			char_display.item(i).style.display = "block";
 			char_display.item(i).innerHTML = listLinksFormattedString[i];
-		}
-		for (let i = 0; i < char_eza.length; i++) {
-			char_eza.item(i).style.top = "-60px";
-			char_eza.item(i).style.left = "55px";
 		}
 	}
 	//Categories
 	if (filterDisplay == 12) {
 		for (let i = 0; i < char_display.length; i++) {
-			char.item(i).style.width = "270px";
-			char.item(i).style.height = "460px";
+			char.item(i).style.width = "215px";
+			charDivClass.item(i).style.width = "208px";
 
-			char_type_base.item(i).style.top = "10px";
-			char_type_base.item(i).style.left = "95px";
-
-			char_thumb.item(i).style.top = "18px";
-			char_thumb.item(i).style.left = "-18px";
-
-			char_rarity.item(i).style.top = "-40px";
-			char_rarity.item(i).style.left = "83px";
-
-			char_type.item(i).style.top = "-129px";
-			char_type.item(i).style.left = "103px";
-
-			char_display.item(i).style.top = "-45px";
-			char_display.item(i).style.width = "250px";
-			char_display.item(i).style.height = "306px";
-
+			char_type_base.item(i).style.left = "50px";
+			char_thumb.item(i).style.left = "38px";
+			char_rarity.item(i).style.left = "-90px";
+			char_rarity.item(i).style.top = "-78px";
+			char_type.item(i).style.left = "120px";
+			char_type.item(i).style.top = "-220px";
+			for (let i = 0; i < char_eza.length; i++) {
+				char_eza.item(i).style.left = "69px";
+				char_eza.item(i).style.top = "-152px";
+			}
+			char_display.item(i).style.width = "200px";
+			char_display.item(i).style.display = "block";
 			char_display.item(i).innerHTML = listCategoriesFormattedString[i];
-		}
-		for (let i = 0; i < char_eza.length; i++) {
-			char_eza.item(i).style.top = "-60px";
-			char_eza.item(i).style.left = "55px";
 		}
 	}
 }

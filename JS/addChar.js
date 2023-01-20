@@ -18,27 +18,50 @@ function addChar() {
 	let char_rarity = document.getElementsByClassName("char_rarity");
 	let char_type = document.getElementsByClassName("char_type");
 
-	for (let i = 0; i < dataCharTypeItems.length; i++) {
+	for (let i = 0; i < char.length; i++) {
+		let charDiv = document.createElement("div");
+		charDiv.classList.add("char-div-class");
+		//char_type_base
 		let char_type_base_img = document.createElement("img");
 		char_type_base_img.classList.add("char_type_base");
 		char_type_base_img.loading = "lazy";
-		char.item(i).appendChild(char_type_base_img);
+		charDiv.appendChild(char_type_base_img);
 
+		//char_thumb
 		let char_thumb_img = document.createElement("img");
 		char_thumb_img.classList.add("char_thumb");
 		char_thumb_img.loading = "lazy";
 		char_thumb_img.src = dataCharIdItems[i].getAttribute(dataCharId).toLowerCase();
-		char.item(i).appendChild(char_thumb_img);
+		charDiv.appendChild(char_thumb_img);
 
+		//char_rarity
 		let char_rarity_img = document.createElement("img");
 		char_rarity_img.classList.add("char_rarity");
 		char_rarity_img.loading = "lazy";
-		char.item(i).appendChild(char_rarity_img);
+		charDiv.appendChild(char_rarity_img);
 
+		//char_type
 		let char_type_img = document.createElement("img");
 		char_type_img.classList.add("char_type");
 		char_type_img.loading = "lazy";
-		char.item(i).appendChild(char_type_img);
+		charDiv.appendChild(char_type_img);
+
+		//char_eza
+		if (char.item(i).getAttribute(dataCharEza) == "eza") {
+			let char_eza_img = document.createElement("img");
+			char_eza_img.classList.add("char_eza");
+			char_eza_img.loading = "lazy";
+			char_eza_img.src = "Images/char/char_eza/eza.png";
+			charDiv.appendChild(char_eza_img);
+		}
+
+		char.item(i).appendChild(charDiv);
+		
+		//char_display
+		let char_display_div = document.createElement("div");
+		char_display_div.classList.add("char_display");
+		char_display_div.innerHTML = dataCharNameItems[i].getAttribute(dataCharName);
+		char.item(i).appendChild(char_display_div);
 	}
 
 	for (let i = 0; i < char.length; i++) {
@@ -213,23 +236,6 @@ function addChar() {
 
 		let charId = char_thumb[i].src;
 		char_thumb[i].src = "Images/char/char_thumb/char_" + charId.slice(-7) + "_thumb.png";
-	}
-
-	for (let i = 0; i < char.length; i++) {
-		if (char.item(i).getAttribute(dataCharEza) == "eza") {
-			let char_eza_img = document.createElement("img");
-			char_eza_img.classList.add("char_eza");
-			char_eza_img.loading = "lazy";
-			char_eza_img.src = "Images/char/char_eza/eza.png";
-			char.item(i).appendChild(char_eza_img);
-		}
-	}
-
-	for (let i = 0; i < dataCharTypeItems.length; i++) {
-		let char_display_div = document.createElement("div");
-		char_display_div.classList.add("char_display");
-		char_display_div.innerHTML = dataCharNameItems[i].getAttribute(dataCharName);
-		char.item(i).appendChild(char_display_div);
 	}
 
 	let char_display_add_color = document.getElementsByClassName("char_display");
