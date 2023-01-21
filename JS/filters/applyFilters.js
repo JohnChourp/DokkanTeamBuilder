@@ -151,19 +151,7 @@ function applyFilters() {
 			charListDefault[i] = char.item(i);
 		}
 	}
-	if (sumFilterUsed == 1) {
-		charListDefault = filtersMultipleUsed(dataChars, filtersEachLengthString, filtersEachLengthStringUsed, filtersUsed);
-	}
-	if (sumFilterUsed == 2) {
-		charListDefault = filtersMultipleUsed(dataChars, filtersEachLengthString, filtersEachLengthStringUsed, filtersUsed);
-	}
-	if (sumFilterUsed == 3) {
-		charListDefault = filtersMultipleUsed(dataChars, filtersEachLengthString, filtersEachLengthStringUsed, filtersUsed);
-	}
-	if (sumFilterUsed == 4) {
-		charListDefault = filtersMultipleUsed(dataChars, filtersEachLengthString, filtersEachLengthStringUsed, filtersUsed);
-	}
-	if (sumFilterUsed == 5) {
+	if (sumFilterUsed > 0) {
 		charListDefault = filtersMultipleUsed(dataChars, filtersEachLengthString, filtersEachLengthStringUsed, filtersUsed);
 	}
 
