@@ -41,10 +41,13 @@ function filtersMultipleUsedWithSearchChar(dataChars, filtersEachLengthString, f
 }
 
 function searchChar() {
-	let nameOrTitle = localStorage.getItem("nameOrTitle");
 	let characterSearchId = document.getElementById("char-search-id");
 	characterSearchId.addEventListener("keypress", function (event) {
 		if (event.key === "Enter") {
+			let nameOrTitle = localStorage.getItem("nameOrTitle");
+			if(nameOrTitle == null){
+				nameOrTitle = 1;
+			}
 			event.preventDefault();
 			setCharList();
 			let char_container_id = document.getElementById("char-container-id");

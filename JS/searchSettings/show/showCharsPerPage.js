@@ -1,14 +1,6 @@
-function charsPerPageStart() {
-	let charsPerPage_class = document.getElementsByClassName("charsPerPage");
-	charsPerPage_class.item(1).classList.add("checkedCharsPerPageBtn");
-	let charsPerPageNum = Math.pow(2, 1) * 16;
+function charsPerPageInput(charsPerPageNum) {
 	localStorage.setItem("charsPerPageNumItem", charsPerPageNum);
-	for (let i = 0; i < charsPerPage_class.length; i++) {
-		if (i != 1) {
-			charsPerPage_class.item(i).classList.remove("checkedCharsPerPageBtn");
-		}
-	}
-
+	
 	let charsPerPageIdTypeBox = document.getElementById("characters-per-input-page-id");
 	charsPerPageIdTypeBox.addEventListener("keypress", function (event) {
 		if (event.key === "Enter") {
@@ -22,8 +14,6 @@ function charsPerPageStart() {
 			}
 		}
 	});
-	searchChar();
-	applyFilters();
 }
 
 function charsPerPage(charsPerPageBtn) {
