@@ -45,9 +45,6 @@ function searchChar() {
 	characterSearchId.addEventListener("keypress", function (event) {
 		if (event.key === "Enter") {
 			let nameOrTitle = localStorage.getItem("nameOrTitle");
-			if(nameOrTitle == null){
-				nameOrTitle = 1;
-			}
 			event.preventDefault();
 			setCharList();
 			let char_container_id = document.getElementById("char-container-id");
