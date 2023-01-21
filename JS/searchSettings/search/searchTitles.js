@@ -4,7 +4,7 @@ function searchTitlesYes() {
 	buttonYes.classList.add("checkedTitlesnBtn");
 	buttonYes.style.backgroundColor = "#33ccff";
 	buttonNo.style.backgroundColor = "white";
-	searchChar(2);
+	localStorage.setItem("nameOrTitle", 2);
 }
 function searchTitlesNo() {
 	let buttonYes = document.getElementsByClassName("searchTitles").item(0);
@@ -12,5 +12,5 @@ function searchTitlesNo() {
 	buttonYes.classList.remove("checkedTitlesnBtn");
 	buttonYes.style.backgroundColor = "white";
 	buttonNo.style.backgroundColor = "#33ccff";
-	searchChar(1);
+	localStorage.setItem("nameOrTitle", 1);
 }
