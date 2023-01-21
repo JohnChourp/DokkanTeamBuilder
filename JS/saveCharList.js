@@ -49,7 +49,7 @@ function saveCharList() {
 	localStorage.setItem("charList_dataCharCategoriesItems", JSON.stringify(charList_dataCharCategoriesItems));;
 }
 
-function getCharList() {
+function setCharList() {
 	let charListSaved = [];
 
 	let charList_dataCharNameItems = JSON.parse(localStorage.getItem('charList_dataCharNameItems'));

@@ -1,10 +1,52 @@
+function filtersMultipleUsedWithSearchChar(dataChars, filtersEachLengthString, filtersEachLengthStringUsed, filtersUsed, dataCharNameOrTitleItems, dataCharNameOrTitle, characterSearchId) {
+	let filters = [], filterCharItems = [], filterChars = [];
+
+	for (j = 0; j < filtersEachLengthStringUsed.length; j++) {
+		for (let i = 0; i < filtersEachLengthString.length; i++) {
+			if (filtersEachLengthStringUsed[j] == filtersEachLengthString[i]) {
+				filters[j] = filtersUsed[i];
+				filterCharItems[j] = document.querySelectorAll('[' + dataChars[i] + ']');
+				filterChars[j] = dataChars[i];
+			}
+		}
+	}
+	let charListAll = create2DimensionalArray(filtersEachLengthStringUsed.length, 1);
+	let char = document.getElementsByClassName("char");
+
+	for (k = 0; k < filtersEachLengthStringUsed.length; k++) {
+		if (k == 0) {
+			for (let j = 0; j < filters[k].length; j++) {
+				for (let i = 0; i < char.length; i++) {
+					if ((dataCharNameOrTitleItems[i].getAttribute(dataCharNameOrTitle).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0)
+						&& (filterCharItems[k][i].getAttribute(filterChars[k]).toLowerCase() == filters[k][j])) {
+						charListAll[0][i] = char.item(i);
+					}
+				}
+			}
+		} else {
+			for (let j = 0; j < filters[k].length; j++) {
+				for (let i = 0; i < charListAll[k - 1].length; i++) {
+					if (charListAll[k - 1][i] != undefined) {
+						if ((dataCharNameOrTitleItems[i].getAttribute(dataCharNameOrTitle).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0)
+							&& (filterCharItems[k][i].getAttribute(filterChars[k]).toLowerCase() == filters[k][j])) {
+							charListAll[k][i] = char.item(i);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	return charListAll[filtersEachLengthStringUsed.length - 1];
+}
+
 function searchChar() {
-	let nameOrTitle = localStorage.getItem("nameOrTitle");
 	let characterSearchId = document.getElementById("char-search-id");
 	characterSearchId.addEventListener("keypress", function (event) {
 		if (event.key === "Enter") {
+			let nameOrTitle = localStorage.getItem("nameOrTitle");
 			event.preventDefault();
-			getCharList();
+			setCharList();
 			let char_container_id = document.getElementById("char-container-id");
 			let char = document.getElementsByClassName("char");
 			let checkedDirectionBtn = document.getElementsByClassName("checkedDirectionBtn");
@@ -22,24 +64,14 @@ function searchChar() {
 
 			let dataCharName = 'data-char-name', dataCharTitle = 'data-char-title', dataCharType = 'data-char-type', dataCharRarity = 'data-char-rarity',
 				dataCharClass = 'data-char-class', dataCharEza = 'data-char-eza', dataCharAwaken = 'data-char-awaken';
+			let dataChars = [dataCharType, dataCharRarity, dataCharClass, dataCharEza, dataCharAwaken];
 			let filterType = [], filterRarity = [], filterClass = [], filterEza = [],
-				filterAwakenId = [], filterAwakenValue = [], charList = [];
+				filterAwakenId = [], filterAwakenValue = [];
 
 			let dataCharNameItems = document.querySelectorAll('[' + dataCharName + ']');
 			let dataCharTitleItems = document.querySelectorAll('[' + dataCharTitle + ']');
-			let dataCharTypeItems = document.querySelectorAll('[' + dataCharType + ']');
-			let dataCharClassItems = document.querySelectorAll('[' + dataCharClass + ']');
-			let dataCharRarityItems = document.querySelectorAll('[' + dataCharRarity + ']');
-			let dataCharEzaItems = document.querySelectorAll('[' + dataCharEza + ']');
-			let dataCharAwakenItems = document.querySelectorAll('[' + dataCharAwaken + ']');
 
 			let characterSearchId = document.getElementById("char-search-id");
-
-			let A = document.getElementsByClassName("checkedTypeBtn");
-			let B = document.getElementsByClassName("checkedRarityBtn");
-			let C = document.getElementsByClassName("checkedClassBtn");
-			let D = document.getElementsByClassName("checkedEzaBtn");
-			let E = document.getElementsByClassName("checkedAwakenBtn");
 
 			let dataCharNameOrTitleItems, dataCharNameOrTitle;
 
@@ -52,7 +84,6 @@ function searchChar() {
 				dataCharNameOrTitle = dataCharTitle;
 			}
 
-			//filterType
 			let filterTypeTemp = ["agl", "teq", "int", "str", "phy"];
 			let filterTypeLength = filterTypeTemp.length;
 			for (let i = 0; i < filterTypeLength; i++) {
@@ -62,7 +93,6 @@ function searchChar() {
 			}
 			filterType.clean(undefined);
 
-			//filterRarity
 			let filterRarityTemp = ["n", "r", "sr", "ssr", "ur", "lr"];
 			let filterRarityLength = filterRarityTemp.length;
 			for (let i = 0; i < filterRarityLength; i++) {
@@ -72,7 +102,6 @@ function searchChar() {
 			}
 			filterRarity.clean(undefined);
 
-			//filterClass
 			let filterClassTemp = ["super", "extreme"];
 			let filterClassLength = filterClassTemp.length;
 			for (let i = 0; i < filterClassLength; i++) {
@@ -82,7 +111,6 @@ function searchChar() {
 			}
 			filterClass.clean(undefined);
 
-			//filterEza
 			let filterEzaTemp = ["eza", "noeza"];
 			let filterEzaLength = filterEzaTemp.length;
 			for (let i = 0; i < filterEzaLength; i++) {
@@ -92,7 +120,6 @@ function searchChar() {
 			}
 			filterEza.clean(undefined);
 
-			//filterAwaken
 			let filterAwakenIdTemp = ["notDokkanAwakened", "preDokkanAwakened", "dokkanAwakened"];
 			let filterAwakenValueTemp = ["not-dokkan-awakened", "pre-dokkan-awakened", "dokkan-awakened"];
 			let filterAwakenIdLength = filterAwakenIdTemp.length;
@@ -105,544 +132,57 @@ function searchChar() {
 			filterAwakenId.clean(undefined);
 			filterAwakenValue.clean(undefined);
 
-			let filtersUsed = [filterType.length, filterRarity.length, filterClass.length, filterEza.length, filterAwakenId.length];
+
+			let filtersUsed = [filterType, filterRarity, filterClass, filterEza, filterAwakenValue];
+			let A = document.getElementsByClassName("checkedTypeBtn").length;
+			let B = document.getElementsByClassName("checkedRarityBtn").length;
+			let C = document.getElementsByClassName("checkedClassBtn").length;
+			let D = document.getElementsByClassName("checkedEzaBtn").length;
+			let E = document.getElementsByClassName("checkedAwakenBtn").length;
+			let filtersEachLength = [A, B, C, D, E];
+			let filtersEachLengthString = ["A", "B", "C", "D", "E"];
+			let filtersEachLengthStringUsed = [];
+			let charListDefault = [];
 			let sumFilterUsed = 0;
+
 			//check how many filter are used
 			for (let i = 0; i < filtersUsed.length; i++) {
-				if (filtersUsed[i] > 0) {
+				if (filtersUsed[i].length > 0) {
 					sumFilterUsed = sumFilterUsed + 1;
 				}
 			}
+			for (let i = 0; i < filtersEachLength.length; i++) {
+				if (filtersEachLength[i] > 0) {
+					filtersEachLengthStringUsed[i] = filtersEachLengthString[i];
+				}
+			}
+			filtersEachLengthStringUsed.clean(undefined);
 
 			if (sumFilterUsed == 0) {
 				for (let i = 0; i < char.length; i++) {
 					if (dataCharNameOrTitleItems[i].getAttribute(dataCharNameOrTitle).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0) {
-						charList[i] = char.item(i);
+						charListDefault[i] = char.item(i);
 					}
 				}
 			}
 			if (sumFilterUsed == 1) {
-				//type//A,rarity//B,class//C,eza//D,dokkan//E
-				//A B C D E
-				//-----------------------1 filter used-------------------
-				//type//A
-				if ((A.length > 0) && (B.length == 0) && (C.length == 0) && (D.length == 0) && (E.length == 0)) {
-					for (let j = 0; j < filterType.length; j++) {
-						for (let i = 0; i < char.length; i++) {
-							if ((dataCharNameOrTitleItems[i].getAttribute(dataCharNameOrTitle).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0)
-								&& (dataCharTypeItems[i].getAttribute(dataCharType) == filterType[j])) {
-								charList[i] = char.item(i);
-							}
-						}
-					}
-				}
-				//rarity//B
-				if ((A.length == 0) && (B.length > 0) && (C.length == 0) && (D.length == 0) && (E.length == 0)) {
-					for (let j = 0; j < filterRarity.length; j++) {
-						for (let i = 0; i < char.length; i++) {
-							if ((dataCharNameOrTitleItems[i].getAttribute(dataCharNameOrTitle).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0)
-								&& (dataCharRarityItems[i].getAttribute(dataCharRarity) == filterRarity[j])) {
-								charList[i] = char.item(i);
-							}
-						}
-					}
-				}
-				//class//C
-				if ((A.length == 0) && (B.length == 0) && (C.length > 0) && (D.length == 0) && (E.length == 0)) {
-					for (let j = 0; j < filterClass.length; j++) {
-						for (let i = 0; i < char.length; i++) {
-							if ((dataCharNameOrTitleItems[i].getAttribute(dataCharNameOrTitle).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0)
-								&& (dataCharClassItems[i].getAttribute(dataCharClass) == filterClass[j])) {
-								charList[i] = char.item(i);
-							}
-						}
-					}
-				}
-				//eza//D
-				if ((A.length == 0) && (B.length == 0) && (C.length == 0) && (D.length > 0) && (E.length == 0)) {
-					for (let j = 0; j < filterEza.length; j++) {
-						for (let i = 0; i < dataCharEzaItems.length; i++) {
-							if ((dataCharEzaItems[i].getAttribute(dataCharNameOrTitle).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0)
-								&& (dataCharEzaItems[i].getAttribute(dataCharEza).toLowerCase() == filterEza[j])) {
-								charList[i] = char.item(i);
-							}
-						}
-					}
-				}
-				//dokkan//E
-				if ((A.length == 0) && (B.length == 0) && (C.length == 0) && (D.length == 0) && (E.length > 0)) {
-					for (let j = 0; j < filterAwakenId.length; j++) {
-						for (let i = 0; i < char.length; i++) {
-							if ((dataCharNameOrTitleItems[i].getAttribute(dataCharNameOrTitle).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0)
-								&& (dataCharAwakenItems[i].getAttribute(dataCharAwaken).toLowerCase() == filterAwakenValue[j])) {
-								charList[i] = char.item(i);
-							}
-						}
-					}
-				}
-				//-----------------------1 filter used-------------------
+				charListDefault = filtersMultipleUsedWithSearchChar(dataChars, filtersEachLengthString, filtersEachLengthStringUsed, filtersUsed, dataCharNameOrTitleItems, dataCharNameOrTitle, characterSearchId);
 			}
 			if (sumFilterUsed == 2) {
-				//type//A,rarity//B,class//C,eza//D,dokkan//E
-				//AB AC AD AE BC BD BE CD CE DE
-				//------------------------2 filters used------------------------
-				//type,rarity//AB
-				if ((A.length > 0) && (B.length > 0) && (C.length == 0) && (D.length == 0) && (E.length == 0)) {
-					for (let k = 0; k < filterRarity.length; k++) {
-						for (let j = 0; j < filterType.length; j++) {
-							for (let i = 0; i < char.length; i++) {
-								if ((dataCharNameOrTitleItems[i].getAttribute(dataCharNameOrTitle).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0)
-									&& (dataCharTypeItems[i].getAttribute(dataCharType) == filterType[j])
-									&& (dataCharRarityItems[i].getAttribute(dataCharRarity) == filterRarity[k])) {
-									charList[i] = char.item(i);
-								}
-							}
-						}
-					}
-				}
-				//type,class//AC
-				if ((A.length > 0) && (B.length == 0) && (C.length > 0) && (D.length == 0) && (E.length == 0)) {
-					for (let k = 0; k < filterClass.length; k++) {
-						for (let j = 0; j < filterType.length; j++) {
-							for (let i = 0; i < char.length; i++) {
-								if ((dataCharNameOrTitleItems[i].getAttribute(dataCharName).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0)
-									&& (dataCharTypeItems[i].getAttribute(dataCharType) == filterType[j])
-									&& (dataCharClassItems[i].getAttribute(dataCharClass) == filterClass[k])) {
-									charList[i] = char.item(i);
-								}
-							}
-						}
-					}
-				}
-				//type,eza//AD
-				if ((A.length > 0) && (B.length == 0) && (C.length == 0) && (D.length > 0) && (E.length == 0)) {
-					for (let k = 0; k < filterEza.length; k++) {
-						for (let j = 0; j < filterType.length; j++) {
-							for (let i = 0; i < dataCharEzaItems.length; i++) {
-								if ((dataCharEzaItems[i].getAttribute(dataCharNameOrTitle).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0)
-									&& (dataCharEzaItems[i].getAttribute(dataCharType) == filterType[j])
-									&& (dataCharEzaItems[i].getAttribute(dataCharEza).toLowerCase() == filterEza[k])) {
-									charList[i] = char.item(i);
-								}
-							}
-						}
-					}
-				}
-				//type,dokkan//AE
-				if ((A.length > 0) && (B.length == 0) && (C.length == 0) && (D.length == 0) && (E.length > 0)) {
-					for (let k = 0; k < filterAwakenId.length; k++) {
-						for (let j = 0; j < filterType.length; j++) {
-							for (let i = 0; i < char.length; i++) {
-								if ((dataCharNameOrTitleItems[i].getAttribute(dataCharNameOrTitle).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0)
-									&& (dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == filterType[j])
-									&& (dataCharAwakenItems[i].getAttribute(dataCharAwaken).toLowerCase() == filterAwakenValue[k])) {
-									charList[i] = char.item(i);
-								}
-							}
-						}
-					}
-				}
-				//rarity,class//BC
-				if ((A.length == 0) && (B.length > 0) && (C.length > 0) && (D.length == 0) && (E.length == 0)) {
-					for (let k = 0; k < filterRarity.length; k++) {
-						for (let j = 0; j < filterClass.length; j++) {
-							for (let i = 0; i < char.length; i++) {
-								if ((dataCharNameOrTitleItems[i].getAttribute(dataCharNameOrTitle).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0)
-									&& (dataCharClassItems[i].getAttribute(dataCharClass) == filterClass[j])
-									&& (dataCharRarityItems[i].getAttribute(dataCharRarity) == filterRarity[k])) {
-									charList[i] = char.item(i);
-								}
-							}
-						}
-					}
-				}
-				//rarity,eza//BD
-				if ((A.length == 0) && (B.length > 0) && (C.length == 0) && (D.length > 0) && (E.length == 0)) {
-					for (let k = 0; k < filterEza.length; k++) {
-						for (let j = 0; j < filterRarity.length; j++) {
-							for (let i = 0; i < dataCharEzaItems.length; i++) {
-								if ((dataCharEzaItems[i].getAttribute(dataCharNameOrTitle).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0)
-									&& (dataCharEzaItems[i].getAttribute(dataCharRarity) == filterRarity[j])
-									&& (dataCharEzaItems[i].getAttribute(dataCharEza).toLowerCase() == filterEza[k])) {
-									charList[i] = char.item(i);
-								}
-							}
-						}
-					}
-				}
-				//rarity,dokkan//BE
-				if ((A.length == 0) && (B.length > 0) && (C.length == 0) && (D.length == 0) && (E.length > 0)) {
-					for (let k = 0; k < filterAwakenId.length; k++) {
-						for (let j = 0; j < filterRarity.length; j++) {
-							for (let i = 0; i < char.length; i++) {
-								if ((dataCharNameOrTitleItems[i].getAttribute(dataCharNameOrTitle).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0)
-									&& (dataCharRarityItems[i].getAttribute(dataCharRarity).toLowerCase() == filterRarity[j])
-									&& (dataCharAwakenItems[i].getAttribute(dataCharAwaken).toLowerCase() == filterAwakenValue[k])) {
-									charList[i] = char.item(i);
-								}
-							}
-						}
-					}
-				}
-				//class,eza//CD
-				if ((A.length == 0) && (B.length == 0) && (C.length > 0) && (D.length > 0) && (E.length == 0)) {
-					for (let k = 0; k < filterEza.length; k++) {
-						for (let j = 0; j < filterClass.length; j++) {
-							for (let i = 0; i < dataCharEzaItems.length; i++) {
-								if ((dataCharEzaItems[i].getAttribute(dataCharNameOrTitle).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0)
-									&& (dataCharEzaItems[i].getAttribute(dataCharClass) == filterClass[j])
-									&& (dataCharEzaItems[i].getAttribute(dataCharEza).toLowerCase() == filterEza[k])) {
-									charList[i] = char.item(i);
-								}
-							}
-						}
-					}
-				}
-				//class,dokkan//CE
-				if ((A.length == 0) && (B.length == 0) && (C.length > 0) && (D.length == 0) && (E.length > 0)) {
-					for (let k = 0; k < filterAwakenId.length; k++) {
-						for (let j = 0; j < filterClass.length; j++) {
-							for (let i = 0; i < char.length; i++) {
-								if ((dataCharNameOrTitleItems[i].getAttribute(dataCharNameOrTitle).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0)
-									&& (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == filterClass[j])
-									&& (dataCharAwakenItems[i].getAttribute(dataCharAwaken).toLowerCase() == filterAwakenValue[k])) {
-									charList[i] = char.item(i);
-								}
-							}
-						}
-					}
-				}
-				//eza,dokkan//DE
-				if ((A.length == 0) && (B.length == 0) && (C.length == 0) && (D.length > 0) && (E.length > 0)) {
-					for (let k = 0; k < filterAwakenId.length; k++) {
-						for (let j = 0; j < filterEza.length; j++) {
-							for (let i = 0; i < char.length; i++) {
-								if ((dataCharNameOrTitleItems[i].getAttribute(dataCharNameOrTitle).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0)
-									&& (dataCharEzaItems[i].getAttribute(dataCharEza).toLowerCase() == filterEza[j])
-									&& (dataCharAwakenItems[i].getAttribute(dataCharAwaken).toLowerCase() == filterAwakenValue[k])) {
-									charList[i] = char.item(i);
-								}
-							}
-						}
-					}
-				}
-				//------------------------2 filters used------------------------
+				charListDefault = filtersMultipleUsedWithSearchChar(dataChars, filtersEachLengthString, filtersEachLengthStringUsed, filtersUsed, dataCharNameOrTitleItems, dataCharNameOrTitle, characterSearchId);
 			}
 			if (sumFilterUsed == 3) {
-				//type//A,rarity//B,class//C,eza//D,dokkan//E
-				//ABC ABD ABE ACD ACE ADE BCD BCE BDE CDE
-				//------------------------3 filters used------------------------
-				//type,rarity,class//ABC
-				if ((A.length > 0) && (B.length > 0) && (C.length > 0) && (D.length == 0) && (E.length == 0)) {
-					for (let l = 0; l < filterRarity.length; l++) {
-						for (let k = 0; k < filterClass.length; k++) {
-							for (let j = 0; j < filterType.length; j++) {
-								for (let i = 0; i < char.length; i++) {
-									if ((dataCharNameOrTitleItems[i].getAttribute(dataCharNameOrTitle).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0)
-										&& (dataCharTypeItems[i].getAttribute(dataCharType) == filterType[j])
-										&& (dataCharClassItems[i].getAttribute(dataCharClass) == filterClass[k])
-										&& (dataCharRarityItems[i].getAttribute(dataCharRarity) == filterRarity[l])) {
-
-										charList[i] = char.item(i);
-									}
-								}
-							}
-						}
-					}
-				}
-				//type,rarity,eza//ABD
-				if ((A.length > 0) && (B.length > 0) && (C.length == 0) && (D.length > 0) && (E.length == 0)) {
-					for (let l = 0; l < filterEza.length; l++) {
-						for (let k = 0; k < filterRarity.length; k++) {
-							for (let j = 0; j < filterType.length; j++) {
-								for (let i = 0; i < dataCharEzaItems.length; i++) {
-									if ((dataCharEzaItems[i].getAttribute(dataCharNameOrTitle).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0)
-										&& (dataCharEzaItems[i].getAttribute(dataCharType) == filterType[j])
-										&& (dataCharEzaItems[i].getAttribute(dataCharRarity) == filterRarity[k])
-										&& (dataCharEzaItems[i].getAttribute(dataCharEza).toLowerCase() == filterEza[l])) {
-										charList[i] = char.item(i);
-									}
-								}
-							}
-						}
-					}
-				}
-				//type,rarity,dokkan//ABE
-				if ((A.length > 0) && (B.length > 0) && (C.length == 0) && (D.length == 0) && (E.length > 0)) {
-					for (let k = 0; k < filterAwakenId.length; k++) {
-						for (let l = 0; l < filterRarity.length; l++) {
-							for (let j = 0; j < filterType.length; j++) {
-								for (let i = 0; i < char.length; i++) {
-									if ((dataCharNameOrTitleItems[i].getAttribute(dataCharNameOrTitle).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0)
-										&& (dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == filterType[j])
-										&& (dataCharRarityItems[i].getAttribute(dataCharRarity).toLowerCase() == filterRarity[l])
-										&& (dataCharAwakenItems[i].getAttribute(dataCharAwaken).toLowerCase() == filterAwakenValue[k])) {
-										charList[i] = char.item(i);
-									}
-								}
-							}
-						}
-					}
-				}
-				//type,class,eza//ACD
-				if ((A.length > 0) && (B.length == 0) && (C.length > 0) && (D.length > 0) && (E.length == 0)) {
-					for (let l = 0; l < filterEza.length; l++) {
-						for (let k = 0; k < filterClass.length; k++) {
-							for (let j = 0; j < filterType.length; j++) {
-								for (let i = 0; i < dataCharEzaItems.length; i++) {
-									if ((dataCharEzaItems[i].getAttribute(dataCharNameOrTitle).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0)
-										&& (dataCharEzaItems[i].getAttribute(dataCharType) == filterType[j])
-										&& (dataCharEzaItems[i].getAttribute(dataCharClass) == filterClass[k])
-										&& (dataCharEzaItems[i].getAttribute(dataCharEza).toLowerCase() == filterEza[l])) {
-										charList[i] = char.item(i);
-									}
-								}
-							}
-						}
-					}
-				}
-				//type,class,dokkan//ACE
-				if ((A.length > 0) && (B.length == 0) && (C.length > 0) && (D.length == 0) && (E.length > 0)) {
-					for (let k = 0; k < filterAwakenId.length; k++) {
-						for (let l = 0; l < filterClass.length; l++) {
-							for (let j = 0; j < filterType.length; j++) {
-								for (let i = 0; i < char.length; i++) {
-									if ((dataCharNameOrTitleItems[i].getAttribute(dataCharNameOrTitle).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0)
-										&& (dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == filterType[j])
-										&& (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == filterClass[l])
-										&& (dataCharAwakenItems[i].getAttribute(dataCharAwaken).toLowerCase() == filterAwakenValue[k])) {
-										charList[i] = char.item(i);
-									}
-								}
-							}
-						}
-					}
-				}
-				//type,eza,dokkan//ADE
-				if ((A.length > 0) && (B.length == 0) && (C.length == 0) && (D.length > 0) && (E.length > 0)) {
-					for (let l = 0; l < filterAwakenId.length; l++) {
-						for (let k = 0; k < filterEza.length; k++) {
-							for (let j = 0; j < filterType.length; j++) {
-								for (let i = 0; i < char.length; i++) {
-									if ((dataCharNameOrTitleItems[i].getAttribute(dataCharNameOrTitle).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0)
-										&& (dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == filterType[j])
-										&& (dataCharEzaItems[i].getAttribute(dataCharEza).toLowerCase() == filterEza[k])
-										&& (dataCharAwakenItems[i].getAttribute(dataCharAwaken).toLowerCase() == filterAwakenValue[l])) {
-										charList[i] = char.item(i);
-									}
-								}
-							}
-						}
-					}
-				}
-				//rarity,class,eza//BCD
-				if ((A.length == 0) && (B.length > 0) && (C.length > 0) && (D.length > 0) && (E.length == 0)) {
-					for (let l = 0; l < filterEza.length; l++) {
-						for (let k = 0; k < filterClass.length; k++) {
-							for (let j = 0; j < filterRarity.length; j++) {
-								for (let i = 0; i < dataCharEzaItems.length; i++) {
-									if ((dataCharEzaItems[i].getAttribute(dataCharNameOrTitle).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0)
-										&& (dataCharEzaItems[i].getAttribute(dataCharRarity) == filterRarity[j])
-										&& (dataCharEzaItems[i].getAttribute(dataCharClass) == filterClass[k])
-										&& (dataCharEzaItems[i].getAttribute(dataCharEza).toLowerCase() == filterEza[l])) {
-										charList[i] = char.item(i);
-									}
-								}
-							}
-						}
-					}
-				}
-				//rarity,class,dokkan//BCE
-				if ((A.length == 0) && (B.length > 0) && (C.length > 0) && (D.length == 0) && (E.length > 0)) {
-					for (let l = 0; l < filterAwakenId.length; l++) {
-						for (let k = 0; k < filterClass.length; k++) {
-							for (let j = 0; j < filterRarity.length; j++) {
-								for (let i = 0; i < char.length; i++) {
-									if ((dataCharNameOrTitleItems[i].getAttribute(dataCharNameOrTitle).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0)
-										&& (dataCharRarityItems[i].getAttribute(dataCharRarity).toLowerCase() == filterRarity[j])
-										&& (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == filterClass[k])
-										&& (dataCharAwakenItems[i].getAttribute(dataCharAwaken).toLowerCase() == filterAwakenValue[l])) {
-										charList[i] = char.item(i);
-									}
-								}
-							}
-						}
-					}
-				}
-				//rarity,eza,dokkan//BDE
-				if ((A.length == 0) && (B.length > 0) && (C.length == 0) && (D.length > 0) && (E.length > 0)) {
-					for (let l = 0; l < filterAwakenId.length; l++) {
-						for (let k = 0; k < filterEza.length; k++) {
-							for (let j = 0; j < filterRarity.length; j++) {
-								for (let i = 0; i < char.length; i++) {
-									if ((dataCharNameOrTitleItems[i].getAttribute(dataCharNameOrTitle).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0)
-										&& (dataCharRarityItems[i].getAttribute(dataCharRarity).toLowerCase() == filterRarity[j])
-										&& (dataCharEzaItems[i].getAttribute(dataCharEza).toLowerCase() == filterEza[k])
-										&& (dataCharAwakenItems[i].getAttribute(dataCharAwaken).toLowerCase() == filterAwakenValue[l])) {
-										charList[i] = char.item(i);
-									}
-								}
-							}
-						}
-					}
-				}
-				//class,eza,dokkan//CDE
-				if ((A.length == 0) && (B.length == 0) && (C.length > 0) && (D.length > 0) && (E.length > 0)) {
-					for (let l = 0; l < filterAwakenId.length; l++) {
-						for (let k = 0; k < filterEza.length; k++) {
-							for (let j = 0; j < filterClass.length; j++) {
-								for (let i = 0; i < char.length; i++) {
-									if ((dataCharNameOrTitleItems[i].getAttribute(dataCharNameOrTitle).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0)
-										&& (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == filterClass[j])
-										&& (dataCharEzaItems[i].getAttribute(dataCharEza).toLowerCase() == filterEza[k])
-										&& (dataCharAwakenItems[i].getAttribute(dataCharAwaken).toLowerCase() == filterAwakenValue[l])) {
-										charList[i] = char.item(i);
-									}
-								}
-							}
-						}
-					}
-				}
-				//------------------------3 filters used------------------------
+				charListDefault = filtersMultipleUsedWithSearchChar(dataChars, filtersEachLengthString, filtersEachLengthStringUsed, filtersUsed, dataCharNameOrTitleItems, dataCharNameOrTitle, characterSearchId);
 			}
 			if (sumFilterUsed == 4) {
-				//type//A,rarity//B,class//C,eza//D,dokkan//E
-				//ABCD ABCE ABDE ACDE BCDE
-				//----------4 filters used----------
-				//type,rarity,class,,eza//ABCD
-				if ((A.length > 0) && (B.length > 0) && (C.length > 0) && (D.length > 0) && (E.length == 0)) {
-					for (let p = 0; p < filterEza.length; p++) {
-						for (let l = 0; l < filterRarity.length; l++) {
-							for (let k = 0; k < filterClass.length; k++) {
-								for (let j = 0; j < filterType.length; j++) {
-									for (let i = 0; i < dataCharEzaItems.length; i++) {
-										if ((dataCharEzaItems[i].getAttribute(dataCharNameOrTitle).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0)
-											&& (dataCharEzaItems[i].getAttribute(dataCharType) == filterType[j])
-											&& (dataCharEzaItems[i].getAttribute(dataCharClass) == filterClass[k])
-											&& (dataCharEzaItems[i].getAttribute(dataCharRarity) == filterRarity[l])
-											&& (dataCharEzaItems[i].getAttribute(dataCharEza).toLowerCase() == filterEza[p])) {
-											charList[i] = char.item(i);
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-				//type,rarity,class,dokkan//ABCE
-				if ((A.length > 0) && (B.length > 0) && (C.length > 0) && (D.length == 0) && (E.length > 0)) {
-					for (let p = 0; p < filterAwakenId.length; p++) {
-						for (let l = 0; l < filterClass.length; l++) {
-							for (let k = 0; k < filterRarity.length; k++) {
-								for (let j = 0; j < filterType.length; j++) {
-									for (let i = 0; i < dataCharEzaItems.length; i++) {
-										if ((dataCharNameOrTitleItems[i].getAttribute(dataCharNameOrTitle).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0)
-											&& (dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == filterType[j])
-											&& (dataCharRarityItems[i].getAttribute(dataCharRarity).toLowerCase() == filterRarity[k])
-											&& (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == filterClass[l])
-											&& (dataCharAwakenItems[i].getAttribute(dataCharAwaken).toLowerCase() == filterAwakenValue[p])) {
-											charList[i] = char.item(i);
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-				//type,rarity,eza,dokkan//ABDE
-				if ((A.length > 0) && (B.length > 0) && (C.length == 0) && (D.length > 0) && (E.length > 0)) {
-					for (let p = 0; p < filterAwakenId.length; p++) {
-						for (let l = 0; l < filterEza.length; l++) {
-							for (let k = 0; k < filterRarity.length; k++) {
-								for (let j = 0; j < filterType.length; j++) {
-									for (let i = 0; i < char.length; i++) {
-										if ((dataCharNameOrTitleItems[i].getAttribute(dataCharNameOrTitle).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0)
-											&& (dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == filterType[j])
-											&& (dataCharRarityItems[i].getAttribute(dataCharRarity).toLowerCase() == filterRarity[k])
-											&& (dataCharEzaItems[i].getAttribute(dataCharEza).toLowerCase() == filterEza[l])
-											&& (dataCharAwakenItems[i].getAttribute(dataCharAwaken).toLowerCase() == filterAwakenValue[p])) {
-											charList[i] = char.item(i);
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-				//type,class,eza,dokkan//ACDE
-				if ((A.length > 0) && (B.length == 0) && (C.length > 0) && (D.length > 0) && (E.length > 0)) {
-					for (let p = 0; p < filterAwakenId.length; p++) {
-						for (let l = 0; l < filterEza.length; l++) {
-							for (let k = 0; k < filterClass.length; k++) {
-								for (let j = 0; j < filterType.length; j++) {
-									for (let i = 0; i < char.length; i++) {
-										if ((dataCharNameOrTitleItems[i].getAttribute(dataCharNameOrTitle).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0)
-											&& (dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == filterType[j])
-											&& (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == filterClass[k])
-											&& (dataCharEzaItems[i].getAttribute(dataCharEza).toLowerCase() == filterEza[l])
-											&& (dataCharAwakenItems[i].getAttribute(dataCharAwaken).toLowerCase() == filterAwakenValue[p])) {
-											charList[i] = char.item(i);
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-				//rarity,class,eza,dokkan//BCDE
-				if ((A.length == 0) && (B.length > 0) && (C.length > 0) && (D.length > 0) && (E.length > 0)) {
-					for (let p = 0; p < filterAwakenId.length; p++) {
-						for (let l = 0; l < filterEza.length; l++) {
-							for (let k = 0; k < filterClass.length; k++) {
-								for (let j = 0; j < filterRarity.length; j++) {
-									for (let i = 0; i < char.length; i++) {
-										if ((dataCharNameOrTitleItems[i].getAttribute(dataCharNameOrTitle).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0)
-											&& (dataCharRarityItems[i].getAttribute(dataCharRarity).toLowerCase() == filterRarity[j])
-											&& (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == filterClass[k])
-											&& (dataCharEzaItems[i].getAttribute(dataCharEza).toLowerCase() == filterEza[l])
-											&& (dataCharAwakenItems[i].getAttribute(dataCharAwaken).toLowerCase() == filterAwakenValue[p])) {
-											charList[i] = char.item(i);
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-				//----------4 filters used----------
+				charListDefault = filtersMultipleUsedWithSearchChar(dataChars, filtersEachLengthString, filtersEachLengthStringUsed, filtersUsed, dataCharNameOrTitleItems, dataCharNameOrTitle, characterSearchId);
 			}
 			if (sumFilterUsed == 5) {
-				//type//A,rarity//B,class//C,eza//D,dokkan//E
-				//ABCDE
-				//------------------------------5 filters used------------------------------
-				//type,rarity,class,eza,dokkan//ABCDE
-				if ((A.length > 0) && (B.length > 0) && (C.length > 0) && (D.length > 0) && (E.length > 0)) {
-					for (let o = 0; o < filterAwakenId.length; o++) {
-						for (let p = 0; p < filterEza.length; p++) {
-							for (let l = 0; l < filterClass.length; l++) {
-								for (let k = 0; k < filterRarity.length; k++) {
-									for (let j = 0; j < filterType.length; j++) {
-										for (let i = 0; i < char.length; i++) {
-											if ((dataCharNameOrTitleItems[i].getAttribute(dataCharNameOrTitle).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0)
-												&& (dataCharTypeItems[i].getAttribute(dataCharType).toLowerCase() == filterType[j])
-												&& (dataCharRarityItems[i].getAttribute(dataCharRarity).toLowerCase() == filterRarity[k])
-												&& (dataCharClassItems[i].getAttribute(dataCharClass).toLowerCase() == filterClass[l])
-												&& (dataCharEzaItems[i].getAttribute(dataCharEza).toLowerCase() == filterEza[p])
-												&& (dataCharAwakenItems[i].getAttribute(dataCharAwaken).toLowerCase() == filterAwakenValue[o])) {
-												charList[i] = char.item(i);
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-				//------------------------------5 filters used------------------------------
+				charListDefault = filtersMultipleUsedWithSearchChar(dataChars, filtersEachLengthString, filtersEachLengthStringUsed, filtersUsed, dataCharNameOrTitleItems, dataCharNameOrTitle, characterSearchId);
 			}
 
-			charList.clean(undefined);
-			createFilterPagination(charList, localStorage.getItem("charsPerPageNumItem"));
+			charListDefault.clean(undefined);
+			createFilterPagination(charListDefault, localStorage.getItem("charsPerPageNumItem"));
 			addDropdownClass(localStorage.getItem("filterDisplay"));
 		}
 	});

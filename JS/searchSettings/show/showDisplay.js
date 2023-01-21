@@ -41,7 +41,7 @@ function addDropdownClass(filterDisplay) {
 	let dataCharSuperAtkType = 'data-char-super-atk-type';
 	let dataCharLinks = 'data-char-links';
 	let dataCharCategories = 'data-char-categories';
-	
+
 	let dataCharNameItems = document.querySelectorAll('[' + dataCharName + ']');
 	let dataCharTitleItems = document.querySelectorAll('[' + dataCharTitle + ']');
 	let dataCharIdItems = document.querySelectorAll('[' + dataCharId + ']');
@@ -55,7 +55,7 @@ function addDropdownClass(filterDisplay) {
 	let dataCharSuperAtkTypeItems = document.querySelectorAll('[' + dataCharSuperAtkType + ']');
 	let dataCharLinksItems = document.querySelectorAll('[' + dataCharLinks + ']');
 	let dataCharCategoriesItems = document.querySelectorAll('[' + dataCharCategories + ']');
-	
+
 	let char = document.getElementsByClassName("char");
 	let charDivClass = document.getElementsByClassName("char-div-class");
 	let char_display = document.getElementsByClassName("char_display");
@@ -64,7 +64,7 @@ function addDropdownClass(filterDisplay) {
 	let char_rarity = document.getElementsByClassName("char_rarity");
 	let char_type = document.getElementsByClassName("char_type");
 	let char_eza = document.getElementsByClassName("char_eza");
-	
+
 	let listLinks = [], listCategories = [], listSuperAtkType = [], listRelease = [];
 	let listLinksFormattedString = [], listCategoriesFormattedString = [], listSuperAtkTypeFormattedString = [],
 		listReleaseFormattedString = [];

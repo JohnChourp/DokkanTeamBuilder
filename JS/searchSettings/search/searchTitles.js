@@ -6,6 +6,7 @@ function searchTitlesYes() {
 	buttonNo.style.backgroundColor = "white";
 	localStorage.setItem("nameOrTitle", 2);
 }
+
 function searchTitlesNo() {
 	let buttonYes = document.getElementsByClassName("searchTitles").item(0);
 	let buttonNo = document.getElementsByClassName("searchTitles").item(1);
