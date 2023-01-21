@@ -1,4 +1,3 @@
-
 function applyFilters() {
 	getCharList();
 	//sortDirection

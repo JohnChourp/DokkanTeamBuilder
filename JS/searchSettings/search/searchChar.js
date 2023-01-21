@@ -1,4 +1,5 @@
-function searchChar(nameOrTitle) {
+function searchChar() {
+	let nameOrTitle = localStorage.getItem("nameOrTitle");
 	let characterSearchId = document.getElementById("char-search-id");
 	characterSearchId.addEventListener("keypress", function (event) {
 		if (event.key === "Enter") {

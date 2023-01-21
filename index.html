@@ -10,6 +10,7 @@
 	<link href="CSS/body.css" rel="stylesheet" type="text/css" />
 	<link href="CSS/char.css" rel="stylesheet" type="text/css" />
 	<link href="CSS/pagination.css" rel="stylesheet" type="text/css" />
+	<link href="CSS/scrollbar.css" rel="stylesheet" type="text/css" />
 
 
 	<link href="CSS/filters/filterAwakenedInfo.css" rel="stylesheet" type="text/css" />
@@ -63,8 +64,7 @@
 	<title>Dokkan Link Tool</title>
 </head>
 
-<body
-	onload="addChar(); saveCharList(); charsPerPage(1);  searchChar(1); charsPerPageTextBox(); closeNavWhenClickedOutside(); addAllCharNames(); removeAllFilters(); mostLetterInNames(); mostLetterInLinks(); mostLetterInCategories();">
+<body onload="addChar(); saveCharList(); searchTitlesNo(); charsPerPageStart(); closeNavWhenClickedOutside(); addAllCharNames(); mostLetterInNames(); mostLetterInLinks(); mostLetterInCategories();">
 	<div id="left-sidenav-id">
 		<div id="left-sidenav-filters-id">
 			<p class="filter-options-text-class">Sort Direction</p>
@@ -259,7 +259,7 @@
 				<button onclick="applyFilters(); closeNav();" id="ok" type="button">
 					OK
 				</button>
-				<button id="remove-all-id" type="button">
+				<button onclick="removeAllFilters();" id="remove-all-id" type="button">
 					Remove All
 				</button>
 			</div>
@@ -273,7 +273,7 @@
 			<input id="char-search-id" placeholder="Enter Character Name..." title="Type in a name" type="text"
 				inputmode="search" />
 			<button onclick="searchSettings();" id="search-settings-btn-id">
-				<img id="search-settings-image-id" loading="lazy" src="Images/searchSettings/searchSettingImageGear.png"
+				<img id="search-settings-image-id"  loading="lazy" draggable="false" src="Images/searchSettings/searchSettingImageGear.png"
 					alt="settings_Image">
 			</button>
 		</div>
@@ -315,30 +315,30 @@
 				</button>
 			</div>
 			<div id="characters-per-page-id">
-				<p id="search-settings-text-characters-per-page-id" class="search-settings-text-class">Characters Per
+				<p id="characters-per-page-text-id" class="search-settings-text-class">Characters Per
 					Page</p>
-				<input id="chars-per-page-id" placeholder="Number..." title="Type in a number" type="text"
+				<input id="characters-per-input-page-id" placeholder="Number..." title="Type in a number" type="text"
 					inputmode="search" />
-				<div id="characters-per-page-pages-id">
-					<button onclick="charsPerPage(0);" class="charsPerPage" type="button">
-						16
-					</button>
-					<button onclick="charsPerPage(1);" class="charsPerPage checkedCharsPerPageBtn" type="button">
-						32
-					</button>
-					<button onclick="charsPerPage(2);" class="charsPerPage" type="button">
-						64
-					</button>
-					<button onclick="charsPerPage(3);" class="charsPerPage" type="button">
-						128
-					</button>
-					<button onclick="charsPerPage(4);" class="charsPerPage" type="button">
-						256
-					</button>
-					<button onclick="charsPerPage(5);" class="charsPerPage" type="button">
-						512
-					</button>
-				</div>
+			</div>
+			<div id="characters-per-page-pages-id">
+				<button onclick="charsPerPage(0);" class="charsPerPage" type="button">
+					16
+				</button>
+				<button onclick="charsPerPage(1);" class="charsPerPage checkedCharsPerPageBtn" type="button">
+					32
+				</button>
+				<button onclick="charsPerPage(2);" class="charsPerPage" type="button">
+					64
+				</button>
+				<button onclick="charsPerPage(3);" class="charsPerPage" type="button">
+					128
+				</button>
+				<button onclick="charsPerPage(4);" class="charsPerPage" type="button">
+					256
+				</button>
+				<button onclick="charsPerPage(5);" class="charsPerPage" type="button">
+					512
+				</button>
 			</div>
 		</div>
 		<div id="pagination-id"></div>

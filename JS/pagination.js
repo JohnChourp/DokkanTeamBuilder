@@ -14,57 +14,6 @@ function setAttributes(elem) {
 	}
 }
 
-function createPagination(charsPerPageNum) {
-	let paginationDiv = document.getElementById("pagination-id");
-	paginationDiv.innerHTML = "";
-	let char = document.getElementsByClassName("char");
-	let pageSum = Math.ceil(char.length / charsPerPageNum);
-
-	let pagePrevious = document.createElement("a");
-	pagePrevious.onclick = function () { paginationPrevious(pageSum, charsPerPageNum); }
-	pagePrevious.href = "#";
-	pagePrevious.setAttribute("draggable", "false");
-	pagePrevious.innerHTML = "&laquo;";
-	paginationDiv.appendChild(pagePrevious);
-
-	for (let i = 1; i <= pageSum; i++) {
-		if (i == 1) {
-			let page = document.createElement("a");
-			page.onclick = function () { pagination_page((i - 1) * charsPerPageNum, i * charsPerPageNum, pageSum, i); };
-			page.href = "#";
-			page.setAttribute("draggable", "false");
-			page.innerHTML = i;
-			page.classList.add("checkedPagiantionBtn");
-			paginationDiv.appendChild(page);
-		} else {
-			let page = document.createElement("a");
-			page.onclick = function () { pagination_page((i - 1) * charsPerPageNum, i * charsPerPageNum, pageSum, i); };
-			page.href = "#";
-			page.setAttribute("draggable", "false");
-			page.innerHTML = i;
-			paginationDiv.appendChild(page);
-		}
-	}
-
-	let pageNext = document.createElement("a");
-	pageNext.onclick = function () { paginationFilterNext(pageSum, charsPerPageNum); }
-	pageNext.href = "#";
-	pageNext.setAttribute("draggable", "false");
-	pageNext.innerHTML = "&raquo;";
-	paginationDiv.appendChild(pageNext);
-
-	let pageResults = document.createElement("a");
-	pageResults.href = "#";
-	pageResults.style.cursor = "text";
-	pageResults.style.backgroundColor = "transparent";
-	pageResults.setAttribute("draggable", "false");
-	pageResults.setAttribute('id', 'charResults');
-
-	pageResults.innerHTML = "Showing 1 to " + charsPerPageNum + " of " + char.length + " Characters";
-	paginationDiv.appendChild(pageResults);
-	pagination_page(0, charsPerPageNum, pageSum, 1);
-}
-
 function createFilterPagination(charList, charsPerPageNum) {
 	let char_container_id = document.getElementById("char-container-id");
 	char_container_id.innerHTML = "";
