@@ -56,7 +56,7 @@ function addChar() {
 		}
 
 		char.item(i).appendChild(charDiv);
-		
+
 		//char_display
 		let char_display_div = document.createElement("div");
 		char_display_div.classList.add("char_display");

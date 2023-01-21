@@ -4,7 +4,7 @@ function searchChar() {
 	characterSearchId.addEventListener("keypress", function (event) {
 		if (event.key === "Enter") {
 			event.preventDefault();
-			getCharList();
+			setCharList();
 			let char_container_id = document.getElementById("char-container-id");
 			let char = document.getElementsByClassName("char");
 			let checkedDirectionBtn = document.getElementsByClassName("checkedDirectionBtn");
