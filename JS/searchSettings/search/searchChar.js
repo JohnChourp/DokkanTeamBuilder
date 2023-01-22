@@ -10,15 +10,24 @@ function filtersMultipleUsedWithSearchChar(dataChars, filtersEachLengthString, f
 			}
 		}
 	}
+
 	let charListAll = create2DimensionalArray(filtersEachLengthStringUsed.length, 1);
 	let char = document.getElementsByClassName("char");
+	let filterCharItemsTemp = [], filterCharItems2 = [];
 
 	for (k = 0; k < filtersEachLengthStringUsed.length; k++) {
+		if (filtersUsed[5].length > 0) {
+			for (let i = 0; i < filterCharItems[k].length; i++) {
+				filterCharItemsTemp[i] = filterCharItems[k][i].getAttribute(filterChars[k]).split(",");
+				filterCharItems2[i] = filterCharItemsTemp[i][1];
+			}
+		}
+
 		if (k == 0) {
 			for (let j = 0; j < filters[k].length; j++) {
 				for (let i = 0; i < char.length; i++) {
 					if ((dataCharNameOrTitleItems[i].getAttribute(dataCharNameOrTitle).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0)
-						&& (filterCharItems[k][i].getAttribute(filterChars[k]).toLowerCase() == filters[k][j])) {
+						&& ((filterCharItems2[i] == filters[k][j]) || (filterCharItems[k][i].getAttribute(filterChars[k]) == filters[k][j]))) {
 						charListAll[0][i] = char.item(i);
 					}
 				}
@@ -28,7 +37,7 @@ function filtersMultipleUsedWithSearchChar(dataChars, filtersEachLengthString, f
 				for (let i = 0; i < charListAll[k - 1].length; i++) {
 					if (charListAll[k - 1][i] != undefined) {
 						if ((dataCharNameOrTitleItems[i].getAttribute(dataCharNameOrTitle).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0)
-							&& (filterCharItems[k][i].getAttribute(filterChars[k]).toLowerCase() == filters[k][j])) {
+							&& ((filterCharItems2[i] == filters[k][j]) || (filterCharItems[k][i].getAttribute(filterChars[k]) == filters[k][j]))) {
 							charListAll[k][i] = char.item(i);
 						}
 					}
@@ -36,7 +45,6 @@ function filtersMultipleUsedWithSearchChar(dataChars, filtersEachLengthString, f
 			}
 		}
 	}
-
 	return charListAll[filtersEachLengthStringUsed.length - 1];
 }
 
@@ -63,10 +71,9 @@ function searchChar() {
 			}
 
 			let dataCharName = 'data-char-name', dataCharTitle = 'data-char-title', dataCharType = 'data-char-type', dataCharRarity = 'data-char-rarity',
-				dataCharClass = 'data-char-class', dataCharEza = 'data-char-eza', dataCharAwaken = 'data-char-awaken';
-			let dataChars = [dataCharType, dataCharRarity, dataCharClass, dataCharEza, dataCharAwaken];
-			let filterType = [], filterRarity = [], filterClass = [], filterEza = [],
-				filterAwakenId = [], filterAwakenValue = [];
+				dataCharClass = 'data-char-class', dataCharEza = 'data-char-eza', dataCharAwaken = 'data-char-awaken', dataCharSuperAtkType = 'data-char-super-atk-type';
+			let dataChars = [dataCharType, dataCharRarity, dataCharClass, dataCharEza, dataCharAwaken, dataCharSuperAtkType];
+			let filterType = [], filterRarity = [], filterClass = [], filterEza = [], filterAwakenId = [], filterSuperAttackTypeId = [];
 
 			let dataCharNameItems = document.querySelectorAll('[' + dataCharName + ']');
 			let dataCharTitleItems = document.querySelectorAll('[' + dataCharTitle + ']');
@@ -120,27 +127,32 @@ function searchChar() {
 			}
 			filterEza.clean(undefined);
 
-			let filterAwakenIdTemp = ["notDokkanAwakened", "preDokkanAwakened", "dokkanAwakened"];
-			let filterAwakenValueTemp = ["not-dokkan-awakened", "pre-dokkan-awakened", "dokkan-awakened"];
-			let filterAwakenIdLength = filterAwakenIdTemp.length;
-			for (let i = 0; i < filterAwakenIdLength; i++) {
+			let filterAwakenIdTemp = ["not-dokkan-awakened", "pre-dokkan-awakened", "dokkan-awakened"];
+			for (let i = 0; i < filterAwakenIdTemp.length; i++) {
 				if (document.getElementById(filterAwakenIdTemp[i]).classList.contains("checkedAwakenBtn")) {
 					filterAwakenId[i] = filterAwakenIdTemp[i];
-					filterAwakenValue[i] = filterAwakenValueTemp[i];
 				}
 			}
 			filterAwakenId.clean(undefined);
-			filterAwakenValue.clean(undefined);
 
+			let filterSuperAttackTypeIdTemp = ["ki-blast", "unarmed", "physical", "other"];
+			let filterSuperAttackTypeIdValueTemp = ["Ki Blast", "Unarmed", "Physical", "Other"];
+			for (let i = 0; i < filterSuperAttackTypeIdTemp.length; i++) {
+				if (document.getElementById(filterSuperAttackTypeIdTemp[i]).classList.contains("checkedSuperAttackTypeBtn")) {
+					filterSuperAttackTypeId[i] = filterSuperAttackTypeIdValueTemp[i];
+				}
+			}
+			filterSuperAttackTypeId.clean(undefined);
 
-			let filtersUsed = [filterType, filterRarity, filterClass, filterEza, filterAwakenValue];
+			let filtersUsed = [filterType, filterRarity, filterClass, filterEza, filterAwakenId, filterSuperAttackTypeId];
 			let A = document.getElementsByClassName("checkedTypeBtn").length;
 			let B = document.getElementsByClassName("checkedRarityBtn").length;
 			let C = document.getElementsByClassName("checkedClassBtn").length;
 			let D = document.getElementsByClassName("checkedEzaBtn").length;
 			let E = document.getElementsByClassName("checkedAwakenBtn").length;
-			let filtersEachLength = [A, B, C, D, E];
-			let filtersEachLengthString = ["A", "B", "C", "D", "E"];
+			let F = document.getElementsByClassName("checkedSuperAttackTypeBtn").length;
+			let filtersEachLength = [A, B, C, D, E, F];
+			let filtersEachLengthString = ["A", "B", "C", "D", "E", "F"];
 			let filtersEachLengthStringUsed = [];
 			let charListDefault = [];
 			let sumFilterUsed = 0;
@@ -165,19 +177,7 @@ function searchChar() {
 					}
 				}
 			}
-			if (sumFilterUsed == 1) {
-				charListDefault = filtersMultipleUsedWithSearchChar(dataChars, filtersEachLengthString, filtersEachLengthStringUsed, filtersUsed, dataCharNameOrTitleItems, dataCharNameOrTitle, characterSearchId);
-			}
-			if (sumFilterUsed == 2) {
-				charListDefault = filtersMultipleUsedWithSearchChar(dataChars, filtersEachLengthString, filtersEachLengthStringUsed, filtersUsed, dataCharNameOrTitleItems, dataCharNameOrTitle, characterSearchId);
-			}
-			if (sumFilterUsed == 3) {
-				charListDefault = filtersMultipleUsedWithSearchChar(dataChars, filtersEachLengthString, filtersEachLengthStringUsed, filtersUsed, dataCharNameOrTitleItems, dataCharNameOrTitle, characterSearchId);
-			}
-			if (sumFilterUsed == 4) {
-				charListDefault = filtersMultipleUsedWithSearchChar(dataChars, filtersEachLengthString, filtersEachLengthStringUsed, filtersUsed, dataCharNameOrTitleItems, dataCharNameOrTitle, characterSearchId);
-			}
-			if (sumFilterUsed == 5) {
+			if (sumFilterUsed > 0) {
 				charListDefault = filtersMultipleUsedWithSearchChar(dataChars, filtersEachLengthString, filtersEachLengthStringUsed, filtersUsed, dataCharNameOrTitleItems, dataCharNameOrTitle, characterSearchId);
 			}
 

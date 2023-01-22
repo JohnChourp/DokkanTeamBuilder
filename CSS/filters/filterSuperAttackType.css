@@ -1,17 +1,18 @@
-.filterDokkanAwakened {
+.super-attack-type-class {
     background-color: #ddd;
     color: black;
     border: 2px solid #008CBA;
     transition-duration: 0.4s;
     height: 30px;
     margin: 0px 5px 0px 5px;
+    margin-bottom: 150px;
 }
 
-.filterDokkanAwakened:hover {
+.super-attack-type-class:hover {
     cursor: pointer;
 }
 
-.checkedAwakenBtn {
+.checkedSuperAttackTypeBtn {
     background-color: #33ccff;
     color: black;
     border: 2px solid #008CBA;

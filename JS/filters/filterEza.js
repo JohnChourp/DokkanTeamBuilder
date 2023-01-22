@@ -3,45 +3,49 @@ function ezaFilter() {
 }
 
 function addEza(ezaFilter) {
+    let notDokkanAwakened = document.getElementById("not-dokkan-awakened");
+    let preDokkanAwakened = document.getElementById("pre-dokkan-awakened");
+    let dokkanAwakened = document.getElementById("dokkan-awakened");
+   
     if (document.getElementById(ezaFilter).classList.contains("checkedEzaBtn")) {
         document.getElementById(ezaFilter).classList.remove("checkedEzaBtn");
 
-        document.getElementById("notDokkanAwakened").style.backgroundColor = "#ddd";
-        document.getElementById("preDokkanAwakened").style.backgroundColor = "#ddd";
-        document.getElementById("dokkanAwakened").style.backgroundColor = "#ddd";
+        notDokkanAwakened.style.backgroundColor = "#ddd";
+        preDokkanAwakened.style.backgroundColor = "#ddd";
+        dokkanAwakened.style.backgroundColor = "#ddd";
 
-        document.getElementById("notDokkanAwakened").style.cursor = "pointer";
-        document.getElementById("preDokkanAwakened").style.cursor = "pointer";
-        document.getElementById("dokkanAwakened").style.cursor = "pointer";
+        notDokkanAwakened.style.cursor = "pointer";
+        preDokkanAwakened.style.cursor = "pointer";
+        dokkanAwakened.style.cursor = "pointer";
 
-        document.getElementById("notDokkanAwakened").style.color = "black";
-        document.getElementById("preDokkanAwakened").style.color = "black";
-        document.getElementById("dokkanAwakened").style.color = "black";
+        notDokkanAwakened.style.color = "black";
+        preDokkanAwakened.style.color = "black";
+        dokkanAwakened.style.color = "black";
 
-        document.getElementById("notDokkanAwakened").removeAttribute("disabled");
-        document.getElementById("preDokkanAwakened").removeAttribute("disabled");
-        document.getElementById("dokkanAwakened").removeAttribute("disabled");
+        notDokkanAwakened.removeAttribute("disabled");
+        preDokkanAwakened.removeAttribute("disabled");
+        dokkanAwakened.removeAttribute("disabled");
     } else {
         document.getElementById(ezaFilter).classList.add("checkedEzaBtn");
-        document.getElementById("notDokkanAwakened").style.backgroundColor = "#343A40";
-        document.getElementById("preDokkanAwakened").style.backgroundColor = "#343A40";
-        document.getElementById("dokkanAwakened").style.backgroundColor = "#343A40";
+        notDokkanAwakened.style.backgroundColor = "#343A40";
+        preDokkanAwakened.style.backgroundColor = "#343A40";
+        dokkanAwakened.style.backgroundColor = "#343A40";
 
-        document.getElementById("notDokkanAwakened").style.cursor = "not-allowed";
-        document.getElementById("preDokkanAwakened").style.cursor = "not-allowed";
-        document.getElementById("dokkanAwakened").style.cursor = "not-allowed";
+        notDokkanAwakened.style.cursor = "not-allowed";
+        preDokkanAwakened.style.cursor = "not-allowed";
+        dokkanAwakened.style.cursor = "not-allowed";
 
-        document.getElementById("notDokkanAwakened").style.color = "#6C757D";
-        document.getElementById("preDokkanAwakened").style.color = "#6C757D";
-        document.getElementById("dokkanAwakened").style.color = "#6C757D";
+        notDokkanAwakened.style.color = "#6C757D";
+        preDokkanAwakened.style.color = "#6C757D";
+        dokkanAwakened.style.color = "#6C757D";
 
-        document.getElementById("notDokkanAwakened").setAttribute("disabled", "enabled");
-        document.getElementById("preDokkanAwakened").setAttribute("disabled", "enabled");
-        document.getElementById("dokkanAwakened").setAttribute("disabled", "enabled");
+        notDokkanAwakened.setAttribute("disabled", "enabled");
+        preDokkanAwakened.setAttribute("disabled", "enabled");
+        dokkanAwakened.setAttribute("disabled", "enabled");
 
-        document.getElementById("notDokkanAwakened").classList.remove("checkedAwakenBtn");
-        document.getElementById("preDokkanAwakened").classList.remove("checkedAwakenBtn");
-        document.getElementById("dokkanAwakened").classList.remove("checkedAwakenBtn");
+        notDokkanAwakened.classList.remove("checkedAwakenBtn");
+        preDokkanAwakened.classList.remove("checkedAwakenBtn");
+        dokkanAwakened.classList.remove("checkedAwakenBtn");
     }
 }
 

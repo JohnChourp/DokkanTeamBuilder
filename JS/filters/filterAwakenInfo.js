@@ -1,5 +1,5 @@
 function filterNotDokkanAwakened() {
-    let notDokkanAwakenedBtn = document.getElementById("notDokkanAwakened");
+    let notDokkanAwakenedBtn = document.getElementById("not-dokkan-awakened");
     if (notDokkanAwakenedBtn.classList.contains("checkedAwakenBtn")) {
         notDokkanAwakenedBtn.classList.remove("checkedAwakenBtn");
         notDokkanAwakenedBtn.style.backgroundColor = "#ddd";
@@ -10,7 +10,7 @@ function filterNotDokkanAwakened() {
 }
 
 function filterPreDokkanAwakened() {
-    let preDokkanAwakenedBtn = document.getElementById("preDokkanAwakened");
+    let preDokkanAwakenedBtn = document.getElementById("pre-dokkan-awakened");
     if (preDokkanAwakenedBtn.classList.contains("checkedAwakenBtn")) {
         preDokkanAwakenedBtn.classList.remove("checkedAwakenBtn");
         preDokkanAwakenedBtn.style.backgroundColor = "#ddd";
@@ -21,7 +21,7 @@ function filterPreDokkanAwakened() {
 }
 
 function filterDokkanAwakened() {
-    let dokkanAwakenedBtn = document.getElementById("dokkanAwakened");
+    let dokkanAwakenedBtn = document.getElementById("dokkan-awakened");
     if (dokkanAwakenedBtn.classList.contains("checkedAwakenBtn")) {
         dokkanAwakenedBtn.classList.remove("checkedAwakenBtn");
         dokkanAwakenedBtn.style.backgroundColor = "#ddd";
@@ -32,7 +32,7 @@ function filterDokkanAwakened() {
 }
 
 function removeAllDokkanAwaken() {
-    let filterAwakenId = ["notDokkanAwakened", "preDokkanAwakened", "dokkanAwakened"];
+    let filterAwakenId = ["not-dokkan-awakened", "pre-dokkan-awakened", "dokkan-awakened"];
     for (let i = 0; i < filterAwakenId.length; i++) {
         document.getElementById(filterAwakenId[i]).classList.remove("checkedAwakenBtn");
         document.getElementById(filterAwakenId[i]).style.backgroundColor = "#ddd";

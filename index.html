@@ -19,6 +19,7 @@
 	<link href="CSS/filters/filterRarity.css" rel="stylesheet" type="text/css" />
 	<link href="CSS/filters/filterSideNav.css" rel="stylesheet" type="text/css" />
 	<link href="CSS/filters/filterSortDirection.css" rel="stylesheet" type="text/css" />
+	<link href="CSS/filters/filterSuperAttackType.css" rel="stylesheet" type="text/css" />
 	<link href="CSS/filters/filterType.css" rel="stylesheet" type="text/css" />
 
 	<link href="CSS/searchSettings/searchSettings.css" rel="stylesheet" type="text/css" />
@@ -45,6 +46,7 @@
 	<script src="JS/filters/filterRarity.js" type="text/javascript"></script>
 	<script src="JS/filters/filterSideNav.js" type="text/javascript"></script>
 	<script src="JS/filters/filterSortDirection.js" type="text/javascript"></script>
+	<script src="JS/filters/filterSuperAttackType.js" type="text/javascript"></script>
 	<script src="JS/filters/filterType.js" type="text/javascript"></script>
 	<script src="JS/filters/removeAllFilters.js" type="text/javascript"></script>
 
@@ -238,17 +240,32 @@
 			</div>
 			<p class="filter-options-text-class">Awaken</p>
 			<div class="filter-class">
-				<button onclick="filterNotDokkanAwakened();" id="notDokkanAwakened" class="filterDokkanAwakened"
+				<button onclick="filterNotDokkanAwakened();" id="not-dokkan-awakened" class="filterDokkanAwakened"
 					type="button">
 					Not-Dokkan
 				</button>
-				<button onclick="filterPreDokkanAwakened();" id="preDokkanAwakened" class="filterDokkanAwakened"
+				<button onclick="filterPreDokkanAwakened();" id="pre-dokkan-awakened" class="filterDokkanAwakened"
 					type="button">
 					Pre-Dokkan
 				</button>
-				<button onclick="filterDokkanAwakened();" id="dokkanAwakened" class="filterDokkanAwakened"
+				<button onclick="filterDokkanAwakened();" id="dokkan-awakened" class="filterDokkanAwakened"
 					type="button">
 					Dokkan
+				</button>
+			</div>
+			<p class="filter-options-text-class">Super Attack Type</p>
+			<div class="filter-class">
+				<button onclick="filterSuperAttackTypeKiBlast();" id="ki-blast" class="super-attack-type-class" type="button">
+					Ki Blast
+				</button>
+				<button onclick="filterSuperAttackTypeUnarmed();" id="unarmed" class="super-attack-type-class" type="button">
+					Unarmed
+				</button>
+				<button onclick="filterSuperAttackTypePhysical();" id="physical" class="super-attack-type-class" type="button">
+					Physical
+				</button>
+				<button onclick="filterSuperAttackTypeOther();" id="other" class="super-attack-type-class" type="button">
+					Other
 				</button>
 			</div>
 		</div>

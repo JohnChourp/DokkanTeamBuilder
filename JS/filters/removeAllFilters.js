@@ -1,7 +1,6 @@
 function removeAllFilters() {
 	// removeAllId.style.backgroundColor = "#dfc011";
-	let filterType = [], filterRarity = [], filterClass = [], filterEza = [],
-		filterAwakenId = [], filterAwakenValue = [];
+	let filterType = [], filterRarity = [], filterClass = [], filterEza = [], filterAwakenId = [], filterSuperAttackTypeId = [];
 
 	//filterType
 	let filterTypeTemp = ["agl", "teq", "int", "str", "phy"];
@@ -44,28 +43,38 @@ function removeAllFilters() {
 	filterEza.clean(undefined);
 
 	//filterAwaken
-	let filterAwakenIdTemp = ["notDokkanAwakened", "preDokkanAwakened", "dokkanAwakened"];
-	let filterAwakenValueTemp = ["not-dokkan-awakened", "pre-dokkan-awakened", "dokkan-awakened"];
-	let filterAwakenIdLength = filterAwakenIdTemp.length;
-	for (let i = 0; i < filterAwakenIdLength; i++) {
+	let filterAwakenIdTemp = ["not-dokkan-awakened", "pre-dokkan-awakened", "dokkan-awakened"];
+	for (let i = 0; i < filterAwakenIdTemp.length; i++) {
 		if (document.getElementById(filterAwakenIdTemp[i]).classList.contains("checkedAwakenBtn")) {
 			filterAwakenId[i] = filterAwakenIdTemp[i];
-			filterAwakenValue[i] = filterAwakenValueTemp[i];
 		}
 	}
 	filterAwakenId.clean(undefined);
-	filterAwakenValue.clean(undefined);
 
-	let filtersUsed = [filterType.length, filterRarity.length, filterClass.length, filterEza.length, filterAwakenId.length];
+	//filterSuperAttackType
+	let filterSuperAttackTypeIdTemp = ["ki-blast", "unarmed", "physical", "other"];
+	for (let i = 0; i < filterSuperAttackTypeIdTemp.length; i++) {
+		if (document.getElementById(filterSuperAttackTypeIdTemp[i]).classList.contains("checkedSuperAttackTypeBtn")) {
+			filterSuperAttackTypeId[i] = filterSuperAttackTypeIdTemp[i];
+		}
+	}
+	filterSuperAttackTypeId.clean(undefined);
 
+	let filtersUsed = [filterType, filterRarity, filterClass, filterEza, filterAwakenId, filterSuperAttackTypeId];
+	let sumFilterUsed = 0;
 	//check how many filter are used
 	for (let i = 0; i < filtersUsed.length; i++) {
-		if (filtersUsed[i] > 0) {
-			removeAllRarity();
-			removeAllType();
-			removeAllClass();
-			removeAllEza();
-			removeAllDokkanAwaken();
+		if (filtersUsed[i].length > 0) {
+			sumFilterUsed = sumFilterUsed + 1;
 		}
+	}
+
+	if (sumFilterUsed > 0) {
+		removeAllRarity();
+		removeAllType();
+		removeAllClass();
+		removeAllEza();
+		removeAllDokkanAwaken();
+		removeAllSuperAttackType();
 	}
 }

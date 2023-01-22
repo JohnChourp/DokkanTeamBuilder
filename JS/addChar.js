@@ -31,7 +31,7 @@ function addChar() {
 		let char_thumb_img = document.createElement("img");
 		char_thumb_img.classList.add("char_thumb");
 		char_thumb_img.loading = "lazy";
-		char_thumb_img.src = dataCharIdItems[i].getAttribute(dataCharId).toLowerCase();
+		char_thumb_img.src = dataCharIdItems[i].getAttribute(dataCharId);
 		charDiv.appendChild(char_thumb_img);
 
 		//char_rarity
