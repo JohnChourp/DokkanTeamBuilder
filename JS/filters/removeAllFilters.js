@@ -1,6 +1,6 @@
 function removeAllFilters() {
 	// removeAllId.style.backgroundColor = "#dfc011";
-	let filterType = [], filterRarity = [], filterClass = [], filterEza = [], filterAwakenId = [];
+	let filterType = [], filterRarity = [], filterClass = [], filterEza = [], filterAwakenId = [], filterSuperAttackTypeId = [];
 
 	//filterType
 	let filterTypeTemp = ["agl", "teq", "int", "str", "phy"];
@@ -51,15 +51,30 @@ function removeAllFilters() {
 	}
 	filterAwakenId.clean(undefined);
 
-	let filtersUsed = [filterType.length, filterRarity.length, filterClass.length, filterEza.length, filterAwakenId.length];
+	//filterSuperAttackType
+	let filterSuperAttackTypeIdTemp = ["ki-blast", "unarmed", "physical", "other"];
+	for (let i = 0; i < filterSuperAttackTypeIdTemp.length; i++) {
+		if (document.getElementById(filterSuperAttackTypeIdTemp[i]).classList.contains("checkedSuperAttackTypeBtn")) {
+			filterSuperAttackTypeId[i] = filterSuperAttackTypeIdTemp[i];
+		}
+	}
+	filterSuperAttackTypeId.clean(undefined);
+
+	let filtersUsed = [filterType, filterRarity, filterClass, filterEza, filterAwakenId, filterSuperAttackTypeId];
+	let sumFilterUsed = 0;
 	//check how many filter are used
 	for (let i = 0; i < filtersUsed.length; i++) {
-		if (filtersUsed[i] > 0) {
-			removeAllRarity();
-			removeAllType();
-			removeAllClass();
-			removeAllEza();
-			removeAllDokkanAwaken();
+		if (filtersUsed[i].length > 0) {
+			sumFilterUsed = sumFilterUsed + 1;
 		}
+	}
+
+	if (sumFilterUsed > 0) {
+		removeAllRarity();
+		removeAllType();
+		removeAllClass();
+		removeAllEza();
+		removeAllDokkanAwaken();
+		removeAllSuperAttackType();
 	}
 }

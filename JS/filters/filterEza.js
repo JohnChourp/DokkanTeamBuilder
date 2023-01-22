@@ -3,12 +3,13 @@ function ezaFilter() {
 }
 
 function addEza(ezaFilter) {
+    let notDokkanAwakened = document.getElementById("not-dokkan-awakened");
+    let preDokkanAwakened = document.getElementById("pre-dokkan-awakened");
+    let dokkanAwakened = document.getElementById("dokkan-awakened");
+   
     if (document.getElementById(ezaFilter).classList.contains("checkedEzaBtn")) {
         document.getElementById(ezaFilter).classList.remove("checkedEzaBtn");
-        let notDokkanAwakened = document.getElementById("not-dokkan-awakened");
-        let preDokkanAwakened = document.getElementById("pre-dokkan-awakened");
-        let dokkanAwakened = document.getElementById("dokkan-awakened");
-        
+
         notDokkanAwakened.style.backgroundColor = "#ddd";
         preDokkanAwakened.style.backgroundColor = "#ddd";
         dokkanAwakened.style.backgroundColor = "#ddd";
