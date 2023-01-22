@@ -84,14 +84,14 @@
 }
 
 .char_display {
-	background-color: rgb(255, 255, 255);
     position: relative;
     left:10px;
-	width: 200px;
-	height: 40px;
-	word-wrap: break-word;
-	display: block;
-	text-align: center;
+    width: 200px;
+    height: 40px;
+    word-wrap: break-word;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
     overflow: auto;
-	border: 4px solid #000000;
+    border: 4px solid #000000;
 }

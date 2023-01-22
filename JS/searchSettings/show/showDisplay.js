@@ -30,6 +30,7 @@ function addDropdownClass(filterDisplay) {
 
 	let dataCharName = 'data-char-name';
 	let dataCharTitle = 'data-char-title';
+	let dataCharEza = 'data-char-eza';
 	let dataCharId = 'data-char-id';
 	let dataCharHp = 'data-char-hp';
 	let dataCharAttack = 'data-char-attack';
@@ -44,6 +45,7 @@ function addDropdownClass(filterDisplay) {
 
 	let dataCharNameItems = document.querySelectorAll('[' + dataCharName + ']');
 	let dataCharTitleItems = document.querySelectorAll('[' + dataCharTitle + ']');
+	let dataCharEzaItems = document.querySelectorAll('[' + dataCharEza + ']');
 	let dataCharIdItems = document.querySelectorAll('[' + dataCharId + ']');
 	let dataCharHpItems = document.querySelectorAll('[' + dataCharHp + ']');
 	let dataCharAttackItems = document.querySelectorAll('[' + dataCharAttack + ']');
@@ -85,6 +87,25 @@ function addDropdownClass(filterDisplay) {
 		listCategoriesFormattedString[i] = listCategories[i].join("<br/>");
 	}
 
+	if (((filterDisplay > -1) && (filterDisplay < 8)) || (filterDisplay == 9)) {
+		for (let i = 0; i < char_display.length; i++) {
+			char_display.item(i).style.display = "table-cell";
+		}
+	}
+	if (filterDisplay == 8) {
+		for (let i = 0; i < char_display.length; i++) {
+			if (dataCharEzaItems[i].getAttribute(dataCharEza) != "eza") {
+				char_display.item(i).style.display = "table-cell";
+			} else {
+				char_display.item(i).style.display = "block";
+			}
+		}
+	}
+	if (filterDisplay > 9) {
+		for (let i = 0; i < char_display.length; i++) {
+			char_display.item(i).style.display = "block";
+		}
+	}
 	//Name
 	if (filterDisplay == 0) {
 		for (let i = 0; i < char_display.length; i++) {
