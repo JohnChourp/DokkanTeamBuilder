@@ -71,8 +71,7 @@ function applyFilters() {
 	let dataCharType = 'data-char-type', dataCharRarity = 'data-char-rarity', dataCharClass = 'data-char-class',
 		dataCharEza = 'data-char-eza', dataCharAwaken = 'data-char-awaken';
 	let dataChars = [dataCharType, dataCharRarity, dataCharClass, dataCharEza, dataCharAwaken];
-	let filterType = [], filterRarity = [], filterClass = [], filterEza = [],
-		filterAwakenId = [], filterAwakenValue = [];
+	let filterType = [], filterRarity = [], filterClass = [], filterEza = [], filterAwakenId = [];
 
 	let filterTypeTemp = ["agl", "teq", "int", "str", "phy"];
 	let filterTypeLength = filterTypeTemp.length;
@@ -110,18 +109,15 @@ function applyFilters() {
 	}
 	filterEza.clean(undefined);
 
-	let filterAwakenIdTemp = ["notDokkanAwakened", "preDokkanAwakened", "dokkanAwakened"];
-	let filterAwakenValueTemp = ["not-dokkan-awakened", "pre-dokkan-awakened", "dokkan-awakened"];
+	let filterAwakenIdTemp = ["not-dokkan-awakened", "pre-dokkan-awakened", "dokkan-awakened"];
 	for (let i = 0; i < filterAwakenIdTemp.length; i++) {
 		if (document.getElementById(filterAwakenIdTemp[i]).classList.contains("checkedAwakenBtn")) {
 			filterAwakenId[i] = filterAwakenIdTemp[i];
-			filterAwakenValue[i] = filterAwakenValueTemp[i];
 		}
 	}
 	filterAwakenId.clean(undefined);
-	filterAwakenValue.clean(undefined);
 
-	let filtersUsed = [filterType, filterRarity, filterClass, filterEza, filterAwakenValue];
+	let filtersUsed = [filterType, filterRarity, filterClass, filterEza, filterAwakenId];
 	let A = document.getElementsByClassName("checkedTypeBtn").length;
 	let B = document.getElementsByClassName("checkedRarityBtn").length;
 	let C = document.getElementsByClassName("checkedClassBtn").length;

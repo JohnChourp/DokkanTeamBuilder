@@ -1,7 +1,6 @@
 function removeAllFilters() {
 	// removeAllId.style.backgroundColor = "#dfc011";
-	let filterType = [], filterRarity = [], filterClass = [], filterEza = [],
-		filterAwakenId = [], filterAwakenValue = [];
+	let filterType = [], filterRarity = [], filterClass = [], filterEza = [], filterAwakenId = [];
 
 	//filterType
 	let filterTypeTemp = ["agl", "teq", "int", "str", "phy"];
@@ -44,20 +43,15 @@ function removeAllFilters() {
 	filterEza.clean(undefined);
 
 	//filterAwaken
-	let filterAwakenIdTemp = ["notDokkanAwakened", "preDokkanAwakened", "dokkanAwakened"];
-	let filterAwakenValueTemp = ["not-dokkan-awakened", "pre-dokkan-awakened", "dokkan-awakened"];
-	let filterAwakenIdLength = filterAwakenIdTemp.length;
-	for (let i = 0; i < filterAwakenIdLength; i++) {
+	let filterAwakenIdTemp = ["not-dokkan-awakened", "pre-dokkan-awakened", "dokkan-awakened"];
+	for (let i = 0; i < filterAwakenIdTemp.length; i++) {
 		if (document.getElementById(filterAwakenIdTemp[i]).classList.contains("checkedAwakenBtn")) {
 			filterAwakenId[i] = filterAwakenIdTemp[i];
-			filterAwakenValue[i] = filterAwakenValueTemp[i];
 		}
 	}
 	filterAwakenId.clean(undefined);
-	filterAwakenValue.clean(undefined);
 
 	let filtersUsed = [filterType.length, filterRarity.length, filterClass.length, filterEza.length, filterAwakenId.length];
-
 	//check how many filter are used
 	for (let i = 0; i < filtersUsed.length; i++) {
 		if (filtersUsed[i] > 0) {
