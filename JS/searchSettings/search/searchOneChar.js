@@ -132,30 +132,6 @@ function addSearchOneCharDropdownClass(charNamePos) {
 			}
 		}
 	}
-	if (tempPos == 17) {
-		for (let j = 0; j < charListSaved.length; j++) {
-			let temp = charList_dataCharNameItems[j];
-			temp = temp.split('');
-			temp[tempPos] = 'and1 ';
-			temp = temp.join('');
-
-			selectedCharName = selectedCharName.split('');
-			selectedCharName[tempPos + 4] = ' ';
-			selectedCharName[tempPos + 3] = ' ';
-			selectedCharName[tempPos + 2] = ' ';
-			selectedCharName[tempPos + 1] = ' ';
-			selectedCharName[tempPos] = 'and1';
-			selectedCharName[tempPos + 1] = ' ';
-			selectedCharName[tempPos + 2] = '';
-			selectedCharName[tempPos + 3] = '';
-			selectedCharName[tempPos + 4] = '';
-			selectedCharName = selectedCharName.join('');
-
-			if (temp == selectedCharName) {
-				char_container_id.appendChild(charListSaved[j]);
-			}
-		}
-	}
 	addChar();
 
 	createSearchOneCharPagination(localStorage.getItem("charsPerPageNumItem"));

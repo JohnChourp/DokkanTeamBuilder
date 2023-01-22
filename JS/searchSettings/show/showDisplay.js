@@ -56,15 +56,7 @@ function addDropdownClass(filterDisplay) {
 	let dataCharLinksItems = document.querySelectorAll('[' + dataCharLinks + ']');
 	let dataCharCategoriesItems = document.querySelectorAll('[' + dataCharCategories + ']');
 
-	let char = document.getElementsByClassName("char");
-	let charDivClass = document.getElementsByClassName("char-div-class");
 	let char_display = document.getElementsByClassName("char_display");
-	let char_type_base = document.getElementsByClassName("char_type_base");
-	let char_thumb = document.getElementsByClassName("char_thumb");
-	let char_rarity = document.getElementsByClassName("char_rarity");
-	let char_type = document.getElementsByClassName("char_type");
-	let char_eza = document.getElementsByClassName("char_eza");
-
 	let listLinks = [], listCategories = [], listSuperAtkType = [], listRelease = [];
 	let listLinksFormattedString = [], listCategoriesFormattedString = [], listSuperAtkTypeFormattedString = [],
 		listReleaseFormattedString = [];
