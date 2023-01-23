@@ -18,7 +18,7 @@ function closeNav() {
   document.getElementById("left-sidenav-filters-id").style.width = "0";
   document.getElementById("apply-filters-bg-id").style.width = "0";
   document.getElementById("apply-filters-id").style.width = "0";
-  document.getElementById("apply-filters-text-id").style.left = "-50px";
+  document.getElementById("apply-filters-text-id").style.left = "-70px";
   document.getElementById("ok").style.left = "-30px";
   document.getElementById("remove-all-id").style.left = "-90px";
 
@@ -35,7 +35,7 @@ function closeNavWhenClickedOutside() {
       document.getElementById("left-sidenav-filters-id").style.width = "0";
       document.getElementById("apply-filters-bg-id").style.width = "0";
       document.getElementById("apply-filters-id").style.width = "0";
-      document.getElementById("apply-filters-text-id").style.left = "-50px";
+      document.getElementById("apply-filters-text-id").style.left = "-70px";
       document.getElementById("ok").style.left = "-30px";
       document.getElementById("remove-all-id").style.left = "-90px";
 
@@ -52,7 +52,7 @@ function closeNavWhenClickedOutside() {
       document.getElementById("left-sidenav-filters-id").style.width = "0";
       document.getElementById("apply-filters-bg-id").style.width = "0";
       document.getElementById("apply-filters-id").style.width = "0";
-      document.getElementById("apply-filters-text-id").style.left = "-50px";
+      document.getElementById("apply-filters-text-id").style.left = "-70px";
       document.getElementById("ok").style.left = "-30px";
       document.getElementById("remove-all-id").style.left = "-90px";
 
