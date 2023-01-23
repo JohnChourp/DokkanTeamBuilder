@@ -5,9 +5,9 @@ function removeDuplicates(arr) {
 
 function searchOneCharOptions() {
 	document.getElementsByClassName("search-one-char-dropdown-options").item(0).classList.toggle("showOneCharName");
-	if(document.getElementsByClassName("search-one-char-dropdown-options").item(0).classList.contains("showOneCharName")){
+	if (document.getElementsByClassName("search-one-char-dropdown-options").item(0).classList.contains("showOneCharName")) {
 		document.getElementById("search-one-char-menu-id").style.display = "block";
-	}else{
+	} else {
 		document.getElementById("search-one-char-menu-id").style.display = "none";
 	}
 }
@@ -147,19 +147,19 @@ function myFunction() {
 	let input = document.getElementById("search-one-char-menu-id");
 	let filter = input.value.toLowerCase();
 	ui = document.getElementsByClassName("search-one-char-dropdown-options-value");
-  
+
 	// Loop through all list items, and hide those who don't match the search query
 	for (i = 0; i < ui.length; i++) {
-		if(input.value.length > 0){
+		if (input.value.length > 0) {
 			console.log(filter);
 			console.log(ui.item(i).innerHTML.toLowerCase());
 			if (ui.item(i).innerHTML.toLowerCase().indexOf(filter) >= 0) {
 				ui.item(i).style.display = "block";
-			  } else {
+			} else {
 				ui.item(i).style.display = "none";
-			  }
-		}else{
+			}
+		} else {
 			ui.item(i).style.display = "block";
 		}
 	}
-  }
+}
