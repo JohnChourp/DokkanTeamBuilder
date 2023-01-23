@@ -18,7 +18,6 @@ function addDropdownClass(filterDisplay) {
 	localStorage.setItem("filterDisplay", filterDisplay);
 	let selecteddropdown_btn = document.getElementById("selected-dropdown");
 	let dropdownOptionsValue = document.getElementsByClassName("dropdown-options-value");
-
 	selecteddropdown_btn.innerHTML = dropdownOptionsValue.item(filterDisplay).innerHTML;
 	dropdownOptionsValue.item(filterDisplay).classList.add("checkedDisplayBtn");
 
@@ -102,6 +101,9 @@ function addDropdownClass(filterDisplay) {
 				char_display.item(i).style.display = "table-cell";
 			} else {
 				char_display.item(i).style.display = "block";
+				if (window.matchMedia('(max-device-width: 412px)').matches) {
+					char_display.item(i).style.width = "91px";
+				}
 			}
 		}
 	}
