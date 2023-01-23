@@ -61,7 +61,9 @@
 
 	<script src="JS/searchSettings/searchSettings.js" type="text/javascript"></script>
 
+	<script src="JS/test/deviceInfo.js" type="text/javascript"></script>
 	<script src="JS/test/mostLetters.js" type="text/javascript"></script>
+	
 	<!--Javascript Files-->
 
 
@@ -69,7 +71,9 @@
 </head>
 
 <body
-	onload="addChar(); saveCharList(); charsPerPageInput(32); searchTitlesNo(); searchChar(); applyFilters(); closeNavWhenClickedOutside(); addAllCharNames();">
+	onload="addChar(); saveCharList(); charsPerPageInput(32); searchTitlesNo(); searchChar(); applyFilters(); closeNavWhenClickedOutside(); addAllCharNames(); deviceWidthAndHeight(); windowWidthAndHeight();">
+	<div id="test-device-id"></div>
+	<div id="test-window-id"></div>
 	<div id="left-sidenav-id">
 		<div id="left-sidenav-filters-id">
 			<p class="filter-options-text-class">Sort Direction</p>
