@@ -1,17 +1,18 @@
-.super-attack-type-class {
+.recruit-class {
     background-color: #ddd;
     color: black;
     border: 2px solid #008CBA;
     transition-duration: 0.4s;
     height: 30px;
     margin: 0px 5px 0px 5px;
+    margin-bottom: 150px;
 }
 
-.super-attack-type-class:hover {
+.recruit-class:hover {
     cursor: pointer;
 }
 
-.checkedSuperAttackTypeBtn {
+.checkedRecruitBtn {
     background-color: #33ccff;
     color: black;
     border: 2px solid #008CBA;

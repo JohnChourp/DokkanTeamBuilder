@@ -1,6 +1,8 @@
 function removeAllFilters() {
 	// removeAllId.style.backgroundColor = "#dfc011";
-	let filterType = [], filterRarity = [], filterClass = [], filterEza = [], filterAwakenId = [], filterSuperAttackTypeId = [];
+	let filterType = [], filterRarity = [], filterClass = [],
+		filterEza = [], filterAwakenId = [], filterSuperAttackTypeId = [],
+		filterRecruitId = [];
 
 	//filterType
 	let filterTypeTemp = ["agl", "teq", "int", "str", "phy"];
@@ -60,7 +62,16 @@ function removeAllFilters() {
 	}
 	filterSuperAttackTypeId.clean(undefined);
 
-	let filtersUsed = [filterType, filterRarity, filterClass, filterEza, filterAwakenId, filterSuperAttackTypeId];
+	//filterRecruit
+	let filterRecruitIdTemp = ["summonable", "free-to-play"];
+	for (let i = 0; i < filterRecruitIdTemp.length; i++) {
+		if (document.getElementById(filterRecruitIdTemp[i]).classList.contains("checkedRecruitBtn")) {
+			filterRecruitId[i] = filterRecruitIdTemp[i];
+		}
+	}
+	filterRecruitId.clean(undefined);
+
+	let filtersUsed = [filterType, filterRarity, filterClass, filterEza, filterAwakenId, filterSuperAttackTypeId, filterRecruitId];
 	let sumFilterUsed = 0;
 	//check how many filter are used
 	for (let i = 0; i < filtersUsed.length; i++) {
@@ -76,5 +87,6 @@ function removeAllFilters() {
 		removeAllEza();
 		removeAllDokkanAwaken();
 		removeAllSuperAttackType();
+		removeAllRecruit()
 	}
 }

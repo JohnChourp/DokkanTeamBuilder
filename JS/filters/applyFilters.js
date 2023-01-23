@@ -77,9 +77,13 @@ function applyFilters() {
 	}
 
 	let dataCharType = 'data-char-type', dataCharRarity = 'data-char-rarity', dataCharClass = 'data-char-class',
-		dataCharEza = 'data-char-eza', dataCharAwaken = 'data-char-awaken', dataCharSuperAtkType = 'data-char-super-atk-type';
-	let dataChars = [dataCharType, dataCharRarity, dataCharClass, dataCharEza, dataCharAwaken, dataCharSuperAtkType];
-	let filterType = [], filterRarity = [], filterClass = [], filterEza = [], filterAwakenId = [], filterSuperAttackTypeId = [];
+		dataCharEza = 'data-char-eza', dataCharAwaken = 'data-char-awaken', dataCharSuperAtkType = 'data-char-super-atk-type',
+		dataCharRecruit = 'data-char-recruit';
+	let dataChars = [dataCharType, dataCharRarity, dataCharClass,
+		dataCharEza, dataCharAwaken, dataCharSuperAtkType, dataCharRecruit];
+	let filterType = [], filterRarity = [], filterClass = [],
+		filterEza = [], filterAwakenId = [], filterSuperAttackTypeId = [],
+		filterRecruitId = [];
 
 	let filterTypeTemp = ["agl", "teq", "int", "str", "phy"];
 	let filterTypeLength = filterTypeTemp.length;
@@ -126,23 +130,31 @@ function applyFilters() {
 	filterAwakenId.clean(undefined);
 
 	let filterSuperAttackTypeIdTemp = ["ki-blast", "unarmed", "physical", "other"];
-	let filterSuperAttackTypeIdValueTemp = ["Ki Blast", "Unarmed", "Physical", "Other"];
 	for (let i = 0; i < filterSuperAttackTypeIdTemp.length; i++) {
 		if (document.getElementById(filterSuperAttackTypeIdTemp[i]).classList.contains("checkedSuperAttackTypeBtn")) {
-			filterSuperAttackTypeId[i] = filterSuperAttackTypeIdValueTemp[i];
+			filterSuperAttackTypeId[i] = filterSuperAttackTypeIdTemp[i];
 		}
 	}
 	filterSuperAttackTypeId.clean(undefined);
 
-	let filtersUsed = [filterType, filterRarity, filterClass, filterEza, filterAwakenId, filterSuperAttackTypeId];
+	let filterRecruitIdTemp = ["summonable", "free-to-play"];
+	for (let i = 0; i < filterRecruitIdTemp.length; i++) {
+		if (document.getElementById(filterRecruitIdTemp[i]).classList.contains("checkedRecruitBtn")) {
+			filterRecruitId[i] = filterRecruitIdTemp[i];
+		}
+	}
+	filterRecruitId.clean(undefined);
+
+	let filtersUsed = [filterType, filterRarity, filterClass, filterEza, filterAwakenId, filterSuperAttackTypeId, filterRecruitId];
 	let A = document.getElementsByClassName("checkedTypeBtn").length;
 	let B = document.getElementsByClassName("checkedRarityBtn").length;
 	let C = document.getElementsByClassName("checkedClassBtn").length;
 	let D = document.getElementsByClassName("checkedEzaBtn").length;
 	let E = document.getElementsByClassName("checkedAwakenBtn").length;
 	let F = document.getElementsByClassName("checkedSuperAttackTypeBtn").length;
-	let filtersEachLength = [A, B, C, D, E, F];
-	let filtersEachLengthString = ["A", "B", "C", "D", "E", "F"];
+	let G = document.getElementsByClassName("checkedRecruitBtn").length;
+	let filtersEachLength = [A, B, C, D, E, F, G];
+	let filtersEachLengthString = ["A", "B", "C", "D", "E", "F", "G"];
 	let filtersEachLengthStringUsed = [];
 	let charListDefault = [];
 	let sumFilterUsed = 0;
