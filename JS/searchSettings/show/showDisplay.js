@@ -101,7 +101,7 @@ function addDropdownClass(filterDisplay) {
 				char_display.item(i).style.display = "table-cell";
 			} else {
 				char_display.item(i).style.display = "block";
-				if (window.matchMedia('(max-device-width: 412px)').matches) {
+				if (window.matchMedia('(max-device-width: 445px)').matches) {
 					char_display.item(i).style.width = "91px";
 				}
 			}

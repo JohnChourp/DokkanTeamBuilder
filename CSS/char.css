@@ -99,7 +99,7 @@
 }
 
 /*Samsung Galaxy A51/A71 dimensions */
-@media only screen and (max-width: 412px) {
+@media only screen and (max-width: 445px) {
     .char {
         width: 99px;
         height: 100px;
