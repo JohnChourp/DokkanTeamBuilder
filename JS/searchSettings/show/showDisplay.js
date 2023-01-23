@@ -37,8 +37,10 @@ function addDropdownClass(filterDisplay) {
 	let dataCharDefense = 'data-char-defense';
 	let dataCharCost = 'data-char-cost';
 	let dataCharMaxLevel = 'data-char-max-level';
-	let dataCharSuperAtkLevel = 'data-char-super-atk-level';
 	let dataCharRelease = 'data-char-release';
+	let dataCharRecruit = 'data-char-recruit';
+	let dataCharAwaken = 'data-char-awaken';
+	let dataCharSuperAtkLevel = 'data-char-super-atk-level';
 	let dataCharSuperAtkType = 'data-char-super-atk-type';
 	let dataCharLinks = 'data-char-links';
 	let dataCharCategories = 'data-char-categories';
@@ -52,6 +54,8 @@ function addDropdownClass(filterDisplay) {
 	let dataCharDefenseItems = document.querySelectorAll('[' + dataCharDefense + ']');
 	let dataCharCostItems = document.querySelectorAll('[' + dataCharCost + ']');
 	let dataCharMaxLevelItems = document.querySelectorAll('[' + dataCharMaxLevel + ']');
+	let dataCharRecruitItems = document.querySelectorAll('[' + dataCharRecruit + ']');
+	let dataCharAwakenItems = document.querySelectorAll('[' + dataCharAwaken + ']');
 	let dataCharSuperAtkLevelItems = document.querySelectorAll('[' + dataCharSuperAtkLevel + ']');
 	let dataCharReleaseItems = document.querySelectorAll('[' + dataCharRelease + ']');
 	let dataCharSuperAtkTypeItems = document.querySelectorAll('[' + dataCharSuperAtkType + ']');
@@ -87,7 +91,7 @@ function addDropdownClass(filterDisplay) {
 		listCategoriesFormattedString[i] = listCategories[i].join("<br/>");
 	}
 
-	if (((filterDisplay > -1) && (filterDisplay < 8)) || (filterDisplay == 9)) {
+	if (((filterDisplay > -1) && (filterDisplay < 8)) || ((filterDisplay > 9) && filterDisplay < 12)) {
 		for (let i = 0; i < char_display.length; i++) {
 			char_display.item(i).style.display = "table-cell";
 		}
@@ -101,7 +105,7 @@ function addDropdownClass(filterDisplay) {
 			}
 		}
 	}
-	if (filterDisplay > 9) {
+	if (filterDisplay > 11) {
 		for (let i = 0; i < char_display.length; i++) {
 			char_display.item(i).style.display = "block";
 		}
@@ -160,26 +164,38 @@ function addDropdownClass(filterDisplay) {
 			char_display.item(i).innerHTML = listReleaseFormattedString[i];
 		}
 	}
-	//Super ATK Level
+	//Recruit
 	if (filterDisplay == 9) {
+		for (let i = 0; i < char_display.length; i++) {
+			char_display.item(i).innerHTML = dataCharRecruitItems[i].getAttribute(dataCharRecruit);
+		}
+	}
+	//Awaken
+	if (filterDisplay == 10) {
+		for (let i = 0; i < char_display.length; i++) {
+			char_display.item(i).innerHTML = dataCharAwakenItems[i].getAttribute(dataCharAwaken);
+		}
+	}
+	//Super ATK Level
+	if (filterDisplay == 11) {
 		for (let i = 0; i < char_display.length; i++) {
 			char_display.item(i).innerHTML = dataCharSuperAtkLevelItems[i].getAttribute(dataCharSuperAtkLevel);
 		}
 	}
 	//Super ATK Type
-	if (filterDisplay == 10) {
+	if (filterDisplay == 12) {
 		for (let i = 0; i < char_display.length; i++) {
 			char_display.item(i).innerHTML = listSuperAtkTypeFormattedString[i];
 		}
 	}
 	//Links
-	if (filterDisplay == 11) {
+	if (filterDisplay == 13) {
 		for (let i = 0; i < char_display.length; i++) {
 			char_display.item(i).innerHTML = listLinksFormattedString[i];
 		}
 	}
 	//Categories
-	if (filterDisplay == 12) {
+	if (filterDisplay == 14) {
 		for (let i = 0; i < char_display.length; i++) {
 			char_display.item(i).innerHTML = listCategoriesFormattedString[i];
 		}
