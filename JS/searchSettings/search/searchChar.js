@@ -69,7 +69,7 @@ function searchChar() {
 				}
 			}
 
-			let dataCharTitle = 'data-char-title',dataCharName = 'data-char-name',dataCharType = 'data-char-type', dataCharRarity = 'data-char-rarity', dataCharClass = 'data-char-class',
+			let dataCharTitle = 'data-char-title', dataCharName = 'data-char-name', dataCharType = 'data-char-type', dataCharRarity = 'data-char-rarity', dataCharClass = 'data-char-class',
 				dataCharEza = 'data-char-eza', dataCharAwaken = 'data-char-awaken', dataCharSuperAtkType = 'data-char-super-atk-type',
 				dataCharRecruit = 'data-char-recruit';
 			let dataChars = [dataCharType, dataCharRarity, dataCharClass,

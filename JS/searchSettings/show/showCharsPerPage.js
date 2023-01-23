@@ -1,6 +1,6 @@
 function charsPerPageInput(charsPerPageNum) {
 	localStorage.setItem("charsPerPageNumItem", charsPerPageNum);
-	
+
 	let charsPerPageIdTypeBox = document.getElementById("characters-per-input-page-id");
 	charsPerPageIdTypeBox.addEventListener("keypress", function (event) {
 		if (event.key === "Enter") {

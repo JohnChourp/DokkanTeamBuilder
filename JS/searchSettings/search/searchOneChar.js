@@ -5,17 +5,21 @@ function removeDuplicates(arr) {
 
 function searchOneCharOptions() {
 	document.getElementsByClassName("search-one-char-dropdown-options").item(0).classList.toggle("showOneCharName");
-
+	if (document.getElementsByClassName("search-one-char-dropdown-options").item(0).classList.contains("showOneCharName")) {
+		document.getElementById("search-one-char-menu-id").style.display = "block";
+	} else {
+		document.getElementById("search-one-char-menu-id").style.display = "none";
+	}
 }
 
 function addAllCharNames() {
 	document.addEventListener('click', function (event) {
-		if (!event.target.matches('#search-one-char-selected-dropdown')) {
-			var dropdowns = document.getElementsByClassName("search-one-char-dropdown-options");
+		if (!event.target.matches('#search-one-char-selected-dropdown') && !event.target.matches('#search-one-char-menu-id')) {
+			let dropdowns = document.getElementsByClassName("search-one-char-dropdown-options");
 			for (let i = 0; i < dropdowns.length; i++) {
-				var openDropdown = dropdowns[i];
-				if (openDropdown.classList.contains('showOneCharName')) {
-					openDropdown.classList.remove('showOneCharName');
+				if (dropdowns[i].classList.contains('showOneCharName')) {
+					dropdowns[i].classList.remove('showOneCharName');
+					document.getElementById("search-one-char-menu-id").style.display = "none";
 				}
 			}
 		}
@@ -136,4 +140,26 @@ function addSearchOneCharDropdownClass(charNamePos) {
 
 	createSearchOneCharPagination(localStorage.getItem("charsPerPageNumItem"));
 	addDropdownClass(localStorage.getItem("filterDisplay"));
+}
+
+function myFunction() {
+	// Declare variables
+	let input = document.getElementById("search-one-char-menu-id");
+	let filter = input.value.toLowerCase();
+	ui = document.getElementsByClassName("search-one-char-dropdown-options-value");
+
+	// Loop through all list items, and hide those who don't match the search query
+	for (i = 0; i < ui.length; i++) {
+		if (input.value.length > 0) {
+			console.log(filter);
+			console.log(ui.item(i).innerHTML.toLowerCase());
+			if (ui.item(i).innerHTML.toLowerCase().indexOf(filter) >= 0) {
+				ui.item(i).style.display = "block";
+			} else {
+				ui.item(i).style.display = "none";
+			}
+		} else {
+			ui.item(i).style.display = "block";
+		}
+	}
 }

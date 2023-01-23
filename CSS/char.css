@@ -1,7 +1,7 @@
 #char-container-id {
     display: flex;
     flex-wrap: wrap;
-    background-color:#3b3a3a;
+    background-color: #3b3a3a;
 }
 
 .char {
@@ -10,10 +10,11 @@
 }
 
 .char-div-class {
-    margin-left:10px;
+    margin-left: 10px;
     width: 208px;
     height: 150px;
 }
+
 .char-div-class:hover {
     background-color: #2e2d2d;
 }
@@ -85,7 +86,7 @@
 
 .char_display {
     position: relative;
-    left:10px;
+    left: 10px;
     width: 200px;
     height: 40px;
     word-wrap: break-word;
