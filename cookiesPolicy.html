@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="content-type" content-type="text/html' charset=utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+	<!--Google Analytics-->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-S015YVBQ1D"></script>
+	<script async src="JS/googleAnalytics.js" type="text/javascript"></script>
+	<link href="CSS/cookiesBoxPrompt.css" rel="stylesheet" type="text/css" />
+	<script src="JS/cookiesBoxPrompt.js" type="text/javascript"></script>
+	<!--Google Analytics-->
+
+	<!--CSS Files-->
+	<link href="CSS/body.css" rel="stylesheet" type="text/css" />
+	<link href="CSS/cookiesPolicy.css" rel="stylesheet" type="text/css" />
+
+	<title>Dokkan Link Tool</title>
+</head>
+
+<body onload="cookiesBoxPrompt();">
+	<div id="cookies-prompt" style="display:none;">
+		<div id="cookies-prompt-title-id">We value your privacy</div>
+		<div id="cookies-prompt-flex-id">
+			<div id="cookies-prompt-text-id">We use cookies to enhance your browsing experience, serve personalized ads
+				or content, and analyze our traffic.<br>By clicking "Accept", you consent to our use of cookies. <a
+					href="cookiesPolicy.html">Cookie
+					Policy</a>
+			</div>
+			<div id="cookies-prompt-btn-id">
+				<button onclick="cookiesBoxPromptAccept();" id="cookies-prompt-accept-id" type="button">Accept</button>
+				<button onclick="cookiesBoxPromptReject();" id="cookies-prompt-reject-id" type="button">Reject</button>
+			</div>
+		</div>
+	</div>
+	<div id="cookiesPolicy">
+		<div class="cookies-questions-class">What are cookies?</div>
+		<div class="cookies-answers-class">Cookies are small text files that are stored in your browser by websites that
+			you visit. They usually
+			contain a website and an identifier. Cookies help improve your experience while browsing on our website, for
+			example by remembering what items you put in your basket.</div>
+
+		<div class="cookies-questions-class">How and why do you use cookies?</div>
+		<div class="cookies-answers-class">We use cookies to improve your browser experience, by remembering that you
+			have logged in. If you fill out a contact form we use cookies to remember your details for a next
+			time.<br><br><i>Third-party cookies</i><br><br>We use third-party cookies to track how you use our website,
+			for example, what pages you visit and how long you spend on them. This helps us get a better understanding
+			of how people are using our site and how they access it, which helps us create better campaigns.
+		</div>
+
+		<div class="cookies-questions-class">How to disable cookies</div>
+		<div class="cookies-answers-class">You can prevent cookies from being placed in your browser settings, though
+			this may affect the functionality of websites that you visit. Cookies on our website are not essential, but
+			may improve your experience.<br><br>
+
+			If you want to delete cookies in your browser, check this guide: <a href="cookiesDelete.html">How do I
+				delete cookies?</a>
+		</div>
+	</div>
+</body>
+
+</html>

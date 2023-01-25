@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="content-type" content-type="text/html' charset=utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+	<!--Google Analytics-->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-S015YVBQ1D"></script>
+	<script async src="JS/googleAnalytics.js" type="text/javascript"></script>
+	<link href="CSS/cookiesBoxPrompt.css" rel="stylesheet" type="text/css" />
+	<script src="JS/cookiesBoxPrompt.js" type="text/javascript"></script>
+	<!--Google Analytics-->
+
+	<!--CSS Files-->
+	<link href="CSS/body.css" rel="stylesheet" type="text/css" />
+	<link href="CSS/cookiesDelete.css" rel="stylesheet" type="text/css" />
+
+	<title>Dokkan Link Tool</title>
+</head>
+
+<body onload="cookiesBoxPrompt();">
+	<div id="cookies-prompt" style="display:none;">
+		<div id="cookies-prompt-title-id">We value your privacy</div>
+		<div id="cookies-prompt-flex-id">
+			<div id="cookies-prompt-text-id">We use cookies to enhance your browsing experience, serve personalized ads
+				or content, and analyze our traffic.<br>By clicking "Accept", you consent to our use of cookies. <a
+					href="cookiesPolicy.html">Cookie
+					Policy</a>
+			</div>
+			<div id="cookies-prompt-btn-id">
+				<button onclick="cookiesBoxPromptAccept();" id="cookies-prompt-accept-id" type="button">Accept</button>
+				<button onclick="cookiesBoxPromptReject();" id="cookies-prompt-reject-id" type="button">Reject</button>
+			</div>
+		</div>
+	</div>
+	<div id="cookiesDelete">
+		<div class="cookies-delete-class">How do I delete cookies?</div>
+		<div class="cookies-delete-info-class">Cookies are small files that websites put on your computer to store
+			information about you and your preferences.<br><br>To learn how to delete cookies, please select your
+			browser from the list:</div>
+		<div class="cookies-delete-browsers-class"><a
+				href="https://support.mozilla.org/en-US/kb/clear-cookies-and-site-data-firefox?redirectslug=delete-cookies-remove-info-websites-stored&redirectlocale=en-US" target="_blank" rel="noopener">Mozilla
+				Firefox</a></div>
+		<div class="cookies-delete-browsers-class"><a
+				href="https://support.mozilla.org/en-US/kb/clear-cookies-and-site-data-firefox?redirectslug=delete-cookies-remove-info-websites-stored&redirectlocale=en-US" target="_blank" rel="noopener">Google
+				Chrome</a></div>
+		<div class="cookies-delete-browsers-class"><a
+				href="https://support.apple.com/guide/safari/manage-cookies-sfri11471/mac">Safari</a></div>
+		<div class="cookies-delete-browsers-class"><a
+				href="https://support.microsoft.com/en-us/microsoft-edge/delete-cookies-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09#:~:text=Select%20Settings%20%3E%20Privacy%2C%20search%2C,and%20then%20select%20Clear%20now." target="_blank" rel="noopener">Microsoft
+				Edge</a></div>
+	</div>
+</body>
+
+</html>

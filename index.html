@@ -2,25 +2,21 @@
 <html lang="en">
 
 <head>
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-S015YVBQ1D"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() { dataLayer.push(arguments); }
-		gtag('js', new Date());
-
-		gtag('config', 'G-S015YVBQ1D');
-	</script>
 	<meta http-equiv="content-type" content-type="text/html' charset=utf-8" />
 	<meta name="viewport" content="width=device-width,initial-scale=1" />
 
+	<!--Google Analytics-->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-S015YVBQ1D"></script>
+	<script async src="JS/googleAnalytics.js" type="text/javascript"></script>
+	<link href="CSS/cookiesBoxPrompt.css" rel="stylesheet" type="text/css" />
+	<script src="JS/cookiesBoxPrompt.js" type="text/javascript"></script>
+	<!--Google Analytics-->
 
 	<!--CSS Files-->
 	<link href="CSS/body.css" rel="stylesheet" type="text/css" />
 	<link href="CSS/char.css" rel="stylesheet" type="text/css" />
 	<link href="CSS/pagination.css" rel="stylesheet" type="text/css" />
 	<link href="CSS/scrollbar.css" rel="stylesheet" type="text/css" />
-
 
 	<link href="CSS/filters/filterAwakenedInfo.css" rel="stylesheet" type="text/css" />
 	<link href="CSS/filters/filterClass.css" rel="stylesheet" type="text/css" />
@@ -69,20 +65,26 @@
 	<script src="JS/searchSettings/show/showDisplay.js" type="text/javascript"></script>
 
 	<script src="JS/searchSettings/searchSettings.js" type="text/javascript"></script>
-
-	<script src="JS/test/deviceInfo.js" type="text/javascript"></script>
-	<script src="JS/test/mostLetters.js" type="text/javascript"></script>
-	
 	<!--Javascript Files-->
-
-
 	<title>Dokkan Link Tool</title>
 </head>
 
 <body
-	onload="addChar(); saveCharList(); charsPerPageInput(32); searchTitlesNo(); searchChar(); applyFilters(); closeNavWhenClickedOutside(); addAllCharNames(); deviceWidthAndHeight(); windowWidthAndHeight();">
-	<div id="test-device-id"></div>
-	<div id="test-window-id"></div>
+	onload="cookiesBoxPrompt(); addChar(); saveCharList(); charsPerPageInput(32); searchTitlesNo(); searchChar(); applyFilters(); closeNavWhenClickedOutside(); addAllCharNames();">
+	<div id="cookies-prompt" style="display:none;">
+		<div id="cookies-prompt-title-id">We value your privacy</div>
+		<div id="cookies-prompt-flex-id">
+			<div id="cookies-prompt-text-id">We use cookies to enhance your browsing experience, serve personalized ads
+				or content, and analyze our traffic.<br>By clicking "Accept", you consent to our use of cookies. <a
+					href="cookiesPolicy.html">Cookie
+					Policy</a>
+			</div>
+			<div id="cookies-prompt-btn-id">
+				<button onclick="cookiesBoxPromptAccept();" id="cookies-prompt-accept-id" type="button">Accept</button>
+				<button onclick="cookiesBoxPromptReject();" id="cookies-prompt-reject-id" type="button">Reject</button>
+			</div>
+		</div>
+	</div>
 	<div id="left-sidenav-id">
 		<div id="left-sidenav-filters-id">
 			<p class="filter-options-text-class">Sort Direction</p>
@@ -5298,23 +5300,611 @@
 				data-char-links="All in the Family,The Saiyan Lineage,Kamehameha,Shocking Speed,Over in a Flash,Shattering the Limit"
 				data-char-categories="Pure Saiyans,Goku's Family,Kamehameha,Full Power,Final Trump Card,Bond of Parent and Child,Bond of Friendship,Turtle School,All-Out Struggle,Accelerated Battle">
 			</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+			<div class="char" data-char-name="Majin Vegeta" data-char-title="Dark Desires Awoken" data-char-type="agl"
+				data-char-rarity="ur" data-char-class="extreme" data-char-eza="noeza" data-char-id="1010150"
+				data-char-hp="13,233" data-char-attack="13,212" data-char-defense="9,479" data-char-cost="34"
+				data-char-max-level="100" data-char-super-atk-level="10" data-char-recruit="summonable"
+				data-char-awaken="pre-dokkan-awakened" data-char-release="Jun 12, 2017"
+				data-char-super-atk-type="Super Attack (12 Ki),ki-blast"
+				data-char-links="Super Saiyan,Saiyan Warrior Race,Saiyan Pride,Royal Lineage,Over in a Flash"
+				data-char-categories="Majin Buu Saga,Pure Saiyans,Vegeta's Family,Super Saiyan 2,Power Beyond Super Saiyan,Corroded Body and Mind,Worthy Rivals,Bond of Parent and Child,Gifted Warriors,Resurrected Warriors">
+			</div>
+			<div class="char" data-char-name="Majin Vegeta" data-char-title="The Final Clash" data-char-type="agl"
+				data-char-rarity="ur" data-char-class="extreme" data-char-eza="noeza" data-char-id="1009660"
+				data-char-hp="14,806" data-char-attack="14,153" data-char-defense="10,169" data-char-cost="50"
+				data-char-max-level="120" data-char-super-atk-level="10" data-char-recruit="summonable"
+				data-char-awaken="pre-dokkan-awakened" data-char-release="Jun 12, 2017"
+				data-char-super-atk-type="Super Attack (12 Ki),ki-blast"
+				data-char-links="Super Saiyan,Saiyan Warrior Race,Saiyan Pride,Royal Lineage,Over in a Flash,Shattering the Limit"
+				data-char-categories="Majin Buu Saga,Pure Saiyans,Vegeta's Family,Super Saiyan 2,Power Beyond Super Saiyan,Corroded Body and Mind,Worthy Rivals,Bond of Parent and Child,Gifted Warriors,Resurrected Warriors">
+			</div>
+			<div class="char" data-char-name="Majin Vegeta" data-char-title="Beyond the Ferocious Flash"
+				data-char-type="agl" data-char-rarity="lr" data-char-class="extreme" data-char-eza="eza"
+				data-char-id="1010160" data-char-hp="20,650" data-char-attack="20,870" data-char-defense="15,163"
+				data-char-cost="77" data-char-max-level="150" data-char-super-atk-level="25"
+				data-char-recruit="summonable" data-char-awaken="dokkan-awakened"
+				data-char-release="Jun 12, 2017.Jan 24, 2022"
+				data-char-super-atk-type="Super Attack (12 Ki),ki-blast,Super Attack (18 Ki),other"
+				data-char-links="Super Saiyan,Saiyan Warrior Race,Saiyan Pride,Royal Lineage,Over in a Flash,Shattering the Limit"
+				data-char-categories="Majin Buu Saga,Pure Saiyans,Vegeta's Family,Super Saiyan 2,Power Beyond Super Saiyan,Corroded Body and Mind,Worthy Rivals,Bond of Parent and Child,Gifted Warriors,Resurrected Warriors">
+			</div>
+			<div class="char" data-char-name="Super Saiyan Gotenks" data-char-title="Faith in Super Fusion"
+				data-char-type="phy" data-char-rarity="ur" data-char-class="super" data-char-eza="noeza"
+				data-char-id="1004720" data-char-hp="13,896" data-char-attack="12,796" data-char-defense="9,186"
+				data-char-cost="26" data-char-max-level="100" data-char-super-atk-level="10"
+				data-char-recruit="summonable" data-char-awaken="pre-dokkan-awakened" data-char-release="Jul 08, 2016"
+				data-char-super-atk-type="Super Attack (12 Ki),ki-blast"
+				data-char-links="Golden Warrior,Super Saiyan,Prepared for Battle,The Innocents,Fused Fighter,The Saiyan Lineage"
+				data-char-categories="Majin Buu Saga,Hybrid Saiyans,Youth,Super Saiyans,Fusion,Fused Fighters,Rapid Growth,Time Limit,Gifted Warriors,Connected Hope,Entrusted Will,Heavenly Events,Special Pose">
+			</div>
+			<div class="char" data-char-name="Super Saiyan Gotenks" data-char-title="Devastating Fusion Power"
+				data-char-type="phy" data-char-rarity="ur" data-char-class="super" data-char-eza="eza"
+				data-char-id="1009860" data-char-hp="17,184" data-char-attack="15,695" data-char-defense="10,822"
+				data-char-cost="42" data-char-max-level="140" data-char-super-atk-level="15"
+				data-char-recruit="summonable" data-char-awaken="dokkan-awakened"
+				data-char-release="Jul 07, 2017.Feb 10, 2020" data-char-super-atk-type="Super Attack (12 Ki),ki-blast"
+				data-char-links="Golden Warrior,Super Saiyan,Prepared for Battle,The Innocents,Fused Fighter,The Saiyan Lineage,Fierce Battle"
+				data-char-categories="Majin Buu Saga,Hybrid Saiyans,Youth,Super Saiyans,Fusion,Fused Fighters,Rapid Growth,Time Limit,Gifted Warriors,Connected Hope,Entrusted Will,Heavenly Events,Special Pose">
+			</div>
+			<div class="char" data-char-name="Goku (Youth)" data-char-title="Into the Big Wide World"
+				data-char-type="phy" data-char-rarity="ssr" data-char-class="super" data-char-eza="noeza"
+				data-char-id="1005460" data-char-hp="6,014" data-char-attack="5,972" data-char-defense="3,566"
+				data-char-cost="11" data-char-max-level="80" data-char-super-atk-level="10"
+				data-char-recruit="summonable" data-char-awaken="pre-dokkan-awakened" data-char-release="Jul 06, 2016"
+				data-char-super-atk-type="Super Attack (12 Ki),unarmed"
+				data-char-links="All in the Family,The Innocents,Turtle School,Guidance of the Dragon Balls,The Incredible Adventure"
+				data-char-categories="DB Saga,Pure Saiyans,Goku's Family,Youth,Bond of Parent and Child,Bond of Friendship,Bond of Master and Disciple,Turtle School,Low-Class Warrior,Dragon Ball Seekers">
+			</div>
+			<div class="char" data-char-name="Goku (Youth)" data-char-title="Braveness and Vigor in Action"
+				data-char-type="phy" data-char-rarity="ur" data-char-class="super" data-char-eza="noeza"
+				data-char-id="1009870" data-char-hp="9,898" data-char-attack="9,836" data-char-defense="6,686"
+				data-char-cost="17" data-char-max-level="100" data-char-super-atk-level="10"
+				data-char-recruit="summonable" data-char-awaken="dokkan-awakened" data-char-release="Jul 07, 2017"
+				data-char-super-atk-type="Super Attack (12 Ki),unarmed"
+				data-char-links="All in the Family,The Innocents,Turtle School,Guidance of the Dragon Balls,The Incredible Adventure"
+				data-char-categories="DB Saga,Pure Saiyans,Goku's Family,Youth,Bond of Parent and Child,Bond of Friendship,Bond of Master and Disciple,Turtle School,Low-Class Warrior,Dragon Ball Seekers">
+			</div>
+			<div class="char" data-char-name="Super Saiyan Goku" data-char-title="Limitless Strength"
+				data-char-type="teq" data-char-rarity="ur" data-char-class="super" data-char-eza="noeza"
+				data-char-id="1005500" data-char-hp="9,599" data-char-attack="9,703" data-char-defense="6,293"
+				data-char-cost="16" data-char-max-level="100" data-char-super-atk-level="10"
+				data-char-recruit="free-to-play" data-char-awaken="pre-dokkan-awakened" data-char-release="Jul 06, 2016"
+				data-char-super-atk-type="Super Attack (12 Ki),ki-blast"
+				data-char-links="Golden Warrior,Saiyan Warrior Race,Super Saiyan,Kamehameha,Z Fighters"
+				data-char-categories="Pure Saiyans,Goku's Family,Kamehameha,Bond of Parent and Child,Bond of Friendship,Turtle School,Accelerated Battle">
+			</div>
+			<div class="char" data-char-name="Super Saiyan 2 Goku" data-char-title="Surpassing the Limits"
+				data-char-type="teq" data-char-rarity="ur" data-char-class="super" data-char-eza="noeza"
+				data-char-id="1009880" data-char-hp="10,410" data-char-attack="10,289" data-char-defense="7,113"
+				data-char-cost="29" data-char-max-level="100" data-char-super-atk-level="10"
+				data-char-recruit="free-to-play" data-char-awaken="dokkan-awakened" data-char-release="Jul 07, 2017"
+				data-char-super-atk-type="Super Attack (12 Ki),ki-blast"
+				data-char-links="Golden Warrior,Saiyan Warrior Race,Super Saiyan,Kamehameha,Z Fighters,Family Ties,Shattering the Limit"
+				data-char-categories="Pure Saiyans,Goku's Family,Super Saiyan 2,Power Beyond Super Saiyan,Kamehameha,Mastered Evolution,Bond of Parent and Child,Bond of Friendship,Turtle School,Accelerated Battle">
+			</div>
+			<div class="char" data-char-name="Super Baby 2" data-char-title="Revenge Exacted" data-char-type="int"
+				data-char-rarity="ur" data-char-class="extreme" data-char-eza="noeza" data-char-id="1006030"
+				data-char-hp="13,583" data-char-attack="12,976" data-char-defense="9,412" data-char-cost="28"
+				data-char-max-level="100" data-char-super-atk-level="10" data-char-recruit="summonable"
+				data-char-awaken="pre-dokkan-awakened" data-char-release="Oct 11, 2016"
+				data-char-super-atk-type="Super Attack (12 Ki),ki-blast"
+				data-char-links="Thirst for Conquest,Metamorphosis,Coward,GT,Hatred of Saiyans,Big Bad Bosses"
+				data-char-categories="Artificial Life Forms,Transformation Boost,Corroded Body and Mind,GT Bosses,Space-Traveling Warriors,Revenge,Target: Goku,Terrifying Conquerors,Inhuman Deeds,Battle of Fate">
+			</div>
+			<div class="char" data-char-name="Super Baby 2 (Giant Ape)" data-char-title="Rampaging Vengeance"
+				data-char-type="int" data-char-rarity="ur" data-char-class="extreme" data-char-eza="noeza"
+				data-char-id="1006520" data-char-hp="13,947" data-char-attack="13,232" data-char-defense="9,584"
+				data-char-cost="42" data-char-max-level="120" data-char-super-atk-level="10"
+				data-char-recruit="summonable" data-char-awaken="dokkan-awakened" data-char-release="Jul 07, 2017"
+				data-char-super-atk-type="Super Attack (12 Ki),ki-blast"
+				data-char-links="Thirst for Conquest,Metamorphosis,Coward,GT,Hatred of Saiyans,Big Bad Bosses,Fierce Battle"
+				data-char-categories="Artificial Life Forms,Transformation Boost,Corroded Body and Mind,GT Bosses,Space-Traveling Warriors,Revenge,Target: Goku,Terrifying Conquerors,Inhuman Deeds,Battle of Fate">
+			</div>
+			<div class="char" data-char-name="Super Saiyan 3 Goku (GT)" data-char-title="Ultimate Aspiration"
+				data-char-type="str" data-char-rarity="ur" data-char-class="super" data-char-eza="noeza"
+				data-char-id="1006750" data-char-hp="14,185" data-char-attack="13,204" data-char-defense="9,098"
+				data-char-cost="27" data-char-max-level="100" data-char-super-atk-level="10"
+				data-char-recruit="summonable" data-char-awaken="pre-dokkan-awakened" data-char-release="Oct 11, 2016"
+				data-char-super-atk-type="Super Attack (12 Ki),ki-blast"
+				data-char-links="Golden Warrior,Super Saiyan,Kamehameha,Limit-Breaking Form,Over in a Flash,GT"
+				data-char-categories="Pure Saiyans,Goku's Family,Super Saiyan 3,Power Beyond Super Saiyan,Kamehameha,Bond of Parent and Child,Bond of Friendship,GT Heroes,Turtle School,Revenge,Accelerated Battle">
+			</div>
+			<div class="char" data-char-name="Super Saiyan 3 Goku (GT) (Golden Giant Ape)"
+				data-char-title="Inklings of Ultimate Power" data-char-type="str" data-char-rarity="ur"
+				data-char-class="super" data-char-eza="noeza" data-char-id="1008290" data-char-hp="14,320"
+				data-char-attack="13,408" data-char-defense="9,277" data-char-cost="42" data-char-max-level="120"
+				data-char-super-atk-level="10" data-char-recruit="summonable" data-char-awaken="dokkan-awakened"
+				data-char-release="Jul 07, 2017" data-char-super-atk-type="Super Attack (12 Ki),ki-blast"
+				data-char-links="Super Saiyan,Kamehameha,Limit-Breaking Form,Over in a Flash,GT,Saiyan Roar,Fierce Battle"
+				data-char-categories="Pure Saiyans,Goku's Family,Super Saiyan 3,Power Beyond Super Saiyan,Giant Form,Kamehameha,Giant Ape Power,Bond of Parent and Child,Bond of Friendship,GT Heroes,Turtle School,Revenge,Accelerated Battle">
+			</div>
+			<div class="char" data-char-name="Super Saiyan 4 Goku" data-char-title="Scarlet Hero" data-char-type="str"
+				data-char-rarity="ur" data-char-class="super" data-char-eza="noeza" data-char-id="1009420"
+				data-char-hp="14,300" data-char-attack="14,600" data-char-defense="8,075" data-char-cost="40"
+				data-char-max-level="100" data-char-super-atk-level="10" data-char-recruit="summonable"
+				data-char-awaken="pre-dokkan-awakened" data-char-release="Jul 07, 2017"
+				data-char-super-atk-type="Super Attack (12 Ki),ki-blast"
+				data-char-links="Super Saiyan,Saiyan Roar,Prepared for Battle,Shocking Speed,Kamehameha,GT"
+				data-char-categories="Pure Saiyans,Goku's Family,Power Beyond Super Saiyan,Kamehameha,Giant Ape Power,Miraculous Awakening,Bond of Parent and Child,Bond of Friendship,GT Heroes,Turtle School,Accelerated Battle,Battle of Fate">
+			</div>
+			<div class="char" data-char-name="Super Saiyan 4 Goku" data-char-title="Ultimate Super Saiyan"
+				data-char-type="str" data-char-rarity="ur" data-char-class="super" data-char-eza="eza"
+				data-char-id="1009430" data-char-hp="19,325" data-char-attack="19,880" data-char-defense="10,306"
+				data-char-cost="58" data-char-max-level="140" data-char-super-atk-level="15"
+				data-char-recruit="summonable" data-char-awaken="dokkan-awakened"
+				data-char-release="Jul 07, 2017.May 13, 2021" data-char-super-atk-type="Super Attack (12 Ki),ki-blast"
+				data-char-links="Super Saiyan,Saiyan Roar,Prepared for Battle,Shocking Speed,Kamehameha,GT,Fierce Battle"
+				data-char-categories="Pure Saiyans,Goku's Family,Power Beyond Super Saiyan,Kamehameha,Giant Ape Power,Miraculous Awakening,Bond of Parent and Child,Bond of Friendship,GT Heroes,Turtle School,Accelerated Battle,Battle of Fate">
+			</div>
+			<div class="char" data-char-name="Super Saiyan 4 Vegeta" data-char-title="Crimson Flare"
+				data-char-type="agl" data-char-rarity="ur" data-char-class="super" data-char-eza="noeza"
+				data-char-id="1009820" data-char-hp="13,520" data-char-attack="13,744" data-char-defense="9,635"
+				data-char-cost="40" data-char-max-level="100" data-char-super-atk-level="10"
+				data-char-recruit="summonable" data-char-awaken="pre-dokkan-awakened" data-char-release="Jul 07, 2017"
+				data-char-super-atk-type="Super Attack (12 Ki),ki-blast"
+				data-char-links="Super Saiyan,Saiyan Roar,Prepared for Battle,Shocking Speed,Saiyan Pride,GT"
+				data-char-categories="Shadow Dragon Saga,Pure Saiyans,Vegeta's Family,Power Beyond Super Saiyan,Giant Ape Power,Miraculous Awakening,Worthy Rivals,Bond of Parent and Child,GT Heroes,Gifted Warriors,Saviors,Battle of Fate">
+			</div>
+			<div class="char" data-char-name="Super Saiyan 4 Vegeta" data-char-title="Unparalleled Super Saiyan"
+				data-char-type="agl" data-char-rarity="ur" data-char-class="super" data-char-eza="eza"
+				data-char-id="1009830" data-char-hp="19,407" data-char-attack="18,320" data-char-defense="12,314"
+				data-char-cost="40" data-char-max-level="140" data-char-super-atk-level="15"
+				data-char-recruit="summonable" data-char-awaken="dokkan-awakened"
+				data-char-release="Jul 07, 2017.May 13, 2021" data-char-super-atk-type="Super Attack (12 Ki),ki-blast"
+				data-char-links="Super Saiyan,Saiyan Roar,Prepared for Battle,Shocking Speed,Saiyan Pride,GT,Fierce Battle"
+				data-char-categories="Shadow Dragon Saga,Pure Saiyans,Vegeta's Family,Power Beyond Super Saiyan,Giant Ape Power,Miraculous Awakening,Worthy Rivals,Bond of Parent and Child,GT Heroes,Gifted Warriors,Saviors,Battle of Fate">
+			</div>
+			<div class="char" data-char-name="Pan (GT)" data-char-title="Furious Girl" data-char-type="phy"
+				data-char-rarity="ur" data-char-class="super" data-char-eza="noeza" data-char-id="1009990"
+				data-char-hp="14,953" data-char-attack="12,452" data-char-defense="9,357" data-char-cost="29"
+				data-char-max-level="100" data-char-super-atk-level="10" data-char-recruit="summonable"
+				data-char-awaken="pre-dokkan-awakened" data-char-release="Jul 07, 2017"
+				data-char-super-atk-type="Super Attack (12 Ki),ki-blast"
+				data-char-links="All in the Family,The Saiyan Lineage,Battlefield Diva,GT,The Innocents,Kamehameha"
+				data-char-categories="Shadow Dragon Saga,Hybrid Saiyans,Goku's Family,Youth,Kamehameha,Bond of Parent and Child,Bond of Friendship,GT Heroes">
+			</div>
+			<div class="char" data-char-name="Pan (GT)" data-char-title="Talent's in the Blood" data-char-type="phy"
+				data-char-rarity="ur" data-char-class="super" data-char-eza="noeza" data-char-id="1010000"
+				data-char-hp="15,279" data-char-attack="12,599" data-char-defense="9,510" data-char-cost="42"
+				data-char-max-level="120" data-char-super-atk-level="10" data-char-recruit="summonable"
+				data-char-awaken="dokkan-awakened" data-char-release="Jul 07, 2017"
+				data-char-super-atk-type="Super Attack (12 Ki),ki-blast"
+				data-char-links="All in the Family,The Saiyan Lineage,Battlefield Diva,GT,The Innocents,Kamehameha,Fierce Battle"
+				data-char-categories="Shadow Dragon Saga,Hybrid Saiyans,Goku's Family,Youth,Kamehameha,Bond of Parent and Child,Bond of Friendship,GT Heroes">
+			</div>
+			<div class="char" data-char-name="Super Saiyan Trunks (GT)" data-char-title="Unshakable Resolution"
+				data-char-type="str" data-char-rarity="ur" data-char-class="super" data-char-eza="noeza"
+				data-char-id="1010010" data-char-hp="13,924" data-char-attack="13,499" data-char-defense="8,863"
+				data-char-cost="29" data-char-max-level="100" data-char-super-atk-level="10"
+				data-char-recruit="summonable" data-char-awaken="pre-dokkan-awakened" data-char-release="Jul 07, 2017"
+				data-char-super-atk-type="Super Attack (12 Ki),ki-blast"
+				data-char-links="Super Saiyan,Royal Lineage,Golden Warrior,Cold Judgment,GT,Prepared for Battle"
+				data-char-categories="Shadow Dragon Saga,Hybrid Saiyans,Vegeta's Family,Super Saiyans,Bond of Parent and Child,Siblings' Bond,Bond of Friendship,GT Heroes,Battle of Wits">
+			</div>
+			<div class="char" data-char-name="Super Saiyan Trunks (GT)" data-char-title="Brains and Brawn Combined"
+				data-char-type="str" data-char-rarity="ur" data-char-class="super" data-char-eza="noeza"
+				data-char-id="1010020" data-char-hp="14,227" data-char-attack="13,669" data-char-defense="8,998"
+				data-char-cost="42" data-char-max-level="120" data-char-super-atk-level="10"
+				data-char-recruit="summonable" data-char-awaken="dokkan-awakened" data-char-release="Jul 07, 2017"
+				data-char-super-atk-type="Super Attack (12 Ki),ki-blast"
+				data-char-links="Super Saiyan,Royal Lineage,Golden Warrior,Cold Judgment,GT,Prepared for Battle,Fierce Battle"
+				data-char-categories="Shadow Dragon Saga,Hybrid Saiyans,Vegeta's Family,Super Saiyans,Bond of Parent and Child,Siblings' Bond,Bond of Friendship,GT Heroes,Battle of Wits">
+			</div>
+			<div class="char" data-char-name="Super Saiyan Gohan (Youth)" data-char-title="Day of Destiny"
+				data-char-type="int" data-char-rarity="ur" data-char-class="super" data-char-eza="noeza"
+				data-char-id="1010050" data-char-hp="13,367" data-char-attack="13,354" data-char-defense="9,035"
+				data-char-cost="34" data-char-max-level="100" data-char-super-atk-level="10"
+				data-char-recruit="summonable" data-char-awaken="pre-dokkan-awakened" data-char-release="Jul 07, 2017"
+				data-char-super-atk-type="Super Attack (12 Ki),ki-blast"
+				data-char-links="Super Saiyan,Saiyan Warrior Race,Golden Warrior,Gaze of Respect,Kamehameha,Prepared for Battle"
+				data-char-categories="Androids/Cell Saga,Hybrid Saiyans,Goku's Family,Youth,Kamehameha,Bond of Parent and Child,Bond of Master and Disciple,Entrusted Will">
+			</div>
+			<div class="char" data-char-name="Super Saiyan 2 Gohan (Youth)" data-char-title="Fatal Resolve"
+				data-char-type="int" data-char-rarity="ur" data-char-class="super" data-char-eza="noeza"
+				data-char-id="1010060" data-char-hp="14,994" data-char-attack="14,365" data-char-defense="9,609"
+				data-char-cost="50" data-char-max-level="120" data-char-super-atk-level="10"
+				data-char-recruit="summonable" data-char-awaken="pre-dokkan-awakened" data-char-release="Jul 07, 2017"
+				data-char-super-atk-type="Super Attack (12 Ki),ki-blast"
+				data-char-links="Super Saiyan,Golden Warrior,Gaze of Respect,Kamehameha,Prepared for Battle,Shocking Speed,Fierce Battle"
+				data-char-categories="Androids/Cell Saga,Hybrid Saiyans,Goku's Family,Youth,Super Saiyan 2,Power Beyond Super Saiyan,Kamehameha,Full Power,Miraculous Awakening,Bond of Parent and Child,Bond of Master and Disciple,Exploding Rage,Entrusted Will,Battle of Fate">
+			</div>
+			<div class="char" data-char-name="Super Saiyan 2 Gohan (Youth)" data-char-title="Full-Tilt Kamehameha"
+				data-char-type="int" data-char-rarity="lr" data-char-class="super" data-char-eza="eza"
+				data-char-id="1010070" data-char-hp="20,200" data-char-attack="21,975" data-char-defense="13,806"
+				data-char-cost="77" data-char-max-level="150" data-char-super-atk-level="25"
+				data-char-recruit="summonable" data-char-awaken="dokkan-awakened"
+				data-char-release="Jul 07, 2017.Oct 28, 2021"
+				data-char-super-atk-type="Super Attack (12 Ki),ki-blast,Super Attack (18 Ki),ki-blast"
+				data-char-links="Super Saiyan,Golden Warrior,Gaze of Respect,Kamehameha,Prepared for Battle,Shocking Speed,Fierce Battle,Legendary Power"
+				data-char-categories="Androids/Cell Saga,Hybrid Saiyans,Goku's Family,Youth,Super Saiyan 2,Power Beyond Super Saiyan,Kamehameha,Full Power,Miraculous Awakening,Bond of Parent and Child,Bond of Master and Disciple,Exploding Rage,Entrusted Will,All-Out Struggle,Battle of Fate">
+			</div>
+			<div class="char" data-char-name="Vegeta (GT)" data-char-title="Unwavering Spirit" data-char-type="agl"
+				data-char-rarity="ssr" data-char-class="super" data-char-eza="noeza" data-char-id="1008020"
+				data-char-hp="6,548" data-char-attack="6,041" data-char-defense="3,589" data-char-cost="12"
+				data-char-max-level="80" data-char-super-atk-level="10" data-char-recruit="free-to-play"
+				data-char-awaken="pre-dokkan-awakened" data-char-release="Oct 11, 2016"
+				data-char-super-atk-type="Super Attack (12 Ki),ki-blast"
+				data-char-links="Saiyan Warrior Race,Prodigies,The Saiyan Lineage,Royal Lineage,GT"
+				data-char-categories="">
+			</div>
+			<div class="char" data-char-name="Baby Vegeta" data-char-title="Dreadful Fusion" data-char-type="agl"
+				data-char-rarity="ur" data-char-class="extreme" data-char-eza="noeza" data-char-id="1006010"
+				data-char-hp="10,334" data-char-attack="10,079" data-char-defense="7,353" data-char-cost="18"
+				data-char-max-level="100" data-char-super-atk-level="10" data-char-recruit="free-to-play"
+				data-char-awaken="pre-dokkan-awakened" data-char-release="Oct 11, 2016"
+				data-char-super-atk-type="Super Attack (12 Ki),ki-blast"
+				data-char-links="Thirst for Conquest,Metamorphosis,Coward,GT,Hatred of Saiyans,The Saiyan Lineage"
+				data-char-categories="Artificial Life Forms,Transformation Boost,Corroded Body and Mind,GT Bosses,Space-Traveling Warriors,Revenge,Target: Goku,Terrifying Conquerors,Inhuman Deeds">
+			</div>
+			<div class="char" data-char-name="Super Baby 1" data-char-title="Corroding Menace" data-char-type="agl"
+				data-char-rarity="ur" data-char-class="extreme" data-char-eza="noeza" data-char-id="1006020"
+				data-char-hp="11,075" data-char-attack="10,614" data-char-defense="7,690" data-char-cost="30"
+				data-char-max-level="120" data-char-super-atk-level="10" data-char-recruit="free-to-play"
+				data-char-awaken="dokkan-awakened" data-char-release="Jul 12, 2017"
+				data-char-super-atk-type="Super Attack (12 Ki),ki-blast"
+				data-char-links="Thirst for Conquest,Metamorphosis,Coward,GT,Hatred of Saiyans,Nightmare,Shattering the Limit"
+				data-char-categories="Artificial Life Forms,Transformation Boost,Corroded Body and Mind,GT Bosses,Space-Traveling Warriors,Revenge,Target: Goku,Terrifying Conquerors,Inhuman Deeds">
+			</div>
+			<div class="char" data-char-name="Gohan Possessed (GT)" data-char-title="Evil Transferred"
+				data-char-type="teq" data-char-rarity="ssr" data-char-class="extreme" data-char-eza="noeza"
+				data-char-id="1006270" data-char-hp="6,923" data-char-attack="5,995" data-char-defense="3,646"
+				data-char-cost="13" data-char-max-level="80" data-char-super-atk-level="10"
+				data-char-recruit="summonable" data-char-awaken="pre-dokkan-awakened" data-char-release="Jul 12, 2017"
+				data-char-super-atk-type="Super Attack (12 Ki),ki-blast"
+				data-char-links="Thirst for Conquest,Coward,GT,Loyalty,Kamehameha,All in the Family"
+				data-char-categories="Hybrid Saiyans,Kamehameha,Corroded Body and Mind,Terrifying Conquerors">
+			</div>
+			<div class="char" data-char-name="SS Gohan Possessed (GT)" data-char-title="Viciousness Released"
+				data-char-type="teq" data-char-rarity="ur" data-char-class="extreme" data-char-eza="noeza"
+				data-char-id="1006300" data-char-hp="10,755" data-char-attack="10,255" data-char-defense="7,170"
+				data-char-cost="19" data-char-max-level="100" data-char-super-atk-level="10"
+				data-char-recruit="summonable" data-char-awaken="dokkan-awakened" data-char-release="Jul 12, 2017"
+				data-char-super-atk-type="Super Attack (12 Ki),ki-blast"
+				data-char-links="Thirst for Conquest,Coward,GT,Hatred of Saiyans,Loyalty,Super Saiyan,Kamehameha"
+				data-char-categories="Hybrid Saiyans,Super Saiyans,Kamehameha,Corroded Body and Mind,Terrifying Conquerors">
+			</div>
+			<div class="char" data-char-name="Trunks Possessed (GT)" data-char-title="A Heart Corrupted"
+				data-char-type="int" data-char-rarity="ssr" data-char-class="extreme" data-char-eza="noeza"
+				data-char-id="1006290" data-char-hp="6,267" data-char-attack="6,363" data-char-defense="3,515"
+				data-char-cost="13" data-char-max-level="80" data-char-super-atk-level="10"
+				data-char-recruit="summonable" data-char-awaken="pre-dokkan-awakened" data-char-release="Jul 12, 2017"
+				data-char-super-atk-type="Super Attack (12 Ki),ki-blast"
+				data-char-links="Thirst for Conquest,Coward,GT,Loyalty,Royal Lineage"
+				data-char-categories="Hybrid Saiyans,Corroded Body and Mind,Terrifying Conquerors">
+			</div>
+			<div class="char" data-char-name="SS Trunks Possessed (GT)" data-char-title="Surging Bloodlust"
+				data-char-type="int" data-char-rarity="ur" data-char-class="extreme" data-char-eza="noeza"
+				data-char-id="1006320" data-char-hp="10,224" data-char-attack="10,446" data-char-defense="7,016"
+				data-char-cost="19" data-char-max-level="100" data-char-super-atk-level="10"
+				data-char-recruit="summonable" data-char-awaken="dokkan-awakened" data-char-release="Jul 12, 2017"
+				data-char-super-atk-type="Super Attack (12 Ki),ki-blast"
+				data-char-links="Thirst for Conquest,Coward,GT,Hatred of Saiyans,Loyalty,Royal Lineage,Super Saiyan"
+				data-char-categories="Hybrid Saiyans,Super Saiyans,Corroded Body and Mind,Terrifying Conquerors">
+			</div>
+			<div class="char" data-char-name="Goku (Angel)" data-char-title="Rising Star in North Galaxy"
+				data-char-type="int" data-char-rarity="ssr" data-char-class="super" data-char-eza="noeza"
+				data-char-id="1010640" data-char-hp="7,450" data-char-attack="5,835" data-char-defense="3,395"
+				data-char-cost="12" data-char-max-level="80" data-char-super-atk-level="10"
+				data-char-recruit="summonable" data-char-awaken="pre-dokkan-awakened" data-char-release="Jul 14, 2017"
+				data-char-super-atk-type="Super Attack (12 Ki),ki-blast"
+				data-char-links="All in the Family,Experienced Fighters,Z Fighters,Kamehameha,Otherworld Warriors"
+				data-char-categories="Pure Saiyans,Goku's Family,Kamehameha,Bond of Parent and Child,Bond of Friendship,Turtle School,Otherworld Warriors,Accelerated Battle">
+			</div>
+			<div class="char" data-char-name="Super Saiyan Goku (Angel)" data-char-title="Strongest in the Otherworld"
+				data-char-type="int" data-char-rarity="ur" data-char-class="super" data-char-eza="noeza"
+				data-char-id="1010650" data-char-hp="12,640" data-char-attack="11,415" data-char-defense="8,474"
+				data-char-cost="18" data-char-max-level="80" data-char-super-atk-level="10"
+				data-char-recruit="summonable" data-char-awaken="dokkan-awakened" data-char-release="Jul 14, 2017"
+				data-char-super-atk-type="Super Attack (12 Ki),ki-blast"
+				data-char-links="All in the Family,Super Saiyan,Golden Warrior,Saiyan Warrior Race,Kamehameha,Otherworld Warriors"
+				data-char-categories="Pure Saiyans,Goku's Family,Super Saiyans,Kamehameha,Bond of Parent and Child,Bond of Friendship,Turtle School,Otherworld Warriors,Accelerated Battle">
+			</div>
+			<div class="char" data-char-name="Super Saiyan Goku (Angel) (Super Kaioken)"
+				data-char-title="Victory-Sealing Super Attack" data-char-type="phy" data-char-rarity="ur"
+				data-char-class="super" data-char-eza="noeza" data-char-id="1010670" data-char-hp="13,965"
+				data-char-attack="13,135" data-char-defense="8,998" data-char-cost="29" data-char-max-level="100"
+				data-char-super-atk-level="10" data-char-recruit="summonable" data-char-awaken="pre-dokkan-awakened"
+				data-char-release="Jul 14, 2017" data-char-super-atk-type="Super Attack (12 Ki),other"
+				data-char-links="Prepared for Battle,Shocking Speed,Super Saiyan,Kamehameha,Over in a Flash,Otherworld Warriors"
+				data-char-categories="Pure Saiyans,Goku's Family,Super Saiyans,Kamehameha,Full Power,Final Trump Card,Bond of Parent and Child,Bond of Friendship,Turtle School,Otherworld Warriors,Accelerated Battle">
+			</div>
+			<div class="char" data-char-name="Super Saiyan Goku (Angel) (Super Kaioken)"
+				data-char-title="Burning to the Last" data-char-type="phy" data-char-rarity="ur" data-char-class="super"
+				data-char-eza="noeza" data-char-id="1010660" data-char-hp="14,363" data-char-attack="13,371"
+				data-char-defense="9,190" data-char-cost="42" data-char-max-level="120" data-char-super-atk-level="10"
+				data-char-recruit="summonable" data-char-awaken="dokkan-awakened" data-char-release="Jul 14, 2017"
+				data-char-super-atk-type="Super Attack (12 Ki),other"
+				data-char-links="Prepared for Battle,Shocking Speed,Super Saiyan,Kamehameha,Over in a Flash,Otherworld Warriors,Fierce Battle"
+				data-char-categories="Pure Saiyans,Goku's Family,Super Saiyans,Kamehameha,Full Power,Final Trump Card,Bond of Parent and Child,Bond of Friendship,Turtle School,Otherworld Warriors,Accelerated Battle">
+			</div>
+			<div class="char" data-char-name="King Cold (Angel)" data-char-title="Lying in Wait" data-char-type="teq"
+				data-char-rarity="ssr" data-char-class="extreme" data-char-eza="noeza" data-char-id="1010700"
+				data-char-hp="8,800" data-char-attack="6,360" data-char-defense="2,900" data-char-cost="13"
+				data-char-max-level="80" data-char-super-atk-level="10" data-char-recruit="summonable"
+				data-char-awaken="not-dokkan-awakened" data-char-release="Jul 14, 2017"
+				data-char-super-atk-type="Super Attack (12 Ki),ki-blast"
+				data-char-links="Brutal Beatdown,Strongest Clan in Space,Tough as Nails,Thirst for Conquest,Otherworld Warriors"
+				data-char-categories="Wicked Bloodline,Otherworld Warriors">
+			</div>
+			<div class="char" data-char-name="Paikuhan" data-char-title="Silent Rivalry" data-char-type="str"
+				data-char-rarity="ur" data-char-class="super" data-char-eza="noeza" data-char-id="1010630"
+				data-char-hp="14,104" data-char-attack="12,996" data-char-defense="9,402" data-char-cost="29"
+				data-char-max-level="100" data-char-super-atk-level="10" data-char-recruit="summonable"
+				data-char-awaken="pre-dokkan-awakened" data-char-release="Jul 14, 2017"
+				data-char-super-atk-type="Super Attack (12 Ki),unarmed"
+				data-char-links="Prepared for Battle,Gentleman,Experienced Fighters,Shocking Speed,Cold Judgment,Otherworld Warriors"
+				data-char-categories="Worthy Rivals,Otherworld Warriors,Storied Figures,Saviors,Battle of Wits">
+			</div>
+			<div class="char" data-char-name="Paikuhan" data-char-title="Blazing Clash" data-char-type="str"
+				data-char-rarity="ur" data-char-class="super" data-char-eza="noeza" data-char-id="1011040"
+				data-char-hp="14,529" data-char-attack="13,205" data-char-defense="9,615" data-char-cost="42"
+				data-char-max-level="120" data-char-super-atk-level="10" data-char-recruit="summonable"
+				data-char-awaken="dokkan-awakened" data-char-release="Jul 14, 2017"
+				data-char-super-atk-type="Super Attack (12 Ki),other"
+				data-char-links="Prepared for Battle,Gentleman,Experienced Fighters,Shocking Speed,Cold Judgment,Otherworld Warriors,Fierce Battle"
+				data-char-categories="Worthy Rivals,Otherworld Warriors,Storied Figures,Saviors,Battle of Wits">
+			</div>
+			<div class="char" data-char-name="Yamcha" data-char-title="Optimistic Warrior" data-char-type="str"
+				data-char-rarity="ur" data-char-class="super" data-char-eza="noeza" data-char-id="1011410"
+				data-char-hp="9,274" data-char-attack="10,105" data-char-defense="5,833" data-char-cost="15"
+				data-char-max-level="100" data-char-super-atk-level="10" data-char-recruit="free-to-play"
+				data-char-awaken="not-dokkan-awakened" data-char-release="Jul 28, 2017"
+				data-char-super-atk-type="Super Attack (12 Ki),unarmed"
+				data-char-links="Z Fighters,Turtle School,Speedy Retribution,Infighter,Solid Support"
+				data-char-categories="Androids/Cell Saga,Earthlings,Worthy Rivals,Turtle School">
+			</div>
+			<div class="char" data-char-name="Bulma (Youth)" data-char-title="Branches of Fate" data-char-type="teq"
+				data-char-rarity="ur" data-char-class="super" data-char-eza="noeza" data-char-id="1011420"
+				data-char-hp="10,140" data-char-attack="9,876" data-char-defense="7,210" data-char-cost="17"
+				data-char-max-level="100" data-char-super-atk-level="10" data-char-recruit="free-to-play"
+				data-char-awaken="pre-dokkan-awakened" data-char-release="Jul 28, 2017"
+				data-char-super-atk-type="Super Attack (12 Ki),physical"
+				data-char-links="Battlefield Diva,Solid Support,Brainiacs,The Incredible Adventure,Guidance of the Dragon Balls,Scientist"
+				data-char-categories="DB Saga,Earthlings,Youth,Peppy Gals,Dragon Ball Seekers">
+			</div>
+			<div class="char" data-char-name="Bulma (Youth)" data-char-title="Getting Butterflies" data-char-type="teq"
+				data-char-rarity="ur" data-char-class="super" data-char-eza="noeza" data-char-id="1011430"
+				data-char-hp="10,630" data-char-attack="10,146" data-char-defense="7,565" data-char-cost="32"
+				data-char-max-level="120" data-char-super-atk-level="10" data-char-recruit="free-to-play"
+				data-char-awaken="dokkan-awakened" data-char-release="Jul 28, 2017"
+				data-char-super-atk-type="Super Attack (12 Ki),physical"
+				data-char-links="Battlefield Diva,Solid Support,Brainiacs,The Incredible Adventure,Guidance of the Dragon Balls,Scientist,Shattering the Limit"
+				data-char-categories="DB Saga,Earthlings,Youth,Peppy Gals,Dragon Ball Seekers">
+			</div>
+			<div class="char" data-char-name="Goku" data-char-title="Monumental Dreams" data-char-type="agl"
+				data-char-rarity="ur" data-char-class="super" data-char-eza="noeza" data-char-id="1005530"
+				data-char-hp="9,160" data-char-attack="9,614" data-char-defense="6,564" data-char-cost="23"
+				data-char-max-level="100" data-char-super-atk-level="10" data-char-recruit="free-to-play"
+				data-char-awaken="pre-dokkan-awakened" data-char-release="Jul 01, 2016"
+				data-char-super-atk-type="Super Attack (12 Ki),ki-blast"
+				data-char-links="Z Fighters,All in the Family,High Compatibility,Experienced Fighters,The Saiyan Lineage,Supreme Power"
+				data-char-categories="Majin Buu Saga,Pure Saiyans,Goku's Family,Final Trump Card,Bond of Parent and Child,Bond of Friendship,Turtle School,Connected Hope,Accelerated Battle,Battle of Fate">
+			</div>
+			<div class="char" data-char-name="Super Saiyan Goku" data-char-title="Strike of Gratitude and Respect"
+				data-char-type="agl" data-char-rarity="ur" data-char-class="super" data-char-eza="noeza"
+				data-char-id="1011440" data-char-hp="11,781" data-char-attack="11,058" data-char-defense="7,817"
+				data-char-cost="40" data-char-max-level="120" data-char-super-atk-level="10"
+				data-char-recruit="free-to-play" data-char-awaken="dokkan-awakened" data-char-release="Jul 28, 2017"
+				data-char-super-atk-type="Super Attack (12 Ki),ki-blast"
+				data-char-links="Z Fighters,All in the Family,Super Saiyan,Experienced Fighters,Golden Warrior,Supreme Power,Shattering the Limit"
+				data-char-categories="Majin Buu Saga,Pure Saiyans,Goku's Family,Super Saiyans,Final Trump Card,Bond of Parent and Child,Bond of Friendship,Turtle School,Connected Hope,Accelerated Battle,Battle of Fate">
+			</div>
+			<div class="char" data-char-name="Android #17" data-char-title="True Might" data-char-type="str"
+				data-char-rarity="ur" data-char-class="extreme" data-char-eza="noeza" data-char-id="1003790"
+				data-char-hp="13,588" data-char-attack="12,419" data-char-defense="8,904" data-char-cost="23"
+				data-char-max-level="100" data-char-super-atk-level="10" data-char-recruit="summonable"
+				data-char-awaken="pre-dokkan-awakened" data-char-release="Mar 11, 2016"
+				data-char-super-atk-type="Super Attack (12 Ki),unarmed"
+				data-char-links="Infinite Energy,Android Assault,Twin Terrors,The Innocents,Infighter,Soul vs Soul,Fear and Faith"
+				data-char-categories="Androids/Cell Saga,Androids,Siblings' Bond,Target: Goku">
+			</div>
+			<div class="char" data-char-name="Android #17" data-char-title="Concentrated Power" data-char-type="str"
+				data-char-rarity="ur" data-char-class="extreme" data-char-eza="eza" data-char-id="1010480"
+				data-char-hp="17,757" data-char-attack="16,152" data-char-defense="10,934" data-char-cost="42"
+				data-char-max-level="140" data-char-super-atk-level="15" data-char-recruit="summonable"
+				data-char-awaken="dokkan-awakened" data-char-release="Jul 28, 2017.Apr 10, 2020"
+				data-char-super-atk-type="Super Attack (12 Ki),unarmed"
+				data-char-links="Infinite Energy,Android Assault,Twin Terrors,The Innocents,Infighter,Soul vs Soul,Fear and Faith,Fierce Battle"
+				data-char-categories="Androids/Cell Saga,Androids,Siblings' Bond,Target: Goku">
+			</div>
+			<div class="char" data-char-name="Android #18" data-char-title="Flawless Combat" data-char-type="int"
+				data-char-rarity="ur" data-char-class="extreme" data-char-eza="noeza" data-char-id="1003780"
+				data-char-hp="13,748" data-char-attack="11,699" data-char-defense="9,624" data-char-cost="26"
+				data-char-max-level="100" data-char-super-atk-level="10" data-char-recruit="summonable"
+				data-char-awaken="pre-dokkan-awakened" data-char-release="Mar 11, 2016"
+				data-char-super-atk-type="Super Attack (12 Ki),unarmed"
+				data-char-links="Infinite Energy,Android Assault,Twin Terrors,The Innocents,Battlefield Diva,Soul vs Soul,Nightmare"
+				data-char-categories="Androids/Cell Saga,Androids,Peppy Gals,Siblings' Bond,Target: Goku,Battle of Wits">
+			</div>
+			<div class="char" data-char-name="Android #18" data-char-title="Breathless Struggle" data-char-type="int"
+				data-char-rarity="ur" data-char-class="extreme" data-char-eza="eza" data-char-id="1010490"
+				data-char-hp="18,263" data-char-attack="15,449" data-char-defense="11,461" data-char-cost="42"
+				data-char-max-level="140" data-char-super-atk-level="15" data-char-recruit="summonable"
+				data-char-awaken="dokkan-awakened" data-char-release="Mar 11, 2016"
+				data-char-super-atk-type="Super Attack (12 Ki),unarmed"
+				data-char-links="Infinite Energy,Android Assault,Twin Terrors,The Innocents,Battlefield Diva,Soul vs Soul,Nightmare,Fierce Battle"
+				data-char-categories="Androids/Cell Saga,Androids,Peppy Gals,Siblings' Bond,Target: Goku,Battle of Wits">
+			</div>
+			<div class="char" data-char-name="Super Saiyan 2 Gohan (Youth)" data-char-title="Entrusted Mission"
+				data-char-type="agl" data-char-rarity="ur" data-char-class="super" data-char-eza="noeza"
+				data-char-id="1002700" data-char-hp="12,102" data-char-attack="12,191" data-char-defense="9,289"
+				data-char-cost="25" data-char-max-level="100" data-char-super-atk-level="10"
+				data-char-recruit="summonable" data-char-awaken="pre-dokkan-awakened" data-char-release="Oct 30, 2015"
+				data-char-super-atk-type="Super Attack (12 Ki),ki-blast"
+				data-char-links="Golden Warrior,Saiyan Warrior Race,Super Saiyan,Kamehameha"
+				data-char-categories="Hybrid Saiyans,Goku's Family,Youth,Super Saiyan 2,Power Beyond Super Saiyan,Kamehameha,Full Power,Powerful Comeback,Bond of Parent and Child,Bond of Master and Disciple,Movie Heroes,Exploding Rage,Entrusted Will,All-Out Struggle">
+			</div>
+			<div class="char" data-char-name="Super Saiyan 2 Gohan (Youth)" data-char-title="Point-Blank Flash"
+				data-char-type="agl" data-char-rarity="ur" data-char-class="super" data-char-eza="noeza"
+				data-char-id="1010410" data-char-hp="13,989" data-char-attack="12,911" data-char-defense="9,977"
+				data-char-cost="40" data-char-max-level="120" data-char-super-atk-level="10"
+				data-char-recruit="summonable" data-char-awaken="dokkan-awakened" data-char-release="Aug 01, 2017"
+				data-char-super-atk-type="Super Attack (12 Ki),ki-blast"
+				data-char-links="Golden Warrior,Saiyan Warrior Race,Super Saiyan,Kamehameha,Prepared for Battle,Shattering the Limit"
+				data-char-categories="Hybrid Saiyans,Goku's Family,Youth,Super Saiyan 2,Power Beyond Super Saiyan,Kamehameha,Full Power,Powerful Comeback,Bond of Parent and Child,Bond of Master and Disciple,Movie Heroes,Exploding Rage,Entrusted Will,All-Out Struggle">
+			</div>
+			<div class="char" data-char-name="Boujack" data-char-title="Galaxy's Most Evil" data-char-type="str"
+				data-char-rarity="ssr" data-char-class="extreme" data-char-eza="noeza" data-char-id="2000700"
+				data-char-hp="6,123" data-char-attack="6,172" data-char-defense="3,289" data-char-cost="12"
+				data-char-max-level="80" data-char-super-atk-level="10" data-char-recruit="free-to-play"
+				data-char-awaken="pre-dokkan-awakened" data-char-release="Oct 30, 2015"
+				data-char-super-atk-type="Super Attack (12 Ki),ki-blast"
+				data-char-links="The Hera Clan,Galactic Warriors,Big Bad Bosses,Thirst for Conquest,Revival,The Wall Standing Tall"
+				data-char-categories="Movie Bosses,Resurrected Warriors,Space-Traveling Warriors,Time Travelers,Storied Figures,Legendary Existence,Terrifying Conquerors,Inhuman Deeds">
+			</div>
+			<div class="char" data-char-name="Full Power Boujack" data-char-title="Full Strength Tremor"
+				data-char-type="str" data-char-rarity="ur" data-char-class="extreme" data-char-eza="noeza"
+				data-char-id="1002560" data-char-hp="10,250" data-char-attack="11,053" data-char-defense="6,716"
+				data-char-cost="25" data-char-max-level="100" data-char-super-atk-level="10"
+				data-char-recruit="free-to-play" data-char-awaken="pre-dokkan-awakened" data-char-release="Oct 30, 2015"
+				data-char-super-atk-type="Super Attack (12 Ki),ki-blast"
+				data-char-links="The Hera Clan,Galactic Warriors,Big Bad Bosses,Thirst for Conquest,Coward,The Wall Standing Tall"
+				data-char-categories="Full Power,Movie Bosses,Resurrected Warriors,Space-Traveling Warriors,Time Travelers,Storied Figures,Legendary Existence,Terrifying Conquerors,Inhuman Deeds">
+			</div>
+			<div class="char" data-char-name="Full Power Boujack" data-char-title="Horrific Super Energy"
+				data-char-type="str" data-char-rarity="ur" data-char-class="extreme" data-char-eza="noeza"
+				data-char-id="1010450" data-char-hp="11,145" data-char-attack="11,160" data-char-defense="6,913"
+				data-char-cost="40" data-char-max-level="120" data-char-super-atk-level="10"
+				data-char-recruit="free-to-play" data-char-awaken="dokkan-awakened" data-char-release="Aug 01, 2017"
+				data-char-super-atk-type="Super Attack (12 Ki),ki-blast"
+				data-char-links="The Hera Clan,Galactic Warriors,Big Bad Bosses,Thirst for Conquest,Coward,The Wall Standing Tall,Shattering the Limit"
+				data-char-categories="Full Power,Movie Bosses,Resurrected Warriors,Space-Traveling Warriors,Time Travelers,Storied Figures,Legendary Existence,Terrifying Conquerors,Inhuman Deeds">
+			</div>
+			<div class="char" data-char-name="Full Power Boujack" data-char-title="Galactic Annihilation"
+				data-char-type="agl" data-char-rarity="ur" data-char-class="extreme" data-char-eza="noeza"
+				data-char-id="1004940" data-char-hp="12,775" data-char-attack="12,130" data-char-defense="10,150"
+				data-char-cost="26" data-char-max-level="100" data-char-super-atk-level="10"
+				data-char-recruit="summonable" data-char-awaken="pre-dokkan-awakened" data-char-release="Apr 18, 2016"
+				data-char-super-atk-type="Super Attack (12 Ki),ki-blast"
+				data-char-links="The Hera Clan,Galactic Warriors,Big Bad Bosses,Thirst for Conquest,Coward,The Wall Standing Tall"
+				data-char-categories="Full Power,Movie Bosses,Resurrected Warriors,Space-Traveling Warriors,Time Travelers,Storied Figures,Legendary Existence,Terrifying Conquerors,Inhuman Deeds">
+			</div>
+			<div class="char" data-char-name="Full Power Boujack" data-char-title="Tyrannical Maelstrom"
+				data-char-type="agl" data-char-rarity="ur" data-char-class="extreme" data-char-eza="noeza"
+				data-char-id="1010460" data-char-hp="13,621" data-char-attack="12,691" data-char-defense="10,436"
+				data-char-cost="40" data-char-max-level="100" data-char-super-atk-level="10"
+				data-char-recruit="summonable" data-char-awaken="dokkan-awakened" data-char-release="Apr 18, 2016"
+				data-char-super-atk-type="Super Attack (12 Ki),ki-blast"
+				data-char-links="The Hera Clan,Galactic Warriors,Big Bad Bosses,Thirst for Conquest,Coward,The Wall Standing Tall,Shattering the Limit"
+				data-char-categories="Full Power,Movie Bosses,Resurrected Warriors,Space-Traveling Warriors,Time Travelers,Storied Figures,Legendary Existence,Terrifying Conquerors,Inhuman Deeds">
+			</div>
+			<div class="char" data-char-name="Zangya" data-char-title="Brutal Battlefield Diva" data-char-type="agl"
+				data-char-rarity="ssr" data-char-class="extreme" data-char-eza="noeza" data-char-id="2000710"
+				data-char-hp="6,833" data-char-attack="5,433" data-char-defense="3,666" data-char-cost="12"
+				data-char-max-level="80" data-char-super-atk-level="10" data-char-recruit="summonable"
+				data-char-awaken="pre-dokkan-awakened" data-char-release="Oct 30, 2015"
+				data-char-super-atk-type="Super Attack (12 Ki),ki-blast"
+				data-char-links="The Hera Clan,Galactic Warriors,Battlefield Diva,Brutal Beatdown,Loyalty"
+				data-char-categories="Peppy Gals,Resurrected Warriors,Space-Traveling Warriors,Time Travelers,Storied Figures,Terrifying Conquerors">
+			</div>
+			<div class="char" data-char-name="Zangya" data-char-title="Merciless Swift Strike" data-char-type="agl"
+				data-char-rarity="ur" data-char-class="extreme" data-char-eza="noeza" data-char-id="1010470"
+				data-char-hp="10,664" data-char-attack="9,568" data-char-defense="7,516" data-char-cost="27"
+				data-char-max-level="100" data-char-super-atk-level="10" data-char-recruit="summonable"
+				data-char-awaken="dokkan-awakened" data-char-release="Aug 01, 2017"
+				data-char-super-atk-type="Super Attack (12 Ki),ki-blast"
+				data-char-links="The Hera Clan,Galactic Warriors,Battlefield Diva,Brutal Beatdown,Loyalty,Shocking Speed"
+				data-char-categories="Peppy Gals,Resurrected Warriors,Space-Traveling Warriors,Time Travelers,Storied Figures,Terrifying Conquerors">
+			</div>
+			<div class="char" data-char-name="Super Saiyan 4 Gogeta" data-char-title="The Supreme Fusion"
+				data-char-type="teq" data-char-rarity="ur" data-char-class="super" data-char-eza="noeza"
+				data-char-id="1011290" data-char-hp="13,550" data-char-attack="15,460" data-char-defense="8,700"
+				data-char-cost="40" data-char-max-level="100" data-char-super-atk-level="10"
+				data-char-recruit="summonable" data-char-awaken="pre-dokkan-awakened" data-char-release="Aug 03, 2017"
+				data-char-super-atk-type="Super Attack (12 Ki),ki-blast"
+				data-char-links="Super Saiyan,Kamehameha,Shocking Speed,Over in a Flash,Fused Fighter,GT"
+				data-char-categories="Shadow Dragon Saga,Power Beyond Super Saiyan,Fusion,Fused Fighters,Kamehameha,Giant Ape Power,Time Limit,Final Trump Card,GT Heroes,Accelerated Battle,Battle of Fate">
+			</div>
+			<div class="char" data-char-name="Super Saiyan 4 Gogeta" data-char-title="Peerless Gleam"
+				data-char-type="teq" data-char-rarity="ur" data-char-class="super" data-char-eza="eza"
+				data-char-id="1011300" data-char-hp="19,199" data-char-attack="20,745" data-char-defense="10,909"
+				data-char-cost="58" data-char-max-level="140" data-char-super-atk-level="15"
+				data-char-recruit="summonable" data-char-awaken="dokkan-awakened"
+				data-char-release="Aug 03, 2017.Jul 19, 2022" data-char-super-atk-type="Super Attack (12 Ki),ki-blast"
+				data-char-links="Super Saiyan,Kamehameha,Shocking Speed,Over in a Flash,Fused Fighter,GT,Fierce Battle"
+				data-char-categories="Shadow Dragon Saga,Power Beyond Super Saiyan,Fusion,Fused Fighters,Kamehameha,Giant Ape Power,Time Limit,Final Trump Card,GT Heroes,Accelerated Battle,Battle of Fate">
+			</div>
+			<div class="char" data-char-name="Omega Shenron" data-char-title="The Strongest Shadow Dragon"
+				data-char-type="phy" data-char-rarity="ur" data-char-class="extreme" data-char-eza="noeza"
+				data-char-id="1011310" data-char-hp="15,375" data-char-attack="14,240" data-char-defense="8,813"
+				data-char-cost="40" data-char-max-level="100" data-char-super-atk-level="10"
+				data-char-recruit="summonable" data-char-awaken="pre-dokkan-awakened" data-char-release="Aug 03, 2017"
+				data-char-super-atk-type="Super Attack (12 Ki),other"
+				data-char-links="Brutal Beatdown,Fear and Faith,Big Bad Bosses,Shocking Speed,GT,Shadow Dragons"
+				data-char-categories="Shadow Dragon Saga,Power Absorption,Full Power,GT Bosses,Inhuman Deeds,Battle of Fate">
+			</div>
+			<div class="char" data-char-name="Omega Shenron" data-char-title="Crashing Maelstrom" data-char-type="phy"
+				data-char-rarity="ur" data-char-class="extreme" data-char-eza="eza" data-char-id="1011320"
+				data-char-hp="21,706" data-char-attack="18,980" data-char-defense="11,362" data-char-cost="58"
+				data-char-max-level="140" data-char-super-atk-level="15" data-char-recruit="summonable"
+				data-char-awaken="dokkan-awakened" data-char-release="Aug 03, 2017.Jul 19, 2022"
+				data-char-super-atk-type="Super Attack (12 Ki),ki-blast"
+				data-char-links="Brutal Beatdown,Fear and Faith,Big Bad Bosses,Shocking Speed,GT,Shadow Dragons,Fierce Battle"
+				data-char-categories="Shadow Dragon Saga,Power Absorption,Full Power,GT Bosses,Inhuman Deeds,Battle of Fate">
+			</div>
+			<div class="char" data-char-name="Super Saiyan Goku" data-char-title="Ecstatic Combat" data-char-type="int"
+				data-char-rarity="ur" data-char-class="super" data-char-eza="noeza" data-char-id="1006760"
+				data-char-hp="13,583" data-char-attack="12,700" data-char-defense="9,369" data-char-cost="28"
+				data-char-max-level="100" data-char-super-atk-level="10" data-char-recruit="summonable"
+				data-char-awaken="pre-dokkan-awakened" data-char-release="Sep 12, 2016"
+				data-char-super-atk-type="Super Attack (12 Ki),ki-blast"
+				data-char-links="Golden Warrior,Prepared for Battle,Super Saiyan,Kamehameha,Family Ties,The First Awakened"
+				data-char-categories="Pure Saiyans,Goku's Family,Super Saiyans,Kamehameha,Bond of Parent and Child,Bond of Friendship,Turtle School,Accelerated Battle">
+			</div>
+			<div class="char" data-char-name="Super Saiyan Goku" data-char-title="Accrued Strength" data-char-type="int"
+				data-char-rarity="ur" data-char-class="super" data-char-eza="noeza" data-char-id="1010720"
+				data-char-hp="13,929" data-char-attack="13,021" data-char-defense="9,669" data-char-cost="40"
+				data-char-max-level="120" data-char-super-atk-level="10" data-char-recruit="summonable"
+				data-char-awaken="dokkan-awakened" data-char-release="Aug 12, 2017"
+				data-char-super-atk-type="Super Attack (12 Ki),ki-blast"
+				data-char-links="Golden Warrior,Prepared for Battle,Super Saiyan,Kamehameha,Family Ties,The First Awakened,Shattering the Limit"
+				data-char-categories="Pure Saiyans,Goku's Family,Super Saiyans,Kamehameha,Bond of Parent and Child,Bond of Friendship,Turtle School,Accelerated Battle">
+			</div>
+			<div class="char" data-char-name="Hercule" data-char-title="Glorious Radiance" data-char-type="agl"
+				data-char-rarity="ur" data-char-class="super" data-char-eza="noeza" data-char-id="1004100"
+				data-char-hp="13,573" data-char-attack="12,800" data-char-defense="4,084" data-char-cost="9"
+				data-char-max-level="100" data-char-super-atk-level="10" data-char-recruit="free-to-play"
+				data-char-awaken="not-dokkan-awakened" data-char-release="Aug 20, 2017"
+				data-char-super-atk-type="Super Attack (12 Ki),unarmed"
+				data-char-links="World Tournament Champion,Champion's Strength,Hero,Money Money Money,World Tournament Reborn"
+				data-char-categories="Earthlings,Bond of Parent and Child,Bond of Friendship">
+			</div>
+			<div class="char" data-char-name="Hercule" data-char-title="Earth's Savior" data-char-type="teq"
+				data-char-rarity="ssr" data-char-class="super" data-char-eza="noeza" data-char-id="1003730"
+				data-char-hp="6,548" data-char-attack="5,319" data-char-defense="3,524" data-char-cost="12"
+				data-char-max-level="80" data-char-super-atk-level="10" data-char-recruit="free-to-play"
+				data-char-awaken="pre-dokkan-awakened" data-char-release="Mar 11, 2016"
+				data-char-super-atk-type="Super Attack (12 Ki),unarmed"
+				data-char-links="World Tournament Champion,Champion's Strength,Hero,Money Money Money,Soul vs Soul,Golden Z-Fighter,Supreme Power"
+				data-char-categories="Majin Buu Saga,Earthlings,Bond of Parent and Child,Bond of Friendship,World Tournament,Saviors">
+			</div>
+			<div class="char" data-char-name="Hercule" data-char-title="A Champion's Roar" data-char-type="teq"
+				data-char-rarity="ur" data-char-class="super" data-char-eza="noeza" data-char-id="1010880"
+				data-char-hp="12,169" data-char-attack="12,126" data-char-defense="9,181" data-char-cost="26"
+				data-char-max-level="100" data-char-super-atk-level="10" data-char-recruit="free-to-play"
+				data-char-awaken="pre-dokkan-awakened" data-char-release="Aug 20, 2017"
+				data-char-super-atk-type="Super Attack (12 Ki),unarmed"
+				data-char-links="World Tournament Champion,Champion's Strength,Hero,Money Money Money,Soul vs Soul,Golden Z-Fighter,Supreme Power"
+				data-char-categories="Majin Buu Saga,Earthlings,Bond of Parent and Child,Bond of Friendship,World Tournament,Saviors">
+			</div>
+			<div class="char" data-char-name="Hercule" data-char-title="Earth's Final Trump Card" data-char-type="teq"
+				data-char-rarity="ur" data-char-class="super" data-char-eza="noeza" data-char-id="1010890"
+				data-char-hp="13,642" data-char-attack="13,121" data-char-defense="10,336" data-char-cost="38"
+				data-char-max-level="120" data-char-super-atk-level="10" data-char-recruit="free-to-play"
+				data-char-awaken="pre-dokkan-awakened" data-char-release="Aug 20, 2017"
+				data-char-super-atk-type="Super Attack (12 Ki),other"
+				data-char-links="World Tournament Champion,Champion's Strength,Hero,Money Money Money,Soul vs Soul,Golden Z-Fighter,Supreme Power,Shattering the Limit"
+				data-char-categories="Majin Buu Saga,Earthlings,Bond of Parent and Child,Bond of Friendship,World Tournament,Saviors">
+			</div>
+			<div class="char" data-char-name="Hercule" data-char-title="Extraordinary Friendship" data-char-type="teq"
+				data-char-rarity="lr" data-char-class="super" data-char-eza="eza" data-char-id="1010900"
+				data-char-hp="20,740" data-char-attack="16,522" data-char-defense="13,077" data-char-cost="99"
+				data-char-max-level="150" data-char-super-atk-level="25" data-char-recruit="free-to-play"
+				data-char-awaken="dokkan-awakened" data-char-release="Aug 20, 2017.Sep 15, 2020"
+				data-char-super-atk-type="Super Attack (12 Ki),other,Super Attack (12 Ki),unarmed"
+				data-char-links="Hero,Soul vs Soul,Golden Z-Fighter,Supreme Power,The Innocents,Shattering the Limit,Legendary Power"
+				data-char-categories="Majin Buu Saga,Earthlings,Bond of Parent and Child,Bond of Friendship,World Tournament,Saviors">
+			</div>
 
 
 
@@ -5361,78 +5951,6 @@
 				data-char-links="Turtle School,All in the Family,Bombardment,The Incredible Adventure,Guidance of the Dragon Balls,Super Strike"
 				data-char-categories="DB Saga,Earthlings,Goku's Family,Time Limit,Bond of Parent and Child,Bond of Master and Disciple,Turtle School,otherworld Warriors">
 			</div>
-			<div class="char" data-char-name="Boujack" data-char-title="Galaxy's Most Evil" data-char-type="str"
-				data-char-rarity="ssr" data-char-class="extreme" data-char-eza="noeza" data-char-id="2000700"
-				data-char-hp="6,123" data-char-attack="6,172" data-char-defense="3,289" data-char-cost="12"
-				data-char-max-level="80" data-char-super-atk-level="10" data-char-recruit="free-to-play"
-				data-char-awaken="pre-dokkan-awakened" data-char-release="Oct 30, 2015"
-				data-char-super-atk-type="Super Attack (12 Ki),ki-blast"
-				data-char-links="The Hera Clan,Galactic Warriors,Big Bad Bosses,Thirst for Conquest,Revival,The Wall Standing Tall"
-				data-char-categories="Movie Bosses,Resurrected Warriors,Space-Traveling Warriors,Time Travelers,Storied Figures,Legendary Existence,Terrifying Conquerors,Inhuman Deeds">
-			</div>
-			<div class="char" data-char-name="Full Power Boujack" data-char-title="Full Strength Tremor"
-				data-char-type="str" data-char-rarity="ur" data-char-class="extreme" data-char-eza="noeza"
-				data-char-id="1002560" data-char-hp="10,250" data-char-attack="11,053" data-char-defense="6,716"
-				data-char-cost="25" data-char-max-level="100" data-char-super-atk-level="10"
-				data-char-recruit="free-to-play" data-char-awaken="pre-dokkan-awakened" data-char-release="Oct 30, 2015"
-				data-char-super-atk-type="Super Attack (12 Ki),ki-blast"
-				data-char-links="The Hera Clan,Galactic Warriors,Big Bad Bosses,Thirst for Conquest,Coward,The Wall Standing Tall"
-				data-char-categories="Full Power,Movie Bosses,Resurrected Warriors,Space-Traveling Warriors,Time Travelers,Storied Figures,Legendary Existence,Terrifying Conquerors,Inhuman Deeds">
-			</div>
-			<div class="char" data-char-name="Full Power Boujack" data-char-title="Horrific Super Energy"
-				data-char-type="str" data-char-rarity="ur" data-char-class="extreme" data-char-eza="noeza"
-				data-char-id="1010450" data-char-hp="11,145" data-char-attack="11,160" data-char-defense="6,913"
-				data-char-cost="40" data-char-max-level="120" data-char-super-atk-level="10"
-				data-char-recruit="free-to-play" data-char-awaken="dokkan-awakened" data-char-release="Aug 01, 2017"
-				data-char-super-atk-type="Super Attack (12 Ki),ki-blast"
-				data-char-links="The Hera Clan,Galactic Warriors,Big Bad Bosses,Thirst for Conquest,Coward,The Wall Standing Tall,Shattering the Limit"
-				data-char-categories="Full Power,Movie Bosses,Resurrected Warriors,Space-Traveling Warriors,Time Travelers,Storied Figures,Legendary Existence,Terrifying Conquerors,Inhuman Deeds">
-			</div>
-			<div class="char" data-char-name="Zangya" data-char-title="Brutal Battlefield Diva" data-char-type="agl"
-				data-char-rarity="ssr" data-char-class="extreme" data-char-eza="noeza" data-char-id="2000710"
-				data-char-hp="6,833" data-char-attack="5,433" data-char-defense="3,666" data-char-cost="12"
-				data-char-max-level="80" data-char-super-atk-level="10" data-char-recruit="summonable"
-				data-char-awaken="pre-dokkan-awakened" data-char-release="Oct 30, 2015"
-				data-char-super-atk-type="Super Attack (12 Ki),ki-blast"
-				data-char-links="The Hera Clan,Galactic Warriors,Battlefield Diva,Brutal Beatdown,Loyalty"
-				data-char-categories="Peppy Gals,Resurrected Warriors,Space-Traveling Warriors,Time Travelers,Storied Figures,Terrifying Conquerors">
-			</div>
-			<div class="char" data-char-name="Zangya" data-char-title="Merciless Swift Strike" data-char-type="agl"
-				data-char-rarity="ur" data-char-class="extreme" data-char-eza="noeza" data-char-id="1010470"
-				data-char-hp="10,664" data-char-attack="9,568" data-char-defense="7,516" data-char-cost="27"
-				data-char-max-level="100" data-char-super-atk-level="10" data-char-recruit="summonable"
-				data-char-awaken="dokkan-awakened" data-char-release="Aug 01, 2017"
-				data-char-super-atk-type="Super Attack (12 Ki),ki-blast"
-				data-char-links="The Hera Clan,Galactic Warriors,Battlefield Diva,Brutal Beatdown,Loyalty,Shocking Speed"
-				data-char-categories="Peppy Gals,Resurrected Warriors,Space-Traveling Warriors,Time Travelers,Storied Figures,Terrifying Conquerors">
-			</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 			<div class="char" data-char-name="Goku" data-char-title="Overflowing Resolve" data-char-type="teq"
 				data-char-rarity="sr" data-char-class="super" data-char-eza="noeza" data-char-id="2000670"
 				data-char-hp="3,948" data-char-attack="4,007" data-char-defense="2,920" data-char-cost="6"
