@@ -5,7 +5,6 @@ function gtag() {
 }
 
 function googleAnalytics() {
-	
 	gtag('js', new Date());
 	gtag('config', 'G-S015YVBQ1D');
 }
