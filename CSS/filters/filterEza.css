@@ -11,18 +11,5 @@
     --angle: 0deg;
     height: 45px;
     border: 5px solid;
-    border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
-    animation: 5s rotate linear infinite;
-}
-
-@keyframes rotate {
-    to {
-        --angle: 360deg;
-    }
-}
-
-@property --angle {
-    syntax: '<angle>';
-    initial-value: 0deg;
-    inherits: false;
+    border-image: conic-gradient(red, yellow, lime, aqua, blue, magenta, red) 1;
 }

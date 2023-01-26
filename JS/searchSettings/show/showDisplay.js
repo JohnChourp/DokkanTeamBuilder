@@ -90,7 +90,12 @@ function addDropdownClass(filterDisplay) {
 		listCategoriesFormattedString[i] = listCategories[i].join("<br/>");
 	}
 
-	if (((filterDisplay > -1) && (filterDisplay < 8)) || ((filterDisplay > 9) && filterDisplay < 12)) {
+	if ((filterDisplay > -1) && (filterDisplay < 8)) {
+		for (let i = 0; i < char_display.length; i++) {
+			char_display.item(i).style.display = "table-cell";
+		}
+	}
+	if ((filterDisplay > 9) && (filterDisplay < 12)) {
 		for (let i = 0; i < char_display.length; i++) {
 			char_display.item(i).style.display = "table-cell";
 		}
@@ -110,6 +115,13 @@ function addDropdownClass(filterDisplay) {
 	if (filterDisplay > 11) {
 		for (let i = 0; i < char_display.length; i++) {
 			char_display.item(i).style.display = "block";
+		}
+	}
+	if (filterDisplay > 12) {
+		for (let i = 0; i < char_display.length; i++) {
+			if (window.matchMedia('(max-device-width: 413px)').matches) {
+				char_display.item(i).style.fontSize = "8px";
+			}
 		}
 	}
 	//Name
@@ -133,19 +145,19 @@ function addDropdownClass(filterDisplay) {
 	//HP
 	if (filterDisplay == 3) {
 		for (let i = 0; i < char_display.length; i++) {
-			char_display.item(i).innerHTML = dataCharHpItems[i].getAttribute(dataCharHp);
+			char_display.item(i).innerHTML = new Intl.NumberFormat().format(dataCharHpItems[i].getAttribute(dataCharHp));
 		}
 	}
 	//Attack
 	if (filterDisplay == 4) {
 		for (let i = 0; i < char_display.length; i++) {
-			char_display.item(i).innerHTML = dataCharAttackItems[i].getAttribute(dataCharAttack);
+			char_display.item(i).innerHTML = new Intl.NumberFormat().format(dataCharAttackItems[i].getAttribute(dataCharAttack));
 		}
 	}
 	//Defense
 	if (filterDisplay == 5) {
 		for (let i = 0; i < char_display.length; i++) {
-			char_display.item(i).innerHTML = dataCharDefenseItems[i].getAttribute(dataCharDefense);
+			char_display.item(i).innerHTML = new Intl.NumberFormat().format(dataCharDefenseItems[i].getAttribute(dataCharDefense));
 		}
 	}
 	//Cost

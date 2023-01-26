@@ -48,6 +48,14 @@
 	background-color: #ddd;
 }
 
+.search-one-char-dropdown-options-value {
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+	user-select: none;
+}
+
 #search-one-char-hint-id {
 	color: white;
 	font-size: 15px;
