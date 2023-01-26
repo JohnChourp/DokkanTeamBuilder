@@ -9,26 +9,30 @@
 
 .top-half-bg-color-type {
 	position: relative;
-
 	left: -1px;
 	top: 27px;
-
 	width: 47px;
 	height: 12px;
-
 	background-color: #6B6B67;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+	user-select: none;
 }
 
 .bottom-half-bg-color-type {
 	position: relative;
-
 	left: -1px;
 	top: 27px;
-
 	width: 47px;
 	height: 11px;
-
 	background-color: #555555;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+	user-select: none;
 }
 
 .top-line-type,
@@ -40,20 +44,22 @@
 	height: 5px;
 	position: relative;
 	border-radius: 15%;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+	user-select: none;
 }
 
 .top-line-type {
 	width: 45px;
-
 	background-color: #CED1D0;
 }
 
 .top-left-line-rotated-type {
 	top: 5px;
 	left: -13px;
-
 	width: 24px;
-
 	background-color: #CED1D0;
 	transform: rotate(-75deg);
 }
@@ -61,27 +67,21 @@
 .top-right-line-rotated-type {
 	top: -7px;
 	left: 41px;
-
 	width: 10px;
-
 	background-color: #CED1D0;
 	transform: rotate(50deg);
 }
 
 .bottom-line-type {
 	top: 11px;
-
 	width: 47px;
-
 	background-color: #CED1D0;
 }
 
 .bottom-left-line-rotated-type {
 	top: 3px;
 	left: -6px;
-
 	width: 10px;
-
 	background-color: #CED1D0;
 	transform: rotate(50deg);
 }
@@ -89,9 +89,7 @@
 .bottom-right-line-rotated-type {
 	top: -9px;
 	left: 35px;
-
 	width: 24px;
-
 	background-color: #CED1D0;
 	transform: rotate(100deg);
 }
@@ -109,10 +107,9 @@
 	-webkit-text-fill-color: transparent;
 	-moz-background-clip: text;
 	-moz-text-fill-color: transparent;
-	-webkit-user-select: none;
-	/* Safari */
-	-ms-user-select: none;
-	/* IE 10 and IE 11 */
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 	user-select: none;
-	/* Standard syntax */
 }

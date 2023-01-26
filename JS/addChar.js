@@ -12,6 +12,11 @@ function addChar() {
 	let dataCharClassItems = document.querySelectorAll('[' + dataCharClass + ']');
 	let dataCharIdItems = document.querySelectorAll('[' + dataCharId + ']');
 
+	let searchSettingsImageId = document.getElementById("search-settings-image-id");
+	searchSettingsImageId.loading = "lazy";
+	searchSettingsImageId.setAttribute("draggable","false");
+	searchSettingsImageId.alt = "search_settings_image";
+
 	let char = document.getElementsByClassName("char");
 	let char_type_base = document.getElementsByClassName("char_type_base");
 	let char_thumb = document.getElementsByClassName("char_thumb");
@@ -25,6 +30,8 @@ function addChar() {
 		let char_type_base_img = document.createElement("img");
 		char_type_base_img.classList.add("char_type_base");
 		char_type_base_img.loading = "lazy";
+		char_type_base_img.setAttribute("draggable","false");
+		char_type_base_img.alt = "char_type_base";
 		charDiv.appendChild(char_type_base_img);
 
 		//char_thumb
@@ -32,18 +39,24 @@ function addChar() {
 		char_thumb_img.classList.add("char_thumb");
 		char_thumb_img.loading = "lazy";
 		char_thumb_img.src = dataCharIdItems[i].getAttribute(dataCharId);
+		char_thumb_img.setAttribute("draggable","false");
+		char_thumb_img.alt = "char_thumb";
 		charDiv.appendChild(char_thumb_img);
 
 		//char_rarity
 		let char_rarity_img = document.createElement("img");
 		char_rarity_img.classList.add("char_rarity");
 		char_rarity_img.loading = "lazy";
+		char_rarity_img.setAttribute("draggable","false");
+		char_rarity_img.alt = "char_rarity";
 		charDiv.appendChild(char_rarity_img);
 
 		//char_type
 		let char_type_img = document.createElement("img");
 		char_type_img.classList.add("char_type");
 		char_type_img.loading = "lazy";
+		char_type_img.setAttribute("draggable","false");
+		char_type_img.alt = "char_type";
 		charDiv.appendChild(char_type_img);
 
 		//char_eza
@@ -52,6 +65,8 @@ function addChar() {
 			char_eza_img.classList.add("char_eza");
 			char_eza_img.loading = "lazy";
 			char_eza_img.src = "Images/char/char_eza/eza.png";
+			char_eza_img.setAttribute("draggable","false");
+			char_eza_img.alt = "char_eza";
 			charDiv.appendChild(char_eza_img);
 		}
 
@@ -61,6 +76,8 @@ function addChar() {
 		let char_display_div = document.createElement("div");
 		char_display_div.classList.add("char_display");
 		char_display_div.innerHTML = dataCharNameItems[i].getAttribute(dataCharName);
+		char_display_div.setAttribute("draggable","false");
+		char_display_div.alt = "char_display";
 		char.item(i).appendChild(char_display_div);
 	}
 
