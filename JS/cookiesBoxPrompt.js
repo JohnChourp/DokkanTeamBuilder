@@ -1,7 +1,6 @@
 function cookiesBoxPromptAccept() {
     localStorage.setItem("cookiesPromptAcceptOrReject", "accept");
-    document.getElementById("cookies-prompt").style.display = "none";
-    googleAnalytics();
+    window.location.reload();
 }
 
 function cookiesBoxPromptReject() {
