@@ -18,6 +18,7 @@
 
 .char-div-class:hover {
     background-color: #2e2d2d;
+    cursor: pointer;
 }
 
 .char_type_base {
