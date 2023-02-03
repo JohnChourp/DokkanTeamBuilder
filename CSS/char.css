@@ -18,6 +18,7 @@
 
 .char-div-class:hover {
     background-color: #2e2d2d;
+    cursor: pointer;
 }
 
 .char_type_base {
@@ -76,7 +77,7 @@
     width: 25px;
     height: 25px;
     position: relative;
-    left: 69px;
+    left: 75px;
     top: -152px;
     -moz-user-select: none;
     -webkit-user-drag: none;
