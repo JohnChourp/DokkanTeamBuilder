@@ -112,14 +112,7 @@ function addSearchOneCharDropdownClass(charNamePos) {
 			}
 		}
 	}
-	console.log(tempPos);
-	if (tempPos == 1 || tempPos == 2 || tempPos == 3 || tempPos == 4 || tempPos == 5
-		|| tempPos == 6 || tempPos == 7 || tempPos == 8 || tempPos == 9 || tempPos == 10
-		|| tempPos == 11 || tempPos == 12 || tempPos == 13 || tempPos == 14 || tempPos == 15
-		|| tempPos == 16 || tempPos == 17 || tempPos == 18 || tempPos == 19 || tempPos == 20
-		|| tempPos == 21 || tempPos == 22 || tempPos == 23 || tempPos == 24 || tempPos == 25
-		|| tempPos == 26 || tempPos == 27 || tempPos == 28 || tempPos == 29 || tempPos == 30
-		|| tempPos == 31 || tempPos == 32 || tempPos == 33 || tempPos == 34 || tempPos == 35) {
+	if (tempPos > 0 && tempPos < 36) {
 		for (let j = 0; j < charListSaved.length; j++) {
 			let temp = charList_dataCharNameItems[j];
 			temp = temp.split('');
@@ -150,12 +143,10 @@ function addSearchOneCharDropdownClass(charNamePos) {
 }
 
 function myFunction() {
-	// Declare variables
 	let input = document.getElementById("search-one-char-menu-id");
 	let filter = input.value.toLowerCase();
 	ui = document.getElementsByClassName("search-one-char-dropdown-options-value");
 
-	// Loop through all list items, and hide those who don't match the search query
 	for (i = 0; i < ui.length; i++) {
 		if (input.value.length > 0) {
 			console.log(filter);
