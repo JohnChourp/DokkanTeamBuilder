@@ -27,7 +27,7 @@ function createFilterPagination(charList, charsPerPageNum) {
 	let pageSum = Math.ceil(char.length / charsPerPageNum);
 
 	let pagePrevious = document.createElement("a");
-	pagePrevious.onclick = function () { paginationPrevious(pageSum, charsPerPageNum); }
+	pagePrevious.onclick = function () { paginationPrevious(pageSum, charsPerPageNum, charList); }
 	pagePrevious.href = "#";
 	pagePrevious.setAttribute("draggable", "false");
 	pagePrevious.innerHTML = "&laquo;";
@@ -53,7 +53,7 @@ function createFilterPagination(charList, charsPerPageNum) {
 	}
 
 	let pageNext = document.createElement("a");
-	pageNext.onclick = function () { paginationFilterNext(pageSum, charsPerPageNum); }
+	pageNext.onclick = function () { paginationFilterNext(pageSum, charsPerPageNum, charList); }
 	pageNext.href = "#";
 	pageNext.setAttribute("draggable", "false");
 	pageNext.innerHTML = "&raquo;";
@@ -71,7 +71,7 @@ function createFilterPagination(charList, charsPerPageNum) {
 		paginationDiv.appendChild(pageResults);
 		pagination_page(0, char.length, pageSum, 1, charsPerPageNum, charList);
 	} else {
-		pageResults.innerHTML = "Showing 1 to " + charsPerPageNum + " of " + char.length + " Characters";
+		pageResults.innerHTML = "Showing 1 to " + charsPerPageNum + " of " + charList.length + " Characters";
 		paginationDiv.appendChild(pageResults);
 		pagination_page(0, charsPerPageNum, pageSum, 1, charsPerPageNum, charList);
 	}
@@ -86,18 +86,15 @@ function pagination_page(start, end, pageSum, pageNum, charsPerPageNum, charList
 			char_container_id.appendChild(charList[i]);
 		}
 	} else {
-		for (let i = start; i < end ; i++) {
+		for (let i = start; i < end; i++) {
 			char_container_id.appendChild(charList[i]);
 		}
 	}
-
 	let pagination_id = document.getElementById("pagination-id");
-	if (char.length < charsPerPageNum) {
-		pagination_id.children.item(pageSum + 2).innerHTML = "Showing 1 to " + char.length + " of " + char.length + " Characters";
-	} else if (pageSum == pageNum) {
-		pagination_id.children.item(pageSum + 2).innerHTML = "Showing " + (start + 1) + " to " + char.length + " of " + char.length + " Characters";
-	} else {
-		pagination_id.children.item(pageSum + 2).innerHTML = "Showing " + (start + 1) + " to " + (pageNum * charsPerPageNum) + " of " + char.length + " Characters";
+	if ((char.length < charsPerPageNum) && (pageNum == pageSum)) {
+		pagination_id.children.item(pageSum + 2).innerHTML = "Showing " + (start + 1) + " to " + charList.length + " of " + charList.length + " Characters";
+	}else {
+		pagination_id.children.item(pageSum + 2).innerHTML = "Showing " + (start + 1) + " to " + (pageNum * charsPerPageNum) + " of " + charList.length + " Characters";
 	}
 	addFilterPaginationClass(pageNum, pageSum);
 }
@@ -190,8 +187,7 @@ function pagination_page_one_char(start, end, pageSum, pageNum, charsPerPageNum)
 }
 
 
-
-function paginationPrevious(pageSum, charsPerPageNum) {
+function paginationPrevious(pageSum, charsPerPageNum, charList) {
 	let pagination_id = document.getElementById("pagination-id");
 	for (i = 1; i <= pageSum; i++) {
 		if (pagination_id.children.item(i + 1).classList.contains("checkedPagiantionBtn")) {
@@ -199,12 +195,12 @@ function paginationPrevious(pageSum, charsPerPageNum) {
 			pagination_id.children.item(i).style.border = "1px solid #4CAF50";
 			pagination_id.children.item(i + 1).classList.remove("checkedPagiantionBtn");
 			pagination_id.children.item(i + 1).style.border = "1px solid #ddd";
-			pagination_page((i - 1) * charsPerPageNum, i * charsPerPageNum, pageSum, i, charsPerPageNum);
+			pagination_page(((i - 1) * charsPerPageNum), (i * charsPerPageNum), pageSum, i, charsPerPageNum, charList);
 		}
 	}
 }
 
-function paginationFilterNext(pageSum, charsPerPageNum) {
+function paginationFilterNext(pageSum, charsPerPageNum, charList) {
 	let char = document.getElementsByClassName("char");
 	let pagination_id = document.getElementById("pagination-id");
 	for (i = pageSum; i > 0; i--) {
@@ -214,9 +210,9 @@ function paginationFilterNext(pageSum, charsPerPageNum) {
 			pagination_id.children.item(i - 1).classList.remove("checkedPagiantionBtn");
 			pagination_id.children.item(i - 1).style.border = "1px solid #ddd";
 			if (i == 1) {
-				pagination_page((i - 1) * charsPerPageNum, char.length, pageSum, i, charsPerPageNum);
+				pagination_page((i - 1) * charsPerPageNum, char.length, pageSum, i, charsPerPageNum, charList);
 			} else {
-				pagination_page((i - 1) * charsPerPageNum, i * charsPerPageNum, pageSum, i, charsPerPageNum);
+				pagination_page((i - 1) * charsPerPageNum, i * charsPerPageNum, pageSum, i, charsPerPageNum, charList);
 			}
 		}
 	}
