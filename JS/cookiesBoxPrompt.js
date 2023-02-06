@@ -13,7 +13,7 @@ function cookiesBoxPrompt() {
     let cookiesPromptAcceptOrReject = localStorage.getItem("cookiesPromptAcceptOrReject");
     if (cookiesPromptAcceptOrReject == "accept") {
         cookiesPrompt.style.display = "none";
-        //loadAnalytics();
+        loadAnalytics();
     } else {
         cookiesPrompt.style.display = "block";
     }
