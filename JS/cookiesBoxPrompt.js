@@ -11,6 +11,7 @@ function cookiesBoxPromptReject() {
 function cookiesBoxPrompt() {
     let cookiesPrompt = document.getElementById("cookies-prompt");
     let cookiesPromptAcceptOrReject = localStorage.getItem("cookiesPromptAcceptOrReject");
+
     if (cookiesPromptAcceptOrReject == "accept") {
         cookiesPrompt.style.display = "none";
         loadAnalytics();

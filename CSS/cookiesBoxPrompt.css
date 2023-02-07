@@ -8,7 +8,7 @@
     animation: fadeInAnimation ease 1s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
-    display:none;
+    display: none;
 }
 
 @keyframes fadeInAnimation {
@@ -91,7 +91,7 @@
 @media only screen and (max-width: 950px) {
     #cookies-prompt-btn-id {
         right: 10px;
-        margin-top:10px;
+        margin-top: 10px;
     }
 
     #cookies-prompt-text-id {
@@ -102,14 +102,14 @@
 @media only screen and (max-width: 741px) {
     #cookies-prompt-btn-id {
         right: 10px;
-        margin-top:20px;
+        margin-top: 20px;
     }
 }
 
 @media only screen and (max-width: 520px) {
     #cookies-prompt-btn-id {
         right: 10px;
-        margin-top:60px;
+        margin-top: 60px;
     }
 
     #cookies-prompt-text-id {

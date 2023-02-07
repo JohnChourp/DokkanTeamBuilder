@@ -13,9 +13,11 @@ function searchOneCharOptions() {
 }
 
 function addAllCharNames() {
+	let charListDiv, charList_dataCharNameItems, SortedFormattedcharList, charName, dropdowns;
+
 	document.addEventListener('click', function (event) {
 		if (!event.target.matches('#search-one-char-selected-dropdown') && !event.target.matches('#search-one-char-menu-id')) {
-			let dropdowns = document.getElementsByClassName("search-one-char-dropdown-options");
+			dropdowns = document.getElementsByClassName("search-one-char-dropdown-options");
 			for (let i = 0; i < dropdowns.length; i++) {
 				if (dropdowns[i].classList.contains('showOneCharName')) {
 					dropdowns[i].classList.remove('showOneCharName');
@@ -25,34 +27,27 @@ function addAllCharNames() {
 		}
 	});
 
-	let CharListDiv = document.getElementsByClassName("search-one-char-dropdown-options").item(0);
-	let charList_dataCharNameItems = JSON.parse(localStorage.getItem('charList_dataCharNameItems'));
-	let SortedFormattedcharList = removeDuplicates(charList_dataCharNameItems).sort();
+	charListDiv = document.getElementsByClassName("search-one-char-dropdown-options").item(0);
+	charList_dataCharNameItems = JSON.parse(localStorage.getItem('charList_dataCharNameItems'));
+	SortedFormattedcharList = removeDuplicates(charList_dataCharNameItems).sort();
 	for (let i = 0; i < SortedFormattedcharList.length; i++) {
-		let charName = document.createElement("a");
+		charName = document.createElement("a");
 		charName.classList.add("search-one-char-dropdown-options-value");
 		charName.href = "#";
 		charName.innerHTML = SortedFormattedcharList[i];
 		charName.onclick = function () { addSearchOneCharDropdownClass(i) };
-		CharListDiv.appendChild(charName);
+		charListDiv.appendChild(charName);
 	}
 }
 
 function addSearchOneCharDropdownClass(charNamePos) {
 	let searchOneCharDropdown_btn = document.getElementById("search-one-char-selected-dropdown");
 	let searchOneCharDropdownValue = document.getElementsByClassName("search-one-char-dropdown-options-value");
+	let char_container_id = document.getElementById("char-container-id");
+
 	let selectedCharName = searchOneCharDropdownValue.item(charNamePos).innerHTML;
-
-	searchOneCharDropdown_btn.innerHTML = searchOneCharDropdownValue.item(charNamePos).innerHTML;
-	searchOneCharDropdownValue.item(charNamePos).classList.add("checkedSearchOneCharBtn");
-
-	for (let i = 0; i < searchOneCharDropdownValue.length; i++) {
-		if (i != charNamePos) {
-			searchOneCharDropdownValue.item(i).classList.remove("checkedSearchOneCharBtn");
-		}
-	}
-
-	let charListSaved = [];
+	let tempPos = selectedCharName.indexOf("&");
+	let charListSaved = [], char_div, temp;
 
 	let charList_dataCharNameItems = JSON.parse(localStorage.getItem('charList_dataCharNameItems'));
 	let charList_dataCharTitleItems = JSON.parse(localStorage.getItem('charList_dataCharTitleItems'));
@@ -74,8 +69,17 @@ function addSearchOneCharDropdownClass(charNamePos) {
 	let charList_dataCharLinksItems = JSON.parse(localStorage.getItem('charList_dataCharLinksItems'));
 	let charList_dataCharCategoriesItems = JSON.parse(localStorage.getItem('charList_dataCharCategoriesItems'));
 
+	searchOneCharDropdown_btn.innerHTML = searchOneCharDropdownValue.item(charNamePos).innerHTML;
+	searchOneCharDropdownValue.item(charNamePos).classList.add("checkedSearchOneCharBtn");
+
+	for (let i = 0; i < searchOneCharDropdownValue.length; i++) {
+		if (i != charNamePos) {
+			searchOneCharDropdownValue.item(i).classList.remove("checkedSearchOneCharBtn");
+		}
+	}
+
 	for (let i = 0; i < charList_dataCharNameItems.length; i++) {
-		let char_div = document.createElement("div");
+		char_div = document.createElement("div");
 		char_div.classList.add("char");
 		setAttributes(char_div,
 			"data-char-name", charList_dataCharNameItems[i],
@@ -100,13 +104,11 @@ function addSearchOneCharDropdownClass(charNamePos) {
 		charListSaved[i] = char_div;
 	}
 
-	let char_container_id = document.getElementById("char-container-id");
 	char_container_id.innerHTML = "";
 
-	let tempPos = selectedCharName.indexOf("&");
 	if (tempPos == -1) {
 		for (let j = 0; j < charListSaved.length; j++) {
-			let temp = charList_dataCharNameItems[j];
+			temp = charList_dataCharNameItems[j];
 			if (temp == selectedCharName) {
 				char_container_id.appendChild(charListSaved[j]);
 			}
@@ -114,7 +116,7 @@ function addSearchOneCharDropdownClass(charNamePos) {
 	}
 	if (tempPos > 0 && tempPos < 36) {
 		for (let j = 0; j < charListSaved.length; j++) {
-			let temp = charList_dataCharNameItems[j];
+			temp = charList_dataCharNameItems[j];
 			temp = temp.split('');
 			temp[tempPos] = 'and1 ';
 			temp = temp.join('');
@@ -145,12 +147,10 @@ function addSearchOneCharDropdownClass(charNamePos) {
 function myFunction() {
 	let input = document.getElementById("search-one-char-menu-id");
 	let filter = input.value.toLowerCase();
-	ui = document.getElementsByClassName("search-one-char-dropdown-options-value");
+	let ui = document.getElementsByClassName("search-one-char-dropdown-options-value");
 
 	for (i = 0; i < ui.length; i++) {
 		if (input.value.length > 0) {
-			console.log(filter);
-			console.log(ui.item(i).innerHTML.toLowerCase());
 			if (ui.item(i).innerHTML.toLowerCase().indexOf(filter) >= 0) {
 				ui.item(i).style.display = "block";
 			} else {

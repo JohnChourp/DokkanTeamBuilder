@@ -1,8 +1,9 @@
 window.onclick = function (event) {
+	let dropdowns = document.getElementsByClassName("dropdown-options");
+	let openDropdown;
 	if (!event.target.matches('#selected-dropdown')) {
-		var dropdowns = document.getElementsByClassName("dropdown-options");
 		for (let i = 0; i < dropdowns.length; i++) {
-			var openDropdown = dropdowns[i];
+			openDropdown = dropdowns[i];
 			if (openDropdown.classList.contains('show')) {
 				openDropdown.classList.remove('show');
 			}
@@ -15,34 +16,15 @@ function showDisplayOptions() {
 }
 
 function addDropdownClass(filterDisplay) {
-	localStorage.setItem("filterDisplay", filterDisplay);
 	let selecteddropdown_btn = document.getElementById("selected-dropdown");
 	let dropdownOptionsValue = document.getElementsByClassName("dropdown-options-value");
-	selecteddropdown_btn.innerHTML = dropdownOptionsValue.item(filterDisplay).innerHTML;
-	dropdownOptionsValue.item(filterDisplay).classList.add("checkedDisplayBtn");
 
-	for (let i = 0; i < dropdownOptionsValue.length; i++) {
-		if (i != filterDisplay) {
-			dropdownOptionsValue.item(i).classList.remove("checkedDisplayBtn");
-		}
-	}
-
-	let dataCharName = 'data-char-name';
-	let dataCharTitle = 'data-char-title';
-	let dataCharEza = 'data-char-eza';
-	let dataCharId = 'data-char-id';
-	let dataCharHp = 'data-char-hp';
-	let dataCharAttack = 'data-char-attack';
-	let dataCharDefense = 'data-char-defense';
-	let dataCharCost = 'data-char-cost';
-	let dataCharMaxLevel = 'data-char-max-level';
-	let dataCharRelease = 'data-char-release';
-	let dataCharRecruit = 'data-char-recruit';
-	let dataCharAwaken = 'data-char-awaken';
-	let dataCharSuperAtkLevel = 'data-char-super-atk-level';
-	let dataCharSuperAtkType = 'data-char-super-atk-type';
-	let dataCharLinks = 'data-char-links';
-	let dataCharCategories = 'data-char-categories';
+	let dataCharName = 'data-char-name', dataCharTitle = 'data-char-title', dataCharEza = 'data-char-eza',
+		dataCharId = 'data-char-id', dataCharHp = 'data-char-hp', dataCharAttack = 'data-char-attack',
+		dataCharDefense = 'data-char-defense', dataCharCost = 'data-char-cost', dataCharMaxLevel = 'data-char-max-level',
+		dataCharRelease = 'data-char-release', dataCharRecruit = 'data-char-recruit', dataCharAwaken = 'data-char-awaken',
+		dataCharSuperAtkLevel = 'data-char-super-atk-level', dataCharSuperAtkType = 'data-char-super-atk-type',
+		dataCharLinks = 'data-char-links', dataCharCategories = 'data-char-categories';
 
 	let dataCharNameItems = document.querySelectorAll('[' + dataCharName + ']');
 	let dataCharTitleItems = document.querySelectorAll('[' + dataCharTitle + ']');
@@ -64,7 +46,17 @@ function addDropdownClass(filterDisplay) {
 	let char_display = document.getElementsByClassName("char_display");
 	let listLinks = [], listCategories = [], listSuperAtkType = [], listRelease = [];
 	let listLinksFormattedString = [], listCategoriesFormattedString = [], listSuperAtkTypeFormattedString = [],
-		listReleaseFormattedString = [];
+		listReleaseFormattedString = [], a, b, position, temp;
+
+	localStorage.setItem("filterDisplay", filterDisplay);
+	selecteddropdown_btn.innerHTML = dropdownOptionsValue.item(filterDisplay).innerHTML;
+	dropdownOptionsValue.item(filterDisplay).classList.add("checkedDisplayBtn");
+
+	for (let i = 0; i < dropdownOptionsValue.length; i++) {
+		if (i != filterDisplay) {
+			dropdownOptionsValue.item(i).classList.remove("checkedDisplayBtn");
+		}
+	}
 
 	for (let i = 0; i < char_display.length; i++) {
 		listLinks[i] = dataCharLinksItems[i].getAttribute(dataCharLinks).split(",");
@@ -74,10 +66,10 @@ function addDropdownClass(filterDisplay) {
 		listSuperAtkTypeFormattedString[i] = listSuperAtkType[i].join("<br/>");
 
 		if (dataCharReleaseItems[i].getAttribute(dataCharRelease).length == 25) {
-			let a = dataCharReleaseItems[i].getAttribute(dataCharRelease);
-			let b = "After EZA:.";
-			let position = 13;
-			let temp = [a.slice(0, position), b, a.slice(position)].join('');
+			a = dataCharReleaseItems[i].getAttribute(dataCharRelease);
+			b = "After EZA:.";
+			position = 13;
+			temp = [a.slice(0, position), b, a.slice(position)].join('');
 			temp = "Before EZA:." + temp;
 			listRelease[i] = temp.split(".");
 		} else {

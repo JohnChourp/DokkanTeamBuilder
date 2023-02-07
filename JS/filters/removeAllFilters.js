@@ -1,13 +1,15 @@
 function removeAllFilters() {
-	// removeAllId.style.backgroundColor = "#dfc011";
 	let filterType = [], filterRarity = [], filterClass = [],
 		filterEza = [], filterAwakenId = [], filterSuperAttackTypeId = [],
 		filterRecruitId = [];
+	let filterTypeTemp = ["agl", "teq", "int", "str", "phy"], filterRarityTemp = ["n", "r", "sr", "ssr", "ur", "lr"],
+		filterClassTemp = ["super", "extreme"], filterEzaTemp = ["eza", "noeza"],
+		filterAwakenIdTemp = ["not-dokkan-awakened", "pre-dokkan-awakened", "dokkan-awakened"],
+		filterSuperAttackTypeIdTemp = ["ki-blast", "unarmed", "physical", "other"], filterRecruitIdTemp = ["summonable", "free-to-play"],
+		filtersUsed = [], sumFilterUsed = 0;
 
 	//filterType
-	let filterTypeTemp = ["agl", "teq", "int", "str", "phy"];
-	let filterTypeLength = filterTypeTemp.length;
-	for (let i = 0; i < filterTypeLength; i++) {
+	for (let i = 0; i < filterTypeTemp.length; i++) {
 		if (document.getElementById(filterTypeTemp[i]).classList.contains("checkedTypeBtn")) {
 			filterType[i] = filterTypeTemp[i];
 		}
@@ -15,9 +17,7 @@ function removeAllFilters() {
 	filterType.clean(undefined);
 
 	//filterRarity
-	let filterRarityTemp = ["n", "r", "sr", "ssr", "ur", "lr"];
-	let filterRarityLength = filterRarityTemp.length;
-	for (let i = 0; i < filterRarityLength; i++) {
+	for (let i = 0; i < filterRarityTemp.length; i++) {
 		if (document.getElementById(filterRarityTemp[i]).classList.contains("checkedRarityBtn")) {
 			filterRarity[i] = filterRarityTemp[i];
 		}
@@ -25,9 +25,8 @@ function removeAllFilters() {
 	filterRarity.clean(undefined);
 
 	//filterClass
-	let filterClassTemp = ["super", "extreme"];
-	let filterClassLength = filterClassTemp.length;
-	for (let i = 0; i < filterClassLength; i++) {
+
+	for (let i = 0; i < filterClassTemp.length; i++) {
 		if (document.getElementById(filterClassTemp[i]).classList.contains("checkedClassBtn")) {
 			filterClass[i] = filterClassTemp[i];
 		}
@@ -35,9 +34,7 @@ function removeAllFilters() {
 	filterClass.clean(undefined);
 
 	//filterEza
-	let filterEzaTemp = ["eza", "noeza"];
-	let filterEzaLength = filterEzaTemp.length;
-	for (let i = 0; i < filterEzaLength; i++) {
+	for (let i = 0; i < filterEzaTemp.length; i++) {
 		if (document.getElementById(filterEzaTemp[i]).classList.contains("checkedEzaBtn")) {
 			filterEza[i] = filterEzaTemp[i];
 		}
@@ -45,7 +42,6 @@ function removeAllFilters() {
 	filterEza.clean(undefined);
 
 	//filterAwaken
-	let filterAwakenIdTemp = ["not-dokkan-awakened", "pre-dokkan-awakened", "dokkan-awakened"];
 	for (let i = 0; i < filterAwakenIdTemp.length; i++) {
 		if (document.getElementById(filterAwakenIdTemp[i]).classList.contains("checkedAwakenBtn")) {
 			filterAwakenId[i] = filterAwakenIdTemp[i];
@@ -54,7 +50,6 @@ function removeAllFilters() {
 	filterAwakenId.clean(undefined);
 
 	//filterSuperAttackType
-	let filterSuperAttackTypeIdTemp = ["ki-blast", "unarmed", "physical", "other"];
 	for (let i = 0; i < filterSuperAttackTypeIdTemp.length; i++) {
 		if (document.getElementById(filterSuperAttackTypeIdTemp[i]).classList.contains("checkedSuperAttackTypeBtn")) {
 			filterSuperAttackTypeId[i] = filterSuperAttackTypeIdTemp[i];
@@ -63,7 +58,6 @@ function removeAllFilters() {
 	filterSuperAttackTypeId.clean(undefined);
 
 	//filterRecruit
-	let filterRecruitIdTemp = ["summonable", "free-to-play"];
 	for (let i = 0; i < filterRecruitIdTemp.length; i++) {
 		if (document.getElementById(filterRecruitIdTemp[i]).classList.contains("checkedRecruitBtn")) {
 			filterRecruitId[i] = filterRecruitIdTemp[i];
@@ -71,8 +65,7 @@ function removeAllFilters() {
 	}
 	filterRecruitId.clean(undefined);
 
-	let filtersUsed = [filterType, filterRarity, filterClass, filterEza, filterAwakenId, filterSuperAttackTypeId, filterRecruitId];
-	let sumFilterUsed = 0;
+	filtersUsed = [filterType, filterRarity, filterClass, filterEza, filterAwakenId, filterSuperAttackTypeId, filterRecruitId];
 	//check how many filter are used
 	for (let i = 0; i < filtersUsed.length; i++) {
 		if (filtersUsed[i].length > 0) {
