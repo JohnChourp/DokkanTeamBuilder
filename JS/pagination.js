@@ -25,7 +25,7 @@ function createFilterPagination(charList, charsPerPageNum) {
 	let char = document.getElementsByClassName("char");
 	let page, pageNext, pageResults, pageSum;
 
-	pageSum = Math.ceil(char.length / charsPerPageNum);
+	pageSum = Math.ceil(charList.length / charsPerPageNum);
 	char_container_id.innerHTML = "";
 
 	for (let i = 0; i < charList.length; i++) {

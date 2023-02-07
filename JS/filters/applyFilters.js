@@ -172,6 +172,7 @@ function applyFilters() {
 	}
 
 	charListDefault.clean(undefined);
+	console.log(charListDefault);
 	createFilterPagination(charListDefault, localStorage.getItem("charsPerPageNumItem"));
 
 	let characterSearchId = document.getElementById("char-search-id");
