@@ -1,19 +1,19 @@
 function searchTitlesYes() {
-	let buttonYes = document.getElementsByClassName("searchTitles").item(0);
-	let buttonNo = document.getElementsByClassName("searchTitles").item(1);
+	let buttonYes = document.getElementById("search-titles-yes-id");
+	let buttonNo = document.getElementById("search-titles-no-id");
 
 	buttonYes.classList.add("checkedTitlesnBtn");
-	buttonYes.style.backgroundColor = "#33ccff";
-	buttonNo.style.backgroundColor = "white";
+	buttonNo.classList.remove("checkedTitlesnBtn");
+
 	localStorage.setItem("nameOrTitle", 2);
 }
 
 function searchTitlesNo() {
-	let buttonYes = document.getElementsByClassName("searchTitles").item(0);
-	let buttonNo = document.getElementsByClassName("searchTitles").item(1);
+	let buttonYes = document.getElementById("search-titles-yes-id");
+	let buttonNo = document.getElementById("search-titles-no-id");
 
 	buttonYes.classList.remove("checkedTitlesnBtn");
-	buttonYes.style.backgroundColor = "white";
-	buttonNo.style.backgroundColor = "#33ccff";
+	buttonNo.classList.add("checkedTitlesnBtn");
+
 	localStorage.setItem("nameOrTitle", 1);
 }

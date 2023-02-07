@@ -1,4 +1,5 @@
 function saveCharList() {
+	localStorage.setItem("nameOrTitle", 1);
 	let charList_dataCharNameItems = [], charList_dataCharTitleItems = [], charList_dataCharTypeItems = [],
 		charList_dataCharRarityItems = [], charList_dataCharClassItems = [], charList_dataCharEzaItems = [],
 		charList_dataCharidItems = [], charList_dataCharHpItems = [], charList_dataCharAttackItems = [],
