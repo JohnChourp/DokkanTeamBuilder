@@ -78,6 +78,10 @@ function applyFilters() {
 	let filtersEachLength = [A, B, C, D, E, F, G], filtersEachLengthString = ["A", "B", "C", "D", "E", "F", "G"],
 		filtersEachLengthStringUsed = [], charListDefault = [], filtersUsed = [], sumFilterUsed = 0;
 
+	let charactersPerInputPageId = document.getElementById("characters-per-input-page-id");
+	let charsPerPage_class = document.getElementsByClassName("charsPerPage");
+	let characterSearchId = document.getElementById("char-search-id");
+
 	//sortDirection
 	if (checkedDirectionBtn.length == 1) {
 		let temp_char = [];
@@ -172,10 +176,52 @@ function applyFilters() {
 	}
 
 	charListDefault.clean(undefined);
-	console.log(charListDefault);
 	createFilterPagination(charListDefault, localStorage.getItem("charsPerPageNumItem"));
+	charactersPerInputPageId.value = localStorage.getItem("charsPerPageNumItem");
+	for (let i = 0; i < charsPerPage_class.length; i++) {
+		charsPerPage_class.item(i).classList.remove("checkedCharsPerPageBtn");
+	}
+	if (charactersPerInputPageId.value == 16) {
+		charsPerPage_class.item(0).classList.add("checkedCharsPerPageBtn");
+		for (let i = 0; i < charsPerPage_class.length; i++) {
+			if (i != 0) {
+				charsPerPage_class.item(i).classList.remove("checkedCharsPerPageBtn");
+			}
+		}
+	}
+	if (charactersPerInputPageId.value == 32) {
+		charsPerPage_class.item(1).classList.add("checkedCharsPerPageBtn");
+		for (let i = 0; i < charsPerPage_class.length; i++) {
+			if (i != 1) {
+				charsPerPage_class.item(i).classList.remove("checkedCharsPerPageBtn");
+			}
+		}
+	}
+	if (charactersPerInputPageId.value == 64) {
+		charsPerPage_class.item(2).classList.add("checkedCharsPerPageBtn");
+		for (let i = 0; i < charsPerPage_class.length; i++) {
+			if (i != 2) {
+				charsPerPage_class.item(i).classList.remove("checkedCharsPerPageBtn");
+			}
+		}
+	}
+	if (charactersPerInputPageId.value == 128) {
+		charsPerPage_class.item(3).classList.add("checkedCharsPerPageBtn");
+		for (let i = 0; i < charsPerPage_class.length; i++) {
+			if (i != 3) {
+				charsPerPage_class.item(i).classList.remove("checkedCharsPerPageBtn");
+			}
+		}
+	}
+	if (charactersPerInputPageId.value == 256) {
+		charsPerPage_class.item(4).classList.add("checkedCharsPerPageBtn");
+		for (let i = 0; i < charsPerPage_class.length; i++) {
+			if (i != 4) {
+				charsPerPage_class.item(i).classList.remove("checkedCharsPerPageBtn");
+			}
+		}
+	}
 
-	let characterSearchId = document.getElementById("char-search-id");
 	if (characterSearchId.value.length > 0) {
 		characterSearchId.value = "";
 	}
