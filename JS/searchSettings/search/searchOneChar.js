@@ -44,11 +44,12 @@ function addSearchOneCharDropdownClass(charNamePos) {
 	let searchOneCharDropdown_btn = document.getElementById("search-one-char-selected-dropdown");
 	let searchOneCharDropdownValue = document.getElementsByClassName("search-one-char-dropdown-options-value");
 	let char_container_id = document.getElementById("char-container-id");
-
+	let char = document.getElementsByClassName("char");
+	
 	let selectedCharName = searchOneCharDropdownValue.item(charNamePos).innerHTML;
 	let tempPos = selectedCharName.indexOf("&");
 	let tempPos2 = selectedCharName.indexOf("&", tempPos+1);
-	let charListSaved = [], char_div, temp, temp2;
+	let charList=[],charListSaved = [], char_div, temp, temp2;
 
 	let charList_dataCharNameItems = JSON.parse(localStorage.getItem('charList_dataCharNameItems'));
 	let charList_dataCharTitleItems = JSON.parse(localStorage.getItem('charList_dataCharTitleItems'));
@@ -148,7 +149,11 @@ function addSearchOneCharDropdownClass(charNamePos) {
 
 	addChar();
 
-	createSearchOneCharPagination(localStorage.getItem("charsPerPageNumItem"));
+	for (let i = 0; i < char.length; i++) {
+		charList[i] = char.item(i);
+	}
+
+	createFilterPagination(charList,localStorage.getItem("charsPerPageNumItem"));
 	addDropdownClass(localStorage.getItem("filterDisplay"));
 }
 
