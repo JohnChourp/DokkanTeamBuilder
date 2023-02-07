@@ -16,17 +16,18 @@ function setAttributes(elem) {
 
 function createFilterPagination(charList, charsPerPageNum) {
 	let char_container_id = document.getElementById("char-container-id");
+	let paginationDiv = document.getElementById("pagination-id");
+	let pagePrevious = document.createElement("a");
+	let char = document.getElementsByClassName("char");
+	let page, pageNext, pageResults, pageSum;
+
+	pageSum = Math.ceil(char.length / charsPerPageNum);
 	char_container_id.innerHTML = "";
 	for (let i = 0; i < charList.length; i++) {
 		char_container_id.appendChild(charList[i]);
 	}
-
-	let paginationDiv = document.getElementById("pagination-id");
 	paginationDiv.innerHTML = "";
-	let char = document.getElementsByClassName("char");
-	let pageSum = Math.ceil(char.length / charsPerPageNum);
 
-	let pagePrevious = document.createElement("a");
 	pagePrevious.onclick = function () { paginationPrevious(pageSum, charsPerPageNum, charList); }
 	pagePrevious.href = "#";
 	pagePrevious.setAttribute("draggable", "false");
@@ -35,7 +36,7 @@ function createFilterPagination(charList, charsPerPageNum) {
 
 	for (let i = 1; i <= pageSum; i++) {
 		if (i == 1) {
-			let page = document.createElement("a");
+			page = document.createElement("a");
 			page.onclick = function () { pagination_page((i - 1) * charsPerPageNum, i * charsPerPageNum, pageSum, 1, charsPerPageNum, charList); };
 			page.href = "#";
 			page.setAttribute("draggable", "false");
@@ -43,7 +44,7 @@ function createFilterPagination(charList, charsPerPageNum) {
 			page.classList.add("checkedPagiantionBtn");
 			paginationDiv.appendChild(page);
 		} else {
-			let page = document.createElement("a");
+			page = document.createElement("a");
 			page.onclick = function () { pagination_page((i - 1) * charsPerPageNum, i * charsPerPageNum, pageSum, i, charsPerPageNum, charList); };
 			page.href = "#";
 			page.setAttribute("draggable", "false");
@@ -52,14 +53,14 @@ function createFilterPagination(charList, charsPerPageNum) {
 		}
 	}
 
-	let pageNext = document.createElement("a");
+	pageNext = document.createElement("a");
 	pageNext.onclick = function () { paginationFilterNext(pageSum, charsPerPageNum, charList); }
 	pageNext.href = "#";
 	pageNext.setAttribute("draggable", "false");
 	pageNext.innerHTML = "&raquo;";
 	paginationDiv.appendChild(pageNext);
 
-	let pageResults = document.createElement("a");
+	pageResults = document.createElement("a");
 	pageResults.href = "#";
 	pageResults.style.cursor = "text";
 	pageResults.style.backgroundColor = "transparent";
@@ -76,11 +77,13 @@ function createFilterPagination(charList, charsPerPageNum) {
 		pagination_page(0, charsPerPageNum, pageSum, 1, charsPerPageNum, charList);
 	}
 }
+
 function pagination_page(start, end, pageSum, pageNum, charsPerPageNum, charList) {
 	let char_container_id = document.getElementById("char-container-id");
-	char_container_id.innerHTML = "";
-
 	let char = document.getElementsByClassName("char");
+	let pagination_id = document.getElementById("pagination-id");
+
+	char_container_id.innerHTML = "";
 	if (pageSum == pageNum) {
 		for (let i = start; i < charList.length; i++) {
 			char_container_id.appendChild(charList[i]);
@@ -90,10 +93,9 @@ function pagination_page(start, end, pageSum, pageNum, charsPerPageNum, charList
 			char_container_id.appendChild(charList[i]);
 		}
 	}
-	let pagination_id = document.getElementById("pagination-id");
 	if ((char.length < charsPerPageNum) && (pageNum == pageSum)) {
 		pagination_id.children.item(pageSum + 2).innerHTML = "Showing " + (start + 1) + " to " + charList.length + " of " + charList.length + " Characters";
-	}else {
+	} else {
 		pagination_id.children.item(pageSum + 2).innerHTML = "Showing " + (start + 1) + " to " + (pageNum * charsPerPageNum) + " of " + charList.length + " Characters";
 	}
 	addFilterPaginationClass(pageNum, pageSum);
@@ -101,11 +103,13 @@ function pagination_page(start, end, pageSum, pageNum, charsPerPageNum, charList
 
 function createSearchOneCharPagination(charsPerPageNum) {
 	let paginationDiv = document.getElementById("pagination-id");
-	paginationDiv.innerHTML = "";
 	let char = document.getElementsByClassName("char");
-	let pageSum = Math.ceil(char.length / charsPerPageNum);
-
 	let pagePrevious = document.createElement("a");
+	let pageSum, pageNext, pageResults;
+
+	pageSum = Math.ceil(char.length / charsPerPageNum);
+	paginationDiv.innerHTML = "";
+
 	pagePrevious.onclick = function () { paginationPrevious(pageSum, charsPerPageNum); }
 	pagePrevious.href = "#";
 	pagePrevious.setAttribute("draggable", "false");
@@ -131,14 +135,14 @@ function createSearchOneCharPagination(charsPerPageNum) {
 		}
 	}
 
-	let pageNext = document.createElement("a");
+	pageNext = document.createElement("a");
 	pageNext.onclick = function () { paginationFilterNext(pageSum, charsPerPageNum); }
 	pageNext.href = "#";
 	pageNext.setAttribute("draggable", "false");
 	pageNext.innerHTML = "&raquo;";
 	paginationDiv.appendChild(pageNext);
 
-	let pageResults = document.createElement("a");
+	pageResults = document.createElement("a");
 	pageResults.href = "#";
 	pageResults.style.cursor = "text";
 	pageResults.style.backgroundColor = "transparent";
@@ -157,6 +161,8 @@ function createSearchOneCharPagination(charsPerPageNum) {
 }
 function pagination_page_one_char(start, end, pageSum, pageNum, charsPerPageNum) {
 	let char = document.getElementsByClassName("char");
+	let pagination_id = document.getElementById("pagination-id");
+
 	for (let i = 0; i < char.length; i++) {
 		char.item(i).style.display = "none";
 	}
@@ -175,7 +181,6 @@ function pagination_page_one_char(start, end, pageSum, pageNum, charsPerPageNum)
 		}
 	}
 
-	let pagination_id = document.getElementById("pagination-id");
 	if (char.length < charsPerPageNum) {
 		pagination_id.children.item(pageSum + 2).innerHTML = "Showing 1 to " + char.length + " of " + char.length + " Characters";
 	} else if (pageSum == pageNum) {
@@ -189,6 +194,7 @@ function pagination_page_one_char(start, end, pageSum, pageNum, charsPerPageNum)
 
 function paginationPrevious(pageSum, charsPerPageNum, charList) {
 	let pagination_id = document.getElementById("pagination-id");
+
 	for (i = 1; i <= pageSum; i++) {
 		if (pagination_id.children.item(i + 1).classList.contains("checkedPagiantionBtn")) {
 			pagination_id.children.item(i).classList.add("checkedPagiantionBtn");
@@ -203,6 +209,7 @@ function paginationPrevious(pageSum, charsPerPageNum, charList) {
 function paginationFilterNext(pageSum, charsPerPageNum, charList) {
 	let char = document.getElementsByClassName("char");
 	let pagination_id = document.getElementById("pagination-id");
+
 	for (i = pageSum; i > 0; i--) {
 		if (pagination_id.children.item(i - 1).classList.contains("checkedPagiantionBtn")) {
 			pagination_id.children.item(i).classList.add("checkedPagiantionBtn");
@@ -220,6 +227,7 @@ function paginationFilterNext(pageSum, charsPerPageNum, charList) {
 
 function addFilterPaginationClass(pageNum, pageSum) {
 	let pagination_id = document.getElementById("pagination-id");
+
 	if (!pagination_id.children.item(pageNum).classList.contains("checkedPagiantionBtn")) {
 		for (i = 1; i <= pageSum; i++) {
 			pagination_id.children.item(i).classList.remove("checkedPagiantionBtn");

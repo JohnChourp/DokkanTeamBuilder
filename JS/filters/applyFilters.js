@@ -1,5 +1,7 @@
 function filtersMultipleUsed(dataChars, filtersEachLengthString, filtersEachLengthStringUsed, filtersUsed) {
-	let filters = [], filterCharItems = [], filterChars = [];
+	let filters = [], filterCharItems = [], filterChars = [], filterCharItemsTemp = [], filterCharItems2 = [];
+	let charListAll = create2DimensionalArray(filtersEachLengthStringUsed.length, 1);
+	let char = document.getElementsByClassName("char");
 
 	for (j = 0; j < filtersEachLengthStringUsed.length; j++) {
 		for (let i = 0; i < filtersEachLengthString.length; i++) {
@@ -10,10 +12,7 @@ function filtersMultipleUsed(dataChars, filtersEachLengthString, filtersEachLeng
 			}
 		}
 	}
-	let charListAll = create2DimensionalArray(filtersEachLengthStringUsed.length, 1);
-	let char = document.getElementsByClassName("char");
 
-	let filterCharItemsTemp = [], filterCharItems2 = [];
 	for (k = 0; k < filtersEachLengthStringUsed.length; k++) {
 		if (filtersUsed[5].length > 0) {
 			for (let i = 0; i < filterCharItems[k].length; i++) {
@@ -52,10 +51,34 @@ function create2DimensionalArray(rows, columns) {
 
 function applyFilters() {
 	setCharList();
-	//sortDirection
 	let char_container_id = document.getElementById("char-container-id");
 	let char = document.getElementsByClassName("char");
 	let checkedDirectionBtn = document.getElementsByClassName("checkedDirectionBtn");
+	let searchOneCharDropdownValue = document.getElementsByClassName("search-one-char-dropdown-options-value");
+	let dataCharType = 'data-char-type', dataCharRarity = 'data-char-rarity', dataCharClass = 'data-char-class',
+		dataCharEza = 'data-char-eza', dataCharAwaken = 'data-char-awaken', dataCharSuperAtkType = 'data-char-super-atk-type',
+		dataCharRecruit = 'data-char-recruit';
+	let dataChars = [dataCharType, dataCharRarity, dataCharClass,
+		dataCharEza, dataCharAwaken, dataCharSuperAtkType, dataCharRecruit];
+	let filterType = [], filterRarity = [], filterClass = [],
+		filterEza = [], filterAwakenId = [], filterSuperAttackTypeId = [],
+		filterRecruitId = [];
+
+	let filterTypeTemp = ["agl", "teq", "int", "str", "phy"], filterRarityTemp = ["n", "r", "sr", "ssr", "ur", "lr"],
+		filterClassTemp = ["super", "extreme"], filterEzaTemp = ["eza", "noeza"],
+		filterAwakenIdTemp = ["not-dokkan-awakened", "pre-dokkan-awakened", "dokkan-awakened"],
+		filterSuperAttackTypeIdTemp = ["ki-blast", "unarmed", "physical", "other"], filterRecruitIdTemp = ["summonable", "free-to-play"];
+	let A = document.getElementsByClassName("checkedTypeBtn").length;
+	let B = document.getElementsByClassName("checkedRarityBtn").length;
+	let C = document.getElementsByClassName("checkedClassBtn").length;
+	let D = document.getElementsByClassName("checkedEzaBtn").length;
+	let E = document.getElementsByClassName("checkedAwakenBtn").length;
+	let F = document.getElementsByClassName("checkedSuperAttackTypeBtn").length;
+	let G = document.getElementsByClassName("checkedRecruitBtn").length;
+	let filtersEachLength = [A, B, C, D, E, F, G], filtersEachLengthString = ["A", "B", "C", "D", "E", "F", "G"],
+		filtersEachLengthStringUsed = [], charListDefault = [], filtersUsed = [], sumFilterUsed = 0;
+
+	//sortDirection
 	if (checkedDirectionBtn.length == 1) {
 		let temp_char = [];
 		for (let i = 0; i < char.length; i++) {
@@ -69,59 +92,40 @@ function applyFilters() {
 	}
 
 	//select one char
-	let searchOneCharDropdownValue = document.getElementsByClassName("search-one-char-dropdown-options-value");
 	for (let i = 0; i < searchOneCharDropdownValue.length; i++) {
 		if (searchOneCharDropdownValue.item(i).classList.contains("checkedSearchOneCharBtn")) {
 			addSearchOneCharDropdownClass(i);
 		}
 	}
 
-	let dataCharType = 'data-char-type', dataCharRarity = 'data-char-rarity', dataCharClass = 'data-char-class',
-		dataCharEza = 'data-char-eza', dataCharAwaken = 'data-char-awaken', dataCharSuperAtkType = 'data-char-super-atk-type',
-		dataCharRecruit = 'data-char-recruit';
-	let dataChars = [dataCharType, dataCharRarity, dataCharClass,
-		dataCharEza, dataCharAwaken, dataCharSuperAtkType, dataCharRecruit];
-	let filterType = [], filterRarity = [], filterClass = [],
-		filterEza = [], filterAwakenId = [], filterSuperAttackTypeId = [],
-		filterRecruitId = [];
-
-	let filterTypeTemp = ["agl", "teq", "int", "str", "phy"];
-	let filterTypeLength = filterTypeTemp.length;
-	for (let i = 0; i < filterTypeLength; i++) {
+	for (let i = 0; i < filterTypeTemp.length; i++) {
 		if (document.getElementById(filterTypeTemp[i]).classList.contains("checkedTypeBtn")) {
 			filterType[i] = filterTypeTemp[i];
 		}
 	}
 	filterType.clean(undefined);
 
-	let filterRarityTemp = ["n", "r", "sr", "ssr", "ur", "lr"];
-	let filterRarityLength = filterRarityTemp.length;
-	for (let i = 0; i < filterRarityLength; i++) {
+	for (let i = 0; i < filterRarityTemp.length; i++) {
 		if (document.getElementById(filterRarityTemp[i]).classList.contains("checkedRarityBtn")) {
 			filterRarity[i] = filterRarityTemp[i];
 		}
 	}
 	filterRarity.clean(undefined);
 
-	let filterClassTemp = ["super", "extreme"];
-	let filterClassLength = filterClassTemp.length;
-	for (let i = 0; i < filterClassLength; i++) {
+	for (let i = 0; i < filterClassTemp.length; i++) {
 		if (document.getElementById(filterClassTemp[i]).classList.contains("checkedClassBtn")) {
 			filterClass[i] = filterClassTemp[i];
 		}
 	}
 	filterClass.clean(undefined);
 
-	let filterEzaTemp = ["eza", "noeza"];
-	let filterEzaLength = filterEzaTemp.length;
-	for (let i = 0; i < filterEzaLength; i++) {
+	for (let i = 0; i < filterEzaTemp.length; i++) {
 		if (document.getElementById(filterEzaTemp[i]).classList.contains("checkedEzaBtn")) {
 			filterEza[i] = filterEzaTemp[i];
 		}
 	}
 	filterEza.clean(undefined);
 
-	let filterAwakenIdTemp = ["not-dokkan-awakened", "pre-dokkan-awakened", "dokkan-awakened"];
 	for (let i = 0; i < filterAwakenIdTemp.length; i++) {
 		if (document.getElementById(filterAwakenIdTemp[i]).classList.contains("checkedAwakenBtn")) {
 			filterAwakenId[i] = filterAwakenIdTemp[i];
@@ -129,7 +133,6 @@ function applyFilters() {
 	}
 	filterAwakenId.clean(undefined);
 
-	let filterSuperAttackTypeIdTemp = ["ki-blast", "unarmed", "physical", "other"];
 	for (let i = 0; i < filterSuperAttackTypeIdTemp.length; i++) {
 		if (document.getElementById(filterSuperAttackTypeIdTemp[i]).classList.contains("checkedSuperAttackTypeBtn")) {
 			filterSuperAttackTypeId[i] = filterSuperAttackTypeIdTemp[i];
@@ -137,7 +140,6 @@ function applyFilters() {
 	}
 	filterSuperAttackTypeId.clean(undefined);
 
-	let filterRecruitIdTemp = ["summonable", "free-to-play"];
 	for (let i = 0; i < filterRecruitIdTemp.length; i++) {
 		if (document.getElementById(filterRecruitIdTemp[i]).classList.contains("checkedRecruitBtn")) {
 			filterRecruitId[i] = filterRecruitIdTemp[i];
@@ -145,19 +147,7 @@ function applyFilters() {
 	}
 	filterRecruitId.clean(undefined);
 
-	let filtersUsed = [filterType, filterRarity, filterClass, filterEza, filterAwakenId, filterSuperAttackTypeId, filterRecruitId];
-	let A = document.getElementsByClassName("checkedTypeBtn").length;
-	let B = document.getElementsByClassName("checkedRarityBtn").length;
-	let C = document.getElementsByClassName("checkedClassBtn").length;
-	let D = document.getElementsByClassName("checkedEzaBtn").length;
-	let E = document.getElementsByClassName("checkedAwakenBtn").length;
-	let F = document.getElementsByClassName("checkedSuperAttackTypeBtn").length;
-	let G = document.getElementsByClassName("checkedRecruitBtn").length;
-	let filtersEachLength = [A, B, C, D, E, F, G];
-	let filtersEachLengthString = ["A", "B", "C", "D", "E", "F", "G"];
-	let filtersEachLengthStringUsed = [];
-	let charListDefault = [];
-	let sumFilterUsed = 0;
+	filtersUsed = [filterType, filterRarity, filterClass, filterEza, filterAwakenId, filterSuperAttackTypeId, filterRecruitId];
 
 	//check how many filter are used
 	for (let i = 0; i < filtersUsed.length; i++) {

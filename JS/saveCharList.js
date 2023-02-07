@@ -6,6 +6,7 @@ function saveCharList() {
 		charList_dataCharSuperAtkLevelItems = [], charList_dataCharRecruitItems = [], charList_dataCharAwakenItems = [],
 		charList_dataCharReleaseItems = [], charList_dataCharSuperAtkTypeItems = [], charList_dataCharLinksItems = [], charList_dataCharCategoriesItems = [];
 	let char = document.getElementsByClassName("char");
+
 	for (let i = 0; i < char.length; i++) {
 		charList_dataCharNameItems[i] = char.item(i).getAttribute("data-char-name");
 		charList_dataCharTitleItems[i] = char.item(i).getAttribute("data-char-title");
@@ -51,7 +52,6 @@ function saveCharList() {
 
 function setCharList() {
 	let charListSaved = [];
-
 	let charList_dataCharNameItems = JSON.parse(localStorage.getItem('charList_dataCharNameItems'));
 	let charList_dataCharTitleItems = JSON.parse(localStorage.getItem('charList_dataCharTitleItems'));
 	let charList_dataCharTypeItems = JSON.parse(localStorage.getItem('charList_dataCharTypeItems'));
@@ -71,9 +71,11 @@ function setCharList() {
 	let charList_dataCharSuperAtkTypeItems = JSON.parse(localStorage.getItem('charList_dataCharSuperAtkTypeItems'));
 	let charList_dataCharLinksItems = JSON.parse(localStorage.getItem('charList_dataCharLinksItems'));
 	let charList_dataCharCategoriesItems = JSON.parse(localStorage.getItem('charList_dataCharCategoriesItems'));
+	let char_div = document.createElement("div");
+	let char_container_id = document.getElementById("char-container-id");
 
 	for (let i = 0; i < charList_dataCharNameItems.length; i++) {
-		let char_div = document.createElement("div");
+		char_div = document.createElement("div");
 		char_div.classList.add("char");
 		setAttributes(char_div,
 			"data-char-name", charList_dataCharNameItems[i],
@@ -98,7 +100,6 @@ function setCharList() {
 		charListSaved[i] = char_div;
 	}
 
-	let char_container_id = document.getElementById("char-container-id");
 	char_container_id.innerHTML = "";
 	for (let j = 0; j < charListSaved.length; j++) {
 		char_container_id.appendChild(charListSaved[j]);
