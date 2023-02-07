@@ -73,7 +73,7 @@
 </head>
 
 <body
-	onload="cookiesBoxPrompt(); addChar(); saveCharList(); charsPerPageInput(32); searchTitlesNo(); searchChar(); applyFilters(); closeNavWhenClickedOutside(); addAllCharNames();">
+	onload="cookiesBoxPrompt(); addChar(); saveCharList(); searchTitlesNo(); applyFilters(); closeNavWhenClickedOutside(); addAllCharNames();">
 	<div id="cookies-prompt">
 		<div id="cookies-prompt-title-id">We value your privacy</div>
 		<div id="cookies-prompt-flex-id">
@@ -321,8 +321,8 @@
 			<span>Filter Select</span>
 		</button>
 		<div id="search-bar-with-settings-id">
-			<input id="char-search-id" placeholder="Enter Character Name..." title="Type in a name" type="text"
-				inputmode="search" />
+			<input onclick="searchChar();" id="char-search-id" placeholder="Enter Character Name..."
+				title="Type in a name" type="text" inputmode="search" />
 			<button onclick="searchSettings();" id="search-settings-btn-id" type="button">
 				<img id="search-settings-image-id" src="Images/searchSettings/searchSettingImageGear.png"
 					alt="settings_Image">
@@ -372,8 +372,8 @@
 			<div id="characters-per-page-id">
 				<p id="characters-per-page-text-id" class="search-settings-text-class">Characters Per
 					Page</p>
-				<input id="characters-per-input-page-id" placeholder="Number..." title="Type in a number" type="text"
-					inputmode="search" />
+				<input onclick="charsPerPageInput(32);" id="characters-per-input-page-id" placeholder="Number..."
+					title="Type in a number" type="text" inputmode="search" />
 			</div>
 			<div id="characters-per-page-pages-id">
 				<button onclick="charsPerPage(0);" class="charsPerPage" type="button">
