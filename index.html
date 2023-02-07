@@ -73,7 +73,7 @@
 </head>
 
 <body
-	onload="cookiesBoxPrompt(); addChar(); saveCharList(); searchTitlesNo(); applyFilters(); closeNavWhenClickedOutside(); addAllCharNames();">
+	onload="cookiesBoxPrompt(); addChar(); saveCharList(); searchTitlesNo(); applyFilters();">
 	<div id="cookies-prompt">
 		<div id="cookies-prompt-title-id">We value your privacy</div>
 		<div id="cookies-prompt-flex-id">
@@ -352,12 +352,12 @@
 			</div>
 			<div id="character-diplay-id">
 				<p id="search-settings-text-character-id" class="search-settings-text-class">Character</p>
-				<button onclick="searchOneCharOptions();" id="search-one-char-selected-dropdown" type="button">
+				<button onclick="addAllCharNames(); closeNavWhenClickedOutside(); searchOneCharOptions();" id="search-one-char-selected-dropdown" type="button">
 					All
 				</button>
 				<div class="search-one-char-dropdown-options"></div>
 				<p id="search-one-char-hint-id">*Use this filter before &laquo;Filter Select&raquo;</p>
-				<input type="text" id="search-one-char-menu-id" onkeyup="myFunction()" placeholder="Search Name.."
+				<input type="text" id="search-one-char-menu-id" onkeyup="myFunction();" placeholder="Search Name.."
 					title="Type in a search name" inputmode="search">
 			</div>
 			<div id="search-titles-id">

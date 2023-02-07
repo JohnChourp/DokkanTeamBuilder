@@ -13,30 +13,36 @@ function searchOneCharOptions() {
 }
 
 function addAllCharNames() {
-	let charListDiv, charList_dataCharNameItems, SortedFormattedcharList, charName, dropdowns;
-
-	document.addEventListener('click', function (event) {
-		if (!event.target.matches('#search-one-char-selected-dropdown') && !event.target.matches('#search-one-char-menu-id')) {
-			dropdowns = document.getElementsByClassName("search-one-char-dropdown-options");
-			for (let i = 0; i < dropdowns.length; i++) {
-				if (dropdowns[i].classList.contains('showOneCharName')) {
-					dropdowns[i].classList.remove('showOneCharName');
-					document.getElementById("search-one-char-menu-id").style.display = "none";
+	let addAllCharNamesEventCompleted = localStorage.getItem("addAllCharNamesEventCompleted");
+	if (addAllCharNamesEventCompleted == null) {
+		window.addEventListener("unload", function () {
+			localStorage.removeItem("addAllCharNamesEventCompleted");
+		});
+		let charListDiv, charList_dataCharNameItems, SortedFormattedcharList, charName, dropdowns;
+		document.addEventListener('click', function (event) {
+			if (!event.target.matches('#search-one-char-selected-dropdown') && !event.target.matches('#search-one-char-menu-id')) {
+				dropdowns = document.getElementsByClassName("search-one-char-dropdown-options");
+				for (let i = 0; i < dropdowns.length; i++) {
+					if (dropdowns[i].classList.contains('showOneCharName')) {
+						dropdowns[i].classList.remove('showOneCharName');
+						document.getElementById("search-one-char-menu-id").style.display = "none";
+					}
 				}
 			}
-		}
-	});
+		});
 
-	charListDiv = document.getElementsByClassName("search-one-char-dropdown-options").item(0);
-	charList_dataCharNameItems = JSON.parse(localStorage.getItem('charList_dataCharNameItems'));
-	SortedFormattedcharList = removeDuplicates(charList_dataCharNameItems).sort();
-	for (let i = 0; i < SortedFormattedcharList.length; i++) {
-		charName = document.createElement("a");
-		charName.classList.add("search-one-char-dropdown-options-value");
-		charName.href = "#";
-		charName.innerHTML = SortedFormattedcharList[i];
-		charName.onclick = function () { addSearchOneCharDropdownClass(i) };
-		charListDiv.appendChild(charName);
+		charListDiv = document.getElementsByClassName("search-one-char-dropdown-options").item(0);
+		charList_dataCharNameItems = JSON.parse(localStorage.getItem('charList_dataCharNameItems'));
+		SortedFormattedcharList = removeDuplicates(charList_dataCharNameItems).sort();
+		for (let i = 0; i < SortedFormattedcharList.length; i++) {
+			charName = document.createElement("a");
+			charName.classList.add("search-one-char-dropdown-options-value");
+			charName.href = "#";
+			charName.innerHTML = SortedFormattedcharList[i];
+			charName.onclick = function () { addSearchOneCharDropdownClass(i) };
+			charListDiv.appendChild(charName);
+		}
+		localStorage.setItem("addAllCharNamesEventCompleted", 1);
 	}
 }
 
@@ -45,11 +51,11 @@ function addSearchOneCharDropdownClass(charNamePos) {
 	let searchOneCharDropdownValue = document.getElementsByClassName("search-one-char-dropdown-options-value");
 	let char_container_id = document.getElementById("char-container-id");
 	let char = document.getElementsByClassName("char");
-	
+
 	let selectedCharName = searchOneCharDropdownValue.item(charNamePos).innerHTML;
 	let tempPos = selectedCharName.indexOf("&");
-	let tempPos2 = selectedCharName.indexOf("&", tempPos+1);
-	let charList=[],charListSaved = [], char_div, temp, temp2;
+	let tempPos2 = selectedCharName.indexOf("&", tempPos + 1);
+	let charList = [], charListSaved = [], char_div, temp, temp2;
 
 	let charList_dataCharNameItems = JSON.parse(localStorage.getItem('charList_dataCharNameItems'));
 	let charList_dataCharTitleItems = JSON.parse(localStorage.getItem('charList_dataCharTitleItems'));
@@ -153,7 +159,7 @@ function addSearchOneCharDropdownClass(charNamePos) {
 		charList[i] = char.item(i);
 	}
 
-	createFilterPagination(charList,localStorage.getItem("charsPerPageNumItem"));
+	createFilterPagination(charList, localStorage.getItem("charsPerPageNumItem"));
 	addDropdownClass(localStorage.getItem("filterDisplay"));
 }
 
