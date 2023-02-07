@@ -192,9 +192,7 @@ function searchChar() {
 				if (sumFilterUsed > 0) {
 					charListDefault = filtersMultipleUsedWithSearchChar(dataChars, filtersEachLengthString, filtersEachLengthStringUsed, filtersUsed, dataCharNameOrTitleItems, dataCharNameOrTitle, characterSearchId);
 				}
-
 				charListDefault.clean(undefined);
-				console.log(charListDefault);
 				createFilterPagination(charListDefault, localStorage.getItem("charsPerPageNumItem"));
 				addDropdownClass(localStorage.getItem("filterDisplay"));
 			}

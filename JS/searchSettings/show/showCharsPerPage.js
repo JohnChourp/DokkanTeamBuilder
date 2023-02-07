@@ -1,6 +1,5 @@
 function charsPerPageInput(charsPerPageNum) {
 	let charsPerPageInputEventCompleted = localStorage.getItem("charsPerPageInputEventCompleted");
-	console.log(charsPerPageInputEventCompleted);
 	if (charsPerPageInputEventCompleted == null) {
 		window.addEventListener("unload",function(){
 			localStorage.removeItem("charsPerPageInputEventCompleted");
