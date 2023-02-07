@@ -47,7 +47,8 @@ function addSearchOneCharDropdownClass(charNamePos) {
 
 	let selectedCharName = searchOneCharDropdownValue.item(charNamePos).innerHTML;
 	let tempPos = selectedCharName.indexOf("&");
-	let charListSaved = [], char_div, temp;
+	let tempPos2 = selectedCharName.indexOf("&", tempPos+1);
+	let charListSaved = [], char_div, temp, temp2;
 
 	let charList_dataCharNameItems = JSON.parse(localStorage.getItem('charList_dataCharNameItems'));
 	let charList_dataCharTitleItems = JSON.parse(localStorage.getItem('charList_dataCharTitleItems'));
@@ -106,38 +107,45 @@ function addSearchOneCharDropdownClass(charNamePos) {
 
 	char_container_id.innerHTML = "";
 
-	if (tempPos == -1) {
-		for (let j = 0; j < charListSaved.length; j++) {
-			temp = charList_dataCharNameItems[j];
-			if (temp == selectedCharName) {
-				char_container_id.appendChild(charListSaved[j]);
+	if (tempPos2 == -1) {
+		if (tempPos == -1) {
+			for (let j = 0; j < charListSaved.length; j++) {
+				temp = charList_dataCharNameItems[j];
+				if (temp == selectedCharName) {
+					char_container_id.appendChild(charListSaved[j]);
+				}
+			}
+		} else {
+			for (let j = 0; j < charListSaved.length; j++) {
+				temp = charList_dataCharNameItems[j];
+				temp = temp.split('');
+				temp[tempPos] = '&amp;';
+				temp = temp.join('');
+
+				if (temp == selectedCharName) {
+					char_container_id.appendChild(charListSaved[j]);
+				}
 			}
 		}
-	}
-	if (tempPos > 0 && tempPos < 36) {
+	} else {
+
 		for (let j = 0; j < charListSaved.length; j++) {
 			temp = charList_dataCharNameItems[j];
 			temp = temp.split('');
-			temp[tempPos] = 'and1 ';
+			temp[tempPos] = '&amp;';
 			temp = temp.join('');
 
-			selectedCharName = selectedCharName.split('');
-			selectedCharName[tempPos + 4] = ' ';
-			selectedCharName[tempPos + 3] = ' ';
-			selectedCharName[tempPos + 2] = ' ';
-			selectedCharName[tempPos + 1] = ' ';
-			selectedCharName[tempPos] = 'and1';
-			selectedCharName[tempPos + 1] = ' ';
-			selectedCharName[tempPos + 2] = '';
-			selectedCharName[tempPos + 3] = '';
-			selectedCharName[tempPos + 4] = '';
-			selectedCharName = selectedCharName.join('');
+			temp2 = temp;
+			temp2 = temp2.split('');
+			temp2[tempPos2] = '&amp;';
+			temp2 = temp2.join('');
 
-			if (temp == selectedCharName) {
+			if (temp2 == selectedCharName) {
 				char_container_id.appendChild(charListSaved[j]);
 			}
 		}
 	}
+
 	addChar();
 
 	createSearchOneCharPagination(localStorage.getItem("charsPerPageNumItem"));
