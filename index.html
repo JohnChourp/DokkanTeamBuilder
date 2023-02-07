@@ -73,7 +73,7 @@
 </head>
 
 <body
-	onload="cookiesBoxPrompt(); addChar(); saveCharList(); searchTitlesNo(); applyFilters();">
+	onload="cookiesBoxPrompt(); addChar(); saveCharList(); applyFilters();">
 	<div id="cookies-prompt">
 		<div id="cookies-prompt-title-id">We value your privacy</div>
 		<div id="cookies-prompt-flex-id">
@@ -362,10 +362,10 @@
 			</div>
 			<div id="search-titles-id">
 				<p id="search-settings-text-search-titles-id" class="search-settings-text-class">Search Titles</p>
-				<button onclick="searchTitlesYes();" class="searchTitles" type="button">
+				<button id="search-titles-yes-id" onclick="searchTitlesYes();" class="titlesnBtn" type="button">
 					YES
 				</button>
-				<button onclick="searchTitlesNo();" class="searchTitles checkedTitlesnBtn" type="button">
+				<button id="search-titles-no-id" onclick="searchTitlesNo();" class="titlesnBtn checkedTitlesnBtn" type="button">
 					NO
 				</button>
 			</div>

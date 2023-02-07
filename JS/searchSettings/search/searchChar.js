@@ -57,9 +57,8 @@ function searchChar() {
 			if (event.key === "Enter") {
 				event.preventDefault();
 				setCharList();
-
-				let characterSearchId = document.getElementById("char-search-id");
 				let nameOrTitle = localStorage.getItem("nameOrTitle");
+				let characterSearchId = document.getElementById("char-search-id");
 				let char_container_id = document.getElementById("char-container-id");
 				let char = document.getElementsByClassName("char");
 				let checkedDirectionBtn = document.getElementsByClassName("checkedDirectionBtn");
