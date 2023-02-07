@@ -194,6 +194,7 @@ function searchChar() {
 				}
 
 				charListDefault.clean(undefined);
+				console.log(charListDefault);
 				createFilterPagination(charListDefault, localStorage.getItem("charsPerPageNumItem"));
 				addDropdownClass(localStorage.getItem("filterDisplay"));
 			}
