@@ -4,7 +4,12 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1" />
-
+	<meta name="description" content="With DokkanTeamBuilder you can filter or search characters and build the best team possible with specialized filters.">
+	<meta name="author" content="IOANNIS CHOURPOULIADIS">
+	<meta name="author" content="JohnChourp">
+	<meta name="color-scheme" content="dark">
+	<meta name="theme-color" content="dark">
+	<meta name="keywords" content="dark">
 	<!--Google Analytics-->
 	<script src="JS/googleAnalytics.js" type="text/javascript"></script>
 	<!--Google Analytics-->
@@ -320,7 +325,7 @@
 		</div>
 	</div>
 	<div id="main-page-id">
-		<button onclick="openNav();" id="filter-select-id" type="button">
+		<button onclick="openNav(); closeNavWhenClickedOutside();" id="filter-select-id" type="button">
 			<span>Filter Select</span>
 		</button>
 		<div id="search-bar-with-settings-id">
@@ -355,7 +360,7 @@
 			</div>
 			<div id="character-diplay-id">
 				<p id="search-settings-text-character-id" class="search-settings-text-class">Character</p>
-				<button onclick="addAllCharNames(); closeNavWhenClickedOutside(); searchOneCharOptions();"
+				<button onclick="addAllCharNames(); searchOneCharOptions();"
 					id="search-one-char-selected-dropdown" type="button">
 					All
 				</button>
