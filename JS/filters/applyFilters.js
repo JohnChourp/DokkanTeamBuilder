@@ -176,7 +176,11 @@ function applyFilters() {
 	}
 
 	charListDefault.clean(undefined);
-	createFilterPagination(charListDefault, localStorage.getItem("charsPerPageNumItem"));
+	if (localStorage.getItem("charsPerPageNumItem") == null) {
+		createFilterPagination(charListDefault, 32);
+	} else {
+		createFilterPagination(charListDefault, localStorage.getItem("charsPerPageNumItem"));
+	}
 	charactersPerInputPageId.value = localStorage.getItem("charsPerPageNumItem");
 	for (let i = 0; i < charsPerPage_class.length; i++) {
 		charsPerPage_class.item(i).classList.remove("checkedCharsPerPageBtn");
