@@ -1,9 +1,9 @@
-function cookiesBoxPromptAccept() {
+function acceptCookies() {
     localStorage.setItem("cookiesPromptAcceptOrReject", "accept");
-    window.location.reload();
+    location.reload();
 }
 
-function cookiesBoxPromptReject() {
+function acceptCookies() {
     localStorage.setItem("cookiesPromptAcceptOrReject", "reject");
     document.getElementById("cookies-prompt").style.display = "none";
 }
