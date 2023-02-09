@@ -1,18 +1,17 @@
-function acceptCookies() {
-    localStorage.setItem("cookiesPromptAcceptOrReject", "accept");
+function cookiesBoxAccept() {
+    localStorage.setItem("cookiesAcceptReject", "accept");
     location.reload();
 }
 
-function acceptCookies() {
-    localStorage.setItem("cookiesPromptAcceptOrReject", "reject");
-    document.getElementById("cookies-prompt").style.display = "none";
+function cookiesBoxReject() {
+    localStorage.setItem("cookiesAcceptReject", "reject");
+    document.querySelector("#cookies-prompt").style.display = "none";
 }
 
-function cookiesBoxPrompt() {
-    let cookiesPrompt = document.getElementById("cookies-prompt");
-    let cookiesPromptAcceptOrReject = localStorage.getItem("cookiesPromptAcceptOrReject");
-
-    if (cookiesPromptAcceptOrReject == "accept") {
+function cookiesBox() {
+    const cookiesPrompt = document.querySelector("#cookies-prompt");
+    const cookiesAcceptReject = localStorage.getItem("cookiesAcceptReject");
+    if (cookiesAcceptReject === "accept") {
         cookiesPrompt.style.display = "none";
         loadAnalytics();
     } else {
