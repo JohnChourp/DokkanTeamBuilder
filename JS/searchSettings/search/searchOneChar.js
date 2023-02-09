@@ -1,8 +1,3 @@
-function removeDuplicates(arr) {
-	return arr.filter((item,
-		index) => arr.indexOf(item) === index);
-}
-
 function searchOneCharOptions() {
 	document.getElementsByClassName("search-one-char-dropdown-options").item(0).classList.toggle("showOneCharName");
 	if (document.getElementsByClassName("search-one-char-dropdown-options").item(0).classList.contains("showOneCharName")) {

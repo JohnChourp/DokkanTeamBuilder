@@ -14,57 +14,49 @@ function removeAllFilters() {
 			filterType[i] = filterTypeTemp[i];
 		}
 	}
-	filterType.clean(undefined);
-
+	filterType = cleanArray(filterType, undefined);
 	//filterRarity
 	for (let i = 0; i < filterRarityTemp.length; i++) {
 		if (document.getElementById(filterRarityTemp[i]).classList.contains("checkedRarityBtn")) {
 			filterRarity[i] = filterRarityTemp[i];
 		}
 	}
-	filterRarity.clean(undefined);
-
+	filterRarity = cleanArray(filterRarity, undefined);
 	//filterClass
-
 	for (let i = 0; i < filterClassTemp.length; i++) {
 		if (document.getElementById(filterClassTemp[i]).classList.contains("checkedClassBtn")) {
 			filterClass[i] = filterClassTemp[i];
 		}
 	}
-	filterClass.clean(undefined);
-
+	filterClass = cleanArray(filterClass, undefined);
 	//filterEza
 	for (let i = 0; i < filterEzaTemp.length; i++) {
 		if (document.getElementById(filterEzaTemp[i]).classList.contains("checkedEzaBtn")) {
 			filterEza[i] = filterEzaTemp[i];
 		}
 	}
-	filterEza.clean(undefined);
-
+	filterEza = cleanArray(filterEza, undefined);
 	//filterAwaken
 	for (let i = 0; i < filterAwakenIdTemp.length; i++) {
 		if (document.getElementById(filterAwakenIdTemp[i]).classList.contains("checkedAwakenBtn")) {
 			filterAwakenId[i] = filterAwakenIdTemp[i];
 		}
 	}
-	filterAwakenId.clean(undefined);
-
+	filterAwakenId = cleanArray(filterAwakenId, undefined);
 	//filterSuperAttackType
 	for (let i = 0; i < filterSuperAttackTypeIdTemp.length; i++) {
 		if (document.getElementById(filterSuperAttackTypeIdTemp[i]).classList.contains("checkedSuperAttackTypeBtn")) {
 			filterSuperAttackTypeId[i] = filterSuperAttackTypeIdTemp[i];
 		}
 	}
-	filterSuperAttackTypeId.clean(undefined);
-
+	filterSuperAttackTypeId = cleanArray(filterSuperAttackTypeId, undefined);
 	//filterRecruit
 	for (let i = 0; i < filterRecruitIdTemp.length; i++) {
 		if (document.getElementById(filterRecruitIdTemp[i]).classList.contains("checkedRecruitBtn")) {
 			filterRecruitId[i] = filterRecruitIdTemp[i];
 		}
 	}
-	filterRecruitId.clean(undefined);
-
+	filterRecruitId = cleanArray(filterRecruitId, undefined);
 	filtersUsed = [filterType, filterRarity, filterClass, filterEza, filterAwakenId, filterSuperAttackTypeId, filterRecruitId];
 	//check how many filter are used
 	for (let i = 0; i < filtersUsed.length; i++) {
