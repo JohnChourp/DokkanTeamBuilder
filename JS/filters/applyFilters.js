@@ -45,10 +45,6 @@ function filtersMultipleUsed(dataChars, filtersEachLengthString, filtersEachLeng
 	return charListAll[filtersEachLengthStringUsed.length - 1];
 }
 
-function create2DimensionalArray(rows, columns) {
-	return Array.from(Array(rows), () => new Array(columns));
-}
-
 function applyFilters() {
 	setCharList();
 	let char_container_id = document.getElementById("char-container-id");
@@ -107,50 +103,47 @@ function applyFilters() {
 			filterType[i] = filterTypeTemp[i];
 		}
 	}
-	filterType.clean(undefined);
+	filterType = cleanArray(filterType, undefined);
 
 	for (let i = 0; i < filterRarityTemp.length; i++) {
 		if (document.getElementById(filterRarityTemp[i]).classList.contains("checkedRarityBtn")) {
 			filterRarity[i] = filterRarityTemp[i];
 		}
 	}
-	filterRarity.clean(undefined);
+	filterRarity = cleanArray(filterRarity, undefined);
 
 	for (let i = 0; i < filterClassTemp.length; i++) {
 		if (document.getElementById(filterClassTemp[i]).classList.contains("checkedClassBtn")) {
 			filterClass[i] = filterClassTemp[i];
 		}
 	}
-	filterClass.clean(undefined);
+	filterClass = cleanArray(filterClass, undefined);
 
 	for (let i = 0; i < filterEzaTemp.length; i++) {
 		if (document.getElementById(filterEzaTemp[i]).classList.contains("checkedEzaBtn")) {
 			filterEza[i] = filterEzaTemp[i];
 		}
 	}
-	filterEza.clean(undefined);
-
+	filterEza = cleanArray(filterEza, undefined);
 	for (let i = 0; i < filterAwakenIdTemp.length; i++) {
 		if (document.getElementById(filterAwakenIdTemp[i]).classList.contains("checkedAwakenBtn")) {
 			filterAwakenId[i] = filterAwakenIdTemp[i];
 		}
 	}
-	filterAwakenId.clean(undefined);
-
+	filterAwakenId = cleanArray(filterAwakenId, undefined);
 	for (let i = 0; i < filterSuperAttackTypeIdTemp.length; i++) {
 		if (document.getElementById(filterSuperAttackTypeIdTemp[i]).classList.contains("checkedSuperAttackTypeBtn")) {
 			filterSuperAttackTypeId[i] = filterSuperAttackTypeIdTemp[i];
 		}
 	}
-	filterSuperAttackTypeId.clean(undefined);
+	filterSuperAttackTypeId = cleanArray(filterSuperAttackTypeId, undefined);
 
 	for (let i = 0; i < filterRecruitIdTemp.length; i++) {
 		if (document.getElementById(filterRecruitIdTemp[i]).classList.contains("checkedRecruitBtn")) {
 			filterRecruitId[i] = filterRecruitIdTemp[i];
 		}
 	}
-	filterRecruitId.clean(undefined);
-
+	filterRecruitId = cleanArray(filterRecruitId, undefined);
 	filtersUsed = [filterType, filterRarity, filterClass, filterEza, filterAwakenId, filterSuperAttackTypeId, filterRecruitId];
 
 	//check how many filter are used
@@ -164,7 +157,7 @@ function applyFilters() {
 			filtersEachLengthStringUsed[i] = filtersEachLengthString[i];
 		}
 	}
-	filtersEachLengthStringUsed.clean(undefined);
+	filtersEachLengthStringUsed = cleanArray(filtersEachLengthStringUsed, undefined);
 
 	if (sumFilterUsed == 0) {
 		for (let i = 0; i < char.length; i++) {
@@ -174,8 +167,8 @@ function applyFilters() {
 	if (sumFilterUsed > 0) {
 		charListDefault = filtersMultipleUsed(dataChars, filtersEachLengthString, filtersEachLengthStringUsed, filtersUsed);
 	}
+	charListDefault = cleanArray(charListDefault, undefined);
 
-	charListDefault.clean(undefined);
 	if (localStorage.getItem("charsPerPageNumItem") == null) {
 		createFilterPagination(charListDefault, 32);
 	} else {

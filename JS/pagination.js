@@ -1,23 +1,3 @@
-Array.prototype.clean = function (deleteValue) {
-	for (var i = 0; i < this.length; i++) {
-		if (this[i] == deleteValue) {
-			this.splice(i, 1);
-			i--;
-		}
-	}
-	return this;
-};
-
-function setAttributes(elem) {
-	for (var i = 1; i < arguments.length; i += 2) {
-		elem.setAttribute(arguments[i], arguments[i + 1]);
-	}
-}
-
-
-
-
-
 function createFilterPagination(charList, charsPerPageNum) {
 	let char_container_id = document.getElementById("char-container-id");
 	let paginationDiv = document.getElementById("pagination-id");
@@ -82,6 +62,7 @@ function createFilterPagination(charList, charsPerPageNum) {
 		pagination_page(0, charsPerPageNum, pageSum, 1, charsPerPageNum, charList);
 	}
 }
+
 function pagination_page(start, end, pageSum, pageNum, charsPerPageNum, charList) {
 	let char_container_id = document.getElementById("char-container-id");
 	let char = document.getElementsByClassName("char");
@@ -104,10 +85,6 @@ function pagination_page(start, end, pageSum, pageNum, charsPerPageNum, charList
 	}
 	addFilterPaginationClass(pageNum, pageSum);
 }
-
-
-
-
 
 function paginationPrevious(pageSum, charsPerPageNum, charList) {
 	let pagination_id = document.getElementById("pagination-id");
@@ -140,10 +117,6 @@ function paginationFilterNext(pageSum, charsPerPageNum, charList) {
 		}
 	}
 }
-
-
-
-
 
 function addFilterPaginationClass(pageNum, pageSum) {
 	let pagination_id = document.getElementById("pagination-id");
