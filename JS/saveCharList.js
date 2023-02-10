@@ -7,7 +7,7 @@ function saveCharList() {
 		charList_dataCharSuperAtkLevelItems = [], charList_dataCharRecruitItems = [], charList_dataCharAwakenItems = [],
 		charList_dataCharReleaseItems = [], charList_dataCharSuperAtkTypeItems = [], charList_dataCharLinksItems = [], charList_dataCharCategoriesItems = [];
 	let char = document.getElementsByClassName("char");
-	
+
 	for (let i = 0; i < char.length; i++) {
 		charList_dataCharNameItems[i] = char.item(i).getAttribute("data-char-name");
 		charList_dataCharTitleItems[i] = char.item(i).getAttribute("data-char-title");

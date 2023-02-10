@@ -1,35 +1,39 @@
 function addType(typeFilter) {
-	if (document.getElementById(typeFilter).classList.contains("checkedTypeBtn")) {
-		document.getElementById(typeFilter).classList.remove("checkedTypeBtn");
-		document.getElementById(typeFilter).children.item(0).style.backgroundColor = "#6B6B67";
-		document.getElementById(typeFilter).children.item(1).style.backgroundColor = "#555555";
-		document.getElementById(typeFilter).children.item(8).style.backgroundImage = 'linear-gradient(180deg, #B6B6B6, #948D87)';
+	let element = document.getElementById(typeFilter);
+
+	if (element.classList.contains("checkedTypeBtn")) {
+		element.classList.remove("checkedTypeBtn");
+		setButtonStyles(element, "#6B6B67", "#555555", 'linear-gradient(180deg, #B6B6B6, #948D87)');
 	} else {
-		document.getElementById(typeFilter).classList.add("checkedTypeBtn");
-		document.getElementById(typeFilter).children.item(0).style.backgroundColor = "#2DA9DD";
-		document.getElementById(typeFilter).children.item(1).style.backgroundColor = "#1B79C3";
-		document.getElementById(typeFilter).children.item(8).style.backgroundImage = 'linear-gradient(180deg, #FFFFFF,#DBCEBD)';
+		element.classList.add("checkedTypeBtn");
+		setButtonStyles(element, "#2DA9DD", "#1B79C3", 'linear-gradient(180deg, #FFFFFF,#DBCEBD)');
 	}
 }
 
-function aglFilter() {
-	addType("agl");
+function setButtonStyles(element, bgColor1, bgColor2, bgImage) {
+	element.children.item(0).style.backgroundColor = bgColor1;
+	element.children.item(1).style.backgroundColor = bgColor2;
+	element.children.item(8).style.backgroundImage = bgImage;
 }
 
-function teqFilter() {
-	addType("teq");
-}
-
-function intFilter() {
-	addType("int");
-}
-
-function strFilter() {
-	addType("str");
-}
-
-function phyFilter() {
-	addType("phy");
+function filterType(type) {
+	switch (type) {
+		case "agl":
+			addType("agl");
+			break;
+		case "teq":
+			addType("teq");
+			break;
+		case "int":
+			addType("int");
+			break;
+		case "str":
+			addType("str");
+			break;
+		case "phy":
+			addType("phy");
+			break;
+	}
 }
 
 function removeAllType() {

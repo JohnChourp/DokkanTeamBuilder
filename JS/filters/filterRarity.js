@@ -1,64 +1,45 @@
+function updateRarity(rarityFilter, checked) {
+    let element = document.getElementById(rarityFilter);
+    if (checked) {
+        element.classList.add("checkedRarityBtn");
+        element.children.item(0).style.backgroundColor = "#2DA9DD";
+        element.children.item(1).style.backgroundColor = "#1B79C3";
+        element.children.item(8).style.backgroundImage = 'linear-gradient(180deg, #FFFFFF,#DBCEBD)';
+    } else {
+        element.classList.remove("checkedRarityBtn");
+        element.children.item(0).style.backgroundColor = "#6B6B67";
+        element.children.item(1).style.backgroundColor = "#555555";
+        element.children.item(8).style.backgroundImage = 'linear-gradient(180deg, #B6B6B6, #948D87)';
+    }
+}
+
 function addRarityAndEzaDependable(rarityFilter) {
-    if (document.getElementById(rarityFilter).classList.contains("checkedRarityBtn")) {
-        if (!document.getElementById("eza").classList.contains("checkedEzaBtn")) {
-            document.getElementById(rarityFilter).classList.remove("checkedRarityBtn");
-            document.getElementById(rarityFilter).children.item(0).style.backgroundColor = "#6B6B67";
-            document.getElementById(rarityFilter).children.item(1).style.backgroundColor = "#555555";
-            document.getElementById(rarityFilter).children.item(8).style.backgroundImage = 'linear-gradient(180deg, #B6B6B6, #948D87)';
-        }
-    } else {
-        if (!document.getElementById("eza").classList.contains("checkedEzaBtn")) {
-            document.getElementById(rarityFilter).classList.add("checkedRarityBtn");
-            document.getElementById(rarityFilter).children.item(0).style.backgroundColor = "#2DA9DD";
-            document.getElementById(rarityFilter).children.item(1).style.backgroundColor = "#1B79C3";
-            document.getElementById(rarityFilter).children.item(8).style.backgroundImage = 'linear-gradient(180deg, #FFFFFF,#DBCEBD)';
-        }
+    let ezaChecked = document.getElementById("eza").classList.contains("checkedEzaBtn");
+    let rarityChecked = document.getElementById(rarityFilter).classList.contains("checkedRarityBtn");
+    if (!ezaChecked && !rarityChecked) {
+        updateRarity(rarityFilter, true);
+    } else if (!ezaChecked && rarityChecked) {
+        updateRarity(rarityFilter, false);
     }
 }
+
 function addRarity(rarityFilter) {
-    if (document.getElementById(rarityFilter).classList.contains("checkedRarityBtn")) {
-        document.getElementById(rarityFilter).classList.remove("checkedRarityBtn");
-        document.getElementById(rarityFilter).children.item(0).style.backgroundColor = "#6B6B67";
-        document.getElementById(rarityFilter).children.item(1).style.backgroundColor = "#555555";
-        document.getElementById(rarityFilter).children.item(8).style.backgroundImage = 'linear-gradient(180deg, #B6B6B6, #948D87)';
-    } else {
-        document.getElementById(rarityFilter).classList.add("checkedRarityBtn");
-        document.getElementById(rarityFilter).children.item(0).style.backgroundColor = "#2DA9DD";
-        document.getElementById(rarityFilter).children.item(1).style.backgroundColor = "#1B79C3";
-        document.getElementById(rarityFilter).children.item(8).style.backgroundImage = 'linear-gradient(180deg, #FFFFFF,#DBCEBD)';
-    }
+    let rarityChecked = document.getElementById(rarityFilter).classList.contains("checkedRarityBtn");
+    updateRarity(rarityFilter, !rarityChecked);
 }
 
-function rarityNFilter() {
-    addRarityAndEzaDependable("n");
-}
-
-function rarityRFilter() {
-    addRarityAndEzaDependable("r");
-}
-
-function raritySRFilter() {
-    addRarityAndEzaDependable("sr");
-}
-
-function raritySSRFilter() {
-    addRarityAndEzaDependable("ssr");
-}
-
-function rarityURFilter() {
-    addRarity("ur");
-}
-
-function rarityLRFilter() {
-    addRarity("lr");
+function rarityFilter(rarity) {
+    addRarityAndEzaDependable(rarity);
 }
 
 function removeAllRarity() {
     let filterRarity = ["n", "r", "sr", "ssr", "ur", "lr"];
-    for (let i = 0; i < filterRarity.length; i++) {
-        document.getElementById(filterRarity[i]).classList.remove("checkedRarityBtn");
-        document.getElementById(filterRarity[i]).children.item(0).style.backgroundColor = "#6B6B67";
-        document.getElementById(filterRarity[i]).children.item(1).style.backgroundColor = "#555555";
-        document.getElementById(filterRarity[i]).children.item(8).style.backgroundImage = 'linear-gradient(180deg, #B6B6B6, #948D87)';
+    let elements = filterRarity.map(rarity => document.getElementById(rarity));
+    for (let i = 0; i < elements.length; i++) {
+        let element = elements[i];
+        element.classList.remove("checkedRarityBtn");
+        element.children[0].style.backgroundColor = "#6B6B67";
+        element.children[1].style.backgroundColor = "#555555";
+        element.children[8].style.backgroundImage = 'linear-gradient(180deg, #B6B6B6, #948D87)';
     }
 }

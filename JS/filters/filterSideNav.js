@@ -1,64 +1,63 @@
-/* Set the width of the side navigation to 250px */
 function openNav() {
-  document.getElementById("left-sidenav-id").style.width = "400px";
-  document.getElementById("left-sidenav-filters-id").style.width = "400px";
-  document.getElementById("apply-filters-bg-id").style.width = "400px";
-  document.getElementById("apply-filters-id").style.width = "400px";
-  document.getElementById("apply-filters-text-id").style.left = "0";
-  document.getElementById("ok").style.left = "0";
-  document.getElementById("remove-all-id").style.left = "0";
+  const leftSidenav = document.getElementById("left-sidenav-id");
+  const leftSidenavFilters = document.getElementById("left-sidenav-filters-id");
+  const applyFiltersBg = document.getElementById("apply-filters-bg-id");
+  const applyFilters = document.getElementById("apply-filters-id");
+  const applyFiltersText = document.getElementById("apply-filters-text-id");
+  const ok = document.getElementById("ok");
+  const removeAll = document.getElementById("remove-all-id");
+  const mainPage = document.getElementById("main-page-id");
 
-  document.getElementById("main-page-id").style.opacity = "0.2";
-  document.getElementById("main-page-id").style.pointerEvents = "none";
-  document.getElementById("main-page-id").style.userSelect = "none";
+  leftSidenav.style.width = "400px";
+  leftSidenavFilters.style.width = "400px";
+  applyFiltersBg.style.width = "400px";
+  applyFilters.style.width = "400px";
+  applyFiltersText.style.left = "0";
+  ok.style.left = "0";
+  removeAll.style.left = "0";
+
+  mainPage.style.opacity = "0.2";
+  mainPage.style.pointerEvents = "none";
+  mainPage.style.userSelect = "none";
 }
 
 function closeNav() {
-  document.getElementById("left-sidenav-id").style.width = "0";
-  document.getElementById("left-sidenav-filters-id").style.width = "0";
-  document.getElementById("apply-filters-bg-id").style.width = "0";
-  document.getElementById("apply-filters-id").style.width = "0";
-  document.getElementById("apply-filters-text-id").style.left = "-70px";
-  document.getElementById("ok").style.left = "-30px";
-  document.getElementById("remove-all-id").style.left = "-90px";
+  const leftSidenav = document.getElementById("left-sidenav-id");
+  const leftSidenavFilters = document.getElementById("left-sidenav-filters-id");
+  const applyFiltersBg = document.getElementById("apply-filters-bg-id");
+  const applyFilters = document.getElementById("apply-filters-id");
+  const applyFiltersText = document.getElementById("apply-filters-text-id");
+  const ok = document.getElementById("ok");
+  const removeAll = document.getElementById("remove-all-id");
+  const mainPage = document.getElementById("main-page-id");
 
-  document.getElementById("main-page-id").style.opacity = "1";
-  document.getElementById("main-page-id").style.pointerEvents = "auto";
-  document.getElementById("main-page-id").style.userSelect = "auto";
+  leftSidenav.style.width = "0";
+  leftSidenavFilters.style.width = "0";
+  applyFiltersBg.style.width = "0";
+  applyFilters.style.width = "0";
+  applyFiltersText.style.left = "-70px";
+  ok.style.left = "-30px";
+  removeAll.style.left = "-90px";
+
+  mainPage.style.opacity = "1";
+  mainPage.style.pointerEvents = "auto";
+  mainPage.style.userSelect = "auto";
 }
 
 function closeNavWhenClickedOutside() {
-    document.addEventListener('mousedown', function (event) {
-      let outsideClick = typeof event.composedPath === 'function' && !event.composedPath().includes(document.getElementById("left-sidenav-id"));
-      if ((outsideClick === true) && (!event.composedPath().includes(document.getElementById("filter-select-id")))) {
-        document.getElementById("left-sidenav-id").style.width = "0";
-        document.getElementById("left-sidenav-filters-id").style.width = "0";
-        document.getElementById("apply-filters-bg-id").style.width = "0";
-        document.getElementById("apply-filters-id").style.width = "0";
-        document.getElementById("apply-filters-text-id").style.left = "-70px";
-        document.getElementById("ok").style.left = "-30px";
-        document.getElementById("remove-all-id").style.left = "-90px";
+  const leftSidenav = document.getElementById("left-sidenav-id");
+  let filterSelect = document.getElementById("filter-select-id");
+  document.addEventListener('mousedown', function (event) {
+    let outsideClick = typeof event.composedPath === 'function' && !event.composedPath().includes(leftSidenav);
+    if ((outsideClick === true) && (!event.composedPath().includes(filterSelect))) {
+      closeNav();
+    }
+  });
 
-        document.getElementById("main-page-id").style.opacity = "1";
-        document.getElementById("main-page-id").style.pointerEvents = "auto";
-        document.getElementById("main-page-id").style.userSelect = "auto";
-      }
-    });
-
-    document.addEventListener('mouseup', function (event) {
-      let outsideClick = typeof event.composedPath === 'function' && !event.composedPath().includes(document.getElementById("left-sidenav-id"));
-      if ((outsideClick === true) && (!event.composedPath().includes(document.getElementById("filter-select-id")))) {
-        document.getElementById("left-sidenav-id").style.width = "0";
-        document.getElementById("left-sidenav-filters-id").style.width = "0";
-        document.getElementById("apply-filters-bg-id").style.width = "0";
-        document.getElementById("apply-filters-id").style.width = "0";
-        document.getElementById("apply-filters-text-id").style.left = "-70px";
-        document.getElementById("ok").style.left = "-30px";
-        document.getElementById("remove-all-id").style.left = "-90px";
-
-        document.getElementById("main-page-id").style.opacity = "1";
-        document.getElementById("main-page-id").style.pointerEvents = "auto";
-        document.getElementById("main-page-id").style.userSelect = "auto";
-      }
-    });
+  document.addEventListener('mouseup', function (event) {
+    let outsideClick = typeof event.composedPath === 'function' && !event.composedPath().includes(leftSidenav);
+    if ((outsideClick === true) && (!event.composedPath().includes(filterSelect))) {
+      closeNav();
+    }
+  });
 }
