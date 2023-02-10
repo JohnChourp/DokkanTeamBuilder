@@ -79,7 +79,7 @@
 	<title>Dokkan Link Tool</title>
 </head>
 
-<body onload="cookiesBox(); addChar(); saveCharList(); searchChar(); applyFilters();">
+<body onload="cookiesBox(); addChar(); saveCharList(); searchChar(); applyFilters(); charsPerPageInput(32); addAllCharNames(); closeNavWhenClickedOutside();">
 	<!-- Google Tag Manager (noscript) -->
 	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TBW6L4T" height="0" width="0"
 			style="display:none;visibility:hidden"></iframe></noscript>
@@ -328,11 +328,11 @@
 		</div>
 	</div>
 	<div id="main-page-id">
-		<button onclick="openNav(); closeNavWhenClickedOutside();" id="filter-select-id" type="button">
+		<button onclick="openNav();" id="filter-select-id" type="button">
 			<span>Filter Select</span>
 		</button>
 		<div id="search-bar-with-settings-id">
-			<input onclick="searchChar();" id="char-search-id" placeholder="Enter Character Name..."
+			<input id="char-search-id" placeholder="Enter Character Name..."
 				title="Type in a name" type="text" inputmode="search" />
 			<button onclick="searchSettings();" id="search-settings-btn-id" type="button">
 				<img id="search-settings-image-id" src="Images/searchSettings/searchSettingImageGear.png"
@@ -363,7 +363,7 @@
 			</div>
 			<div id="character-diplay-id">
 				<p id="search-settings-text-character-id" class="search-settings-text-class">Character</p>
-				<button onclick="addAllCharNames(); searchOneCharOptions();" id="search-one-char-selected-dropdown"
+				<button onclick="searchOneCharOptions();" id="search-one-char-selected-dropdown"
 					type="button">
 					All
 				</button>
@@ -385,7 +385,7 @@
 			<div id="characters-per-page-id">
 				<p id="characters-per-page-text-id" class="search-settings-text-class">Characters Per
 					Page</p>
-				<input onclick="charsPerPageInput(32);" id="characters-per-input-page-id" placeholder="Number..."
+				<input id="characters-per-input-page-id" placeholder="Number..."
 					title="Type in a number" type="text" inputmode="search" />
 			</div>
 			<div id="characters-per-page-pages-id">

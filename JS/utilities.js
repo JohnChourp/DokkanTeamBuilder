@@ -19,11 +19,6 @@ function removeDuplicates(arr) {
 //4. `Array(columns).fill()` creates an array with `columns` number of empty slots, which are `null` due to the `fill()` method being called with no arguments.
 //5. Finally, `map()` returns an array of arrays with the desired dimensions, where each inner array is of length `columns` and filled with `null`.
 //This function creates a 2-dimensional array of size `rows` by `columns` filled with `null` values.
-//Version 3
-function create2DimensionalArray(rows, columns) {
-	return Array(rows).fill().map(() => Array(columns).fill());
-}
-
 //Version 1
 // function create2DimensionalArray(rows, columns) {
 // 	return Array.from(Array(rows), () => new Array(columns));
@@ -33,6 +28,10 @@ function create2DimensionalArray(rows, columns) {
 // function create2DimensionalArray(rows, columns) {
 // 	return Array(rows).fill(null).map(() => Array(columns));
 // }
+//Version 3
+function create2DimensionalArray(rows, columns) {
+	return Array(rows).fill().map(() => Array(columns).fill());
+}
 
 // the function `cleanArray` is a function that takes an array `arr` and a value deleteValue as its arguments.
 // The purpose of the function is to return a new array that does not contain the `deleteValue` element.

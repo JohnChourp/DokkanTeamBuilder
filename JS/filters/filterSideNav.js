@@ -28,11 +28,6 @@ function closeNav() {
 }
 
 function closeNavWhenClickedOutside() {
-  let closeNavWhenClickedOutsideEventCompleted = localStorage.getItem("closeNavWhenClickedOutsideEventCompleted");
-  if (closeNavWhenClickedOutsideEventCompleted == null) {
-    window.addEventListener("unload", function () {
-      localStorage.removeItem("closeNavWhenClickedOutsideEventCompleted");
-    });
     document.addEventListener('mousedown', function (event) {
       let outsideClick = typeof event.composedPath === 'function' && !event.composedPath().includes(document.getElementById("left-sidenav-id"));
       if ((outsideClick === true) && (!event.composedPath().includes(document.getElementById("filter-select-id")))) {
@@ -66,6 +61,4 @@ function closeNavWhenClickedOutside() {
         document.getElementById("main-page-id").style.userSelect = "auto";
       }
     });
-    localStorage.setItem("closeNavWhenClickedOutsideEventCompleted", 1);
-  }
 }
