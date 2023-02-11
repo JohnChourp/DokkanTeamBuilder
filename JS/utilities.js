@@ -8,7 +8,7 @@
 //By using the `Set` object, the function takes advantage of its optimized uniqueness checks to efficiently remove duplicates. 
 //The spread operator is used to convert the `Set` into an array, making it easier to work with the result.
 function removeDuplicates(arr) {
-	return [...new Set(arr)];
+	return Array.from(new Set(arr));
 }
 
 
