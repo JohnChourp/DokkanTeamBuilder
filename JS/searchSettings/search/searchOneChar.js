@@ -8,7 +8,7 @@ function searchOneCharOptions() {
 }
 
 function addAllCharNames() {
-	let charListDiv, charList_dataCharNameItems, SortedFormattedcharList, charName, dropdowns;
+	let dropdowns;
 	document.addEventListener('click', function (event) {
 		if (!event.target.matches('#search-one-char-selected-dropdown') && !event.target.matches('#search-one-char-menu-id')) {
 			dropdowns = document.getElementsByClassName("search-one-char-dropdown-options");
@@ -21,9 +21,11 @@ function addAllCharNames() {
 		}
 	});
 
-	charListDiv = document.getElementsByClassName("search-one-char-dropdown-options").item(0);
-	charList_dataCharNameItems = JSON.parse(localStorage.getItem('charList_dataCharNameItems'));
-	SortedFormattedcharList = removeDuplicates(charList_dataCharNameItems).sort();
+	let charListDiv = document.getElementsByClassName("search-one-char-dropdown-options").item(0);
+	let charList = JSON.parse(localStorage.getItem("charList"));
+	let charList_dataCharNameItems = charList.map(char => char.name);
+	let SortedFormattedcharList = removeDuplicates(charList_dataCharNameItems).sort();
+	let charName;
 	for (let i = 0; i < SortedFormattedcharList.length; i++) {
 		charName = document.createElement("a");
 		charName.classList.add("search-one-char-dropdown-options-value");
@@ -44,26 +46,26 @@ function addSearchOneCharDropdownClass(charNamePos) {
 	let tempPos = selectedCharName.indexOf("&");
 	let tempPos2 = selectedCharName.indexOf("&", tempPos + 1);
 	let charList = [], charListSaved = [], char_div, temp, temp2;
-
-	let charList_dataCharNameItems = JSON.parse(localStorage.getItem('charList_dataCharNameItems'));
-	let charList_dataCharTitleItems = JSON.parse(localStorage.getItem('charList_dataCharTitleItems'));
-	let charList_dataCharTypeItems = JSON.parse(localStorage.getItem('charList_dataCharTypeItems'));
-	let charList_dataCharRarityItems = JSON.parse(localStorage.getItem('charList_dataCharRarityItems'));
-	let charList_dataCharClassItems = JSON.parse(localStorage.getItem('charList_dataCharClassItems'));
-	let charList_dataCharEzaItems = JSON.parse(localStorage.getItem('charList_dataCharEzaItems'));
-	let charList_dataCharidItems = JSON.parse(localStorage.getItem('charList_dataCharidItems'));
-	let charList_dataCharHpItems = JSON.parse(localStorage.getItem('charList_dataCharHpItems'));
-	let charList_dataCharAttackItems = JSON.parse(localStorage.getItem('charList_dataCharAttackItems'));
-	let charList_dataCharDefenseItems = JSON.parse(localStorage.getItem('charList_dataCharDefenseItems'));
-	let charList_dataCharCostItems = JSON.parse(localStorage.getItem('charList_dataCharCostItems'));
-	let charList_dataCharMaxLevelItems = JSON.parse(localStorage.getItem('charList_dataCharMaxLevelItems'));
-	let charList_dataCharSuperAtkLevelItems = JSON.parse(localStorage.getItem('charList_dataCharSuperAtkLevelItems'));
-	let charList_dataCharRecruitItems = JSON.parse(localStorage.getItem('charList_dataCharRecruitItems'));
-	let charList_dataCharAwakenItems = JSON.parse(localStorage.getItem('charList_dataCharAwakenItems'));
-	let charList_dataCharReleaseItems = JSON.parse(localStorage.getItem('charList_dataCharReleaseItems'));
-	let charList_dataCharSuperAtkTypeItems = JSON.parse(localStorage.getItem('charList_dataCharSuperAtkTypeItems'));
-	let charList_dataCharLinksItems = JSON.parse(localStorage.getItem('charList_dataCharLinksItems'));
-	let charList_dataCharCategoriesItems = JSON.parse(localStorage.getItem('charList_dataCharCategoriesItems'));
+	let charListLocalStorage = JSON.parse(localStorage.getItem("charList"));
+	let charList_dataCharNameItems = charListLocalStorage.map(char => char.name);
+	let charList_dataCharTitleItems = charListLocalStorage.map(char => char.title);
+	let charList_dataCharTypeItems = charListLocalStorage.map(char => char.type);
+	let charList_dataCharRarityItems = charListLocalStorage.map(char => char.rarity);
+	let charList_dataCharClassItems = charListLocalStorage.map(char => char.class);
+	let charList_dataCharEzaItems = charListLocalStorage.map(char => char.eza);
+	let charList_dataCharidItems = charListLocalStorage.map(char => char.id);
+	let charList_dataCharHpItems = charListLocalStorage.map(char => char.hp);
+	let charList_dataCharAttackItems = charListLocalStorage.map(char => char.attack);
+	let charList_dataCharDefenseItems = charListLocalStorage.map(char => char.defense);
+	let charList_dataCharCostItems = charListLocalStorage.map(char => char.cost);
+	let charList_dataCharMaxLevelItems = charListLocalStorage.map(char => char.maxLevel);
+	let charList_dataCharSuperAtkLevelItems = charListLocalStorage.map(char => char.superAtkLevel);
+	let charList_dataCharRecruitItems = charListLocalStorage.map(char => char.recruit);
+	let charList_dataCharAwakenItems = charListLocalStorage.map(char => char.awaken);
+	let charList_dataCharReleaseItems = charListLocalStorage.map(char => char.release);
+	let charList_dataCharSuperAtkTypeItems = charListLocalStorage.map(char => char.superAtkType);
+	let charList_dataCharLinksItems = charListLocalStorage.map(char => char.links);
+	let charList_dataCharCategoriesItems  = charListLocalStorage.map(char => char.categories);
 
 	searchOneCharDropdown_btn.innerHTML = searchOneCharDropdownValue.item(charNamePos).innerHTML;
 	searchOneCharDropdownValue.item(charNamePos).classList.add("checkedSearchOneCharBtn");
@@ -169,3 +171,5 @@ function selectedCharName() {
 		}
 	});
 }
+
+
