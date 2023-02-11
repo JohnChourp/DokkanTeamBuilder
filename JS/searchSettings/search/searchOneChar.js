@@ -89,27 +89,40 @@ function addSearchOneCharDropdownClass(charNamePos) {
 	let tempPos = selectedCharName.indexOf("&");
 	let tempPos2 = selectedCharName.indexOf("&", tempPos + 1);
 
-	selectedCharName = selectedCharName.split('&amp;');
-	for (let j = 0; j < charListSaved.length; j++) {
-		let charName = charList_dataCharNameItems[j];
-		let charNameSplit = charName.split('');
-
-		if (tempPos2 == -1) {
-			if (tempPos == -1) {
-				if (charName == selectedCharName) {
-					char_container_id.appendChild(charListSaved[j]);
-				}
-			} else {
-				charNameSplit[tempPos] = '&amp;';
-				if (charNameSplit.join('') == selectedCharName) {
+	if (tempPos2 == -1) {
+		if (tempPos == -1) {
+			for (let j = 0; j < charListSaved.length; j++) {
+				temp = charList_dataCharNameItems[j];
+				if (temp == selectedCharName) {
 					char_container_id.appendChild(charListSaved[j]);
 				}
 			}
 		} else {
-			charNameSplit[tempPos] = '&amp;';
-			let charNameSplit2 = charNameSplit.slice();
-			charNameSplit2[tempPos2] = '&amp;';
-			if (charNameSplit2.join('') == selectedCharName) {
+			for (let j = 0; j < charListSaved.length; j++) {
+				temp = charList_dataCharNameItems[j];
+				temp = temp.split('');
+				temp[tempPos] = '&amp;';
+				temp = temp.join('');
+
+				if (temp == selectedCharName) {
+					char_container_id.appendChild(charListSaved[j]);
+				}
+			}
+		}
+	} else {
+
+		for (let j = 0; j < charListSaved.length; j++) {
+			temp = charList_dataCharNameItems[j];
+			temp = temp.split('');
+			temp[tempPos] = '&amp;';
+			temp = temp.join('');
+
+			temp2 = temp;
+			temp2 = temp2.split('');
+			temp2[tempPos2] = '&amp;';
+			temp2 = temp2.join('');
+
+			if (temp2 == selectedCharName) {
 				char_container_id.appendChild(charListSaved[j]);
 			}
 		}
