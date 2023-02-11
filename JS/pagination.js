@@ -130,27 +130,3 @@ function addFilterPaginationClass(pageNum, pageSum) {
 		pagination_id.children.item(pageNum).style.border = "1px solid #4CAF50";
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
