@@ -1,32 +1,33 @@
 function addChar() {
-	let dataCharName = 'data-char-name', dataCharType = 'data-char-type', dataCharRarity = 'data-char-rarity',
-		dataCharClass = 'data-char-class', dataCharEza = 'data-char-eza', dataCharId = 'data-char-id';
-
-	let dataCharNameItems = document.querySelectorAll('[' + dataCharName + ']');
-	let dataCharTypeItems = document.querySelectorAll('[' + dataCharType + ']');
-	let dataCharRarityItems = document.querySelectorAll('[' + dataCharRarity + ']');
-	let dataCharClassItems = document.querySelectorAll('[' + dataCharClass + ']');
-	let dataCharIdItems = document.querySelectorAll('[' + dataCharId + ']');
-
-	let searchSettingsImageId = document.getElementById("search-settings-image-id");
-
-	let char = document.getElementsByClassName("char");
-	let char_type_base = document.getElementsByClassName("char_type_base");
-	let char_thumb = document.getElementsByClassName("char_thumb");
-	let char_rarity = document.getElementsByClassName("char_rarity");
-	let char_type = document.getElementsByClassName("char_type");
-	let char_display_add_color = document.getElementsByClassName("char_display");
-
+	const dataCharName = 'data-char-name'
+	const dataCharType = 'data-char-type';
+	const dataCharRarity = 'data-char-rarity';
+	const dataCharClass = 'data-char-class';
+	const dataCharId = 'data-char-id';
+	const dataCharEza = 'data-char-eza';
+	const dataCharNameItems = document.querySelectorAll('[' + dataCharName + ']');
+	const dataCharTypeItems = document.querySelectorAll(`[${dataCharType}]`);
+	const dataCharRarityItems = document.querySelectorAll(`[${dataCharRarity}]`);
+	const dataCharClassItems = document.querySelectorAll(`[${dataCharClass}]`);
+	const dataCharIdItems = document.querySelectorAll(`[${dataCharId}]`);
+	const char = document.getElementsByClassName("char");
+	const char_type_base = document.getElementsByClassName("char_type_base");
+	const charThumb = document.getElementsByClassName("char_thumb");
+	const charType = document.getElementsByClassName("char_type");
+	const charRarity = document.getElementsByClassName("char_rarity");
+	const charDisplay = document.getElementsByClassName("char_display");
 	let charDiv, char_type_base_img, char_thumb_img, char_rarity_img,
-		char_type_img, char_eza_img, char_display_div, charId;
-
+		char_type_img, char_eza_img, char_display_div;
+	let searchSettingsImageId = document.getElementById("search-settings-image-id");
 	searchSettingsImageId.loading = "lazy";
 	searchSettingsImageId.setAttribute("draggable", "false");
 	searchSettingsImageId.alt = "search_settings_image";
 
-	for (let i = 0; i < char.length; i++) {
+	for (let i = 0, charItem; i < char.length; i++) {
+		charItem = char[i];
 		charDiv = document.createElement("div");
 		charDiv.classList.add("char-div-class");
+
 		//char_type_base
 		char_type_base_img = document.createElement("img");
 		char_type_base_img.classList.add("char_type_base");
@@ -61,7 +62,7 @@ function addChar() {
 		charDiv.appendChild(char_type_img);
 
 		//char_eza
-		if (char.item(i).getAttribute(dataCharEza) == "eza") {
+		if (charItem.getAttribute(dataCharEza) === "eza") {
 			char_eza_img = document.createElement("img");
 			char_eza_img.classList.add("char_eza");
 			char_eza_img.loading = "lazy";
@@ -71,7 +72,7 @@ function addChar() {
 			charDiv.appendChild(char_eza_img);
 		}
 
-		char.item(i).appendChild(charDiv);
+		charItem.appendChild(charDiv);
 
 		//char_display
 		char_display_div = document.createElement("div");
@@ -79,198 +80,60 @@ function addChar() {
 		char_display_div.innerHTML = dataCharNameItems[i].getAttribute(dataCharName);
 		char_display_div.setAttribute("draggable", "false");
 		char_display_div.alt = "char_display";
-		char.item(i).appendChild(char_display_div);
+		charItem.appendChild(char_display_div);
 	}
 
-	for (let i = 0; i < char.length; i++) {
-		if (dataCharRarityItems[i].getAttribute(dataCharRarity) == "lr") {
-			if (dataCharTypeItems[i].getAttribute(dataCharType) == "agl") {
-				char_type_base[i].src = "Images/char/char_type_base/char_type_base_ssr_agl.png";
-				char_rarity[i].src = "Images/char/char_rarity/char_rarity_lr.png";
-			}
-			if (dataCharTypeItems[i].getAttribute(dataCharType) == "int") {
-				char_type_base[i].src = "Images/char/char_type_base/char_type_base_ssr_int.png";
-				char_rarity[i].src = "Images/char/char_rarity/char_rarity_lr.png";
-			}
-			if (dataCharTypeItems[i].getAttribute(dataCharType) == "phy") {
-				char_type_base[i].src = "Images/char/char_type_base/char_type_base_ssr_phy.png";
-				char_rarity[i].src = "Images/char/char_rarity/char_rarity_lr.png";
-			}
-			if (dataCharTypeItems[i].getAttribute(dataCharType) == "str") {
-				char_type_base[i].src = "Images/char/char_type_base/char_type_base_ssr_str.png";
-				char_rarity[i].src = "Images/char/char_rarity/char_rarity_lr.png";
-			}
-			if (dataCharTypeItems[i].getAttribute(dataCharType) == "teq") {
-				char_type_base[i].src = "Images/char/char_type_base/char_type_base_ssr_teq.png";
-				char_rarity[i].src = "Images/char/char_rarity/char_rarity_lr.png";
-			}
-		}
-		if (dataCharRarityItems[i].getAttribute(dataCharRarity) == "ur") {
-			if (dataCharTypeItems[i].getAttribute(dataCharType) == "agl") {
-				char_type_base[i].src = "Images/char/char_type_base/char_type_base_ssr_agl.png";
-				char_rarity[i].src = "Images/char/char_rarity/char_rarity_ur.png";
-			}
-			if (dataCharTypeItems[i].getAttribute(dataCharType) == "int") {
-				char_type_base[i].src = "Images/char/char_type_base/char_type_base_ssr_int.png";
-				char_rarity[i].src = "Images/char/char_rarity/char_rarity_ur.png";
-			}
-			if (dataCharTypeItems[i].getAttribute(dataCharType) == "phy") {
-				char_type_base[i].src = "Images/char/char_type_base/char_type_base_ssr_phy.png";
-				char_rarity[i].src = "Images/char/char_rarity/char_rarity_ur.png";
-			}
-			if (dataCharTypeItems[i].getAttribute(dataCharType) == "str") {
-				char_type_base[i].src = "Images/char/char_type_base/char_type_base_ssr_str.png";
-				char_rarity[i].src = "Images/char/char_rarity/char_rarity_ur.png";
-			}
-			if (dataCharTypeItems[i].getAttribute(dataCharType) == "teq") {
-				char_type_base[i].src = "Images/char/char_type_base/char_type_base_ssr_teq.png";
-				char_rarity[i].src = "Images/char/char_rarity/char_rarity_ur.png";
-			}
-		}
-		if (dataCharRarityItems[i].getAttribute(dataCharRarity) == "ssr") {
-			if (dataCharTypeItems[i].getAttribute(dataCharType) == "agl") {
-				char_type_base[i].src = "Images/char/char_type_base/char_type_base_ssr_agl.png";
-				char_rarity[i].src = "Images/char/char_rarity/char_rarity_ssr.png";
-			}
-			if (dataCharTypeItems[i].getAttribute(dataCharType) == "int") {
-				char_type_base[i].src = "Images/char/char_type_base/char_type_base_ssr_int.png";
-				char_rarity[i].src = "Images/char/char_rarity/char_rarity_ssr.png";
-			}
-			if (dataCharTypeItems[i].getAttribute(dataCharType) == "phy") {
-				char_type_base[i].src = "Images/char/char_type_base/char_type_base_ssr_phy.png";
-				char_rarity[i].src = "Images/char/char_rarity/char_rarity_ssr.png";
-			}
-			if (dataCharTypeItems[i].getAttribute(dataCharType) == "str") {
-				char_type_base[i].src = "Images/char/char_type_base/char_type_base_ssr_str.png";
-				char_rarity[i].src = "Images/char/char_rarity/char_rarity_ssr.png";
-			}
-			if (dataCharTypeItems[i].getAttribute(dataCharType) == "teq") {
-				char_type_base[i].src = "Images/char/char_type_base/char_type_base_ssr_teq.png";
-				char_rarity[i].src = "Images/char/char_rarity/char_rarity_ssr.png";
-			}
-		}
-		if (dataCharRarityItems[i].getAttribute(dataCharRarity) == "sr") {
-			if (dataCharTypeItems[i].getAttribute(dataCharType) == "agl") {
-				char_type_base[i].src = "Images/char/char_type_base/char_type_base_sr_agl.png";
-				char_rarity[i].src = "Images/char/char_rarity/char_rarity_sr.png";
-			}
-			if (dataCharTypeItems[i].getAttribute(dataCharType) == "int") {
-				char_type_base[i].src = "Images/char/char_type_base/char_type_base_sr_int.png";
-				char_rarity[i].src = "Images/char/char_rarity/char_rarity_sr.png";
-			}
-			if (dataCharTypeItems[i].getAttribute(dataCharType) == "phy") {
-				char_type_base[i].src = "Images/char/char_type_base/char_type_base_sr_phy.png";
-				char_rarity[i].src = "Images/char/char_rarity/char_rarity_sr.png";
-			}
-			if (dataCharTypeItems[i].getAttribute(dataCharType) == "str") {
-				char_type_base[i].src = "Images/char/char_type_base/char_type_base_sr_str.png";
-				char_rarity[i].src = "Images/char/char_rarity/char_rarity_sr.png";
-			}
-			if (dataCharTypeItems[i].getAttribute(dataCharType) == "teq") {
-				char_type_base[i].src = "Images/char/char_type_base/char_type_base_sr_teq.png";
-				char_rarity[i].src = "Images/char/char_rarity/char_rarity_sr.png";
-			}
-		}
-		if (dataCharRarityItems[i].getAttribute(dataCharRarity) == "r") {
-			if (dataCharTypeItems[i].getAttribute(dataCharType) == "agl") {
-				char_type_base[i].src = "Images/char/char_type_base/char_type_base_r_agl.png";
-				char_rarity[i].src = "Images/char/char_rarity/char_rarity_r.png";
-			}
-			if (dataCharTypeItems[i].getAttribute(dataCharType) == "int") {
-				char_type_base[i].src = "Images/char/char_type_base/char_type_base_r_int.png";
-				char_rarity[i].src = "Images/char/char_rarity/char_rarity_r.png";
-			}
-			if (dataCharTypeItems[i].getAttribute(dataCharType) == "phy") {
-				char_type_base[i].src = "Images/char/char_type_base/char_type_base_r_phy.png";
-				char_rarity[i].src = "Images/char/char_rarity/char_rarity_r.png";
-			}
-			if (dataCharTypeItems[i].getAttribute(dataCharType) == "str") {
-				char_type_base[i].src = "Images/char/char_type_base/char_type_base_r_str.png";
-				char_rarity[i].src = "Images/char/char_rarity/char_rarity_r.png";
-			}
-			if (dataCharTypeItems[i].getAttribute(dataCharType) == "teq") {
-				char_type_base[i].src = "Images/char/char_type_base/char_type_base_r_teq.png";
-				char_rarity[i].src = "Images/char/char_rarity/char_rarity_r.png";
-			}
-		}
-		if (dataCharRarityItems[i].getAttribute(dataCharRarity) == "n") {
-			if (dataCharTypeItems[i].getAttribute(dataCharType) == "agl") {
-				char_type_base[i].src = "Images/char/char_type_base/char_type_base_n_agl.png";
-				char_rarity[i].src = "Images/char/char_rarity/char_rarity_n.png";
-			}
-			if (dataCharTypeItems[i].getAttribute(dataCharType) == "int") {
-				char_type_base[i].src = "Images/char/char_type_base/char_type_base_n_int.png";
-				char_rarity[i].src = "Images/char/char_rarity/char_rarity_n.png";
-			}
-			if (dataCharTypeItems[i].getAttribute(dataCharType) == "phy") {
-				char_type_base[i].src = "Images/char/char_type_base/char_type_base_n_phy.png";
-				char_rarity[i].src = "Images/char/char_rarity/char_rarity_n.png";
-			}
-			if (dataCharTypeItems[i].getAttribute(dataCharType) == "str") {
-				char_type_base[i].src = "Images/char/char_type_base/char_type_base_n_str.png";
-				char_rarity[i].src = "Images/char/char_rarity/char_rarity_n.png";
-			}
-			if (dataCharTypeItems[i].getAttribute(dataCharType) == "teq") {
-				char_type_base[i].src = "Images/char/char_type_base/char_type_base_n_teq.png";
-				char_rarity[i].src = "Images/char/char_rarity/char_rarity_n.png";
-			}
-		}
-
-		if (dataCharClassItems[i].getAttribute(dataCharClass) == "super") {
-			if (dataCharTypeItems[i].getAttribute(dataCharType) == "agl") {
-				char_type[i].src = "Images/char/char_type/char_type_super_agl.png";
-			}
-			if (dataCharTypeItems[i].getAttribute(dataCharType) == "int") {
-				char_type[i].src = "Images/char/char_type/char_type_super_int.png";
-			}
-			if (dataCharTypeItems[i].getAttribute(dataCharType) == "phy") {
-				char_type[i].src = "Images/char/char_type/char_type_super_phy.png";
-			}
-			if (dataCharTypeItems[i].getAttribute(dataCharType) == "str") {
-				char_type[i].src = "Images/char/char_type/char_type_super_str.png";
-			}
-			if (dataCharTypeItems[i].getAttribute(dataCharType) == "teq") {
-				char_type[i].src = "Images/char/char_type/char_type_super_teq.png";
-			}
-		}
-
-		if (dataCharClassItems[i].getAttribute(dataCharClass) == "extreme") {
-			if (dataCharTypeItems[i].getAttribute(dataCharType) == "agl") {
-				char_type[i].src = "Images/char/char_type/char_type_extreme_agl.png";
-			}
-			if (dataCharTypeItems[i].getAttribute(dataCharType) == "int") {
-				char_type[i].src = "Images/char/char_type/char_type_extreme_int.png";
-			}
-			if (dataCharTypeItems[i].getAttribute(dataCharType) == "phy") {
-				char_type[i].src = "Images/char/char_type/char_type_extreme_phy.png";
-			}
-			if (dataCharTypeItems[i].getAttribute(dataCharType) == "str") {
-				char_type[i].src = "Images/char/char_type/char_type_extreme_str.png";
-			}
-			if (dataCharTypeItems[i].getAttribute(dataCharType) == "teq") {
-				char_type[i].src = "Images/char/char_type/char_type_extreme_teq.png";
-			}
-		}
-
-		charId = char_thumb[i].src;
-		char_thumb[i].src = "Images/char/char_thumb/char_" + charId.slice(-7) + "_thumb.png";
-	}
+	const charRarityMap = {
+		lr: "Images/char/char_rarity/char_rarity_lr.png",
+		ur: "Images/char/char_rarity/char_rarity_ur.png",
+		ssr: "Images/char/char_rarity/char_rarity_ssr.png",
+		sr: "Images/char/char_rarity/char_rarity_sr.png",
+		r: "Images/char/char_rarity/char_rarity_r.png",
+		n: "Images/char/char_rarity/char_rarity_n.png",
+	};
+	const charClassMap = {
+		super: {
+			agl: 'Images/char/char_type/char_type_super_agl.png',
+			int: 'Images/char/char_type/char_type_super_int.png',
+			phy: 'Images/char/char_type/char_type_super_phy.png',
+			str: 'Images/char/char_type/char_type_super_str.png',
+			teq: 'Images/char/char_type/char_type_super_teq.png',
+		},
+		extreme: {
+			agl: 'Images/char/char_type/char_type_extreme_agl.png',
+			int: 'Images/char/char_type/char_type_extreme_int.png',
+			phy: 'Images/char/char_type/char_type_extreme_phy.png',
+			str: 'Images/char/char_type/char_type_extreme_str.png',
+			teq: 'Images/char/char_type/char_type_extreme_teq.png',
+		},
+	};
+	const colorMap = {
+		agl: '#00AAEE',
+		teq: '#3df05b',
+		int: '#c953e0',
+		str: '#f77777',
+		phy: '#eec038',
+	};
 
 	for (let i = 0; i < char.length; i++) {
-		if (dataCharTypeItems[i].getAttribute(dataCharType) == "agl") {
-			char_display_add_color.item(i).style.backgroundColor = "#00AAEE";
+		const charTypeValue = dataCharTypeItems[i].getAttribute(dataCharType);
+		const charRarityValue = dataCharRarityItems[i].getAttribute(dataCharRarity);
+		const charClassValue = dataCharClassItems[i].getAttribute(dataCharClass);
+		const charThumbSrc = charThumb[i].src;
+
+		charType[i].src = charClassMap[charClassValue][charTypeValue];
+		charRarity[i].src = charRarityMap[charRarityValue];
+		charThumb[i].src = `Images/char/char_thumb/char_${charThumbSrc.slice(-7)}_thumb.png`;
+		charDisplay[i].style.backgroundColor = colorMap[charTypeValue];
+
+		if (charRarityValue == "lr") {
+			char_type_base[i].src = "Images/char/char_type_base/char_type_base_ssr_" + charTypeValue + ".png";
 		}
-		if (dataCharTypeItems[i].getAttribute(dataCharType) == "teq") {
-			char_display_add_color.item(i).style.backgroundColor = "#3df05b";
+		if (charRarityValue == "ur") {
+			char_type_base[i].src = "Images/char/char_type_base/char_type_base_ssr_" + charTypeValue + ".png";
 		}
-		if (dataCharTypeItems[i].getAttribute(dataCharType) == "int") {
-			char_display_add_color.item(i).style.backgroundColor = "#c953e0";
-		}
-		if (dataCharTypeItems[i].getAttribute(dataCharType) == "str") {
-			char_display_add_color.item(i).style.backgroundColor = "#f77777";
-		}
-		if (dataCharTypeItems[i].getAttribute(dataCharType) == "phy") {
-			char_display_add_color.item(i).style.backgroundColor = "#eec038";
+		if (charRarityValue == "ssr" || charRarityValue == "sr" || charRarityValue == "r" || charRarityValue == "n") {
+			char_type_base[i].src = "Images/char/char_type_base/char_type_base_" + charRarityValue + "_" + charTypeValue + ".png";
 		}
 	}
 }
