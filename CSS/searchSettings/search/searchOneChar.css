@@ -20,6 +20,7 @@
 	height: 30px;
 	white-space: nowrap;
 	margin-left: 10px;
+	overflow:hidden;
 }
 
 #search-one-char-selected-dropdown:hover,
@@ -77,19 +78,21 @@
 /*Samsung Galaxy A51/A71 dimensions */
 @media only screen and (max-width: 413px) {
 	#search-one-char-selected-dropdown {
-		width: 100%;
+		width: 97px;
 		height: 30px;
+		overflow:hidden;
 	}
 
 	.search-one-char-dropdown-options {
-		width: 900px;
+		width: 192px;
 		height: 200px;
-		margin-top: 30px;
+		margin-top: 32px;
+		margin-left:5px;
 	}
 
 	#search-one-char-menu-id {
 		position: absolute;
-		top: 192px;
+		top: 215px;
 		left: 209px;
 		height: 26px;
 		width: 186px;
