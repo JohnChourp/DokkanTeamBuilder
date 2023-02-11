@@ -1,12 +1,8 @@
 function searchSettings() {
-	let searchSettingsId = document.getElementById("search-settings-id");
-	let searchSettingsImageId = document.getElementById("search-settings-image-id");
-
-	if (searchSettingsImageId.classList.contains("checkedSettingsBtn")) {
-		searchSettingsImageId.classList.remove("checkedSettingsBtn");
-		searchSettingsId.style.display = "none";
-	} else {
-		searchSettingsImageId.classList.add("checkedSettingsBtn");
-		searchSettingsId.style.display = "flex";
-	}
-}
+	const searchSettingsId = document.getElementById("search-settings-id");
+	const searchSettingsImageId = document.getElementById("search-settings-image-id");
+	const hasCheckedSettingsBtn = searchSettingsImageId.classList.contains("checkedSettingsBtn");
+  
+	searchSettingsImageId.classList.toggle("checkedSettingsBtn", !hasCheckedSettingsBtn);
+	searchSettingsId.style.display = hasCheckedSettingsBtn ? "none" : "flex";
+  }
