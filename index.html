@@ -9,7 +9,8 @@
 	<meta name="author" content="IOANNIS CHOURPOULIADIS">
 	<meta name="author" content="JohnChourp">
 	<meta name="theme-color" content="dark">
-	<meta name="keywords" content="John,Chourp,dokkan,team,builder,DokkanTeamBuilder,battle,dragon,ball,z,dbz,characters,github">
+	<meta name="keywords"
+		content="John,Chourp,dokkan,team,builder,DokkanTeamBuilder,battle,dragon,ball,z,dbz,characters,github,link,tool">
 
 	<!--Google Analytics-->
 	<script src="JS/googleAnalytics.js" type="text/javascript"></script>
@@ -79,7 +80,8 @@
 	<title>Dokkan Link Tool</title>
 </head>
 
-<body onload="cookiesBox(); addChar(); saveCharList(); searchChar(); applyFilters(); charsPerPageInput(32); addAllCharNames(); closeNavWhenClickedOutside();">
+<body
+	onload="cookiesBox(); addChar(); saveCharList(); searchChar(); applyFilters(); charsPerPageInput(32); addAllCharNames(); closeNavWhenClickedOutside();">
 	<!-- Google Tag Manager (noscript) -->
 	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TBW6L4T" height="0" width="0"
 			style="display:none;visibility:hidden"></iframe></noscript>
@@ -103,18 +105,18 @@
 		<div id="left-sidenav-filters-id">
 			<p class="filter-options-text-class">Sort Direction</p>
 			<div class="filter-class">
-				<button onclick="filterDirectionDown();" id="filter-direction-down-id" class="filter-direction-class"
+				<button onclick="toggleDirection('down');" id="filter-direction-down-id" class="filter-direction-class"
 					type="button">
 					Descending Order
 				</button>
-				<button onclick="filterDirectionUp();" id="filter-direction-up-id" class="filter-direction-class"
+				<button onclick="toggleDirection('up');" id="filter-direction-up-id" class="filter-direction-class"
 					type="button">
 					Ascending Order
 				</button>
 			</div>
 			<p class="filter-options-text-class">Rarity</p>
 			<div class="filter-class">
-				<div onclick="rarityNFilter();" id="n" class="filter-rarity-container-class">
+				<div onclick="rarityFilter('n');" id="n" class="filter-rarity-container-class">
 					<div class="top-half-bg-color"></div>
 					<div class="bottom-half-bg-color"></div>
 					<div class="top-line"></div>
@@ -125,7 +127,7 @@
 					<div class="bottom-right-line-rotated"></div>
 					<div class="filter-rarity-container-text-class">N</div>
 				</div>
-				<div onclick="rarityRFilter();" id="r" class="filter-rarity-container-class">
+				<div onclick="rarityFilter('r');" id="r" class="filter-rarity-container-class">
 					<div class="top-half-bg-color"></div>
 					<div class="bottom-half-bg-color"></div>
 					<div class="top-line"></div>
@@ -136,7 +138,7 @@
 					<div class="bottom-right-line-rotated"></div>
 					<div class="filter-rarity-container-text-class">R</div>
 				</div>
-				<div onclick="raritySRFilter();" id="sr" class="filter-rarity-container-class">
+				<div onclick="rarityFilter('sr');" id="sr" class="filter-rarity-container-class">
 					<div class="top-half-bg-color"></div>
 					<div class="bottom-half-bg-color"></div>
 					<div class="top-line"></div>
@@ -147,7 +149,7 @@
 					<div class="bottom-right-line-rotated"></div>
 					<div class="filter-rarity-container-text-class">SR</div>
 				</div>
-				<div onclick="raritySSRFilter();" id="ssr" class="filter-rarity-container-class">
+				<div onclick="rarityFilter('ssr');" id="ssr" class="filter-rarity-container-class">
 					<div class="top-half-bg-color"></div>
 					<div class="bottom-half-bg-color"></div>
 					<div class="top-line"></div>
@@ -158,7 +160,7 @@
 					<div class="bottom-right-line-rotated"></div>
 					<div class="filter-rarity-container-text-class">SSR</div>
 				</div>
-				<div onclick="rarityURFilter();" id="ur" class="filter-rarity-container-class">
+				<div onclick="rarityFilter('ur');" id="ur" class="filter-rarity-container-class">
 					<div class="top-half-bg-color"></div>
 					<div class="bottom-half-bg-color"></div>
 					<div class="top-line"></div>
@@ -169,7 +171,7 @@
 					<div class="bottom-right-line-rotated"></div>
 					<div class="filter-rarity-container-text-class">UR</div>
 				</div>
-				<div onclick="rarityLRFilter();" id="lr" class="filter-rarity-container-class">
+				<div onclick="rarityFilter('lr');" id="lr" class="filter-rarity-container-class">
 					<div class="top-half-bg-color"></div>
 					<div class="bottom-half-bg-color"></div>
 					<div class="top-line"></div>
@@ -183,7 +185,7 @@
 			</div>
 			<p class="filter-options-text-class">Type</p>
 			<div class="filter-class">
-				<div onclick="aglFilter();" id="agl" class="filter-type-container">
+				<div onclick="filterType('agl');" id="agl" class="filter-type-container">
 					<div class="top-half-bg-color-type"></div>
 					<div class="bottom-half-bg-color-type"></div>
 					<div class="top-line-type"></div>
@@ -194,7 +196,7 @@
 					<div class="bottom-right-line-rotated-type"></div>
 					<div class="filter-type-container-text">AGL</div>
 				</div>
-				<div onclick="teqFilter();" id="teq" class="filter-type-container">
+				<div onclick="filterType('teq');" id="teq" class="filter-type-container">
 					<div class="top-half-bg-color-type"></div>
 					<div class="bottom-half-bg-color-type"></div>
 					<div class="top-line-type"></div>
@@ -205,7 +207,7 @@
 					<div class="bottom-right-line-rotated-type"></div>
 					<div class="filter-type-container-text">TEQ</div>
 				</div>
-				<div onclick="intFilter();" id="int" class="filter-type-container">
+				<div onclick="filterType('int');" id="int" class="filter-type-container">
 					<div class="top-half-bg-color-type"></div>
 					<div class="bottom-half-bg-color-type"></div>
 					<div class="top-line-type"></div>
@@ -216,7 +218,7 @@
 					<div class="bottom-right-line-rotated-type"></div>
 					<div class="filter-type-container-text">INT</div>
 				</div>
-				<div onclick="strFilter();" id="str" class="filter-type-container">
+				<div onclick="filterType('str');" id="str" class="filter-type-container">
 					<div class="top-half-bg-color-type"></div>
 					<div class="bottom-half-bg-color-type"></div>
 					<div class="top-line-type"></div>
@@ -227,7 +229,7 @@
 					<div class="bottom-right-line-rotated-type"></div>
 					<div class="filter-type-container-text">STR</div>
 				</div>
-				<div onclick="phyFilter();" id="phy" class="filter-type-container">
+				<div onclick="filterType('phy');" id="phy" class="filter-type-container">
 					<div class="top-half-bg-color-type"></div>
 					<div class="bottom-half-bg-color-type"></div>
 					<div class="top-line-type"></div>
@@ -241,7 +243,7 @@
 			</div>
 			<p class="filter-options-text-class">Class</p>
 			<div class="filter-class">
-				<div onclick="superFilter();" id="super" class="filter-class-container">
+				<div onclick="addClass('super');" id="super" class="filter-class-container">
 					<div class="top-half-bg-color-class"></div>
 					<div class="bottom-half-bg-color-class"></div>
 					<div class="top-line-class"></div>
@@ -252,7 +254,7 @@
 					<div class="bottom-right-line-rotated-class"></div>
 					<div class="filter-class-container-text">SUPER</div>
 				</div>
-				<div onclick="extremeFilter();" id="extreme" class="filter-class-container">
+				<div onclick="addClass('extreme');" id="extreme" class="filter-class-container">
 					<div class="top-half-bg-color-class"></div>
 					<div class="bottom-half-bg-color-class"></div>
 					<div class="top-line-class"></div>
@@ -332,8 +334,8 @@
 			<span>Filter Select</span>
 		</button>
 		<div id="search-bar-with-settings-id">
-			<input id="char-search-id" placeholder="Enter Character Name..."
-				title="Type in a name" type="text" inputmode="search" />
+			<input id="char-search-id" placeholder="Enter Character Name..." title="Type in a name" type="text"
+				inputmode="search" />
 			<button onclick="searchSettings();" id="search-settings-btn-id" type="button">
 				<img id="search-settings-image-id" src="Images/searchSettings/searchSettingImageGear.png"
 					alt="settings_Image">
@@ -363,8 +365,7 @@
 			</div>
 			<div id="character-diplay-id">
 				<p id="search-settings-text-character-id" class="search-settings-text-class">Character</p>
-				<button onclick="searchOneCharOptions();" id="search-one-char-selected-dropdown"
-					type="button">
+				<button onclick="searchOneCharOptions();" id="search-one-char-selected-dropdown" type="button">
 					All
 				</button>
 				<div class="search-one-char-dropdown-options"></div>
@@ -385,8 +386,8 @@
 			<div id="characters-per-page-id">
 				<p id="characters-per-page-text-id" class="search-settings-text-class">Characters Per
 					Page</p>
-				<input id="characters-per-input-page-id" placeholder="Number..."
-					title="Type in a number" type="text" inputmode="search" />
+				<input id="characters-per-input-page-id" placeholder="Number..." title="Type in a number" type="text"
+					inputmode="search" />
 			</div>
 			<div id="characters-per-page-pages-id">
 				<button onclick="charsPerPage(0);" class="charsPerPage" type="button">
