@@ -74,8 +74,6 @@ function applyFilters() {
 	let filtersEachLength = [A, B, C, D, E, F, G], filtersEachLengthString = ["A", "B", "C", "D", "E", "F", "G"],
 		filtersEachLengthStringUsed = [], charListDefault = [], filtersUsed = [], sumFilterUsed = 0;
 
-	let charactersPerInputPageId = document.getElementById("characters-per-input-page-id");
-	let charsPerPage_class = document.getElementsByClassName("charsPerPage");
 	let characterSearchId = document.getElementById("char-search-id");
 
 	//sortDirection
@@ -169,55 +167,43 @@ function applyFilters() {
 	}
 	charListDefault = cleanArray(charListDefault, undefined);
 
+	//------------------charperpage------------------
 	if (localStorage.getItem("charsPerPageNumItem") == null) {
 		createFilterPagination(charListDefault, 32);
+		localStorage.setItem("charsPerPageNumItem", 32);
+
 	} else {
 		createFilterPagination(charListDefault, localStorage.getItem("charsPerPageNumItem"));
 	}
+
+	let charactersPerInputPageId = document.getElementById("characters-per-input-page-id");
 	charactersPerInputPageId.value = localStorage.getItem("charsPerPageNumItem");
+
+	let charsPerPage_class = document.getElementsByClassName("charsPerPage");
 	for (let i = 0; i < charsPerPage_class.length; i++) {
 		charsPerPage_class.item(i).classList.remove("checkedCharsPerPageBtn");
 	}
-	if (charactersPerInputPageId.value == 16) {
-		charsPerPage_class.item(0).classList.add("checkedCharsPerPageBtn");
-		for (let i = 0; i < charsPerPage_class.length; i++) {
-			if (i != 0) {
-				charsPerPage_class.item(i).classList.remove("checkedCharsPerPageBtn");
-			}
-		}
+
+	switch (charactersPerInputPageId.value) {
+		case "16":
+			charsPerPage_class.item(0).classList.add("checkedCharsPerPageBtn");
+			break;
+		case "32":
+			charsPerPage_class.item(1).classList.add("checkedCharsPerPageBtn");
+			break;
+		case "64":
+			charsPerPage_class.item(2).classList.add("checkedCharsPerPageBtn");
+			break;
+		case "128":
+			charsPerPage_class.item(3).classList.add("checkedCharsPerPageBtn");
+			break;
+		case "256":
+			charsPerPage_class.item(4).classList.add("checkedCharsPerPageBtn");
+			break;
+		default:
+			break;
 	}
-	if (charactersPerInputPageId.value == 32) {
-		charsPerPage_class.item(1).classList.add("checkedCharsPerPageBtn");
-		for (let i = 0; i < charsPerPage_class.length; i++) {
-			if (i != 1) {
-				charsPerPage_class.item(i).classList.remove("checkedCharsPerPageBtn");
-			}
-		}
-	}
-	if (charactersPerInputPageId.value == 64) {
-		charsPerPage_class.item(2).classList.add("checkedCharsPerPageBtn");
-		for (let i = 0; i < charsPerPage_class.length; i++) {
-			if (i != 2) {
-				charsPerPage_class.item(i).classList.remove("checkedCharsPerPageBtn");
-			}
-		}
-	}
-	if (charactersPerInputPageId.value == 128) {
-		charsPerPage_class.item(3).classList.add("checkedCharsPerPageBtn");
-		for (let i = 0; i < charsPerPage_class.length; i++) {
-			if (i != 3) {
-				charsPerPage_class.item(i).classList.remove("checkedCharsPerPageBtn");
-			}
-		}
-	}
-	if (charactersPerInputPageId.value == 256) {
-		charsPerPage_class.item(4).classList.add("checkedCharsPerPageBtn");
-		for (let i = 0; i < charsPerPage_class.length; i++) {
-			if (i != 4) {
-				charsPerPage_class.item(i).classList.remove("checkedCharsPerPageBtn");
-			}
-		}
-	}
+	//------------------charperpage------------------
 
 	if (characterSearchId.value.length > 0) {
 		characterSearchId.value = "";

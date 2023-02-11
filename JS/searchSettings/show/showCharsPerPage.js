@@ -1,11 +1,12 @@
-function charsPerPageInput(charsPerPageNum) {
+function charsPerPageInput() {
 	let charsPerPageIdTypeBox = document.getElementById("characters-per-input-page-id");
 	let charsPerPage_class = document.getElementsByClassName("charsPerPage");
-	localStorage.setItem("charsPerPageNumItem", charsPerPageNum);
+	
 	charsPerPageIdTypeBox.addEventListener("keypress", function (event) {
 		if (event.key === "Enter") {
 			if (charsPerPageIdTypeBox.value.length > 0) {
-				localStorage.setItem("charsPerPageNumItem", charsPerPageIdTypeBox.value);
+				let inputValue = parseInt(charsPerPageIdTypeBox.value);
+				localStorage.setItem("charsPerPageNumItem", inputValue);
 				for (let i = 0; i < charsPerPage_class.length; i++) {
 					charsPerPage_class.item(i).classList.remove("checkedCharsPerPageBtn");
 				}
