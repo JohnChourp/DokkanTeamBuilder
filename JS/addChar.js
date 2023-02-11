@@ -5,19 +5,23 @@ function addChar() {
 	const dataCharClass = 'data-char-class';
 	const dataCharId = 'data-char-id';
 	const dataCharEza = 'data-char-eza';
+	
 	const dataCharNameItems = document.querySelectorAll('[' + dataCharName + ']');
 	const dataCharTypeItems = document.querySelectorAll(`[${dataCharType}]`);
 	const dataCharRarityItems = document.querySelectorAll(`[${dataCharRarity}]`);
 	const dataCharClassItems = document.querySelectorAll(`[${dataCharClass}]`);
 	const dataCharIdItems = document.querySelectorAll(`[${dataCharId}]`);
-	const char = document.getElementsByClassName("char");
+	
 	const char_type_base = document.getElementsByClassName("char_type_base");
 	const charThumb = document.getElementsByClassName("char_thumb");
 	const charType = document.getElementsByClassName("char_type");
 	const charRarity = document.getElementsByClassName("char_rarity");
 	const charDisplay = document.getElementsByClassName("char_display");
+
+	const char = document.getElementsByClassName("char");
 	let charDiv, char_type_base_img, char_thumb_img, char_rarity_img,
 		char_type_img, char_eza_img, char_display_div;
+
 	let searchSettingsImageId = document.getElementById("search-settings-image-id");
 	searchSettingsImageId.loading = "lazy";
 	searchSettingsImageId.setAttribute("draggable", "false");
