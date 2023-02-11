@@ -5,13 +5,13 @@ function addChar() {
 	const dataCharClass = 'data-char-class';
 	const dataCharId = 'data-char-id';
 	const dataCharEza = 'data-char-eza';
-	
+
 	const dataCharNameItems = document.querySelectorAll('[' + dataCharName + ']');
 	const dataCharTypeItems = document.querySelectorAll(`[${dataCharType}]`);
 	const dataCharRarityItems = document.querySelectorAll(`[${dataCharRarity}]`);
 	const dataCharClassItems = document.querySelectorAll(`[${dataCharClass}]`);
 	const dataCharIdItems = document.querySelectorAll(`[${dataCharId}]`);
-	
+
 	const char_type_base = document.getElementsByClassName("char_type_base");
 	const charThumb = document.getElementsByClassName("char_thumb");
 	const charType = document.getElementsByClassName("char_type");
@@ -130,14 +130,19 @@ function addChar() {
 		charThumb[i].src = `Images/char/char_thumb/char_${charThumbSrc.slice(-7)}_thumb.png`;
 		charDisplay[i].style.backgroundColor = colorMap[charTypeValue];
 
-		if (charRarityValue == "lr") {
-			char_type_base[i].src = "Images/char/char_type_base/char_type_base_ssr_" + charTypeValue + ".png";
-		}
-		if (charRarityValue == "ur") {
-			char_type_base[i].src = "Images/char/char_type_base/char_type_base_ssr_" + charTypeValue + ".png";
-		}
-		if (charRarityValue == "ssr" || charRarityValue == "sr" || charRarityValue == "r" || charRarityValue == "n") {
-			char_type_base[i].src = "Images/char/char_type_base/char_type_base_" + charRarityValue + "_" + charTypeValue + ".png";
-		}
+		const imagePaths = {
+			lr: `Images/char/char_type_base/char_type_base_ssr_${charTypeValue}.png`,
+			ur: `Images/char/char_type_base/char_type_base_ssr_${charTypeValue}.png`,
+			ssr: `Images/char/char_type_base/char_type_base_ssr_${charTypeValue}.png`,
+			sr: `Images/char/char_type_base/char_type_base_sr_${charTypeValue}.png`,
+			r: `Images/char/char_type_base/char_type_base_r_${charTypeValue}.png`,
+			n: `Images/char/char_type_base/char_type_base_n_${charTypeValue}.png`
+		};
+
+		const imagePath = imagePaths[charRarityValue] || "";
+
+		char_type_base.forEach((el, i) => {
+			el.src = imagePath;
+		});
 	}
 }
