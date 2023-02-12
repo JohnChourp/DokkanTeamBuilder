@@ -176,21 +176,12 @@ function applyFilters(btnPressed) {
 	charListDefault = cleanArray(charListDefault, undefined);
 
 	//------------------charperpage------------------
-	if (localStorage.getItem("charsPerPageNumItem") == null) {
-		if (btnPressed == 1) {
-			createFilterPagination(charListDefault, 32);
-		}
-		if (btnPressed == 2) {
-			createFilterPagination2(charListDefault, 32);
-		}
-		localStorage.setItem("charsPerPageNumItem", 32);
-	} else {
-		if (btnPressed == 1) {
-			createFilterPagination(charListDefault, localStorage.getItem("charsPerPageNumItem"));
-		}
-		if (btnPressed == 2) {
-			createFilterPagination2(charListDefault, localStorage.getItem("charsPerPageNumItem"));
-		}
+
+	if (btnPressed == 1) {
+		createFilterPagination(charListDefault, localStorage.getItem("charsPerPageNumItem"));
+	}
+	if (btnPressed == 2) {
+		createFilterPagination2(charListDefault, localStorage.getItem("charsPerPageNumItem"));
 	}
 
 	let charactersPerInputPageId = document.getElementById("characters-per-input-page-id");
