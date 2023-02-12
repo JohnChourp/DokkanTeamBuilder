@@ -191,6 +191,7 @@ function searchChar() {
 
 			createFilterPagination(charListDefault, localStorage.getItem("charsPerPageNumItem"));
 			addDropdownClass(localStorage.getItem("filterDisplay"));
+			addChar();
 		}
 	});
 }

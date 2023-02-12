@@ -209,4 +209,5 @@ function applyFilters() {
 		characterSearchId.value = "";
 	}
 	addDropdownClass(localStorage.getItem("filterDisplay"));
+	addChar();
 }

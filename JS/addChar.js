@@ -6,7 +6,7 @@ function addChar() {
 	const dataCharId = 'data-char-id';
 	const dataCharEza = 'data-char-eza';
 
-	const dataCharNameItems = document.querySelectorAll('[' + dataCharName + ']');
+	const dataCharNameItems = document.querySelectorAll(`[${dataCharName}]`);
 	const dataCharTypeItems = document.querySelectorAll(`[${dataCharType}]`);
 	const dataCharRarityItems = document.querySelectorAll(`[${dataCharRarity}]`);
 	const dataCharClassItems = document.querySelectorAll(`[${dataCharClass}]`);

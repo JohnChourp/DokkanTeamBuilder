@@ -71,5 +71,5 @@ function setCharList() {
 	for (let j = 0; j < charListSaved.length; j++) {
 		char_container_id.appendChild(charListSaved[j]);
 	}
-	addChar();
+	
 }
