@@ -5,7 +5,7 @@ function searchOneCharOptions() {
 }
 
 
-function addAllCharNames(btnPressed) {
+function addAllCharNames() {
 	let dropdowns = document.getElementsByClassName("search-one-char-dropdown-options");
 
 	document.addEventListener("click", function (event) {
@@ -31,10 +31,7 @@ function addAllCharNames(btnPressed) {
 		charName.classList.add("search-one-char-dropdown-options-value");
 		charName.href = "#";
 		charName.innerHTML = SortedFormattedcharList[i];
-		charName.onclick = function () {
-			addSearchOneCharDropdownClass(i);
-
-		};
+		charName.onclick = function () {addSearchOneCharDropdownClass(i);};
 		charListDiv.appendChild(charName);
 	}
 }
@@ -131,6 +128,8 @@ function addSearchOneCharDropdownClass(charNamePos) {
 		}
 	}
 
+	addChar();
+
 	let char = document.getElementsByClassName("char");
 	let charList = [];
 	for (let i = 0; i < char.length; i++) {
@@ -142,7 +141,7 @@ function addSearchOneCharDropdownClass(charNamePos) {
 	
 }
 
-function selectedCharName() {
+function selectedCharNameSearch() {
 	const input = document.getElementById("search-one-char-menu-id");
 	const filter = input.value.toLowerCase();
 	const ui = document.getElementsByClassName("search-one-char-dropdown-options-value");
