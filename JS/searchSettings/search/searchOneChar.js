@@ -5,7 +5,7 @@ function searchOneCharOptions() {
 }
 
 
-function addAllCharNames() {
+function addAllCharNames(btnPressed) {
 	let dropdowns = document.getElementsByClassName("search-one-char-dropdown-options");
 
 	document.addEventListener("click", function (event) {
@@ -31,7 +31,10 @@ function addAllCharNames() {
 		charName.classList.add("search-one-char-dropdown-options-value");
 		charName.href = "#";
 		charName.innerHTML = SortedFormattedcharList[i];
-		charName.onclick = function () { addSearchOneCharDropdownClass(i) };
+		charName.onclick = function () {
+			addSearchOneCharDropdownClass(i);
+
+		};
 		charListDiv.appendChild(charName);
 	}
 }
@@ -128,16 +131,15 @@ function addSearchOneCharDropdownClass(charNamePos) {
 		}
 	}
 
-	addChar();
-
 	let char = document.getElementsByClassName("char");
 	let charList = [];
 	for (let i = 0; i < char.length; i++) {
 		charList[i] = char.item(i);
 	}
-
-	createFilterPagination(charList, localStorage.getItem("charsPerPageNumItem"));
+	
+	createFilterPagination2(charList, localStorage.getItem("charsPerPageNumItem"));
 	addDropdownClass(localStorage.getItem("filterDisplay"));
+	
 }
 
 function selectedCharName() {

@@ -1,4 +1,4 @@
-function addChar() {
+function addChar(charsPerPageNumItem) {
 	const dataCharName = 'data-char-name'
 	const dataCharType = 'data-char-type';
 	const dataCharRarity = 'data-char-rarity';
@@ -6,7 +6,7 @@ function addChar() {
 	const dataCharId = 'data-char-id';
 	const dataCharEza = 'data-char-eza';
 
-	const dataCharNameItems = document.querySelectorAll('[' + dataCharName + ']');
+	const dataCharNameItems = document.querySelectorAll(`[${dataCharName}]`);
 	const dataCharTypeItems = document.querySelectorAll(`[${dataCharType}]`);
 	const dataCharRarityItems = document.querySelectorAll(`[${dataCharRarity}]`);
 	const dataCharClassItems = document.querySelectorAll(`[${dataCharClass}]`);
@@ -27,7 +27,7 @@ function addChar() {
 	searchSettingsImageId.setAttribute("draggable", "false");
 	searchSettingsImageId.alt = "search_settings_image";
 
-	for (let i = 0, charItem; i < char.length; i++) {
+	for (let i = 0, charItem; i < charsPerPageNumItem; i++) {
 		charItem = char[i];
 		charDiv = document.createElement("div");
 		charDiv.classList.add("char-div-class");
@@ -119,7 +119,7 @@ function addChar() {
 		phy: '#eec038',
 	};
 
-	for (let i = 0; i < char.length; i++) {
+	for (let i = 0; i < charsPerPageNumItem; i++) {
 		const charTypeValue = dataCharTypeItems[i].getAttribute(dataCharType);
 		const charRarityValue = dataCharRarityItems[i].getAttribute(dataCharRarity);
 		const charClassValue = dataCharClassItems[i].getAttribute(dataCharClass);
