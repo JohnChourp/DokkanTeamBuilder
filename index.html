@@ -75,7 +75,7 @@
 </head>
 
 <body
-	onload="cookiesBox(); addChar(); saveCharList(); charsPerPageInput(); applyFilters(); searchChar(); addAllCharNames(); closeNavWhenClickedOutside();">
+	onload="cookiesBox(); saveCharList(); charsPerPageInput(); applyFilters(1); searchChar(1); addAllCharNames(1); closeNavWhenClickedOutside();">
 	<!-- Google Tag Manager (noscript) -->
 	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TBW6L4T" height="0" width="0"
 			style="display:none;visibility:hidden"></iframe></noscript>
@@ -314,7 +314,7 @@
 		<div id="apply-filters-id">
 			<p id="apply-filters-text-id" class="filter-options-text-class">Apply Filters</p>
 			<div class="filter-class">
-				<button onclick="applyFilters(); closeNav();" id="ok" type="button">
+				<button onclick="applyFilters(2); closeNav();" id="ok" type="button">
 					OK
 				</button>
 				<button onclick="removeAllFilters();" id="remove-all-id" type="button">
@@ -364,7 +364,7 @@
 				</button>
 				<div class="search-one-char-dropdown-options"></div>
 				<p id="search-one-char-hint-id">*Use this filter before &laquo;Filter Select&raquo;</p>
-				<input type="text" id="search-one-char-menu-id" onkeyup="selectedCharName();"
+				<input type="text" id="search-one-char-menu-id" onkeyup="selectedCharNameSearch();"
 					placeholder="Search Name.." title="Type in a search name" inputmode="search">
 			</div>
 			<div id="search-titles-id">

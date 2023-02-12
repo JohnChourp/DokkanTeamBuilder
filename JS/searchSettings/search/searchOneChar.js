@@ -31,7 +31,7 @@ function addAllCharNames() {
 		charName.classList.add("search-one-char-dropdown-options-value");
 		charName.href = "#";
 		charName.innerHTML = SortedFormattedcharList[i];
-		charName.onclick = function () { addSearchOneCharDropdownClass(i) };
+		charName.onclick = function () {addSearchOneCharDropdownClass(i);};
 		charListDiv.appendChild(charName);
 	}
 }
@@ -135,12 +135,13 @@ function addSearchOneCharDropdownClass(charNamePos) {
 	for (let i = 0; i < char.length; i++) {
 		charList[i] = char.item(i);
 	}
-
-	createFilterPagination(charList, localStorage.getItem("charsPerPageNumItem"));
+	
+	createFilterPagination2(charList, localStorage.getItem("charsPerPageNumItem"));
 	addDropdownClass(localStorage.getItem("filterDisplay"));
+	
 }
 
-function selectedCharName() {
+function selectedCharNameSearch() {
 	const input = document.getElementById("search-one-char-menu-id");
 	const filter = input.value.toLowerCase();
 	const ui = document.getElementsByClassName("search-one-char-dropdown-options-value");

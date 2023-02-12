@@ -46,12 +46,15 @@ function filtersMultipleUsedWithSearchChar(dataChars, filtersEachLengthString, f
 	return charListAll[filtersEachLengthStringUsed.length - 1];
 }
 
-function searchChar() {
+function searchChar(btnPressed) {
 	let characterSearchId = document.getElementById("char-search-id");
 	characterSearchId.addEventListener("keypress", function (event) {
 		if (event.key === "Enter") {
 			event.preventDefault();
 			setCharList();
+			if (btnPressed == 2) {
+				addChar(localStorage.getItem("charsPerPageNumItem"));
+			}
 			let nameOrTitle = localStorage.getItem("nameOrTitle");
 			let characterSearchId = document.getElementById("char-search-id");
 			let char_container_id = document.getElementById("char-container-id");
@@ -189,7 +192,7 @@ function searchChar() {
 			}
 			charListDefault = cleanArray(charListDefault, undefined);
 
-			createFilterPagination(charListDefault, localStorage.getItem("charsPerPageNumItem"));
+			createFilterPagination2(charListDefault, localStorage.getItem("charsPerPageNumItem"));
 			addDropdownClass(localStorage.getItem("filterDisplay"));
 		}
 	});

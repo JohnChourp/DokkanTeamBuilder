@@ -45,7 +45,7 @@ function filtersMultipleUsed(dataChars, filtersEachLengthString, filtersEachLeng
 	return charListAll[filtersEachLengthStringUsed.length - 1];
 }
 
-function applyFilters() {
+function applyFilters(btnPressed) {
 	setCharList();
 	let char_container_id = document.getElementById("char-container-id");
 	let char = document.getElementsByClassName("char");
@@ -89,13 +89,21 @@ function applyFilters() {
 		}
 	}
 
-	//select one char
-	for (let i = 0; i < searchOneCharDropdownValue.length; i++) {
-		if (searchOneCharDropdownValue.item(i).classList.contains("checkedSearchOneCharBtn")) {
-			addSearchOneCharDropdownClass(i);
-		}
+	// //select one char
+	// let addSearchOneCharDropdownClassChecked = 0;
+	// for (let i = 0; i < searchOneCharDropdownValue.length; i++) {
+	// 	if (searchOneCharDropdownValue.item(i).classList.contains("checkedSearchOneCharBtn")) {
+	// 		addSearchOneCharDropdownClass(i);
+	// 		addSearchOneCharDropdownClassChecked = 1;
+	// 	}
+	// }
+	if (btnPressed == 1) {
+		addChar(localStorage.getItem("charsPerPageNumItem"));
 	}
-
+	// if (addSearchOneCharDropdownClassChecked == 1) {
+	// 	console.log("a");
+	// 	addChar(1);
+	// }
 	for (let i = 0; i < filterTypeTemp.length; i++) {
 		if (document.getElementById(filterTypeTemp[i]).classList.contains("checkedTypeBtn")) {
 			filterType[i] = filterTypeTemp[i];
@@ -168,12 +176,12 @@ function applyFilters() {
 	charListDefault = cleanArray(charListDefault, undefined);
 
 	//------------------charperpage------------------
-	if (localStorage.getItem("charsPerPageNumItem") == null) {
-		createFilterPagination(charListDefault, 32);
-		localStorage.setItem("charsPerPageNumItem", 32);
 
-	} else {
+	if (btnPressed == 1) {
 		createFilterPagination(charListDefault, localStorage.getItem("charsPerPageNumItem"));
+	}
+	if (btnPressed == 2) {
+		createFilterPagination2(charListDefault, localStorage.getItem("charsPerPageNumItem"));
 	}
 
 	let charactersPerInputPageId = document.getElementById("characters-per-input-page-id");

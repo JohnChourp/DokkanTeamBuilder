@@ -25,6 +25,9 @@ function saveCharList() {
 	}));
 
 	localStorage.setItem("charList", JSON.stringify(charList));
+	if (localStorage.getItem("charsPerPageNumItem") == null) {
+		localStorage.setItem("charsPerPageNumItem",32);
+	}
 }
 
 
@@ -71,5 +74,4 @@ function setCharList() {
 	for (let j = 0; j < charListSaved.length; j++) {
 		char_container_id.appendChild(charListSaved[j]);
 	}
-	addChar();
 }
