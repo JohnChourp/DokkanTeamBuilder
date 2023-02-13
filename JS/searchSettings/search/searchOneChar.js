@@ -26,12 +26,19 @@ function addAllCharNames() {
 	let charList_dataCharNameItems = charList.map(char => char.name);
 	let SortedFormattedcharList = removeDuplicates(charList_dataCharNameItems).sort();
 
+	let charName = document.createElement("a");
+	charName.classList.add("search-one-char-dropdown-options-value");
+	charName.href = "#";
+	charName.innerHTML = "All"
+	charName.onclick = function () { addSearchOneCharDropdownClass(0); };
+	charListDiv.appendChild(charName);
+
 	for (let i = 0, len = SortedFormattedcharList.length; i < len; i++) {
 		let charName = document.createElement("a");
 		charName.classList.add("search-one-char-dropdown-options-value");
 		charName.href = "#";
 		charName.innerHTML = SortedFormattedcharList[i];
-		charName.onclick = function () {addSearchOneCharDropdownClass(i);};
+		charName.onclick = function () { addSearchOneCharDropdownClass(i + 1); };
 		charListDiv.appendChild(charName);
 	}
 }
@@ -89,42 +96,48 @@ function addSearchOneCharDropdownClass(charNamePos) {
 	let tempPos = selectedCharName.indexOf("&");
 	let tempPos2 = selectedCharName.indexOf("&", tempPos + 1);
 
-	if (tempPos2 == -1) {
-		if (tempPos == -1) {
-			for (let j = 0; j < charListSaved.length; j++) {
-				temp = charList_dataCharNameItems[j];
-				if (temp == selectedCharName) {
-					char_container_id.appendChild(charListSaved[j]);
+	if (charNamePos != 0) {
+		if (tempPos2 == -1) {
+			if (tempPos == -1) {
+				for (let j = 0; j < charListSaved.length; j++) {
+					temp = charList_dataCharNameItems[j];
+					if (temp == selectedCharName) {
+						char_container_id.appendChild(charListSaved[j]);
+					}
+				}
+			} else {
+				for (let j = 0; j < charListSaved.length; j++) {
+					temp = charList_dataCharNameItems[j];
+					temp = temp.split('');
+					temp[tempPos] = '&amp;';
+					temp = temp.join('');
+
+					if (temp == selectedCharName) {
+						char_container_id.appendChild(charListSaved[j]);
+					}
 				}
 			}
 		} else {
+
 			for (let j = 0; j < charListSaved.length; j++) {
 				temp = charList_dataCharNameItems[j];
 				temp = temp.split('');
 				temp[tempPos] = '&amp;';
 				temp = temp.join('');
 
-				if (temp == selectedCharName) {
+				temp2 = temp;
+				temp2 = temp2.split('');
+				temp2[tempPos2] = '&amp;';
+				temp2 = temp2.join('');
+
+				if (temp2 == selectedCharName) {
 					char_container_id.appendChild(charListSaved[j]);
 				}
 			}
 		}
 	} else {
-
 		for (let j = 0; j < charListSaved.length; j++) {
-			temp = charList_dataCharNameItems[j];
-			temp = temp.split('');
-			temp[tempPos] = '&amp;';
-			temp = temp.join('');
-
-			temp2 = temp;
-			temp2 = temp2.split('');
-			temp2[tempPos2] = '&amp;';
-			temp2 = temp2.join('');
-
-			if (temp2 == selectedCharName) {
-				char_container_id.appendChild(charListSaved[j]);
-			}
+			char_container_id.appendChild(charListSaved[j]);
 		}
 	}
 
@@ -135,10 +148,10 @@ function addSearchOneCharDropdownClass(charNamePos) {
 	for (let i = 0; i < char.length; i++) {
 		charList[i] = char.item(i);
 	}
-	
+
 	createFilterPagination2(charList, localStorage.getItem("charsPerPageNumItem"));
 	addDropdownClass(localStorage.getItem("filterDisplay"));
-	
+
 }
 
 function selectedCharNameSearch() {
