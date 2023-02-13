@@ -141,8 +141,6 @@ function addSearchOneCharDropdownClass(charNamePos) {
 		}
 	}
 
-	addChar();
-
 	let char = document.getElementsByClassName("char");
 	let charList = [];
 	for (let i = 0; i < char.length; i++) {

@@ -4,11 +4,3 @@
     flex-direction: column;
     border: 2px solid cyan;
 }
-
-.search-settings-text-class {
-    color: white;
-    font-size: 20px;
-    height: 30px;
-    white-space: nowrap;
-    margin-left: 10px;
-}

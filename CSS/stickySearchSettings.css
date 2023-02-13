@@ -1,16 +1,20 @@
-#search-titles-id {
+#search-bar-and-settings-id {
+    background-color: #4b4747;
+}
+
+#sticky-search-settings-id {
     height: 40px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
 
-#search-settings-text-search-titles-id {
+#sticky-search-settings-text-id {
     position: relative;
     top: -16px;
 }
 
-.titlesnBtn {
+.stickySearchSettingsnBtn {
     background-color: white;
     color: black;
     border: 2px solid #008CBA;
@@ -19,15 +23,15 @@
     margin: 0px 0px 5px 10px;
 }
 
-.titlesnBtn:hover {
+.stickySearchSettingsnBtn:hover {
     cursor: pointer;
 }
 
-.checkedTitlesnBtn {
+.checkedstickySearchSettingsBtn {
     background-color: #33ccff;
 }
 
-.search-settings-text-class {
+.sticky-search-settings-text-class {
     color: white;
     font-size: 20px;
     height: 30px;
