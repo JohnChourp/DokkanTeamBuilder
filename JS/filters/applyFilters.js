@@ -50,7 +50,7 @@ function applyFilters(btnPressed) {
 	let char_container_id = document.getElementById("char-container-id");
 	let char = document.getElementsByClassName("char");
 	let checkedDirectionBtn = document.getElementsByClassName("checkedDirectionBtn");
-	let searchOneCharDropdownValue = document.getElementsByClassName("search-one-char-dropdown-options-value");
+	//let searchOneCharDropdownValue = document.getElementsByClassName("search-one-char-dropdown-options-value");
 	let dataCharType = 'data-char-type', dataCharRarity = 'data-char-rarity', dataCharClass = 'data-char-class',
 		dataCharEza = 'data-char-eza', dataCharAwaken = 'data-char-awaken', dataCharSuperAtkType = 'data-char-super-atk-type',
 		dataCharRecruit = 'data-char-recruit';

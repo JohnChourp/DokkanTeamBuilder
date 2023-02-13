@@ -10,7 +10,7 @@ function charsPerPageInput() {
 				for (let i = 0; i < charsPerPage_class.length; i++) {
 					charsPerPage_class.item(i).classList.remove("checkedCharsPerPageBtn");
 				}
-				applyFilters();
+				applyFilters(2);
 			}
 		}
 	});
@@ -27,5 +27,5 @@ function charsPerPage(charsPerPageBtn) {
 			charsPerPage_class.item(i).classList.remove("checkedCharsPerPageBtn");
 		}
 	}
-	applyFilters();
+	applyFilters(2);
 }
