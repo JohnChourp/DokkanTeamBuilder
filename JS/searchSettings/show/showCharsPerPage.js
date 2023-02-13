@@ -1,7 +1,7 @@
 function charsPerPageInput() {
 	let charsPerPageIdTypeBox = document.getElementById("characters-per-input-page-id");
 	let charsPerPage_class = document.getElementsByClassName("charsPerPage");
-	
+
 	charsPerPageIdTypeBox.addEventListener("keypress", function (event) {
 		if (event.key === "Enter") {
 			if (charsPerPageIdTypeBox.value.length > 0) {

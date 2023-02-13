@@ -89,9 +89,9 @@ function pagination_page(start, end, pageSum, pageNum, charList, pagesLoaded) {
 	addFilterPaginationClass(pageNum, pageSum);
 
 	const pageKeys = Object.keys(pagesLoaded);
-	for (let i = 0; i < pageKeys.length+1; i++) {
+	for (let i = 0; i < pageKeys.length + 1; i++) {
 		if (pageNum == i) {
-			const page = pageKeys[i-1];
+			const page = pageKeys[i - 1];
 			if (!pagesLoaded[page]) {
 				pagesLoaded[page] = true;
 				if (pageNum == pageSum) {
@@ -195,9 +195,9 @@ function pagination_page2(start, end, pageSum, pageNum, charList, pagesLoaded) {
 	addFilterPaginationClass2(pageNum, pageSum);
 
 	const pageKeys = Object.keys(pagesLoaded);
-	for (let i = 0; i < pageKeys.length+1; i++) {
+	for (let i = 0; i < pageKeys.length + 1; i++) {
 		if (pageNum == i) {
-			const page = pageKeys[i-1];
+			const page = pageKeys[i - 1];
 			if (!pagesLoaded[page]) {
 				pagesLoaded[page] = true;
 				if (pageNum == pageSum) {

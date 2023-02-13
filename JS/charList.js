@@ -26,7 +26,7 @@ function saveCharList() {
 
 	localStorage.setItem("charList", JSON.stringify(charList));
 	if (localStorage.getItem("charsPerPageNumItem") == null) {
-		localStorage.setItem("charsPerPageNumItem",32);
+		localStorage.setItem("charsPerPageNumItem", 32);
 	}
 }
 
