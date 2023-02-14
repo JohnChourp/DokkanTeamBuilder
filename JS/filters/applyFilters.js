@@ -1,5 +1,13 @@
 function filtersMultipleUsed(dataChars, filtersEachLengthString, filtersEachLengthStringUsed, filtersUsed) {
-	let filters = [], filterCharItems = [], filterChars = [], filterCharItemsTemp = [], filterCharItems2 = [];
+	let filters = [],
+		filterCharItems = [],
+		filterChars = [],
+		filterCharItemsTemp = [],
+		filterCharItems1 = [],
+		filterCharItems2 = [],
+		filterCharItems3 = [],
+		filterCharItems4 = [];
+
 	let charListAll = create2DimensionalArray(filtersEachLengthStringUsed.length, 1);
 	let char = document.getElementsByClassName("char");
 
@@ -17,14 +25,17 @@ function filtersMultipleUsed(dataChars, filtersEachLengthString, filtersEachLeng
 		if (filtersUsed[5].length > 0) {
 			for (let i = 0; i < filterCharItems[k].length; i++) {
 				filterCharItemsTemp[i] = filterCharItems[k][i].getAttribute(filterChars[k]).split(",");
-				filterCharItems2[i] = filterCharItemsTemp[i][1];
+				filterCharItems1[i] = filterCharItemsTemp[i][1];
+				filterCharItems2[i] = filterCharItemsTemp[i][3];
+				filterCharItems3[i] = filterCharItemsTemp[i][5];
+				filterCharItems4[i] = filterCharItemsTemp[i][7];
 			}
 		}
 
 		if (k == 0) {
 			for (let j = 0; j < filters[k].length; j++) {
 				for (let i = 0; i < char.length; i++) {
-					if ((filterCharItems2[i] == filters[k][j]) || (filterCharItems[k][i].getAttribute(filterChars[k]) == filters[k][j])) {
+					if ((filterCharItems1[i] == filters[k][j]) || (filterCharItems2[i] == filters[k][j]) || (filterCharItems3[i] == filters[k][j]) || (filterCharItems4[i] == filters[k][j]) || (filterCharItems[k][i].getAttribute(filterChars[k]) == filters[k][j])) {
 						charListAll[0][i] = char.item(i);
 					}
 				}
@@ -33,7 +44,7 @@ function filtersMultipleUsed(dataChars, filtersEachLengthString, filtersEachLeng
 			for (let j = 0; j < filters[k].length; j++) {
 				for (let i = 0; i < charListAll[k - 1].length; i++) {
 					if (charListAll[k - 1][i] != undefined) {
-						if ((filterCharItems2[i] == filters[k][j]) || (filterCharItems[k][i].getAttribute(filterChars[k]) == filters[k][j])) {
+						if ((filterCharItems1[i] == filters[k][j]) || (filterCharItems2[i] == filters[k][j]) || (filterCharItems3[i] == filters[k][j]) || (filterCharItems4[i] == filters[k][j]) || (filterCharItems[k][i].getAttribute(filterChars[k]) == filters[k][j])) {
 							charListAll[k][i] = char.item(i);
 						}
 					}
