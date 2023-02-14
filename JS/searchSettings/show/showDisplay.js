@@ -1,5 +1,5 @@
 window.onclick = function (event) {
-	let dropdowns = document.getElementsByClassName("dropdown-options");
+	const dropdowns = document.getElementsByClassName("dropdown-options");
 	let openDropdown;
 	if (!event.target.matches('#selected-dropdown')) {
 		for (let i = 0; i < dropdowns.length; i++) {
@@ -16,34 +16,34 @@ function showDisplayOptions() {
 }
 
 function addDropdownClass(filterDisplay) {
-	let selecteddropdown_btn = document.getElementById("selected-dropdown");
-	let dropdownOptionsValue = document.getElementsByClassName("dropdown-options-value");
+	const selecteddropdown_btn = document.getElementById("selected-dropdown");
+	const dropdownOptionsValue = document.getElementsByClassName("dropdown-options-value");
 
-	let dataCharName = 'data-char-name', dataCharTitle = 'data-char-title', dataCharEza = 'data-char-eza',
+	const dataCharName = 'data-char-name', dataCharTitle = 'data-char-title', dataCharEza = 'data-char-eza',
 		dataCharId = 'data-char-id', dataCharHp = 'data-char-hp', dataCharAttack = 'data-char-attack',
 		dataCharDefense = 'data-char-defense', dataCharCost = 'data-char-cost', dataCharMaxLevel = 'data-char-max-level',
 		dataCharRelease = 'data-char-release', dataCharRecruit = 'data-char-recruit', dataCharAwaken = 'data-char-awaken',
 		dataCharSuperAtkLevel = 'data-char-super-atk-level', dataCharSuperAtkType = 'data-char-super-atk-type',
 		dataCharLinks = 'data-char-links', dataCharCategories = 'data-char-categories';
 
-	let dataCharNameItems = document.querySelectorAll('[' + dataCharName + ']');
-	let dataCharTitleItems = document.querySelectorAll('[' + dataCharTitle + ']');
-	let dataCharEzaItems = document.querySelectorAll('[' + dataCharEza + ']');
-	let dataCharIdItems = document.querySelectorAll('[' + dataCharId + ']');
-	let dataCharHpItems = document.querySelectorAll('[' + dataCharHp + ']');
-	let dataCharAttackItems = document.querySelectorAll('[' + dataCharAttack + ']');
-	let dataCharDefenseItems = document.querySelectorAll('[' + dataCharDefense + ']');
-	let dataCharCostItems = document.querySelectorAll('[' + dataCharCost + ']');
-	let dataCharMaxLevelItems = document.querySelectorAll('[' + dataCharMaxLevel + ']');
-	let dataCharRecruitItems = document.querySelectorAll('[' + dataCharRecruit + ']');
-	let dataCharAwakenItems = document.querySelectorAll('[' + dataCharAwaken + ']');
-	let dataCharSuperAtkLevelItems = document.querySelectorAll('[' + dataCharSuperAtkLevel + ']');
-	let dataCharReleaseItems = document.querySelectorAll('[' + dataCharRelease + ']');
-	let dataCharSuperAtkTypeItems = document.querySelectorAll('[' + dataCharSuperAtkType + ']');
-	let dataCharLinksItems = document.querySelectorAll('[' + dataCharLinks + ']');
-	let dataCharCategoriesItems = document.querySelectorAll('[' + dataCharCategories + ']');
+		const dataCharNameItems = document.querySelectorAll('[' + dataCharName + ']');
+		const dataCharTitleItems = document.querySelectorAll('[' + dataCharTitle + ']');
+		const dataCharEzaItems = document.querySelectorAll('[' + dataCharEza + ']');
+		const dataCharIdItems = document.querySelectorAll('[' + dataCharId + ']');
+		const dataCharHpItems = document.querySelectorAll('[' + dataCharHp + ']');
+		const dataCharAttackItems = document.querySelectorAll('[' + dataCharAttack + ']');
+		const dataCharDefenseItems = document.querySelectorAll('[' + dataCharDefense + ']');
+		const dataCharCostItems = document.querySelectorAll('[' + dataCharCost + ']');
+		const dataCharMaxLevelItems = document.querySelectorAll('[' + dataCharMaxLevel + ']');
+		const dataCharRecruitItems = document.querySelectorAll('[' + dataCharRecruit + ']');
+		const dataCharAwakenItems = document.querySelectorAll('[' + dataCharAwaken + ']');
+		const dataCharSuperAtkLevelItems = document.querySelectorAll('[' + dataCharSuperAtkLevel + ']');
+		const dataCharReleaseItems = document.querySelectorAll('[' + dataCharRelease + ']');
+		const dataCharSuperAtkTypeItems = document.querySelectorAll('[' + dataCharSuperAtkType + ']');
+		const dataCharLinksItems = document.querySelectorAll('[' + dataCharLinks + ']');
+		const dataCharCategoriesItems = document.querySelectorAll('[' + dataCharCategories + ']');
 
-	let char_display = document.getElementsByClassName("char_display");
+		const char_display = document.getElementsByClassName("char_display");
 	let listLinks = [], listCategories = [], listSuperAtkType = [], listRelease = [];
 	let listLinksFormattedString = [], listCategoriesFormattedString = [], listSuperAtkTypeFormattedString = [],
 		listReleaseFormattedString = [], a, b, position, temp;

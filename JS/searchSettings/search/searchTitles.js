@@ -1,6 +1,6 @@
 function searchTitlesYes() {
-	let buttonYes = document.getElementById("search-titles-yes-id");
-	let buttonNo = document.getElementById("search-titles-no-id");
+	const buttonYes = document.getElementById("search-titles-yes-id");
+	const buttonNo = document.getElementById("search-titles-no-id");
 
 	buttonYes.classList.add("checkedTitlesnBtn");
 	buttonNo.classList.remove("checkedTitlesnBtn");
@@ -9,8 +9,8 @@ function searchTitlesYes() {
 }
 
 function searchTitlesNo() {
-	let buttonYes = document.getElementById("search-titles-yes-id");
-	let buttonNo = document.getElementById("search-titles-no-id");
+	const buttonYes = document.getElementById("search-titles-yes-id");
+	const buttonNo = document.getElementById("search-titles-no-id");
 
 	buttonYes.classList.remove("checkedTitlesnBtn");
 	buttonNo.classList.add("checkedTitlesnBtn");

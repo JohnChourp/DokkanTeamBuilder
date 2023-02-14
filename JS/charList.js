@@ -1,8 +1,8 @@
 function saveCharList() {
 	localStorage.setItem("nameOrTitle", 1);
 
-	let char = document.getElementsByClassName("char");
-	let charList = Array.from(char).map(c => ({
+	const char = document.getElementsByClassName("char");
+	const charList = Array.from(char).map(c => ({
 		name: c.getAttribute("data-char-name"),
 		title: c.getAttribute("data-char-title"),
 		type: c.getAttribute("data-char-type"),
@@ -33,19 +33,18 @@ function saveCharList() {
 
 function setCharList() {
 	let charListSaved = [];
-	let charListData = JSON.parse(localStorage.getItem('charList'));
+	const charListData = JSON.parse(localStorage.getItem('charList'));
 
 	if (!charListData) {
 		return;
 	}
 
-	let char_div = document.createElement("div");
-	let char_container_id = document.getElementById("char-container-id");
+	const char_container_id = document.getElementById("char-container-id");
 
 	for (let i = 0; i < charListData.length; i++) {
-		let data = charListData[i];
+		const data = charListData[i];
 
-		char_div = document.createElement("div");
+		const char_div = document.createElement("div");
 		char_div.classList.add("char");
 		setAttributes(char_div,
 			"data-char-name", data.name,

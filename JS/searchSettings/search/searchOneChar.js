@@ -1,17 +1,17 @@
 function searchOneCharOptions() {
-	let dropdown = document.getElementsByClassName("search-one-char-dropdown-options").item(0);
+	const dropdown = document.getElementsByClassName("search-one-char-dropdown-options").item(0);
 	dropdown.classList.toggle("showOneCharName");
 	document.getElementById("search-one-char-menu-id").style.display = dropdown.classList.contains("showOneCharName") ? "block" : "none";
 }
 
 
 function addAllCharNames() {
-	let dropdowns = document.getElementsByClassName("search-one-char-dropdown-options");
+	const dropdowns = document.getElementsByClassName("search-one-char-dropdown-options");
 
 	document.addEventListener("click", function (event) {
 		if (!event.target.matches("#search-one-char-selected-dropdown") && !event.target.matches("#search-one-char-menu-id")) {
 			for (let i = 0, len = dropdowns.length; i < len; i++) {
-				let dropdown = dropdowns[i];
+				const dropdown = dropdowns[i];
 				if (dropdown.classList.contains("showOneCharName")) {
 					dropdown.classList.remove("showOneCharName");
 					document.getElementById("search-one-char-menu-id").style.display = "none";
@@ -21,12 +21,12 @@ function addAllCharNames() {
 		}
 	});
 
-	let charListDiv = dropdowns[0];
-	let charList = JSON.parse(localStorage.getItem("charList"));
-	let charList_dataCharNameItems = charList.map(char => char.name);
-	let SortedFormattedcharList = removeDuplicates(charList_dataCharNameItems).sort();
+	const charListDiv = dropdowns[0];
+	const charList = JSON.parse(localStorage.getItem("charList"));
+	const charList_dataCharNameItems = charList.map(char => char.name);
+	const SortedFormattedcharList = removeDuplicates(charList_dataCharNameItems).sort();
 
-	let charName = document.createElement("a");
+	const charName = document.createElement("a");
 	charName.classList.add("search-one-char-dropdown-options-value");
 	charName.href = "#";
 	charName.innerHTML = "All"
@@ -34,7 +34,7 @@ function addAllCharNames() {
 	charListDiv.appendChild(charName);
 
 	for (let i = 0, len = SortedFormattedcharList.length; i < len; i++) {
-		let charName = document.createElement("a");
+		const charName = document.createElement("a");
 		charName.classList.add("search-one-char-dropdown-options-value");
 		charName.href = "#";
 		charName.innerHTML = SortedFormattedcharList[i];
@@ -44,8 +44,8 @@ function addAllCharNames() {
 }
 
 function addSearchOneCharDropdownClass(charNamePos) {
-	let searchOneCharDropdown_btn = document.getElementById("search-one-char-selected-dropdown");
-	let searchOneCharDropdownValue = document.getElementsByClassName("search-one-char-dropdown-options-value");
+	const searchOneCharDropdown_btn = document.getElementById("search-one-char-selected-dropdown");
+	const searchOneCharDropdownValue = document.getElementsByClassName("search-one-char-dropdown-options-value");
 
 	searchOneCharDropdown_btn.innerHTML = searchOneCharDropdownValue.item(charNamePos).innerHTML;
 	searchOneCharDropdownValue.item(charNamePos).classList.add("checkedSearchOneCharBtn");
@@ -56,15 +56,15 @@ function addSearchOneCharDropdownClass(charNamePos) {
 		}
 	}
 
-	let selectedCharName = searchOneCharDropdownValue.item(charNamePos).innerHTML;
+	const selectedCharName = searchOneCharDropdownValue.item(charNamePos).innerHTML;
 	let charListSaved = [];
-	let charListLocalStorage = JSON.parse(localStorage.getItem("charList"));
-	let charList_dataCharNameItems = charListLocalStorage.map(char => char.name);
+	const charListLocalStorage = JSON.parse(localStorage.getItem("charList"));
+	const charList_dataCharNameItems = charListLocalStorage.map(char => char.name);
 
 	for (let i = 0; i < charListLocalStorage.length; i++) {
-		let char = charListLocalStorage[i];
+		const char = charListLocalStorage[i];
 
-		let char_div = document.createElement("div");
+		const char_div = document.createElement("div");
 		char_div.classList.add("char");
 
 		setAttributes(char_div,
@@ -90,11 +90,11 @@ function addSearchOneCharDropdownClass(charNamePos) {
 		charListSaved[i] = char_div;
 	}
 
-	let char_container_id = document.getElementById("char-container-id");
+	const char_container_id = document.getElementById("char-container-id");
 	char_container_id.innerHTML = "";
 
-	let tempPos = selectedCharName.indexOf("&");
-	let tempPos2 = selectedCharName.indexOf("&", tempPos + 1);
+	const tempPos = selectedCharName.indexOf("&");
+	const tempPos2 = selectedCharName.indexOf("&", tempPos + 1);
 
 	if (charNamePos != 0) {
 		if (tempPos2 == -1) {
@@ -141,7 +141,7 @@ function addSearchOneCharDropdownClass(charNamePos) {
 		}
 	}
 
-	let char = document.getElementsByClassName("char");
+	const char = document.getElementsByClassName("char");
 	let charList = [];
 	for (let i = 0; i < char.length; i++) {
 		charList[i] = char.item(i);

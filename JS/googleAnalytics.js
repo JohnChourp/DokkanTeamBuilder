@@ -1,5 +1,5 @@
 function loadAnalytics() {
-    var importScript = document.createElement('script');
+    const importScript = document.createElement('script');
     importScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-CS0302XFKQ';
     document.head.appendChild(importScript);
     window.dataLayer = window.dataLayer || [];

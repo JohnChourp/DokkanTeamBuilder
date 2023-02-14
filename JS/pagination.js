@@ -19,9 +19,9 @@ function createFilterPagination(charList, charsPerPageNum) {
 	const char = document.getElementsByClassName("char");
 	const charLength = charList.length;
 	const pageSum = Math.ceil(charLength / charsPerPageNum);
-	let pagePrevious = document.createElement("a");
-	let pageNext = document.createElement("a");
-	let pageResults = document.createElement("a");
+	const pagePrevious = document.createElement("a");
+	const pageNext = document.createElement("a");
+	const pageResults = document.createElement("a");
 
 	const fragment = document.createDocumentFragment();
 	for (let i = charLength - 1; i >= 0; i--) {
@@ -73,10 +73,10 @@ function createFilterPagination(charList, charsPerPageNum) {
 	}
 }
 function pagination_page(start, end, pageSum, pageNum, charList, pagesLoaded) {
-	let char_container_id = document.getElementById("char-container-id");
-	let pagination_id = document.getElementById("pagination-id");
+	const char_container_id = document.getElementById("char-container-id");
+	const pagination_id = document.getElementById("pagination-id");
 
-	let fragment = document.createDocumentFragment();
+	const fragment = document.createDocumentFragment();
 	end = (pageNum === pageSum) ? charList.length : end;
 	for (let i = start; i < end; i++) {
 		fragment.appendChild(charList[i]);

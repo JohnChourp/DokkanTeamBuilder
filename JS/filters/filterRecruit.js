@@ -1,5 +1,5 @@
 function filterRecruit(id) {
-    let btn = document.getElementById(id);
+    const btn = document.getElementById(id);
     if (btn.classList.contains("checkedRecruitBtn")) {
         btn.classList.remove("checkedRecruitBtn");
         btn.style.backgroundColor = "#ddd";
@@ -18,8 +18,8 @@ function filterRecruitFreeToPlay() {
 }
 
 function removeAllRecruit() {
-    let summonableBtn = document.getElementById("summonable");
-    let freeToPlayBtn = document.getElementById("free-to-play");
+    const summonableBtn = document.getElementById("summonable");
+    const freeToPlayBtn = document.getElementById("free-to-play");
 
     summonableBtn.classList.remove("checkedRecruitBtn");
     summonableBtn.style.backgroundColor = "#ddd";

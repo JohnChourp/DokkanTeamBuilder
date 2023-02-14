@@ -59,16 +59,16 @@ function closeNav() {
 function closeNavWhenClickedOutside() {
   const leftSidenav = document.getElementById("left-sidenav-id");
   const rightSidenav = document.getElementById("right-sidenav-id");
-  let filterSelect = document.getElementById("filter-select-id");
+  const filterSelect = document.getElementById("filter-select-id");
   document.addEventListener('mousedown', function (event) {
-    let outsideClick = typeof event.composedPath === 'function' && !event.composedPath().includes(leftSidenav) && !event.composedPath().includes(rightSidenav);
+    const outsideClick = typeof event.composedPath === 'function' && !event.composedPath().includes(leftSidenav) && !event.composedPath().includes(rightSidenav);
     if ((outsideClick === true) && (!event.composedPath().includes(filterSelect))) {
       closeNav();
     }
   });
 
   document.addEventListener('mouseup', function (event) {
-    let outsideClick = typeof event.composedPath === 'function' && !event.composedPath().includes(leftSidenav) && !event.composedPath().includes(rightSidenav);
+    const outsideClick = typeof event.composedPath === 'function' && !event.composedPath().includes(leftSidenav) && !event.composedPath().includes(rightSidenav);
     if ((outsideClick === true) && (!event.composedPath().includes(filterSelect))) {
       closeNav();
     }

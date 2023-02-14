@@ -1,5 +1,5 @@
 function filterAwakened(id) {
-    let awakenedBtn = document.getElementById(id);
+    const awakenedBtn = document.getElementById(id);
     if (awakenedBtn.classList.contains("checkedAwakenBtn")) {
         awakenedBtn.classList.remove("checkedAwakenBtn");
         awakenedBtn.style.backgroundColor = "#ddd";
@@ -22,7 +22,7 @@ function filterDokkanAwakened() {
 }
 
 function removeAllDokkanAwaken() {
-    let filterAwakenId = ["not-dokkan-awakened", "pre-dokkan-awakened", "dokkan-awakened"];
+    const filterAwakenId = ["not-dokkan-awakened", "pre-dokkan-awakened", "dokkan-awakened"];
     let elements = [];
     for (let i = 0; i < filterAwakenId.length; i++) {
         elements.push(document.getElementById(filterAwakenId[i]));
