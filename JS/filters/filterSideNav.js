@@ -8,13 +8,21 @@ function openNav() {
   const removeAll = document.getElementById("remove-all-id");
   const mainPage = document.getElementById("main-page-id");
 
-  leftSidenav.style.width = "412px";
-  leftSidenavFilters.style.width = "412px";
+  let width = '401px';
 
-  applyFiltersBg.style.width = "412px";
-  applyFilters.style.width = "412px";
+  for (let i = 100; i < 416; i++) {
+    if (window.matchMedia(`(max-device-width: ${i}px)`).matches) {
+      width = (i - 1) + "px";
+      break;
+    }
+  }
+
+  leftSidenav.style.width = width;
+  leftSidenavFilters.style.width = width;
+  applyFiltersBg.style.width = width;
+  applyFilters.style.width = width;
+
   applyFiltersText.style.left = "0";
-
   ok.style.left = "0";
   removeAll.style.left = "0";
 
@@ -28,8 +36,25 @@ function openNavRight() {
   const rightSidenavFilters = document.getElementById("right-sidenav-filters-id");
   const mainPage = document.getElementById("main-page-id");
 
-  rightSidenav.style.width = "412px";
-  rightSidenavFilters.style.width = "412px";
+  let width = '401px';
+
+  for (let i = 100; i < 416; i++) {
+    if (i > 400) {
+      if (window.matchMedia(`(max-device-width: ${i}px)`).matches) {
+        width = (i - 1) + "px";
+        break;
+      }
+    } else {
+      if (window.matchMedia(`(max-device-width: ${i}px)`).matches) {
+        width = "401px";
+        break;
+      }
+    }
+
+  }
+
+  rightSidenav.style.width = width;
+  rightSidenavFilters.style.width = width;
 
   mainPage.style.opacity = "0.2";
   mainPage.style.pointerEvents = "none";
