@@ -1,57 +1,48 @@
-/* The left side navigation menu */
 #left-sidenav-id {
     height: 100%;
-    /* 100% Full-height */
     width: 0;
-    /* 0 width - change this with JavaScript */
     position: fixed;
-    /* Stay in place */
     z-index: 1;
-    /* Stay on top */
     top: 0;
-    /* Stay at the top */
     left: 0;
     background-color: #111;
-    /* Black*/
     overflow-x: hidden;
-    /* Disable horizontal scroll */
     transition: 0.5s;
-    /* 0.5 second transition effect to slide in the sidenav */
 }
 
-/* The right side navigation menu */
 #right-sidenav-id {
     height: 100%;
-    /* 100% Full-height */
     width: 0;
-    /* 0 width - change this with JavaScript */
     position: fixed;
-    /* Stay in place */
     z-index: 1;
-    /* Stay on top */
     top: 0;
-    /* Stay at the top */
     right: 0;
     background-color: #111;
-    /* Black*/
     overflow-x: hidden;
-    /* Disable horizontal scroll */
     transition: 0.5s;
-    /* 0.5 second transition effect to slide in the sidenav */
 }
 
-/* The navigation menu links */
+#close-left-sidenav-btn-id {
+    position: absolute;
+    font-size: 36px;
+    right:10px;
+}
+
+#close-right-sidenav-btn-id {
+    position: absolute;
+    font-size: 36px;
+    left:10px;
+}
+
 #left-sidenav-id a,
 #right-sidenav-id a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
-    font-size: 25px;
     color: #818181;
     display: block;
     transition: 0.3s;
 }
 
-/* When you mouse over the navigation links, change their color */
 #left-sidenav-id a:hover,
 #right-sidenav-id a:hover {
     color: #f1f1f1;
@@ -59,43 +50,26 @@
 
 #left-sidenav-filters-id {
     height: 100%;
-    /* 100% Full-height */
     width: 0;
-    /* 0 width - change this with JavaScript */
     position: fixed;
-    /* Stay in place */
     z-index: 1;
-    /* Stay on top */
     top: 0;
-    /* Stay at the top */
     left: 0;
     background-color: #111;
-    /* Black*/
     overflow-x: hidden;
-    /* Disable horizontal scroll */
     transition: 0.5s;
-    /* 0.5 second transition effect to slide in the sidenav */
 }
 
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-
-#main {
-    transition: margin-left .5s;
-    padding: 20px;
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-
-    #left-sidenav-id,
-    #right-sidenav-id {
-        padding-top: 15px;
-    }
-
-    #left-sidenav-id a,
-    #right-sidenav-id a {
-        font-size: 18px;
-    }
+#right-sidenav-filters-id {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
 }
 
 
@@ -209,4 +183,10 @@
     position: relative;
     margin-left: 20px;
     left: -80px;
+}
+
+#agl,#teq,#int,#str,#phy,
+#n,#r,#sr,#ssr,#ur,#lr,
+#super,#extreme {
+    -webkit-tap-highlight-color: transparent;
 }
