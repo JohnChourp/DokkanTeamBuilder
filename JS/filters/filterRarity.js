@@ -1,5 +1,5 @@
 function updateRarity(rarityFilter, checked) {
-    let element = document.getElementById(rarityFilter);
+    const element = document.getElementById(rarityFilter);
     if (checked) {
         element.classList.add("checkedRarityBtn");
         element.children.item(0).style.backgroundColor = "#2DA9DD";
@@ -14,8 +14,8 @@ function updateRarity(rarityFilter, checked) {
 }
 
 function addRarityAndEzaDependable(rarityFilter) {
-    let ezaChecked = document.getElementById("eza").classList.contains("checkedEzaBtn");
-    let rarityChecked = document.getElementById(rarityFilter).classList.contains("checkedRarityBtn");
+    const ezaChecked = document.getElementById("eza").classList.contains("checkedEzaBtn");
+    const rarityChecked = document.getElementById(rarityFilter).classList.contains("checkedRarityBtn");
     if (!ezaChecked && !rarityChecked) {
         updateRarity(rarityFilter, true);
     } else if (!ezaChecked && rarityChecked) {
@@ -24,7 +24,7 @@ function addRarityAndEzaDependable(rarityFilter) {
 }
 
 function addRarity(rarityFilter) {
-    let rarityChecked = document.getElementById(rarityFilter).classList.contains("checkedRarityBtn");
+    const rarityChecked = document.getElementById(rarityFilter).classList.contains("checkedRarityBtn");
     updateRarity(rarityFilter, !rarityChecked);
 }
 
@@ -33,8 +33,8 @@ function rarityFilter(rarity) {
 }
 
 function removeAllRarity() {
-    let filterRarity = ["n", "r", "sr", "ssr", "ur", "lr"];
-    let elements = filterRarity.map(rarity => document.getElementById(rarity));
+    const filterRarity = ["n", "r", "sr", "ssr", "ur", "lr"];
+    const elements = filterRarity.map(rarity => document.getElementById(rarity));
     for (let i = 0; i < elements.length; i++) {
         let element = elements[i];
         element.classList.remove("checkedRarityBtn");

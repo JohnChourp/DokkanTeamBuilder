@@ -1,5 +1,5 @@
 function removeAllFilters() {
-	let filters = [{ id: "agl", class: "checkedTypeBtn", list: ["agl", "teq", "int", "str", "phy"] },
+	const filters = [{ id: "agl", class: "checkedTypeBtn", list: ["agl", "teq", "int", "str", "phy"] },
 	{ id: "n", class: "checkedRarityBtn", list: ["n", "r", "sr", "ssr", "ur", "lr"] },
 	{ id: "super", class: "checkedClassBtn", list: ["super", "extreme"] },
 	{ id: "eza", class: "checkedEzaBtn", list: ["eza", "noeza"] },
@@ -8,8 +8,8 @@ function removeAllFilters() {
 	{ id: "summonable", class: "checkedRecruitBtn", list: ["summonable", "free-to-play"] }
 	];
 
-	let filterIds = filters.reduce((result, filter) => {
-		let selectedIds = filter.list.filter(id => document.getElementById(id).classList.contains(filter.class));
+	const filterIds = filters.reduce((result, filter) => {
+		const selectedIds = filter.list.filter(id => document.getElementById(id).classList.contains(filter.class));
 		return result.concat(selectedIds);
 	}, []);
 

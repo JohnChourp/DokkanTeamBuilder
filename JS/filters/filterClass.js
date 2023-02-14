@@ -1,6 +1,6 @@
 function addClass(classFilter) {
-    let filter = document.getElementById(classFilter);
-    let [bg0, bg1, bg8] = [filter.children.item(0), filter.children.item(1), filter.children.item(8)];
+    const filter = document.getElementById(classFilter);
+    const [bg0, bg1, bg8] = [filter.children.item(0), filter.children.item(1), filter.children.item(8)];
     if (filter.classList.contains("checkedClassBtn")) {
         filter.classList.remove("checkedClassBtn");
         bg0.style.backgroundColor = "#6B6B67";
@@ -15,8 +15,8 @@ function addClass(classFilter) {
 }
 
 function removeAllClass() {
-    let filterClass = ["super", "extreme"];
-    let classButtons = document.querySelectorAll(filterClass.map(id => `#${id}`).join(", "));
+    const filterClass = ["super", "extreme"];
+    const classButtons = document.querySelectorAll(filterClass.map(id => `#${id}`).join(", "));
     for (let button of classButtons) {
         button.classList.remove("checkedClassBtn");
         let children = button.children;

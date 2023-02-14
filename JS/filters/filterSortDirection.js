@@ -1,6 +1,6 @@
 function toggleDirection(direction) {
-	let buttonDown = document.getElementById("filter-direction-down-id");
-	let buttonUp = document.getElementById("filter-direction-up-id");
+	const buttonDown = document.getElementById("filter-direction-down-id");
+	const buttonUp = document.getElementById("filter-direction-up-id");
 	if (direction === "down") {
 		buttonDown.classList.add("checkedDirectionBtn");
 		buttonDown.style.backgroundColor = "#33ccff";

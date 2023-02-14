@@ -8,8 +8,8 @@ function filtersMultipleUsed(dataChars, filtersEachLengthString, filtersEachLeng
 		filterCharItems3 = [],
 		filterCharItems4 = [];
 
+	const char = document.getElementsByClassName("char");
 	let charListAll = create2DimensionalArray(filtersEachLengthStringUsed.length, 1);
-	let char = document.getElementsByClassName("char");
 
 	for (j = 0; j < filtersEachLengthStringUsed.length; j++) {
 		for (let i = 0; i < filtersEachLengthString.length; i++) {
@@ -94,7 +94,8 @@ function applyFilters(btnPressed) {
 		filterEzaTemp = ["eza", "noeza"],
 		filterAwakenIdTemp = ["not-dokkan-awakened", "pre-dokkan-awakened", "dokkan-awakened"],
 		filterSuperAttackTypeIdTemp = ["ki-blast", "unarmed", "physical", "other"],
-		filterRecruitIdTemp = ["summonable", "free-to-play"];
+		filterRecruitIdTemp = ["summonable", "free-to-play"],
+		filtersEachLengthString = ["A", "B", "C", "D", "E", "F", "G"];
 
 	const A = document.getElementsByClassName("checkedTypeBtn").length;
 	const B = document.getElementsByClassName("checkedRarityBtn").length;
@@ -103,14 +104,7 @@ function applyFilters(btnPressed) {
 	const E = document.getElementsByClassName("checkedAwakenBtn").length;
 	const F = document.getElementsByClassName("checkedSuperAttackTypeBtn").length;
 	const G = document.getElementsByClassName("checkedRecruitBtn").length;
-
-	const filtersEachLength = [A, B, C, D, E, F, G], 
-	filtersEachLengthString = ["A", "B", "C", "D", "E", "F", "G"];
-
-	let filtersEachLengthStringUsed = [],
-		charListDefault = [],
-		filtersUsed = [],
-		sumFilterUsed = 0;
+	const filtersEachLength = [A, B, C, D, E, F, G];
 
 	//sortDirection
 	if (checkedDirectionBtn.length == 1) {
@@ -186,14 +180,16 @@ function applyFilters(btnPressed) {
 		}
 	}
 	filterRecruitId = cleanArray(filterRecruitId, undefined);
-	filtersUsed = [filterType, filterRarity, filterClass, filterEza, filterAwakenId, filterSuperAttackTypeId, filterRecruitId];
+	const filtersUsed = [filterType, filterRarity, filterClass, filterEza, filterAwakenId, filterSuperAttackTypeId, filterRecruitId];
 
+	let sumFilterUsed = 0;
 	//check how many filter are used
 	for (let i = 0; i < filtersUsed.length; i++) {
 		if (filtersUsed[i].length > 0) {
 			sumFilterUsed = sumFilterUsed + 1;
 		}
 	}
+	let filtersEachLengthStringUsed = [];
 	for (let i = 0; i < filtersEachLength.length; i++) {
 		if (filtersEachLength[i] > 0) {
 			filtersEachLengthStringUsed[i] = filtersEachLengthString[i];
@@ -201,6 +197,7 @@ function applyFilters(btnPressed) {
 	}
 	filtersEachLengthStringUsed = cleanArray(filtersEachLengthStringUsed, undefined);
 
+	let charListDefault = [];
 	if (sumFilterUsed == 0) {
 		for (let i = 0; i < char.length; i++) {
 			charListDefault[i] = char.item(i);

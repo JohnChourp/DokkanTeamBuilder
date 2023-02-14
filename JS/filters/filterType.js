@@ -1,5 +1,5 @@
 function addType(typeFilter) {
-	let element = document.getElementById(typeFilter);
+	const element = document.getElementById(typeFilter);
 
 	if (element.classList.contains("checkedTypeBtn")) {
 		element.classList.remove("checkedTypeBtn");
@@ -37,7 +37,7 @@ function filterType(type) {
 }
 
 function removeAllType() {
-	let filterType = ["agl", "teq", "int", "str", "phy"];
+	const filterType = ["agl", "teq", "int", "str", "phy"];
 	for (let i = 0; i < filterType.length; i++) {
 		document.getElementById(filterType[i]).classList.remove("checkedTypeBtn");
 		document.getElementById(filterType[i]).children.item(0).style.backgroundColor = "#6B6B67";

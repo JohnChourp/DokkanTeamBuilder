@@ -1,5 +1,5 @@
 function filterSuperAttackType(id) {
-    let btn = document.getElementById(id);
+    const btn = document.getElementById(id);
     if (btn.classList.contains("checkedSuperAttackTypeBtn")) {
         btn.classList.remove("checkedSuperAttackTypeBtn");
         btn.style.backgroundColor = "#ddd";
@@ -26,8 +26,8 @@ function filterSuperAttackTypeOther() {
 }
 
 function removeAllSuperAttackType() {
-    let filterSuperAttackTypeId = ["ki-blast", "unarmed", "physical", "other"];
-    let elements = filterSuperAttackTypeId.map(id => document.getElementById(id));
+    const filterSuperAttackTypeId = ["ki-blast", "unarmed", "physical", "other"];
+    const elements = filterSuperAttackTypeId.map(id => document.getElementById(id));
 
     elements.forEach(el => {
         el.classList.remove("checkedSuperAttackTypeBtn");

@@ -19,21 +19,19 @@ function addChar(charsPerPageNumItem) {
 	const charDisplay = document.getElementsByClassName("char_display");
 
 	const char = document.getElementsByClassName("char");
-	let charDiv, char_type_base_img, char_thumb_img, char_rarity_img,
-		char_type_img, char_eza_img, char_display_div;
 
-	let searchSettingsImageId = document.getElementById("search-settings-image-id");
+	const searchSettingsImageId = document.getElementById("search-settings-image-id");
 	searchSettingsImageId.loading = "lazy";
 	searchSettingsImageId.setAttribute("draggable", "false");
 	searchSettingsImageId.alt = "search_settings_image";
 
-	for (let i = 0, charItem; i < charsPerPageNumItem; i++) {
-		charItem = char[i];
-		charDiv = document.createElement("div");
+	for (let i = 0; i < charsPerPageNumItem; i++) {
+		const charItem = char[i];
+		const charDiv = document.createElement("div");
 		charDiv.classList.add("char-div-class");
 
 		//char_type_base
-		char_type_base_img = document.createElement("img");
+		const char_type_base_img = document.createElement("img");
 		char_type_base_img.classList.add("char_type_base");
 		char_type_base_img.loading = "lazy";
 		char_type_base_img.setAttribute("draggable", "false");
@@ -41,7 +39,7 @@ function addChar(charsPerPageNumItem) {
 		charDiv.appendChild(char_type_base_img);
 
 		//char_thumb
-		char_thumb_img = document.createElement("img");
+		const char_thumb_img = document.createElement("img");
 		char_thumb_img.classList.add("char_thumb");
 		char_thumb_img.loading = "lazy";
 		char_thumb_img.src = dataCharIdItems[i].getAttribute(dataCharId);
@@ -50,7 +48,7 @@ function addChar(charsPerPageNumItem) {
 		charDiv.appendChild(char_thumb_img);
 
 		//char_rarity
-		char_rarity_img = document.createElement("img");
+		const char_rarity_img = document.createElement("img");
 		char_rarity_img.classList.add("char_rarity");
 		char_rarity_img.loading = "lazy";
 		char_rarity_img.setAttribute("draggable", "false");
@@ -58,7 +56,7 @@ function addChar(charsPerPageNumItem) {
 		charDiv.appendChild(char_rarity_img);
 
 		//char_type
-		char_type_img = document.createElement("img");
+		const char_type_img = document.createElement("img");
 		char_type_img.classList.add("char_type");
 		char_type_img.loading = "lazy";
 		char_type_img.setAttribute("draggable", "false");
@@ -67,7 +65,7 @@ function addChar(charsPerPageNumItem) {
 
 		//char_eza
 		if (charItem.getAttribute(dataCharEza) === "eza") {
-			char_eza_img = document.createElement("img");
+			const char_eza_img = document.createElement("img");
 			char_eza_img.classList.add("char_eza");
 			char_eza_img.loading = "lazy";
 			char_eza_img.src = "Images/char/char_eza/eza.png";
@@ -79,7 +77,7 @@ function addChar(charsPerPageNumItem) {
 		charItem.appendChild(charDiv);
 
 		//char_display
-		char_display_div = document.createElement("div");
+		const char_display_div = document.createElement("div");
 		char_display_div.classList.add("char_display");
 		char_display_div.innerHTML = dataCharNameItems[i].getAttribute(dataCharName);
 		char_display_div.setAttribute("draggable", "false");
