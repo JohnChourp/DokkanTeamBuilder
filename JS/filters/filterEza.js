@@ -3,32 +3,42 @@ function ezaFilter() {
 }
 
 function addEza(ezaFilter) {
-    let filterRarityId = ["n", "r", "sr", "ssr"];
-    let filterAwakenId = ["not-dokkan-awakened", "pre-dokkan-awakened", "dokkan-awakened"];
-    let isEza = document.getElementById(ezaFilter).classList.contains("checkedEzaBtn");
+    const filterRarityId = ["n", "r", "sr", "ssr"]
+    const filterAwakenId = ["not-dokkan-awakened", "pre-dokkan-awakened", "dokkan-awakened"];
+    if (document.getElementById(ezaFilter).classList.contains("checkedEzaBtn")) {
+        document.getElementById(ezaFilter).classList.remove("checkedEzaBtn");
 
-    for (let id of filterAwakenId) {
-        let awaken = document.getElementById(id);
-        awaken.style.backgroundColor = isEza ? "#ddd" : "#343A40";
-        awaken.style.cursor = isEza ? "pointer" : "not-allowed";
-        awaken.style.color = isEza ? "black" : "#6C757D";
-        awaken.disabled = !isEza;
-        awaken.classList.toggle("checkedAwakenBtn", isEza);
+        for (let i = 0; i < filterAwakenId.length; i++) {
+            document.getElementById(filterAwakenId[i]).style.backgroundColor = "#ddd";
+            document.getElementById(filterAwakenId[i]).style.cursor = "pointer";
+            document.getElementById(filterAwakenId[i]).style.color = "black";
+            document.getElementById(filterAwakenId[i]).removeAttribute("disabled");
+        }
+        for (let i = 0; i < filterRarityId.length; i++) {
+            document.getElementById(filterRarityId[i]).style.cursor = "pointer";
+            document.getElementById(filterRarityId[i]).removeAttribute("disabled");
+            document.getElementById(filterRarityId[i]).children.item(0).style.backgroundColor = "#6B6B67";
+            document.getElementById(filterRarityId[i]).children.item(1).style.backgroundColor = "#555555";
+            document.getElementById(filterRarityId[i]).children.item(8).style.backgroundImage = 'linear-gradient(180deg, #B6B6B6, #948D87)';
+        }
+    } else {
+        document.getElementById(ezaFilter).classList.add("checkedEzaBtn");
+        for (let i = 0; i < filterAwakenId.length; i++) {
+            document.getElementById(filterAwakenId[i]).style.backgroundColor = "#343A40";
+            document.getElementById(filterAwakenId[i]).style.cursor = "not-allowed";
+            document.getElementById(filterAwakenId[i]).style.color = "#6C757D";
+            document.getElementById(filterAwakenId[i]).setAttribute("disabled", "enabled");
+            document.getElementById(filterAwakenId[i]).classList.remove("checkedAwakenBtn");
+        }
+        for (let i = 0; i < filterRarityId.length; i++) {
+            document.getElementById(filterRarityId[i]).style.cursor = "not-allowed";
+            document.getElementById(filterRarityId[i]).setAttribute("disabled", "enabled");
+            document.getElementById(filterRarityId[i]).classList.remove("checkedRarityBtn");
+            document.getElementById(filterRarityId[i]).children.item(0).style.backgroundColor = "#343A40";
+            document.getElementById(filterRarityId[i]).children.item(1).style.backgroundColor = "#343A40";
+            document.getElementById(filterRarityId[i]).children.item(8).style.backgroundImage = 'linear-gradient(180deg, #FFFFFF,#DBCEBD)';
+        }
     }
-
-    for (let id of filterRarityId) {
-        let rarity = document.getElementById(id);
-        rarity.style.cursor = isEza ? "pointer" : "not-allowed";
-        rarity.disabled = !isEza;
-        rarity.classList.toggle("checkedRarityBtn", isEza);
-
-        let children = rarity.children;
-        children.item(0).style.backgroundColor = isEza ? "#6B6B67" : "#343A40";
-        children.item(1).style.backgroundColor = isEza ? "#555555" : "#343A40";
-        children.item(8).style.backgroundImage = isEza ? 'linear-gradient(180deg, #B6B6B6, #948D87)' : 'linear-gradient(180deg, #FFFFFF,#DBCEBD)';
-    }
-
-    document.getElementById(ezaFilter).classList.toggle("checkedEzaBtn", !isEza);
 }
 
 function ezaNoFilter() {
@@ -36,13 +46,16 @@ function ezaNoFilter() {
 }
 
 function addNoEza(ezaNoFilter) {
-    let ezaNo = document.getElementById(ezaNoFilter);
-    ezaNo.classList.toggle("checkedEzaBtn");
+    if (document.getElementById(ezaNoFilter).classList.contains("checkedEzaBtn")) {
+        document.getElementById(ezaNoFilter).classList.remove("checkedEzaBtn");
+    } else {
+        document.getElementById(ezaNoFilter).classList.add("checkedEzaBtn");
+    }
 }
 
 function removeAllEza() {
-    let filterEza = ["eza", "noeza"];
-    filterEza.forEach(element => {
-        document.getElementById(element).classList.remove("checkedEzaBtn");
-    });
+    const filterEza = ["eza", "noeza"];
+    for (let i = 0; i < filterEza.length; i++) {
+        document.getElementById(filterEza[i]).classList.remove("checkedEzaBtn");
+    }
 }
