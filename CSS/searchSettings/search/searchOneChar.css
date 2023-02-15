@@ -76,25 +76,72 @@
 }
 
 /*Samsung Galaxy A51/A71 dimensions */
-@media only screen and (max-width: 413px) {
+@media only screen and (width: 412px) {
 	#search-one-char-selected-dropdown {
-		width: 97px;
 		height: 30px;
-		overflow: hidden;
-	}
-
-	.search-one-char-dropdown-options {
-		width: 192px;
-		height: 200px;
-		margin-top: 32px;
-		margin-left: 5px;
+		width: 285px;
 	}
 
 	#search-one-char-menu-id {
 		position: absolute;
-		top: 215px;
-		left: 209px;
-		height: 26px;
-		width: 186px;
+		height: 25px;
+		width: 170px;
+		margin-left:209px;
+	}
+
+	.search-one-char-dropdown-options {
+		position: absolute;
+		width: 176px;
+		height: 200px;
+		margin-top: 31px;
+		margin-left:210px;
+	}
+}
+
+
+/*BlackBerry Z30 dimensions */
+@media only screen and (width: 360px) {
+	#search-one-char-selected-dropdown {
+		font-size: 12px;
+		height: 30px;
+		width: 230px;
+	}
+
+	#search-one-char-menu-id {
+		font-size: 12px;
+		position: absolute;
+		height: 25px;
+		width: 160px;
+		margin-left:161px;
+	}
+
+	.search-one-char-dropdown-options {
+		font-size: 12px;
+		position: absolute;
+		width: 166px;
+		height: 200px;
+		margin-top: 31px;
+		margin-left:162px;
+	}
+}
+
+
+/*BlackBerry PlayBook dimensions */
+@media only screen and (width: 600px) {
+	#search-one-char-menu-id {
+		font-size: 12px;
+		position: absolute;
+		height: 25px;
+		width: 210px;
+		margin-left:345px;
+	}
+
+	.search-one-char-dropdown-options {
+		font-size: 12px;
+		position: absolute;
+		width: 216px;
+		height: 200px;
+		margin-top: 31px;
+		margin-left:346px;
 	}
 }

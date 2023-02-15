@@ -72,37 +72,6 @@ function createFilterPagination(charList, charsPerPageNum) {
 		pagination_page(0, charsPerPageNum, pageSum, 1, charList, pagesLoaded);
 	}
 }
-function pagination_page(start, end, pageSum, pageNum, charList, pagesLoaded) {
-	const char_container_id = document.getElementById("char-container-id");
-	const pagination_id = document.getElementById("pagination-id");
-
-	const fragment = document.createDocumentFragment();
-	end = (pageNum === pageSum) ? charList.length : end;
-	for (let i = start; i < end; i++) {
-		fragment.appendChild(charList[i]);
-	}
-
-	char_container_id.innerHTML = "";
-	char_container_id.appendChild(fragment);
-
-	pagination_id.children.item(pageSum + 2).innerHTML = "Showing " + (start + 1) + " to " + end + " of " + charList.length + " Characters";
-	addFilterPaginationClass(pageNum, pageSum);
-
-	const pageKeys = Object.keys(pagesLoaded);
-	for (let i = 0; i < pageKeys.length + 1; i++) {
-		if (pageNum == i) {
-			const page = pageKeys[i - 1];
-			if (!pagesLoaded[page]) {
-				pagesLoaded[page] = true;
-				if (pageNum == pageSum) {
-					addChar(end - start);
-				} else {
-					addChar(localStorage.getItem("charsPerPageNumItem"));
-				}
-			}
-		}
-	}
-}
 
 function createFilterPagination2(charList, charsPerPageNum) {
 	const pagesLoaded = {
@@ -178,6 +147,40 @@ function createFilterPagination2(charList, charsPerPageNum) {
 		pagination_page2(0, charsPerPageNum, pageSum, 1, charList, pagesLoaded);
 	}
 }
+
+function pagination_page(start, end, pageSum, pageNum, charList, pagesLoaded) {
+	const char_container_id = document.getElementById("char-container-id");
+	const pagination_id = document.getElementById("pagination-id");
+
+	const fragment = document.createDocumentFragment();
+	end = (pageNum === pageSum) ? charList.length : end;
+	for (let i = start; i < end; i++) {
+		fragment.appendChild(charList[i]);
+	}
+
+	char_container_id.innerHTML = "";
+	char_container_id.appendChild(fragment);
+
+	pagination_id.children.item(pageSum + 2).innerHTML = "Showing " + (start + 1) + " to " + end + " of " + charList.length + " Characters";
+	addFilterPaginationClass(pageNum, pageSum);
+
+	const pageKeys = Object.keys(pagesLoaded);
+	for (let i = 0; i < pageKeys.length + 1; i++) {
+		if (pageNum == i) {
+			const page = pageKeys[i - 1];
+			if (!pagesLoaded[page]) {
+				pagesLoaded[page] = true;
+				if (pageNum == pageSum) {
+					addChar(end - start);
+				} else {
+					addChar(localStorage.getItem("charsPerPageNumItem"));
+				}
+			}
+		}
+	}
+	addDropdownClass(localStorage.getItem("filterDisplay"));
+}
+
 function pagination_page2(start, end, pageSum, pageNum, charList, pagesLoaded) {
 	let char_container_id = document.getElementById("char-container-id");
 	let pagination_id = document.getElementById("pagination-id");
@@ -219,6 +222,7 @@ function pagination_page2(start, end, pageSum, pageNum, charList, pagesLoaded) {
 			}
 		}
 	}
+	addDropdownClass(localStorage.getItem("filterDisplay"));
 }
 
 function paginationPrevious(pageSum, charsPerPageNum, charList, pagesLoaded) {

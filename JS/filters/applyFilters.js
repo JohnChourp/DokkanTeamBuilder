@@ -249,5 +249,4 @@ function applyFilters(btnPressed) {
 	if (characterSearchId.value.length > 0) {
 		characterSearchId.value = "";
 	}
-	addDropdownClass(localStorage.getItem("filterDisplay"));
 }

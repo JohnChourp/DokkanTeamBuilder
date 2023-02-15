@@ -7,10 +7,18 @@ function stickySearchSettingsYes() {
 	buttonYes.classList.add("checkedstickySearchSettingsBtn");
 	buttonNo.classList.remove("checkedstickySearchSettingsBtn");
 
+	let width = '99%';
+	for (let i = 50; i < 10000; i++) {
+		if (window.matchMedia(`(max-device-width: ${i}px)`).matches) {
+		  width = (i - 16) + "px";
+		  break;
+		}
+	}
+
 	searchSettingsId.style.position = "fixed";
 	searchSettingsId.style.zIndex = "1";
 	searchSettingsId.style.marginTop = "-400px";
-	searchSettingsId.style.width = "99%";
+	searchSettingsId.style.width = width;
 
 	sitemapBtnId.style.marginBottom = "400px";
 
@@ -25,10 +33,18 @@ function stickySearchSettingsNo() {
 	buttonYes.classList.remove("checkedstickySearchSettingsBtn");
 	buttonNo.classList.add("checkedstickySearchSettingsBtn");
 	
+	let width = '99%';
+	for (let i = 50; i < 10000; i++) {
+		if (window.matchMedia(`(max-device-width: ${i}px)`).matches) {
+		  width = (i - 16) + "px";
+		  break;
+		}
+	}
+
 	searchSettingsId.style.position = "relative";
 	searchSettingsId.style.zIndex = "0";
 	searchSettingsId.style.marginTop = "0px";
-	searchSettingsId.style.width = "auto";
+	searchSettingsId.style.width = width;
 
 	sitemapBtnId.style.marginBottom = "0px";
 }
