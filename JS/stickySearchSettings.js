@@ -9,7 +9,7 @@ function stickySearchSettingsYes() {
 
 	let width = '99%';
 	for (let i = 50; i < 10000; i++) {
-		if (window.matchMedia(`(max-device-width: ${i}px)`).matches) {
+		if (window.matchMedia(`(device-width: ${i}px)`).matches) {
 		  width = (i - 16) + "px";
 		  break;
 		}
@@ -35,7 +35,7 @@ function stickySearchSettingsNo() {
 	
 	let width = '99%';
 	for (let i = 50; i < 10000; i++) {
-		if (window.matchMedia(`(max-device-width: ${i}px)`).matches) {
+		if (window.matchMedia(`(device-width: ${i}px)`).matches) {
 		  width = (i - 16) + "px";
 		  break;
 		}

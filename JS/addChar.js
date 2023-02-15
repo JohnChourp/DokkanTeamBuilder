@@ -124,7 +124,13 @@ function addChar(charsPerPageNumItem) {
 		str: 'url(\'Images/char_filter/char_filter_type/str.png\')',
 		phy: 'url(\'Images/char_filter/char_filter_type/phy.png\')',
 	};
-
+	const colorMapMobile = {
+		agl: 'url(\'Images/char_filter/char_filter_type/agl_mobile.png\')',
+		teq: 'url(\'Images/char_filter/char_filter_type/teq_mobile.png\')',
+		int: 'url(\'Images/char_filter/char_filter_type/int_mobile.png\')',
+		str: 'url(\'Images/char_filter/char_filter_type/str_mobile.png\')',
+		phy: 'url(\'Images/char_filter/char_filter_type/phy_mobile.png\')',
+	};
 	for (let i = 0; i < charsPerPageNumItem; i++) {
 		const charTypeValue = dataCharTypeItems[i].getAttribute(dataCharType);
 		const charRarityValue = dataCharRarityItems[i].getAttribute(dataCharRarity);
@@ -134,7 +140,11 @@ function addChar(charsPerPageNumItem) {
 		charType[i].src = charClassMap[charClassValue][charTypeValue];
 		charRarity[i].src = charRarityMap[charRarityValue];
 		charThumb[i].src = `Images/char/char_thumb/char_${charThumbSrc.slice(-7)}_thumb.png`;
-		charDisplay[i].style.backgroundImage = colorMap[charTypeValue];
+		if (window.matchMedia(`(device-width: 412px)`).matches) {
+			charDisplay[i].style.backgroundImage = colorMapMobile[charTypeValue];
+		}else{
+			charDisplay[i].style.backgroundImage = colorMap[charTypeValue];
+		}
 		const imagePaths = {
 			lr: `Images/char/char_type_base/char_type_base_ssr_${charTypeValue}.png`,
 			ur: `Images/char/char_type_base/char_type_base_ssr_${charTypeValue}.png`,

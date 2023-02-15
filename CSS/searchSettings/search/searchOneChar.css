@@ -79,7 +79,7 @@
 @media only screen and (width: 412px) {
 	#search-one-char-selected-dropdown {
 		height: 30px;
-		width: 285px;
+		width: 286px;
 	}
 
 	#search-one-char-menu-id {
@@ -93,55 +93,7 @@
 		position: absolute;
 		width: 176px;
 		height: 200px;
-		margin-top: 31px;
+		margin-top:30px;
 		margin-left:210px;
-	}
-}
-
-
-/*BlackBerry Z30 dimensions */
-@media only screen and (width: 360px) {
-	#search-one-char-selected-dropdown {
-		font-size: 12px;
-		height: 30px;
-		width: 230px;
-	}
-
-	#search-one-char-menu-id {
-		font-size: 12px;
-		position: absolute;
-		height: 25px;
-		width: 160px;
-		margin-left:161px;
-	}
-
-	.search-one-char-dropdown-options {
-		font-size: 12px;
-		position: absolute;
-		width: 166px;
-		height: 200px;
-		margin-top: 31px;
-		margin-left:162px;
-	}
-}
-
-
-/*BlackBerry PlayBook dimensions */
-@media only screen and (width: 600px) {
-	#search-one-char-menu-id {
-		font-size: 12px;
-		position: absolute;
-		height: 25px;
-		width: 210px;
-		margin-left:345px;
-	}
-
-	.search-one-char-dropdown-options {
-		font-size: 12px;
-		position: absolute;
-		width: 216px;
-		height: 200px;
-		margin-top: 31px;
-		margin-left:346px;
 	}
 }

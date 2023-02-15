@@ -84,12 +84,22 @@ function addDropdownClass(filterDisplay) {
 
 	if (filterDisplay >= 0 && filterDisplay <= 8) {
 		for (let i = 0; i < char_display_text.length; i++) {
+			char_display_text.item(i).style.display = "table-cell";
+			char_display_text.item(i).style.top = "10px";
+			char_display_text.item(i).style.textAlign = "center";
+			char_display_text.item(i).style.removeProperty('left');
+			char_display_text.item(i).style.width = "80px";
+		}
+	}
+
+	if (filterDisplay >= 0 && filterDisplay <= 8) {
+		for (let i = 0; i < char_display_text.length; i++) {
 			if (dataCharEzaItems[i].getAttribute(dataCharEza) == "eza") {
 				char_display_text.item(i).style.display = "block";
 				char_display_text.item(i).style.removeProperty('top');
-			} else {
-				char_display_text.item(i).style.display = "table-cell";
-				char_display_text.item(i).style.top = "10px";
+				char_display_text.item(i).style.textAlign = "center";
+				char_display_text.item(i).style.removeProperty('left');
+				char_display_text.item(i).style.width = "80px";
 			}
 		}
 	}
@@ -98,13 +108,28 @@ function addDropdownClass(filterDisplay) {
 		for (let i = 0; i < char_display_text.length; i++) {
 			char_display_text.item(i).style.display = "table-cell";
 			char_display_text.item(i).style.top = "10px";
+			char_display_text.item(i).style.removeProperty('left');
+			char_display_text.item(i).style.textAlign = "center";
+			char_display_text.item(i).style.width = "80px";
 		}
 	}
-	console.log("a");
-	if (filterDisplay == 12 || filterDisplay == 13 || filterDisplay == 14) {
+
+	if (filterDisplay == 12) {
 		for (let i = 0; i < char_display_text.length; i++) {
 			char_display_text.item(i).style.display = "block";
 			char_display_text.item(i).style.removeProperty('top');
+			char_display_text.item(i).style.removeProperty('left');
+			char_display_text.item(i).style.textAlign = "center";
+			char_display_text.item(i).style.width = "80px";
+		}
+	}
+	if (filterDisplay == 13 || filterDisplay == 14) {
+		for (let i = 0; i < char_display_text.length; i++) {
+			char_display_text.item(i).style.display = "block";
+			char_display_text.item(i).style.removeProperty('top');
+			char_display_text.item(i).style.textAlign = "start";
+			char_display_text.item(i).style.left = "10px";
+			char_display_text.item(i).style.width = "70px";
 		}
 	}
 	//Name

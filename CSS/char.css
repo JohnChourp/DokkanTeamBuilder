@@ -7,15 +7,16 @@
 }
 
 .char {
-    width: 250px;
+    width: 215px;
     height: 200px;
+    margin-top:10px;
 }
 
 .char-div-class {
     width: 200px;
     height: 120px;
     position: relative;
-    left: 25px;
+    left: 7.5px;
 }
 
 .char-div-class:hover {
@@ -27,7 +28,7 @@
     width: 200px;
     height: 55px;
     position: relative;
-    left: 25px;
+    left: 7.5px;
     background-size: cover;
     background-position: center top;
 }
@@ -87,7 +88,7 @@
     width: 50px;
     height: 50px;
     position: relative;
-    bottom: 240px;
+    bottom: 235px;
     left: 120px;
     -moz-user-select: none;
     -webkit-user-drag: none;
@@ -112,175 +113,62 @@
 /*Samsung Galaxy A51/A71 dimensions */
 @media only screen and (width: 412px) {
     .char {
-        margin-left: 5px;
-        width: 80px;
+        width: 95px;
         height: 100px;
     }
-
+    
     .char-div-class {
         width: 80px;
-        height: 100px;
+        height: 60px;
+        left: 7.5px;
     }
-
+    
+    .char_display {
+        width: 80px;
+        height: 40px;
+        left: 7.5px;
+    }
+    
+    .char_display_text {
+        width: 70px;
+        height: 21px;
+        top:10px;
+        font-size:xx-small;
+    }
+    
     .char_type_base {
         width: 50px;
         height: 50px;
-        top: 18px;
-        left: 20px;
+        top: 7.5px;
+        left: 17.5px;
     }
-
+    
     .char_thumb {
-        width: 62px;
-        height: 62px;
-        top: -44px;
-        left: 14px;
+        width: 62.5px;
+        height: 62.5px;
+        bottom: 55px;
+        left: 11.5px;
     }
-
+    
     .char_rarity {
         width: 30px;
         height: 30px;
-        top: -74px;
-        left: 10px;
+        bottom: 85px;
+        left: 7.5px;
     }
-
+    
     .char_type {
         width: 25px;
         height: 25px;
-        top: -118px;
-        left: 25px;
+        bottom: 126px;
+        left: 21.5px;
     }
-
+    
     .char_eza {
-        width: 12px;
-        height: 12px;
-        top: -84px;
-        left: 1px;
-    }
-
-    .char_display {
-        width: 100px;
-        height: 25px;
-        top: -30px;
-        left: 0px;
-        font-size: 10px;
-        transform: scale(0.95);
-    }
-}
-
-
-/*BlackBerry Z30 dimensions */
-@media only screen and (width: 360px) {
-    .char {
-        width: 99px;
-        height: 100px;
-    }
-
-    .char-div-class {
-        width: 90px;
-        height: 100px;
-        margin-left: 10px;
-    }
-
-    .char_type_base {
-        width: 50px;
-        height: 50px;
-        top: 18px;
-        left: 20px;
-    }
-
-    .char_thumb {
-        width: 62px;
-        height: 62px;
-        top: -44px;
-        left: 14px;
-    }
-
-    .char_rarity {
-        width: 30px;
-        height: 30px;
-        top: -74px;
-        left: 10px;
-    }
-
-    .char_type {
-        width: 25px;
-        height: 25px;
-        top: -118px;
-        left: 25px;
-    }
-
-    .char_eza {
-        width: 12px;
-        height: 12px;
-        top: -84px;
-        left: 1px;
-    }
-
-    .char_display {
-        width: 100px;
-        height: 25px;
-        top: -30px;
-        left: 0px;
-        font-size: 10px;
-        transform: scale(0.95);
-    }
-}
-
-/*BlackBerry PlayBook dimensions */
-@media only screen and (width: 600px) {
-    .char {
-        margin-left: 10px;
-        width: 99px;
-        height: 100px;
-    }
-
-    .char-div-class {
-        width: 90px;
-        height: 100px;
-        margin-left: 5px;
-    }
-
-    .char_type_base {
-        width: 50px;
-        height: 50px;
-        top: 18px;
-        left: 20px;
-    }
-
-    .char_thumb {
-        width: 62px;
-        height: 62px;
-        top: -44px;
-        left: 14px;
-    }
-
-    .char_rarity {
-        width: 30px;
-        height: 30px;
-        top: -74px;
-        left: 10px;
-    }
-
-    .char_type {
-        width: 25px;
-        height: 25px;
-        top: -118px;
-        left: 25px;
-    }
-
-    .char_eza {
-        width: 12px;
-        height: 12px;
-        top: -84px;
-        left: 1px;
-    }
-
-    .char_display {
-        width: 100px;
-        height: 25px;
-        top: -30px;
-        left: 0px;
-        font-size: 10px;
-        transform: scale(0.95);
+        width: 12.5px;
+        height: 12.5px;
+        left: 35px;
+        bottom: 95px;
+        left:-2.5px;
     }
 }

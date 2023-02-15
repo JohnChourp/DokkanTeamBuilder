@@ -72,16 +72,3 @@
 		width: 135px;
 	}
 }
-
-/*BlackBerry Z30 dimensions */
-@media only screen and (width: 360px) {
-	#selected-dropdown{
-		width: 110px;
-		font-size: 12px;
-	}
-
-	.dropdown-options {
-		width: 110px;
-		font-size: 12px;
-	}
-}
