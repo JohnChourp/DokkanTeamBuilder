@@ -79,9 +79,17 @@ function addChar(charsPerPageNumItem) {
 		//char_display
 		const char_display_div = document.createElement("div");
 		char_display_div.classList.add("char_display");
-		char_display_div.innerHTML = dataCharNameItems[i].getAttribute(dataCharName);
 		char_display_div.setAttribute("draggable", "false");
 		char_display_div.alt = "char_display";
+
+		//char_display_text
+		const char_display_text_div = document.createElement("div");
+		char_display_text_div.classList.add("char_display_text");
+		char_display_text_div.innerHTML = dataCharNameItems[i].getAttribute(dataCharName);
+		char_display_text_div.setAttribute("draggable", "false");
+		char_display_text_div.alt = "char_display_text";
+		char_display_div.appendChild(char_display_text_div);
+
 		charItem.appendChild(char_display_div);
 	}
 
@@ -110,13 +118,19 @@ function addChar(charsPerPageNumItem) {
 		},
 	};
 	const colorMap = {
-		agl: '#00AAEE',
-		teq: '#3df05b',
-		int: '#c953e0',
-		str: '#f77777',
-		phy: '#eec038',
+		agl: 'url(\'Images/char_filter/char_filter_type/agl.png\')',
+		teq: 'url(\'Images/char_filter/char_filter_type/teq.png\')',
+		int: 'url(\'Images/char_filter/char_filter_type/int.png\')',
+		str: 'url(\'Images/char_filter/char_filter_type/str.png\')',
+		phy: 'url(\'Images/char_filter/char_filter_type/phy.png\')',
 	};
-
+	const colorMapMobile = {
+		agl: 'url(\'Images/char_filter/char_filter_type/agl_mobile.png\')',
+		teq: 'url(\'Images/char_filter/char_filter_type/teq_mobile.png\')',
+		int: 'url(\'Images/char_filter/char_filter_type/int_mobile.png\')',
+		str: 'url(\'Images/char_filter/char_filter_type/str_mobile.png\')',
+		phy: 'url(\'Images/char_filter/char_filter_type/phy_mobile.png\')',
+	};
 	for (let i = 0; i < charsPerPageNumItem; i++) {
 		const charTypeValue = dataCharTypeItems[i].getAttribute(dataCharType);
 		const charRarityValue = dataCharRarityItems[i].getAttribute(dataCharRarity);
@@ -126,7 +140,11 @@ function addChar(charsPerPageNumItem) {
 		charType[i].src = charClassMap[charClassValue][charTypeValue];
 		charRarity[i].src = charRarityMap[charRarityValue];
 		charThumb[i].src = `Images/char/char_thumb/char_${charThumbSrc.slice(-7)}_thumb.png`;
-		charDisplay[i].style.backgroundColor = colorMap[charTypeValue];
+		if (window.matchMedia(`(device-width: 412px)`).matches) {
+			charDisplay[i].style.backgroundImage = colorMapMobile[charTypeValue];
+		}else{
+			charDisplay[i].style.backgroundImage = colorMap[charTypeValue];
+		}
 		const imagePaths = {
 			lr: `Images/char/char_type_base/char_type_base_ssr_${charTypeValue}.png`,
 			ur: `Images/char/char_type_base/char_type_base_ssr_${charTypeValue}.png`,
@@ -138,5 +156,12 @@ function addChar(charsPerPageNumItem) {
 
 		const imagePath = imagePaths[charRarityValue] || "";
 		char_type_base[i].src = imagePath;
+	}
+
+	const charDiv = document.getElementsByClassName("char-div-class");
+	for (i = 0; i < charDiv.length; i++) {
+		charDiv.item(i).addEventListener("click", function () {
+			openNavRight();
+		});
 	}
 }

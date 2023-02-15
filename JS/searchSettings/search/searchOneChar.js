@@ -148,8 +148,6 @@ function addSearchOneCharDropdownClass(charNamePos) {
 	}
 
 	createFilterPagination2(charList, localStorage.getItem("charsPerPageNumItem"));
-	addDropdownClass(localStorage.getItem("filterDisplay"));
-
 }
 
 function selectedCharNameSearch() {

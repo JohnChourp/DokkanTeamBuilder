@@ -189,4 +189,5 @@
 #n,#r,#sr,#ssr,#ur,#lr,
 #super,#extreme {
     -webkit-tap-highlight-color: transparent;
+    -tap-highlight-color: transparent;
 }
