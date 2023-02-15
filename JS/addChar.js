@@ -157,4 +157,11 @@ function addChar(charsPerPageNumItem) {
 		const imagePath = imagePaths[charRarityValue] || "";
 		char_type_base[i].src = imagePath;
 	}
+
+	const charDiv = document.getElementsByClassName("char-div-class");
+	for (i = 0; i < charDiv.length; i++) {
+		charDiv.item(i).addEventListener("click", function () {
+			openNavRight();
+		});
+	}
 }

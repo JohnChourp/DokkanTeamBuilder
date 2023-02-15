@@ -82,24 +82,24 @@ function addDropdownClass(filterDisplay) {
 		listCategoriesFormattedString[i] = listCategories[i].join("<br/>");
 	}
 
-	if (filterDisplay >= 0 && filterDisplay <= 8) {
+	if (filterDisplay >= 0 && filterDisplay <= 7) {
 		for (let i = 0; i < char_display_text.length; i++) {
 			char_display_text.item(i).style.display = "table-cell";
 			char_display_text.item(i).style.top = "10px";
 			char_display_text.item(i).style.textAlign = "center";
 			char_display_text.item(i).style.removeProperty('left');
-			char_display_text.item(i).style.width = "80px";
+			char_display_text.item(i).style.width = "200px";
 		}
 	}
 
-	if (filterDisplay >= 0 && filterDisplay <= 8) {
+	if (filterDisplay == 8) {
 		for (let i = 0; i < char_display_text.length; i++) {
 			if (dataCharEzaItems[i].getAttribute(dataCharEza) == "eza") {
 				char_display_text.item(i).style.display = "block";
 				char_display_text.item(i).style.removeProperty('top');
 				char_display_text.item(i).style.textAlign = "center";
 				char_display_text.item(i).style.removeProperty('left');
-				char_display_text.item(i).style.width = "80px";
+				char_display_text.item(i).style.width = "200px";
 			}
 		}
 	}
@@ -110,7 +110,7 @@ function addDropdownClass(filterDisplay) {
 			char_display_text.item(i).style.top = "10px";
 			char_display_text.item(i).style.removeProperty('left');
 			char_display_text.item(i).style.textAlign = "center";
-			char_display_text.item(i).style.width = "80px";
+			char_display_text.item(i).style.width = "200px";
 		}
 	}
 
@@ -120,7 +120,7 @@ function addDropdownClass(filterDisplay) {
 			char_display_text.item(i).style.removeProperty('top');
 			char_display_text.item(i).style.removeProperty('left');
 			char_display_text.item(i).style.textAlign = "center";
-			char_display_text.item(i).style.width = "80px";
+			char_display_text.item(i).style.width = "200px";
 		}
 	}
 	if (filterDisplay == 13 || filterDisplay == 14) {
@@ -129,7 +129,7 @@ function addDropdownClass(filterDisplay) {
 			char_display_text.item(i).style.removeProperty('top');
 			char_display_text.item(i).style.textAlign = "start";
 			char_display_text.item(i).style.left = "10px";
-			char_display_text.item(i).style.width = "70px";
+			char_display_text.item(i).style.width = "190px";
 		}
 	}
 	//Name
