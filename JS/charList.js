@@ -1,5 +1,13 @@
 function saveCharList() {
-	localStorage.setItem("nameOrTitle", 1);
+	if (localStorage.getItem("nameOrTitle") == null) {
+		localStorage.setItem("nameOrTitle", 1);
+	}
+	if (localStorage.getItem("filterDisplay") == null) {
+		localStorage.setItem("filterDisplay", 0);
+	}
+	if (localStorage.getItem("charsPerPageNumItem") == null) {
+		localStorage.setItem("charsPerPageNumItem", 32);
+	}
 
 	const char = document.getElementsByClassName("char");
 	const charList = Array.from(char).map(c => ({
@@ -23,13 +31,8 @@ function saveCharList() {
 		links: c.getAttribute("data-char-links"),
 		categories: c.getAttribute("data-char-categories")
 	}));
-
 	localStorage.setItem("charList", JSON.stringify(charList));
-	if (localStorage.getItem("charsPerPageNumItem") == null) {
-		localStorage.setItem("charsPerPageNumItem", 32);
-	}
 }
-
 
 function setCharList() {
 	let charListSaved = [];
