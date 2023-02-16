@@ -9,7 +9,7 @@
 .char {
     width: 215px;
     height: 200px;
-    margin-top:10px;
+    margin-top: 10px;
 }
 
 .char-div-class {
@@ -41,7 +41,7 @@
     position: relative;
     display: table-cell;
     vertical-align: middle;
-    top:10px;
+    top: 10px;
     overflow: auto;
 }
 
@@ -116,59 +116,59 @@
         width: 95px;
         height: 100px;
     }
-    
+
     .char-div-class {
         width: 80px;
         height: 60px;
         left: 7.5px;
     }
-    
+
     .char_display {
         width: 80px;
         height: 40px;
         left: 7.5px;
     }
-    
+
     .char_display_text {
         width: 70px;
         height: 21px;
-        top:10px;
-        font-size:xx-small;
+        top: 10px;
+        font-size: xx-small;
     }
-    
+
     .char_type_base {
         width: 50px;
         height: 50px;
         top: 7.5px;
         left: 17.5px;
     }
-    
+
     .char_thumb {
         width: 62.5px;
         height: 62.5px;
         bottom: 55px;
         left: 11.5px;
     }
-    
+
     .char_rarity {
         width: 30px;
         height: 30px;
         bottom: 85px;
         left: 7.5px;
     }
-    
+
     .char_type {
         width: 25px;
         height: 25px;
         bottom: 126px;
         left: 21.5px;
     }
-    
+
     .char_eza {
         width: 12.5px;
         height: 12.5px;
         left: 35px;
         bottom: 95px;
-        left:-2.5px;
+        left: -2.5px;
     }
 }
