@@ -10,8 +10,8 @@ function stickySearchSettingsYes() {
 	let width = '99%';
 	for (let i = 50; i < 10000; i++) {
 		if (window.matchMedia(`(device-width: ${i}px)`).matches) {
-		  width = (i - 16) + "px";
-		  break;
+			width = (i - 16) + "px";
+			break;
 		}
 	}
 
@@ -32,12 +32,12 @@ function stickySearchSettingsNo() {
 
 	buttonYes.classList.remove("checkedstickySearchSettingsBtn");
 	buttonNo.classList.add("checkedstickySearchSettingsBtn");
-	
+
 	let width = '99%';
 	for (let i = 50; i < 10000; i++) {
 		if (window.matchMedia(`(device-width: ${i}px)`).matches) {
-		  width = (i - 16) + "px";
-		  break;
+			width = (i - 16) + "px";
+			break;
 		}
 	}
 

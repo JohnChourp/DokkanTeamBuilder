@@ -84,11 +84,15 @@ function addDropdownClass(filterDisplay) {
 
 	if (filterDisplay >= 0 && filterDisplay <= 7) {
 		for (let i = 0; i < char_display_text.length; i++) {
+			char_display_text.item(i).style.left = "10px";
 			char_display_text.item(i).style.display = "table-cell";
 			char_display_text.item(i).style.top = "10px";
 			char_display_text.item(i).style.textAlign = "center";
-			char_display_text.item(i).style.removeProperty('left');
-			char_display_text.item(i).style.width = "200px";
+			if (window.matchMedia("(max-width: 413px)").matches) {
+				char_display_text.item(i).style.width = "70px";
+			} else {
+				char_display_text.item(i).style.width = "180px";
+			}
 		}
 	}
 
@@ -98,8 +102,15 @@ function addDropdownClass(filterDisplay) {
 				char_display_text.item(i).style.display = "block";
 				char_display_text.item(i).style.removeProperty('top');
 				char_display_text.item(i).style.textAlign = "center";
-				char_display_text.item(i).style.removeProperty('left');
-				char_display_text.item(i).style.width = "200px";
+				char_display_text.item(i).style.left = "10px";
+			} else {
+				char_display_text.item(i).style.left = "15px";
+			}
+			if (window.matchMedia("(max-width: 413px)").matches) {
+				char_display_text.item(i).style.left = "8px";
+				char_display_text.item(i).style.width = "64px";
+			} else {
+				char_display_text.item(i).style.width = "180px";
 			}
 		}
 	}
@@ -110,7 +121,12 @@ function addDropdownClass(filterDisplay) {
 			char_display_text.item(i).style.top = "10px";
 			char_display_text.item(i).style.removeProperty('left');
 			char_display_text.item(i).style.textAlign = "center";
-			char_display_text.item(i).style.width = "200px";
+			if (window.matchMedia("(max-width: 413px)").matches) {
+				char_display_text.item(i).style.left = "5px";
+				char_display_text.item(i).style.width = "70px";
+			} else {
+				char_display_text.item(i).style.width = "200px";
+			}
 		}
 	}
 
@@ -118,9 +134,13 @@ function addDropdownClass(filterDisplay) {
 		for (let i = 0; i < char_display_text.length; i++) {
 			char_display_text.item(i).style.display = "block";
 			char_display_text.item(i).style.removeProperty('top');
-			char_display_text.item(i).style.removeProperty('left');
+			char_display_text.item(i).style.left = "10px";
 			char_display_text.item(i).style.textAlign = "center";
-			char_display_text.item(i).style.width = "200px";
+			if (window.matchMedia("(max-width: 413px)").matches) {
+				char_display_text.item(i).style.width = "64px";
+			} else {
+				char_display_text.item(i).style.width = "180px";
+			}
 		}
 	}
 	if (filterDisplay == 13 || filterDisplay == 14) {
@@ -129,7 +149,11 @@ function addDropdownClass(filterDisplay) {
 			char_display_text.item(i).style.removeProperty('top');
 			char_display_text.item(i).style.textAlign = "start";
 			char_display_text.item(i).style.left = "10px";
-			char_display_text.item(i).style.width = "190px";
+			if (window.matchMedia("(max-width: 413px)").matches) {
+				char_display_text.item(i).style.width = "64px";
+			} else {
+				char_display_text.item(i).style.width = "180px";
+			}
 		}
 	}
 	//Name

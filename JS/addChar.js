@@ -142,7 +142,7 @@ function addChar(charsPerPageNumItem) {
 		charThumb[i].src = `Images/char/char_thumb/char_${charThumbSrc.slice(-7)}_thumb.png`;
 		if (window.matchMedia(`(device-width: 412px)`).matches) {
 			charDisplay[i].style.backgroundImage = colorMapMobile[charTypeValue];
-		}else{
+		} else {
 			charDisplay[i].style.backgroundImage = colorMap[charTypeValue];
 		}
 		const imagePaths = {
