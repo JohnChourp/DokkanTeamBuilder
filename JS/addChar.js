@@ -118,18 +118,18 @@ function addChar(charsPerPageNumItem) {
 		},
 	};
 	const colorMap = {
-		agl: 'url(\'Images/char_filter/char_filter_type/agl.png\')',
-		teq: 'url(\'Images/char_filter/char_filter_type/teq.png\')',
-		int: 'url(\'Images/char_filter/char_filter_type/int.png\')',
-		str: 'url(\'Images/char_filter/char_filter_type/str.png\')',
-		phy: 'url(\'Images/char_filter/char_filter_type/phy.png\')',
+		agl: 'url(\'Images/char/char_display/agl.png\')',
+		teq: 'url(\'Images/char/char_display/teq.png\')',
+		int: 'url(\'Images/char/char_display/int.png\')',
+		str: 'url(\'Images/char/char_display/str.png\')',
+		phy: 'url(\'Images/char/char_display/phy.png\')',
 	};
 	const colorMapMobile = {
-		agl: 'url(\'Images/char_filter/char_filter_type/agl_mobile.png\')',
-		teq: 'url(\'Images/char_filter/char_filter_type/teq_mobile.png\')',
-		int: 'url(\'Images/char_filter/char_filter_type/int_mobile.png\')',
-		str: 'url(\'Images/char_filter/char_filter_type/str_mobile.png\')',
-		phy: 'url(\'Images/char_filter/char_filter_type/phy_mobile.png\')',
+		agl: 'url(\'Images/char/char_display/agl_mobile.png\')',
+		teq: 'url(\'Images/char/char_display/teq_mobile.png\')',
+		int: 'url(\'Images/char/char_display/int_mobile.png\')',
+		str: 'url(\'Images/char/char_display/str_mobile.png\')',
+		phy: 'url(\'Images/char/char_display/phy_mobile.png\')',
 	};
 	for (let i = 0; i < charsPerPageNumItem; i++) {
 		const charTypeValue = dataCharTypeItems[i].getAttribute(dataCharType);
