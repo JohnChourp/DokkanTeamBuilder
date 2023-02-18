@@ -1,6 +1,5 @@
 function openNav() {
   const leftSidenav = document.getElementById("left-sidenav-id");
-  const leftSidenavFilters = document.getElementById("left-sidenav-filters-id");
   const applyFiltersBg = document.getElementById("apply-filters-bg-id");
   const applyFilters = document.getElementById("apply-filters-id");
   const applyFiltersText = document.getElementById("apply-filters-text-id");
@@ -18,7 +17,6 @@ function openNav() {
   }
 
   leftSidenav.style.width = width;
-  leftSidenavFilters.style.width = width;
   applyFiltersBg.style.width = width;
   applyFilters.style.width = width;
 
@@ -63,8 +61,8 @@ function openNavRight() {
 
 
 function closeNav() {
-  const leftSidenav = document.getElementById("left-sidenav-id");
-  const leftSidenavFilters = document.getElementById("left-sidenav-filters-id");
+  const allCategoriesId = document.getElementById("all-categories-id");
+	const leftSidenav = document.getElementById("left-sidenav-id");
   const rightSidenav = document.getElementById("right-sidenav-id");
   const rightSidenavFilters = document.getElementById("right-sidenav-filters-id");
   const applyFiltersBg = document.getElementById("apply-filters-bg-id");
@@ -74,9 +72,9 @@ function closeNav() {
   const removeAll = document.getElementById("remove-all-id");
   const mainPage = document.getElementById("main-page-id");
 
+  allCategoriesId.style.width = "0";
   leftSidenav.style.width = "0";
-  leftSidenavFilters.style.width = "0";
-
+  
   rightSidenav.style.width = "0";
   rightSidenavFilters.style.width = "0";
 

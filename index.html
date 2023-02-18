@@ -108,293 +108,314 @@
 		</div>
 	</div>
 	<div id="left-sidenav-id">
-		<div id="left-sidenav-filters-id">
-			<a href="javascript:void(0)" id="close-left-sidenav-btn-id" onclick="closeNav();">&times;</a>
-			<p class="filter-options-text-class">Sort Direction</p>
-			<div class="filter-class">
-				<button onclick="toggleDirection('down');" id="filter-direction-down-id" class="filter-direction-class"
-					type="button">
-					Descending Order
-				</button>
-				<button onclick="toggleDirection('up');" id="filter-direction-up-id" class="filter-direction-class"
-					type="button">
-					Ascending Order
-				</button>
-			</div>
-			<p class="filter-options-text-class">Category</p>
-			<div class="filter-class">
-				<div onclick="filterCategory('db-saga');" id="db-saga" class="filter-category-container">
-					<div class="top-half-bg-color-category"></div>
-					<div class="bottom-half-bg-color-category"></div>
-					<div class="top-line-category"></div>
-					<div class="top-left-line-rotated-category"></div>
-					<div class="top-right-line-rotated-category"></div>
-					<div class="bottom-line-category"></div>
-					<div class="bottom-left-line-rotated-category"></div>
-					<div class="bottom-right-line-rotated-category"></div>
-					<div class="filter-category-container-text">DB Saga</div>
-				</div>
-				<div onclick="filterCategory('saiyan-saga');" id="saiyan-saga" class="filter-category-container">
-					<div class="top-half-bg-color-category"></div>
-					<div class="bottom-half-bg-color-category"></div>
-					<div class="top-line-category"></div>
-					<div class="top-left-line-rotated-category"></div>
-					<div class="top-right-line-rotated-category"></div>
-					<div class="bottom-line-category"></div>
-					<div class="bottom-left-line-rotated-category"></div>
-					<div class="bottom-right-line-rotated-category"></div>
-					<div class="filter-category-container-text">Saiyan Saga</div>
-				</div>
-				<div onclick="filterCategory('planet-namek-saga');" id="planet-namek-saga"
-					class="filter-category-container">
-					<div class="top-half-bg-color-category"></div>
-					<div class="bottom-half-bg-color-category"></div>
-					<div class="top-line-category"></div>
-					<div class="top-left-line-rotated-category"></div>
-					<div class="top-right-line-rotated-category"></div>
-					<div class="bottom-line-category"></div>
-					<div class="bottom-left-line-rotated-category"></div>
-					<div class="bottom-right-line-rotated-category"></div>
-					<div class="filter-category-container-text">Planet Namek Saga</div>
-				</div>
-				<div onclick="filterCategory('androids-cell-saga');" id="androids-cell-saga"
-					class="filter-category-container">
-					<div class="top-half-bg-color-category"></div>
-					<div class="bottom-half-bg-color-category"></div>
-					<div class="top-line-category"></div>
-					<div class="top-left-line-rotated-category"></div>
-					<div class="top-right-line-rotated-category"></div>
-					<div class="bottom-line-category"></div>
-					<div class="bottom-left-line-rotated-category"></div>
-					<div class="bottom-right-line-rotated-category"></div>
-					<div class="filter-category-container-text">Androids/Cell Saga</div>
-				</div>
-				<div onclick="filterCategory('majin-buu-saga');" id="majin-buu-saga" class="filter-category-container">
-					<div class="top-half-bg-color-category"></div>
-					<div class="bottom-half-bg-color-category"></div>
-					<div class="top-line-category"></div>
-					<div class="top-left-line-rotated-category"></div>
-					<div class="top-right-line-rotated-category"></div>
-					<div class="bottom-line-category"></div>
-					<div class="bottom-left-line-rotated-category"></div>
-					<div class="bottom-right-line-rotated-category"></div>
-					<div class="filter-category-container-text">Majin Buu Saga</div>
-				</div>
-			</div>
-			<p class="filter-options-text-class">Rarity</p>
-			<div class="filter-class">
-				<div onclick="rarityFilter('n');" id="n" class="filter-rarity-container-class">
-					<div class="top-half-bg-color"></div>
-					<div class="bottom-half-bg-color"></div>
-					<div class="top-line"></div>
-					<div class="top-left-line-rotated"></div>
-					<div class="top-right-line-rotated"></div>
-					<div class="bottom-line"></div>
-					<div class="bottom-left-line-rotated"></div>
-					<div class="bottom-right-line-rotated"></div>
-					<div class="filter-rarity-container-text-class">N</div>
-				</div>
-				<div onclick="rarityFilter('r');" id="r" class="filter-rarity-container-class">
-					<div class="top-half-bg-color"></div>
-					<div class="bottom-half-bg-color"></div>
-					<div class="top-line"></div>
-					<div class="top-left-line-rotated"></div>
-					<div class="top-right-line-rotated"></div>
-					<div class="bottom-line"></div>
-					<div class="bottom-left-line-rotated"></div>
-					<div class="bottom-right-line-rotated"></div>
-					<div class="filter-rarity-container-text-class">R</div>
-				</div>
-				<div onclick="rarityFilter('sr');" id="sr" class="filter-rarity-container-class">
-					<div class="top-half-bg-color"></div>
-					<div class="bottom-half-bg-color"></div>
-					<div class="top-line"></div>
-					<div class="top-left-line-rotated"></div>
-					<div class="top-right-line-rotated"></div>
-					<div class="bottom-line"></div>
-					<div class="bottom-left-line-rotated"></div>
-					<div class="bottom-right-line-rotated"></div>
-					<div class="filter-rarity-container-text-class">SR</div>
-				</div>
-				<div onclick="rarityFilter('ssr');" id="ssr" class="filter-rarity-container-class">
-					<div class="top-half-bg-color"></div>
-					<div class="bottom-half-bg-color"></div>
-					<div class="top-line"></div>
-					<div class="top-left-line-rotated"></div>
-					<div class="top-right-line-rotated"></div>
-					<div class="bottom-line"></div>
-					<div class="bottom-left-line-rotated"></div>
-					<div class="bottom-right-line-rotated"></div>
-					<div class="filter-rarity-container-text-class">SSR</div>
-				</div>
-				<div onclick="rarityFilter('ur');" id="ur" class="filter-rarity-container-class">
-					<div class="top-half-bg-color"></div>
-					<div class="bottom-half-bg-color"></div>
-					<div class="top-line"></div>
-					<div class="top-left-line-rotated"></div>
-					<div class="top-right-line-rotated"></div>
-					<div class="bottom-line"></div>
-					<div class="bottom-left-line-rotated"></div>
-					<div class="bottom-right-line-rotated"></div>
-					<div class="filter-rarity-container-text-class">UR</div>
-				</div>
-				<div onclick="rarityFilter('lr');" id="lr" class="filter-rarity-container-class">
-					<div class="top-half-bg-color"></div>
-					<div class="bottom-half-bg-color"></div>
-					<div class="top-line"></div>
-					<div class="top-left-line-rotated"></div>
-					<div class="top-right-line-rotated"></div>
-					<div class="bottom-line"></div>
-					<div class="bottom-left-line-rotated"></div>
-					<div class="bottom-right-line-rotated"></div>
-					<div class="filter-rarity-container-text-class">LR</div>
-				</div>
-			</div>
-			<p class="filter-options-text-class">Type</p>
-			<div class="filter-class">
-				<div onclick="filterType('agl');" id="agl" class="filter-type-container">
-					<div class="top-half-bg-color-type"></div>
-					<div class="bottom-half-bg-color-type"></div>
-					<div class="top-line-type"></div>
-					<div class="top-left-line-rotated-type"></div>
-					<div class="top-right-line-rotated-type"></div>
-					<div class="bottom-line-type"></div>
-					<div class="bottom-left-line-rotated-type"></div>
-					<div class="bottom-right-line-rotated-type"></div>
-					<div class="filter-type-container-text">AGL</div>
-				</div>
-				<div onclick="filterType('teq');" id="teq" class="filter-type-container">
-					<div class="top-half-bg-color-type"></div>
-					<div class="bottom-half-bg-color-type"></div>
-					<div class="top-line-type"></div>
-					<div class="top-left-line-rotated-type"></div>
-					<div class="top-right-line-rotated-type"></div>
-					<div class="bottom-line-type"></div>
-					<div class="bottom-left-line-rotated-type"></div>
-					<div class="bottom-right-line-rotated-type"></div>
-					<div class="filter-type-container-text">TEQ</div>
-				</div>
-				<div onclick="filterType('int');" id="int" class="filter-type-container">
-					<div class="top-half-bg-color-type"></div>
-					<div class="bottom-half-bg-color-type"></div>
-					<div class="top-line-type"></div>
-					<div class="top-left-line-rotated-type"></div>
-					<div class="top-right-line-rotated-type"></div>
-					<div class="bottom-line-type"></div>
-					<div class="bottom-left-line-rotated-type"></div>
-					<div class="bottom-right-line-rotated-type"></div>
-					<div class="filter-type-container-text">INT</div>
-				</div>
-				<div onclick="filterType('str');" id="str" class="filter-type-container">
-					<div class="top-half-bg-color-type"></div>
-					<div class="bottom-half-bg-color-type"></div>
-					<div class="top-line-type"></div>
-					<div class="top-left-line-rotated-type"></div>
-					<div class="top-right-line-rotated-type"></div>
-					<div class="bottom-line-type"></div>
-					<div class="bottom-left-line-rotated-type"></div>
-					<div class="bottom-right-line-rotated-type"></div>
-					<div class="filter-type-container-text">STR</div>
-				</div>
-				<div onclick="filterType('phy');" id="phy" class="filter-type-container">
-					<div class="top-half-bg-color-type"></div>
-					<div class="bottom-half-bg-color-type"></div>
-					<div class="top-line-type"></div>
-					<div class="top-left-line-rotated-type"></div>
-					<div class="top-right-line-rotated-type"></div>
-					<div class="bottom-line-type"></div>
-					<div class="bottom-left-line-rotated-type"></div>
-					<div class="bottom-right-line-rotated-type"></div>
-					<div class="filter-type-container-text">PHY</div>
-				</div>
-			</div>
-			<p class="filter-options-text-class">Class</p>
-			<div class="filter-class">
-				<div onclick="addClass('super');" id="super" class="filter-class-container">
-					<div class="top-half-bg-color-class"></div>
-					<div class="bottom-half-bg-color-class"></div>
-					<div class="top-line-class"></div>
-					<div class="top-left-line-rotated-class"></div>
-					<div class="top-right-line-rotated-class"></div>
-					<div class="bottom-line-class"></div>
-					<div class="bottom-left-line-rotated-class"></div>
-					<div class="bottom-right-line-rotated-class"></div>
-					<div class="filter-class-container-text">SUPER</div>
-				</div>
-				<div onclick="addClass('extreme');" id="extreme" class="filter-class-container">
-					<div class="top-half-bg-color-class"></div>
-					<div class="bottom-half-bg-color-class"></div>
-					<div class="top-line-class"></div>
-					<div class="top-left-line-rotated-class"></div>
-					<div class="top-right-line-rotated-class"></div>
-					<div class="bottom-line-class"></div>
-					<div class="bottom-left-line-rotated-class"></div>
-					<div class="bottom-right-line-rotated-class"></div>
-					<div class="filter-class-container-text">EXTREME</div>
-				</div>
-			</div>
-			<p class="filter-options-text-class">Eza</p>
-			<div class="filter-class">
-				<button onclick="ezaFilter();" id="eza" type="button">EZA</button>
-				<button onclick="ezaNoFilter();" id="noeza" type="button">NO EZA</button>
-			</div>
-			<p class="filter-options-text-class">Awakening</p>
-			<div class="filter-class">
-				<button onclick="filterNotDokkanAwakened();" id="not-dokkan-awakened" class="filterDokkanAwakened"
-					type="button">
-					Not-Dokkan
-				</button>
-				<button onclick="filterPreDokkanAwakened();" id="pre-dokkan-awakened" class="filterDokkanAwakened"
-					type="button">
-					Pre-Dokkan
-				</button>
-				<button onclick="filterDokkanAwakened();" id="dokkan-awakened" class="filterDokkanAwakened"
-					type="button">
-					Dokkan
-				</button>
-			</div>
-			<p class="filter-options-text-class">Super Attack Type</p>
-			<div class="filter-class">
-				<button onclick="filterSuperAttackTypeKiBlast();" id="ki-blast" class="super-attack-type-class"
-					type="button">
-					Ki Blast
-				</button>
-				<button onclick="filterSuperAttackTypeUnarmed();" id="unarmed" class="super-attack-type-class"
-					type="button">
-					Unarmed
-				</button>
-				<button onclick="filterSuperAttackTypePhysical();" id="physical" class="super-attack-type-class"
-					type="button">
-					Physical
-				</button>
-				<button onclick="filterSuperAttackTypeOther();" id="other" class="super-attack-type-class"
-					type="button">
-					Other
-				</button>
-			</div>
-			<p class="filter-options-text-class">Recruit</p>
-			<div class="filter-class">
-				<button onclick="filterRecruitSummonable();" id="summonable" class="recruit-class" type="button">
-					Summonable
-				</button>
-				<button onclick="filterRecruitFreeToPlay();" id="free-to-play" class="recruit-class" type="button">
-					Free To Play
-				</button>
+		<a href="javascript:void(0)" id="close-left-sidenav-btn-id" onclick="closeNav();">&times;</a>
+		<p class="filter-options-text-class">Sort Direction</p>
+		<div class="filter-class">
+			<button onclick="toggleDirection('down');" id="filter-direction-down-id" class="filter-direction-class"
+				type="button">
+				Descending Order
+			</button>
+			<button onclick="toggleDirection('up');" id="filter-direction-up-id" class="filter-direction-class"
+				type="button">
+				Ascending Order
+			</button>
+		</div>
+		<p class="filter-options-text-class">Category</p>
+		<div class="filter-class">
+			<div onclick="openCategories();" id="categories-select-id" class="filter-category-container">
+				<div class="top-half-bg-color-category"></div>
+				<div class="bottom-half-bg-color-category"></div>
+				<div class="top-line-category"></div>
+				<div class="top-left-line-rotated-category"></div>
+				<div class="top-right-line-rotated-category"></div>
+				<div class="bottom-line-category"></div>
+				<div class="bottom-left-line-rotated-category"></div>
+				<div class="bottom-right-line-rotated-category"></div>
+				<div class="filter-category-container-text">Select Category</div>
 			</div>
 		</div>
-		<div id="apply-filters-bg-id">
+		<div id="all-categories-id">
+			<div class="wrapper-categories">
+			<div onclick="filterCategory('db-saga');" id="db-saga" class="filter-category-container category-db-saga-class">
+				<div class="top-half-bg-color-category"></div>
+				<div class="bottom-half-bg-color-category"></div>
+				<div class="top-line-category"></div>
+				<div class="top-left-line-rotated-category"></div>
+				<div class="top-right-line-rotated-category"></div>
+				<div class="bottom-line-category"></div>
+				<div class="bottom-left-line-rotated-category"></div>
+				<div class="bottom-right-line-rotated-category"></div>
+				<div class="filter-category-container-text">DB Saga</div>
+			</div>
+			<div onclick="filterCategory('saiyan-saga');" id="saiyan-saga" class="filter-category-container category-saiyan-saga-class">
+				<div class="top-half-bg-color-category"></div>
+				<div class="bottom-half-bg-color-category"></div>
+				<div class="top-line-category"></div>
+				<div class="top-left-line-rotated-category"></div>
+				<div class="top-right-line-rotated-category"></div>
+				<div class="bottom-line-category"></div>
+				<div class="bottom-left-line-rotated-category"></div>
+				<div class="bottom-right-line-rotated-category"></div>
+				<div class="filter-category-container-text">Saiyan Saga</div>
+			</div>
+			<div onclick="filterCategory('planet-namek-saga');" id="planet-namek-saga"
+				class="filter-category-container category-planet-namek-saga-class">
+				<div class="top-half-bg-color-category"></div>
+				<div class="bottom-half-bg-color-category"></div>
+				<div class="top-line-category"></div>
+				<div class="top-left-line-rotated-category"></div>
+				<div class="top-right-line-rotated-category"></div>
+				<div class="bottom-line-category"></div>
+				<div class="bottom-left-line-rotated-category"></div>
+				<div class="bottom-right-line-rotated-category"></div>
+				<div class="filter-category-container-text">Planet Namek Saga</div>
+			</div>
+			<div onclick="filterCategory('androids-cell-saga');" id="androids-cell-saga"
+				class="filter-category-container category-androids-cell-saga-class">
+				<div class="top-half-bg-color-category"></div>
+				<div class="bottom-half-bg-color-category"></div>
+				<div class="top-line-category"></div>
+				<div class="top-left-line-rotated-category"></div>
+				<div class="top-right-line-rotated-category"></div>
+				<div class="bottom-line-category"></div>
+				<div class="bottom-left-line-rotated-category"></div>
+				<div class="bottom-right-line-rotated-category"></div>
+				<div class="filter-category-container-text">Androids/Cell Saga</div>
+			</div>
+			<div onclick="filterCategory('majin-buu-saga');" id="majin-buu-saga" class="filter-category-container">
+				<div class="top-half-bg-color-category category-majin-buu-saga-class"></div>
+				<div class="bottom-half-bg-color-category"></div>
+				<div class="top-line-category"></div>
+				<div class="top-left-line-rotated-category"></div>
+				<div class="top-right-line-rotated-category"></div>
+				<div class="bottom-line-category"></div>
+				<div class="bottom-left-line-rotated-category"></div>
+				<div class="bottom-right-line-rotated-category"></div>
+				<div class="filter-category-container-text">Majin Buu Saga</div>
+			</div>
 		</div>
-		<div id="apply-filters-id">
-			<p id="apply-filters-text-id" class="filter-options-text-class">Apply Filters</p>
-			<div class="filter-class">
-				<button onclick="applyFilters(2); closeNav();" id="ok" type="button">
+			<p id="apply-categories-text-id" class="filter-options-text-class category-text-class">Apply Categories</p>
+			<div class="filter-class category-ok-remove-class">
+				<button onclick="closeCategories();" id="close-categories-id" type="button">
 					OK
 				</button>
-				<button onclick="removeAllFilters();" id="remove-all-id" type="button">
+				<button onclick="removeAllCategory();" id="remove-all-categories-id" type="button">
 					Remove All
 				</button>
 			</div>
 		</div>
+		<p class="filter-options-text-class">Rarity</p>
+		<div class="filter-class">
+			<div onclick="rarityFilter('n');" id="n" class="filter-rarity-container-class">
+				<div class="top-half-bg-color"></div>
+				<div class="bottom-half-bg-color"></div>
+				<div class="top-line"></div>
+				<div class="top-left-line-rotated"></div>
+				<div class="top-right-line-rotated"></div>
+				<div class="bottom-line"></div>
+				<div class="bottom-left-line-rotated"></div>
+				<div class="bottom-right-line-rotated"></div>
+				<div class="filter-rarity-container-text-class">N</div>
+			</div>
+			<div onclick="rarityFilter('r');" id="r" class="filter-rarity-container-class">
+				<div class="top-half-bg-color"></div>
+				<div class="bottom-half-bg-color"></div>
+				<div class="top-line"></div>
+				<div class="top-left-line-rotated"></div>
+				<div class="top-right-line-rotated"></div>
+				<div class="bottom-line"></div>
+				<div class="bottom-left-line-rotated"></div>
+				<div class="bottom-right-line-rotated"></div>
+				<div class="filter-rarity-container-text-class">R</div>
+			</div>
+			<div onclick="rarityFilter('sr');" id="sr" class="filter-rarity-container-class">
+				<div class="top-half-bg-color"></div>
+				<div class="bottom-half-bg-color"></div>
+				<div class="top-line"></div>
+				<div class="top-left-line-rotated"></div>
+				<div class="top-right-line-rotated"></div>
+				<div class="bottom-line"></div>
+				<div class="bottom-left-line-rotated"></div>
+				<div class="bottom-right-line-rotated"></div>
+				<div class="filter-rarity-container-text-class">SR</div>
+			</div>
+			<div onclick="rarityFilter('ssr');" id="ssr" class="filter-rarity-container-class">
+				<div class="top-half-bg-color"></div>
+				<div class="bottom-half-bg-color"></div>
+				<div class="top-line"></div>
+				<div class="top-left-line-rotated"></div>
+				<div class="top-right-line-rotated"></div>
+				<div class="bottom-line"></div>
+				<div class="bottom-left-line-rotated"></div>
+				<div class="bottom-right-line-rotated"></div>
+				<div class="filter-rarity-container-text-class">SSR</div>
+			</div>
+			<div onclick="rarityFilter('ur');" id="ur" class="filter-rarity-container-class">
+				<div class="top-half-bg-color"></div>
+				<div class="bottom-half-bg-color"></div>
+				<div class="top-line"></div>
+				<div class="top-left-line-rotated"></div>
+				<div class="top-right-line-rotated"></div>
+				<div class="bottom-line"></div>
+				<div class="bottom-left-line-rotated"></div>
+				<div class="bottom-right-line-rotated"></div>
+				<div class="filter-rarity-container-text-class">UR</div>
+			</div>
+			<div onclick="rarityFilter('lr');" id="lr" class="filter-rarity-container-class">
+				<div class="top-half-bg-color"></div>
+				<div class="bottom-half-bg-color"></div>
+				<div class="top-line"></div>
+				<div class="top-left-line-rotated"></div>
+				<div class="top-right-line-rotated"></div>
+				<div class="bottom-line"></div>
+				<div class="bottom-left-line-rotated"></div>
+				<div class="bottom-right-line-rotated"></div>
+				<div class="filter-rarity-container-text-class">LR</div>
+			</div>
+		</div>
+		<p class="filter-options-text-class">Type</p>
+		<div class="filter-class">
+			<div onclick="filterType('agl');" id="agl" class="filter-type-container">
+				<div class="top-half-bg-color-type"></div>
+				<div class="bottom-half-bg-color-type"></div>
+				<div class="top-line-type"></div>
+				<div class="top-left-line-rotated-type"></div>
+				<div class="top-right-line-rotated-type"></div>
+				<div class="bottom-line-type"></div>
+				<div class="bottom-left-line-rotated-type"></div>
+				<div class="bottom-right-line-rotated-type"></div>
+				<div class="filter-type-container-text">AGL</div>
+			</div>
+			<div onclick="filterType('teq');" id="teq" class="filter-type-container">
+				<div class="top-half-bg-color-type"></div>
+				<div class="bottom-half-bg-color-type"></div>
+				<div class="top-line-type"></div>
+				<div class="top-left-line-rotated-type"></div>
+				<div class="top-right-line-rotated-type"></div>
+				<div class="bottom-line-type"></div>
+				<div class="bottom-left-line-rotated-type"></div>
+				<div class="bottom-right-line-rotated-type"></div>
+				<div class="filter-type-container-text">TEQ</div>
+			</div>
+			<div onclick="filterType('int');" id="int" class="filter-type-container">
+				<div class="top-half-bg-color-type"></div>
+				<div class="bottom-half-bg-color-type"></div>
+				<div class="top-line-type"></div>
+				<div class="top-left-line-rotated-type"></div>
+				<div class="top-right-line-rotated-type"></div>
+				<div class="bottom-line-type"></div>
+				<div class="bottom-left-line-rotated-type"></div>
+				<div class="bottom-right-line-rotated-type"></div>
+				<div class="filter-type-container-text">INT</div>
+			</div>
+			<div onclick="filterType('str');" id="str" class="filter-type-container">
+				<div class="top-half-bg-color-type"></div>
+				<div class="bottom-half-bg-color-type"></div>
+				<div class="top-line-type"></div>
+				<div class="top-left-line-rotated-type"></div>
+				<div class="top-right-line-rotated-type"></div>
+				<div class="bottom-line-type"></div>
+				<div class="bottom-left-line-rotated-type"></div>
+				<div class="bottom-right-line-rotated-type"></div>
+				<div class="filter-type-container-text">STR</div>
+			</div>
+			<div onclick="filterType('phy');" id="phy" class="filter-type-container">
+				<div class="top-half-bg-color-type"></div>
+				<div class="bottom-half-bg-color-type"></div>
+				<div class="top-line-type"></div>
+				<div class="top-left-line-rotated-type"></div>
+				<div class="top-right-line-rotated-type"></div>
+				<div class="bottom-line-type"></div>
+				<div class="bottom-left-line-rotated-type"></div>
+				<div class="bottom-right-line-rotated-type"></div>
+				<div class="filter-type-container-text">PHY</div>
+			</div>
+		</div>
+		<p class="filter-options-text-class">Class</p>
+		<div class="filter-class">
+			<div onclick="addClass('super');" id="super" class="filter-class-container">
+				<div class="top-half-bg-color-class"></div>
+				<div class="bottom-half-bg-color-class"></div>
+				<div class="top-line-class"></div>
+				<div class="top-left-line-rotated-class"></div>
+				<div class="top-right-line-rotated-class"></div>
+				<div class="bottom-line-class"></div>
+				<div class="bottom-left-line-rotated-class"></div>
+				<div class="bottom-right-line-rotated-class"></div>
+				<div class="filter-class-container-text">SUPER</div>
+			</div>
+			<div onclick="addClass('extreme');" id="extreme" class="filter-class-container">
+				<div class="top-half-bg-color-class"></div>
+				<div class="bottom-half-bg-color-class"></div>
+				<div class="top-line-class"></div>
+				<div class="top-left-line-rotated-class"></div>
+				<div class="top-right-line-rotated-class"></div>
+				<div class="bottom-line-class"></div>
+				<div class="bottom-left-line-rotated-class"></div>
+				<div class="bottom-right-line-rotated-class"></div>
+				<div class="filter-class-container-text">EXTREME</div>
+			</div>
+		</div>
+		<p class="filter-options-text-class">Eza</p>
+		<div class="filter-class">
+			<button onclick="ezaFilter();" id="eza" type="button">EZA</button>
+			<button onclick="ezaNoFilter();" id="noeza" type="button">NO EZA</button>
+		</div>
+		<p class="filter-options-text-class">Awakening</p>
+		<div class="filter-class">
+			<button onclick="filterNotDokkanAwakened();" id="not-dokkan-awakened" class="filterDokkanAwakened"
+				type="button">
+				Not-Dokkan
+			</button>
+			<button onclick="filterPreDokkanAwakened();" id="pre-dokkan-awakened" class="filterDokkanAwakened"
+				type="button">
+				Pre-Dokkan
+			</button>
+			<button onclick="filterDokkanAwakened();" id="dokkan-awakened" class="filterDokkanAwakened" type="button">
+				Dokkan
+			</button>
+		</div>
+		<p class="filter-options-text-class">Super Attack Type</p>
+		<div class="filter-class">
+			<button onclick="filterSuperAttackTypeKiBlast();" id="ki-blast" class="super-attack-type-class"
+				type="button">
+				Ki Blast
+			</button>
+			<button onclick="filterSuperAttackTypeUnarmed();" id="unarmed" class="super-attack-type-class"
+				type="button">
+				Unarmed
+			</button>
+			<button onclick="filterSuperAttackTypePhysical();" id="physical" class="super-attack-type-class"
+				type="button">
+				Physical
+			</button>
+			<button onclick="filterSuperAttackTypeOther();" id="other" class="super-attack-type-class" type="button">
+				Other
+			</button>
+		</div>
+		<p class="filter-options-text-class">Recruit</p>
+		<div class="filter-class">
+			<button onclick="filterRecruitSummonable();" id="summonable" class="recruit-class" type="button">
+				Summonable
+			</button>
+			<button onclick="filterRecruitFreeToPlay();" id="free-to-play" class="recruit-class" type="button">
+				Free To Play
+			</button>
+		</div>
+	</div>
+	<div id="apply-filters-bg-id">
+	</div>
+	<div id="apply-filters-id">
+		<p id="apply-filters-text-id" class="filter-options-text-class">Apply Filters</p>
+		<div class="filter-class">
+			<button onclick="applyFilters(2); closeNav();" id="ok" type="button">
+				OK
+			</button>
+			<button onclick="removeAllFilters();" id="remove-all-id" type="button">
+				Remove All
+			</button>
+		</div>
+	</div>
 	</div>
 	<div id="right-sidenav-id">
 		<div id="right-sidenav-filters-id">

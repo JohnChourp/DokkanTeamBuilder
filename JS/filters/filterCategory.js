@@ -45,3 +45,33 @@ function removeAllCategory() {
 		document.getElementById(filterCategory[i]).children.item(8).style.backgroundImage = 'linear-gradient(180deg, #B6B6B6, #948D87)';
 	}
 }
+
+function openCategories() {
+	const allCategoriesId = document.getElementById("all-categories-id");
+	const closeCategories = document.getElementById("close-categories-id");
+	const removeAllCategories = document.getElementById("remove-all-categories-id");
+	
+	let width = '401px';
+
+	for (let i = 100; i < 416; i++) {
+		if (window.matchMedia(`(max-device-width: ${i}px)`).matches) {
+			width = (i - 1) + "px";
+			break;
+		}
+	}
+
+	allCategoriesId.style.width = width;
+	closeCategories.style.left = "0";
+	removeAllCategories.style.left = "0";
+}
+
+
+function closeCategories() {
+	const allCategoriesId = document.getElementById("all-categories-id");
+	const closeCategories = document.getElementById("close-categories-id");
+	const removeAllCategories = document.getElementById("remove-all-categories-id");
+
+	allCategoriesId.style.width = "0";
+	closeCategories.style.left = "-30px";
+	removeAllCategories.style.left = "-90px";
+}
