@@ -1,11 +1,12 @@
 function filtersMultipleUsedWithSearchChar(dataChars, filtersEachLengthString, filtersEachLengthStringUsed, filtersUsed, dataCharNameOrTitleItems, dataCharNameOrTitle, characterSearchId) {
 	const char = document.getElementsByClassName("char");
-	
+
 	let filters = [],
 		filterCharItems = [],
 		filterChars = [],
 		filterCharItemsTemp = [],
 		maxSuperAttackTypes = 0,
+		maxCategories = 0,
 		charListAll = create2DimensionalArray(filtersEachLengthStringUsed.length, 1);
 
 	for (j = 0; j < filtersEachLengthStringUsed.length; j++) {
@@ -17,8 +18,9 @@ function filtersMultipleUsedWithSearchChar(dataChars, filtersEachLengthString, f
 			}
 		}
 	}
-
+	console.log(filterCharItems[0].length);
 	let filterSuperAttackTypeItems = create2DimensionalArray(filterCharItems[0].length, 1);
+	let filterCategoryItems = create2DimensionalArray(filterCharItems[0].length, 1);
 
 	for (k = 0; k < filtersEachLengthStringUsed.length; k++) {
 		if (filtersUsed[5].length > 0) {
@@ -35,16 +37,39 @@ function filtersMultipleUsedWithSearchChar(dataChars, filtersEachLengthString, f
 			}
 		}
 
+		if (filtersUsed[7].length > 0) {
+			for (let i = 0; i < filterCharItems[k].length; i++) {
+				filterCharItemsTemp[i] = filterCharItems[k][i].getAttribute(filterChars[k]).split(",");
+				if (filterCharItemsTemp[i].length > maxCategories) {
+					maxCategories = filterCharItemsTemp[i].length;
+				}
+			}
+			
+			for (let j = 0; j < maxCategories; j++) {
+				for (let i = 0; i < filterCharItems[k].length; i++) {
+					filterCategoryItems[i][j] = filterCharItemsTemp[i][j];
+				}
+			}
+		}
+
 		if (k == 0) {
 			for (let j = 0; j < filters[k].length; j++) {
 				for (let i = 0; i < char.length; i++) {
 					if (dataCharNameOrTitleItems[i].getAttribute(dataCharNameOrTitle).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0) {
-						for (let l = 0; l < (maxSuperAttackTypes / 2); l++) {
-							if (filterSuperAttackTypeItems[i][l] == filters[k][j]) {
-								charListAll[0][i] = char.item(i);
+						if (filtersUsed[5].length > 0) {
+							for (let l = 0; l < (maxSuperAttackTypes / 2); l++) {
+								if (filterSuperAttackTypeItems[i][l] == filters[k][j]) {
+									charListAll[0][i] = char.item(i);
+								}
 							}
 						}
-
+						if (filtersUsed[7].length > 0) {
+							for (let l = 0; l < maxCategories; l++) {
+								if (filterCategoryItems[i][l] == filters[k][j]) {
+									charListAll[0][i] = char.item(i);
+								}
+							}
+						}
 						if (filterCharItems[k][i].getAttribute(filterChars[k]) == filters[k][j]) {
 							charListAll[0][i] = char.item(i);
 						}
@@ -56,12 +81,20 @@ function filtersMultipleUsedWithSearchChar(dataChars, filtersEachLengthString, f
 				for (let i = 0; i < charListAll[k - 1].length; i++) {
 					if (charListAll[k - 1][i] != undefined) {
 						if (dataCharNameOrTitleItems[i].getAttribute(dataCharNameOrTitle).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0) {
-							for (let l = 0; l < (maxSuperAttackTypes / 2); l++) {
-								if (filterSuperAttackTypeItems[i][l] == filters[k][j]) {
-									charListAll[k][i] = char.item(i);
+							if (filtersUsed[5].length > 0) {
+								for (let l = 0; l < (maxSuperAttackTypes / 2); l++) {
+									if (filterSuperAttackTypeItems[i][l] == filters[k][j]) {
+										charListAll[k][i] = char.item(i);
+									}
 								}
 							}
-							
+							if (filtersUsed[7].length > 0) {
+								for (let l = 0; l < maxCategories; l++) {
+									if (filterCategoryItems[i][l] == filters[k][j]) {
+										charListAll[k][i] = char.item(i);
+									}
+								}
+							}
 							if (filterCharItems[k][i].getAttribute(filterChars[k]) == filters[k][j]) {
 								charListAll[k][i] = char.item(i);
 							}
@@ -93,14 +126,14 @@ function searchChar(btnPressed) {
 
 			const dataCharTitle = 'data-char-title', dataCharName = 'data-char-name', dataCharType = 'data-char-type', dataCharRarity = 'data-char-rarity', dataCharClass = 'data-char-class',
 				dataCharEza = 'data-char-eza', dataCharAwaken = 'data-char-awaken', dataCharSuperAtkType = 'data-char-super-atk-type',
-				dataCharRecruit = 'data-char-recruit';
+				dataCharRecruit = 'data-char-recruit', dataCharCategories = 'data-char-categories';
 
 			const dataChars = [dataCharType, dataCharRarity, dataCharClass,
-				dataCharEza, dataCharAwaken, dataCharSuperAtkType, dataCharRecruit];
+				dataCharEza, dataCharAwaken, dataCharSuperAtkType, dataCharRecruit, dataCharCategories];
 
 			let filterType = [], filterRarity = [], filterClass = [],
-				filterEza = [], filterAwakenId = [], filterSuperAttackTypeId = [],
-				filterRecruitId = [];
+				filterEza = [], filterAwaken = [], filterSuperAttackType = [],
+				filterRecruit = [],filterCategory = [];
 
 			const dataCharNameItems = document.querySelectorAll('[' + dataCharName + ']');
 			const dataCharTitleItems = document.querySelectorAll('[' + dataCharTitle + ']');
@@ -113,7 +146,9 @@ function searchChar(btnPressed) {
 				filterAwakenIdTemp = ["not-dokkan-awakened", "pre-dokkan-awakened", "dokkan-awakened"],
 				filterSuperAttackTypeIdTemp = ["ki-blast", "unarmed", "physical", "other"],
 				filterRecruitIdTemp = ["summonable", "free-to-play"],
-				filtersEachLengthString = ["A", "B", "C", "D", "E", "F", "G"];
+				filterCategoriesTemp = ["db-saga", "saiyan-saga", "planet-namek-saga", "androids-cell-saga", "majin-buu-saga"],
+				filterCategoriesTemp2 = ["DB Saga", "Saiyan Saga", "Planet Namek Saga", "Androids/Cell Saga", "Majin Buu Saga"],
+				filtersEachLengthString = ["A", "B", "C", "D", "E", "F", "G", "H"];
 
 			const A = document.getElementsByClassName("checkedTypeBtn").length;
 			const B = document.getElementsByClassName("checkedRarityBtn").length;
@@ -122,7 +157,8 @@ function searchChar(btnPressed) {
 			const E = document.getElementsByClassName("checkedAwakenBtn").length;
 			const F = document.getElementsByClassName("checkedSuperAttackTypeBtn").length;
 			const G = document.getElementsByClassName("checkedRecruitBtn").length;
-			const filtersEachLength = [A, B, C, D, E, F, G];
+			const H = document.getElementsByClassName("checkedCategoryBtn").length;
+			const filtersEachLength = [A, B, C, D, E, F, G, H];
 
 			if (checkedDirectionBtn.length == 1) {
 				let temp_char = [];
@@ -176,27 +212,34 @@ function searchChar(btnPressed) {
 
 			for (let i = 0; i < filterAwakenIdTemp.length; i++) {
 				if (document.getElementById(filterAwakenIdTemp[i]).classList.contains("checkedAwakenBtn")) {
-					filterAwakenId[i] = filterAwakenIdTemp[i];
+					filterAwaken[i] = filterAwakenIdTemp[i];
 				}
 			}
-			filterAwakenId = cleanArray(filterAwakenId, undefined);
+			filterAwaken = cleanArray(filterAwaken, undefined);
 
 			for (let i = 0; i < filterSuperAttackTypeIdTemp.length; i++) {
 				if (document.getElementById(filterSuperAttackTypeIdTemp[i]).classList.contains("checkedSuperAttackTypeBtn")) {
-					filterSuperAttackTypeId[i] = filterSuperAttackTypeIdTemp[i];
+					filterSuperAttackType[i] = filterSuperAttackTypeIdTemp[i];
 				}
 			}
-			filterSuperAttackTypeId = cleanArray(filterSuperAttackTypeId, undefined);
+			filterSuperAttackType = cleanArray(filterSuperAttackType, undefined);
 
 			for (let i = 0; i < filterRecruitIdTemp.length; i++) {
 				if (document.getElementById(filterRecruitIdTemp[i]).classList.contains("checkedRecruitBtn")) {
-					filterRecruitId[i] = filterRecruitIdTemp[i];
+					filterRecruit[i] = filterRecruitIdTemp[i];
 				}
 			}
-			filterRecruitId = cleanArray(filterRecruitId, undefined);
+			filterRecruit = cleanArray(filterRecruit, undefined);
 
-			const filtersUsed = [filterType, filterRarity, filterClass, filterEza, filterAwakenId, filterSuperAttackTypeId, filterRecruitId];
-
+			for (let i = 0; i < filterCategoriesTemp.length; i++) {
+				if (document.getElementById(filterCategoriesTemp[i]).classList.contains("checkedCategoryBtn")) {
+					filterCategory[i] = filterCategoriesTemp2[i];
+				}
+			}
+			filterCategory = cleanArray(filterCategory, undefined);
+			
+			const filtersUsed = [filterType, filterRarity, filterClass, filterEza, filterAwaken, filterSuperAttackType, filterRecruit, filterCategory];
+		
 			let sumFilterUsed = 0;
 			//check how many filter are used
 			for (let i = 0; i < filtersUsed.length; i++) {
