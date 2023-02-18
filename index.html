@@ -25,6 +25,7 @@
 	<link href="CSS/stickySearchSettings.css" rel="stylesheet" type="text/css" />
 
 	<link href="CSS/filters/filterAwakenedInfo.css" rel="stylesheet" type="text/css" />
+	<link href="CSS/filters/filterCategory.css" rel="stylesheet" type="text/css" />
 	<link href="CSS/filters/filterClass.css" rel="stylesheet" type="text/css" />
 	<link href="CSS/filters/filterEza.css" rel="stylesheet" type="text/css" />
 	<link href="CSS/filters/filterRarity.css" rel="stylesheet" type="text/css" />
@@ -55,6 +56,7 @@
 
 	<script src="JS/filters/applyFilters.js" type="text/javascript"></script>
 	<script src="JS/filters/filterAwakenInfo.js" type="text/javascript"></script>
+	<script src="JS/filters/filterCategory.js" type="text/javascript"></script>
 	<script src="JS/filters/filterClass.js" type="text/javascript"></script>
 	<script src="JS/filters/filterEza.js" type="text/javascript"></script>
 	<script src="JS/filters/filterRarity.js" type="text/javascript"></script>
@@ -86,7 +88,10 @@
 	<button id="sitemap-btn-id" onclick="window.location.href='sitemap.html';" type="button">Sitemap</button>
 	<div id="update-site-message-id">If you are using this site after 18 Feb 2023 at afternoon it means its updated and
 		you should clear
-		<a href="cookiesDelete.html">cookies and site data</a> from this site only to work properly. <br>This site is updated regularly.<br> You can find me on Github <a href="https://github.com/JohnChourp/DokkanTeamBuilder">here</a> to provide ideas,discuss and contribute to this project.
+		<a href="cookiesDelete.html">cookies and site data</a> from this site only to work properly. <br>This site is
+		updated regularly.<br> You can find me on Github <a
+			href="https://github.com/JohnChourp/DokkanTeamBuilder">here</a> to provide ideas,discuss and contribute to
+		this project.
 	</div>
 	<div id="cookies-prompt">
 		<div id="cookies-prompt-title-id">We value your privacy</div>
@@ -115,6 +120,66 @@
 					type="button">
 					Ascending Order
 				</button>
+			</div>
+			<p class="filter-options-text-class">Category</p>
+			<div class="filter-class">
+				<div onclick="filterCategory('db-saga');" id="db-saga" class="filter-category-container">
+					<div class="top-half-bg-color-category"></div>
+					<div class="bottom-half-bg-color-category"></div>
+					<div class="top-line-category"></div>
+					<div class="top-left-line-rotated-category"></div>
+					<div class="top-right-line-rotated-category"></div>
+					<div class="bottom-line-category"></div>
+					<div class="bottom-left-line-rotated-category"></div>
+					<div class="bottom-right-line-rotated-category"></div>
+					<div class="filter-category-container-text">DB Saga</div>
+				</div>
+				<div onclick="filterCategory('saiyan-saga');" id="saiyan-saga" class="filter-category-container">
+					<div class="top-half-bg-color-category"></div>
+					<div class="bottom-half-bg-color-category"></div>
+					<div class="top-line-category"></div>
+					<div class="top-left-line-rotated-category"></div>
+					<div class="top-right-line-rotated-category"></div>
+					<div class="bottom-line-category"></div>
+					<div class="bottom-left-line-rotated-category"></div>
+					<div class="bottom-right-line-rotated-category"></div>
+					<div class="filter-category-container-text">Saiyan Saga</div>
+				</div>
+				<div onclick="filterCategory('planet-namek-saga');" id="planet-namek-saga"
+					class="filter-category-container">
+					<div class="top-half-bg-color-category"></div>
+					<div class="bottom-half-bg-color-category"></div>
+					<div class="top-line-category"></div>
+					<div class="top-left-line-rotated-category"></div>
+					<div class="top-right-line-rotated-category"></div>
+					<div class="bottom-line-category"></div>
+					<div class="bottom-left-line-rotated-category"></div>
+					<div class="bottom-right-line-rotated-category"></div>
+					<div class="filter-category-container-text">Planet Namek Saga</div>
+				</div>
+				<div onclick="filterCategory('androids-cell-saga');" id="androids-cell-saga"
+					class="filter-category-container">
+					<div class="top-half-bg-color-category"></div>
+					<div class="bottom-half-bg-color-category"></div>
+					<div class="top-line-category"></div>
+					<div class="top-left-line-rotated-category"></div>
+					<div class="top-right-line-rotated-category"></div>
+					<div class="bottom-line-category"></div>
+					<div class="bottom-left-line-rotated-category"></div>
+					<div class="bottom-right-line-rotated-category"></div>
+					<div class="filter-category-container-text">Androids/Cell Saga</div>
+				</div>
+				<div onclick="filterCategory('majin-buu-saga');" id="majin-buu-saga" class="filter-category-container">
+					<div class="top-half-bg-color-category"></div>
+					<div class="bottom-half-bg-color-category"></div>
+					<div class="top-line-category"></div>
+					<div class="top-left-line-rotated-category"></div>
+					<div class="top-right-line-rotated-category"></div>
+					<div class="bottom-line-category"></div>
+					<div class="bottom-left-line-rotated-category"></div>
+					<div class="bottom-right-line-rotated-category"></div>
+					<div class="filter-category-container-text">Majin Buu Saga</div>
+				</div>
 			</div>
 			<p class="filter-options-text-class">Rarity</p>
 			<div class="filter-class">
@@ -273,7 +338,7 @@
 				<button onclick="ezaFilter();" id="eza" type="button">EZA</button>
 				<button onclick="ezaNoFilter();" id="noeza" type="button">NO EZA</button>
 			</div>
-			<p class="filter-options-text-class">Awaken</p>
+			<p class="filter-options-text-class">Awakening</p>
 			<div class="filter-class">
 				<button onclick="filterNotDokkanAwakened();" id="not-dokkan-awakened" class="filterDokkanAwakened"
 					type="button">

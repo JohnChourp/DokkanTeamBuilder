@@ -5,7 +5,8 @@ function removeAllFilters() {
 	{ id: "eza", class: "checkedEzaBtn", list: ["eza", "noeza"] },
 	{ id: "not-dokkan-awakened", class: "checkedAwakenBtn", list: ["not-dokkan-awakened", "pre-dokkan-awakened", "dokkan-awakened"] },
 	{ id: "ki-blast", class: "checkedSuperAttackTypeBtn", list: ["ki-blast", "unarmed", "physical", "other"] },
-	{ id: "summonable", class: "checkedRecruitBtn", list: ["summonable", "free-to-play"] }
+	{ id: "summonable", class: "checkedRecruitBtn", list: ["summonable", "free-to-play"] },
+	{ id: "db-saga", class: "checkedCategoryBtn", list: ["db-saga", "saiyan-saga", "planet-namek-saga", "androids-cell-saga", "majin-buu-saga"] }
 	];
 
 	const filterIds = filters.reduce((result, filter) => {
@@ -21,5 +22,6 @@ function removeAllFilters() {
 		removeAllDokkanAwaken();
 		removeAllSuperAttackType();
 		removeAllRecruit();
+		emoveAllCategory();
 	}
 }
