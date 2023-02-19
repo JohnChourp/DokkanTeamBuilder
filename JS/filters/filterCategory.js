@@ -3,10 +3,15 @@ function addCategory(categoryFilter) {
 
 	if (element.classList.contains("checkedCategoryBtn")) {
 		element.classList.remove("checkedCategoryBtn");
+
 		if (element.querySelector(".top-half-category-orange")) {
 			setButtonStyles(element, "#85671C", "#7F4503", 'linear-gradient(180deg, #c0c0c0, #a19b95)');
-		} else {
-			setButtonStyles(element, "#51741F", "#2F5510", 'linear-gradient(180deg, #B6B6B6, #948D87)');
+		}
+		if (element.querySelector(".top-half-category-green")) {
+			setButtonStyles(element, "#51741F", "#2F5510", 'linear-gradient(180deg, #c0c0c0, #a19b95)');
+		}
+		if (element.querySelector(".top-half-category-yellow")) {
+			setButtonStyles(element, "#868131", "#7E6C06", 'linear-gradient(180deg, #c0c0c0, #a19b95)');
 		}
 	} else {
 		element.classList.add("checkedCategoryBtn");
@@ -56,12 +61,71 @@ function filterCategory(category) {
 		case "earthlings":
 			addCategory("earthlings");
 			break;
+		case "namekians":
+			addCategory("namekians");
+			break;
+		case "androids":
+			addCategory("androids");
+			break;
+		case "artificial-life-forms":
+			addCategory("artificial-life-forms");
+			break;
+		case "gokus-family":
+			addCategory("gokus-family");
+			break;
+		case "vegetas-family":
+			addCategory("vegetas-family");
+			break;
+		case "wicked-bloodline":
+			addCategory("wicked-bloodline");
+			break;
+		case "youth":
+			addCategory("youth");
+			break;
+		case "peppy-gals":
+			addCategory("peppy-gals");
+			break;
+
+		case "super-saiyans":
+			addCategory("super-saiyans");
+			break;
+		case "super-saiyan-2":
+			addCategory("super-saiyan-2");
+			break;
+			case "super-saiyan-3":
+			addCategory("super-saiyan-3");
+			break;
+			case "power-beyond-super-saiyan":
+			addCategory("power-beyond-super-saiyan");
+			break;
+			case "fusion":
+			addCategory("fusion");
+			break;
+			case "potara":
+			addCategory("potara");
+			break;
+			case "fused-fighters":
+			addCategory("fused-fighters");
+			break;
+			case "giant-form":
+			addCategory("giant-form");
+			break;
+			case "transformation-boost":
+			addCategory("transformation-boost");
+			break;
+			case "power-absorption":
+			addCategory("power-absorption");
+			break;
+			case "kamehameha":
+			addCategory("kamehameha");
+			break;
 	}
 }
 
 function removeAllCategory() {
 	const topHalfCategoryOrange = document.getElementsByClassName("top-half-category-orange");
 	const topHalfCategoryGreen = document.getElementsByClassName("top-half-category-green");
+	const topHalfCategoryYellow = document.getElementsByClassName("top-half-category-yellow");
 	const filterCategory = ["db-saga",
 		"saiyan-saga",
 		"planet-namek-saga",
@@ -73,7 +137,27 @@ function removeAllCategory() {
 
 		"pure-saiyans",
 		"hybrid-saiyans",
-		"earthlings"];
+		"earthlings",
+		"namekians",
+		"androids",
+		"artificial-life-forms",
+		"gokus-family",
+		"vegetas-family",
+		"wicked-bloodline",
+		"youth",
+		"peppy-gals",
+					
+		"super-saiyans",
+		"super-saiyan-2",
+		"super-saiyan-3",
+		"power-beyond-super-saiyan",
+		"fusion",
+		"potara",
+		"fused-fighters",
+		"giant-form",
+		"transformation-boost",
+		"power-absorption",
+		"kamehameha"];
 
 	for (let i = 0; i < topHalfCategoryOrange.length; i++) {
 		document.getElementById(filterCategory[i]).classList.remove("checkedCategoryBtn");
@@ -81,14 +165,18 @@ function removeAllCategory() {
 		document.getElementById(filterCategory[i]).children.item(1).style.backgroundColor = "#7F4503";
 		document.getElementById(filterCategory[i]).children.item(8).style.backgroundImage = 'linear-gradient(180deg, #c0c0c0, #a19b95)';
 	}
-	for (let i = topHalfCategoryOrange.length; i < filterCategory.length; i++) {
+	for (let i = topHalfCategoryOrange.length; i < topHalfCategoryOrange.length + topHalfCategoryGreen.length; i++) {
 		document.getElementById(filterCategory[i]).classList.remove("checkedCategoryBtn");
 		document.getElementById(filterCategory[i]).children.item(0).style.backgroundColor = "#51741F";
 		document.getElementById(filterCategory[i]).children.item(1).style.backgroundColor = "#2F5510";
 		document.getElementById(filterCategory[i]).children.item(8).style.backgroundImage = 'linear-gradient(180deg, #c0c0c0, #a19b95)';
 	}
-
-
+	for (let i = topHalfCategoryOrange.length + topHalfCategoryGreen.length; i < topHalfCategoryOrange.length + topHalfCategoryGreen.length+topHalfCategoryYellow.length; i++) {
+		document.getElementById(filterCategory[i]).classList.remove("checkedCategoryBtn");
+		document.getElementById(filterCategory[i]).children.item(0).style.backgroundColor = "#868131";
+		document.getElementById(filterCategory[i]).children.item(1).style.backgroundColor = "#7E6C06";
+		document.getElementById(filterCategory[i]).children.item(8).style.backgroundImage = 'linear-gradient(180deg, #c0c0c0, #a19b95)';
+	}
 }
 
 function openCategories() {

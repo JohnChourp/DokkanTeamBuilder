@@ -19,7 +19,27 @@ function removeAllFilters() {
 
 			"pure-saiyans",
 			"hybrid-saiyans",
-			"earthlings"]
+			"earthlings",
+			"namekians",
+			"androids",
+			"artificial-life-forms",
+			"gokus-family",
+			"vegetas-family",
+			"wicked-bloodline",
+			"youth",
+			"peppy-gals",
+
+			"super-saiyans",
+			"super-saiyan-2",
+			"super-saiyan-3",
+			"power-beyond-super-saiyan",
+			"fusion",
+			"potara",
+			"fused-fighters",
+			"giant-form",
+			"transformation-boost",
+			"power-absorption",
+			"kamehameha"]
 	}
 	];
 

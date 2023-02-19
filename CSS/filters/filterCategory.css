@@ -54,6 +54,13 @@
 	background-color: #2F5510;
 }
 
+.top-half-category-yellow {
+	background-color: #868131;
+}
+.bottom-half-category-yellow {
+	background-color: #7E6C06;
+}
+
 .top-line-category,
 .top-left-line-rotated-category,
 .top-right-line-rotated-category,
@@ -198,7 +205,11 @@
 	grid-auto-columns: auto;
 	grid-auto-rows: auto;
 	grid-column-gap: 15px;
-	grid-template-rows: repeat(6, 45px);
+	grid-template-rows: repeat(10, 45px);
 	margin-left: 5px;
 	margin-top: 25px;
+}
+
+.category-ok-remove-class {
+	margin-bottom:150px;
 }
