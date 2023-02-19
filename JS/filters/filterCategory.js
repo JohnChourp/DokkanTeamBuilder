@@ -3,7 +3,11 @@ function addCategory(categoryFilter) {
 
 	if (element.classList.contains("checkedCategoryBtn")) {
 		element.classList.remove("checkedCategoryBtn");
-		setButtonStyles(element, "#6B6B67", "#555555", 'linear-gradient(180deg, #B6B6B6, #948D87)');
+		if (element.querySelector(".top-half-category-orange")) {
+			setButtonStyles(element, "#85671C", "#7F4503", 'linear-gradient(180deg, #c0c0c0, #a19b95)');
+		} else {
+			setButtonStyles(element, "#51741F", "#2F5510", 'linear-gradient(180deg, #B6B6B6, #948D87)');
+		}
 	} else {
 		element.classList.add("checkedCategoryBtn");
 		setButtonStyles(element, "#2DA9DD", "#1B79C3", 'linear-gradient(180deg, #FFFFFF,#DBCEBD)');
@@ -56,6 +60,8 @@ function filterCategory(category) {
 }
 
 function removeAllCategory() {
+	const topHalfCategoryOrange = document.getElementsByClassName("top-half-category-orange");
+	const topHalfCategoryGreen = document.getElementsByClassName("top-half-category-green");
 	const filterCategory = ["db-saga",
 		"saiyan-saga",
 		"planet-namek-saga",
@@ -68,12 +74,21 @@ function removeAllCategory() {
 		"pure-saiyans",
 		"hybrid-saiyans",
 		"earthlings"];
-	for (let i = 0; i < filterCategory.length; i++) {
+
+	for (let i = 0; i < topHalfCategoryOrange.length; i++) {
 		document.getElementById(filterCategory[i]).classList.remove("checkedCategoryBtn");
-		document.getElementById(filterCategory[i]).children.item(0).style.backgroundColor = "#6B6B67";
-		document.getElementById(filterCategory[i]).children.item(1).style.backgroundColor = "#555555";
-		document.getElementById(filterCategory[i]).children.item(8).style.backgroundImage = 'linear-gradient(180deg, #B6B6B6, #948D87)';
+		document.getElementById(filterCategory[i]).children.item(0).style.backgroundColor = "#85671C";
+		document.getElementById(filterCategory[i]).children.item(1).style.backgroundColor = "#7F4503";
+		document.getElementById(filterCategory[i]).children.item(8).style.backgroundImage = 'linear-gradient(180deg, #c0c0c0, #a19b95)';
 	}
+	for (let i = topHalfCategoryOrange.length; i < filterCategory.length; i++) {
+		document.getElementById(filterCategory[i]).classList.remove("checkedCategoryBtn");
+		document.getElementById(filterCategory[i]).children.item(0).style.backgroundColor = "#51741F";
+		document.getElementById(filterCategory[i]).children.item(1).style.backgroundColor = "#2F5510";
+		document.getElementById(filterCategory[i]).children.item(8).style.backgroundImage = 'linear-gradient(180deg, #c0c0c0, #a19b95)';
+	}
+
+
 }
 
 function openCategories() {
