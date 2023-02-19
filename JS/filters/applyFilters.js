@@ -18,7 +18,7 @@ function filtersMultipleUsed(dataChars, filtersEachLengthString, filtersEachLeng
 			}
 		}
 	}
-	
+
 	let filterSuperAttackTypeItems = create2DimensionalArray(filterCharItems[0].length, 1);
 	let filterCategoryItems = create2DimensionalArray(filterCharItems[0].length, 1);
 
@@ -42,7 +42,6 @@ function filtersMultipleUsed(dataChars, filtersEachLengthString, filtersEachLeng
 				filterCharItemsTemp[i] = filterCharItems[k][i].getAttribute(filterChars[k]).split(",");
 				if (filterCharItemsTemp[i].length > maxCategories) {
 					maxCategories = filterCharItemsTemp[i].length;
-					
 				}
 			}
 			for (let j = 0; j < maxCategories; j++) {
@@ -146,8 +145,30 @@ function applyFilters(btnPressed) {
 		filterAwakenIdTemp = ["not-dokkan-awakened", "pre-dokkan-awakened", "dokkan-awakened"],
 		filterSuperAttackTypeIdTemp = ["ki-blast", "unarmed", "physical", "other"],
 		filterRecruitIdTemp = ["summonable", "free-to-play"],
-		filterCategoriesTemp = ["db-saga", "saiyan-saga", "planet-namek-saga", "androids-cell-saga", "majin-buu-saga"],
-		filterCategoriesTemp2 = ["DB Saga", "Saiyan Saga", "Planet Namek Saga", "Androids/Cell Saga", "Majin Buu Saga"],
+		filterCategoriesTemp = ["db-saga",
+			"saiyan-saga",
+			"planet-namek-saga",
+			"androids-cell-saga",
+			"majin-buu-saga",
+			"future-saga",
+			"universe-survival-saga",
+			"shadow-dragon-saga",
+
+			"pure-saiyans",
+			"hybrid-saiyans",
+			"earthlings"],
+		filterCategoriesTemp2 = ["DB Saga",
+			"Saiyan Saga",
+			"Planet Namek Saga",
+			"Androids/Cell Saga",
+			"Majin Buu Saga",
+			"Future Saga",
+			"Universe Survival Saga",
+			"Shadow Dragon Saga",
+
+			"Pure Saiyans",
+			"Hybrid Saiyans",
+			"Earthlings"],
 		filtersEachLengthString = ["A", "B", "C", "D", "E", "F", "G", "H"];
 
 	const A = document.getElementsByClassName("checkedTypeBtn").length;

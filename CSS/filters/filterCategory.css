@@ -1,17 +1,22 @@
+#categories-select-id {
+	font-size: medium;
+	margin-bottom: -40px;
+}
+
 .filter-category-container {
 	position: relative;
-	width: 60px;
-	height: 30px;
+	width: 190px;
 	left: 10px;
 	top: -25px;
 	cursor: pointer;
+	font-size: small;
 }
 
 .top-half-bg-color-category {
 	position: relative;
 	left: -1px;
 	top: 27px;
-	width: 47px;
+	width: 177px;
 	height: 12px;
 	background-color: #6B6B67;
 	-moz-user-select: none;
@@ -25,7 +30,7 @@
 	position: relative;
 	left: -1px;
 	top: 27px;
-	width: 47px;
+	width: 177px;
 	height: 11px;
 	background-color: #555555;
 	-moz-user-select: none;
@@ -43,7 +48,7 @@
 .bottom-right-line-rotated-category {
 	height: 5px;
 	position: relative;
-	border-radius: 15%;
+	border-radius: 12%;
 	-moz-user-select: none;
 	-webkit-user-drag: none;
 	-webkit-user-select: none;
@@ -52,7 +57,7 @@
 }
 
 .top-line-category {
-	width: 45px;
+	width: 175px;
 	background-color: #CED1D0;
 }
 
@@ -66,7 +71,7 @@
 
 .top-right-line-rotated-category {
 	top: -7px;
-	left: 41px;
+	left: 171px;
 	width: 10px;
 	background-color: #CED1D0;
 	transform: rotate(50deg);
@@ -74,7 +79,7 @@
 
 .bottom-line-category {
 	top: 11px;
-	width: 47px;
+	width: 177px;
 	background-color: #CED1D0;
 }
 
@@ -88,7 +93,7 @@
 
 .bottom-right-line-rotated-category {
 	top: -9px;
-	left: 35px;
+	left: 165px;
 	width: 24px;
 	background-color: #CED1D0;
 	transform: rotate(100deg);
@@ -114,8 +119,6 @@
 	-ms-user-select: none;
 	user-select: none;
 }
-
-
 
 #all-categories-id {
 	height: 100%;
@@ -154,49 +157,13 @@
 	left: -80px;
 }
 
-
 .wrapper-categories {
 	display: grid;
 	grid-template-columns: 180px 180px;
 	grid-auto-columns: auto;
 	grid-auto-rows: auto;
-	grid-column-gap: 20px;
-	grid-row-gap: 20px;
-	grid-template-rows: 50px 50px;
-	margin-left:50px;
-}
-
-.category-db-saga-class {
-	grid-column-start: 1;
-	grid-column-end: 1;
-	grid-row-start: 1;
-	grid-row-end: 1;
-}
-
-.category-saiyan-saga-class {
-	grid-column-start: 2;
-	grid-column-end: 2;
-	grid-row-start: 1;
-	grid-row-end: 1;
-}
-
-.category-planet-namek-saga-class {
-	grid-column-start: 1;
-	grid-column-end: 1;
-	grid-row-start: 2;
-	grid-row-end: 2;
-}
-
-.category-androids-cell-saga-class {
-	grid-column-start: 2;
-	grid-column-end: 2;
-	grid-row-start: 2;
-	grid-row-end: 2;
-}
-
-.category-majin-buu-saga-class {
-	grid-column-start: 1;
-	grid-column-end: 1;
-	grid-row-start: 2;
-	grid-row-end: 2;
+	grid-column-gap: 15px;
+	grid-template-rows: repeat(6, 45px);
+	margin-left: 5px;
+	margin-top: 25px;
 }

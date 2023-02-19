@@ -62,7 +62,7 @@ function openNavRight() {
 
 function closeNav() {
   const allCategoriesId = document.getElementById("all-categories-id");
-	const leftSidenav = document.getElementById("left-sidenav-id");
+  const leftSidenav = document.getElementById("left-sidenav-id");
   const rightSidenav = document.getElementById("right-sidenav-id");
   const rightSidenavFilters = document.getElementById("right-sidenav-filters-id");
   const applyFiltersBg = document.getElementById("apply-filters-bg-id");
@@ -74,7 +74,7 @@ function closeNav() {
 
   allCategoriesId.style.width = "0";
   leftSidenav.style.width = "0";
-  
+
   rightSidenav.style.width = "0";
   rightSidenavFilters.style.width = "0";
 
@@ -83,7 +83,7 @@ function closeNav() {
   applyFiltersText.style.left = "-70px";
 
   ok.style.left = "-30px";
-  removeAll.style.left = "-90px";
+  removeAll.style.left = "-120px";
 
   mainPage.style.opacity = "1";
   mainPage.style.pointerEvents = "auto";
@@ -91,18 +91,19 @@ function closeNav() {
 }
 
 function closeNavWhenClickedOutside() {
+  const applyFiltersId = document.getElementById("apply-filters-id");
   const leftSidenav = document.getElementById("left-sidenav-id");
   const rightSidenav = document.getElementById("right-sidenav-id");
   const filterSelect = document.getElementById("filter-select-id");
   document.addEventListener('mousedown', function (event) {
-    const outsideClick = typeof event.composedPath === 'function' && !event.composedPath().includes(leftSidenav) && !event.composedPath().includes(rightSidenav);
+    const outsideClick = typeof event.composedPath === 'function' && !event.composedPath().includes(leftSidenav) && !event.composedPath().includes(rightSidenav) && !event.composedPath().includes(applyFiltersId);
     if ((outsideClick === true) && (!event.composedPath().includes(filterSelect))) {
       closeNav();
     }
   });
 
   document.addEventListener('mouseup', function (event) {
-    const outsideClick = typeof event.composedPath === 'function' && !event.composedPath().includes(leftSidenav) && !event.composedPath().includes(rightSidenav);
+    const outsideClick = typeof event.composedPath === 'function' && !event.composedPath().includes(leftSidenav) && !event.composedPath().includes(rightSidenav) && !event.composedPath().includes(applyFiltersId);
     if ((outsideClick === true) && (!event.composedPath().includes(filterSelect))) {
       closeNav();
     }

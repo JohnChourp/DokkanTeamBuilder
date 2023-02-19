@@ -18,7 +18,6 @@ function filtersMultipleUsedWithSearchChar(dataChars, filtersEachLengthString, f
 			}
 		}
 	}
-	console.log(filterCharItems[0].length);
 	let filterSuperAttackTypeItems = create2DimensionalArray(filterCharItems[0].length, 1);
 	let filterCategoryItems = create2DimensionalArray(filterCharItems[0].length, 1);
 
@@ -44,7 +43,7 @@ function filtersMultipleUsedWithSearchChar(dataChars, filtersEachLengthString, f
 					maxCategories = filterCharItemsTemp[i].length;
 				}
 			}
-			
+
 			for (let j = 0; j < maxCategories; j++) {
 				for (let i = 0; i < filterCharItems[k].length; i++) {
 					filterCategoryItems[i][j] = filterCharItemsTemp[i][j];
@@ -124,20 +123,37 @@ function searchChar(btnPressed) {
 
 			const charLength = char.length;
 
-			const dataCharTitle = 'data-char-title', dataCharName = 'data-char-name', dataCharType = 'data-char-type', dataCharRarity = 'data-char-rarity', dataCharClass = 'data-char-class',
-				dataCharEza = 'data-char-eza', dataCharAwaken = 'data-char-awaken', dataCharSuperAtkType = 'data-char-super-atk-type',
-				dataCharRecruit = 'data-char-recruit', dataCharCategories = 'data-char-categories';
+			const dataCharTitle = 'data-char-title',
+				dataCharName = 'data-char-name',
+				dataCharType = 'data-char-type',
+				dataCharRarity = 'data-char-rarity',
+				dataCharClass = 'data-char-class',
+				dataCharEza = 'data-char-eza',
+				dataCharAwaken = 'data-char-awaken',
+				dataCharSuperAtkType = 'data-char-super-atk-type',
+				dataCharRecruit = 'data-char-recruit',
+				dataCharCategories = 'data-char-categories';
 
-			const dataChars = [dataCharType, dataCharRarity, dataCharClass,
-				dataCharEza, dataCharAwaken, dataCharSuperAtkType, dataCharRecruit, dataCharCategories];
+			const dataChars = [dataCharType,
+				dataCharRarity,
+				dataCharClass,
+				dataCharEza,
+				dataCharAwaken,
+				dataCharSuperAtkType,
+				dataCharRecruit,
+				dataCharCategories];
 
-			let filterType = [], filterRarity = [], filterClass = [],
-				filterEza = [], filterAwaken = [], filterSuperAttackType = [],
-				filterRecruit = [],filterCategory = [];
+			let filterType = [],
+				filterRarity = [],
+				filterClass = [],
+				filterEza = [],
+				filterAwaken = [],
+				filterSuperAttackType = [],
+				filterRecruit = [],
+				filterCategory = [];
 
 			const dataCharNameItems = document.querySelectorAll('[' + dataCharName + ']');
 			const dataCharTitleItems = document.querySelectorAll('[' + dataCharTitle + ']');
-
 
 			const filterTypeTemp = ["agl", "teq", "int", "str", "phy"],
 				filterRarityTemp = ["n", "r", "sr", "ssr", "ur", "lr"],
@@ -146,8 +162,30 @@ function searchChar(btnPressed) {
 				filterAwakenIdTemp = ["not-dokkan-awakened", "pre-dokkan-awakened", "dokkan-awakened"],
 				filterSuperAttackTypeIdTemp = ["ki-blast", "unarmed", "physical", "other"],
 				filterRecruitIdTemp = ["summonable", "free-to-play"],
-				filterCategoriesTemp = ["db-saga", "saiyan-saga", "planet-namek-saga", "androids-cell-saga", "majin-buu-saga"],
-				filterCategoriesTemp2 = ["DB Saga", "Saiyan Saga", "Planet Namek Saga", "Androids/Cell Saga", "Majin Buu Saga"],
+				filterCategoriesTemp = ["db-saga",
+					"saiyan-saga",
+					"planet-namek-saga",
+					"androids-cell-saga",
+					"majin-buu-saga",
+					"future-saga",
+					"universe-survival-saga",
+					"shadow-dragon-saga",
+
+					"pure-saiyans",
+					"hybrid-saiyans",
+					"earthlings"],
+				filterCategoriesTemp2 = ["DB Saga",
+					"Saiyan Saga",
+					"Planet Namek Saga",
+					"Androids/Cell Saga",
+					"Majin Buu Saga",
+					"Future Saga",
+					"Universe Survival Saga",
+					"Shadow Dragon Saga",
+
+					"Pure Saiyans",
+					"Hybrid Saiyans",
+					"Earthlings"],
 				filtersEachLengthString = ["A", "B", "C", "D", "E", "F", "G", "H"];
 
 			const A = document.getElementsByClassName("checkedTypeBtn").length;
@@ -237,9 +275,9 @@ function searchChar(btnPressed) {
 				}
 			}
 			filterCategory = cleanArray(filterCategory, undefined);
-			
+
 			const filtersUsed = [filterType, filterRarity, filterClass, filterEza, filterAwaken, filterSuperAttackType, filterRecruit, filterCategory];
-		
+
 			let sumFilterUsed = 0;
 			//check how many filter are used
 			for (let i = 0; i < filtersUsed.length; i++) {

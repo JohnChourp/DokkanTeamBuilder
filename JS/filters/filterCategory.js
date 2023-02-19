@@ -33,11 +33,41 @@ function filterCategory(category) {
 		case "majin-buu-saga":
 			addCategory("majin-buu-saga");
 			break;
+		case "future-saga":
+			addCategory("future-saga");
+			break;
+		case "universe-survival-saga":
+			addCategory("universe-survival-saga");
+			break;
+		case "shadow-dragon-saga":
+			addCategory("shadow-dragon-saga");
+			break;
+
+		case "pure-saiyans":
+			addCategory("pure-saiyans");
+			break;
+		case "hybrid-saiyans":
+			addCategory("hybrid-saiyans");
+			break;
+		case "earthlings":
+			addCategory("earthlings");
+			break;
 	}
 }
 
 function removeAllCategory() {
-	const filterCategory = ["db-saga", "saiyan-saga", "planet-namek-saga", "androids-cell-saga", "majin-buu-saga"];
+	const filterCategory = ["db-saga",
+		"saiyan-saga",
+		"planet-namek-saga",
+		"androids-cell-saga",
+		"majin-buu-saga",
+		"future-saga",
+		"universe-survival-saga",
+		"shadow-dragon-saga",
+
+		"pure-saiyans",
+		"hybrid-saiyans",
+		"earthlings"];
 	for (let i = 0; i < filterCategory.length; i++) {
 		document.getElementById(filterCategory[i]).classList.remove("checkedCategoryBtn");
 		document.getElementById(filterCategory[i]).children.item(0).style.backgroundColor = "#6B6B67";
@@ -50,7 +80,7 @@ function openCategories() {
 	const allCategoriesId = document.getElementById("all-categories-id");
 	const closeCategories = document.getElementById("close-categories-id");
 	const removeAllCategories = document.getElementById("remove-all-categories-id");
-	
+
 	let width = '401px';
 
 	for (let i = 100; i < 416; i++) {
