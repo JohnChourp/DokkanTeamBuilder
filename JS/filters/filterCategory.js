@@ -314,10 +314,10 @@ function filterCategory(category) {
 			addCategory("worldwide-chaos");
 			break;
 
-			case "crossover":
+		case "crossover":
 			addCategory("crossover");
 			break;
-			case "dragon-ball-heroes":
+		case "dragon-ball-heroes":
 			addCategory("dragon-ball-heroes");
 			break;
 	}
@@ -488,16 +488,16 @@ function removeAllCategory() {
 }
 
 function openCategories() {
-	const applyCategoriesBgId = document.getElementById("apply-categories-bg-id");
 	const allCategoriesId = document.getElementById("all-categories-id");
+
+	const applyCategoriesBgId = document.getElementById("apply-categories-bg-id");
 	const applyCategoriesId = document.getElementById("apply-categories-id");
- 	
 	const applyCategoriesTextId = document.getElementById("apply-categories-text-id");
 	const removeAllCategories = document.getElementById("remove-all-categories-id");
 	const okCategories = document.getElementById("ok-categories-id");
-	
 
-	let width = '390px';
+
+	let width = '400px';
 
 	for (let i = 100; i < 416; i++) {
 		if (window.matchMedia(`(max-device-width: ${i}px)`).matches) {
@@ -508,31 +508,63 @@ function openCategories() {
 
 
 	applyCategoriesBgId.style.width = width;
-	applyCategoriesBgId.style.marginBottom = "110px";
-
 	allCategoriesId.style.width = width;
-	allCategoriesId.style.marginBottom = "110px";
-
 	applyCategoriesId.style.width = width;
-	applyCategoriesId.style.marginBottom = "110px";
-
 	applyCategoriesTextId.style.left = "0";
 	removeAllCategories.style.left = "0";
 	okCategories.style.left = "0";
+
+	const applyFiltersBg = document.getElementById("apply-filters-bg-id");
+	const applyFilters = document.getElementById("apply-filters-id");
+	const applyFiltersText = document.getElementById("apply-filters-text-id");
+	const ok = document.getElementById("ok");
+	const removeAll = document.getElementById("remove-all-id");
+	applyFiltersBg.style.width = "0";
+	applyFilters.style.width = "0";
+	applyFiltersText.style.left = "-70px";
+
+	ok.style.left = "-30px";
+	removeAll.style.left = "-120px";
+
 }
 
 function closeCategories() {
-	const applyCategoriesBgId = document.getElementById("apply-categories-bg-id");
 	const allCategoriesId = document.getElementById("all-categories-id");
-	
+
+	const applyCategoriesBgId = document.getElementById("apply-categories-bg-id");
+	const applyCategoriesId = document.getElementById("apply-categories-id");
 	const applyCategoriesTextId = document.getElementById("apply-categories-text-id");
 	const okCategories = document.getElementById("ok-categories-id");
 	const removeAllCategories = document.getElementById("remove-all-categories-id");
 
 	applyCategoriesBgId.style.width = "0";
 	allCategoriesId.style.width = "0";
+	applyCategoriesId.style.width = "0";
 
 	applyCategoriesTextId.style.left = "-400px";
 	okCategories.style.left = "-300px";
 	removeAllCategories.style.left = "-400px";
+
+	const applyFiltersBg = document.getElementById("apply-filters-bg-id");
+	const applyFilters = document.getElementById("apply-filters-id");
+	const applyFiltersText = document.getElementById("apply-filters-text-id");
+	const ok = document.getElementById("ok");
+	const removeAll = document.getElementById("remove-all-id");
+
+	let width = '400px';
+
+	for (let i = 100; i < 416; i++) {
+		if (window.matchMedia(`(max-device-width: ${i}px)`).matches) {
+			width = (i - 1) + "px";
+			break;
+		}
+	}
+	applyFiltersBg.style.width = width;
+	applyFiltersBg.style.left = "-10px";
+	applyFilters.style.width = width;
+
+	applyFiltersText.style.left = "-10px";
+	ok.style.left = "-10px";
+	removeAll.style.left = "-10px";
+
 }

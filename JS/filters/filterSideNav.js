@@ -23,7 +23,6 @@ function openNav() {
   leftSidenav.style.width = width;
 
   applyFiltersText.style.left = "-10px";
-
   ok.style.left = "-10px";
   removeAll.style.left = "-10px";
 
@@ -95,18 +94,19 @@ function closeNav() {
 
 function closeNavWhenClickedOutside() {
   const applyFiltersId = document.getElementById("apply-filters-id");
+  const applyCategoriesId = document.getElementById("apply-categories-id");
   const leftSidenav = document.getElementById("left-sidenav-id");
   const rightSidenav = document.getElementById("right-sidenav-id");
   const filterSelect = document.getElementById("filter-select-id");
   document.addEventListener('mousedown', function (event) {
-    const outsideClick = typeof event.composedPath === 'function' && !event.composedPath().includes(leftSidenav) && !event.composedPath().includes(rightSidenav) && !event.composedPath().includes(applyFiltersId);
+    const outsideClick = typeof event.composedPath === 'function' && !event.composedPath().includes(leftSidenav) && !event.composedPath().includes(rightSidenav) && !event.composedPath().includes(applyFiltersId) && !event.composedPath().includes(applyCategoriesId);
     if ((outsideClick === true) && (!event.composedPath().includes(filterSelect))) {
       closeNav();
     }
   });
 
   document.addEventListener('mouseup', function (event) {
-    const outsideClick = typeof event.composedPath === 'function' && !event.composedPath().includes(leftSidenav) && !event.composedPath().includes(rightSidenav) && !event.composedPath().includes(applyFiltersId);
+    const outsideClick = typeof event.composedPath === 'function' && !event.composedPath().includes(leftSidenav) && !event.composedPath().includes(rightSidenav) && !event.composedPath().includes(applyFiltersId) && !event.composedPath().includes(applyCategoriesId);
     if ((outsideClick === true) && (!event.composedPath().includes(filterSelect))) {
       closeNav();
     }
