@@ -326,7 +326,7 @@ function searchChar(btnPressed) {
 					"World Tournament",
 
 					"Low Class Warrior",
-					"Earth Bred Fighters",
+					"Earth-Bred Fighters",
 					"Gifted Warriors",
 					"Otherworld Warriors",
 					"Resurrected Warriors",
