@@ -488,11 +488,16 @@ function removeAllCategory() {
 }
 
 function openCategories() {
+	const applyCategoriesBgId = document.getElementById("apply-categories-bg-id");
 	const allCategoriesId = document.getElementById("all-categories-id");
-	const closeCategories = document.getElementById("close-categories-id");
+	const applyCategoriesId = document.getElementById("apply-categories-id");
+ 	
+	const applyCategoriesTextId = document.getElementById("apply-categories-text-id");
 	const removeAllCategories = document.getElementById("remove-all-categories-id");
+	const okCategories = document.getElementById("ok-categories-id");
+	
 
-	let width = '401px';
+	let width = '390px';
 
 	for (let i = 100; i < 416; i++) {
 		if (window.matchMedia(`(max-device-width: ${i}px)`).matches) {
@@ -501,17 +506,33 @@ function openCategories() {
 		}
 	}
 
+
+	applyCategoriesBgId.style.width = width;
+	applyCategoriesBgId.style.marginBottom = "110px";
+
 	allCategoriesId.style.width = width;
-	closeCategories.style.left = "0";
+	allCategoriesId.style.marginBottom = "110px";
+
+	applyCategoriesId.style.width = width;
+	applyCategoriesId.style.marginBottom = "110px";
+
+	applyCategoriesTextId.style.left = "0";
 	removeAllCategories.style.left = "0";
+	okCategories.style.left = "0";
 }
 
 function closeCategories() {
+	const applyCategoriesBgId = document.getElementById("apply-categories-bg-id");
 	const allCategoriesId = document.getElementById("all-categories-id");
-	const closeCategories = document.getElementById("close-categories-id");
+	
+	const applyCategoriesTextId = document.getElementById("apply-categories-text-id");
+	const okCategories = document.getElementById("ok-categories-id");
 	const removeAllCategories = document.getElementById("remove-all-categories-id");
 
+	applyCategoriesBgId.style.width = "0";
 	allCategoriesId.style.width = "0";
-	closeCategories.style.left = "-30px";
-	removeAllCategories.style.left = "-90px";
+
+	applyCategoriesTextId.style.left = "-300px";
+	okCategories.style.left = "-200px";
+	removeAllCategories.style.left = "-300px";
 }

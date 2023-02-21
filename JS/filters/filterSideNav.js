@@ -1,13 +1,13 @@
 function openNav() {
-  const leftSidenav = document.getElementById("left-sidenav-id");
   const applyFiltersBg = document.getElementById("apply-filters-bg-id");
   const applyFilters = document.getElementById("apply-filters-id");
+  const leftSidenav = document.getElementById("left-sidenav-id");
   const applyFiltersText = document.getElementById("apply-filters-text-id");
   const ok = document.getElementById("ok");
   const removeAll = document.getElementById("remove-all-id");
   const mainPage = document.getElementById("main-page-id");
 
-  let width = '401px';
+  let width = '400px';
 
   for (let i = 100; i < 416; i++) {
     if (window.matchMedia(`(max-device-width: ${i}px)`).matches) {
@@ -16,13 +16,16 @@ function openNav() {
     }
   }
 
-  leftSidenav.style.width = width;
   applyFiltersBg.style.width = width;
+  applyFiltersBg.style.left = "-10px";
   applyFilters.style.width = width;
 
-  applyFiltersText.style.left = "0";
-  ok.style.left = "0";
-  removeAll.style.left = "0";
+  leftSidenav.style.width = width;
+
+  applyFiltersText.style.left = "-10px";
+
+  ok.style.left = "-10px";
+  removeAll.style.left = "-10px";
 
   mainPage.style.opacity = "0.2";
   mainPage.style.pointerEvents = "none";

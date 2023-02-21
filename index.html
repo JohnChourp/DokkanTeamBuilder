@@ -1153,14 +1153,17 @@
 					<div class="filter-category-container-text">Dragon Ball Heroes</div>
 				</div>
 			</div>
-			<p id="apply-categories-text-id" class="filter-options-text-class category-text-class">Apply Categories</p>
-			<div class="filter-class category-ok-remove-class">
-				<button onclick="closeCategories();" id="close-categories-id" type="button">
-					OK
-				</button>
-				<button onclick="removeAllCategory();" id="remove-all-categories-id" type="button">
-					Remove All
-				</button>
+			<div id="apply-categories-bg-id"></div>
+			<div id="apply-categories-id">
+				<p id="apply-categories-text-id" class="filter-options-text-class">Apply Categories</p>
+				<div class="filter-class">
+					<button onclick="closeCategories();" id="ok-categories-id" type="button">
+						OK
+					</button>
+					<button onclick="removeAllCategory();" id="remove-all-categories-id" type="button">
+						Remove All
+					</button>
+				</div>
 			</div>
 		</div>
 		<p class="filter-options-text-class">Rarity</p>
@@ -1374,7 +1377,6 @@
 			</button>
 		</div>
 	</div>
-	</div>
 	<div id="right-sidenav-id">
 		<div id="right-sidenav-filters-id">
 			<a href="javascript:void(0)" id="close-right-sidenav-btn-id" onclick="closeNav();">&times;</a>
@@ -1394,7 +1396,6 @@
 						alt="settings_Image">
 				</button>
 			</div>
-
 			<div id="search-settings-id">
 				<div id="box-diplay-id">
 					<p id="search-settings-text-box-diplay-id" class="search-settings-text-class">Box Diplay</p>
