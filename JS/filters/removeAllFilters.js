@@ -5,7 +5,107 @@ function removeAllFilters() {
 	{ id: "eza", class: "checkedEzaBtn", list: ["eza", "noeza"] },
 	{ id: "not-dokkan-awakened", class: "checkedAwakenBtn", list: ["not-dokkan-awakened", "pre-dokkan-awakened", "dokkan-awakened"] },
 	{ id: "ki-blast", class: "checkedSuperAttackTypeBtn", list: ["ki-blast", "unarmed", "physical", "other"] },
-	{ id: "summonable", class: "checkedRecruitBtn", list: ["summonable", "free-to-play"] }
+	{ id: "summonable", class: "checkedRecruitBtn", list: ["summonable", "free-to-play"] },
+	{
+		id: "db-saga", class: "checkedCategoryBtn", list: [
+			"db-saga",
+			"saiyan-saga",
+			"planet-namek-saga",
+			"androids-cell-saga",
+			"majin-buu-saga",
+			"future-saga",
+			"universe-survival-saga",
+			"shadow-dragon-saga",
+
+			"pure-saiyans",
+			"hybrid-saiyans",
+			"earthlings",
+			"namekians",
+			"androids",
+			"artificial-life-forms",
+			"gokus-family",
+			"vegetas-family",
+			"wicked-bloodline",
+			"youth",
+			"peppy-gals",
+
+			"super-saiyans",
+			"super-saiyan-2",
+			"super-saiyan-3",
+			"power-beyond-super-saiyan",
+			"fusion",
+			"potara",
+			"fused-fighters",
+			"giant-form",
+			"transformation-boost",
+			"power-absorption",
+			"kamehameha",
+
+			"realm-of-gods",
+			"full-power",
+			"giant-ape-power",
+			"majin-power",
+			"powerful-comeback",
+			"miraculous-awakening",
+			"corroded-body-and-mind",
+			"rapid-growth",
+			"mastered-evolution",
+			"time-limit",
+			"final-trump-card",
+
+			"worthy-rivals",
+			"sworn-enemies",
+			"joined-forces",
+			"bond-of-parent-and-child",
+			"siblings-bond",
+			"bond-of-friendship",
+			"bond-of-master-and-disciple",
+
+			"ginyu-force",
+			"team-bardock",
+			"universe-6",
+			"representatives-of-universe-7",
+			"universe-11",
+			"gt-heroes",
+			"gt-bosses",
+			"super-heroes",
+			"movie-heroes",
+			"movie-bosses",
+			"turtle-school",
+			"world-tournament",
+
+			"low-class-warrior",
+			"earth-bred-fighters",
+			"gifted-warriors",
+			"otherworld-warriors",
+			"resurrected-warriors",
+			"space-traveling-warriors",
+			"time-travelers",
+			"dragon-ball-seekers",
+			"storied-figures",
+			"legendary-existence",
+			"saviors",
+			"defenders-of-justice",
+
+			"revenge",
+			"target-goku",
+			"terrifying-conquerors",
+			"inhumal-deeds",
+			"planetary-destruction",
+			"exploding-rage",
+			"connected-hope",
+			"entrusted-will",
+			"all-out-struggle",
+			"battle-of-wits",
+			"accelerated-battle",
+			"battle-of-fate",
+			"heavenly-events",
+			"special-pose",
+			"worldwide-chaos",
+
+			"crossover",
+			"dragon-ball-heroes"]
+	}
 	];
 
 	const filterIds = filters.reduce((result, filter) => {
@@ -21,5 +121,6 @@ function removeAllFilters() {
 		removeAllDokkanAwaken();
 		removeAllSuperAttackType();
 		removeAllRecruit();
+		removeAllCategory();
 	}
 }

@@ -1,6 +1,13 @@
 function saveCharList() {
 	if (localStorage.getItem("nameOrTitle") == null) {
 		localStorage.setItem("nameOrTitle", 1);
+	} else {
+		if (localStorage.getItem("nameOrTitle") == 2) {
+			const buttonYes = document.getElementById("search-titles-yes-id");
+			const buttonNo = document.getElementById("search-titles-no-id");
+			buttonYes.classList.add("checkedTitlesnBtn");
+			buttonNo.classList.remove("checkedTitlesnBtn");
+		}
 	}
 	if (localStorage.getItem("filterDisplay") == null) {
 		localStorage.setItem("filterDisplay", 0);
