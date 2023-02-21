@@ -532,7 +532,7 @@ function closeCategories() {
 	applyCategoriesBgId.style.width = "0";
 	allCategoriesId.style.width = "0";
 
-	applyCategoriesTextId.style.left = "-300px";
-	okCategories.style.left = "-200px";
-	removeAllCategories.style.left = "-300px";
+	applyCategoriesTextId.style.left = "-400px";
+	okCategories.style.left = "-300px";
+	removeAllCategories.style.left = "-400px";
 }
