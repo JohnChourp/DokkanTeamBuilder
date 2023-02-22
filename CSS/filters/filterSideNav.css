@@ -175,19 +175,10 @@
     left: -120px;
 }
 
-#agl,
-#teq,
-#int,
-#str,
-#phy,
-#n,
-#r,
-#sr,
-#ssr,
-#ur,
-#lr,
-#super,
-#extreme {
+.filter-type-container,
+.filter-rarity-container,
+.filter-class-container,
+.filter-category-container {
     -webkit-tap-highlight-color: transparent;
     -tap-highlight-color: transparent;
 }
