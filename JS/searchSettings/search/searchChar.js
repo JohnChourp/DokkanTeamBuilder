@@ -124,142 +124,137 @@ function searchChar(btnPressed) {
 			const charLength = char.length;
 
 			const dataCharTitle = 'data-char-title',
-				dataCharName = 'data-char-name',
-				dataCharType = 'data-char-type',
-				dataCharRarity = 'data-char-rarity',
-				dataCharClass = 'data-char-class',
-				dataCharEza = 'data-char-eza',
-				dataCharAwaken = 'data-char-awaken',
-				dataCharSuperAtkType = 'data-char-super-atk-type',
-				dataCharRecruit = 'data-char-recruit',
-				dataCharCategories = 'data-char-categories';
-
-			const dataChars = [dataCharType,
-				dataCharRarity,
-				dataCharClass,
-				dataCharEza,
-				dataCharAwaken,
-				dataCharSuperAtkType,
-				dataCharRecruit,
-				dataCharCategories];
-
-			let filterType = [],
-				filterRarity = [],
-				filterClass = [],
-				filterEza = [],
-				filterAwaken = [],
-				filterSuperAttackType = [],
-				filterRecruit = [],
-				filterCategory = [];
+				dataCharName = 'data-char-name';
 
 			const dataCharNameItems = document.querySelectorAll('[' + dataCharName + ']');
 			const dataCharTitleItems = document.querySelectorAll('[' + dataCharTitle + ']');
 
-			const filterTypeTemp = ["agl", "teq", "int", "str", "phy"],
-				filterRarityTemp = ["n", "r", "sr", "ssr", "ur", "lr"],
-				filterClassTemp = ["super", "extreme"],
-				filterEzaTemp = ["eza", "noeza"],
-				filterAwakenIdTemp = ["not-dokkan-awakened", "pre-dokkan-awakened", "dokkan-awakened"],
-				filterSuperAttackTypeIdTemp = ["ki-blast", "unarmed", "physical", "other"],
-				filterRecruitIdTemp = ["summonable", "free-to-play"],
-				filterCategoriesTemp = ["db-saga",
-					"saiyan-saga",
-					"planet-namek-saga",
-					"androids-cell-saga",
-					"majin-buu-saga",
-					"future-saga",
-					"universe-survival-saga",
-					"shadow-dragon-saga",
+			const dataCharCategories = 'data-char-categories',
+				dataCharRarity = 'data-char-rarity',
+				dataCharType = 'data-char-type',
+				dataCharClass = 'data-char-class',
+				dataCharAwaken = 'data-char-awaken',
+				dataCharSuperAtkType = 'data-char-super-atk-type',
+				dataCharEza = 'data-char-eza',
+				dataCharRecruit = 'data-char-recruit';
 
-					"pure-saiyans",
-					"hybrid-saiyans",
-					"earthlings",
-					"namekians",
-					"androids",
-					"artificial-life-forms",
-					"gokus-family",
-					"vegetas-family",
-					"wicked-bloodline",
-					"youth",
-					"peppy-gals",
+			const dataChars = [dataCharCategories,
+				dataCharRarity,
+				dataCharType,
+				dataCharClass,
+				dataCharAwaken,
+				dataCharSuperAtkType,
+				dataCharEza,
+				dataCharRecruit];
 
-					"super-saiyans",
-					"super-saiyan-2",
-					"super-saiyan-3",
-					"power-beyond-super-saiyan",
-					"fusion",
-					"potara",
-					"fused-fighters",
-					"giant-form",
-					"transformation-boost",
-					"power-absorption",
-					"kamehameha",
+			let filterCategoryUsed = [],
+				filterRarityUsed = [],
+				filterTypeUsed = [],
+				filterClassUsed = [],
+				filterAwakenUsed = [],
+				filterSuperAttackTypeUsed = [],
+				filterEzaUsed = [],
+				filterRecruitUsed = [];
 
-					"realm-of-gods",
-					"full-power",
-					"giant-ape-power",
-					"majin-power",
-					"powerful-comeback",
-					"miraculous-awakening",
-					"corroded-body-and-mind",
-					"rapid-growth",
-					"mastered-evolution",
-					"time-limit",
-					"final-trump-card",
 
-					"worthy-rivals",
-					"sworn-enemies",
-					"joined-forces",
-					"bond-of-parent-and-child",
-					"siblings-bond",
-					"bond-of-friendship",
-					"bond-of-master-and-disciple",
+			const filterCategories = ["db-saga",
+				"saiyan-saga",
+				"planet-namek-saga",
+				"androids-cell-saga",
+				"majin-buu-saga",
+				"future-saga",
+				"universe-survival-saga",
+				"shadow-dragon-saga",
 
-					"ginyu-force",
-					"team-bardock",
-					"universe-6",
-					"representatives-of-universe-7",
-					"universe-11",
-					"gt-heroes",
-					"gt-bosses",
-					"super-heroes",
-					"movie-heroes",
-					"movie-bosses",
-					"turtle-school",
-					"world-tournament",
+				"pure-saiyans",
+				"hybrid-saiyans",
+				"earthlings",
+				"namekians",
+				"androids",
+				"artificial-life-forms",
+				"gokus-family",
+				"vegetas-family",
+				"wicked-bloodline",
+				"youth",
+				"peppy-gals",
 
-					"low-class-warrior",
-					"earth-bred-fighters",
-					"gifted-warriors",
-					"otherworld-warriors",
-					"resurrected-warriors",
-					"space-traveling-warriors",
-					"time-travelers",
-					"dragon-ball-seekers",
-					"storied-figures",
-					"legendary-existence",
-					"saviors",
-					"defenders-of-justice",
+				"super-saiyans",
+				"super-saiyan-2",
+				"super-saiyan-3",
+				"power-beyond-super-saiyan",
+				"fusion",
+				"potara",
+				"fused-fighters",
+				"giant-form",
+				"transformation-boost",
+				"power-absorption",
+				"kamehameha",
 
-					"revenge",
-					"target-goku",
-					"terrifying-conquerors",
-					"inhumal-deeds",
-					"planetary-destruction",
-					"exploding-rage",
-					"connected-hope",
-					"entrusted-will",
-					"all-out-struggle",
-					"battle-of-wits",
-					"accelerated-battle",
-					"battle-of-fate",
-					"heavenly-events",
-					"special-pose",
-					"worldwide-chaos",
+				"realm-of-gods",
+				"full-power",
+				"giant-ape-power",
+				"majin-power",
+				"powerful-comeback",
+				"miraculous-awakening",
+				"corroded-body-and-mind",
+				"rapid-growth",
+				"mastered-evolution",
+				"time-limit",
+				"final-trump-card",
 
-					"crossover",
-					"dragon-ball-heroes"],
-				filterCategoriesTemp2 = ["DB Saga",
+				"worthy-rivals",
+				"sworn-enemies",
+				"joined-forces",
+				"bond-of-parent-and-child",
+				"siblings-bond",
+				"bond-of-friendship",
+				"bond-of-master-and-disciple",
+
+				"ginyu-force",
+				"team-bardock",
+				"universe-6",
+				"representatives-of-universe-7",
+				"universe-11",
+				"gt-heroes",
+				"gt-bosses",
+				"super-heroes",
+				"movie-heroes",
+				"movie-bosses",
+				"turtle-school",
+				"world-tournament",
+
+				"low-class-warrior",
+				"earth-bred-fighters",
+				"gifted-warriors",
+				"otherworld-warriors",
+				"resurrected-warriors",
+				"space-traveling-warriors",
+				"time-travelers",
+				"dragon-ball-seekers",
+				"storied-figures",
+				"legendary-existence",
+				"saviors",
+				"defenders-of-justice",
+
+				"revenge",
+				"target-goku",
+				"terrifying-conquerors",
+				"inhumal-deeds",
+				"planetary-destruction",
+				"exploding-rage",
+				"connected-hope",
+				"entrusted-will",
+				"all-out-struggle",
+				"battle-of-wits",
+				"accelerated-battle",
+				"battle-of-fate",
+				"heavenly-events",
+				"special-pose",
+				"worldwide-chaos",
+
+				"crossover",
+				"dragon-ball-heroes"],
+				filterCategoriesNames = ["DB Saga",
 					"Saiyan Saga",
 					"Planet Namek Saga",
 					"Androids/Cell Saga",
@@ -311,7 +306,7 @@ function searchChar(btnPressed) {
 					"Siblings' Bond",
 					"Bond of Friendship",
 					"Bond of Master and Disciple",
-		
+
 					"Ginyu Force",
 					"Team Bardock",
 					"Universe 6",
@@ -356,18 +351,27 @@ function searchChar(btnPressed) {
 
 					"Crossover",
 					"Dragon Ball Heroes"],
-				filtersEachLengthString = ["A", "B", "C", "D", "E", "F", "G", "H"];
+				filterRarity = ["n", "r", "sr", "ssr", "ur", "lr"],
+				filterType = ["agl", "teq", "int", "str", "phy"],
+				filterClass = ["super", "extreme"],
+				filterAwaken = ["not-dokkan-awakened", "pre-dokkan-awakened", "dokkan-awakened"],
+				filterSuperAttackType = ["ki-blast", "unarmed", "physical", "other"],
+				filterEza = ["eza", "noeza"],
+				filterRecruit = ["summonable", "free-to-play"];
 
-			const A = document.getElementsByClassName("checkedTypeBtn").length;
+
+			const A = document.getElementsByClassName("checkedCategoryBtn").length;
 			const B = document.getElementsByClassName("checkedRarityBtn").length;
-			const C = document.getElementsByClassName("checkedClassBtn").length;
-			const D = document.getElementsByClassName("checkedEzaBtn").length;
+			const C = document.getElementsByClassName("checkedTypeBtn").length;
+			const D = document.getElementsByClassName("checkedClassBtn").length;
 			const E = document.getElementsByClassName("checkedAwakenBtn").length;
 			const F = document.getElementsByClassName("checkedSuperAttackTypeBtn").length;
-			const G = document.getElementsByClassName("checkedRecruitBtn").length;
-			const H = document.getElementsByClassName("checkedCategoryBtn").length;
+			const G = document.getElementsByClassName("checkedEzaBtn").length;
+			const H = document.getElementsByClassName("checkedRecruitBtn").length;
 			const filtersEachLength = [A, B, C, D, E, F, G, H];
+			const filtersEachLengthString = ["A", "B", "C", "D", "E", "F", "G", "H"];
 
+			//sortDirection
 			if (checkedDirectionBtn.length == 1) {
 				let temp_char = [];
 				for (let i = 0; i < char.length; i++) {
@@ -390,63 +394,71 @@ function searchChar(btnPressed) {
 				dataCharNameOrTitle = dataCharTitle;
 			}
 
-			for (let i = 0; i < filterTypeTemp.length; i++) {
-				if (document.getElementById(filterTypeTemp[i]).classList.contains("checkedTypeBtn")) {
-					filterType[i] = filterTypeTemp[i];
+			//filterCategory
+			for (let i = 0; i < filterCategories.length; i++) {
+				if (document.getElementById(filterCategories[i]).classList.contains("checkedCategoryBtn")) {
+					filterCategoryUsed[i] = filterCategoriesNames[i];
 				}
 			}
-			filterType = cleanArray(filterType, undefined);
+			filterCategoryUsed = cleanArray(filterCategoryUsed, undefined);
 
-			for (let i = 0; i < filterRarityTemp.length; i++) {
-				if (document.getElementById(filterRarityTemp[i]).classList.contains("checkedRarityBtn")) {
-					filterRarity[i] = filterRarityTemp[i];
+			//filterRarity
+			for (let i = 0; i < filterRarity.length; i++) {
+				if (document.getElementById(filterRarity[i]).classList.contains("checkedRarityBtn")) {
+					filterRarityUsed[i] = filterRarity[i];
 				}
 			}
-			filterRarity = cleanArray(filterRarity, undefined);
+			filterRarityUsed = cleanArray(filterRarityUsed, undefined);
 
-			for (let i = 0; i < filterClassTemp.length; i++) {
-				if (document.getElementById(filterClassTemp[i]).classList.contains("checkedClassBtn")) {
-					filterClass[i] = filterClassTemp[i];
+			//filterType
+			for (let i = 0; i < filterType.length; i++) {
+				if (document.getElementById(filterType[i]).classList.contains("checkedTypeBtn")) {
+					filterTypeUsed[i] = filterType[i];
 				}
 			}
-			filterClass = cleanArray(filterClass, undefined);
+			filterTypeUsed = cleanArray(filterTypeUsed, undefined);
 
-			for (let i = 0; i < filterEzaTemp.length; i++) {
-				if (document.getElementById(filterEzaTemp[i]).classList.contains("checkedEzaBtn")) {
-					filterEza[i] = filterEzaTemp[i];
+			//filterClass
+			for (let i = 0; i < filterClass.length; i++) {
+				if (document.getElementById(filterClass[i]).classList.contains("checkedClassBtn")) {
+					filterClassUsed[i] = filterClass[i];
 				}
 			}
-			filterEza = cleanArray(filterEza, undefined);
+			filterClassUsed = cleanArray(filterClassUsed, undefined);
 
-			for (let i = 0; i < filterAwakenIdTemp.length; i++) {
-				if (document.getElementById(filterAwakenIdTemp[i]).classList.contains("checkedAwakenBtn")) {
-					filterAwaken[i] = filterAwakenIdTemp[i];
+			//filterAwaken
+			for (let i = 0; i < filterAwaken.length; i++) {
+				if (document.getElementById(filterAwaken[i]).classList.contains("checkedAwakenBtn")) {
+					filterAwakenUsed[i] = filterAwaken[i];
 				}
 			}
-			filterAwaken = cleanArray(filterAwaken, undefined);
+			filterAwakenUsed = cleanArray(filterAwakenUsed, undefined);
 
-			for (let i = 0; i < filterSuperAttackTypeIdTemp.length; i++) {
-				if (document.getElementById(filterSuperAttackTypeIdTemp[i]).classList.contains("checkedSuperAttackTypeBtn")) {
-					filterSuperAttackType[i] = filterSuperAttackTypeIdTemp[i];
+			//filterSuperAttackType
+			for (let i = 0; i < filterSuperAttackType.length; i++) {
+				if (document.getElementById(filterSuperAttackType[i]).classList.contains("checkedSuperAttackTypeBtn")) {
+					filterSuperAttackTypeUsed[i] = filterSuperAttackType[i];
 				}
 			}
-			filterSuperAttackType = cleanArray(filterSuperAttackType, undefined);
+			filterSuperAttackTypeUsed = cleanArray(filterSuperAttackTypeUsed, undefined);
 
-			for (let i = 0; i < filterRecruitIdTemp.length; i++) {
-				if (document.getElementById(filterRecruitIdTemp[i]).classList.contains("checkedRecruitBtn")) {
-					filterRecruit[i] = filterRecruitIdTemp[i];
+			//filterEza
+			for (let i = 0; i < filterEza.length; i++) {
+				if (document.getElementById(filterEza[i]).classList.contains("checkedEzaBtn")) {
+					filterEzaUsed[i] = filterEza[i];
 				}
 			}
-			filterRecruit = cleanArray(filterRecruit, undefined);
+			filterEzaUsed = cleanArray(filterEzaUsed, undefined);
 
-			for (let i = 0; i < filterCategoriesTemp.length; i++) {
-				if (document.getElementById(filterCategoriesTemp[i]).classList.contains("checkedCategoryBtn")) {
-					filterCategory[i] = filterCategoriesTemp2[i];
+			//filterRecruit
+			for (let i = 0; i < filterRecruit.length; i++) {
+				if (document.getElementById(filterRecruit[i]).classList.contains("checkedRecruitBtn")) {
+					filterRecruitUsed[i] = filterRecruit[i];
 				}
 			}
-			filterCategory = cleanArray(filterCategory, undefined);
+			filterRecruitUsed = cleanArray(filterRecruitUsed, undefined);
 
-			const filtersUsed = [filterType, filterRarity, filterClass, filterEza, filterAwaken, filterSuperAttackType, filterRecruit, filterCategory];
+			const filtersUsed = [filterCategoryUsed, filterRarityUsed, filterTypeUsed, filterClassUsed, filterAwakenUsed, filterSuperAttackTypeUsed, filterEzaUsed, filterRecruitUsed];
 
 			let sumFilterUsed = 0;
 			//check how many filter are used
