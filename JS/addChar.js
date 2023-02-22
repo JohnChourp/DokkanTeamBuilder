@@ -42,7 +42,7 @@ function addChar(charsPerPageNumItem) {
 		const char_thumb_img = document.createElement("img");
 		char_thumb_img.classList.add("char_thumb");
 		char_thumb_img.loading = "lazy";
-		char_thumb_img.setAttribute("src", dataCharIdItems[i].getAttribute(dataCharId));
+		char_thumb_img.src = dataCharIdItems[i].getAttribute(dataCharId);
 		char_thumb_img.setAttribute("draggable", "false");
 		char_thumb_img.alt = "char_thumb";
 		charDiv.appendChild(char_thumb_img);
@@ -74,9 +74,6 @@ function addChar(charsPerPageNumItem) {
 			charDiv.appendChild(char_eza_img);
 		}
 
-		const charItemText = document.createTextNode(charItem.textContent);
-  		charItem.textContent = '';
-  		charItem.appendChild(charItemText);
 		charItem.appendChild(charDiv);
 
 		//char_display
