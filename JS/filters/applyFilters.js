@@ -387,7 +387,7 @@ function applyFilters(btnPressed) {
 		}
 	}
 	filterCategoryUsed = cleanArray(filterCategoryUsed, undefined);
-
+	
 	//filterRarity
 	for (let i = 0; i < filterRarity.length; i++) {
 		if (document.getElementById(filterRarity[i]).classList.contains("checkedRarityBtn")) {
