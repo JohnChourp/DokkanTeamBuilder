@@ -37,7 +37,7 @@ function filtersMultipleUsed(dataChars, filtersEachLengthString, filtersEachLeng
 			}
 		}
 
-		if (filtersUsed[7].length > 0) {
+		if (filtersUsed[0].length > 0) {
 			for (let i = 0; i < filterCharItems[k].length; i++) {
 				filterCharItemsTemp[i] = filterCharItems[k][i].getAttribute(filterChars[k]).split(",");
 				if (filterCharItemsTemp[i].length > maxCategories) {
@@ -61,7 +61,7 @@ function filtersMultipleUsed(dataChars, filtersEachLengthString, filtersEachLeng
 							}
 						}
 					}
-					if (filtersUsed[7].length > 0) {
+					if (filtersUsed[0].length > 0) {
 						for (let l = 0; l < maxCategories; l++) {
 							if (filterCategoryItems[i][l] == filters[k][j]) {
 								charListAll[0][i] = char.item(i);
@@ -84,7 +84,7 @@ function filtersMultipleUsed(dataChars, filtersEachLengthString, filtersEachLeng
 								}
 							}
 						}
-						if (filtersUsed[7].length > 0) {
+						if (filtersUsed[0].length > 0) {
 							for (let l = 0; l < maxCategories; l++) {
 								if (filterCategoryItems[i][l] == filters[k][j]) {
 									charListAll[k][i] = char.item(i);
