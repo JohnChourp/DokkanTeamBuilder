@@ -42,7 +42,8 @@ function addChar(charsPerPageNumItem) {
 		const char_thumb_img = document.createElement("img");
 		char_thumb_img.classList.add("char_thumb");
 		char_thumb_img.loading = "lazy";
-		char_thumb_img.src = dataCharIdItems[i].getAttribute(dataCharId);
+		const srcValue = dataCharIdItems[i].getAttribute(dataCharId).replace(/[^\w\s]/gi, '');
+		char_thumb_img.setAttribute("src", srcValue);
 		char_thumb_img.setAttribute("draggable", "false");
 		char_thumb_img.alt = "char_thumb";
 		charDiv.appendChild(char_thumb_img);
