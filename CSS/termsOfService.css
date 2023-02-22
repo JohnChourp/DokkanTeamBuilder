@@ -1,0 +1,9 @@
+li {
+    color: rgb(190, 188, 188);
+    font-size: 30px;
+}
+
+#user-obligations-id li {
+    color: white;
+    font-size: 20px;
+}
