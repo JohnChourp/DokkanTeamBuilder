@@ -610,7 +610,7 @@ function closeCategoriesSelectBtn() {
 	categoriesSelectId.style.fontSize = "medium";
 	if (filterCategoryUsed.length > 1) {
 		setButtonStyles(categoriesSelectId, "#57C75B", "#199411", 'linear-gradient(rgb(255, 255, 255), rgb(219, 206, 189))');
-		filterCategoryContainerTextFirst.item(0).innerHTML = "Selected: <span style='color: blue'>" + filterCategoryUsed.length + "</span>";
+		filterCategoryContainerTextFirst.item(0).innerHTML = "Selected: " + filterCategoryUsed.length;
 	}
 	if (filterCategoryUsed.length == 0) {
 		setButtonStyles(categoriesSelectId, "#6B6B67", "#555555", 'linear-gradient(180deg, #B6B6B6, #948D87)');
