@@ -43,283 +43,109 @@ function setButtonStyles(element, bgColor1, bgColor2, bgImage) {
 	element.children.item(8).style.backgroundImage = bgImage;
 }
 
+const categories = {
+	"db-saga": true,
+	"saiyan-saga": true,
+	"planet-namek-saga": true,
+	"androids-cell-saga": true,
+	"majin-buu-saga": true,
+	"future-saga": true,
+	"universe-survival-saga": true,
+	"shadow-dragon-saga": true,
+
+	"pure-saiyans": true,
+	"hybrid-saiyans": true,
+	"earthlings": true,
+	"namekians": true,
+	"androids": true,
+	"artificial-life-forms": true,
+	"gokus-family": true,
+	"vegetas-family": true,
+	"wicked-bloodline": true,
+	"youth": true,
+	"peppy-gals": true,
+
+	"super-saiyans": true,
+	"super-saiyan-2": true,
+	"super-saiyan-3": true,
+	"power-beyond-super-saiyan": true,
+	"fusion": true,
+	"potara": true,
+	"fused-fighters": true,
+	"giant-form": true,
+	"transformation-boost": true,
+	"power-absorption": true,
+	"kamehameha": true,
+
+	"realm-of-gods": true,
+	"full-power": true,
+	"giant-ape-power": true,
+	"majin-power": true,
+	"powerful-comeback": true,
+	"miraculous-awakening": true,
+	"corroded-body-and-mind": true,
+	"rapid-growth": true,
+	"mastered-evolution": true,
+	"time-limit": true,
+	"final-trump-card": true,
+
+	"worthy-rivals": true,
+	"sworn-enemies": true,
+	"joined-forces": true,
+	"bond-of-parent-and-child": true,
+	"siblings-bond": true,
+	"bond-of-friendship": true,
+	"bond-of-master-and-disciple": true,
+
+	"ginyu-force": true,
+	"team-bardock": true,
+	"universe-6": true,
+	"representatives-of-universe-7": true,
+	"universe-11": true,
+	"gt-heroes": true,
+	"gt-bosses": true,
+	"super-heroes": true,
+	"movie-heroes": true,
+	"movie-bosses": true,
+	"turtle-school": true,
+	"world-tournament": true,
+
+	"low-class-warrior": true,
+	"earth-bred-fighters": true,
+	"gifted-warriors": true,
+	"otherworld-warriors": true,
+	"resurrected-warriors": true,
+	"space-traveling-warriors": true,
+	"time-travelers": true,
+	"dragon-ball-seekers": true,
+	"storied-figures": true,
+	"legendary-existence": true,
+	"saviors": true,
+	"defenders-of-justice": true,
+
+	"revenge": true,
+	"target-goku": true,
+	"terrifying-conquerors": true,
+	"inhumal-deeds": true,
+	"planetary-destruction": true,
+	"exploding-rage": true,
+	"connected-hope": true,
+	"entrusted-will": true,
+	"all-out-struggle": true,
+	"battle-of-wits": true,
+	"accelerated-battle": true,
+	"battle-of-fate": true,
+	"heavenly-events": true,
+	"special-pose": true,
+	"worldwide-chaos": true,
+
+	"crossover": true,
+	"dragon-ball-heroes": true
+};
+
 function filterCategory(category) {
-	switch (category) {
-		case "db-saga":
-			addCategory("db-saga");
-			break;
-		case "saiyan-saga":
-			addCategory("saiyan-saga");
-			break;
-		case "planet-namek-saga":
-			addCategory("planet-namek-saga");
-			break;
-		case "androids-cell-saga":
-			addCategory("androids-cell-saga");
-			break;
-		case "majin-buu-saga":
-			addCategory("majin-buu-saga");
-			break;
-		case "future-saga":
-			addCategory("future-saga");
-			break;
-		case "universe-survival-saga":
-			addCategory("universe-survival-saga");
-			break;
-		case "shadow-dragon-saga":
-			addCategory("shadow-dragon-saga");
-			break;
-
-		case "pure-saiyans":
-			addCategory("pure-saiyans");
-			break;
-		case "hybrid-saiyans":
-			addCategory("hybrid-saiyans");
-			break;
-		case "earthlings":
-			addCategory("earthlings");
-			break;
-		case "namekians":
-			addCategory("namekians");
-			break;
-		case "androids":
-			addCategory("androids");
-			break;
-		case "artificial-life-forms":
-			addCategory("artificial-life-forms");
-			break;
-		case "gokus-family":
-			addCategory("gokus-family");
-			break;
-		case "vegetas-family":
-			addCategory("vegetas-family");
-			break;
-		case "wicked-bloodline":
-			addCategory("wicked-bloodline");
-			break;
-		case "youth":
-			addCategory("youth");
-			break;
-		case "peppy-gals":
-			addCategory("peppy-gals");
-			break;
-
-		case "super-saiyans":
-			addCategory("super-saiyans");
-			break;
-		case "super-saiyan-2":
-			addCategory("super-saiyan-2");
-			break;
-		case "super-saiyan-3":
-			addCategory("super-saiyan-3");
-			break;
-		case "power-beyond-super-saiyan":
-			addCategory("power-beyond-super-saiyan");
-			break;
-		case "fusion":
-			addCategory("fusion");
-			break;
-		case "potara":
-			addCategory("potara");
-			break;
-		case "fused-fighters":
-			addCategory("fused-fighters");
-			break;
-		case "giant-form":
-			addCategory("giant-form");
-			break;
-		case "transformation-boost":
-			addCategory("transformation-boost");
-			break;
-		case "power-absorption":
-			addCategory("power-absorption");
-			break;
-		case "kamehameha":
-			addCategory("kamehameha");
-			break;
-
-		case "realm-of-gods":
-			addCategory("realm-of-gods");
-			break;
-		case "full-power":
-			addCategory("full-power");
-			break;
-		case "giant-ape-power":
-			addCategory("giant-ape-power");
-			break;
-		case "majin-power":
-			addCategory("majin-power");
-			break;
-		case "powerful-comeback":
-			addCategory("powerful-comeback");
-			break;
-		case "miraculous-awakening":
-			addCategory("miraculous-awakening");
-			break;
-		case "corroded-body-and-mind":
-			addCategory("corroded-body-and-mind");
-			break;
-		case "rapid-growth":
-			addCategory("rapid-growth");
-			break;
-		case "mastered-evolution":
-			addCategory("mastered-evolution");
-			break;
-		case "time-limit":
-			addCategory("time-limit");
-			break;
-		case "final-trump-card":
-			addCategory("final-trump-card");
-			break;
-
-		case "worthy-rivals":
-			addCategory("worthy-rivals");
-			break;
-		case "sworn-enemies":
-			addCategory("sworn-enemies");
-			break;
-		case "joined-forces":
-			addCategory("joined-forces");
-			break;
-		case "bond-of-parent-and-child":
-			addCategory("bond-of-parent-and-child");
-			break;
-		case "siblings-bond":
-			addCategory("siblings-bond");
-			break;
-		case "bond-of-friendship":
-			addCategory("bond-of-friendship");
-			break;
-		case "bond-of-master-and-disciple":
-			addCategory("bond-of-master-and-disciple");
-			break;
-
-		case "ginyu-force":
-			addCategory("ginyu-force");
-			break;
-		case "team-bardock":
-			addCategory("team-bardock");
-			break;
-		case "universe-6":
-			addCategory("universe-6");
-			break;
-		case "representatives-of-universe-7":
-			addCategory("representatives-of-universe-7");
-			break;
-		case "universe-11":
-			addCategory("universe-11");
-			break;
-		case "gt-heroes":
-			addCategory("gt-heroes");
-			break;
-		case "gt-bosses":
-			addCategory("gt-bosses");
-			break;
-		case "super-heroes":
-			addCategory("super-heroes");
-			break;
-		case "movie-heroes":
-			addCategory("movie-heroes");
-			break;
-		case "movie-bosses":
-			addCategory("movie-bosses");
-			break;
-		case "turtle-school":
-			addCategory("turtle-school");
-			break;
-		case "world-tournament":
-			addCategory("world-tournament");
-			break;
-
-		case "low-class-warrior":
-			addCategory("low-class-warrior");
-			break;
-		case "earth-bred-fighters":
-			addCategory("earth-bred-fighters");
-			break;
-		case "gifted-warriors":
-			addCategory("gifted-warriors");
-			break;
-		case "otherworld-warriors":
-			addCategory("otherworld-warriors");
-			break;
-		case "resurrected-warriors":
-			addCategory("resurrected-warriors");
-			break;
-		case "space-traveling-warriors":
-			addCategory("space-traveling-warriors");
-			break;
-		case "time-travelers":
-			addCategory("time-travelers");
-			break;
-		case "dragon-ball-seekers":
-			addCategory("dragon-ball-seekers");
-			break;
-		case "storied-figures":
-			addCategory("storied-figures");
-			break;
-		case "legendary-existence":
-			addCategory("legendary-existence");
-			break;
-		case "saviors":
-			addCategory("saviors");
-			break;
-		case "defenders-of-justice":
-			addCategory("defenders-of-justice");
-			break;
-
-		case "revenge":
-			addCategory("revenge");
-			break;
-		case "target-goku":
-			addCategory("target-goku");
-			break;
-		case "terrifying-conquerors":
-			addCategory("terrifying-conquerors");
-			break;
-		case "inhumal-deeds":
-			addCategory("inhumal-deeds");
-			break;
-		case "planetary-destruction":
-			addCategory("planetary-destruction");
-			break;
-		case "exploding-rage":
-			addCategory("exploding-rage");
-			break;
-		case "connected-hope":
-			addCategory("connected-hope");
-			break;
-		case "entrusted-will":
-			addCategory("entrusted-will");
-			break;
-		case "all-out-struggle":
-			addCategory("all-out-struggle");
-			break;
-		case "battle-of-wits":
-			addCategory("battle-of-wits");
-			break;
-		case "accelerated-battle":
-			addCategory("accelerated-battle");
-			break;
-		case "battle-of-fate":
-			addCategory("battle-of-fate");
-			break;
-		case "heavenly-events":
-			addCategory("heavenly-events");
-			break;
-		case "special-pose":
-			addCategory("special-pose");
-			break;
-		case "worldwide-chaos":
-			addCategory("worldwide-chaos");
-			break;
-
-		case "crossover":
-			addCategory("crossover");
-			break;
-		case "dragon-ball-heroes":
-			addCategory("dragon-ball-heroes");
-			break;
+	if (categories[category]) {
+		addCategory(category);
 	}
 }
 
@@ -333,6 +159,7 @@ function removeAllCategory() {
 	const topHalfCategoryRoze = document.getElementsByClassName("top-half-category-roze");
 	const topHalfCategoryDarkGreen = document.getElementsByClassName("top-half-category-dark-green");
 	const topHalfCategoryDarkBlue = document.getElementsByClassName("top-half-category-dark-blue");
+	
 	const filterCategory = ["db-saga",
 		"saiyan-saga",
 		"planet-namek-saga",
@@ -566,5 +393,258 @@ function closeCategories() {
 	applyFiltersText.style.left = "-10px";
 	ok.style.left = "-10px";
 	removeAll.style.left = "-10px";
+	closeCategoriesSelectBtn();
+}
 
+function closeCategoriesSelectBtn() {
+	const filterCategories = ["db-saga",
+		"saiyan-saga",
+		"planet-namek-saga",
+		"androids-cell-saga",
+		"majin-buu-saga",
+		"future-saga",
+		"universe-survival-saga",
+		"shadow-dragon-saga",
+
+		"pure-saiyans",
+		"hybrid-saiyans",
+		"earthlings",
+		"namekians",
+		"androids",
+		"artificial-life-forms",
+		"gokus-family",
+		"vegetas-family",
+		"wicked-bloodline",
+		"youth",
+		"peppy-gals",
+
+		"super-saiyans",
+		"super-saiyan-2",
+		"super-saiyan-3",
+		"power-beyond-super-saiyan",
+		"fusion",
+		"potara",
+		"fused-fighters",
+		"giant-form",
+		"transformation-boost",
+		"power-absorption",
+		"kamehameha",
+
+		"realm-of-gods",
+		"full-power",
+		"giant-ape-power",
+		"majin-power",
+		"powerful-comeback",
+		"miraculous-awakening",
+		"corroded-body-and-mind",
+		"rapid-growth",
+		"mastered-evolution",
+		"time-limit",
+		"final-trump-card",
+
+		"worthy-rivals",
+		"sworn-enemies",
+		"joined-forces",
+		"bond-of-parent-and-child",
+		"siblings-bond",
+		"bond-of-friendship",
+		"bond-of-master-and-disciple",
+
+		"ginyu-force",
+		"team-bardock",
+		"universe-6",
+		"representatives-of-universe-7",
+		"universe-11",
+		"gt-heroes",
+		"gt-bosses",
+		"super-heroes",
+		"movie-heroes",
+		"movie-bosses",
+		"turtle-school",
+		"world-tournament",
+
+		"low-class-warrior",
+		"earth-bred-fighters",
+		"gifted-warriors",
+		"otherworld-warriors",
+		"resurrected-warriors",
+		"space-traveling-warriors",
+		"time-travelers",
+		"dragon-ball-seekers",
+		"storied-figures",
+		"legendary-existence",
+		"saviors",
+		"defenders-of-justice",
+
+		"revenge",
+		"target-goku",
+		"terrifying-conquerors",
+		"inhumal-deeds",
+		"planetary-destruction",
+		"exploding-rage",
+		"connected-hope",
+		"entrusted-will",
+		"all-out-struggle",
+		"battle-of-wits",
+		"accelerated-battle",
+		"battle-of-fate",
+		"heavenly-events",
+		"special-pose",
+		"worldwide-chaos",
+
+		"crossover",
+		"dragon-ball-heroes"],
+		filterCategoriesNames = ["DB Saga",
+			"Saiyan Saga",
+			"Planet Namek Saga",
+			"Androids/Cell Saga",
+			"Majin Buu Saga",
+			"Future Saga",
+			"Universe Survival Saga",
+			"Shadow Dragon Saga",
+
+			"Pure Saiyans",
+			"Hybrid Saiyans",
+			"Earthlings",
+			"Namekians",
+			"Androids",
+			"Artificial Life Forms",
+			"Goku's Family",
+			"Vegeta's Family",
+			"Wicked Bloodline",
+			"Youth",
+			"Peppy Gals",
+
+			"Super Saiyans",
+			"Super Saiyan 2",
+			"Super Saiyan 3",
+			"Power Beyond Super Saiyan",
+			"Fusion",
+			"Potara",
+			"Fused Fighters",
+			"Giant Form",
+			"Transformation Boost",
+			"Power Absorption",
+			"Kamehameha",
+
+			"Realm of Gods",
+			"Full Power",
+			"Giant Ape Power",
+			"Majin Power",
+			"Powerful Comeback",
+			"Miraculous Awakening",
+			"Corroded Body And Mind",
+			"Rapid Growth",
+			"Mastered Evolution",
+			"Time Limit",
+			"Final Trump Card",
+
+			"Worthy Rivals",
+			"Sworn Enemies",
+			"Joined Forces",
+			"Bond of Parent and Child",
+			"Siblings' Bond",
+			"Bond of Friendship",
+			"Bond of Master and Disciple",
+
+			"Ginyu Force",
+			"Team Bardock",
+			"Universe 6",
+			"Representatives of Universe 7",
+			"Universe 11",
+			"GT Heroes",
+			"GT Bosses",
+			"Super Heroes",
+			"Movie Heroes",
+			"Movie Bosses",
+			"Turtle School",
+			"World Tournament",
+
+			"Low Class Warrior",
+			"Earth-Bred Fighters",
+			"Gifted Warriors",
+			"Otherworld Warriors",
+			"Resurrected Warriors",
+			"Space Traveling Warriors",
+			"Time Travelers",
+			"Dragon Ball Seekers",
+			"Storied Figures",
+			"Legendary Existence",
+			"Saviors",
+			"Defenders of Justice",
+
+			"Revenge",
+			"Target: Goku",
+			"Terrifying Conquerors",
+			"Inhumal Deeds",
+			"Planetary Destruction",
+			"Exploding Rage",
+			"Connected Hope",
+			"Entrusted Will",
+			"All-Out Struggle",
+			"Battle of Wits",
+			"Accelerated Battle",
+			"Battle of Fate",
+			"Heavenly Events",
+			"Special Pose",
+			"Worldwide Chaos",
+
+			"Crossover",
+			"Dragon Ball Heroes"];
+	let filterCategoryUsed = [],filterCategoryUsedPos = 0;
+	//filterCategory
+	for (let i = 0; i < filterCategories.length; i++) {
+		if (document.getElementById(filterCategories[i]).classList.contains("checkedCategoryBtn")) {
+			filterCategoryUsed[i] = filterCategoriesNames[i];
+		}
+	}
+	for (let i = 0; i < filterCategories.length; i++) {
+		if(filterCategoryUsed[i] != undefined){
+			filterCategoryUsedPos = i;
+		}
+	}
+	filterCategoryUsed = cleanArray(filterCategoryUsed, undefined);
+
+	let filterCategoryContainerTextFirst = document.getElementsByClassName("filter-category-container-text-first");
+	const categoriesSelectId = document.getElementById("categories-select-id");
+	categoriesSelectId.style.fontSize = "medium";
+	if (filterCategoryUsed.length > 1) {
+		setButtonStyles(categoriesSelectId, "#57C75B", "#199411", 'linear-gradient(rgb(255, 255, 255), rgb(219, 206, 189))');
+		filterCategoryContainerTextFirst.item(0).innerHTML = "Selected: " + filterCategoryUsed.length;
+	}
+	if (filterCategoryUsed.length == 0) {
+		setButtonStyles(categoriesSelectId, "#6B6B67", "#555555", 'linear-gradient(180deg, #B6B6B6, #948D87)');
+		filterCategoryContainerTextFirst.item(0).innerHTML = "Select Category";
+	}
+	if (filterCategoryUsed.length == 1) {
+		if(filterCategoryUsedPos >= 0 && filterCategoryUsedPos <= 7){
+			setButtonStyles(categoriesSelectId, "#85671C", "#7F4503", 'linear-gradient(180deg, #B6B6B6, #948D87)');
+		}
+		if(filterCategoryUsedPos >= 8 && filterCategoryUsedPos <= 18){
+			setButtonStyles(categoriesSelectId, "#51741F", "#2F5510", 'linear-gradient(180deg, #B6B6B6, #948D87)');
+		}
+		if(filterCategoryUsedPos >= 19 && filterCategoryUsedPos <= 29){
+			setButtonStyles(categoriesSelectId, "#868131", "#7E6C06", 'linear-gradient(180deg, #B6B6B6, #948D87)');
+		}
+		if(filterCategoryUsedPos >= 30 && filterCategoryUsedPos <= 40){
+			setButtonStyles(categoriesSelectId, "#136B73", "#105B59", 'linear-gradient(180deg, #B6B6B6, #948D87)');
+		}
+		if(filterCategoryUsedPos >= 41 && filterCategoryUsedPos <= 47){
+			setButtonStyles(categoriesSelectId, "#0F6089", "#053C7C", 'linear-gradient(180deg, #B6B6B6, #948D87)');
+		}
+		if(filterCategoryUsedPos >= 48 && filterCategoryUsedPos <= 59){
+			setButtonStyles(categoriesSelectId, "#6C5087", "#513474", 'linear-gradient(180deg, #B6B6B6, #948D87)');
+		}
+		if(filterCategoryUsedPos >= 60 && filterCategoryUsedPos <= 71){
+			setButtonStyles(categoriesSelectId, "#83445A", "#742133", 'linear-gradient(180deg, #B6B6B6, #948D87)');
+		}
+		if(filterCategoryUsedPos >= 72 && filterCategoryUsedPos <= 86){
+			setButtonStyles(categoriesSelectId, "#105E4B", "#073F2B", 'linear-gradient(180deg, #B6B6B6, #948D87)');
+		}
+		if(filterCategoryUsedPos >= 87 && filterCategoryUsedPos <= 88){
+			setButtonStyles(categoriesSelectId, "#29355B", "#0A093C", 'linear-gradient(180deg, #B6B6B6, #948D87)');
+		}
+		filterCategoryContainerTextFirst.item(0).innerHTML = filterCategoryUsed[0];
+		categoriesSelectId.style.fontSize = "small";
+	}
 }
