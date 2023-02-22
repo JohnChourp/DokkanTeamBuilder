@@ -1,5 +1,5 @@
 function addChar(charsPerPageNumItem) {
-	const dataCharName = 'data-char-name'
+	const dataCharName = 'data-char-name';
 	const dataCharType = 'data-char-type';
 	const dataCharRarity = 'data-char-rarity';
 	const dataCharClass = 'data-char-class';
@@ -42,7 +42,7 @@ function addChar(charsPerPageNumItem) {
 		const char_thumb_img = document.createElement("img");
 		char_thumb_img.classList.add("char_thumb");
 		char_thumb_img.loading = "lazy";
-		char_thumb_img.src = dataCharIdItems[i].getAttribute(dataCharId);
+		char_thumb_img.setAttribute("src", dataCharIdItems[i].getAttribute(dataCharId));
 		char_thumb_img.setAttribute("draggable", "false");
 		char_thumb_img.alt = "char_thumb";
 		charDiv.appendChild(char_thumb_img);
@@ -85,7 +85,7 @@ function addChar(charsPerPageNumItem) {
 		//char_display_text
 		const char_display_text_div = document.createElement("div");
 		char_display_text_div.classList.add("char_display_text");
-		char_display_text_div.innerHTML = dataCharNameItems[i].getAttribute(dataCharName);
+		char_display_text_div.appendChild(document.createTextNode(dataCharNameItems[i].getAttribute(dataCharName)));
 		char_display_text_div.setAttribute("draggable", "false");
 		char_display_text_div.alt = "char_display_text";
 		char_display_div.appendChild(char_display_text_div);

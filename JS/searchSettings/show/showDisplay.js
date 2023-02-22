@@ -60,10 +60,10 @@ function addDropdownClass(filterDisplay) {
 
 	for (let i = 0; i < char_display_text.length; i++) {
 		listLinks[i] = dataCharLinksItems[i].getAttribute(dataCharLinks).split(",");
-		listLinksFormattedString[i] = listLinks[i].join("<br/>");
+		listLinksFormattedString[i] = listLinks[i].join("\n");
 
 		listSuperAtkType[i] = dataCharSuperAtkTypeItems[i].getAttribute(dataCharSuperAtkType).split(",");
-		listSuperAtkTypeFormattedString[i] = listSuperAtkType[i].join("<br/>");
+		listSuperAtkTypeFormattedString[i] = listSuperAtkType[i].join("\n");
 
 		if (dataCharReleaseItems[i].getAttribute(dataCharRelease).length == 25) {
 			a = dataCharReleaseItems[i].getAttribute(dataCharRelease);
@@ -75,11 +75,11 @@ function addDropdownClass(filterDisplay) {
 		} else {
 			listRelease[i] = dataCharReleaseItems[i].getAttribute(dataCharRelease).split(".");
 		}
-		listReleaseFormattedString[i] = listRelease[i].join("<br/>");
+		listReleaseFormattedString[i] = listRelease[i].join("\n");
 	}
 	for (let i = 0; i < dataCharCategoriesItems.length; i++) {
 		listCategories[i] = dataCharCategoriesItems[i].getAttribute(dataCharCategories).split(",");
-		listCategoriesFormattedString[i] = listCategories[i].join("<br/>");
+		listCategoriesFormattedString[i] = listCategories[i].join("\n");
 	}
 
 	if (filterDisplay >= 0 && filterDisplay <= 7) {
@@ -159,19 +159,19 @@ function addDropdownClass(filterDisplay) {
 	//Name
 	if (filterDisplay == 0) {
 		for (let i = 0; i < char_display_text.length; i++) {
-			char_display_text.item(i).innerHTML = dataCharNameItems[i].getAttribute(dataCharName);
+			char_display_text.item(i).textContent = dataCharNameItems[i].getAttribute(dataCharName);
 		}
 	}
 	//Title
 	if (filterDisplay == 1) {
 		for (let i = 0; i < char_display_text.length; i++) {
-			char_display_text.item(i).innerHTML = dataCharTitleItems[i].getAttribute(dataCharTitle);
+			char_display_text.item(i).textContent = dataCharTitleItems[i].getAttribute(dataCharTitle);
 		}
 	}
 	//Char ID
 	if (filterDisplay == 2) {
 		for (let i = 0; i < char_display_text.length; i++) {
-			char_display_text.item(i).innerHTML = dataCharIdItems[i].getAttribute(dataCharId);
+			char_display_text.item(i).textContent = dataCharIdItems[i].getAttribute(dataCharId);
 		}
 	}
 	//HP
@@ -195,55 +195,55 @@ function addDropdownClass(filterDisplay) {
 	//Cost
 	if (filterDisplay == 6) {
 		for (let i = 0; i < char_display_text.length; i++) {
-			char_display_text.item(i).innerHTML = dataCharCostItems[i].getAttribute(dataCharCost);
+			char_display_text.item(i).textContent = dataCharCostItems[i].getAttribute(dataCharCost);
 		}
 	}
 	//Max Level
 	if (filterDisplay == 7) {
 		for (let i = 0; i < char_display_text.length; i++) {
-			char_display_text.item(i).innerHTML = dataCharMaxLevelItems[i].getAttribute(dataCharMaxLevel);
+			char_display_text.item(i).textContent = dataCharMaxLevelItems[i].getAttribute(dataCharMaxLevel);
 		}
 	}
 	//Release Date
 	if (filterDisplay == 8) {
 		for (let i = 0; i < char_display_text.length; i++) {
-			char_display_text.item(i).innerHTML = listReleaseFormattedString[i];
+			char_display_text.item(i).textContent = listReleaseFormattedString[i];
 		}
 	}
 	//Recruit
 	if (filterDisplay == 9) {
 		for (let i = 0; i < char_display_text.length; i++) {
-			char_display_text.item(i).innerHTML = dataCharRecruitItems[i].getAttribute(dataCharRecruit);
+			char_display_text.item(i).textContent = dataCharRecruitItems[i].getAttribute(dataCharRecruit);
 		}
 	}
 	//Awaken
 	if (filterDisplay == 10) {
 		for (let i = 0; i < char_display_text.length; i++) {
-			char_display_text.item(i).innerHTML = dataCharAwakenItems[i].getAttribute(dataCharAwaken);
+			char_display_text.item(i).textContent = dataCharAwakenItems[i].getAttribute(dataCharAwaken);
 		}
 	}
 	//Super ATK Level
 	if (filterDisplay == 11) {
 		for (let i = 0; i < char_display_text.length; i++) {
-			char_display_text.item(i).innerHTML = dataCharSuperAtkLevelItems[i].getAttribute(dataCharSuperAtkLevel);
+			char_display_text.item(i).textContent = dataCharSuperAtkLevelItems[i].getAttribute(dataCharSuperAtkLevel);
 		}
 	}
 	//Super ATK Type
 	if (filterDisplay == 12) {
 		for (let i = 0; i < char_display_text.length; i++) {
-			char_display_text.item(i).innerHTML = listSuperAtkTypeFormattedString[i];
+			char_display_text.item(i).textContent = listSuperAtkTypeFormattedString[i];
 		}
 	}
 	//Links
 	if (filterDisplay == 13) {
 		for (let i = 0; i < char_display_text.length; i++) {
-			char_display_text.item(i).innerHTML = listLinksFormattedString[i];
+			char_display_text.item(i).textContent = listLinksFormattedString[i];
 		}
 	}
 	//Categories
 	if (filterDisplay == 14) {
 		for (let i = 0; i < char_display_text.length; i++) {
-			char_display_text.item(i).innerHTML = listCategoriesFormattedString[i];
+			char_display_text.item(i).textContent  = listCategoriesFormattedString[i];
 		}
 	}
 }
