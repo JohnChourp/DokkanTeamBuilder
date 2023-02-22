@@ -74,6 +74,9 @@ function addChar(charsPerPageNumItem) {
 			charDiv.appendChild(char_eza_img);
 		}
 
+		const charItemText = document.createTextNode(charItem.textContent);
+  		charItem.textContent = '';
+  		charItem.appendChild(charItemText);
 		charItem.appendChild(charDiv);
 
 		//char_display
