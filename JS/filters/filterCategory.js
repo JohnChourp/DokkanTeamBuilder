@@ -642,33 +642,34 @@ function closeCategoriesSelectBtn() {
 		setButtonStyles(categoriesSelectId, "#6B6B67", "#555555", 'linear-gradient(180deg, #B6B6B6, #948D87)');
 		filterCategoryContainerTextFirst.item(0).innerHTML = "Select Category";
 	}
+
 	if (filterCategoryUsed.length == 1) {
 		if(filterCategoryUsedPos >= 0 && filterCategoryUsedPos <= 7){
-			setButtonStyles(categoriesSelectId, "#85671C", "#7F4503", 'linear-gradient(180deg, #B6B6B6, #948D87)');
+			setButtonStyles(categoriesSelectId, "#FFB721", "#FF7500", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
 		}
 		if(filterCategoryUsedPos >= 8 && filterCategoryUsedPos <= 18){
-			setButtonStyles(categoriesSelectId, "#51741F", "#2F5510", 'linear-gradient(180deg, #B6B6B6, #948D87)');
+			setButtonStyles(categoriesSelectId, "#9CF434", "#61C81C", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
 		}
 		if(filterCategoryUsedPos >= 19 && filterCategoryUsedPos <= 29){
-			setButtonStyles(categoriesSelectId, "#868131", "#7E6C06", 'linear-gradient(180deg, #B6B6B6, #948D87)');
+			setButtonStyles(categoriesSelectId, "#F7EE3E", "#F2CC00", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
 		}
 		if(filterCategoryUsedPos >= 30 && filterCategoryUsedPos <= 40){
-			setButtonStyles(categoriesSelectId, "#136B73", "#105B59", 'linear-gradient(180deg, #B6B6B6, #948D87)');
+			setButtonStyles(categoriesSelectId, "#00DFDE", "#00B0AD", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
 		}
 		if(filterCategoryUsedPos >= 41 && filterCategoryUsedPos <= 47){
-			setButtonStyles(categoriesSelectId, "#0F6089", "#053C7C", 'linear-gradient(180deg, #B6B6B6, #948D87)');
+			setButtonStyles(categoriesSelectId, "#00AAFF", "#0055EF", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
 		}
 		if(filterCategoryUsedPos >= 48 && filterCategoryUsedPos <= 59){
-			setButtonStyles(categoriesSelectId, "#6C5087", "#513474", 'linear-gradient(180deg, #B6B6B6, #948D87)');
+			setButtonStyles(categoriesSelectId, "#C46CF3", "#823ADF", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
 		}
 		if(filterCategoryUsedPos >= 60 && filterCategoryUsedPos <= 71){
-			setButtonStyles(categoriesSelectId, "#83445A", "#742133", 'linear-gradient(180deg, #B6B6B6, #948D87)');
+			setButtonStyles(categoriesSelectId, "#F65589", "#E60543", "#742133", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
 		}
 		if(filterCategoryUsedPos >= 72 && filterCategoryUsedPos <= 86){
-			setButtonStyles(categoriesSelectId, "#105E4B", "#073F2B", 'linear-gradient(180deg, #B6B6B6, #948D87)');
+			setButtonStyles(categoriesSelectId, "#105E4B", "#073F2B", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
 		}
 		if(filterCategoryUsedPos >= 87 && filterCategoryUsedPos <= 88){
-			setButtonStyles(categoriesSelectId, "#29355B", "#0A093C", 'linear-gradient(180deg, #B6B6B6, #948D87)');
+			setButtonStyles(categoriesSelectId, "#00BB8D", "#00885B", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
 		}
 		filterCategoryContainerTextFirst.item(0).innerHTML = filterCategoryUsed[0];
 		categoriesSelectId.style.fontSize = "small";

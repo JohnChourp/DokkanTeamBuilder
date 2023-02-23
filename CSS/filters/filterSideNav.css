@@ -26,12 +26,14 @@
     position: absolute;
     font-size: 36px;
     right: 10px;
+    cursor: pointer;
 }
 
 #close-right-sidenav-btn-id {
     position: absolute;
     font-size: 36px;
     left: 10px;
+    cursor: pointer;
 }
 
 #left-sidenav-id a,
