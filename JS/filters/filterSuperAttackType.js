@@ -1,12 +1,14 @@
 function filterSuperAttackType(id) {
     const btn = document.getElementById(id);
+    const btnImg = document.getElementById("filter_super_attack_type_" + id + "-image-id");
     if (btn.classList.contains("checkedSuperAttackTypeBtn")) {
         btn.classList.remove("checkedSuperAttackTypeBtn");
-        btn.style.backgroundColor = "#ddd";
+        btnImg.src = "Images/char_filter/char_filter_super_attack_type/filter_super_attack_type_" + id + ".png";
     } else {
         btn.classList.add("checkedSuperAttackTypeBtn");
-        btn.style.backgroundColor = "#33ccff";
+        btnImg.src = "Images/char_filter/char_filter_super_attack_type/filter_super_attack_type_" + id + "_checked.png";
     }
+
 }
 
 function filterSuperAttackTypeKiBlast() {
@@ -31,9 +33,11 @@ function removeAllSuperAttackType() {
 
     elements.forEach(el => {
         el.classList.remove("checkedSuperAttackTypeBtn");
-        el.style.backgroundColor = "#ddd";
         el.style.cursor = "pointer";
-        el.style.color = "black";
         el.removeAttribute("disabled");
     });
+    document.getElementById(filterSuperAttackTypeId[0]).src = "Images/char_filter/char_filter_super_attack_type/filter_super_attack_type_" + filterSuperAttackTypeId[0] + ".png";
+    document.getElementById(filterSuperAttackTypeId[1]).src = "Images/char_filter/char_filter_super_attack_type/filter_super_attack_type_" + filterSuperAttackTypeId[1] + ".png";
+    document.getElementById(filterSuperAttackTypeId[2]).src = "Images/char_filter/char_filter_super_attack_type/filter_super_attack_type_" + filterSuperAttackTypeId[2] + ".png";
+    document.getElementById(filterSuperAttackTypeId[3]).src = "Images/char_filter/char_filter_super_attack_type/filter_super_attack_type_" + filterSuperAttackTypeId[3] + ".png";
 }
