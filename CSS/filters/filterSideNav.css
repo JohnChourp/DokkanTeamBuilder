@@ -26,12 +26,14 @@
     position: absolute;
     font-size: 36px;
     right: 10px;
+    cursor: pointer;
 }
 
 #close-right-sidenav-btn-id {
     position: absolute;
     font-size: 36px;
     left: 10px;
+    cursor: pointer;
 }
 
 #left-sidenav-id a,
@@ -117,11 +119,19 @@
     text-align: center;
 }
 
+.filter-options-text-big-class {
+    font-size: 26px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin-top:10px;
+}
+
 .filter-class {
     display: flex;
     justify-content: center;
     flex-direction: row;
 }
+
 
 #apply-filters-bg-id {
     z-index: 1;

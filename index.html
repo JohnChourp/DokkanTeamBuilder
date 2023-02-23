@@ -113,7 +113,7 @@
 	</div>
 	<!-- Warn User -->
 	<div id="left-sidenav-id">
-		<a href="javascript:void(0)" id="close-left-sidenav-btn-id" onclick="closeNav();">&times;</a>
+		<a id="close-left-sidenav-btn-id" onclick="closeNav();">&times;</a>
 		<p class="filter-options-text-class">Sort Direction</p>
 		<div class="filter-class">
 			<button onclick="toggleDirection('down');" id="filter-direction-down-id" class="filter-direction-class"
@@ -125,6 +125,8 @@
 				Ascending Order
 			</button>
 		</div>
+		<hr>
+		<p class="filter-options-text-big-class">Filter Select</p>
 		<p class="filter-options-text-class">Category</p>
 		<div class="filter-class">
 			<div onclick="openCategories();" id="categories-select-id" class="filter-category-container">
@@ -1286,7 +1288,6 @@
 				<div class="filter-type-container-text">PHY</div>
 			</div>
 		</div>
-		<p class="filter-options-text-class">Class</p>
 		<div class="filter-class">
 			<div onclick="addClass('super');" id="super" class="filter-class-container">
 				<div class="top-half-bg-color-class"></div>
@@ -1297,7 +1298,7 @@
 				<div class="bottom-line-class"></div>
 				<div class="bottom-left-line-rotated-class"></div>
 				<div class="bottom-right-line-rotated-class"></div>
-				<div class="filter-class-container-text">SUPER</div>
+				<div class="filter-class-container-text">Super Class</div>
 			</div>
 			<div onclick="addClass('extreme');" id="extreme" class="filter-class-container">
 				<div class="top-half-bg-color-class"></div>
@@ -1308,7 +1309,7 @@
 				<div class="bottom-line-class"></div>
 				<div class="bottom-left-line-rotated-class"></div>
 				<div class="bottom-right-line-rotated-class"></div>
-				<div class="filter-class-container-text">EXTREME</div>
+				<div class="filter-class-container-text">Extreme Class</div>
 			</div>
 		</div>
 		<p class="filter-options-text-class">Awakening</p>
@@ -1329,18 +1330,22 @@
 		<div class="filter-class">
 			<button onclick="filterSuperAttackTypeKiBlast();" id="ki-blast" class="super-attack-type-class"
 				type="button">
-				Ki Blast
+				<img id="filter_super_attack_type_ki-blast-image-id" src="Images/char_filter/char_filter_super_attack_type/filter_super_attack_type_ki-blast.png"
+						alt="filter_super_attack_type_ki_blast">
 			</button>
 			<button onclick="filterSuperAttackTypeUnarmed();" id="unarmed" class="super-attack-type-class"
 				type="button">
-				Unarmed
+				<img id="filter_super_attack_type_unarmed-image-id" src="Images/char_filter/char_filter_super_attack_type/filter_super_attack_type_unarmed.png"
+						alt="filter_super_attack_type_unarmed">
 			</button>
 			<button onclick="filterSuperAttackTypePhysical();" id="physical" class="super-attack-type-class"
 				type="button">
-				Physical
+				<img id="filter_super_attack_type_physical-image-id" src="Images/char_filter/char_filter_super_attack_type/filter_super_attack_type_physical.png"
+						alt="filter_super_attack_type_physical">
 			</button>
 			<button onclick="filterSuperAttackTypeOther();" id="other" class="super-attack-type-class" type="button">
-				Other
+				<img id="filter_super_attack_type_other-image-id" src="Images/char_filter/char_filter_super_attack_type/filter_super_attack_type_other.png"
+						alt="filter_super_attack_type_other">
 			</button>
 		</div>
 		<p class="filter-options-text-class">Eza</p>
@@ -1385,7 +1390,7 @@
 
 	<div id="right-sidenav-id">
 		<div id="right-sidenav-filters-id">
-			<a href="javascript:void(0)" id="close-right-sidenav-btn-id" onclick="closeNav();">&times;</a>
+			<a id="close-right-sidenav-btn-id" onclick="closeNav();">&times;</a>
 			<p class="filter-options-text-class">Comming Soon Info About Character</p>
 		</div>
 	</div>

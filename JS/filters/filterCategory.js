@@ -5,35 +5,61 @@ function addCategory(categoryFilter) {
 		element.classList.remove("checkedCategoryBtn");
 
 		if (element.querySelector(".top-half-category-orange")) {
-			setButtonStyles(element, "#85671C", "#7F4503", 'linear-gradient(180deg, #c0c0c0, #a19b95)');
+			setButtonStyles(element, "#85671C", "#7F4503", 'linear-gradient(180deg, #FFFFFF, #a19b95)');
 		}
 		if (element.querySelector(".top-half-category-green")) {
-			setButtonStyles(element, "#51741F", "#2F5510", 'linear-gradient(180deg, #c0c0c0, #a19b95)');
+			setButtonStyles(element, "#51741F", "#2F5510", 'linear-gradient(180deg, #FFFFFF, #a19b95)');
 		}
 		if (element.querySelector(".top-half-category-yellow")) {
-			setButtonStyles(element, "#868131", "#7E6C06", 'linear-gradient(180deg, #c0c0c0, #a19b95)');
+			setButtonStyles(element, "#868131", "#7E6C06", 'linear-gradient(180deg, #FFFFFF, #a19b95)');
 		}
 		if (element.querySelector(".top-half-category-cyan")) {
-			setButtonStyles(element, "#136B73", "#105B59", 'linear-gradient(180deg, #c0c0c0, #a19b95)');
+			setButtonStyles(element, "#136B73", "#105B59", 'linear-gradient(180deg, #FFFFFF, #a19b95)');
 		}
 		if (element.querySelector(".top-half-category-blue")) {
-			setButtonStyles(element, "#0F6089", "#053C7C", 'linear-gradient(180deg, #c0c0c0, #a19b95)');
+			setButtonStyles(element, "#0F6089", "#053C7C", 'linear-gradient(180deg, #FFFFFF, #a19b95)');
 		}
 		if (element.querySelector(".top-half-category-purple")) {
-			setButtonStyles(element, "#6C5087", "#513474", 'linear-gradient(180deg, #c0c0c0, #a19b95)');
+			setButtonStyles(element, "#6C5087", "#513474", 'linear-gradient(180deg, #FFFFFF, #a19b95)');
 		}
 		if (element.querySelector(".top-half-category-roze")) {
-			setButtonStyles(element, "#83445A", "#742133", 'linear-gradient(180deg, #c0c0c0, #a19b95)');
+			setButtonStyles(element, "#83445A", "#742133", 'linear-gradient(180deg, #FFFFFF, #a19b95)');
 		}
 		if (element.querySelector(".top-half-category-dark-green")) {
-			setButtonStyles(element, "#105E4B", "#073F2B", 'linear-gradient(180deg, #c0c0c0, #a19b95)');
+			setButtonStyles(element, "#105E4B", "#073F2B", 'linear-gradient(180deg, #FFFFFF, #a19b95)');
 		}
 		if (element.querySelector(".top-half-category-dark-blue")) {
-			setButtonStyles(element, "#29355B", "#0A093C", 'linear-gradient(180deg, #c0c0c0, #a19b95)');
+			setButtonStyles(element, "#29355B", "#0A093C", 'linear-gradient(180deg, #FFFFFF, #a19b95)');
 		}
 	} else {
 		element.classList.add("checkedCategoryBtn");
-		setButtonStyles(element, "#2DA9DD", "#1B79C3", 'linear-gradient(180deg, #FFFFFF,#DBCEBD)');
+		if (element.querySelector(".top-half-category-orange")) {
+			setButtonStyles(element, "#FFB721", "#FF7500", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
+		}
+		if (element.querySelector(".top-half-category-green")) {
+			setButtonStyles(element, "#9CF434", "#61C81C", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
+		}
+		if (element.querySelector(".top-half-category-yellow")) {
+			setButtonStyles(element, "#F7EE3E", "#F2CC00", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
+		}
+		if (element.querySelector(".top-half-category-cyan")) {
+			setButtonStyles(element, "#00DFDE", "#00B0AD", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
+		}
+		if (element.querySelector(".top-half-category-blue")) {
+			setButtonStyles(element, "#00AAFF", "#0055EF", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
+		}
+		if (element.querySelector(".top-half-category-purple")) {
+			setButtonStyles(element, "#C46CF3", "#823ADF", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
+		}
+		if (element.querySelector(".top-half-category-roze")) {
+			setButtonStyles(element, "#F65589", "#E60543", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
+		}
+		if (element.querySelector(".top-half-category-dark-green")) {
+			setButtonStyles(element, "#00BB8D", "#00885B", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
+		}
+		if (element.querySelector(".top-half-category-dark-blue")) {
+			setButtonStyles(element, "#4250AC", "#212C72", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
+		}
 	}
 }
 
@@ -262,55 +288,55 @@ function removeAllCategory() {
 		document.getElementById(filterCategory[i]).classList.remove("checkedCategoryBtn");
 		document.getElementById(filterCategory[i]).children.item(0).style.backgroundColor = "#85671C";
 		document.getElementById(filterCategory[i]).children.item(1).style.backgroundColor = "#7F4503";
-		document.getElementById(filterCategory[i]).children.item(8).style.backgroundImage = 'linear-gradient(180deg, #c0c0c0, #a19b95)';
+		document.getElementById(filterCategory[i]).children.item(8).style.backgroundImage = 'linear-gradient(180deg, #FFFFFF, #a19b95)';
 	}
 	for (let i = topHalfCategoryOrange.length; i < topHalfCategoryOrange.length + topHalfCategoryGreen.length; i++) {
 		document.getElementById(filterCategory[i]).classList.remove("checkedCategoryBtn");
 		document.getElementById(filterCategory[i]).children.item(0).style.backgroundColor = "#51741F";
 		document.getElementById(filterCategory[i]).children.item(1).style.backgroundColor = "#2F5510";
-		document.getElementById(filterCategory[i]).children.item(8).style.backgroundImage = 'linear-gradient(180deg, #c0c0c0, #a19b95)';
+		document.getElementById(filterCategory[i]).children.item(8).style.backgroundImage = 'linear-gradient(180deg, #FFFFFF, #a19b95)';
 	}
 	for (let i = topHalfCategoryOrange.length + topHalfCategoryGreen.length; i < topHalfCategoryOrange.length + topHalfCategoryGreen.length + topHalfCategoryYellow.length; i++) {
 		document.getElementById(filterCategory[i]).classList.remove("checkedCategoryBtn");
 		document.getElementById(filterCategory[i]).children.item(0).style.backgroundColor = "#868131";
 		document.getElementById(filterCategory[i]).children.item(1).style.backgroundColor = "#7E6C06";
-		document.getElementById(filterCategory[i]).children.item(8).style.backgroundImage = 'linear-gradient(180deg, #c0c0c0, #a19b95)';
+		document.getElementById(filterCategory[i]).children.item(8).style.backgroundImage = 'linear-gradient(180deg, #FFFFFF, #a19b95)';
 	}
 	for (let i = topHalfCategoryOrange.length + topHalfCategoryGreen.length + topHalfCategoryYellow.length; i < topHalfCategoryOrange.length + topHalfCategoryGreen.length + topHalfCategoryYellow.length + topHalfCategoryCyan.length; i++) {
 		document.getElementById(filterCategory[i]).classList.remove("checkedCategoryBtn");
 		document.getElementById(filterCategory[i]).children.item(0).style.backgroundColor = "#136B73";
 		document.getElementById(filterCategory[i]).children.item(1).style.backgroundColor = "#105B59";
-		document.getElementById(filterCategory[i]).children.item(8).style.backgroundImage = 'linear-gradient(180deg, #c0c0c0, #a19b95)';
+		document.getElementById(filterCategory[i]).children.item(8).style.backgroundImage = 'linear-gradient(180deg, #FFFFFF, #a19b95)';
 	}
 	for (let i = topHalfCategoryOrange.length + topHalfCategoryGreen.length + topHalfCategoryYellow.length + topHalfCategoryCyan.length; i < topHalfCategoryOrange.length + topHalfCategoryGreen.length + topHalfCategoryYellow.length + topHalfCategoryCyan.length + topHalfCategoryBlue.length; i++) {
 		document.getElementById(filterCategory[i]).classList.remove("checkedCategoryBtn");
 		document.getElementById(filterCategory[i]).children.item(0).style.backgroundColor = "#0F6089";
 		document.getElementById(filterCategory[i]).children.item(1).style.backgroundColor = "#053C7C";
-		document.getElementById(filterCategory[i]).children.item(8).style.backgroundImage = 'linear-gradient(180deg, #c0c0c0, #a19b95)';
+		document.getElementById(filterCategory[i]).children.item(8).style.backgroundImage = 'linear-gradient(180deg, #FFFFFF, #a19b95)';
 	}
 	for (let i = topHalfCategoryOrange.length + topHalfCategoryGreen.length + topHalfCategoryYellow.length + topHalfCategoryCyan.length + topHalfCategoryBlue.length; i < topHalfCategoryOrange.length + topHalfCategoryGreen.length + topHalfCategoryYellow.length + topHalfCategoryCyan.length + topHalfCategoryBlue.length + topHalfCategoryPurple.length; i++) {
 		document.getElementById(filterCategory[i]).classList.remove("checkedCategoryBtn");
 		document.getElementById(filterCategory[i]).children.item(0).style.backgroundColor = "#6C5087";
 		document.getElementById(filterCategory[i]).children.item(1).style.backgroundColor = "#513474";
-		document.getElementById(filterCategory[i]).children.item(8).style.backgroundImage = 'linear-gradient(180deg, #c0c0c0, #a19b95)';
+		document.getElementById(filterCategory[i]).children.item(8).style.backgroundImage = 'linear-gradient(180deg, #FFFFFF, #a19b95)';
 	}
 	for (let i = topHalfCategoryOrange.length + topHalfCategoryGreen.length + topHalfCategoryYellow.length + topHalfCategoryCyan.length + topHalfCategoryBlue.length + topHalfCategoryPurple.length; i < topHalfCategoryOrange.length + topHalfCategoryGreen.length + topHalfCategoryYellow.length + topHalfCategoryCyan.length + topHalfCategoryBlue.length + topHalfCategoryPurple.length + topHalfCategoryRoze.length; i++) {
 		document.getElementById(filterCategory[i]).classList.remove("checkedCategoryBtn");
 		document.getElementById(filterCategory[i]).children.item(0).style.backgroundColor = "#83445A";
 		document.getElementById(filterCategory[i]).children.item(1).style.backgroundColor = "#742133";
-		document.getElementById(filterCategory[i]).children.item(8).style.backgroundImage = 'linear-gradient(180deg, #c0c0c0, #a19b95)';
+		document.getElementById(filterCategory[i]).children.item(8).style.backgroundImage = 'linear-gradient(180deg, #FFFFFF, #a19b95)';
 	}
 	for (let i = topHalfCategoryOrange.length + topHalfCategoryGreen.length + topHalfCategoryYellow.length + topHalfCategoryCyan.length + topHalfCategoryBlue.length + topHalfCategoryPurple.length + topHalfCategoryRoze.length; i < topHalfCategoryOrange.length + topHalfCategoryGreen.length + topHalfCategoryYellow.length + topHalfCategoryCyan.length + topHalfCategoryBlue.length + topHalfCategoryPurple.length + topHalfCategoryRoze.length + topHalfCategoryDarkGreen.length; i++) {
 		document.getElementById(filterCategory[i]).classList.remove("checkedCategoryBtn");
 		document.getElementById(filterCategory[i]).children.item(0).style.backgroundColor = "#105E4B";
 		document.getElementById(filterCategory[i]).children.item(1).style.backgroundColor = "#073F2B";
-		document.getElementById(filterCategory[i]).children.item(8).style.backgroundImage = 'linear-gradient(180deg, #c0c0c0, #a19b95)';
+		document.getElementById(filterCategory[i]).children.item(8).style.backgroundImage = 'linear-gradient(180deg, #FFFFFF, #a19b95)';
 	}
 	for (let i = topHalfCategoryOrange.length + topHalfCategoryGreen.length + topHalfCategoryYellow.length + topHalfCategoryCyan.length + topHalfCategoryBlue.length + topHalfCategoryPurple.length + topHalfCategoryRoze.length + topHalfCategoryDarkGreen.length; i < topHalfCategoryOrange.length + topHalfCategoryGreen.length + topHalfCategoryYellow.length + topHalfCategoryCyan.length + topHalfCategoryBlue.length + topHalfCategoryPurple.length + topHalfCategoryRoze.length + topHalfCategoryDarkGreen.length + topHalfCategoryDarkBlue.length; i++) {
 		document.getElementById(filterCategory[i]).classList.remove("checkedCategoryBtn");
 		document.getElementById(filterCategory[i]).children.item(0).style.backgroundColor = "#29355B";
 		document.getElementById(filterCategory[i]).children.item(1).style.backgroundColor = "#0A093C";
-		document.getElementById(filterCategory[i]).children.item(8).style.backgroundImage = 'linear-gradient(180deg, #c0c0c0, #a19b95)';
+		document.getElementById(filterCategory[i]).children.item(8).style.backgroundImage = 'linear-gradient(180deg, #FFFFFF, #a19b95)';
 	}
 }
 
@@ -616,33 +642,34 @@ function closeCategoriesSelectBtn() {
 		setButtonStyles(categoriesSelectId, "#6B6B67", "#555555", 'linear-gradient(180deg, #B6B6B6, #948D87)');
 		filterCategoryContainerTextFirst.item(0).innerHTML = "Select Category";
 	}
+
 	if (filterCategoryUsed.length == 1) {
 		if(filterCategoryUsedPos >= 0 && filterCategoryUsedPos <= 7){
-			setButtonStyles(categoriesSelectId, "#85671C", "#7F4503", 'linear-gradient(180deg, #B6B6B6, #948D87)');
+			setButtonStyles(categoriesSelectId, "#FFB721", "#FF7500", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
 		}
 		if(filterCategoryUsedPos >= 8 && filterCategoryUsedPos <= 18){
-			setButtonStyles(categoriesSelectId, "#51741F", "#2F5510", 'linear-gradient(180deg, #B6B6B6, #948D87)');
+			setButtonStyles(categoriesSelectId, "#9CF434", "#61C81C", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
 		}
 		if(filterCategoryUsedPos >= 19 && filterCategoryUsedPos <= 29){
-			setButtonStyles(categoriesSelectId, "#868131", "#7E6C06", 'linear-gradient(180deg, #B6B6B6, #948D87)');
+			setButtonStyles(categoriesSelectId, "#F7EE3E", "#F2CC00", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
 		}
 		if(filterCategoryUsedPos >= 30 && filterCategoryUsedPos <= 40){
-			setButtonStyles(categoriesSelectId, "#136B73", "#105B59", 'linear-gradient(180deg, #B6B6B6, #948D87)');
+			setButtonStyles(categoriesSelectId, "#00DFDE", "#00B0AD", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
 		}
 		if(filterCategoryUsedPos >= 41 && filterCategoryUsedPos <= 47){
-			setButtonStyles(categoriesSelectId, "#0F6089", "#053C7C", 'linear-gradient(180deg, #B6B6B6, #948D87)');
+			setButtonStyles(categoriesSelectId, "#00AAFF", "#0055EF", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
 		}
 		if(filterCategoryUsedPos >= 48 && filterCategoryUsedPos <= 59){
-			setButtonStyles(categoriesSelectId, "#6C5087", "#513474", 'linear-gradient(180deg, #B6B6B6, #948D87)');
+			setButtonStyles(categoriesSelectId, "#C46CF3", "#823ADF", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
 		}
 		if(filterCategoryUsedPos >= 60 && filterCategoryUsedPos <= 71){
-			setButtonStyles(categoriesSelectId, "#83445A", "#742133", 'linear-gradient(180deg, #B6B6B6, #948D87)');
+			setButtonStyles(categoriesSelectId, "#F65589", "#E60543", "#742133", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
 		}
 		if(filterCategoryUsedPos >= 72 && filterCategoryUsedPos <= 86){
-			setButtonStyles(categoriesSelectId, "#105E4B", "#073F2B", 'linear-gradient(180deg, #B6B6B6, #948D87)');
+			setButtonStyles(categoriesSelectId, "#105E4B", "#073F2B", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
 		}
 		if(filterCategoryUsedPos >= 87 && filterCategoryUsedPos <= 88){
-			setButtonStyles(categoriesSelectId, "#29355B", "#0A093C", 'linear-gradient(180deg, #B6B6B6, #948D87)');
+			setButtonStyles(categoriesSelectId, "#00BB8D", "#00885B", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
 		}
 		filterCategoryContainerTextFirst.item(0).innerHTML = filterCategoryUsed[0];
 		categoriesSelectId.style.fontSize = "small";

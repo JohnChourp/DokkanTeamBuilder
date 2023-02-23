@@ -1,6 +1,6 @@
 .filter-class-container {
 	position: relative;
-	width: 110px;
+	width: 150px;
 	height: 30px;
 	left: 10px;
 	top: -25px;
@@ -11,7 +11,7 @@
 	position: relative;
 	left: -1px;
 	top: 27px;
-	width: 87px;
+	width: 127px;
 	height: 12px;
 	background-color: #6B6B67;
 	-moz-user-select: none;
@@ -25,7 +25,7 @@
 	position: relative;
 	left: -1px;
 	top: 27px;
-	width: 87px;
+	width: 127px;
 	height: 11px;
 	background-color: #555555;
 	-moz-user-select: none;
@@ -52,7 +52,7 @@
 }
 
 .top-line-class {
-	width: 85px;
+	width: 125px;
 	background-color: #CED1D0;
 }
 
@@ -66,7 +66,7 @@
 
 .top-right-line-rotated-class {
 	top: -7px;
-	left: 81px;
+	left: 121px;
 	width: 10px;
 	background-color: #CED1D0;
 	transform: rotate(50deg);
@@ -74,7 +74,7 @@
 
 .bottom-line-class {
 	top: 11px;
-	width: 87px;
+	width: 127px;
 	background-color: #CED1D0;
 }
 
@@ -88,7 +88,7 @@
 
 .bottom-right-line-rotated-class {
 	top: -9px;
-	left: 75px;
+	left: 115px;
 	width: 24px;
 	background-color: #CED1D0;
 	transform: rotate(100deg);
@@ -113,4 +113,9 @@
 	-webkit-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+}
+
+#super,#extreme {
+    margin-top:15px;
+	margin-right:-5px;
 }
