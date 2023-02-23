@@ -1,1 +1,16 @@
-frame-ancestors 'self';block-all-mixed-content;script-src 'self' 'report-sample' 'unsafe-inline' 'unsafe-eval' https://*.doubleclick.net https://*.google.com https://*.googleadservices.com https://*.googlesyndication.com https://*.googletagservices.com https://googletagmanager.com https://tagmanager.google.com https://www.googletagmanager.com;style-src 'self' 'report-sample' 'unsafe-inline' *.google.com www.googletagmanager.com;object-src *.googlesyndication.com;child-src 'self' blob: *.googlesyndication.com *.google.com *.doubleclick.net www.googletagmanager.com;base-uri 'self';form-action 'self' *.google.com;worker-src 'self' blob: www.google.com;
+frame-ancestors 'self';
+block-all-mixed-content;
+default-src 'self';
+script-src 'self' 'report-sample' 'unsafe-inline' https://googletagmanager.com https://tagmanager.google.com https://www.googletagmanager.com;
+style-src 'self' 'report-sample' tagmanager.google.com www.googletagmanager.com;
+object-src 'none';frame-src 'self' www.googletagmanager.com;
+child-src 'self' www.googletagmanager.com;
+img-src 'self' data: www.googletagmanager.com;
+font-src 'self' data:;
+connect-src 'self' *.analytics.google.com www.googletagmanager.com;
+manifest-src 'self';
+base-uri 'self';
+form-action 'self';
+media-src 'self';
+prefetch-src 'self';
+worker-src 'self';
