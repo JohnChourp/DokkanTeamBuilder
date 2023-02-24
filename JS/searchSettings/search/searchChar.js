@@ -106,15 +106,12 @@ function filtersMultipleUsedWithSearchChar(dataChars, filtersEachLengthString, f
 	return charListAll[filtersEachLengthStringUsed.length - 1];
 }
 
-function searchChar(btnPressed) {
+function searchChar() {
 	const characterSearchId = document.getElementById("char-search-id");
 	characterSearchId.addEventListener("keypress", function (event) {
 		if (event.key === "Enter") {
 			event.preventDefault();
 			setCharList();
-			if (btnPressed == 2) {
-				addChar(localStorage.getItem("charsPerPageNumItem"));
-			}
 			const nameOrTitle = localStorage.getItem("nameOrTitle");
 			const characterSearchId = document.getElementById("char-search-id");
 			const char_container_id = document.getElementById("char-container-id");
