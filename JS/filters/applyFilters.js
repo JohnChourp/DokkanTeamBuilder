@@ -475,10 +475,10 @@ function applyFilters(btnPressed) {
 	//------------------charperpage------------------
 
 	if (btnPressed == 1) {
-		createFilterPagination(charListDefault, localStorage.getItem("charsPerPageNumItem"));
+		createFilterPagination(charListDefault);
 	}
 	if (btnPressed == 2) {
-		createFilterPagination2(charListDefault, localStorage.getItem("charsPerPageNumItem"));
+		createFilterPagination2(charListDefault);
 	}
 
 	let charactersPerInputPageId = document.getElementById("characters-per-input-page-id");

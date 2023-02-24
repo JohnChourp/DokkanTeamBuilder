@@ -1,4 +1,5 @@
 function saveCharList() {
+	//set localStorage
 	if (localStorage.getItem("nameOrTitle") == null) {
 		localStorage.setItem("nameOrTitle", 1);
 	} else {
