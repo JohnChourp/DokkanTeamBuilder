@@ -2,25 +2,17 @@ function createFilterPagination(charList) {
 	const charContainer = document.getElementById("char-container-id");
 	const paginationDiv = document.getElementById("pagination-id");
 	const char = document.getElementsByClassName("char");
-	const pagesLoaded = {
-		page1: false, page2: false, page3: false, page4: false, page5: false,
-		page6: false, page7: false, page8: false, page9: false, page10: false,
-		page11: false, page12: false, page13: false, page14: false, page15: false,
-		page16: false, page17: false, page18: false, page19: false, page20: false,
-		page21: false, page22: false, page23: false, page24: false, page25: false,
-		page26: false, page27: false, page28: false, page29: false, page30: false,
-		page31: false, page32: false, page33: false, page34: false, page35: false,
-		page36: false, page37: false, page38: false, page39: false, page40: false,
-		page41: false, page42: false, page43: false, page44: false, page45: false,
-		page46: false, page47: false, page48: false, page49: false, page50: false,
-		page51: false, page52: false, page53: false, page54: false, page55: false,
-		page56: false, page57: false, page58: false, page59: false, page60: false,
-		page61: false, page62: false, page63: false, page64: false
-	};
-	const charLength = charList.length;
+	
 	let charsPerPageNum = localStorage.getItem("charsPerPageNumItem");
+	const charLength = charList.length;
 	const pageSum = Math.ceil(charLength / charsPerPageNum);
-
+	const pagesLoaded = {};
+	for (let i = 1; i <= pageSum; i++) {
+		const pageKey = `page${i}`;
+		pagesLoaded[pageKey] = false;
+	}
+	
+	
 	const fragment = document.createDocumentFragment();
 	for (let i = charLength - 1; i >= 0; i--) {
 		fragment.appendChild(charList[i]);
