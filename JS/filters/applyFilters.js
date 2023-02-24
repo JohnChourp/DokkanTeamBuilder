@@ -363,7 +363,6 @@ function applyFilters() {
 			charContainerId.appendChild(temp_char[i]);
 		}
 	}
-
 	//select one char
 	for (let i = 1; i < searchOneCharDropdownValue.length; i++) {
 		if (searchOneCharDropdownValue.item(i).classList.contains("checkedSearchOneCharBtn")) {
@@ -435,7 +434,6 @@ function applyFilters() {
 	filterRecruitUsed = cleanArray(filterRecruitUsed, undefined);
 
 	const filtersUsed = [filterCategoryUsed, filterRarityUsed, filterTypeUsed, filterClassUsed, filterAwakenUsed, filterSuperAttackTypeUsed, filterEzaUsed, filterRecruitUsed];
-
 	let sumFilterUsed = 0;
 	//check how many filter are used
 	for (let i = 0; i < filtersUsed.length; i++) {
@@ -450,7 +448,6 @@ function applyFilters() {
 		}
 	}
 	filtersEachLengthStringUsed = cleanArray(filtersEachLengthStringUsed, undefined);
-
 	let charListDefault = [];
 	if (sumFilterUsed == 0) {
 		for (let i = 0; i < char.length; i++) {
@@ -461,7 +458,6 @@ function applyFilters() {
 		charListDefault = filtersMultipleUsed(dataChars, filtersEachLengthString, filtersEachLengthStringUsed, filtersUsed);
 	}
 	charListDefault = cleanArray(charListDefault, undefined);
-
 	//------------------charperpage------------------
 
 	createFilterPagination(charListDefault);
@@ -497,5 +493,14 @@ function applyFilters() {
 
 	if (characterSearchId.value.length > 0) {
 		characterSearchId.value = "";
+	}
+
+	if (sumFilterUsed > 0 ) {
+		let charListFilteredNames = [];
+		for (let i = 0; i < charListDefault.length; i++) {
+			charListFilteredNames[i] = charListDefault[i].getAttribute("data-char-name");
+		}
+		console.log(charListFilteredNames);
+		addOnlyFilteredCharNames();
 	}
 }
