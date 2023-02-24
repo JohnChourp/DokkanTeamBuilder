@@ -185,7 +185,7 @@ function removeAllCategory() {
 	const topHalfCategoryRoze = document.getElementsByClassName("top-half-category-roze");
 	const topHalfCategoryDarkGreen = document.getElementsByClassName("top-half-category-dark-green");
 	const topHalfCategoryDarkBlue = document.getElementsByClassName("top-half-category-dark-blue");
-	
+
 	const filterCategory = ["db-saga",
 		"saiyan-saga",
 		"planet-namek-saga",
@@ -617,7 +617,7 @@ function closeCategoriesSelectBtn() {
 
 			"Crossover",
 			"Dragon Ball Heroes"];
-	let filterCategoryUsed = [],filterCategoryUsedPos = 0;
+	let filterCategoryUsed = [], filterCategoryUsedPos = 0;
 	//filterCategory
 	for (let i = 0; i < filterCategories.length; i++) {
 		if (document.getElementById(filterCategories[i]).classList.contains("checkedCategoryBtn")) {
@@ -625,7 +625,7 @@ function closeCategoriesSelectBtn() {
 		}
 	}
 	for (let i = 0; i < filterCategories.length; i++) {
-		if(filterCategoryUsed[i] != undefined){
+		if (filterCategoryUsed[i] != undefined) {
 			filterCategoryUsedPos = i;
 		}
 	}
@@ -644,31 +644,31 @@ function closeCategoriesSelectBtn() {
 	}
 
 	if (filterCategoryUsed.length == 1) {
-		if(filterCategoryUsedPos >= 0 && filterCategoryUsedPos <= 7){
+		if (filterCategoryUsedPos >= 0 && filterCategoryUsedPos <= 7) {
 			setButtonStyles(categoriesSelectId, "#FFB721", "#FF7500", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
 		}
-		if(filterCategoryUsedPos >= 8 && filterCategoryUsedPos <= 18){
+		if (filterCategoryUsedPos >= 8 && filterCategoryUsedPos <= 18) {
 			setButtonStyles(categoriesSelectId, "#9CF434", "#61C81C", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
 		}
-		if(filterCategoryUsedPos >= 19 && filterCategoryUsedPos <= 29){
+		if (filterCategoryUsedPos >= 19 && filterCategoryUsedPos <= 29) {
 			setButtonStyles(categoriesSelectId, "#F7EE3E", "#F2CC00", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
 		}
-		if(filterCategoryUsedPos >= 30 && filterCategoryUsedPos <= 40){
+		if (filterCategoryUsedPos >= 30 && filterCategoryUsedPos <= 40) {
 			setButtonStyles(categoriesSelectId, "#00DFDE", "#00B0AD", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
 		}
-		if(filterCategoryUsedPos >= 41 && filterCategoryUsedPos <= 47){
+		if (filterCategoryUsedPos >= 41 && filterCategoryUsedPos <= 47) {
 			setButtonStyles(categoriesSelectId, "#00AAFF", "#0055EF", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
 		}
-		if(filterCategoryUsedPos >= 48 && filterCategoryUsedPos <= 59){
+		if (filterCategoryUsedPos >= 48 && filterCategoryUsedPos <= 59) {
 			setButtonStyles(categoriesSelectId, "#C46CF3", "#823ADF", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
 		}
-		if(filterCategoryUsedPos >= 60 && filterCategoryUsedPos <= 71){
+		if (filterCategoryUsedPos >= 60 && filterCategoryUsedPos <= 71) {
 			setButtonStyles(categoriesSelectId, "#F65589", "#E60543", "#742133", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
 		}
-		if(filterCategoryUsedPos >= 72 && filterCategoryUsedPos <= 86){
+		if (filterCategoryUsedPos >= 72 && filterCategoryUsedPos <= 86) {
 			setButtonStyles(categoriesSelectId, "#105E4B", "#073F2B", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
 		}
-		if(filterCategoryUsedPos >= 87 && filterCategoryUsedPos <= 88){
+		if (filterCategoryUsedPos >= 87 && filterCategoryUsedPos <= 88) {
 			setButtonStyles(categoriesSelectId, "#00BB8D", "#00885B", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
 		}
 		filterCategoryContainerTextFirst.item(0).innerHTML = filterCategoryUsed[0];

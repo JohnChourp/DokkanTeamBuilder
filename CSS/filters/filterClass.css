@@ -115,7 +115,8 @@
 	user-select: none;
 }
 
-#super,#extreme {
-    margin-top:15px;
-	margin-right:-5px;
+#super,
+#extreme {
+	margin-top: 15px;
+	margin-right: -5px;
 }

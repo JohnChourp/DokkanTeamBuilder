@@ -43,6 +43,7 @@
 .top-half-category-orange {
 	background-color: #85671C;
 }
+
 .bottom-half-category-orange {
 	background-color: #7F4503;
 }
@@ -50,6 +51,7 @@
 .top-half-category-green {
 	background-color: #51741F;
 }
+
 .bottom-half-category-green {
 	background-color: #2F5510;
 }
@@ -57,6 +59,7 @@
 .top-half-category-yellow {
 	background-color: #868131;
 }
+
 .bottom-half-category-yellow {
 	background-color: #7E6C06;
 }
@@ -64,6 +67,7 @@
 .top-half-category-cyan {
 	background-color: #136B73;
 }
+
 .bottom-half-category-cyan {
 	background-color: #105B59;
 }
@@ -71,6 +75,7 @@
 .top-half-category-blue {
 	background-color: #0F6089;
 }
+
 .bottom-half-category-blue {
 	background-color: #053C7C;
 }
@@ -78,6 +83,7 @@
 .top-half-category-purple {
 	background-color: #6C5087;
 }
+
 .bottom-half-category-purple {
 	background-color: #513474;
 }
@@ -85,6 +91,7 @@
 .top-half-category-roze {
 	background-color: #83445A;
 }
+
 .bottom-half-category-roze {
 	background-color: #742133;
 }
@@ -92,6 +99,7 @@
 .top-half-category-dark-green {
 	background-color: #105E4B;
 }
+
 .bottom-half-category-dark-green {
 	background-color: #073F2B;
 }
@@ -99,6 +107,7 @@
 .top-half-category-dark-blue {
 	background-color: #29355B;
 }
+
 .bottom-half-category-dark-blue {
 	background-color: #0A093C;
 }
@@ -225,11 +234,11 @@
 	grid-template-rows: repeat(45, 45px);
 	margin-left: 5px;
 	margin-top: 25px;
-	margin-bottom:150px;
+	margin-bottom: 150px;
 }
 
-#representatives-of-universe-7{
-	font-size:12px
+#representatives-of-universe-7 {
+	font-size: 12px
 }
 
 
@@ -250,53 +259,53 @@
 
 
 #apply-categories-bg-id {
-    z-index: 2;
-    width: 0;
-    height: 110px;
-    position: fixed;
-    bottom: 0;
-    background-color: #494141;
-    opacity: 0.8;
-    transition: 0.5s;
+	z-index: 2;
+	width: 0;
+	height: 110px;
+	position: fixed;
+	bottom: 0;
+	background-color: #494141;
+	opacity: 0.8;
+	transition: 0.5s;
 }
 
 #apply-categories-id {
-    z-index: 2;
-    width: 0;
-    height: 110px;
-    position: fixed;
-    bottom: 0;
-    display: flex;
-    flex-direction: column;
-    transition: 0.5s;
+	z-index: 2;
+	width: 0;
+	height: 110px;
+	position: fixed;
+	bottom: 0;
+	display: flex;
+	flex-direction: column;
+	transition: 0.5s;
 }
 
 #apply-categories-text-id {
-    position: relative;
-    left: -100px;
+	position: relative;
+	left: -100px;
 }
 
 #ok-categories-id {
 	cursor: pointer;
-    height: 40px;
-    width: 50px;
-    font-size: 18px;
-    background-color: #df8611;
-    font-weight: 800;
-    color: aliceblue;
-    position: relative;
-    left: -100px;
+	height: 40px;
+	width: 50px;
+	font-size: 18px;
+	background-color: #df8611;
+	font-weight: 800;
+	color: aliceblue;
+	position: relative;
+	left: -100px;
 }
 
 #remove-all-categories-id {
 	cursor: pointer;
-    height: 40px;
-    width: 130px;
-    font-size: 18px;
-    background-color: #df8611;
-    font-weight: 800;
-    color: aliceblue;
-    position: relative;
-    margin-left: 20px;
-    left: -200px;
+	height: 40px;
+	width: 130px;
+	font-size: 18px;
+	background-color: #df8611;
+	font-weight: 800;
+	color: aliceblue;
+	position: relative;
+	margin-left: 20px;
+	left: -200px;
 }

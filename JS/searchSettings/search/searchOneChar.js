@@ -147,7 +147,7 @@ function addSearchOneCharDropdownClass(charNamePos) {
 		charList[i] = char.item(i);
 	}
 
-	createFilterPagination2(charList, localStorage.getItem("charsPerPageNumItem"));
+	createFilterPagination(charList);
 }
 
 function selectedCharNameSearch() {

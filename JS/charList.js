@@ -1,4 +1,5 @@
 function saveCharList() {
+	//set localStorage
 	if (localStorage.getItem("nameOrTitle") == null) {
 		localStorage.setItem("nameOrTitle", 1);
 	} else {
@@ -13,7 +14,7 @@ function saveCharList() {
 		localStorage.setItem("filterDisplay", 0);
 	}
 	if (localStorage.getItem("charsPerPageNumItem") == null) {
-		localStorage.setItem("charsPerPageNumItem", 32);
+		localStorage.setItem("charsPerPageNumItem", 16);
 	}
 
 	const char = document.getElementsByClassName("char");
