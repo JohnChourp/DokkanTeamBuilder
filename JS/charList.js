@@ -14,7 +14,7 @@ function saveCharList() {
 		localStorage.setItem("filterDisplay", 0);
 	}
 	if (localStorage.getItem("charsPerPageNumItem") == null) {
-		localStorage.setItem("charsPerPageNumItem", 32);
+		localStorage.setItem("charsPerPageNumItem", 16);
 	}
 
 	const char = document.getElementsByClassName("char");

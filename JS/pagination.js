@@ -78,7 +78,7 @@ function pagination_page(start, charsPerPageNum, pageSum, pageNum, charList, pag
 	pagination_id.children.item(pageSum).innerHTML = "Showing " + (start + 1) + " to " + end + " of " + charList.length + " Characters";
 	const pageKeys = Object.keys(pagesLoaded);
 
-	for (let i = 0; i < pageKeys.length; i++) {
+	for (let i = 0; i < pagination_id.children.length; i++) {
 		if (pagination_id.children.item(i).classList.contains("checkedPagiantionBtn")) {
 			pagination_id.children.item(i).classList.remove("checkedPagiantionBtn");
 			pagination_id.children.item(i).style.border = "1px solid #ddd";
@@ -179,12 +179,9 @@ function pagination_page2(start, charsPerPageNum, pageSum, pageNum, charList, pa
 	const fragment = document.createDocumentFragment();
 	let end;
 
-	if ((pageNum+1) === pageSum || pageNum === pageSum) {
-		console.log("A");
+	if ((pageNum + 1) === pageSum || pageNum === pageSum) {
 		end = charList.length;
 	} else {
-		console.log("k");
-		console.log(pageNum);
 		end = charsPerPageNum;
 	}
 	for (let i = start; i < end; i++) {
@@ -195,11 +192,9 @@ function pagination_page2(start, charsPerPageNum, pageSum, pageNum, charList, pa
 	char_container_id.appendChild(fragment);
 	pagination_id.children.item(pageSum).innerHTML = "Showing " + (start + 1) + " to " + end + " of " + charList.length + " Characters";
 	const pageKeys = Object.keys(pagesLoaded);
-	
+
 	for (let i = 0; i < pagination_id.children.length; i++) {
-		console.log("i");
 		if (pagination_id.children.item(i).classList.contains("checkedPagiantionBtn")) {
-			console.log("g");
 			pagination_id.children.item(i).classList.remove("checkedPagiantionBtn");
 			pagination_id.children.item(i).style.border = "1px solid #ddd";
 		}
@@ -207,48 +202,40 @@ function pagination_page2(start, charsPerPageNum, pageSum, pageNum, charList, pa
 
 	if (pagesLoaded[pageKeys[0]] == false) {
 		pagesLoaded[pageKeys[0]] = true;
-		console.log("h");
 		const currentItem = pagination_id.children.item(pageNum);
 		currentItem.classList.add("checkedPagiantionBtn");
 		currentItem.style.border = "1px solid #4CAF50";
 		if (pageNum == pageSum) {
-			console.log("f");
 			addChar(end - start);
 		} else {
-			console.log("g");
-			if ((pageNum+1) === pageSum) {
+			if ((pageNum + 1) === pageSum) {
 				addChar(charList.length);
-			}else{
+			} else {
 				addChar(localStorage.getItem("charsPerPageNumItem"));
 			}
-			
+
 		}
 	}
 
 	const currentItem = pagination_id.children.item(pageNum - 1);
 	for (let i = 1; i < pageKeys.length + 1; i++) {
-		console.log("e");
 		if (pageNum == i && pagesLoaded[pageKeys[i - 1]] == false) {
 			pagesLoaded[pageKeys[i - 1]] = true;
 			currentItem.classList.add("checkedPagiantionBtn");
 			currentItem.style.border = "1px solid #4CAF50";
-			console.log("d");
 			if (pageNum == pageSum) {
-				console.log("c");
 				addChar(end - start);
 			} else {
-				console.log("B");
 				addChar(localStorage.getItem("charsPerPageNumItem"));
 			}
 		}
 		if (pageNum == i && !currentItem.classList.contains("checkedPagiantionBtn")) {
-			console.log("a");
 			currentItem.classList.add("checkedPagiantionBtn");
 			currentItem.style.border = "1px solid #4CAF50";
 		}
 	}
 
-	if(pagination_id.children.length == 1){
+	if (pagination_id.children.length == 1) {
 		pagination_id.children.item(0).innerHTML = "No Characters";
 		pagination_id.children.item(0).classList.remove("checkedPagiantionBtn");
 		pagination_id.children.item(0).style.border = "1px solid #ddd";
