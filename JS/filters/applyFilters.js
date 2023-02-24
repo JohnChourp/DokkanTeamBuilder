@@ -103,13 +103,13 @@ function filtersMultipleUsed(dataChars, filtersEachLengthString, filtersEachLeng
 	return charListAll[filtersEachLengthStringUsed.length - 1];
 }
 
-function applyFilters(btnPressed) {
+function applyFilters() {
 	setCharList();
 	const characterSearchId = document.getElementById("char-search-id");
 	const charContainerId = document.getElementById("char-container-id");
 	const char = document.getElementsByClassName("char");
 	const checkedDirectionBtn = document.getElementsByClassName("checkedDirectionBtn");
-	//let searchOneCharDropdownValue = document.getElementsByClassName("search-one-char-dropdown-options-value");
+	const searchOneCharDropdownValue = document.getElementsByClassName("search-one-char-dropdown-options-value");
 
 	const dataCharCategories = 'data-char-categories',
 		dataCharRarity = 'data-char-rarity',
@@ -364,22 +364,12 @@ function applyFilters(btnPressed) {
 		}
 	}
 
-	// //select one char
-	// let addSearchOneCharDropdownClassChecked = 0;
-	// for (let i = 0; i < searchOneCharDropdownValue.length; i++) {
-	// 	if (searchOneCharDropdownValue.item(i).classList.contains("checkedSearchOneCharBtn")) {
-	// 		addSearchOneCharDropdownClass(i);
-	// 		addSearchOneCharDropdownClassChecked = 1;
-	// 	}
-	// }
-	// if (btnPressed == 1) {
-	// 	addChar(localStorage.getItem("charsPerPageNumItem"));
-	// }
-	// if (addSearchOneCharDropdownClassChecked == 1) {
-	// 	console.log("a");
-	// 	addChar(1);
-	// }
-
+	//select one char
+	for (let i = 1; i < searchOneCharDropdownValue.length; i++) {
+		if (searchOneCharDropdownValue.item(i).classList.contains("checkedSearchOneCharBtn")) {
+			addSearchOneCharDropdownClass(i, 1);
+		}
+	}
 	//filterCategory
 	for (let i = 0; i < filterCategories.length; i++) {
 		if (document.getElementById(filterCategories[i]).classList.contains("checkedCategoryBtn")) {
