@@ -243,7 +243,7 @@ function addDropdownClass(filterDisplay) {
 	//Categories
 	if (filterDisplay == 14) {
 		for (let i = 0; i < char_display_text.length; i++) {
-			char_display_text.item(i).textContent  = listCategoriesFormattedString[i];
+			char_display_text.item(i).textContent = listCategoriesFormattedString[i];
 		}
 	}
 }
