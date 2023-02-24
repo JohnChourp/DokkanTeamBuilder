@@ -488,7 +488,7 @@ function searchChar(btnPressed) {
 			}
 			charListDefault = cleanArray(charListDefault, undefined);
 
-			createFilterPagination2(charListDefault);
+			createFilterPagination(charListDefault);
 		}
 	});
 }

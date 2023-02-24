@@ -372,9 +372,9 @@ function applyFilters(btnPressed) {
 	// 		addSearchOneCharDropdownClassChecked = 1;
 	// 	}
 	// }
-	if (btnPressed == 1) {
-		addChar(localStorage.getItem("charsPerPageNumItem"));
-	}
+	// if (btnPressed == 1) {
+	// 	addChar(localStorage.getItem("charsPerPageNumItem"));
+	// }
 	// if (addSearchOneCharDropdownClassChecked == 1) {
 	// 	console.log("a");
 	// 	addChar(1);
@@ -387,7 +387,7 @@ function applyFilters(btnPressed) {
 		}
 	}
 	filterCategoryUsed = cleanArray(filterCategoryUsed, undefined);
-	
+
 	//filterRarity
 	for (let i = 0; i < filterRarity.length; i++) {
 		if (document.getElementById(filterRarity[i]).classList.contains("checkedRarityBtn")) {
@@ -443,7 +443,7 @@ function applyFilters(btnPressed) {
 		}
 	}
 	filterRecruitUsed = cleanArray(filterRecruitUsed, undefined);
-	
+
 	const filtersUsed = [filterCategoryUsed, filterRarityUsed, filterTypeUsed, filterClassUsed, filterAwakenUsed, filterSuperAttackTypeUsed, filterEzaUsed, filterRecruitUsed];
 
 	let sumFilterUsed = 0;
@@ -474,12 +474,7 @@ function applyFilters(btnPressed) {
 
 	//------------------charperpage------------------
 
-	if (btnPressed == 1) {
-		createFilterPagination(charListDefault);
-	}
-	if (btnPressed == 2) {
-		createFilterPagination2(charListDefault);
-	}
+	createFilterPagination(charListDefault);
 
 	let charactersPerInputPageId = document.getElementById("characters-per-input-page-id");
 	charactersPerInputPageId.value = localStorage.getItem("charsPerPageNumItem");
