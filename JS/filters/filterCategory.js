@@ -338,6 +338,11 @@ function removeAllCategory() {
 		document.getElementById(filterCategory[i]).children.item(1).style.backgroundColor = "#0A093C";
 		document.getElementById(filterCategory[i]).children.item(8).style.backgroundImage = 'linear-gradient(180deg, #FFFFFF, #a19b95)';
 	}
+	let filterCategoryContainerTextFirst = document.getElementsByClassName("filter-category-container-text-first");
+	filterCategoryContainerTextFirst.item(0).innerHTML = "Select Category";
+	const categoriesSelectId = document.getElementById("categories-select-id");
+	categoriesSelectId.style.fontSize = "medium";
+	setButtonStyles(categoriesSelectId, "#6B6B67", "#555555", 'linear-gradient(180deg, #B6B6B6, #948D87)');
 }
 
 function openCategories() {
