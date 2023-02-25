@@ -99,13 +99,11 @@ function filtersMultipleUsed(dataChars, filtersEachLengthString, filtersEachLeng
 			}
 		}
 	}
-
 	return charListAll[filtersEachLengthStringUsed.length - 1];
 }
 
 function applyFilters() {
 	setCharList();
-	const characterSearchId = document.getElementById("char-search-id");
 	const charContainerId = document.getElementById("char-container-id");
 	const char = document.getElementsByClassName("char");
 	const checkedDirectionBtn = document.getElementsByClassName("checkedDirectionBtn");
@@ -129,209 +127,40 @@ function applyFilters() {
 		dataCharEza,
 		dataCharRecruit];
 
-	let filterCategoryUsed = [],
-		filterRarityUsed = [],
-		filterTypeUsed = [],
-		filterClassUsed = [],
-		filterAwakenUsed = [],
-		filterSuperAttackTypeUsed = [],
-		filterEzaUsed = [],
-		filterRecruitUsed = [];
+	const filterCategories = ["db-saga", "saiyan-saga", "planet-namek-saga", "androids-cell-saga", "majin-buu-saga", "future-saga", "universe-survival-saga", "shadow-dragon-saga",
 
-	const filterCategories = ["db-saga",
-		"saiyan-saga",
-		"planet-namek-saga",
-		"androids-cell-saga",
-		"majin-buu-saga",
-		"future-saga",
-		"universe-survival-saga",
-		"shadow-dragon-saga",
+		"pure-saiyans", "hybrid-saiyans", "earthlings", "namekians", "androids", "artificial-life-forms", "gokus-family", "vegetas-family", "wicked-bloodline", "youth", "peppy-gals",
 
-		"pure-saiyans",
-		"hybrid-saiyans",
-		"earthlings",
-		"namekians",
-		"androids",
-		"artificial-life-forms",
-		"gokus-family",
-		"vegetas-family",
-		"wicked-bloodline",
-		"youth",
-		"peppy-gals",
+		"super-saiyans", "super-saiyan-2", "super-saiyan-3", "power-beyond-super-saiyan", "fusion", "potara", "fused-fighters", "giant-form", "transformation-boost", "power-absorption", "kamehameha",
 
-		"super-saiyans",
-		"super-saiyan-2",
-		"super-saiyan-3",
-		"power-beyond-super-saiyan",
-		"fusion",
-		"potara",
-		"fused-fighters",
-		"giant-form",
-		"transformation-boost",
-		"power-absorption",
-		"kamehameha",
+		"realm-of-gods", "full-power", "giant-ape-power", "majin-power", "powerful-comeback", "miraculous-awakening", "corroded-body-and-mind", "rapid-growth", "mastered-evolution", "time-limit", "final-trump-card",
 
-		"realm-of-gods",
-		"full-power",
-		"giant-ape-power",
-		"majin-power",
-		"powerful-comeback",
-		"miraculous-awakening",
-		"corroded-body-and-mind",
-		"rapid-growth",
-		"mastered-evolution",
-		"time-limit",
-		"final-trump-card",
+		"worthy-rivals", "sworn-enemies", "joined-forces", "bond-of-parent-and-child", "siblings-bond", "bond-of-friendship", "bond-of-master-and-disciple",
 
-		"worthy-rivals",
-		"sworn-enemies",
-		"joined-forces",
-		"bond-of-parent-and-child",
-		"siblings-bond",
-		"bond-of-friendship",
-		"bond-of-master-and-disciple",
+		"ginyu-force", "team-bardock", "universe-6", "representatives-of-universe-7", "universe-11", "gt-heroes", "gt-bosses", "super-heroes", "movie-heroes", "movie-bosses", "turtle-school", "world-tournament",
 
-		"ginyu-force",
-		"team-bardock",
-		"universe-6",
-		"representatives-of-universe-7",
-		"universe-11",
-		"gt-heroes",
-		"gt-bosses",
-		"super-heroes",
-		"movie-heroes",
-		"movie-bosses",
-		"turtle-school",
-		"world-tournament",
+		"low-class-warrior", "earth-bred-fighters", "gifted-warriors", "otherworld-warriors", "resurrected-warriors", "space-traveling-warriors", "time-travelers", "dragon-ball-seekers", "storied-figures", "legendary-existence", "saviors", "defenders-of-justice",
 
-		"low-class-warrior",
-		"earth-bred-fighters",
-		"gifted-warriors",
-		"otherworld-warriors",
-		"resurrected-warriors",
-		"space-traveling-warriors",
-		"time-travelers",
-		"dragon-ball-seekers",
-		"storied-figures",
-		"legendary-existence",
-		"saviors",
-		"defenders-of-justice",
+		"revenge", "target-goku", "terrifying-conquerors", "inhumal-deeds", "planetary-destruction", "exploding-rage", "connected-hope", "entrusted-will", "all-out-struggle", "battle-of-wits", "accelerated-battle", "battle-of-fate", "heavenly-events", "special-pose", "worldwide-chaos",
 
-		"revenge",
-		"target-goku",
-		"terrifying-conquerors",
-		"inhumal-deeds",
-		"planetary-destruction",
-		"exploding-rage",
-		"connected-hope",
-		"entrusted-will",
-		"all-out-struggle",
-		"battle-of-wits",
-		"accelerated-battle",
-		"battle-of-fate",
-		"heavenly-events",
-		"special-pose",
-		"worldwide-chaos",
+		"crossover", "dragon-ball-heroes"],
+		filterCategoriesNames = ["DB Saga", "Saiyan Saga", "Planet Namek Saga", "Androids/Cell Saga", "Majin Buu Saga", "Future Saga", "Universe Survival Saga", "Shadow Dragon Saga",
 
-		"crossover",
-		"dragon-ball-heroes"],
-		filterCategoriesNames = ["DB Saga",
-			"Saiyan Saga",
-			"Planet Namek Saga",
-			"Androids/Cell Saga",
-			"Majin Buu Saga",
-			"Future Saga",
-			"Universe Survival Saga",
-			"Shadow Dragon Saga",
+			"Pure Saiyans", "Hybrid Saiyans", "Earthlings", "Namekians", "Androids", "Artificial Life Forms", "Goku's Family", "Vegeta's Family", "Wicked Bloodline", "Youth", "Peppy Gals",
 
-			"Pure Saiyans",
-			"Hybrid Saiyans",
-			"Earthlings",
-			"Namekians",
-			"Androids",
-			"Artificial Life Forms",
-			"Goku's Family",
-			"Vegeta's Family",
-			"Wicked Bloodline",
-			"Youth",
-			"Peppy Gals",
+			"Super Saiyans", "Super Saiyan 2", "Super Saiyan 3", "Power Beyond Super Saiyan", "Fusion", "Potara", "Fused Fighters", "Giant Form", "Transformation Boost", "Power Absorption", "Kamehameha",
 
-			"Super Saiyans",
-			"Super Saiyan 2",
-			"Super Saiyan 3",
-			"Power Beyond Super Saiyan",
-			"Fusion",
-			"Potara",
-			"Fused Fighters",
-			"Giant Form",
-			"Transformation Boost",
-			"Power Absorption",
-			"Kamehameha",
+			"Realm of Gods", "Full Power", "Giant Ape Power", "Majin Power", "Powerful Comeback", "Miraculous Awakening", "Corroded Body And Mind", "Rapid Growth", "Mastered Evolution", "Time Limit", "Final Trump Card",
 
-			"Realm of Gods",
-			"Full Power",
-			"Giant Ape Power",
-			"Majin Power",
-			"Powerful Comeback",
-			"Miraculous Awakening",
-			"Corroded Body And Mind",
-			"Rapid Growth",
-			"Mastered Evolution",
-			"Time Limit",
-			"Final Trump Card",
+			"Worthy Rivals", "Sworn Enemies", "Joined Forces", "Bond of Parent and Child", "Siblings' Bond", "Bond of Friendship", "Bond of Master and Disciple",
 
-			"Worthy Rivals",
-			"Sworn Enemies",
-			"Joined Forces",
-			"Bond of Parent and Child",
-			"Siblings' Bond",
-			"Bond of Friendship",
-			"Bond of Master and Disciple",
+			"Ginyu Force", "Team Bardock", "Universe 6", "Representatives of Universe 7", "Universe 11", "GT Heroes", "GT Bosses", "Super Heroes", "Movie Heroes", "Movie Bosses", "Turtle School", "World Tournament",
 
-			"Ginyu Force",
-			"Team Bardock",
-			"Universe 6",
-			"Representatives of Universe 7",
-			"Universe 11",
-			"GT Heroes",
-			"GT Bosses",
-			"Super Heroes",
-			"Movie Heroes",
-			"Movie Bosses",
-			"Turtle School",
-			"World Tournament",
+			"Low Class Warrior", "Earth-Bred Fighters", "Gifted Warriors", "Otherworld Warriors", "Resurrected Warriors", "Space Traveling Warriors", "Time Travelers", "Dragon Ball Seekers", "Storied Figures", "Legendary Existence", "Saviors", "Defenders of Justice",
 
-			"Low Class Warrior",
-			"Earth-Bred Fighters",
-			"Gifted Warriors",
-			"Otherworld Warriors",
-			"Resurrected Warriors",
-			"Space Traveling Warriors",
-			"Time Travelers",
-			"Dragon Ball Seekers",
-			"Storied Figures",
-			"Legendary Existence",
-			"Saviors",
-			"Defenders of Justice",
+			"Revenge", "Target: Goku", "Terrifying Conquerors", "Inhumal Deeds", "Planetary Destruction", "Exploding Rage", "Connected Hope", "Entrusted Will", "All-Out Struggle", "Battle of Wits", "Accelerated Battle", "Battle of Fate", "Heavenly Events", "Special Pose", "Worldwide Chaos",
 
-			"Revenge",
-			"Target: Goku",
-			"Terrifying Conquerors",
-			"Inhumal Deeds",
-			"Planetary Destruction",
-			"Exploding Rage",
-			"Connected Hope",
-			"Entrusted Will",
-			"All-Out Struggle",
-			"Battle of Wits",
-			"Accelerated Battle",
-			"Battle of Fate",
-			"Heavenly Events",
-			"Special Pose",
-			"Worldwide Chaos",
-
-			"Crossover",
-			"Dragon Ball Heroes"],
+			"Crossover", "Dragon Ball Heroes"],
 		filterRarity = ["n", "r", "sr", "ssr", "ur", "lr"],
 		filterType = ["agl", "teq", "int", "str", "phy"],
 		filterClass = ["super", "extreme"],
@@ -340,114 +169,30 @@ function applyFilters() {
 		filterEza = ["eza", "noeza"],
 		filterRecruit = ["summonable", "free-to-play"];
 
-	const A = document.getElementsByClassName("checkedCategoryBtn").length;
-	const B = document.getElementsByClassName("checkedRarityBtn").length;
-	const C = document.getElementsByClassName("checkedTypeBtn").length;
-	const D = document.getElementsByClassName("checkedClassBtn").length;
-	const E = document.getElementsByClassName("checkedAwakenBtn").length;
-	const F = document.getElementsByClassName("checkedSuperAttackTypeBtn").length;
-	const G = document.getElementsByClassName("checkedEzaBtn").length;
-	const H = document.getElementsByClassName("checkedRecruitBtn").length;
-	const filtersEachLength = [A, B, C, D, E, F, G, H];
-	const filtersEachLengthString = ["A", "B", "C", "D", "E", "F", "G", "H"]
+	//checked filter Brn
+	const filterClasses = ["checkedCategoryBtn", "checkedRarityBtn", "checkedTypeBtn", "checkedClassBtn", "checkedAwakenBtn", "checkedSuperAttackTypeBtn", "checkedEzaBtn", "checkedRecruitBtn"];
+	const filtersEachLength = [];
+	const filtersEachLengthString = [];
+
+	for (let i = 0; i < filterClasses.length; i++) {
+		const length = document.getElementsByClassName(filterClasses[i]).length;
+		filtersEachLength.push(length);
+		filtersEachLengthString.push(String.fromCharCode(65 + i)); // Convert index to corresponding letter of the alphabet
+	}
 
 	//sortDirection
-	if (checkedDirectionBtn.length == 1) {
-		let temp_char = [];
-		for (let i = 0; i < char.length; i++) {
-			temp_char[i] = char.item(i);
-		}
-		const charLength = char.length;
-		charContainerId.innerHTML = "";
-		for (let i = charLength - 1; i > -1; i--) {
-			charContainerId.appendChild(temp_char[i]);
-		}
-	}
+	sortDirectionAscendingDesencding(checkedDirectionBtn.length, char, charContainerId);
+
 	//select one char
-	for (let i = 1; i < searchOneCharDropdownValue.length; i++) {
-		if (searchOneCharDropdownValue.item(i).classList.contains("checkedSearchOneCharBtn")) {
-			addSearchOneCharDropdownClass(i, 1);
-		}
-	}
-	//filterCategory
-	for (let i = 0; i < filterCategories.length; i++) {
-		if (document.getElementById(filterCategories[i]).classList.contains("checkedCategoryBtn")) {
-			filterCategoryUsed[i] = filterCategoriesNames[i];
-		}
-	}
-	filterCategoryUsed = cleanArray(filterCategoryUsed, undefined);
+	selectOneChar(searchOneCharDropdownValue);
 
-	//filterRarity
-	for (let i = 0; i < filterRarity.length; i++) {
-		if (document.getElementById(filterRarity[i]).classList.contains("checkedRarityBtn")) {
-			filterRarityUsed[i] = filterRarity[i];
-		}
-	}
-	filterRarityUsed = cleanArray(filterRarityUsed, undefined);
+	//filter category used
+	const filtersUsed = filterCategoryUsed(filterCategories, filterCategoriesNames, filterRarity, filterType, filterClass, filterAwaken, filterSuperAttackType, filterEza, filterRecruit);
 
-	//filterType
-	for (let i = 0; i < filterType.length; i++) {
-		if (document.getElementById(filterType[i]).classList.contains("checkedTypeBtn")) {
-			filterTypeUsed[i] = filterType[i];
-		}
-	}
-	filterTypeUsed = cleanArray(filterTypeUsed, undefined);
-
-	//filterClass
-	for (let i = 0; i < filterClass.length; i++) {
-		if (document.getElementById(filterClass[i]).classList.contains("checkedClassBtn")) {
-			filterClassUsed[i] = filterClass[i];
-		}
-	}
-	filterClassUsed = cleanArray(filterClassUsed, undefined);
-
-	//filterAwaken
-	for (let i = 0; i < filterAwaken.length; i++) {
-		if (document.getElementById(filterAwaken[i]).classList.contains("checkedAwakenBtn")) {
-			filterAwakenUsed[i] = filterAwaken[i];
-		}
-	}
-	filterAwakenUsed = cleanArray(filterAwakenUsed, undefined);
-
-	//filterSuperAttackType
-	for (let i = 0; i < filterSuperAttackType.length; i++) {
-		if (document.getElementById(filterSuperAttackType[i]).classList.contains("checkedSuperAttackTypeBtn")) {
-			filterSuperAttackTypeUsed[i] = filterSuperAttackType[i];
-		}
-	}
-	filterSuperAttackTypeUsed = cleanArray(filterSuperAttackTypeUsed, undefined);
-
-	//filterEza
-	for (let i = 0; i < filterEza.length; i++) {
-		if (document.getElementById(filterEza[i]).classList.contains("checkedEzaBtn")) {
-			filterEzaUsed[i] = filterEza[i];
-		}
-	}
-	filterEzaUsed = cleanArray(filterEzaUsed, undefined);
-
-	//filterRecruit
-	for (let i = 0; i < filterRecruit.length; i++) {
-		if (document.getElementById(filterRecruit[i]).classList.contains("checkedRecruitBtn")) {
-			filterRecruitUsed[i] = filterRecruit[i];
-		}
-	}
-	filterRecruitUsed = cleanArray(filterRecruitUsed, undefined);
-
-	const filtersUsed = [filterCategoryUsed, filterRarityUsed, filterTypeUsed, filterClassUsed, filterAwakenUsed, filterSuperAttackTypeUsed, filterEzaUsed, filterRecruitUsed];
-	let sumFilterUsed = 0;
 	//check how many filter are used
-	for (let i = 0; i < filtersUsed.length; i++) {
-		if (filtersUsed[i].length > 0) {
-			sumFilterUsed = sumFilterUsed + 1;
-		}
-	}
-	let filtersEachLengthStringUsed = [];
-	for (let i = 0; i < filtersEachLength.length; i++) {
-		if (filtersEachLength[i] > 0) {
-			filtersEachLengthStringUsed[i] = filtersEachLengthString[i];
-		}
-	}
-	filtersEachLengthStringUsed = cleanArray(filtersEachLengthStringUsed, undefined);
+	let [sumFilterUsed, filtersEachLengthStringUsed] = filterSumCategoryUsed(filtersUsed, filtersEachLength, filtersEachLengthString);
+
+	//create list of filtered characters
 	let charListDefault = [];
 	if (sumFilterUsed == 0) {
 		for (let i = 0; i < char.length; i++) {
@@ -458,49 +203,16 @@ function applyFilters() {
 		charListDefault = filtersMultipleUsed(dataChars, filtersEachLengthString, filtersEachLengthStringUsed, filtersUsed);
 	}
 	charListDefault = cleanArray(charListDefault, undefined);
-	//------------------charperpage------------------
 
+	//create pagination
 	createFilterPagination(charListDefault);
 
-	let charactersPerInputPageId = document.getElementById("characters-per-input-page-id");
-	charactersPerInputPageId.value = localStorage.getItem("charsPerPageNumItem");
-
-	let charsPerPage_class = document.getElementsByClassName("charsPerPage");
-	for (let i = 0; i < charsPerPage_class.length; i++) {
-		charsPerPage_class.item(i).classList.remove("checkedCharsPerPageBtn");
-	}
-
-	switch (charactersPerInputPageId.value) {
-		case "16":
-			charsPerPage_class.item(0).classList.add("checkedCharsPerPageBtn");
-			break;
-		case "32":
-			charsPerPage_class.item(1).classList.add("checkedCharsPerPageBtn");
-			break;
-		case "64":
-			charsPerPage_class.item(2).classList.add("checkedCharsPerPageBtn");
-			break;
-		case "128":
-			charsPerPage_class.item(3).classList.add("checkedCharsPerPageBtn");
-			break;
-		case "256":
-			charsPerPage_class.item(4).classList.add("checkedCharsPerPageBtn");
-			break;
-		default:
-			break;
-	}
-	//------------------charperpage------------------
-
-	if (characterSearchId.value.length > 0) {
-		characterSearchId.value = "";
-	}
-
-	if (sumFilterUsed > 0 ) {
+	//add filter names in search one char
+	if (sumFilterUsed > 0) {
 		let charListFilteredNames = [];
 		for (let i = 0; i < charListDefault.length; i++) {
 			charListFilteredNames[i] = charListDefault[i].getAttribute("data-char-name");
 		}
-		console.log(charListFilteredNames);
 		addOnlyFilteredCharNames();
 	}
 }
