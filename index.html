@@ -28,6 +28,7 @@
 	<link href="CSS/filters/filterRarity.css" rel="stylesheet" type="text/css" />
 	<link href="CSS/filters/filterRecruit.css" rel="stylesheet" type="text/css" />
 	<link href="CSS/filters/filterSideNav.css" rel="stylesheet" type="text/css" />
+	<link href="CSS/filters/filterSort.css" rel="stylesheet" type="text/css" />
 	<link href="CSS/filters/filterSortDirection.css" rel="stylesheet" type="text/css" />
 	<link href="CSS/filters/filterSuperAttackType.css" rel="stylesheet" type="text/css" />
 	<link href="CSS/filters/filterType.css" rel="stylesheet" type="text/css" />
@@ -100,7 +101,7 @@
 	<!-- Warn User -->
 	<div id="left-sidenav-id">
 		<a href="#" id="close-left-sidenav-btn-id" onclick="closeNav();">&times;</a>
-		<p class="filter-options-text-class">Sort Direction</p>
+		<p class="filter-options-text-big-class">Please Choose Display Order</p>
 		<div class="filter-class">
 			<button onclick="toggleDirection('down');" id="filter-direction-down-id" class="filter-direction-class"
 				type="button">
@@ -110,6 +111,194 @@
 				type="button">
 				Ascending Order
 			</button>
+		</div>
+		<div class="filter-class">
+			<div onclick="" id="sort-updated" class="filter-sort-container">
+				<div class="filter-sort-container-inside">
+					<div class="top-half-bg-color-sort"></div>
+					<div class="bottom-half-bg-color-sort"></div>
+					<div class="filter-sort-container-inside-outline">
+						<div class="top-line-sort"></div>
+						<div class="bottom-line-sort"></div>
+						<div class="top-left-line-rotated-sort"></div>
+						<div class="top-right-line-rotated-sort"></div>
+						<div class="bottom-left-line-rotated-sort"></div>
+						<div class="bottom-right-line-rotated-sort"></div>
+					</div>
+					<div class="filter-sort-container-text">Updated</div>
+				</div>
+			</div>
+			<div onclick="" id="sort-released" class="filter-sort-container">
+				<div class="filter-sort-container-inside">
+					<div class="top-half-bg-color-sort"></div>
+					<div class="bottom-half-bg-color-sort"></div>
+					<div class="filter-sort-container-inside-outline">
+						<div class="top-line-sort"></div>
+						<div class="bottom-line-sort"></div>
+						<div class="top-left-line-rotated-sort"></div>
+						<div class="top-right-line-rotated-sort"></div>
+						<div class="bottom-left-line-rotated-sort"></div>
+						<div class="bottom-right-line-rotated-sort"></div>
+					</div>
+					<div class="filter-sort-container-text">Released</div>
+				</div>
+			</div>
+			<div onclick="" id="sort-type" class="filter-sort-container">
+				<div class="filter-sort-container-inside">
+					<div class="top-half-bg-color-sort"></div>
+					<div class="bottom-half-bg-color-sort"></div>
+					<div class="filter-sort-container-inside-outline">
+						<div class="top-line-sort"></div>
+						<div class="bottom-line-sort"></div>
+						<div class="top-left-line-rotated-sort"></div>
+						<div class="top-right-line-rotated-sort"></div>
+						<div class="bottom-left-line-rotated-sort"></div>
+						<div class="bottom-right-line-rotated-sort"></div>
+					</div>
+					<div class="filter-sort-container-text">Type</div>
+				</div>
+			</div>
+		</div>
+		<div class="filter-class">
+			<div onclick="" id="sort-level" class="filter-sort-container">
+				<div class="filter-sort-container-inside">
+					<div class="top-half-bg-color-sort"></div>
+					<div class="bottom-half-bg-color-sort"></div>
+					<div class="filter-sort-container-inside-outline">
+						<div class="top-line-sort"></div>
+						<div class="bottom-line-sort"></div>
+						<div class="top-left-line-rotated-sort"></div>
+						<div class="top-right-line-rotated-sort"></div>
+						<div class="bottom-left-line-rotated-sort"></div>
+						<div class="bottom-right-line-rotated-sort"></div>
+					</div>
+					<div class="filter-sort-container-text">Level</div>
+				</div>
+			</div>
+			<div onclick="" id="sort-rarity" class="filter-sort-container">
+				<div class="filter-sort-container-inside">
+					<div class="top-half-bg-color-sort"></div>
+					<div class="bottom-half-bg-color-sort"></div>
+					<div class="filter-sort-container-inside-outline">
+						<div class="top-line-sort"></div>
+						<div class="bottom-line-sort"></div>
+						<div class="top-left-line-rotated-sort"></div>
+						<div class="top-right-line-rotated-sort"></div>
+						<div class="bottom-left-line-rotated-sort"></div>
+						<div class="bottom-right-line-rotated-sort"></div>
+					</div>
+					<div class="filter-sort-container-text">Rarity</div>
+				</div>
+			</div>
+			<div onclick="" id="sort-cost" class="filter-sort-container">
+				<div class="filter-sort-container-inside">
+					<div class="top-half-bg-color-sort"></div>
+					<div class="bottom-half-bg-color-sort"></div>
+					<div class="filter-sort-container-inside-outline">
+						<div class="top-line-sort"></div>
+						<div class="bottom-line-sort"></div>
+						<div class="top-left-line-rotated-sort"></div>
+						<div class="top-right-line-rotated-sort"></div>
+						<div class="bottom-left-line-rotated-sort"></div>
+						<div class="bottom-right-line-rotated-sort"></div>
+					</div>
+					<div class="filter-sort-container-text">Cost</div>
+				</div>
+			</div>
+		</div>
+		<div class="filter-class">
+			<div onclick="" id="sort-hp" class="filter-sort-container">
+				<div class="filter-sort-container-inside">
+					<div class="top-half-bg-color-sort"></div>
+					<div class="bottom-half-bg-color-sort"></div>
+					<div class="filter-sort-container-inside-outline">
+						<div class="top-line-sort"></div>
+						<div class="bottom-line-sort"></div>
+						<div class="top-left-line-rotated-sort"></div>
+						<div class="top-right-line-rotated-sort"></div>
+						<div class="bottom-left-line-rotated-sort"></div>
+						<div class="bottom-right-line-rotated-sort"></div>
+					</div>
+					<div class="filter-sort-container-text">HP</div>
+				</div>
+			</div>
+			<div onclick="" id="sort-attack" class="filter-sort-container">
+				<div class="filter-sort-container-inside">
+					<div class="top-half-bg-color-sort"></div>
+					<div class="bottom-half-bg-color-sort"></div>
+					<div class="filter-sort-container-inside-outline">
+						<div class="top-line-sort"></div>
+						<div class="bottom-line-sort"></div>
+						<div class="top-left-line-rotated-sort"></div>
+						<div class="top-right-line-rotated-sort"></div>
+						<div class="bottom-left-line-rotated-sort"></div>
+						<div class="bottom-right-line-rotated-sort"></div>
+					</div>
+					<div class="filter-sort-container-text">Attack</div>
+				</div>
+			</div>
+			<div onclick="" id="sort-defense" class="filter-sort-container">
+				<div class="filter-sort-container-inside">
+					<div class="top-half-bg-color-sort"></div>
+					<div class="bottom-half-bg-color-sort"></div>
+					<div class="filter-sort-container-inside-outline">
+						<div class="top-line-sort"></div>
+						<div class="bottom-line-sort"></div>
+						<div class="top-left-line-rotated-sort"></div>
+						<div class="top-right-line-rotated-sort"></div>
+						<div class="bottom-left-line-rotated-sort"></div>
+						<div class="bottom-right-line-rotated-sort"></div>
+					</div>
+					<div class="filter-sort-container-text">Defense</div>
+				</div>
+			</div>
+		</div>
+		<div class="filter-class">
+			<div onclick="" id="sort-character" class="filter-sort-container">
+				<div class="filter-sort-container-inside">
+					<div class="top-half-bg-color-sort"></div>
+					<div class="bottom-half-bg-color-sort"></div>
+					<div class="filter-sort-container-inside-outline">
+						<div class="top-line-sort"></div>
+						<div class="bottom-line-sort"></div>
+						<div class="top-left-line-rotated-sort"></div>
+						<div class="top-right-line-rotated-sort"></div>
+						<div class="bottom-left-line-rotated-sort"></div>
+						<div class="bottom-right-line-rotated-sort"></div>
+					</div>
+					<div class="filter-sort-container-text">Character</div>
+				</div>
+			</div>
+			<div onclick="" id="sort-sp-atk-lv" class="filter-sort-container">
+				<div class="filter-sort-container-inside">
+					<div class="top-half-bg-color-sort"></div>
+					<div class="bottom-half-bg-color-sort"></div>
+					<div class="filter-sort-container-inside-outline">
+						<div class="top-line-sort"></div>
+						<div class="bottom-line-sort"></div>
+						<div class="top-left-line-rotated-sort"></div>
+						<div class="top-right-line-rotated-sort"></div>
+						<div class="bottom-left-line-rotated-sort"></div>
+						<div class="bottom-right-line-rotated-sort"></div>
+					</div>
+					<div class="filter-sort-container-text">Sp Atk Lv</div>
+				</div>
+			</div>
+			<div onclick="" id="sort-max-level" class="filter-sort-container">
+				<div class="filter-sort-container-inside">
+					<div class="top-half-bg-color-sort"></div>
+					<div class="bottom-half-bg-color-sort"></div>
+					<div class="filter-sort-container-inside-outline">
+						<div class="top-line-sort"></div>
+						<div class="bottom-line-sort"></div>
+						<div class="top-left-line-rotated-sort"></div>
+						<div class="top-right-line-rotated-sort"></div>
+						<div class="bottom-left-line-rotated-sort"></div>
+						<div class="bottom-right-line-rotated-sort"></div>
+					</div>
+					<div class="filter-sort-container-text">Max Level</div>
+				</div>
+			</div>
 		</div>
 		<hr>
 		<p class="filter-options-text-big-class">Filter Select</p>
