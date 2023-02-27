@@ -3,14 +3,14 @@ function addType(typeFilter) {
 
 	if (element.classList.contains("checkedTypeBtn")) {
 		element.classList.remove("checkedTypeBtn");
-		setButtonStyles(element, "#6B6B67", "#555555", 'linear-gradient(180deg, #B6B6B6, #948D87)');
+		setButtonStylesType(element, "#6B6B67", "#555555", 'linear-gradient(180deg, #B6B6B6, #948D87)');
 	} else {
 		element.classList.add("checkedTypeBtn");
-		setButtonStyles(element, "#2DA9DD", "#1B79C3", 'linear-gradient(180deg, #FFFFFF,#DBCEBD)');
+		setButtonStylesType(element, "#2DA9DD", "#1B79C3", 'linear-gradient(180deg, #FFFFFF,#DBCEBD)');
 	}
 }
 
-function setButtonStyles(element, bgColor1, bgColor2, bgImage) {
+function setButtonStylesType(element, bgColor1, bgColor2, bgImage) {
 	element.children.item(0).style.backgroundColor = bgColor1;
 	element.children.item(1).style.backgroundColor = bgColor2;
 	element.children.item(8).style.backgroundImage = bgImage;

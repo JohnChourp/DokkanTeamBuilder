@@ -5,65 +5,65 @@ function addCategory(categoryFilter) {
 		element.classList.remove("checkedCategoryBtn");
 
 		if (element.querySelector(".top-half-category-orange")) {
-			setButtonStyles(element, "#85671C", "#7F4503", 'linear-gradient(180deg, #FFFFFF, #a19b95)');
+			setButtonStylesCategories(element, "#85671C", "#7F4503", 'linear-gradient(180deg, #FFFFFF, #a19b95)');
 		}
 		if (element.querySelector(".top-half-category-green")) {
-			setButtonStyles(element, "#51741F", "#2F5510", 'linear-gradient(180deg, #FFFFFF, #a19b95)');
+			setButtonStylesCategories(element, "#51741F", "#2F5510", 'linear-gradient(180deg, #FFFFFF, #a19b95)');
 		}
 		if (element.querySelector(".top-half-category-yellow")) {
-			setButtonStyles(element, "#868131", "#7E6C06", 'linear-gradient(180deg, #FFFFFF, #a19b95)');
+			setButtonStylesCategories(element, "#868131", "#7E6C06", 'linear-gradient(180deg, #FFFFFF, #a19b95)');
 		}
 		if (element.querySelector(".top-half-category-cyan")) {
-			setButtonStyles(element, "#136B73", "#105B59", 'linear-gradient(180deg, #FFFFFF, #a19b95)');
+			setButtonStylesCategories(element, "#136B73", "#105B59", 'linear-gradient(180deg, #FFFFFF, #a19b95)');
 		}
 		if (element.querySelector(".top-half-category-blue")) {
-			setButtonStyles(element, "#0F6089", "#053C7C", 'linear-gradient(180deg, #FFFFFF, #a19b95)');
+			setButtonStylesCategories(element, "#0F6089", "#053C7C", 'linear-gradient(180deg, #FFFFFF, #a19b95)');
 		}
 		if (element.querySelector(".top-half-category-purple")) {
-			setButtonStyles(element, "#6C5087", "#513474", 'linear-gradient(180deg, #FFFFFF, #a19b95)');
+			setButtonStylesCategories(element, "#6C5087", "#513474", 'linear-gradient(180deg, #FFFFFF, #a19b95)');
 		}
 		if (element.querySelector(".top-half-category-roze")) {
-			setButtonStyles(element, "#83445A", "#742133", 'linear-gradient(180deg, #FFFFFF, #a19b95)');
+			setButtonStylesCategories(element, "#83445A", "#742133", 'linear-gradient(180deg, #FFFFFF, #a19b95)');
 		}
 		if (element.querySelector(".top-half-category-dark-green")) {
-			setButtonStyles(element, "#105E4B", "#073F2B", 'linear-gradient(180deg, #FFFFFF, #a19b95)');
+			setButtonStylesCategories(element, "#105E4B", "#073F2B", 'linear-gradient(180deg, #FFFFFF, #a19b95)');
 		}
 		if (element.querySelector(".top-half-category-dark-blue")) {
-			setButtonStyles(element, "#29355B", "#0A093C", 'linear-gradient(180deg, #FFFFFF, #a19b95)');
+			setButtonStylesCategories(element, "#29355B", "#0A093C", 'linear-gradient(180deg, #FFFFFF, #a19b95)');
 		}
 	} else {
 		element.classList.add("checkedCategoryBtn");
 		if (element.querySelector(".top-half-category-orange")) {
-			setButtonStyles(element, "#FFB721", "#FF7500", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
+			setButtonStylesCategories(element, "#FFB721", "#FF7500", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
 		}
 		if (element.querySelector(".top-half-category-green")) {
-			setButtonStyles(element, "#9CF434", "#61C81C", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
+			setButtonStylesCategories(element, "#9CF434", "#61C81C", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
 		}
 		if (element.querySelector(".top-half-category-yellow")) {
-			setButtonStyles(element, "#F7EE3E", "#F2CC00", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
+			setButtonStylesCategories(element, "#F7EE3E", "#F2CC00", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
 		}
 		if (element.querySelector(".top-half-category-cyan")) {
-			setButtonStyles(element, "#00DFDE", "#00B0AD", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
+			setButtonStylesCategories(element, "#00DFDE", "#00B0AD", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
 		}
 		if (element.querySelector(".top-half-category-blue")) {
-			setButtonStyles(element, "#00AAFF", "#0055EF", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
+			setButtonStylesCategories(element, "#00AAFF", "#0055EF", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
 		}
 		if (element.querySelector(".top-half-category-purple")) {
-			setButtonStyles(element, "#C46CF3", "#823ADF", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
+			setButtonStylesCategories(element, "#C46CF3", "#823ADF", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
 		}
 		if (element.querySelector(".top-half-category-roze")) {
-			setButtonStyles(element, "#F65589", "#E60543", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
+			setButtonStylesCategories(element, "#F65589", "#E60543", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
 		}
 		if (element.querySelector(".top-half-category-dark-green")) {
-			setButtonStyles(element, "#00BB8D", "#00885B", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
+			setButtonStylesCategories(element, "#00BB8D", "#00885B", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
 		}
 		if (element.querySelector(".top-half-category-dark-blue")) {
-			setButtonStyles(element, "#4250AC", "#212C72", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
+			setButtonStylesCategories(element, "#4250AC", "#212C72", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
 		}
 	}
 }
 
-function setButtonStyles(element, bgColor1, bgColor2, bgImage) {
+function setButtonStylesCategories(element, bgColor1, bgColor2, bgImage) {
 	element.children.item(0).style.backgroundColor = bgColor1;
 	element.children.item(1).style.backgroundColor = bgColor2;
 	element.children.item(8).style.backgroundImage = bgImage;
@@ -342,7 +342,7 @@ function removeAllCategory() {
 	filterCategoryContainerTextFirst.item(0).innerHTML = "Select Category";
 	const categoriesSelectId = document.getElementById("categories-select-id");
 	categoriesSelectId.style.fontSize = "medium";
-	setButtonStyles(categoriesSelectId, "#6B6B67", "#555555", 'linear-gradient(180deg, #B6B6B6, #948D87)');
+	setButtonStylesCategories(categoriesSelectId, "#6B6B67", "#555555", 'linear-gradient(180deg, #B6B6B6, #948D87)');
 }
 
 function openCategories() {
@@ -640,41 +640,41 @@ function closeCategoriesSelectBtn() {
 	const categoriesSelectId = document.getElementById("categories-select-id");
 	categoriesSelectId.style.fontSize = "medium";
 	if (filterCategoryUsed.length > 1) {
-		setButtonStyles(categoriesSelectId, "#57C75B", "#199411", 'linear-gradient(rgb(255, 255, 255), rgb(219, 206, 189))');
+		setButtonStylesCategories(categoriesSelectId, "#57C75B", "#199411", 'linear-gradient(rgb(255, 255, 255), rgb(219, 206, 189))');
 		filterCategoryContainerTextFirst.item(0).innerHTML = "Selected: " + filterCategoryUsed.length;
 	}
 	if (filterCategoryUsed.length == 0) {
-		setButtonStyles(categoriesSelectId, "#6B6B67", "#555555", 'linear-gradient(180deg, #B6B6B6, #948D87)');
+		setButtonStylesCategories(categoriesSelectId, "#6B6B67", "#555555", 'linear-gradient(180deg, #B6B6B6, #948D87)');
 		filterCategoryContainerTextFirst.item(0).innerHTML = "Select Category";
 	}
 
 	if (filterCategoryUsed.length == 1) {
 		if (filterCategoryUsedPos >= 0 && filterCategoryUsedPos <= 7) {
-			setButtonStyles(categoriesSelectId, "#FFB721", "#FF7500", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
+			setButtonStylesCategories(categoriesSelectId, "#FFB721", "#FF7500", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
 		}
 		if (filterCategoryUsedPos >= 8 && filterCategoryUsedPos <= 18) {
-			setButtonStyles(categoriesSelectId, "#9CF434", "#61C81C", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
+			setButtonStylesCategories(categoriesSelectId, "#9CF434", "#61C81C", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
 		}
 		if (filterCategoryUsedPos >= 19 && filterCategoryUsedPos <= 29) {
-			setButtonStyles(categoriesSelectId, "#F7EE3E", "#F2CC00", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
+			setButtonStylesCategories(categoriesSelectId, "#F7EE3E", "#F2CC00", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
 		}
 		if (filterCategoryUsedPos >= 30 && filterCategoryUsedPos <= 40) {
-			setButtonStyles(categoriesSelectId, "#00DFDE", "#00B0AD", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
+			setButtonStylesCategories(categoriesSelectId, "#00DFDE", "#00B0AD", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
 		}
 		if (filterCategoryUsedPos >= 41 && filterCategoryUsedPos <= 47) {
-			setButtonStyles(categoriesSelectId, "#00AAFF", "#0055EF", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
+			setButtonStylesCategories(categoriesSelectId, "#00AAFF", "#0055EF", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
 		}
 		if (filterCategoryUsedPos >= 48 && filterCategoryUsedPos <= 59) {
-			setButtonStyles(categoriesSelectId, "#C46CF3", "#823ADF", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
+			setButtonStylesCategories(categoriesSelectId, "#C46CF3", "#823ADF", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
 		}
 		if (filterCategoryUsedPos >= 60 && filterCategoryUsedPos <= 71) {
-			setButtonStyles(categoriesSelectId, "#F65589", "#E60543", "#742133", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
+			setButtonStylesCategories(categoriesSelectId, "#F65589", "#E60543", "#742133", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
 		}
 		if (filterCategoryUsedPos >= 72 && filterCategoryUsedPos <= 86) {
-			setButtonStyles(categoriesSelectId, "#105E4B", "#073F2B", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
+			setButtonStylesCategories(categoriesSelectId, "#105E4B", "#073F2B", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
 		}
 		if (filterCategoryUsedPos >= 87 && filterCategoryUsedPos <= 88) {
-			setButtonStyles(categoriesSelectId, "#00BB8D", "#00885B", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
+			setButtonStylesCategories(categoriesSelectId, "#00BB8D", "#00885B", 'linear-gradient(rgb(0 0 0), rgb(0 0 0))');
 		}
 		filterCategoryContainerTextFirst.item(0).innerHTML = filterCategoryUsed[0];
 		categoriesSelectId.style.fontSize = "small";
