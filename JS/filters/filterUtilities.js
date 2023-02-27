@@ -1,5 +1,7 @@
-function sortDirectionAscendingDesencding(checkedDirectionBtnLength, char, charContainerId) {
-	if (checkedDirectionBtnLength == 1) {
+function sortDirectionAscendingDesencding(char, charContainerId) {
+	const buttonDescending = document.getElementById("filter-direction-down-id");
+
+	if (buttonDescending.classList.contains("checkedDirectionBtn")) {
 		let temp_char = [];
 		for (let i = 0; i < char.length; i++) {
 			temp_char[i] = char.item(i);

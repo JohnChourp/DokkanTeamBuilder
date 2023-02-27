@@ -116,8 +116,7 @@ function searchChar() {
 			const characterSearchId = document.getElementById("char-search-id");
 			const charContainerId = document.getElementById("char-container-id");
 			const char = document.getElementsByClassName("char");
-			const checkedDirectionBtn = document.getElementsByClassName("checkedDirectionBtn");
-
+			
 			const dataCharTitle = 'data-char-title',
 				dataCharName = 'data-char-name';
 
@@ -208,7 +207,7 @@ function searchChar() {
 			}
 
 			//sortDirection
-			sortDirectionAscendingDesencding(checkedDirectionBtn.length, char, charContainerId);
+			sortDirectionAscendingDesencding(char, charContainerId);
 
 			//filter category used
 			const filtersUsed = filterCategoryUsed(filterCategories, filterCategoriesNames, filterRarity, filterType, filterClass, filterAwaken, filterSuperAttackType, filterEza, filterRecruit);

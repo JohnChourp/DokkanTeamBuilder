@@ -1,13 +1,19 @@
 function toggleDirection(direction) {
-	const buttonDown = document.getElementById("filter-direction-down-id");
-	const buttonUp = document.getElementById("filter-direction-up-id");
+	const buttonDescending = document.getElementById("filter-direction-down-id");
+	const buttonAscending = document.getElementById("filter-direction-up-id");
+	
 	if (direction === "down") {
-		buttonDown.classList.add("checkedDirectionBtn");
-		buttonDown.style.backgroundColor = "#33ccff";
-		buttonUp.style.backgroundColor = "white";
+		buttonDescending.classList.add("checkedDirectionBtn");
+		buttonDescending.style.backgroundColor = "#33ccff";
+
+		buttonAscending.classList.remove("checkedDirectionBtn");
+		buttonAscending.style.backgroundColor = "white";
+		
 	} else if (direction === "up") {
-		buttonDown.classList.remove("checkedDirectionBtn");
-		buttonDown.style.backgroundColor = "white";
-		buttonUp.style.backgroundColor = "#33ccff";
+		buttonDescending.classList.remove("checkedDirectionBtn");
+		buttonDescending.style.backgroundColor = "white";
+
+		buttonAscending.classList.add("checkedDirectionBtn");
+		buttonAscending.style.backgroundColor = "#33ccff";
 	}
 }

@@ -106,7 +106,6 @@ function applyFilters() {
 	setCharList();
 	const charContainerId = document.getElementById("char-container-id");
 	const char = document.getElementsByClassName("char");
-	const checkedDirectionBtn = document.getElementsByClassName("checkedDirectionBtn");
 	const searchOneCharDropdownValue = document.getElementsByClassName("search-one-char-dropdown-options-value");
 
 	const dataCharCategories = 'data-char-categories',
@@ -181,7 +180,7 @@ function applyFilters() {
 	}
 
 	//sortDirection
-	sortDirectionAscendingDesencding(checkedDirectionBtn.length, char, charContainerId);
+	sortDirectionAscendingDesencding(char, charContainerId);
 
 	//select one char
 	selectOneChar(searchOneCharDropdownValue);
