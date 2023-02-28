@@ -37,6 +37,22 @@ function sortDirectionAscendingDesencding(char, charContainerId) {
 		}
 	}
 }
+
+function sortDirectionAscendingDesencdingSearchChar(char, charContainerId, dataCharNameOrTitleItems, dataCharNameOrTitle) {
+	const buttonDescending = document.getElementById("filter-direction-down-id");
+	const characterSearchId = document.getElementById("char-search-id");
+
+	if (buttonDescending.classList.contains("checkedDirectionBtn")) {
+		const fragment = document.createDocumentFragment();
+		for (let i = 0; i < char.length; i++) {
+			if (dataCharNameOrTitleItems[i].getAttribute(dataCharNameOrTitle).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0) {
+				fragment.appendChild(char.item(i));
+			}
+		}
+		charContainerId.appendChild(fragment);
+	}
+}
+
 function selectOneChar(searchOneCharDropdownValue) {
 	for (let i = 1; i < searchOneCharDropdownValue.length; i++) {
 		if (searchOneCharDropdownValue.item(i).classList.contains("checkedSearchOneCharBtn")) {

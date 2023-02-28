@@ -111,9 +111,16 @@ function searchChar() {
 	characterSearchId.addEventListener("keypress", function (event) {
 		if (event.key === "Enter") {
 			event.preventDefault();
-			setCharList();
-			
+			const sortUpdated = document.getElementById("sort-updated");
+			if (sortUpdated.classList.contains("checkedSortBtn")) {
+				setCharList();
+				saveCharListTemp();
+			} else {
+				setCharListTemp();
+			}
+
 			const nameOrTitle = localStorage.getItem("nameOrTitle");
+			const charContainerId = document.getElementById("char-container-id");
 			const characterSearchId = document.getElementById("char-search-id");
 			const char = document.getElementsByClassName("char");
 
@@ -205,6 +212,13 @@ function searchChar() {
 				dataCharNameOrTitle = dataCharTitle;
 			}
 
+			if (!sortUpdated.classList.contains("checkedSortBtn")) {
+				saveCharListTemp();
+			}
+
+			//sortDirection
+			//sortDirectionAscendingDesencdingSearchChar(char, charContainerId, dataCharNameOrTitleItems, dataCharNameOrTitle);
+
 			//filter used
 			const filtersUsed = filterCategoryUsed(filterCategories, filterCategoriesNames, filterRarity, filterType, filterClass, filterAwaken, filterSuperAttackType, filterEza, filterRecruit);
 
@@ -224,7 +238,9 @@ function searchChar() {
 				charListDefault = filtersMultipleUsedWithSearchChar(dataChars, filtersEachLengthString, filtersEachLengthStringUsed, filtersUsed, dataCharNameOrTitleItems, dataCharNameOrTitle, characterSearchId);
 			}
 			charListDefault = cleanArray(charListDefault, undefined);
-			
+
+
+
 			//create pagination
 			createFilterPagination(charListDefault);
 		}

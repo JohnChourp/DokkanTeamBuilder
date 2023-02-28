@@ -103,8 +103,13 @@ function filtersMultipleUsed(dataChars, filtersEachLengthString, filtersEachLeng
 }
 
 function applyFilters() {
-	setCharList();
-	
+	const sortUpdated = document.getElementById("sort-updated");
+	if (sortUpdated.classList.contains("checkedSortBtn")) {
+		setCharList();
+		saveCharListTemp();
+	} else {
+		setCharListTemp();
+	}
 	const charContainerId = document.getElementById("char-container-id");
 	const char = document.getElementsByClassName("char");
 	const searchOneCharDropdownValue = document.getElementsByClassName("search-one-char-dropdown-options-value");
@@ -347,6 +352,10 @@ function applyFilters() {
 		displayOrderremoveDuplicatesAndSortValues(charLength, dataCharMaxLevelItems, dataCharMaxLevel, charContainerId, temp_char);
 	}
 
+	if (!sortUpdated.classList.contains("checkedSortBtn")) {
+		saveCharListTemp();
+	}
+	
 	//sortDirection
 	sortDirectionAscendingDesencding(char, charContainerId);
 
