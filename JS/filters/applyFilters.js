@@ -115,7 +115,15 @@ function applyFilters() {
 		dataCharAwaken = 'data-char-awaken',
 		dataCharSuperAtkType = 'data-char-super-atk-type',
 		dataCharEza = 'data-char-eza',
-		dataCharRecruit = 'data-char-recruit';
+		dataCharRecruit = 'data-char-recruit',
+		dataCharRelease = 'data-char-release',
+		dataCharCost = 'data-char-cost',
+		dataCharHp = 'data-char-hp',
+		dataCharAttack = 'data-char-attack',
+		dataCharDefense = 'data-char-defense',
+		dataCharName = 'data-char-name',
+		dataCharSpAtkLv = 'data-char-super-atk-level',
+		dataCharMaxLevel = 'data-char-max-level';
 
 	const dataChars = [dataCharCategories,
 		dataCharRarity,
@@ -168,7 +176,7 @@ function applyFilters() {
 		filterEza = ["eza", "noeza"],
 		filterRecruit = ["summonable", "free-to-play"];
 
-	//checked filter Brn
+	//checked filter Btn
 	const filterClasses = ["checkedCategoryBtn", "checkedRarityBtn", "checkedTypeBtn", "checkedClassBtn", "checkedAwakenBtn", "checkedSuperAttackTypeBtn", "checkedEzaBtn", "checkedRecruitBtn"];
 	const filtersEachLength = [];
 	const filtersEachLengthString = [];
@@ -179,13 +187,301 @@ function applyFilters() {
 		filtersEachLengthString.push(String.fromCharCode(65 + i)); // Convert index to corresponding letter of the alphabet
 	}
 
-	//sortDirection
-	sortDirectionAscendingDesencding(char, charContainerId);
-
 	//select one char
 	selectOneChar(searchOneCharDropdownValue);
 
-	//filter category used
+	//sortDirection
+	// sortDirectionDisplayOrder();
+	const sortReleased = document.getElementById("sort-released");
+	if (sortReleased.classList.contains("checkedSortBtn")) {
+		const dataCharReleaseItems = document.querySelectorAll('[' + dataCharRelease + ']');
+		let temp_char = [];
+		for (let i = 0; i < char.length; i++) {
+			temp_char[i] = char.item(i);
+		}
+		const charLength = char.length;
+		charContainerId.innerHTML = "";
+		for (let i = 0; i < charLength; i++) {
+			if (dataCharReleaseItems[i].getAttribute(dataCharRelease).slice(-4) === "2015") {
+				charContainerId.appendChild(temp_char[i]);
+			}
+		}
+		for (let i = 0; i < charLength; i++) {
+			if (dataCharReleaseItems[i].getAttribute(dataCharRelease).slice(-4) === "2016") {
+				charContainerId.appendChild(temp_char[i]);
+			}
+		}
+		for (let i = 0; i < charLength; i++) {
+			if (dataCharReleaseItems[i].getAttribute(dataCharRelease).slice(-4) === "2017") {
+				charContainerId.appendChild(temp_char[i]);
+			}
+		}
+		for (let i = 0; i < charLength; i++) {
+			if (dataCharReleaseItems[i].getAttribute(dataCharRelease).slice(-4) === "2018") {
+				charContainerId.appendChild(temp_char[i]);
+			}
+		}
+		for (let i = 0; i < charLength; i++) {
+			if (dataCharReleaseItems[i].getAttribute(dataCharRelease).slice(-4) === "2019") {
+				charContainerId.appendChild(temp_char[i]);
+			}
+		}
+		for (let i = 0; i < charLength; i++) {
+			if (dataCharReleaseItems[i].getAttribute(dataCharRelease).slice(-4) === "2020") {
+				charContainerId.appendChild(temp_char[i]);
+			}
+		}
+		for (let i = 0; i < charLength; i++) {
+			if (dataCharReleaseItems[i].getAttribute(dataCharRelease).slice(-4) === "2021") {
+				charContainerId.appendChild(temp_char[i]);
+			}
+		}
+		for (let i = 0; i < charLength; i++) {
+			if (dataCharReleaseItems[i].getAttribute(dataCharRelease).slice(-4) === "2022") {
+				charContainerId.appendChild(temp_char[i]);
+			}
+		}
+		for (let i = 0; i < charLength; i++) {
+			if (dataCharReleaseItems[i].getAttribute(dataCharRelease).slice(-4) === "2023") {
+				charContainerId.appendChild(temp_char[i]);
+			}
+		}
+	}
+	const sortType = document.getElementById("sort-type");
+	if (sortType.classList.contains("checkedSortBtn")) {
+		const dataCharTypeItems = document.querySelectorAll('[' + dataCharType + ']');
+		let temp_char = [];
+		for (let i = 0; i < char.length; i++) {
+			temp_char[i] = char.item(i);
+		}
+		const charLength = char.length;
+		charContainerId.innerHTML = "";
+		for (let i = 0; i < charLength; i++) {
+			if (dataCharTypeItems[i].getAttribute(dataCharType) == "agl") {
+				charContainerId.appendChild(temp_char[i]);
+			}
+		}
+		for (let i = 0; i < charLength; i++) {
+			if (dataCharTypeItems[i].getAttribute(dataCharType) == "teq") {
+				charContainerId.appendChild(temp_char[i]);
+			}
+		}
+		for (let i = 0; i < charLength; i++) {
+			if (dataCharTypeItems[i].getAttribute(dataCharType) == "int") {
+				charContainerId.appendChild(temp_char[i]);
+			}
+		}
+		for (let i = 0; i < charLength; i++) {
+			if (dataCharTypeItems[i].getAttribute(dataCharType) == "str") {
+				charContainerId.appendChild(temp_char[i]);
+			}
+		}
+		for (let i = 0; i < charLength; i++) {
+			if (dataCharTypeItems[i].getAttribute(dataCharType) == "phy") {
+				charContainerId.appendChild(temp_char[i]);
+			}
+		}
+	}
+	const sortRarity = document.getElementById("sort-rarity");
+	if (sortRarity.classList.contains("checkedSortBtn")) {
+		const dataCharRarityItems = document.querySelectorAll('[' + dataCharRarity + ']');
+		let temp_char = [];
+		for (let i = 0; i < char.length; i++) {
+			temp_char[i] = char.item(i);
+		}
+		const charLength = char.length;
+		charContainerId.innerHTML = "";
+		for (let i = 0; i < charLength; i++) {
+			if (dataCharRarityItems[i].getAttribute(dataCharRarity) == "n") {
+				charContainerId.appendChild(temp_char[i]);
+			}
+		}
+		for (let i = 0; i < charLength; i++) {
+			if (dataCharRarityItems[i].getAttribute(dataCharRarity) == "r") {
+				charContainerId.appendChild(temp_char[i]);
+			}
+		}
+		for (let i = 0; i < charLength; i++) {
+			if (dataCharRarityItems[i].getAttribute(dataCharRarity) == "sr") {
+				charContainerId.appendChild(temp_char[i]);
+			}
+		}
+		for (let i = 0; i < charLength; i++) {
+			if (dataCharRarityItems[i].getAttribute(dataCharRarity) == "ssr") {
+				charContainerId.appendChild(temp_char[i]);
+			}
+		}
+		for (let i = 0; i < charLength; i++) {
+			if (dataCharRarityItems[i].getAttribute(dataCharRarity) == "ur") {
+				charContainerId.appendChild(temp_char[i]);
+			}
+		}
+		for (let i = 0; i < charLength; i++) {
+			if (dataCharRarityItems[i].getAttribute(dataCharRarity) == "lr") {
+				charContainerId.appendChild(temp_char[i]);
+			}
+		}
+	}
+	const sortCost = document.getElementById("sort-cost");
+	if (sortCost.classList.contains("checkedSortBtn")) {
+		const dataCharCostItems = document.querySelectorAll('[' + dataCharCost + ']');
+		let temp_char = [];
+		for (let i = 0; i < char.length; i++) {
+			temp_char[i] = char.item(i);
+		}
+		const charLength = char.length;
+		charContainerId.innerHTML = "";
+		let values = [];
+		for (let i = 0; i < charLength; i++) {
+			values[i] = parseInt(dataCharCostItems[i].getAttribute(dataCharCost));
+		}
+		let sortedvalues = removeDuplicates(values).sort((a, b) => a - b);
+		for (j = 0; j < sortedvalues.length; j++) {
+			for (let i = 0; i < charLength; i++) {
+				if (dataCharCostItems[i].getAttribute(dataCharCost) == sortedvalues[j]) {
+					charContainerId.appendChild(temp_char[i]);
+				}
+			}
+		}
+	}
+	const sortHp = document.getElementById("sort-hp");
+	if (sortHp.classList.contains("checkedSortBtn")) {
+		const dataChaHpItems = document.querySelectorAll('[' + dataCharHp + ']');
+		let temp_char = [];
+		for (let i = 0; i < char.length; i++) {
+			temp_char[i] = char.item(i);
+		}
+		const charLength = char.length;
+		charContainerId.innerHTML = "";
+		let values = [];
+		for (let i = 0; i < charLength; i++) {
+			values[i] = parseInt(dataChaHpItems[i].getAttribute(dataCharHp));
+		}
+		let sortedvalues = removeDuplicates(values).sort((a, b) => a - b);
+		for (j = 0; j < sortedvalues.length; j++) {
+			for (let i = 0; i < charLength; i++) {
+				if (dataChaHpItems[i].getAttribute(dataCharHp) == sortedvalues[j]) {
+					charContainerId.appendChild(temp_char[i]);
+				}
+			}
+		}
+	}
+	const sortAttack = document.getElementById("sort-attack");
+	if (sortAttack.classList.contains("checkedSortBtn")) {
+		const dataCharAttackItems = document.querySelectorAll('[' + dataCharAttack + ']');
+		let temp_char = [];
+		for (let i = 0; i < char.length; i++) {
+			temp_char[i] = char.item(i);
+		}
+		const charLength = char.length;
+		charContainerId.innerHTML = "";
+		let values = [];
+		for (let i = 0; i < charLength; i++) {
+			values[i] = parseInt(dataCharAttackItems[i].getAttribute(dataCharAttack));
+		}
+		let sortedvalues = removeDuplicates(values).sort((a, b) => a - b);
+		for (j = 0; j < sortedvalues.length; j++) {
+			for (let i = 0; i < charLength; i++) {
+				if (dataCharAttackItems[i].getAttribute(dataCharAttack) == sortedvalues[j]) {
+					charContainerId.appendChild(temp_char[i]);
+				}
+			}
+		}
+	}
+	const sortDefense = document.getElementById("sort-defense");
+	if (sortDefense.classList.contains("checkedSortBtn")) {
+		const dataCharDefenseItems = document.querySelectorAll('[' + dataCharDefense + ']');
+		let temp_char = [];
+		for (let i = 0; i < char.length; i++) {
+			temp_char[i] = char.item(i);
+		}
+		const charLength = char.length;
+		charContainerId.innerHTML = "";
+		let values = [];
+		for (let i = 0; i < charLength; i++) {
+			values[i] = parseInt(dataCharDefenseItems[i].getAttribute(dataCharDefense));
+		}
+		let sortedvalues = removeDuplicates(values).sort((a, b) => a - b);
+		for (j = 0; j < sortedvalues.length; j++) {
+			for (let i = 0; i < charLength; i++) {
+				if (dataCharDefenseItems[i].getAttribute(dataCharDefense) == sortedvalues[j]) {
+					charContainerId.appendChild(temp_char[i]);
+				}
+			}
+		}
+	}
+	//need better sort methond so thats it sorts like the in-game method
+	const sortCharacter = document.getElementById("sort-character");
+	if (sortCharacter.classList.contains("checkedSortBtn")) {
+		const dataCharNameItems = document.querySelectorAll('[' + dataCharName + ']');
+		let temp_char = [];
+		for (let i = 0; i < char.length; i++) {
+			temp_char[i] = char.item(i);
+		}
+		const charLength = char.length;
+		charContainerId.innerHTML = "";
+		let values = [];
+		for (let i = 0; i < charLength; i++) {
+			values[i] = dataCharNameItems[i].getAttribute(dataCharName);
+		}
+		let sortedvalues = removeDuplicates(values);
+		for (j = 0; j < sortedvalues.length; j++) {
+			for (let i = 0; i < charLength; i++) {
+				if (dataCharNameItems[i].getAttribute(dataCharName) == sortedvalues[j]) {
+					charContainerId.appendChild(temp_char[i]);
+				}
+			}
+		}
+	}
+	const sortSpAtkLv = document.getElementById("sort-sp-atk-lv");
+	if (sortSpAtkLv.classList.contains("checkedSortBtn")) {
+		const dataCharSpAtkLevelItems = document.querySelectorAll('[' + dataCharSpAtkLv + ']');
+		let temp_char = [];
+		for (let i = 0; i < char.length; i++) {
+			temp_char[i] = char.item(i);
+		}
+		const charLength = char.length;
+		charContainerId.innerHTML = "";
+		let values = [];
+		for (let i = 0; i < charLength; i++) {
+			values[i] = parseInt(dataCharSpAtkLevelItems[i].getAttribute(dataCharSpAtkLv));
+		}
+		let sortedvalues = removeDuplicates(values).sort((a, b) => a - b);
+		for (j = 0; j < sortedvalues.length; j++) {
+			for (let i = 0; i < charLength; i++) {
+				if (dataCharSpAtkLevelItems[i].getAttribute(dataCharSpAtkLv) == sortedvalues[j]) {
+					charContainerId.appendChild(temp_char[i]);
+				}
+			}
+		}
+	}
+	const sortMaxLevel = document.getElementById("sort-max-level");
+	if (sortMaxLevel.classList.contains("checkedSortBtn")) {
+		const dataCharMaxLevelItems = document.querySelectorAll('[' + dataCharMaxLevel + ']');
+		let temp_char = [];
+		for (let i = 0; i < char.length; i++) {
+			temp_char[i] = char.item(i);
+		}
+		const charLength = char.length;
+		charContainerId.innerHTML = "";
+		let values = [];
+		for (let i = 0; i < charLength; i++) {
+			values[i] = parseInt(dataCharMaxLevelItems[i].getAttribute(dataCharMaxLevel));
+		}
+		let sortedvalues = removeDuplicates(values).sort((a, b) => a - b);
+		for (j = 0; j < sortedvalues.length; j++) {
+			for (let i = 0; i < charLength; i++) {
+				if (dataCharMaxLevelItems[i].getAttribute(dataCharMaxLevel) == sortedvalues[j]) {
+					charContainerId.appendChild(temp_char[i]);
+				}
+			}
+		}
+	}
+
+	//sortDirection
+	sortDirectionAscendingDesencding(char, charContainerId);
+
+	//filters used
 	const filtersUsed = filterCategoryUsed(filterCategories, filterCategoriesNames, filterRarity, filterType, filterClass, filterAwaken, filterSuperAttackType, filterEza, filterRecruit);
 
 	//check how many filter are used

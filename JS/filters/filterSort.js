@@ -29,29 +29,26 @@ function filterSort(sort) {
 			addSort("sort-type");
 			break;
 
-		case "sort-level":
-			addSort("sort-level");
-			break;
 		case "sort-rarity":
 			addSort("sort-rarity");
 			break;
 		case "sort-cost":
 			addSort("sort-cost");
 			break;
-
 		case "sort-hp":
 			addSort("sort-hp");
 			break;
+
 		case "sort-attack":
 			addSort("sort-attack");
 			break;
 		case "sort-defense":
 			addSort("sort-defense");
 			break;
-
 		case "sort-character":
 			addSort("sort-character");
 			break;
+
 		case "sort-sp-atk-lv":
 			addSort("sort-sp-atk-lv");
 			break;
@@ -62,8 +59,8 @@ function filterSort(sort) {
 }
 
 function removeAllSort() {
-	const filterType = ["sort-updated","sort-released", "sort-type",
-		"sort-level", "sort-rarity", "sort-cost"
+	const filterType = ["sort-updated", "sort-released", "sort-type",
+		"sort-rarity", "sort-cost"
 		, "sort-hp", "sort-attack", "sort-defense"
 		, "sort-character", "sort-sp-atk-lv", "sort-max-level"];
 	for (let i = 0; i < filterType.length; i++) {
@@ -76,7 +73,7 @@ function removeAllSort() {
 
 function removeAllSortAndAddUpdated() {
 	const filterType = ["sort-released", "sort-type",
-		"sort-level", "sort-rarity", "sort-cost"
+		"sort-rarity", "sort-cost"
 		, "sort-hp", "sort-attack", "sort-defense"
 		, "sort-character", "sort-sp-atk-lv", "sort-max-level"];
 	for (let i = 0; i < filterType.length; i++) {

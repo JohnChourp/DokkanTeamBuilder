@@ -116,14 +116,10 @@ function searchChar() {
 			const characterSearchId = document.getElementById("char-search-id");
 			const charContainerId = document.getElementById("char-container-id");
 			const char = document.getElementsByClassName("char");
-			
+
 			const dataCharTitle = 'data-char-title',
-				dataCharName = 'data-char-name';
-
-			const dataCharNameItems = document.querySelectorAll('[' + dataCharName + ']');
-			const dataCharTitleItems = document.querySelectorAll('[' + dataCharTitle + ']');
-
-			const dataCharCategories = 'data-char-categories',
+				dataCharName = 'data-char-name',
+				dataCharCategories = 'data-char-categories',
 				dataCharRarity = 'data-char-rarity',
 				dataCharType = 'data-char-type',
 				dataCharClass = 'data-char-class',
@@ -183,7 +179,7 @@ function searchChar() {
 				filterEza = ["eza", "noeza"],
 				filterRecruit = ["summonable", "free-to-play"];
 
-			//checked filter Brn
+			//checked filter Btn
 			const filterClasses = ["checkedCategoryBtn", "checkedRarityBtn", "checkedTypeBtn", "checkedClassBtn", "checkedAwakenBtn", "checkedSuperAttackTypeBtn", "checkedEzaBtn", "checkedRecruitBtn"];
 			const filtersEachLength = [];
 			const filtersEachLengthString = [];
@@ -193,6 +189,9 @@ function searchChar() {
 				filtersEachLength.push(length);
 				filtersEachLengthString.push(String.fromCharCode(65 + i)); // Convert index to corresponding letter of the alphabet
 			}
+
+			const dataCharNameItems = document.querySelectorAll('[' + dataCharName + ']');
+			const dataCharTitleItems = document.querySelectorAll('[' + dataCharTitle + ']');
 
 			//check if search titles is enabled
 			let dataCharNameOrTitleItems = [],
@@ -206,10 +205,7 @@ function searchChar() {
 				dataCharNameOrTitle = dataCharTitle;
 			}
 
-			//sortDirection
-			sortDirectionAscendingDesencding(char, charContainerId);
-
-			//filter category used
+			//filter used
 			const filtersUsed = filterCategoryUsed(filterCategories, filterCategoriesNames, filterRarity, filterType, filterClass, filterAwaken, filterSuperAttackType, filterEza, filterRecruit);
 
 			//check how many filter are used
@@ -228,7 +224,7 @@ function searchChar() {
 				charListDefault = filtersMultipleUsedWithSearchChar(dataChars, filtersEachLengthString, filtersEachLengthStringUsed, filtersUsed, dataCharNameOrTitleItems, dataCharNameOrTitle, characterSearchId);
 			}
 			charListDefault = cleanArray(charListDefault, undefined);
-
+			
 			//create pagination
 			createFilterPagination(charListDefault);
 		}

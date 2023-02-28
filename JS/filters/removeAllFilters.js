@@ -1,7 +1,8 @@
 function removeAllFilters() {
 	const filters = [{
-		id: "sort-updated", class: "checkedSortBtn", list: ["sort-updated", "sort-released", "sort-type",
-			"sort-level", "sort-rarity", "sort-cost"
+		id: "sort-updated", class: "checkedSortBtn", list: [
+			"sort-updated", "sort-released", "sort-type",
+			"sort-rarity", "sort-cost"
 			, "sort-hp", "sort-attack", "sort-defense"
 			, "sort-character", "sort-sp-atk-lv", "sort-max-level"]
 	},
