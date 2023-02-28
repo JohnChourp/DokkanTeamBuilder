@@ -103,12 +103,8 @@ function filtersMultipleUsed(dataChars, filtersEachLengthString, filtersEachLeng
 }
 
 function applyFilters() {
-	const sortUpdated = document.getElementById("sort-updated");
-	if (sortUpdated.classList.contains("checkedSortBtn") || localStorage.getItem("charList") == null) {
-		setCharList();
-	} else {
-		setCharListTemp();
-	}
+	setCharList();
+	
 	const charContainerId = document.getElementById("char-container-id");
 	const char = document.getElementsByClassName("char");
 	const searchOneCharDropdownValue = document.getElementsByClassName("search-one-char-dropdown-options-value");
