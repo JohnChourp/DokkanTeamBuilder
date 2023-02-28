@@ -191,291 +191,143 @@ function applyFilters() {
 	selectOneChar(searchOneCharDropdownValue);
 
 	//sortDirection
-	// sortDirectionDisplayOrder();
 	const sortReleased = document.getElementById("sort-released");
 	if (sortReleased.classList.contains("checkedSortBtn")) {
 		const dataCharReleaseItems = document.querySelectorAll('[' + dataCharRelease + ']');
-		let temp_char = [];
-		for (let i = 0; i < char.length; i++) {
-			temp_char[i] = char.item(i);
-		}
-		const charLength = char.length;
-		charContainerId.innerHTML = "";
+		let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
+
+		const charByYear = {};
 		for (let i = 0; i < charLength; i++) {
-			if (dataCharReleaseItems[i].getAttribute(dataCharRelease).slice(-4) === "2015") {
-				charContainerId.appendChild(temp_char[i]);
+			const year = dataCharReleaseItems[i].getAttribute(dataCharRelease).slice(-4);
+			if (!charByYear[year]) {
+				charByYear[year] = [];
 			}
+			charByYear[year].push(temp_char[i]);
 		}
-		for (let i = 0; i < charLength; i++) {
-			if (dataCharReleaseItems[i].getAttribute(dataCharRelease).slice(-4) === "2016") {
-				charContainerId.appendChild(temp_char[i]);
-			}
-		}
-		for (let i = 0; i < charLength; i++) {
-			if (dataCharReleaseItems[i].getAttribute(dataCharRelease).slice(-4) === "2017") {
-				charContainerId.appendChild(temp_char[i]);
-			}
-		}
-		for (let i = 0; i < charLength; i++) {
-			if (dataCharReleaseItems[i].getAttribute(dataCharRelease).slice(-4) === "2018") {
-				charContainerId.appendChild(temp_char[i]);
-			}
-		}
-		for (let i = 0; i < charLength; i++) {
-			if (dataCharReleaseItems[i].getAttribute(dataCharRelease).slice(-4) === "2019") {
-				charContainerId.appendChild(temp_char[i]);
-			}
-		}
-		for (let i = 0; i < charLength; i++) {
-			if (dataCharReleaseItems[i].getAttribute(dataCharRelease).slice(-4) === "2020") {
-				charContainerId.appendChild(temp_char[i]);
-			}
-		}
-		for (let i = 0; i < charLength; i++) {
-			if (dataCharReleaseItems[i].getAttribute(dataCharRelease).slice(-4) === "2021") {
-				charContainerId.appendChild(temp_char[i]);
-			}
-		}
-		for (let i = 0; i < charLength; i++) {
-			if (dataCharReleaseItems[i].getAttribute(dataCharRelease).slice(-4) === "2022") {
-				charContainerId.appendChild(temp_char[i]);
-			}
-		}
-		for (let i = 0; i < charLength; i++) {
-			if (dataCharReleaseItems[i].getAttribute(dataCharRelease).slice(-4) === "2023") {
-				charContainerId.appendChild(temp_char[i]);
+
+		const years = ["2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"];
+		const yearsLength = years.length;
+		for (let i = 0; i < yearsLength; i++) {
+			const year = years[i];
+			if (charByYear[year]) {
+				const charByYearLength = charByYear[year].length;
+				for (let j = 0; j < charByYearLength; j++) {
+					charContainerId.appendChild(charByYear[year][j]);
+				}
 			}
 		}
 	}
 	const sortType = document.getElementById("sort-type");
 	if (sortType.classList.contains("checkedSortBtn")) {
 		const dataCharTypeItems = document.querySelectorAll('[' + dataCharType + ']');
-		let temp_char = [];
-		for (let i = 0; i < char.length; i++) {
-			temp_char[i] = char.item(i);
-		}
-		const charLength = char.length;
-		charContainerId.innerHTML = "";
+		let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
+
+		const charByType = {};
 		for (let i = 0; i < charLength; i++) {
-			if (dataCharTypeItems[i].getAttribute(dataCharType) == "agl") {
-				charContainerId.appendChild(temp_char[i]);
+			const type = dataCharTypeItems[i].getAttribute(dataCharType).slice(-4);
+			if (!charByType[type]) {
+				charByType[type] = [];
 			}
+			charByType[type].push(temp_char[i]);
 		}
-		for (let i = 0; i < charLength; i++) {
-			if (dataCharTypeItems[i].getAttribute(dataCharType) == "teq") {
-				charContainerId.appendChild(temp_char[i]);
-			}
-		}
-		for (let i = 0; i < charLength; i++) {
-			if (dataCharTypeItems[i].getAttribute(dataCharType) == "int") {
-				charContainerId.appendChild(temp_char[i]);
-			}
-		}
-		for (let i = 0; i < charLength; i++) {
-			if (dataCharTypeItems[i].getAttribute(dataCharType) == "str") {
-				charContainerId.appendChild(temp_char[i]);
-			}
-		}
-		for (let i = 0; i < charLength; i++) {
-			if (dataCharTypeItems[i].getAttribute(dataCharType) == "phy") {
-				charContainerId.appendChild(temp_char[i]);
+
+		const types = ["agl", "teq", "int", "str", "phy"];
+		const typesLength = types.length;
+		for (let i = 0; i < typesLength; i++) {
+			const type = types[i];
+			if (charByType[type]) {
+				const charByTypeLength = charByType[type].length;
+				for (let j = 0; j < charByTypeLength; j++) {
+					charContainerId.appendChild(charByType[type][j]);
+				}
 			}
 		}
 	}
 	const sortRarity = document.getElementById("sort-rarity");
 	if (sortRarity.classList.contains("checkedSortBtn")) {
 		const dataCharRarityItems = document.querySelectorAll('[' + dataCharRarity + ']');
-		let temp_char = [];
-		for (let i = 0; i < char.length; i++) {
-			temp_char[i] = char.item(i);
-		}
-		const charLength = char.length;
-		charContainerId.innerHTML = "";
+		let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
+
+		const charByRarity = {};
 		for (let i = 0; i < charLength; i++) {
-			if (dataCharRarityItems[i].getAttribute(dataCharRarity) == "n") {
-				charContainerId.appendChild(temp_char[i]);
+			const rarity = dataCharRarityItems[i].getAttribute(dataCharRarity).slice(-4);
+			if (!charByRarity[rarity]) {
+				charByRarity[rarity] = [];
 			}
+			charByRarity[rarity].push(temp_char[i]);
 		}
-		for (let i = 0; i < charLength; i++) {
-			if (dataCharRarityItems[i].getAttribute(dataCharRarity) == "r") {
-				charContainerId.appendChild(temp_char[i]);
-			}
-		}
-		for (let i = 0; i < charLength; i++) {
-			if (dataCharRarityItems[i].getAttribute(dataCharRarity) == "sr") {
-				charContainerId.appendChild(temp_char[i]);
-			}
-		}
-		for (let i = 0; i < charLength; i++) {
-			if (dataCharRarityItems[i].getAttribute(dataCharRarity) == "ssr") {
-				charContainerId.appendChild(temp_char[i]);
-			}
-		}
-		for (let i = 0; i < charLength; i++) {
-			if (dataCharRarityItems[i].getAttribute(dataCharRarity) == "ur") {
-				charContainerId.appendChild(temp_char[i]);
-			}
-		}
-		for (let i = 0; i < charLength; i++) {
-			if (dataCharRarityItems[i].getAttribute(dataCharRarity) == "lr") {
-				charContainerId.appendChild(temp_char[i]);
+
+		const rarities = ["n", "r", "sr", "ssr", "ur", "lr"];
+		const raritiesLength = rarities.length;
+		for (let i = 0; i < raritiesLength; i++) {
+			const rarity = rarities[i];
+			if (charByRarity[rarity]) {
+				const charByRarityLength = charByRarity[rarity].length;
+				for (let j = 0; j < charByRarityLength; j++) {
+					charContainerId.appendChild(charByRarity[rarity][j]);
+				}
 			}
 		}
 	}
 	const sortCost = document.getElementById("sort-cost");
 	if (sortCost.classList.contains("checkedSortBtn")) {
 		const dataCharCostItems = document.querySelectorAll('[' + dataCharCost + ']');
-		let temp_char = [];
-		for (let i = 0; i < char.length; i++) {
-			temp_char[i] = char.item(i);
-		}
-		const charLength = char.length;
-		charContainerId.innerHTML = "";
-		let values = [];
-		for (let i = 0; i < charLength; i++) {
-			values[i] = parseInt(dataCharCostItems[i].getAttribute(dataCharCost));
-		}
-		let sortedvalues = removeDuplicates(values).sort((a, b) => a - b);
-		for (j = 0; j < sortedvalues.length; j++) {
-			for (let i = 0; i < charLength; i++) {
-				if (dataCharCostItems[i].getAttribute(dataCharCost) == sortedvalues[j]) {
-					charContainerId.appendChild(temp_char[i]);
-				}
-			}
-		}
+		let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
+		displayOrderremoveDuplicatesAndSortValues(charLength, dataCharCostItems, dataCharCost, charContainerId, temp_char);
 	}
 	const sortHp = document.getElementById("sort-hp");
 	if (sortHp.classList.contains("checkedSortBtn")) {
 		const dataChaHpItems = document.querySelectorAll('[' + dataCharHp + ']');
-		let temp_char = [];
-		for (let i = 0; i < char.length; i++) {
-			temp_char[i] = char.item(i);
-		}
-		const charLength = char.length;
-		charContainerId.innerHTML = "";
-		let values = [];
-		for (let i = 0; i < charLength; i++) {
-			values[i] = parseInt(dataChaHpItems[i].getAttribute(dataCharHp));
-		}
-		let sortedvalues = removeDuplicates(values).sort((a, b) => a - b);
-		for (j = 0; j < sortedvalues.length; j++) {
-			for (let i = 0; i < charLength; i++) {
-				if (dataChaHpItems[i].getAttribute(dataCharHp) == sortedvalues[j]) {
-					charContainerId.appendChild(temp_char[i]);
-				}
-			}
-		}
+		let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
+		displayOrderremoveDuplicatesAndSortValues(charLength, dataChaHpItems, dataCharHp, charContainerId, temp_char);
 	}
 	const sortAttack = document.getElementById("sort-attack");
 	if (sortAttack.classList.contains("checkedSortBtn")) {
 		const dataCharAttackItems = document.querySelectorAll('[' + dataCharAttack + ']');
-		let temp_char = [];
-		for (let i = 0; i < char.length; i++) {
-			temp_char[i] = char.item(i);
-		}
-		const charLength = char.length;
-		charContainerId.innerHTML = "";
-		let values = [];
-		for (let i = 0; i < charLength; i++) {
-			values[i] = parseInt(dataCharAttackItems[i].getAttribute(dataCharAttack));
-		}
-		let sortedvalues = removeDuplicates(values).sort((a, b) => a - b);
-		for (j = 0; j < sortedvalues.length; j++) {
-			for (let i = 0; i < charLength; i++) {
-				if (dataCharAttackItems[i].getAttribute(dataCharAttack) == sortedvalues[j]) {
-					charContainerId.appendChild(temp_char[i]);
-				}
-			}
-		}
+		let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
+		displayOrderremoveDuplicatesAndSortValues(charLength, dataCharAttackItems, dataCharAttack, charContainerId, temp_char);
 	}
 	const sortDefense = document.getElementById("sort-defense");
 	if (sortDefense.classList.contains("checkedSortBtn")) {
 		const dataCharDefenseItems = document.querySelectorAll('[' + dataCharDefense + ']');
-		let temp_char = [];
-		for (let i = 0; i < char.length; i++) {
-			temp_char[i] = char.item(i);
-		}
-		const charLength = char.length;
-		charContainerId.innerHTML = "";
-		let values = [];
-		for (let i = 0; i < charLength; i++) {
-			values[i] = parseInt(dataCharDefenseItems[i].getAttribute(dataCharDefense));
-		}
-		let sortedvalues = removeDuplicates(values).sort((a, b) => a - b);
-		for (j = 0; j < sortedvalues.length; j++) {
-			for (let i = 0; i < charLength; i++) {
-				if (dataCharDefenseItems[i].getAttribute(dataCharDefense) == sortedvalues[j]) {
-					charContainerId.appendChild(temp_char[i]);
-				}
-			}
-		}
+		let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
+		displayOrderremoveDuplicatesAndSortValues(charLength, dataCharDefenseItems, dataCharDefense, charContainerId, temp_char);
 	}
-	//need better sort methond so thats it sorts like the in-game method
+	//need better sort names method so thats it sorts like the in-game method
 	const sortCharacter = document.getElementById("sort-character");
 	if (sortCharacter.classList.contains("checkedSortBtn")) {
 		const dataCharNameItems = document.querySelectorAll('[' + dataCharName + ']');
-		let temp_char = [];
-		for (let i = 0; i < char.length; i++) {
-			temp_char[i] = char.item(i);
-		}
+		const temp_char = Array.from(char);
 		const charLength = char.length;
 		charContainerId.innerHTML = "";
-		let values = [];
+
+		let values = new Array(charLength);
 		for (let i = 0; i < charLength; i++) {
 			values[i] = dataCharNameItems[i].getAttribute(dataCharName);
 		}
 		let sortedvalues = removeDuplicates(values);
+
+		const fragment = document.createDocumentFragment();
 		for (j = 0; j < sortedvalues.length; j++) {
 			for (let i = 0; i < charLength; i++) {
-				if (dataCharNameItems[i].getAttribute(dataCharName) == sortedvalues[j]) {
-					charContainerId.appendChild(temp_char[i]);
+				if (values[i] === sortedvalues[j]) {
+					fragment.appendChild(temp_char[i]);
 				}
 			}
 		}
+		charContainerId.appendChild(fragment);
 	}
 	const sortSpAtkLv = document.getElementById("sort-sp-atk-lv");
 	if (sortSpAtkLv.classList.contains("checkedSortBtn")) {
 		const dataCharSpAtkLevelItems = document.querySelectorAll('[' + dataCharSpAtkLv + ']');
-		let temp_char = [];
-		for (let i = 0; i < char.length; i++) {
-			temp_char[i] = char.item(i);
-		}
-		const charLength = char.length;
-		charContainerId.innerHTML = "";
-		let values = [];
-		for (let i = 0; i < charLength; i++) {
-			values[i] = parseInt(dataCharSpAtkLevelItems[i].getAttribute(dataCharSpAtkLv));
-		}
-		let sortedvalues = removeDuplicates(values).sort((a, b) => a - b);
-		for (j = 0; j < sortedvalues.length; j++) {
-			for (let i = 0; i < charLength; i++) {
-				if (dataCharSpAtkLevelItems[i].getAttribute(dataCharSpAtkLv) == sortedvalues[j]) {
-					charContainerId.appendChild(temp_char[i]);
-				}
-			}
-		}
+		let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
+		displayOrderremoveDuplicatesAndSortValues(charLength, dataCharSpAtkLevelItems, dataCharSpAtkLv, charContainerId, temp_char);
 	}
 	const sortMaxLevel = document.getElementById("sort-max-level");
 	if (sortMaxLevel.classList.contains("checkedSortBtn")) {
 		const dataCharMaxLevelItems = document.querySelectorAll('[' + dataCharMaxLevel + ']');
-		let temp_char = [];
-		for (let i = 0; i < char.length; i++) {
-			temp_char[i] = char.item(i);
-		}
-		const charLength = char.length;
-		charContainerId.innerHTML = "";
-		let values = [];
-		for (let i = 0; i < charLength; i++) {
-			values[i] = parseInt(dataCharMaxLevelItems[i].getAttribute(dataCharMaxLevel));
-		}
-		let sortedvalues = removeDuplicates(values).sort((a, b) => a - b);
-		for (j = 0; j < sortedvalues.length; j++) {
-			for (let i = 0; i < charLength; i++) {
-				if (dataCharMaxLevelItems[i].getAttribute(dataCharMaxLevel) == sortedvalues[j]) {
-					charContainerId.appendChild(temp_char[i]);
-				}
-			}
-		}
+		let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
+		displayOrderremoveDuplicatesAndSortValues(charLength, dataCharMaxLevelItems, dataCharMaxLevel, charContainerId, temp_char);
 	}
 
 	//sortDirection

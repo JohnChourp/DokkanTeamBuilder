@@ -1,3 +1,27 @@
+function sortDirectionDisplayOrder(char, charContainerId) {
+	const temp_char = Array.from(char);
+	const charLength = char.length;
+	charContainerId.innerHTML = "";
+	return [temp_char, charLength];
+}
+function displayOrderremoveDuplicatesAndSortValues(charLength, dataCharItems, dataChar, charContainerId, temp_char) {
+	const values = new Array(charLength);
+	for (let i = 0; i < charLength; i++) {
+		values[i] = parseInt(dataCharItems[i].getAttribute(dataChar));
+	}
+	let sortedvalues = removeDuplicates(values).sort((a, b) => a - b);
+
+	const fragment = document.createDocumentFragment();
+	for (let j = 0; j < sortedvalues.length; j++) {
+		for (let i = 0; i < charLength; i++) {
+			if (values[i] === sortedvalues[j]) {
+				fragment.appendChild(temp_char[i]);
+			}
+		}
+	}
+	charContainerId.appendChild(fragment);
+}
+
 function sortDirectionAscendingDesencding(char, charContainerId) {
 	const buttonDescending = document.getElementById("filter-direction-down-id");
 
