@@ -191,32 +191,41 @@ function applyFilters() {
 	selectOneChar(searchOneCharDropdownValue);
 
 	//sortDirection
+	//sortRelease
 	const sortReleased = document.getElementById("sort-released");
 	if (sortReleased.classList.contains("checkedSortBtn")) {
 		const dataCharReleaseItems = document.querySelectorAll('[' + dataCharRelease + ']');
 		let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
 
-		const charByYear = {};
+		const sortedChars = {};
 		for (let i = 0; i < charLength; i++) {
-			const year = dataCharReleaseItems[i].getAttribute(dataCharRelease).slice(-4);
-			if (!charByYear[year]) {
-				charByYear[year] = [];
-			}
-			charByYear[year].push(temp_char[i]);
-		}
+			const releaseDate = dataCharReleaseItems[i].getAttribute(dataCharRelease);
+			const year = releaseDate.slice(-4);
+			const month = releaseDate.slice(-12, -9);
 
-		const years = ["2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023"];
-		const yearsLength = years.length;
-		for (let i = 0; i < yearsLength; i++) {
-			const year = years[i];
-			if (charByYear[year]) {
-				const charByYearLength = charByYear[year].length;
-				for (let j = 0; j < charByYearLength; j++) {
-					charContainerId.appendChild(charByYear[year][j]);
+			if (year === "2015" || year === "2016" || year === "2017"
+				|| year === "2018" || year === "2019" || year === "2020"
+				|| year === "2021" || year === "2022" || year === "2023") {
+				if (!sortedChars[year]) {
+					sortedChars[year] = {};
 				}
+
+				if (!sortedChars[year][month]) {
+					sortedChars[year][month] = [];
+				}
+
+				sortedChars[year][month].push(temp_char[i]);
+			}
+		}
+		
+		for (const year in sortedChars) {
+			for (const month in sortedChars[year]) {
+				const chars = sortedChars[year][month];
+				chars.forEach(char => charContainerId.appendChild(char));
 			}
 		}
 	}
+	//sortType
 	const sortType = document.getElementById("sort-type");
 	if (sortType.classList.contains("checkedSortBtn")) {
 		const dataCharTypeItems = document.querySelectorAll('[' + dataCharType + ']');
@@ -243,6 +252,7 @@ function applyFilters() {
 			}
 		}
 	}
+	//sortRarity
 	const sortRarity = document.getElementById("sort-rarity");
 	if (sortRarity.classList.contains("checkedSortBtn")) {
 		const dataCharRarityItems = document.querySelectorAll('[' + dataCharRarity + ']');
@@ -269,30 +279,35 @@ function applyFilters() {
 			}
 		}
 	}
+	//sortCost
 	const sortCost = document.getElementById("sort-cost");
 	if (sortCost.classList.contains("checkedSortBtn")) {
 		const dataCharCostItems = document.querySelectorAll('[' + dataCharCost + ']');
 		let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
 		displayOrderremoveDuplicatesAndSortValues(charLength, dataCharCostItems, dataCharCost, charContainerId, temp_char);
 	}
+	//sortHp
 	const sortHp = document.getElementById("sort-hp");
 	if (sortHp.classList.contains("checkedSortBtn")) {
 		const dataChaHpItems = document.querySelectorAll('[' + dataCharHp + ']');
 		let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
 		displayOrderremoveDuplicatesAndSortValues(charLength, dataChaHpItems, dataCharHp, charContainerId, temp_char);
 	}
+	//sortAttack
 	const sortAttack = document.getElementById("sort-attack");
 	if (sortAttack.classList.contains("checkedSortBtn")) {
 		const dataCharAttackItems = document.querySelectorAll('[' + dataCharAttack + ']');
 		let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
 		displayOrderremoveDuplicatesAndSortValues(charLength, dataCharAttackItems, dataCharAttack, charContainerId, temp_char);
 	}
+	//sortDefense
 	const sortDefense = document.getElementById("sort-defense");
 	if (sortDefense.classList.contains("checkedSortBtn")) {
 		const dataCharDefenseItems = document.querySelectorAll('[' + dataCharDefense + ']');
 		let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
 		displayOrderremoveDuplicatesAndSortValues(charLength, dataCharDefenseItems, dataCharDefense, charContainerId, temp_char);
 	}
+	//sortCharacter
 	//need better sort names method so thats it sorts like the in-game method
 	const sortCharacter = document.getElementById("sort-character");
 	if (sortCharacter.classList.contains("checkedSortBtn")) {
@@ -317,12 +332,14 @@ function applyFilters() {
 		}
 		charContainerId.appendChild(fragment);
 	}
+	//sortSpAtkLv
 	const sortSpAtkLv = document.getElementById("sort-sp-atk-lv");
 	if (sortSpAtkLv.classList.contains("checkedSortBtn")) {
 		const dataCharSpAtkLevelItems = document.querySelectorAll('[' + dataCharSpAtkLv + ']');
 		let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
 		displayOrderremoveDuplicatesAndSortValues(charLength, dataCharSpAtkLevelItems, dataCharSpAtkLv, charContainerId, temp_char);
 	}
+	//sortMaxLevel
 	const sortMaxLevel = document.getElementById("sort-max-level");
 	if (sortMaxLevel.classList.contains("checkedSortBtn")) {
 		const dataCharMaxLevelItems = document.querySelectorAll('[' + dataCharMaxLevel + ']');
