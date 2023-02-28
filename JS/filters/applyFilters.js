@@ -103,7 +103,12 @@ function filtersMultipleUsed(dataChars, filtersEachLengthString, filtersEachLeng
 }
 
 function applyFilters() {
-	setCharList();
+	const sortUpdated = document.getElementById("sort-updated");
+	if (sortUpdated.classList.contains("checkedSortBtn") || localStorage.getItem("charList") == null) {
+		setCharList();
+	} else {
+		setCharListTemp();
+	}
 	const charContainerId = document.getElementById("char-container-id");
 	const char = document.getElementsByClassName("char");
 	const searchOneCharDropdownValue = document.getElementsByClassName("search-one-char-dropdown-options-value");
@@ -189,8 +194,7 @@ function applyFilters() {
 
 	//select one char
 	selectOneChar(searchOneCharDropdownValue);
-
-	//sortDirection
+	
 	//sortRelease
 	const sortReleased = document.getElementById("sort-released");
 	if (sortReleased.classList.contains("checkedSortBtn")) {
@@ -217,7 +221,7 @@ function applyFilters() {
 				sortedChars[year][month].push(temp_char[i]);
 			}
 		}
-		
+
 		for (const year in sortedChars) {
 			for (const month in sortedChars[year]) {
 				const chars = sortedChars[year][month];

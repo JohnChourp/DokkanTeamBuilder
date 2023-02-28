@@ -111,10 +111,14 @@ function searchChar() {
 	characterSearchId.addEventListener("keypress", function (event) {
 		if (event.key === "Enter") {
 			event.preventDefault();
-			setCharList();
+			const sortUpdated = document.getElementById("sort-updated");
+			if (sortUpdated.classList.contains("checkedSortBtn") || localStorage.getItem("charList") == null) {
+				setCharList();
+			} else {
+				setCharListTemp();
+			}
 			const nameOrTitle = localStorage.getItem("nameOrTitle");
 			const characterSearchId = document.getElementById("char-search-id");
-			const charContainerId = document.getElementById("char-container-id");
 			const char = document.getElementsByClassName("char");
 
 			const dataCharTitle = 'data-char-title',
