@@ -1,0 +1,59 @@
+#search-before-eza-id,#search-after-eza-id {
+    width: 180px;
+    height:30px;
+    margin-left:5px;
+}
+
+.search-before-eza-dropdown-options {
+	display: none;
+	background-color: #f1f1f1;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+	overflow: auto;
+	width: 186px;
+	height: 200px;
+}
+
+.search-before-eza-dropdown-options a {
+	color: black;
+	padding: 5px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+.search-before-eza-dropdown-options a:hover {
+	background-color: #ddd;
+}
+
+.showBeforeEza {
+	display: block;
+    position: absolute;
+    left:7px;
+}
+
+.search-after-eza-dropdown-options {
+	display: none;
+	background-color: #f1f1f1;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+	overflow: auto;
+	width: 186px;
+	height: 200px;
+}
+
+.search-after-eza-dropdown-options a {
+	color: black;
+	padding: 5px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+.search-after-eza-dropdown-options a:hover {
+	background-color: #ddd;
+}
+
+.showAfterEza {
+	display: block;
+    position: absolute;
+    right:2px;
+}

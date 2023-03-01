@@ -50,8 +50,6 @@
     color: #f1f1f1;
 }
 
-
-
 #right-sidenav-filters-id {
     height: 100%;
     width: 0;
@@ -63,14 +61,6 @@
     overflow-x: hidden;
     transition: 0.5s;
 }
-
-
-
-
-
-
-
-
 
 /*filter select button*/
 #filter-select-id {
@@ -191,4 +181,8 @@
 .filter-category-container {
     -webkit-tap-highlight-color: transparent;
     -tap-highlight-color: transparent;
+}
+
+#filter-setting-margin-bottom {
+    height:350px;
 }

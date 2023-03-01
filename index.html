@@ -28,6 +28,7 @@
 	<link href="CSS/filters/filterEza.css" rel="stylesheet" type="text/css" />
 	<link href="CSS/filters/filterRarity.css" rel="stylesheet" type="text/css" />
 	<link href="CSS/filters/filterRecruit.css" rel="stylesheet" type="text/css" />
+	<link href="CSS/filters/filterReleaseDate.css" rel="stylesheet" type="text/css" />
 	<link href="CSS/filters/filterSideNav.css" rel="stylesheet" type="text/css" />
 	<link href="CSS/filters/filterSort.css" rel="stylesheet" type="text/css" />
 	<link href="CSS/filters/filterSortDirection.css" rel="stylesheet" type="text/css" />
@@ -1514,6 +1515,7 @@
 					alt="filter_super_attack_type_other">
 			</button>
 		</div>
+		<hr>
 		<p class="filter-options-text-class">Eza</p>
 		<div class="filter-class">
 			<button onclick="ezaFilter();" id="eza" type="button">EZA</button>
@@ -1557,6 +1559,18 @@
 				8 Year
 			</button>
 		</div>
+		<p class="filter-options-text-class">Release Date</p>
+		<div class="filter-class">
+			<input type="text" id="search-before-eza-id" onkeyup="selectedBeforeEzaSearch();" placeholder="Before EZA.."
+				title="Before EZA" inputmode="search">
+			<input type="text" id="search-after-eza-id" onkeyup="selectedAfterEzaSearch();" placeholder="After EZA.."
+				title="After EZA" inputmode="search">
+		</div>
+		<div class="filter-class">
+			<div class="search-before-eza-dropdown-options showBeforeEza"></div>
+			<div class="search-after-eza-dropdown-options showAfterEza"></div>
+		</div>
+		<div id="filter-setting-margin-bottom"></div>
 	</div>
 	<div id="apply-categories-bg-id"></div>
 	<div id="apply-categories-id">
@@ -20040,6 +20054,7 @@
 	<script defer src="JS/filters/filterEza.js" type="text/javascript"></script>
 	<script defer src="JS/filters/filterRarity.js" type="text/javascript"></script>
 	<script defer src="JS/filters/filterRecruit.js" type="text/javascript"></script>
+	<script defer src="JS/filters/filterReleaseDate.js" type="text/javascript"></script>
 	<script defer src="JS/filters/filterSideNav.js" type="text/javascript"></script>
 	<script defer src="JS/filters/filterSort.js" type="text/javascript"></script>
 	<script defer src="JS/filters/filterSortDirection.js" type="text/javascript"></script>
