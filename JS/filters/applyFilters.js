@@ -103,10 +103,15 @@ function filtersMultipleUsed(dataChars, filtersEachLengthString, filtersEachLeng
 }
 
 function applyFilters() {
-	setCharList();
+	const sortUpdated = document.getElementById("sort-updated");
+	if (sortUpdated.classList.contains("checkedSortBtn")) {
+		setCharList();
+		saveCharListTemp();
+	} else {
+		setCharListTemp();
+	}
 	const charContainerId = document.getElementById("char-container-id");
 	const char = document.getElementsByClassName("char");
-	const checkedDirectionBtn = document.getElementsByClassName("checkedDirectionBtn");
 	const searchOneCharDropdownValue = document.getElementsByClassName("search-one-char-dropdown-options-value");
 
 	const dataCharCategories = 'data-char-categories',
@@ -116,7 +121,15 @@ function applyFilters() {
 		dataCharAwaken = 'data-char-awaken',
 		dataCharSuperAtkType = 'data-char-super-atk-type',
 		dataCharEza = 'data-char-eza',
-		dataCharRecruit = 'data-char-recruit';
+		dataCharRecruit = 'data-char-recruit',
+		dataCharRelease = 'data-char-release',
+		dataCharCost = 'data-char-cost',
+		dataCharHp = 'data-char-hp',
+		dataCharAttack = 'data-char-attack',
+		dataCharDefense = 'data-char-defense',
+		dataCharName = 'data-char-name',
+		dataCharSpAtkLv = 'data-char-super-atk-level',
+		dataCharMaxLevel = 'data-char-max-level';
 
 	const dataChars = [dataCharCategories,
 		dataCharRarity,
@@ -169,7 +182,7 @@ function applyFilters() {
 		filterEza = ["eza", "noeza"],
 		filterRecruit = ["summonable", "free-to-play"];
 
-	//checked filter Brn
+	//checked filter Btn
 	const filterClasses = ["checkedCategoryBtn", "checkedRarityBtn", "checkedTypeBtn", "checkedClassBtn", "checkedAwakenBtn", "checkedSuperAttackTypeBtn", "checkedEzaBtn", "checkedRecruitBtn"];
 	const filtersEachLength = [];
 	const filtersEachLengthString = [];
@@ -180,13 +193,173 @@ function applyFilters() {
 		filtersEachLengthString.push(String.fromCharCode(65 + i)); // Convert index to corresponding letter of the alphabet
 	}
 
-	//sortDirection
-	sortDirectionAscendingDesencding(checkedDirectionBtn.length, char, charContainerId);
-
 	//select one char
 	selectOneChar(searchOneCharDropdownValue);
+	
+	//sortRelease
+	const sortReleased = document.getElementById("sort-released");
+	if (sortReleased.classList.contains("checkedSortBtn")) {
+		const dataCharReleaseItems = document.querySelectorAll('[' + dataCharRelease + ']');
+		let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
 
-	//filter category used
+		const sortedChars = {};
+		for (let i = 0; i < charLength; i++) {
+			const releaseDate = dataCharReleaseItems[i].getAttribute(dataCharRelease);
+			const year = releaseDate.slice(-4);
+			const month = releaseDate.slice(-12, -9);
+
+			if (year === "2015" || year === "2016" || year === "2017"
+				|| year === "2018" || year === "2019" || year === "2020"
+				|| year === "2021" || year === "2022" || year === "2023") {
+				if (!sortedChars[year]) {
+					sortedChars[year] = {};
+				}
+
+				if (!sortedChars[year][month]) {
+					sortedChars[year][month] = [];
+				}
+
+				sortedChars[year][month].push(temp_char[i]);
+			}
+		}
+
+		for (const year in sortedChars) {
+			for (const month in sortedChars[year]) {
+				const chars = sortedChars[year][month];
+				chars.forEach(char => charContainerId.appendChild(char));
+			}
+		}
+	}
+	//sortType
+	const sortType = document.getElementById("sort-type");
+	if (sortType.classList.contains("checkedSortBtn")) {
+		const dataCharTypeItems = document.querySelectorAll('[' + dataCharType + ']');
+		let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
+
+		const charByType = {};
+		for (let i = 0; i < charLength; i++) {
+			const type = dataCharTypeItems[i].getAttribute(dataCharType).slice(-4);
+			if (!charByType[type]) {
+				charByType[type] = [];
+			}
+			charByType[type].push(temp_char[i]);
+		}
+
+		const types = ["agl", "teq", "int", "str", "phy"];
+		const typesLength = types.length;
+		for (let i = 0; i < typesLength; i++) {
+			const type = types[i];
+			if (charByType[type]) {
+				const charByTypeLength = charByType[type].length;
+				for (let j = 0; j < charByTypeLength; j++) {
+					charContainerId.appendChild(charByType[type][j]);
+				}
+			}
+		}
+	}
+	//sortRarity
+	const sortRarity = document.getElementById("sort-rarity");
+	if (sortRarity.classList.contains("checkedSortBtn")) {
+		const dataCharRarityItems = document.querySelectorAll('[' + dataCharRarity + ']');
+		let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
+
+		const charByRarity = {};
+		for (let i = 0; i < charLength; i++) {
+			const rarity = dataCharRarityItems[i].getAttribute(dataCharRarity).slice(-4);
+			if (!charByRarity[rarity]) {
+				charByRarity[rarity] = [];
+			}
+			charByRarity[rarity].push(temp_char[i]);
+		}
+
+		const rarities = ["n", "r", "sr", "ssr", "ur", "lr"];
+		const raritiesLength = rarities.length;
+		for (let i = 0; i < raritiesLength; i++) {
+			const rarity = rarities[i];
+			if (charByRarity[rarity]) {
+				const charByRarityLength = charByRarity[rarity].length;
+				for (let j = 0; j < charByRarityLength; j++) {
+					charContainerId.appendChild(charByRarity[rarity][j]);
+				}
+			}
+		}
+	}
+	//sortCost
+	const sortCost = document.getElementById("sort-cost");
+	if (sortCost.classList.contains("checkedSortBtn")) {
+		const dataCharCostItems = document.querySelectorAll('[' + dataCharCost + ']');
+		let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
+		displayOrderremoveDuplicatesAndSortValues(charLength, dataCharCostItems, dataCharCost, charContainerId, temp_char);
+	}
+	//sortHp
+	const sortHp = document.getElementById("sort-hp");
+	if (sortHp.classList.contains("checkedSortBtn")) {
+		const dataChaHpItems = document.querySelectorAll('[' + dataCharHp + ']');
+		let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
+		displayOrderremoveDuplicatesAndSortValues(charLength, dataChaHpItems, dataCharHp, charContainerId, temp_char);
+	}
+	//sortAttack
+	const sortAttack = document.getElementById("sort-attack");
+	if (sortAttack.classList.contains("checkedSortBtn")) {
+		const dataCharAttackItems = document.querySelectorAll('[' + dataCharAttack + ']');
+		let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
+		displayOrderremoveDuplicatesAndSortValues(charLength, dataCharAttackItems, dataCharAttack, charContainerId, temp_char);
+	}
+	//sortDefense
+	const sortDefense = document.getElementById("sort-defense");
+	if (sortDefense.classList.contains("checkedSortBtn")) {
+		const dataCharDefenseItems = document.querySelectorAll('[' + dataCharDefense + ']');
+		let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
+		displayOrderremoveDuplicatesAndSortValues(charLength, dataCharDefenseItems, dataCharDefense, charContainerId, temp_char);
+	}
+	//sortCharacter
+	//need better sort names method so thats it sorts like the in-game method
+	const sortCharacter = document.getElementById("sort-character");
+	if (sortCharacter.classList.contains("checkedSortBtn")) {
+		const dataCharNameItems = document.querySelectorAll('[' + dataCharName + ']');
+		const temp_char = Array.from(char);
+		const charLength = char.length;
+		charContainerId.innerHTML = "";
+
+		let values = new Array(charLength);
+		for (let i = 0; i < charLength; i++) {
+			values[i] = dataCharNameItems[i].getAttribute(dataCharName);
+		}
+		let sortedvalues = removeDuplicates(values);
+
+		const fragment = document.createDocumentFragment();
+		for (j = 0; j < sortedvalues.length; j++) {
+			for (let i = 0; i < charLength; i++) {
+				if (values[i] === sortedvalues[j]) {
+					fragment.appendChild(temp_char[i]);
+				}
+			}
+		}
+		charContainerId.appendChild(fragment);
+	}
+	//sortSpAtkLv
+	const sortSpAtkLv = document.getElementById("sort-sp-atk-lv");
+	if (sortSpAtkLv.classList.contains("checkedSortBtn")) {
+		const dataCharSpAtkLevelItems = document.querySelectorAll('[' + dataCharSpAtkLv + ']');
+		let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
+		displayOrderremoveDuplicatesAndSortValues(charLength, dataCharSpAtkLevelItems, dataCharSpAtkLv, charContainerId, temp_char);
+	}
+	//sortMaxLevel
+	const sortMaxLevel = document.getElementById("sort-max-level");
+	if (sortMaxLevel.classList.contains("checkedSortBtn")) {
+		const dataCharMaxLevelItems = document.querySelectorAll('[' + dataCharMaxLevel + ']');
+		let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
+		displayOrderremoveDuplicatesAndSortValues(charLength, dataCharMaxLevelItems, dataCharMaxLevel, charContainerId, temp_char);
+	}
+
+	if (!sortUpdated.classList.contains("checkedSortBtn")) {
+		saveCharListTemp();
+	}
+	
+	//sortDirection
+	sortDirectionAscendingDesencding(char, charContainerId);
+
+	//filters used
 	const filtersUsed = filterCategoryUsed(filterCategories, filterCategoriesNames, filterRarity, filterType, filterClass, filterAwaken, filterSuperAttackType, filterEza, filterRecruit);
 
 	//check how many filter are used

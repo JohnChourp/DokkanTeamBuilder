@@ -1,5 +1,12 @@
 function removeAllFilters() {
-	const filters = [{ id: "agl", class: "checkedTypeBtn", list: ["agl", "teq", "int", "str", "phy"] },
+	const filters = [{
+		id: "sort-updated", class: "checkedSortBtn", list: [
+			"sort-updated", "sort-released", "sort-type",
+			"sort-rarity", "sort-cost"
+			, "sort-hp", "sort-attack", "sort-defense"
+			, "sort-character", "sort-sp-atk-lv", "sort-max-level"]
+	},
+	{ id: "agl", class: "checkedTypeBtn", list: ["agl", "teq", "int", "str", "phy"] },
 	{ id: "n", class: "checkedRarityBtn", list: ["n", "r", "sr", "ssr", "ur", "lr"] },
 	{ id: "super", class: "checkedClassBtn", list: ["super", "extreme"] },
 	{ id: "eza", class: "checkedEzaBtn", list: ["eza", "noeza"] },
@@ -122,5 +129,6 @@ function removeAllFilters() {
 		removeAllSuperAttackType();
 		removeAllRecruit();
 		removeAllCategory();
+		removeAllSortAndAddUpdated();
 	}
 }

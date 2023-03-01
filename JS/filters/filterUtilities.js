@@ -1,5 +1,31 @@
-function sortDirectionAscendingDesencding(checkedDirectionBtnLength, char, charContainerId) {
-	if (checkedDirectionBtnLength == 1) {
+function sortDirectionDisplayOrder(char, charContainerId) {
+	const temp_char = Array.from(char);
+	const charLength = char.length;
+	charContainerId.innerHTML = "";
+	return [temp_char, charLength];
+}
+function displayOrderremoveDuplicatesAndSortValues(charLength, dataCharItems, dataChar, charContainerId, temp_char) {
+	const values = new Array(charLength);
+	for (let i = 0; i < charLength; i++) {
+		values[i] = parseInt(dataCharItems[i].getAttribute(dataChar));
+	}
+	let sortedvalues = removeDuplicates(values).sort((a, b) => a - b);
+
+	const fragment = document.createDocumentFragment();
+	for (let j = 0; j < sortedvalues.length; j++) {
+		for (let i = 0; i < charLength; i++) {
+			if (values[i] === sortedvalues[j]) {
+				fragment.appendChild(temp_char[i]);
+			}
+		}
+	}
+	charContainerId.appendChild(fragment);
+}
+
+function sortDirectionAscendingDesencding(char, charContainerId) {
+	const buttonDescending = document.getElementById("filter-direction-down-id");
+
+	if (buttonDescending.classList.contains("checkedDirectionBtn")) {
 		let temp_char = [];
 		for (let i = 0; i < char.length; i++) {
 			temp_char[i] = char.item(i);
@@ -11,6 +37,22 @@ function sortDirectionAscendingDesencding(checkedDirectionBtnLength, char, charC
 		}
 	}
 }
+
+// function sortDirectionAscendingDesencdingSearchChar(char, charContainerId, dataCharNameOrTitleItems, dataCharNameOrTitle) {
+// 	const buttonDescending = document.getElementById("filter-direction-down-id");
+// 	const characterSearchId = document.getElementById("char-search-id");
+
+// 	if (buttonDescending.classList.contains("checkedDirectionBtn")) {
+// 		const fragment = document.createDocumentFragment();
+// 		for (let i = 0; i < char.length; i++) {
+// 			if (dataCharNameOrTitleItems[i].getAttribute(dataCharNameOrTitle).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0) {
+// 				fragment.appendChild(char.item(i));
+// 			}
+// 		}
+// 		charContainerId.appendChild(fragment);
+// 	}
+// }
+
 function selectOneChar(searchOneCharDropdownValue) {
 	for (let i = 1; i < searchOneCharDropdownValue.length; i++) {
 		if (searchOneCharDropdownValue.item(i).classList.contains("checkedSearchOneCharBtn")) {

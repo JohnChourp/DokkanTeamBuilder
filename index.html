@@ -28,6 +28,7 @@
 	<link href="CSS/filters/filterRarity.css" rel="stylesheet" type="text/css" />
 	<link href="CSS/filters/filterRecruit.css" rel="stylesheet" type="text/css" />
 	<link href="CSS/filters/filterSideNav.css" rel="stylesheet" type="text/css" />
+	<link href="CSS/filters/filterSort.css" rel="stylesheet" type="text/css" />
 	<link href="CSS/filters/filterSortDirection.css" rel="stylesheet" type="text/css" />
 	<link href="CSS/filters/filterSuperAttackType.css" rel="stylesheet" type="text/css" />
 	<link href="CSS/filters/filterType.css" rel="stylesheet" type="text/css" />
@@ -67,7 +68,7 @@
 </head>
 
 <body
-	onload="cookiesBox(); saveCharList(); charsPerPageInput(); applyFilters(); searchChar(); addAllCharNames(); closeNavWhenClickedOutside();">
+	onload="cookiesBox(); saveCharList(); saveCharListTemp(); charsPerPageInput(); applyFilters(); searchChar(); addAllCharNames(); closeNavWhenClickedOutside();">
 	<!-- Google Tag Manager (noscript) -->
 	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TBW6L4T" height="0" width="0"
 			style="display:none;visibility:hidden"></iframe></noscript>
@@ -100,9 +101,9 @@
 	<!-- Warn User -->
 	<div id="left-sidenav-id">
 		<a href="#" id="close-left-sidenav-btn-id" onclick="closeNav();">&times;</a>
-		<p class="filter-options-text-class">Sort Direction</p>
+		<p class="filter-options-text-big-class">Please Choose Display Order</p>
 		<div class="filter-class">
-			<button onclick="toggleDirection('down');" id="filter-direction-down-id" class="filter-direction-class"
+			<button onclick="toggleDirection('down');" id="filter-direction-down-id" class="filter-direction-class checkedDirectionBtn"
 				type="button">
 				Descending Order
 			</button>
@@ -110,6 +111,179 @@
 				type="button">
 				Ascending Order
 			</button>
+		</div>
+		<div class="filter-class">
+			<div onclick="filterSort('sort-updated');" id="sort-updated" class="filter-sort-container checkedSortBtn">
+				<div class="filter-sort-container-inside">
+					<div class="top-half-bg-color-sort" style="background-color:#A9C857;"></div>
+					<div class="bottom-half-bg-color-sort" style="background-color:#77A331;"></div>
+					<div class="filter-sort-container-inside-outline">
+						<div class="top-line-sort"></div>
+						<div class="bottom-line-sort"></div>
+						<div class="top-left-line-rotated-sort"></div>
+						<div class="top-right-line-rotated-sort"></div>
+						<div class="bottom-left-line-rotated-sort"></div>
+						<div class="bottom-right-line-rotated-sort"></div>
+					</div>
+					<div class="filter-sort-container-text" style="background-image:linear-gradient(180deg, #FFFFFF,#DBCEBD);">Updated</div>
+				</div>
+			</div>
+			<div onclick="filterSort('sort-released');" id="sort-released" class="filter-sort-container">
+				<div class="filter-sort-container-inside">
+					<div class="top-half-bg-color-sort"></div>
+					<div class="bottom-half-bg-color-sort"></div>
+					<div class="filter-sort-container-inside-outline">
+						<div class="top-line-sort"></div>
+						<div class="bottom-line-sort"></div>
+						<div class="top-left-line-rotated-sort"></div>
+						<div class="top-right-line-rotated-sort"></div>
+						<div class="bottom-left-line-rotated-sort"></div>
+						<div class="bottom-right-line-rotated-sort"></div>
+					</div>
+					<div class="filter-sort-container-text">Released</div>
+				</div>
+			</div>
+			<div onclick="filterSort('sort-type');" id="sort-type" class="filter-sort-container">
+				<div class="filter-sort-container-inside">
+					<div class="top-half-bg-color-sort"></div>
+					<div class="bottom-half-bg-color-sort"></div>
+					<div class="filter-sort-container-inside-outline">
+						<div class="top-line-sort"></div>
+						<div class="bottom-line-sort"></div>
+						<div class="top-left-line-rotated-sort"></div>
+						<div class="top-right-line-rotated-sort"></div>
+						<div class="bottom-left-line-rotated-sort"></div>
+						<div class="bottom-right-line-rotated-sort"></div>
+					</div>
+					<div class="filter-sort-container-text">Type</div>
+				</div>
+			</div>
+		</div>
+		<div class="filter-class">
+			<div onclick="filterSort('sort-rarity');" id="sort-rarity" class="filter-sort-container">
+				<div class="filter-sort-container-inside">
+					<div class="top-half-bg-color-sort"></div>
+					<div class="bottom-half-bg-color-sort"></div>
+					<div class="filter-sort-container-inside-outline">
+						<div class="top-line-sort"></div>
+						<div class="bottom-line-sort"></div>
+						<div class="top-left-line-rotated-sort"></div>
+						<div class="top-right-line-rotated-sort"></div>
+						<div class="bottom-left-line-rotated-sort"></div>
+						<div class="bottom-right-line-rotated-sort"></div>
+					</div>
+					<div class="filter-sort-container-text">Rarity</div>
+				</div>
+			</div>
+			<div onclick="filterSort('sort-cost');" id="sort-cost" class="filter-sort-container">
+				<div class="filter-sort-container-inside">
+					<div class="top-half-bg-color-sort"></div>
+					<div class="bottom-half-bg-color-sort"></div>
+					<div class="filter-sort-container-inside-outline">
+						<div class="top-line-sort"></div>
+						<div class="bottom-line-sort"></div>
+						<div class="top-left-line-rotated-sort"></div>
+						<div class="top-right-line-rotated-sort"></div>
+						<div class="bottom-left-line-rotated-sort"></div>
+						<div class="bottom-right-line-rotated-sort"></div>
+					</div>
+					<div class="filter-sort-container-text">Cost</div>
+				</div>
+			</div>
+			<div onclick="filterSort('sort-hp');" id="sort-hp" class="filter-sort-container">
+				<div class="filter-sort-container-inside">
+					<div class="top-half-bg-color-sort"></div>
+					<div class="bottom-half-bg-color-sort"></div>
+					<div class="filter-sort-container-inside-outline">
+						<div class="top-line-sort"></div>
+						<div class="bottom-line-sort"></div>
+						<div class="top-left-line-rotated-sort"></div>
+						<div class="top-right-line-rotated-sort"></div>
+						<div class="bottom-left-line-rotated-sort"></div>
+						<div class="bottom-right-line-rotated-sort"></div>
+					</div>
+					<div class="filter-sort-container-text">HP</div>
+				</div>
+			</div>
+		</div>
+		<div class="filter-class">
+			<div onclick="filterSort('sort-attack');" id="sort-attack" class="filter-sort-container">
+				<div class="filter-sort-container-inside">
+					<div class="top-half-bg-color-sort"></div>
+					<div class="bottom-half-bg-color-sort"></div>
+					<div class="filter-sort-container-inside-outline">
+						<div class="top-line-sort"></div>
+						<div class="bottom-line-sort"></div>
+						<div class="top-left-line-rotated-sort"></div>
+						<div class="top-right-line-rotated-sort"></div>
+						<div class="bottom-left-line-rotated-sort"></div>
+						<div class="bottom-right-line-rotated-sort"></div>
+					</div>
+					<div class="filter-sort-container-text">Attack</div>
+				</div>
+			</div>
+			<div onclick="filterSort('sort-defense');" id="sort-defense" class="filter-sort-container">
+				<div class="filter-sort-container-inside">
+					<div class="top-half-bg-color-sort"></div>
+					<div class="bottom-half-bg-color-sort"></div>
+					<div class="filter-sort-container-inside-outline">
+						<div class="top-line-sort"></div>
+						<div class="bottom-line-sort"></div>
+						<div class="top-left-line-rotated-sort"></div>
+						<div class="top-right-line-rotated-sort"></div>
+						<div class="bottom-left-line-rotated-sort"></div>
+						<div class="bottom-right-line-rotated-sort"></div>
+					</div>
+					<div class="filter-sort-container-text">Defense</div>
+				</div>
+			</div>
+			<div onclick="filterSort('sort-character');" id="sort-character" class="filter-sort-container">
+				<div class="filter-sort-container-inside">
+					<div class="top-half-bg-color-sort"></div>
+					<div class="bottom-half-bg-color-sort"></div>
+					<div class="filter-sort-container-inside-outline">
+						<div class="top-line-sort"></div>
+						<div class="bottom-line-sort"></div>
+						<div class="top-left-line-rotated-sort"></div>
+						<div class="top-right-line-rotated-sort"></div>
+						<div class="bottom-left-line-rotated-sort"></div>
+						<div class="bottom-right-line-rotated-sort"></div>
+					</div>
+					<div class="filter-sort-container-text">Character</div>
+				</div>
+			</div>
+		</div>
+		<div class="filter-class">
+			<div onclick="filterSort('sort-sp-atk-lv');" id="sort-sp-atk-lv" class="filter-sort-container">
+				<div class="filter-sort-container-inside">
+					<div class="top-half-bg-color-sort"></div>
+					<div class="bottom-half-bg-color-sort"></div>
+					<div class="filter-sort-container-inside-outline">
+						<div class="top-line-sort"></div>
+						<div class="bottom-line-sort"></div>
+						<div class="top-left-line-rotated-sort"></div>
+						<div class="top-right-line-rotated-sort"></div>
+						<div class="bottom-left-line-rotated-sort"></div>
+						<div class="bottom-right-line-rotated-sort"></div>
+					</div>
+					<div class="filter-sort-container-text">Sp Atk Lv</div>
+				</div>
+			</div>
+			<div onclick="filterSort('sort-max-level');" id="sort-max-level" class="filter-sort-container">
+				<div class="filter-sort-container-inside">
+					<div class="top-half-bg-color-sort"></div>
+					<div class="bottom-half-bg-color-sort"></div>
+					<div class="filter-sort-container-inside-outline">
+						<div class="top-line-sort"></div>
+						<div class="bottom-line-sort"></div>
+						<div class="top-left-line-rotated-sort"></div>
+						<div class="top-right-line-rotated-sort"></div>
+						<div class="bottom-left-line-rotated-sort"></div>
+						<div class="bottom-right-line-rotated-sort"></div>
+					</div>
+					<div class="filter-sort-container-text">Max Level</div>
+				</div>
+			</div>
 		</div>
 		<hr>
 		<p class="filter-options-text-big-class">Filter Select</p>
@@ -8683,7 +8857,7 @@
 				data-char-rarity="ur" data-char-class="extreme" data-char-eza="eza" data-char-id="1017160"
 				data-char-hp="11645" data-char-attack="13076" data-char-defense="8321" data-char-cost="32"
 				data-char-max-level="140" data-char-super-atk-level="15" data-char-recruit="free-to-play"
-				data-char-awaken="dokkan-awakened" data-char-release="Oct 3, 2019.Oct 3, 2019"
+				data-char-awaken="dokkan-awakened" data-char-release="Oct 03, 2019.Oct 03, 2019"
 				data-char-super-atk-type="12 Ki,other"
 				data-char-links="Brutal Beatdown,Strongest Clan in Space,Universe's Most Malevolent,Prodigies,Fear and Faith,Big Bad Bosses,Shattering the Limit"
 				data-char-categories="Planet Namek Saga,Wicked Bloodline,Transformation Boost,Sworn Enemies,Gifted Warriors,Space-Traveling Warriors,Terrifying Conquerors,Inhuman Deeds,Planetary Destruction,Accelerated Battle">
@@ -8692,7 +8866,7 @@
 				data-char-type="agl" data-char-rarity="ur" data-char-class="extreme" data-char-eza="noeza"
 				data-char-id="1017210" data-char-hp="11380" data-char-attack="12220" data-char-defense="9258"
 				data-char-cost="29" data-char-max-level="100" data-char-super-atk-level="10"
-				data-char-recruit="summonable" data-char-awaken="pre-dokkan-awakened" data-char-release="Oct 3, 2019"
+				data-char-recruit="summonable" data-char-awaken="pre-dokkan-awakened" data-char-release="Oct 03, 2019"
 				data-char-super-atk-type="12 Ki,other"
 				data-char-links="Strongest Clan in Space,Universe's Most Malevolent,Prodigies,Thirst for Conquest,Big Bad Bosses,Shocking Speed"
 				data-char-categories="Planet Namek Saga,Wicked Bloodline,Transformation Boost,Sworn Enemies,Gifted Warriors,Space-Traveling Warriors,Terrifying Conquerors,Inhuman Deeds,Planetary Destruction,Accelerated Battle">
@@ -8701,7 +8875,7 @@
 				data-char-type="agl" data-char-rarity="ur" data-char-class="extreme" data-char-eza="noeza"
 				data-char-id="1017220" data-char-hp="13870" data-char-attack="13756" data-char-defense="10593"
 				data-char-cost="40" data-char-max-level="120" data-char-super-atk-level="10"
-				data-char-recruit="summonable" data-char-awaken="dokkan-awakened" data-char-release="Oct 3, 2019"
+				data-char-recruit="summonable" data-char-awaken="dokkan-awakened" data-char-release="Oct 03, 2019"
 				data-char-super-atk-type="12 Ki,ki-blast"
 				data-char-links="Strongest Clan in Space,Universe's Most Malevolent,Prodigies,Thirst for Conquest,Big Bad Bosses,Shocking Speed,Fierce Battle"
 				data-char-categories="Planet Namek Saga,Wicked Bloodline,Transformation Boost,Sworn Enemies,Gifted Warriors,Space-Traveling Warriors,Terrifying Conquerors,Inhuman Deeds,Planetary Destruction,Accelerated Battle">
@@ -9240,7 +9414,7 @@
 				data-char-rarity="ur" data-char-class="super" data-char-eza="noeza" data-char-id="1017510"
 				data-char-hp="12093" data-char-attack="12264" data-char-defense="8924" data-char-cost="9"
 				data-char-max-level="100" data-char-super-atk-level="10" data-char-recruit="summonable"
-				data-char-awaken="dokkan-awakened" data-char-release="Jan 6, 2020"
+				data-char-awaken="dokkan-awakened" data-char-release="Jan 06, 2020"
 				data-char-super-atk-type="12 Ki,ki-blast"
 				data-char-links="The Saiyan Lineage,Berserker,Demonic Ways,The Innocents,Gaze of Respect,Shocking Speed,Fierce Battle"
 				data-char-categories="Hybrid Saiyans,Goku's Family,Youth,Bond of Parent and Child,Bond of Friendship,Bond of Master and Disciple,Movie Heroes,Earth-Bred Fighters">
@@ -10049,7 +10223,7 @@
 			<div class="char" data-char-name="Dabura" data-char-title="Lord of the Demon Realm's Trial by Fire"
 				data-char-type="phy" data-char-rarity="ur" data-char-class="extreme" data-char-eza="noeza"
 				data-char-id="1018680" data-char-hp="14875" data-char-attack="14289" data-char-defense="9023"
-				data-char-cost="40" data-char-max-level="110" data-char-super-atk-level="10"
+				data-char-cost="40" data-char-max-level="120" data-char-super-atk-level="10"
 				data-char-recruit="summonable" data-char-awaken="dokkan-awakened" data-char-release="May 08, 2020"
 				data-char-super-atk-type="12 Ki,ki-blast"
 				data-char-links="Brutal Beatdown,Loyalty,Master of Magic,Majin Resurrection Plan,Nightmare,Fear and Faith,Fierce Battle"
@@ -11446,7 +11620,7 @@
 				data-char-id="1020150" data-char-hp="13367" data-char-attack="12689" data-char-defense="8675"
 				data-char-cost="32" data-char-max-level="140" data-char-super-atk-level="15"
 				data-char-recruit="free-to-play" data-char-awaken="dokkan-awakened"
-				data-char-release="Nov 6, 2020.Nov 6, 2020" data-char-super-atk-type="12 Ki,ki-blast"
+				data-char-release="Nov 06, 2020.Nov 06, 2020" data-char-super-atk-type="12 Ki,ki-blast"
 				data-char-links="Prodigies,Universe's Most Malevolent,Shocking Speed,Strongest Clan in Space,Formidable Enemy,Fierce Battle"
 				data-char-categories="Planet Namek Saga,Wicked Bloodline,Transformation Boost,Sworn Enemies,Gifted Warriors,Space-Traveling Warriors,Dragon Ball Seekers,Terrifying Conquerors,Inhuman Deeds,Planetary Destruction,Accelerated Battle">
 			</div>
@@ -11913,7 +12087,7 @@
 			<div class="char" data-char-name="Vegito" data-char-title="Unstoppable Power" data-char-type="agl"
 				data-char-rarity="ur" data-char-class="super" data-char-eza="noeza" data-char-id="1019690"
 				data-char-hp="10982" data-char-attack="10834" data-char-defense="8675" data-char-cost="40"
-				data-char-max-level="120" data-char-super-atk-level="40" data-char-recruit="free-to-play"
+				data-char-max-level="120" data-char-super-atk-level="10" data-char-recruit="free-to-play"
 				data-char-awaken="dokkan-awakened" data-char-release="Jan 01, 2021"
 				data-char-super-atk-type="12 Ki,ki-blast"
 				data-char-links="Saiyan Warrior Race,The Saiyan Lineage,Prepared for Battle,Power Bestowed by God,Fused Fighter,Brainiacs,Shattering the Limit"
@@ -15003,7 +15177,7 @@
 				data-char-id="1017380" data-char-hp="18310" data-char-attack="17872" data-char-defense="12505"
 				data-char-cost="99" data-char-max-level="150" data-char-super-atk-level="25"
 				data-char-recruit="free-to-play" data-char-awaken="not-dokkan-awakened"
-				data-char-release="Aug 27, 2019.15 Dec 2021" data-char-super-atk-type="12 Ki,physical,18 Ki,physical"
+				data-char-release="Aug 27, 2019.Dec 15, 2021" data-char-super-atk-type="12 Ki,physical,18 Ki,physical"
 				data-char-links="The Incredible Adventure,Guidance of the Dragon Balls,The Innocents,Courage,Prodigies,Solid Support,Legendary Power"
 				data-char-categories="DB Saga,Youth,Joined Forces,Earth-Bred Fighters,Dragon Ball Seekers">
 			</div>
@@ -17690,7 +17864,7 @@
 				data-char-id="1025150" data-char-hp="12959" data-char-attack="13169" data-char-defense="8179"
 				data-char-cost="32" data-char-max-level="140" data-char-super-atk-level="15"
 				data-char-recruit="free-to-play" data-char-awaken="dokkan-awakened"
-				data-char-release="Sep 09, 2022.Sep 13, 2022 " data-char-super-atk-type="12 Ki,ki-blast"
+				data-char-release="Sep 09, 2022.Sep 13, 2022" data-char-super-atk-type="12 Ki,ki-blast"
 				data-char-links="Auto Regeneration,Fusion,Deficit Boost,Brutal Beatdown,Thirst for Conquest,Strongest Clan in Space,Shattering the Limit"
 				data-char-categories="Artificial Life Forms,Wicked Bloodline,Corroded Body and Mind,Movie Bosses,Resurrected Warriors,Revenge,Target: Goku,Terrifying Conquerors,Accelerated Battle">
 			</div>
@@ -19663,7 +19837,7 @@
 				data-char-class="super" data-char-eza="eza" data-char-id="1010270" data-char-hp="16778"
 				data-char-attack="16375" data-char-defense="10920" data-char-cost="42" data-char-max-level="140"
 				data-char-super-atk-level="15" data-char-recruit="summonable" data-char-super-atk-type="12 Ki,ki-blast"
-				data-char-awaken="dokkan-awakened" data-char-release="Oct 12, 2017.Feb 16, 2023 "
+				data-char-awaken="dokkan-awakened" data-char-release="Oct 12, 2017.Feb 16, 2023"
 				data-char-links="Golden Warrior,Super Saiyan,Kamehameha,Saiyan Warrior Race,Prepared for Battle,Fierce Battle"
 				data-char-categories="Majin Buu Saga,Pure Saiyans,Goku's Family,Super Saiyan 2,Power Beyond Super Saiyan,Kamehameha,Mastered Evolution,Time Limit,Bond of Parent and Child,Bond of Friendship,Turtle School,Earth-Bred Fighters,Otherworld Warriors,Resurrected Warriors,Accelerated Battle">
 			</div>
@@ -19827,6 +20001,7 @@
 	<script defer src="JS/stickySearchSettings.js" type="text/javascript"></script>
 	<script defer src="JS/charList.js" type="text/javascript"></script>
 
+	<script defer src="JS/filters/filterUtilities.js" type="text/javascript"></script>
 	<script defer src="JS/filters/applyFilters.js" type="text/javascript"></script>
 	<script defer src="JS/filters/filterAwakenInfo.js" type="text/javascript"></script>
 	<script defer src="JS/filters/filterCategory.js" type="text/javascript"></script>
@@ -19835,10 +20010,10 @@
 	<script defer src="JS/filters/filterRarity.js" type="text/javascript"></script>
 	<script defer src="JS/filters/filterRecruit.js" type="text/javascript"></script>
 	<script defer src="JS/filters/filterSideNav.js" type="text/javascript"></script>
+	<script defer src="JS/filters/filterSort.js" type="text/javascript"></script>
 	<script defer src="JS/filters/filterSortDirection.js" type="text/javascript"></script>
 	<script defer src="JS/filters/filterSuperAttackType.js" type="text/javascript"></script>
 	<script defer src="JS/filters/filterType.js" type="text/javascript"></script>
-	<script defer src="JS/filters/filterUtilities.js" type="text/javascript"></script>
 	<script defer src="JS/filters/removeAllFilters.js" type="text/javascript"></script>
 
 	<script defer src="JS/searchSettings/search/searchChar.js" type="text/javascript"></script>
