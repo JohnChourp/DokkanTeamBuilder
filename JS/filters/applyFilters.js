@@ -421,7 +421,7 @@ function applyFilters() {
 	createFilterPagination(charListDefault);
 
 	//add filter names in search one char
-	if (sumFilterUsed > 0) {
+	if (sumFilterUsed > 0 || filterAnniversaryUsed.length > 0) {
 		let charListFilteredNames = [];
 		for (let i = 0; i < charListDefault.length; i++) {
 			charListFilteredNames[i] = charListDefault[i].getAttribute("data-char-name");
