@@ -22,20 +22,6 @@ function filtersMultipleUsedWithSearchChar(dataChars, filtersEachLengthString, f
 	let filterCategoryItems = create2DimensionalArray(filterCharItems[0].length, 1);
 
 	for (k = 0; k < filtersEachLengthStringUsed.length; k++) {
-		if (filtersUsed[5].length > 0) {
-			for (let i = 0; i < filterCharItems[k].length; i++) {
-				filterCharItemsTemp[i] = filterCharItems[k][i].getAttribute(filterChars[k]).split(",");
-				if (filterCharItemsTemp[i].length > maxSuperAttackTypes) {
-					maxSuperAttackTypes = filterCharItemsTemp[i].length;
-				}
-			}
-			for (let j = -1; j < ((maxSuperAttackTypes / 2) - 1); j++) {
-				for (let i = 0; i < filterCharItems[k].length; i++) {
-					filterSuperAttackTypeItems[i][j + 1] = filterCharItemsTemp[i][j + 2];
-				}
-			}
-		}
-
 		if (filtersUsed[0].length > 0) {
 			for (let i = 0; i < filterCharItems[k].length; i++) {
 				filterCharItemsTemp[i] = filterCharItems[k][i].getAttribute(filterChars[k]).split(",");
@@ -50,21 +36,34 @@ function filtersMultipleUsedWithSearchChar(dataChars, filtersEachLengthString, f
 				}
 			}
 		}
+		if (filtersUsed[5].length > 0) {
+			for (let i = 0; i < filterCharItems[k].length; i++) {
+				filterCharItemsTemp[i] = filterCharItems[k][i].getAttribute(filterChars[k]).split(",");
+				if (filterCharItemsTemp[i].length > maxSuperAttackTypes) {
+					maxSuperAttackTypes = filterCharItemsTemp[i].length;
+				}
+			}
+			for (let j = -1; j < ((maxSuperAttackTypes / 2) - 1); j++) {
+				for (let i = 0; i < filterCharItems[k].length; i++) {
+					filterSuperAttackTypeItems[i][j + 1] = filterCharItemsTemp[i][j + 2];
+				}
+			}
+		}
 
 		if (k == 0) {
 			for (let j = 0; j < filters[k].length; j++) {
 				for (let i = 0; i < char.length; i++) {
 					if (dataCharNameOrTitleItems[i].getAttribute(dataCharNameOrTitle).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0) {
-						if (filtersUsed[5].length > 0) {
-							for (let l = 0; l < (maxSuperAttackTypes / 2); l++) {
-								if (filterSuperAttackTypeItems[i][l] == filters[k][j]) {
+						if (filtersUsed[0].length > 0) {
+							for (let l = 0; l < maxCategories; l++) {
+								if (filterCategoryItems[i][l] == filters[k][j]) {
 									charListAll[0][i] = char.item(i);
 								}
 							}
 						}
-						if (filtersUsed[0].length > 0) {
-							for (let l = 0; l < maxCategories; l++) {
-								if (filterCategoryItems[i][l] == filters[k][j]) {
+						if (filtersUsed[5].length > 0) {
+							for (let l = 0; l < (maxSuperAttackTypes / 2); l++) {
+								if (filterSuperAttackTypeItems[i][l] == filters[k][j]) {
 									charListAll[0][i] = char.item(i);
 								}
 							}
@@ -80,16 +79,16 @@ function filtersMultipleUsedWithSearchChar(dataChars, filtersEachLengthString, f
 				for (let i = 0; i < charListAll[k - 1].length; i++) {
 					if (charListAll[k - 1][i] != undefined) {
 						if (dataCharNameOrTitleItems[i].getAttribute(dataCharNameOrTitle).toLowerCase().indexOf(characterSearchId.value.toLowerCase()) >= 0) {
-							if (filtersUsed[5].length > 0) {
-								for (let l = 0; l < (maxSuperAttackTypes / 2); l++) {
-									if (filterSuperAttackTypeItems[i][l] == filters[k][j]) {
+							if (filtersUsed[0].length > 0) {
+								for (let l = 0; l < maxCategories; l++) {
+									if (filterCategoryItems[i][l] == filters[k][j]) {
 										charListAll[k][i] = char.item(i);
 									}
 								}
 							}
-							if (filtersUsed[0].length > 0) {
-								for (let l = 0; l < maxCategories; l++) {
-									if (filterCategoryItems[i][l] == filters[k][j]) {
+							if (filtersUsed[5].length > 0) {
+								for (let l = 0; l < (maxSuperAttackTypes / 2); l++) {
+									if (filterSuperAttackTypeItems[i][l] == filters[k][j]) {
 										charListAll[k][i] = char.item(i);
 									}
 								}
@@ -238,8 +237,6 @@ function searchChar() {
 				charListDefault = filtersMultipleUsedWithSearchChar(dataChars, filtersEachLengthString, filtersEachLengthStringUsed, filtersUsed, dataCharNameOrTitleItems, dataCharNameOrTitle, characterSearchId);
 			}
 			charListDefault = cleanArray(charListDefault, undefined);
-
-
 
 			//create pagination
 			createFilterPagination(charListDefault);
