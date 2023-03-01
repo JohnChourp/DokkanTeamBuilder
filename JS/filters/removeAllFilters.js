@@ -6,6 +6,7 @@ function removeAllFilters() {
 			, "sort-hp", "sort-attack", "sort-defense"
 			, "sort-character", "sort-sp-atk-lv", "sort-max-level"]
 	},
+	{ id: "year-1", class: "checkedAnniversaryBtn", list: ["year-1", "year-2", "year-3", "year-4", "year-5", "year-6", "year-7"] },
 	{ id: "agl", class: "checkedTypeBtn", list: ["agl", "teq", "int", "str", "phy"] },
 	{ id: "n", class: "checkedRarityBtn", list: ["n", "r", "sr", "ssr", "ur", "lr"] },
 	{ id: "super", class: "checkedClassBtn", list: ["super", "extreme"] },
@@ -130,5 +131,6 @@ function removeAllFilters() {
 		removeAllRecruit();
 		removeAllCategory();
 		removeAllSortAndAddUpdated();
+		removeAllAnniversary();
 	}
 }
