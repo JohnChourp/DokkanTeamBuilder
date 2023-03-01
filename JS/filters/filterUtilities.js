@@ -152,3 +152,45 @@ function filterSumCategoryUsed(filtersUsed, filtersEachLength, filtersEachLength
 	filtersEachLengthStringUsed = cleanArray(filtersEachLengthStringUsed, undefined);
 	return [sumFilterUsed, filtersEachLengthStringUsed];
 }
+
+function anniversaryFilterFindReleaseDate(dataCharReleaseItems,dataCharRelease,i) {
+	const releaseDate = dataCharReleaseItems[i].getAttribute(dataCharRelease);
+	let year, month, day;
+	if (releaseDate.length == 12) {
+		year = releaseDate.slice(-4);
+		month = releaseDate.slice(-12, -9);
+		day = parseInt(releaseDate.slice(-8, -6));
+	}
+	if (releaseDate.length == 25) {
+		year = releaseDate.slice(-17, -13);
+		month = releaseDate.slice(-25, -22);
+		day = releaseDate.slice(-21, -19);
+	}
+	return [year, month, day];
+}
+function anniversaryFilterPutCharInContainer(sortedChars,charContainerId){
+	for (const year in sortedChars) {
+		for (const month in sortedChars[year]) {
+			for (const day in sortedChars[year][month]) {
+				const chars = sortedChars[year][month][day];
+				chars.forEach(char => charContainerId.appendChild(char));
+			}
+		}
+	}
+}
+
+function anniversaryFilterPushCharInSortedChars(sortedChars,year,month,day,temp_char,i){
+	if (!sortedChars[year]) {
+		sortedChars[year] = {};
+	}
+
+	if (!sortedChars[year][month]) {
+		sortedChars[year][month] = [];
+	}
+
+	if (!sortedChars[year][month][day]) {
+		sortedChars[year][month][day] = [];
+	}
+
+	sortedChars[year][month][day].push(temp_char[i]);
+}
