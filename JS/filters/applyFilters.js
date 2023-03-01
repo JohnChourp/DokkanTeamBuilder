@@ -23,6 +23,19 @@ function filtersMultipleUsed(dataChars, filtersEachLengthString, filtersEachLeng
 	let filterCategoryItems = create2DimensionalArray(filterCharItems[0].length, 1);
 
 	for (k = 0; k < filtersEachLengthStringUsed.length; k++) {
+		if (filtersUsed[0].length > 0) {
+			for (let i = 0; i < filterCharItems[k].length; i++) {
+				filterCharItemsTemp[i] = filterCharItems[k][i].getAttribute(filterChars[k]).split(",");
+				if (filterCharItemsTemp[i].length > maxCategories) {
+					maxCategories = filterCharItemsTemp[i].length;
+				}
+			}
+			for (let j = 0; j < maxCategories; j++) {
+				for (let i = 0; i < filterCharItems[k].length; i++) {
+					filterCategoryItems[i][j] = filterCharItemsTemp[i][j];
+				}
+			}
+		}
 		if (filtersUsed[5].length > 0) {
 			for (let i = 0; i < filterCharItems[k].length; i++) {
 				filterCharItemsTemp[i] = filterCharItems[k][i].getAttribute(filterChars[k]).split(",");
@@ -37,33 +50,19 @@ function filtersMultipleUsed(dataChars, filtersEachLengthString, filtersEachLeng
 			}
 		}
 
-		if (filtersUsed[0].length > 0) {
-			for (let i = 0; i < filterCharItems[k].length; i++) {
-				filterCharItemsTemp[i] = filterCharItems[k][i].getAttribute(filterChars[k]).split(",");
-				if (filterCharItemsTemp[i].length > maxCategories) {
-					maxCategories = filterCharItemsTemp[i].length;
-				}
-			}
-			for (let j = 0; j < maxCategories; j++) {
-				for (let i = 0; i < filterCharItems[k].length; i++) {
-					filterCategoryItems[i][j] = filterCharItemsTemp[i][j];
-				}
-			}
-		}
-
 		if (k == 0) {
 			for (let j = 0; j < filters[k].length; j++) {
 				for (let i = 0; i < char.length; i++) {
-					if (filtersUsed[5].length > 0) {
-						for (let l = 0; l < (maxSuperAttackTypes / 2); l++) {
-							if (filterSuperAttackTypeItems[i][l] == filters[k][j]) {
+					if (filtersUsed[0].length > 0) {
+						for (let l = 0; l < maxCategories; l++) {
+							if (filterCategoryItems[i][l] == filters[k][j]) {
 								charListAll[0][i] = char.item(i);
 							}
 						}
 					}
-					if (filtersUsed[0].length > 0) {
-						for (let l = 0; l < maxCategories; l++) {
-							if (filterCategoryItems[i][l] == filters[k][j]) {
+					if (filtersUsed[5].length > 0) {
+						for (let l = 0; l < (maxSuperAttackTypes / 2); l++) {
+							if (filterSuperAttackTypeItems[i][l] == filters[k][j]) {
 								charListAll[0][i] = char.item(i);
 							}
 						}
@@ -77,16 +76,16 @@ function filtersMultipleUsed(dataChars, filtersEachLengthString, filtersEachLeng
 			for (let j = 0; j < filters[k].length; j++) {
 				for (let i = 0; i < charListAll[k - 1].length; i++) {
 					if (charListAll[k - 1][i] != undefined) {
-						if (filtersUsed[5].length > 0) {
-							for (let l = 0; l < (maxSuperAttackTypes / 2); l++) {
-								if (filterSuperAttackTypeItems[i][l] == filters[k][j]) {
+						if (filtersUsed[0].length > 0) {
+							for (let l = 0; l < maxCategories; l++) {
+								if (filterCategoryItems[i][l] == filters[k][j]) {
 									charListAll[k][i] = char.item(i);
 								}
 							}
 						}
-						if (filtersUsed[0].length > 0) {
-							for (let l = 0; l < maxCategories; l++) {
-								if (filterCategoryItems[i][l] == filters[k][j]) {
+						if (filtersUsed[5].length > 0) {
+							for (let l = 0; l < (maxSuperAttackTypes / 2); l++) {
+								if (filterSuperAttackTypeItems[i][l] == filters[k][j]) {
 									charListAll[k][i] = char.item(i);
 								}
 							}
@@ -180,7 +179,8 @@ function applyFilters() {
 		filterAwaken = ["not-dokkan-awakened", "pre-dokkan-awakened", "dokkan-awakened"],
 		filterSuperAttackType = ["ki-blast", "unarmed", "physical", "other"],
 		filterEza = ["eza", "noeza"],
-		filterRecruit = ["summonable", "free-to-play"];
+		filterRecruit = ["summonable", "free-to-play"],
+		filterAnniversary = ["year-1", "year-2", "year-3", "year-4", "year-5", "year-6", "year-7", "year-8"];
 
 	//checked filter Btn
 	const filterClasses = ["checkedCategoryBtn", "checkedRarityBtn", "checkedTypeBtn", "checkedClassBtn", "checkedAwakenBtn", "checkedSuperAttackTypeBtn", "checkedEzaBtn", "checkedRecruitBtn"];
@@ -195,7 +195,7 @@ function applyFilters() {
 
 	//select one char
 	selectOneChar(searchOneCharDropdownValue);
-	
+
 	//sortRelease
 	const sortReleased = document.getElementById("sort-released");
 	if (sortReleased.classList.contains("checkedSortBtn")) {
@@ -205,8 +205,15 @@ function applyFilters() {
 		const sortedChars = {};
 		for (let i = 0; i < charLength; i++) {
 			const releaseDate = dataCharReleaseItems[i].getAttribute(dataCharRelease);
-			const year = releaseDate.slice(-4);
-			const month = releaseDate.slice(-12, -9);
+			let year, month;
+			if (releaseDate.length == 12) {
+				year = releaseDate.slice(-4);
+				month = releaseDate.slice(-12, -9);
+			}
+			if (releaseDate.length == 25) {
+				year = releaseDate.slice(-17, -13);
+				month = releaseDate.slice(-25, -22);
+			}
 
 			if (year === "2015" || year === "2016" || year === "2017"
 				|| year === "2018" || year === "2019" || year === "2020"
@@ -355,7 +362,559 @@ function applyFilters() {
 	if (!sortUpdated.classList.contains("checkedSortBtn")) {
 		saveCharListTemp();
 	}
-	
+
+	//anniversaryFilter
+	//filterAnniversary
+	let filterAnniversaryUsed = [];
+	for (let i = 0; i < filterAnniversary.length; i++) {
+		if (document.getElementById(filterAnniversary[i]).classList.contains("checkedAnniversaryBtn")) {
+			filterAnniversaryUsed[i] = filterAnniversary[i];
+		}
+	}
+	filterAnniversaryUsed = cleanArray(filterAnniversaryUsed, undefined);
+
+	for (let i = 0; i < filterAnniversaryUsed.length; i++) {
+		if (filterAnniversaryUsed[i] == "year-1") {
+			const dataCharReleaseItems = document.querySelectorAll('[' + dataCharRelease + ']');
+			let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
+
+			const sortedChars = {};
+			for (let i = 0; i < charLength; i++) {
+				const releaseDate = dataCharReleaseItems[i].getAttribute(dataCharRelease);
+				let year, month, day;
+				if (releaseDate.length == 12) {
+					year = releaseDate.slice(-4);
+					month = releaseDate.slice(-12, -9);
+					day = parseInt(releaseDate.slice(-8, -6));
+				}
+				if (releaseDate.length == 25) {
+					year = releaseDate.slice(-17, -13);
+					month = releaseDate.slice(-25, -22);
+					day = releaseDate.slice(-21, -19);
+				}
+
+				if (year === "2015") {
+					if (!sortedChars[year]) {
+						sortedChars[year] = {};
+					}
+
+					if (!sortedChars[year][month]) {
+						sortedChars[year][month] = [];
+					}
+
+					if (!sortedChars[year][month][day]) {
+						sortedChars[year][month][day] = [];
+					}
+
+					sortedChars[year][month][day].push(temp_char[i]);
+				}
+				if (year === "2016"
+					&& (month === "Jan" || month === "Feb" || month === "Mar"
+						|| month === "Apr" || month === "May" || month === "Jun"
+						|| (month === "Jul" && day < 16))
+				) {
+					if (!sortedChars[year]) {
+						sortedChars[year] = {};
+					}
+
+					if (!sortedChars[year][month]) {
+						sortedChars[year][month] = [];
+					}
+
+					if (!sortedChars[year][month][day]) {
+						sortedChars[year][month][day] = [];
+					}
+
+					sortedChars[year][month][day].push(temp_char[i]);
+				}
+			}
+
+			for (const year in sortedChars) {
+				for (const month in sortedChars[year]) {
+					for (const day in sortedChars[year][month]) {
+						const chars = sortedChars[year][month][day];
+						chars.forEach(char => charContainerId.appendChild(char));
+					}
+				}
+			}
+		}
+	}
+	for (let i = 0; i < filterAnniversaryUsed.length; i++) {
+		if (filterAnniversaryUsed[i] == "year-2") {
+			const dataCharReleaseItems = document.querySelectorAll('[' + dataCharRelease + ']');
+			let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
+
+			const sortedChars = {};
+			for (let i = 0; i < charLength; i++) {
+				const releaseDate = dataCharReleaseItems[i].getAttribute(dataCharRelease);
+				let year, month, day;
+				if (releaseDate.length == 12) {
+					year = releaseDate.slice(-4);
+					month = releaseDate.slice(-12, -9);
+					day = parseInt(releaseDate.slice(-8, -6));
+				}
+				if (releaseDate.length == 25) {
+					year = releaseDate.slice(-17, -13);
+					month = releaseDate.slice(-25, -22);
+					day = releaseDate.slice(-21, -19);
+				}
+
+				if (year === "2016"
+					&& ((month === "Jul" && day > 15) || month === "Aug" || month === "Sep"
+						|| month === "Oct" || month === "Nov" || month === "Dec")) {
+					if (!sortedChars[year]) {
+						sortedChars[year] = {};
+					}
+
+					if (!sortedChars[year][month]) {
+						sortedChars[year][month] = [];
+					}
+
+					if (!sortedChars[year][month][day]) {
+						sortedChars[year][month][day] = [];
+					}
+
+					sortedChars[year][month][day].push(temp_char[i]);
+				}
+				if (year === "2017"
+					&& (month === "Jan" || month === "Feb" || month === "Mar"
+						|| month === "Apr" || month === "May" || month === "Jun"
+						|| (month === "Jul" && day < 16))
+				) {
+					if (!sortedChars[year]) {
+						sortedChars[year] = {};
+					}
+
+					if (!sortedChars[year][month]) {
+						sortedChars[year][month] = [];
+					}
+
+					if (!sortedChars[year][month][day]) {
+						sortedChars[year][month][day] = [];
+					}
+
+					sortedChars[year][month][day].push(temp_char[i]);
+				}
+			}
+
+			for (const year in sortedChars) {
+				for (const month in sortedChars[year]) {
+					for (const day in sortedChars[year][month]) {
+						const chars = sortedChars[year][month][day];
+						chars.forEach(char => charContainerId.appendChild(char));
+					}
+				}
+			}
+		}
+	}
+	for (let i = 0; i < filterAnniversaryUsed.length; i++) {
+		if (filterAnniversaryUsed[i] == "year-3") {
+			const dataCharReleaseItems = document.querySelectorAll('[' + dataCharRelease + ']');
+			let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
+
+			const sortedChars = {};
+			for (let i = 0; i < charLength; i++) {
+				const releaseDate = dataCharReleaseItems[i].getAttribute(dataCharRelease);
+				let year, month, day;
+				if (releaseDate.length == 12) {
+					year = releaseDate.slice(-4);
+					month = releaseDate.slice(-12, -9);
+					day = parseInt(releaseDate.slice(-8, -6));
+				}
+				if (releaseDate.length == 25) {
+					year = releaseDate.slice(-17, -13);
+					month = releaseDate.slice(-25, -22);
+					day = releaseDate.slice(-21, -19);
+				}
+
+				if (year === "2017"
+					&& ((month === "Jul" && day > 15) || month === "Aug" || month === "Sep"
+						|| month === "Oct" || month === "Nov" || month === "Dec")) {
+					if (!sortedChars[year]) {
+						sortedChars[year] = {};
+					}
+
+					if (!sortedChars[year][month]) {
+						sortedChars[year][month] = [];
+					}
+
+					if (!sortedChars[year][month][day]) {
+						sortedChars[year][month][day] = [];
+					}
+
+					sortedChars[year][month][day].push(temp_char[i]);
+				}
+				if (year === "2018"
+					&& (month === "Jan" || month === "Feb" || month === "Mar"
+						|| month === "Apr" || month === "May" || month === "Jun"
+						|| (month === "Jul" && day < 16))
+				) {
+					if (!sortedChars[year]) {
+						sortedChars[year] = {};
+					}
+
+					if (!sortedChars[year][month]) {
+						sortedChars[year][month] = [];
+					}
+
+					if (!sortedChars[year][month][day]) {
+						sortedChars[year][month][day] = [];
+					}
+
+					sortedChars[year][month][day].push(temp_char[i]);
+				}
+			}
+
+			for (const year in sortedChars) {
+				for (const month in sortedChars[year]) {
+					for (const day in sortedChars[year][month]) {
+						const chars = sortedChars[year][month][day];
+						chars.forEach(char => charContainerId.appendChild(char));
+					}
+				}
+			}
+		}
+	}
+	for (let i = 0; i < filterAnniversaryUsed.length; i++) {
+		if (filterAnniversaryUsed[i] == "year-4") {
+			const dataCharReleaseItems = document.querySelectorAll('[' + dataCharRelease + ']');
+			let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
+
+			const sortedChars = {};
+			for (let i = 0; i < charLength; i++) {
+				const releaseDate = dataCharReleaseItems[i].getAttribute(dataCharRelease);
+				let year, month, day;
+				if (releaseDate.length == 12) {
+					year = releaseDate.slice(-4);
+					month = releaseDate.slice(-12, -9);
+					day = parseInt(releaseDate.slice(-8, -6));
+				}
+				if (releaseDate.length == 25) {
+					year = releaseDate.slice(-17, -13);
+					month = releaseDate.slice(-25, -22);
+					day = releaseDate.slice(-21, -19);
+				}
+
+				if (year === "2018"
+					&& ((month === "Jul" && day > 15) || month === "Aug" || month === "Sep"
+						|| month === "Oct" || month === "Nov" || month === "Dec")) {
+					if (!sortedChars[year]) {
+						sortedChars[year] = {};
+					}
+
+					if (!sortedChars[year][month]) {
+						sortedChars[year][month] = [];
+					}
+
+					if (!sortedChars[year][month][day]) {
+						sortedChars[year][month][day] = [];
+					}
+
+					sortedChars[year][month][day].push(temp_char[i]);
+				}
+				if (year === "2019"
+					&& (month === "Jan" || month === "Feb" || month === "Mar"
+						|| month === "Apr" || month === "May" || month === "Jun"
+						|| (month === "Jul" && day < 16))
+				) {
+					if (!sortedChars[year]) {
+						sortedChars[year] = {};
+					}
+
+					if (!sortedChars[year][month]) {
+						sortedChars[year][month] = [];
+					}
+
+					if (!sortedChars[year][month][day]) {
+						sortedChars[year][month][day] = [];
+					}
+
+					sortedChars[year][month][day].push(temp_char[i]);
+				}
+			}
+
+			for (const year in sortedChars) {
+				for (const month in sortedChars[year]) {
+					for (const day in sortedChars[year][month]) {
+						const chars = sortedChars[year][month][day];
+						chars.forEach(char => charContainerId.appendChild(char));
+					}
+				}
+			}
+		}
+	}
+	for (let i = 0; i < filterAnniversaryUsed.length; i++) {
+		if (filterAnniversaryUsed[i] == "year-5") {
+			const dataCharReleaseItems = document.querySelectorAll('[' + dataCharRelease + ']');
+			let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
+
+			const sortedChars = {};
+			for (let i = 0; i < charLength; i++) {
+				const releaseDate = dataCharReleaseItems[i].getAttribute(dataCharRelease);
+				let year, month, day;
+				if (releaseDate.length == 12) {
+					year = releaseDate.slice(-4);
+					month = releaseDate.slice(-12, -9);
+					day = parseInt(releaseDate.slice(-8, -6));
+				}
+				if (releaseDate.length == 25) {
+					year = releaseDate.slice(-17, -13);
+					month = releaseDate.slice(-25, -22);
+					day = releaseDate.slice(-21, -19);
+				}
+
+				if (year === "2019"
+					&& ((month === "Jul" && day > 15) || month === "Aug" || month === "Sep"
+						|| month === "Oct" || month === "Nov" || month === "Dec")) {
+					if (!sortedChars[year]) {
+						sortedChars[year] = {};
+					}
+
+					if (!sortedChars[year][month]) {
+						sortedChars[year][month] = [];
+					}
+
+					if (!sortedChars[year][month][day]) {
+						sortedChars[year][month][day] = [];
+					}
+
+					sortedChars[year][month][day].push(temp_char[i]);
+				}
+				if (year === "2020"
+					&& (month === "Jan" || month === "Feb" || month === "Mar"
+						|| month === "Apr" || month === "May" || month === "Jun"
+						|| (month === "Jul" && day < 16))
+				) {
+					if (!sortedChars[year]) {
+						sortedChars[year] = {};
+					}
+
+					if (!sortedChars[year][month]) {
+						sortedChars[year][month] = [];
+					}
+
+					if (!sortedChars[year][month][day]) {
+						sortedChars[year][month][day] = [];
+					}
+
+					sortedChars[year][month][day].push(temp_char[i]);
+				}
+			}
+
+			for (const year in sortedChars) {
+				for (const month in sortedChars[year]) {
+					for (const day in sortedChars[year][month]) {
+						const chars = sortedChars[year][month][day];
+						chars.forEach(char => charContainerId.appendChild(char));
+					}
+				}
+			}
+		}
+	}
+	for (let i = 0; i < filterAnniversaryUsed.length; i++) {
+		if (filterAnniversaryUsed[i] == "year-6") {
+			const dataCharReleaseItems = document.querySelectorAll('[' + dataCharRelease + ']');
+			let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
+
+			const sortedChars = {};
+			for (let i = 0; i < charLength; i++) {
+				const releaseDate = dataCharReleaseItems[i].getAttribute(dataCharRelease);
+				let year, month, day;
+				if (releaseDate.length == 12) {
+					year = releaseDate.slice(-4);
+					month = releaseDate.slice(-12, -9);
+					day = parseInt(releaseDate.slice(-8, -6));
+				}
+				if (releaseDate.length == 25) {
+					year = releaseDate.slice(-17, -13);
+					month = releaseDate.slice(-25, -22);
+					day = releaseDate.slice(-21, -19);
+				}
+
+				if (year === "2020"
+					&& ((month === "Jul" && day > 15) || month === "Aug" || month === "Sep"
+						|| month === "Oct" || month === "Nov" || month === "Dec")) {
+					if (!sortedChars[year]) {
+						sortedChars[year] = {};
+					}
+
+					if (!sortedChars[year][month]) {
+						sortedChars[year][month] = [];
+					}
+
+					if (!sortedChars[year][month][day]) {
+						sortedChars[year][month][day] = [];
+					}
+
+					sortedChars[year][month][day].push(temp_char[i]);
+				}
+				if (year === "2021"
+					&& (month === "Jan" || month === "Feb" || month === "Mar"
+						|| month === "Apr" || month === "May" || month === "Jun"
+						|| (month === "Jul" && day < 16))
+				) {
+					if (!sortedChars[year]) {
+						sortedChars[year] = {};
+					}
+
+					if (!sortedChars[year][month]) {
+						sortedChars[year][month] = [];
+					}
+
+					if (!sortedChars[year][month][day]) {
+						sortedChars[year][month][day] = [];
+					}
+
+					sortedChars[year][month][day].push(temp_char[i]);
+				}
+			}
+
+			for (const year in sortedChars) {
+				for (const month in sortedChars[year]) {
+					for (const day in sortedChars[year][month]) {
+						const chars = sortedChars[year][month][day];
+						chars.forEach(char => charContainerId.appendChild(char));
+					}
+				}
+			}
+		}
+	}
+	for (let i = 0; i < filterAnniversaryUsed.length; i++) {
+		if (filterAnniversaryUsed[i] == "year-7") {
+			const dataCharReleaseItems = document.querySelectorAll('[' + dataCharRelease + ']');
+			let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
+
+			const sortedChars = {};
+			for (let i = 0; i < charLength; i++) {
+				const releaseDate = dataCharReleaseItems[i].getAttribute(dataCharRelease);
+				let year, month, day;
+				if (releaseDate.length == 12) {
+					year = releaseDate.slice(-4);
+					month = releaseDate.slice(-12, -9);
+					day = parseInt(releaseDate.slice(-8, -6));
+				}
+				if (releaseDate.length == 25) {
+					year = releaseDate.slice(-17, -13);
+					month = releaseDate.slice(-25, -22);
+					day = releaseDate.slice(-21, -19);
+				}
+
+				if (year === "2021"
+					&& ((month === "Jul" && day > 15) || month === "Aug" || month === "Sep"
+						|| month === "Oct" || month === "Nov" || month === "Dec")) {
+					if (!sortedChars[year]) {
+						sortedChars[year] = {};
+					}
+
+					if (!sortedChars[year][month]) {
+						sortedChars[year][month] = [];
+					}
+
+					if (!sortedChars[year][month][day]) {
+						sortedChars[year][month][day] = [];
+					}
+
+					sortedChars[year][month][day].push(temp_char[i]);
+				}
+				if (year === "2022"
+					&& (month === "Jan" || month === "Feb" || month === "Mar"
+						|| month === "Apr" || month === "May" || month === "Jun"
+						|| (month === "Jul" && day < 16))
+				) {
+					if (!sortedChars[year]) {
+						sortedChars[year] = {};
+					}
+
+					if (!sortedChars[year][month]) {
+						sortedChars[year][month] = [];
+					}
+
+					if (!sortedChars[year][month][day]) {
+						sortedChars[year][month][day] = [];
+					}
+
+					sortedChars[year][month][day].push(temp_char[i]);
+				}
+			}
+
+			for (const year in sortedChars) {
+				for (const month in sortedChars[year]) {
+					for (const day in sortedChars[year][month]) {
+						const chars = sortedChars[year][month][day];
+						chars.forEach(char => charContainerId.appendChild(char));
+					}
+				}
+			}
+	}
+	for (let i = 0; i < filterAnniversaryUsed.length; i++) {
+		if (filterAnniversaryUsed[i] == "year-8") {
+			const dataCharReleaseItems = document.querySelectorAll('[' + dataCharRelease + ']');
+			let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
+
+			const sortedChars = {};
+			for (let i = 0; i < charLength; i++) {
+				const releaseDate = dataCharReleaseItems[i].getAttribute(dataCharRelease);
+				let year, month, day;
+				if (releaseDate.length == 12) {
+					year = releaseDate.slice(-4);
+					month = releaseDate.slice(-12, -9);
+					day = parseInt(releaseDate.slice(-8, -6));
+				}
+				if (releaseDate.length == 25) {
+					year = releaseDate.slice(-17, -13);
+					month = releaseDate.slice(-25, -22);
+					day = releaseDate.slice(-21, -19);
+				}
+
+				if (year === "2022"
+					&& ((month === "Jul" && day > 15) || month === "Aug" || month === "Sep"
+						|| month === "Oct" || month === "Nov" || month === "Dec")) {
+					if (!sortedChars[year]) {
+						sortedChars[year] = {};
+					}
+
+					if (!sortedChars[year][month]) {
+						sortedChars[year][month] = [];
+					}
+
+					if (!sortedChars[year][month][day]) {
+						sortedChars[year][month][day] = [];
+					}
+
+					sortedChars[year][month][day].push(temp_char[i]);
+				}
+				if (year === "2023"
+					&& (month === "Jan" || month === "Feb" || month === "Mar"
+						|| month === "Apr" || month === "May" || month === "Jun"
+						|| (month === "Jul" && day < 16))
+				) {
+					if (!sortedChars[year]) {
+						sortedChars[year] = {};
+					}
+
+					if (!sortedChars[year][month]) {
+						sortedChars[year][month] = [];
+					}
+
+					if (!sortedChars[year][month][day]) {
+						sortedChars[year][month][day] = [];
+					}
+
+					sortedChars[year][month][day].push(temp_char[i]);
+				}
+			}
+
+			for (const year in sortedChars) {
+				for (const month in sortedChars[year]) {
+					for (const day in sortedChars[year][month]) {
+						const chars = sortedChars[year][month][day];
+						chars.forEach(char => charContainerId.appendChild(char));
+					}
+				}
+			}
+		}
+	}
+	}
 	//sortDirection
 	sortDirectionAscendingDesencding(char, charContainerId);
 

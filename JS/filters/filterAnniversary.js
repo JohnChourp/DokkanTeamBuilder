@@ -1,4 +1,5 @@
 function filterAnniversary(id) {
+    removeAllAnniversary();
     const btn = document.getElementById(id);
     if (btn.classList.contains("checkedAnniversaryBtn")) {
         btn.classList.remove("checkedAnniversaryBtn");
@@ -29,6 +30,9 @@ function filterAnniversaryYear6() {
 }
 function filterAnniversaryYear7() {
     filterAnniversary("year-7");
+}
+function filterAnniversaryYear8() {
+    filterAnniversary("year-8");
 }
 
 function removeAllAnniversary() {
