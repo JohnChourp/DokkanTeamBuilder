@@ -46,7 +46,7 @@ function charsPerPage(charsPerPageBtn) {
 	const charsPerPage_class = document.getElementsByClassName("charsPerPage");
 	const charsPerPageNum = Math.pow(2, charsPerPageBtn) * 16;
 	const charsPerPageIdTypeBox = document.getElementById("characters-per-input-page-id");
-	
+
 	charsPerPageIdTypeBox.value = charsPerPageNum;
 
 	charsPerPage_class.item(charsPerPageBtn).classList.add("checkedCharsPerPageBtn");

@@ -23,6 +23,19 @@ function filtersMultipleUsed(dataChars, filtersEachLengthString, filtersEachLeng
 	let filterCategoryItems = create2DimensionalArray(filterCharItems[0].length, 1);
 
 	for (k = 0; k < filtersEachLengthStringUsed.length; k++) {
+		if (filtersUsed[0].length > 0) {
+			for (let i = 0; i < filterCharItems[k].length; i++) {
+				filterCharItemsTemp[i] = filterCharItems[k][i].getAttribute(filterChars[k]).split(",");
+				if (filterCharItemsTemp[i].length > maxCategories) {
+					maxCategories = filterCharItemsTemp[i].length;
+				}
+			}
+			for (let j = 0; j < maxCategories; j++) {
+				for (let i = 0; i < filterCharItems[k].length; i++) {
+					filterCategoryItems[i][j] = filterCharItemsTemp[i][j];
+				}
+			}
+		}
 		if (filtersUsed[5].length > 0) {
 			for (let i = 0; i < filterCharItems[k].length; i++) {
 				filterCharItemsTemp[i] = filterCharItems[k][i].getAttribute(filterChars[k]).split(",");
@@ -37,33 +50,19 @@ function filtersMultipleUsed(dataChars, filtersEachLengthString, filtersEachLeng
 			}
 		}
 
-		if (filtersUsed[0].length > 0) {
-			for (let i = 0; i < filterCharItems[k].length; i++) {
-				filterCharItemsTemp[i] = filterCharItems[k][i].getAttribute(filterChars[k]).split(",");
-				if (filterCharItemsTemp[i].length > maxCategories) {
-					maxCategories = filterCharItemsTemp[i].length;
-				}
-			}
-			for (let j = 0; j < maxCategories; j++) {
-				for (let i = 0; i < filterCharItems[k].length; i++) {
-					filterCategoryItems[i][j] = filterCharItemsTemp[i][j];
-				}
-			}
-		}
-
 		if (k == 0) {
 			for (let j = 0; j < filters[k].length; j++) {
 				for (let i = 0; i < char.length; i++) {
-					if (filtersUsed[5].length > 0) {
-						for (let l = 0; l < (maxSuperAttackTypes / 2); l++) {
-							if (filterSuperAttackTypeItems[i][l] == filters[k][j]) {
+					if (filtersUsed[0].length > 0) {
+						for (let l = 0; l < maxCategories; l++) {
+							if (filterCategoryItems[i][l] == filters[k][j]) {
 								charListAll[0][i] = char.item(i);
 							}
 						}
 					}
-					if (filtersUsed[0].length > 0) {
-						for (let l = 0; l < maxCategories; l++) {
-							if (filterCategoryItems[i][l] == filters[k][j]) {
+					if (filtersUsed[5].length > 0) {
+						for (let l = 0; l < (maxSuperAttackTypes / 2); l++) {
+							if (filterSuperAttackTypeItems[i][l] == filters[k][j]) {
 								charListAll[0][i] = char.item(i);
 							}
 						}
@@ -77,16 +76,16 @@ function filtersMultipleUsed(dataChars, filtersEachLengthString, filtersEachLeng
 			for (let j = 0; j < filters[k].length; j++) {
 				for (let i = 0; i < charListAll[k - 1].length; i++) {
 					if (charListAll[k - 1][i] != undefined) {
-						if (filtersUsed[5].length > 0) {
-							for (let l = 0; l < (maxSuperAttackTypes / 2); l++) {
-								if (filterSuperAttackTypeItems[i][l] == filters[k][j]) {
+						if (filtersUsed[0].length > 0) {
+							for (let l = 0; l < maxCategories; l++) {
+								if (filterCategoryItems[i][l] == filters[k][j]) {
 									charListAll[k][i] = char.item(i);
 								}
 							}
 						}
-						if (filtersUsed[0].length > 0) {
-							for (let l = 0; l < maxCategories; l++) {
-								if (filterCategoryItems[i][l] == filters[k][j]) {
+						if (filtersUsed[5].length > 0) {
+							for (let l = 0; l < (maxSuperAttackTypes / 2); l++) {
+								if (filterSuperAttackTypeItems[i][l] == filters[k][j]) {
 									charListAll[k][i] = char.item(i);
 								}
 							}
@@ -104,7 +103,18 @@ function filtersMultipleUsed(dataChars, filtersEachLengthString, filtersEachLeng
 
 function applyFilters() {
 	const sortUpdated = document.getElementById("sort-updated");
-	if (sortUpdated.classList.contains("checkedSortBtn")) {
+
+	//filterAnniversary
+	const filterAnniversary = ["year-1", "year-2", "year-3", "year-4", "year-5", "year-6", "year-7", "year-8"];
+	let filterAnniversaryUsed = [];
+	for (let i = 0; i < filterAnniversary.length; i++) {
+		if (document.getElementById(filterAnniversary[i]).classList.contains("checkedAnniversaryBtn")) {
+			filterAnniversaryUsed[i] = filterAnniversary[i];
+		}
+	}
+	filterAnniversaryUsed = cleanArray(filterAnniversaryUsed, undefined);
+
+	if (sortUpdated.classList.contains("checkedSortBtn") || filterAnniversaryUsed.length > 0) {
 		setCharList();
 		saveCharListTemp();
 	} else {
@@ -195,18 +205,48 @@ function applyFilters() {
 
 	//select one char
 	selectOneChar(searchOneCharDropdownValue);
-	
+
+	//anniversaryFilter
+	const dataCharReleaseItems = document.querySelectorAll('[' + dataCharRelease + ']');
+	for (let j = 0; j < filterAnniversary.length; j++) {
+		if (filterAnniversaryUsed[0] == "year-" + (j + 1)) {
+			let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
+			const sortedChars = {};
+			for (let i = 0; i < charLength; i++) {
+				let [year, month, day] = anniversaryFilterFindReleaseDate(dataCharReleaseItems, dataCharRelease, i);
+				if (year === ((2015 + j).toString())
+					&& ((month === "Jul" && day > 15) || month === "Aug" || month === "Sep"
+						|| month === "Oct" || month === "Nov" || month === "Dec")) {
+					anniversaryFilterPushCharInSortedChars(sortedChars, year, month, day, temp_char, i);
+				}
+				if (year === ((2016 + j).toString())
+					&& (month === "Jan" || month === "Feb" || month === "Mar"
+						|| month === "Apr" || month === "May" || month === "Jun"
+						|| (month === "Jul" && day < 16))) {
+					anniversaryFilterPushCharInSortedChars(sortedChars, year, month, day, temp_char, i);
+				}
+			}
+			anniversaryFilterPutCharInContainer(sortedChars, charContainerId);
+		}
+	}
+
 	//sortRelease
 	const sortReleased = document.getElementById("sort-released");
 	if (sortReleased.classList.contains("checkedSortBtn")) {
-		const dataCharReleaseItems = document.querySelectorAll('[' + dataCharRelease + ']');
 		let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
 
 		const sortedChars = {};
 		for (let i = 0; i < charLength; i++) {
 			const releaseDate = dataCharReleaseItems[i].getAttribute(dataCharRelease);
-			const year = releaseDate.slice(-4);
-			const month = releaseDate.slice(-12, -9);
+			let year, month;
+			if (releaseDate.length == 12) {
+				year = releaseDate.slice(-4);
+				month = releaseDate.slice(-12, -9);
+			}
+			if (releaseDate.length == 25) {
+				year = releaseDate.slice(-17, -13);
+				month = releaseDate.slice(-25, -22);
+			}
 
 			if (year === "2015" || year === "2016" || year === "2017"
 				|| year === "2018" || year === "2019" || year === "2020"
@@ -352,10 +392,10 @@ function applyFilters() {
 		displayOrderremoveDuplicatesAndSortValues(charLength, dataCharMaxLevelItems, dataCharMaxLevel, charContainerId, temp_char);
 	}
 
-	if (!sortUpdated.classList.contains("checkedSortBtn")) {
+	if (!sortUpdated.classList.contains("checkedSortBtn") || filterAnniversaryUsed.length < 0) {
 		saveCharListTemp();
 	}
-	
+
 	//sortDirection
 	sortDirectionAscendingDesencding(char, charContainerId);
 
@@ -381,7 +421,7 @@ function applyFilters() {
 	createFilterPagination(charListDefault);
 
 	//add filter names in search one char
-	if (sumFilterUsed > 0) {
+	if (sumFilterUsed > 0 || filterAnniversaryUsed.length > 0) {
 		let charListFilteredNames = [];
 		for (let i = 0; i < charListDefault.length; i++) {
 			charListFilteredNames[i] = charListDefault[i].getAttribute("data-char-name");
