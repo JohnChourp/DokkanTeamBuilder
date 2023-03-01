@@ -12,13 +12,13 @@ function addAllCharNames() {
 	document.addEventListener("click", hideDropdown);
 
 	// Add "All" option to dropdown
-	addDropdownOption(0, "All", addSearchOneCharDropdownClass);
+	addAllDropdownOptionNames(0, "All", addSearchOneCharDropdownClass);
 
 	// Add character names to dropdown
 	const charList = JSON.parse(localStorage.getItem("charList"));
 	const uniqueCharNames = removeDuplicates(charList.map(char => char.name));
 	uniqueCharNames.sort().forEach((charName, index) => {
-		addDropdownOption(index + 1, charName, addSearchOneCharDropdownClass);
+		addAllDropdownOptionNames(index + 1, charName, addSearchOneCharDropdownClass);
 	});
 
 	function hideDropdown(event) {
@@ -36,7 +36,7 @@ function addAllCharNames() {
 		}
 	}
 
-	function addDropdownOption(index, text, clickHandler) {
+	function addAllDropdownOptionNames(index, text, clickHandler) {
 		const charListDiv = dropdowns[0];
 		const option = document.createElement("a");
 		option.classList.add("search-one-char-dropdown-options-value");
@@ -66,13 +66,13 @@ function addOnlyFilteredCharNames() {
 	document.addEventListener("click", hideDropdown);
 
 	// Add "All" option to dropdown
-	addDropdownOption(0, "All", addSearchOneCharDropdownClass);
+	addAllDropdownOptionOneChar(0, "All", addSearchOneCharDropdownClass);
 
 	// Add character names to dropdown
 
 	const uniqueCharNames = removeDuplicates(chars.map(char => char.name));
 	uniqueCharNames.sort().forEach((charName, index) => {
-		addDropdownOption(index + 1, charName, addSearchOneCharDropdownClass);
+		addAllDropdownOptionOneChar(index + 1, charName, addSearchOneCharDropdownClass);
 	});
 
 	function hideDropdown(event) {
@@ -90,7 +90,7 @@ function addOnlyFilteredCharNames() {
 		}
 	}
 
-	function addDropdownOption(index, text, clickHandler) {
+	function addAllDropdownOptionOneChar(index, text, clickHandler) {
 		const charListDiv = dropdowns[0];
 		const option = document.createElement("a");
 		option.classList.add("search-one-char-dropdown-options-value");
