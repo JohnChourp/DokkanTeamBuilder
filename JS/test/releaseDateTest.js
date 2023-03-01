@@ -14,14 +14,14 @@ function releaseDateTest() {
 		charContainerId.innerHTML = "";
 		for (let i = 0; i < charLength; i++) {
 			if (dataCharReleaseItems[i].getAttribute(dataCharRelease).slice(-4) != "2023" &&
-			dataCharReleaseItems[i].getAttribute(dataCharRelease).slice(-4) != "2022" &&
-			dataCharReleaseItems[i].getAttribute(dataCharRelease).slice(-4) != "2021" &&
-			dataCharReleaseItems[i].getAttribute(dataCharRelease).slice(-4) != "2020" &&
-			dataCharReleaseItems[i].getAttribute(dataCharRelease).slice(-4) != "2019" &&
-			dataCharReleaseItems[i].getAttribute(dataCharRelease).slice(-4) != "2018" &&
-			dataCharReleaseItems[i].getAttribute(dataCharRelease).slice(-4) != "2017" &&
-			dataCharReleaseItems[i].getAttribute(dataCharRelease).slice(-4) != "2016" &&
-			dataCharReleaseItems[i].getAttribute(dataCharRelease).slice(-4) != "2015") {
+				dataCharReleaseItems[i].getAttribute(dataCharRelease).slice(-4) != "2022" &&
+				dataCharReleaseItems[i].getAttribute(dataCharRelease).slice(-4) != "2021" &&
+				dataCharReleaseItems[i].getAttribute(dataCharRelease).slice(-4) != "2020" &&
+				dataCharReleaseItems[i].getAttribute(dataCharRelease).slice(-4) != "2019" &&
+				dataCharReleaseItems[i].getAttribute(dataCharRelease).slice(-4) != "2018" &&
+				dataCharReleaseItems[i].getAttribute(dataCharRelease).slice(-4) != "2017" &&
+				dataCharReleaseItems[i].getAttribute(dataCharRelease).slice(-4) != "2016" &&
+				dataCharReleaseItems[i].getAttribute(dataCharRelease).slice(-4) != "2015") {
 				console.log(temp_char[i]);
 			}
 		}

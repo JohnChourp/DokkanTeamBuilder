@@ -208,173 +208,28 @@ function applyFilters() {
 
 	//anniversaryFilter
 	const dataCharReleaseItems = document.querySelectorAll('[' + dataCharRelease + ']');
+	for (let j = 0; j < filterAnniversary.length; j++) {
+		if (filterAnniversaryUsed[0] == "year-" + (j + 1)) {
+			let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
+			const sortedChars = {};
+			for (let i = 0; i < charLength; i++) {
+				let [year, month, day] = anniversaryFilterFindReleaseDate(dataCharReleaseItems, dataCharRelease, i);
+				if (year === ((2015 + j).toString())
+					&& ((month === "Jul" && day > 15) || month === "Aug" || month === "Sep"
+						|| month === "Oct" || month === "Nov" || month === "Dec")) {
+					anniversaryFilterPushCharInSortedChars(sortedChars, year, month, day, temp_char, i);
+				}
+				if (year === ((2016 + j).toString())
+					&& (month === "Jan" || month === "Feb" || month === "Mar"
+						|| month === "Apr" || month === "May" || month === "Jun"
+						|| (month === "Jul" && day < 16))) {
+					anniversaryFilterPushCharInSortedChars(sortedChars, year, month, day, temp_char, i);
+				}
+			}
+			anniversaryFilterPutCharInContainer(sortedChars, charContainerId);
+		}
+	}
 
-	for (let i = 0; i < filterAnniversaryUsed.length; i++) {
-		if (filterAnniversaryUsed[i] == "year-1") {
-			let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
-			const sortedChars = {};
-			for (let i = 0; i < charLength; i++) {
-				let [year, month, day] = anniversaryFilterFindReleaseDate(dataCharReleaseItems, dataCharRelease, i);
-				if (year === "2015") {
-					anniversaryFilterPushCharInSortedChars(sortedChars, year, month, day, temp_char, i);
-				}
-				if (year === "2016"
-					&& (month === "Jan" || month === "Feb" || month === "Mar"
-						|| month === "Apr" || month === "May" || month === "Jun"
-						|| (month === "Jul" && day < 16))) {
-					anniversaryFilterPushCharInSortedChars(sortedChars, year, month, day, temp_char, i);
-				}
-			}
-			anniversaryFilterPutCharInContainer(sortedChars, charContainerId);
-		}
-	}
-	for (let i = 0; i < filterAnniversaryUsed.length; i++) {
-		if (filterAnniversaryUsed[i] == "year-2") {
-			let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
-			const sortedChars = {};
-			for (let i = 0; i < charLength; i++) {
-				let [year, month, day] = anniversaryFilterFindReleaseDate(dataCharReleaseItems, dataCharRelease, i);
-				if (year === "2016"
-					&& ((month === "Jul" && day > 15) || month === "Aug" || month === "Sep"
-						|| month === "Oct" || month === "Nov" || month === "Dec")) {
-					anniversaryFilterPushCharInSortedChars(sortedChars, year, month, day, temp_char, i);
-				}
-				if (year === "2017"
-					&& (month === "Jan" || month === "Feb" || month === "Mar"
-						|| month === "Apr" || month === "May" || month === "Jun"
-						|| (month === "Jul" && day < 16))) {
-					anniversaryFilterPushCharInSortedChars(sortedChars, year, month, day, temp_char, i);
-				}
-			}
-			anniversaryFilterPutCharInContainer(sortedChars, charContainerId);
-		}
-	}
-	for (let i = 0; i < filterAnniversaryUsed.length; i++) {
-		if (filterAnniversaryUsed[i] == "year-3") {
-			let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
-			const sortedChars = {};
-			for (let i = 0; i < charLength; i++) {
-				let [year, month, day] = anniversaryFilterFindReleaseDate(dataCharReleaseItems, dataCharRelease, i);
-				if (year === "2017"
-					&& ((month === "Jul" && day > 15) || month === "Aug" || month === "Sep"
-						|| month === "Oct" || month === "Nov" || month === "Dec")) {
-					anniversaryFilterPushCharInSortedChars(sortedChars, year, month, day, temp_char, i);
-				}
-				if (year === "2018"
-					&& (month === "Jan" || month === "Feb" || month === "Mar"
-						|| month === "Apr" || month === "May" || month === "Jun"
-						|| (month === "Jul" && day < 16))) {
-					anniversaryFilterPushCharInSortedChars(sortedChars, year, month, day, temp_char, i);
-				}
-			}
-			anniversaryFilterPutCharInContainer(sortedChars, charContainerId);
-		}
-	}
-	for (let i = 0; i < filterAnniversaryUsed.length; i++) {
-		if (filterAnniversaryUsed[i] == "year-4") {
-			let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
-			const sortedChars = {};
-			for (let i = 0; i < charLength; i++) {
-				let [year, month, day] = anniversaryFilterFindReleaseDate(dataCharReleaseItems, dataCharRelease, i);
-				if (year === "2018"
-					&& ((month === "Jul" && day > 15) || month === "Aug" || month === "Sep"
-						|| month === "Oct" || month === "Nov" || month === "Dec")) {
-					anniversaryFilterPushCharInSortedChars(sortedChars, year, month, day, temp_char, i);
-				}
-				if (year === "2019"
-					&& (month === "Jan" || month === "Feb" || month === "Mar"
-						|| month === "Apr" || month === "May" || month === "Jun"
-						|| (month === "Jul" && day < 16))) {
-					anniversaryFilterPushCharInSortedChars(sortedChars, year, month, day, temp_char, i);
-				}
-			}
-			anniversaryFilterPutCharInContainer(sortedChars, charContainerId);
-		}
-	}
-	for (let i = 0; i < filterAnniversaryUsed.length; i++) {
-		if (filterAnniversaryUsed[i] == "year-5") {
-			let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
-			const sortedChars = {};
-			for (let i = 0; i < charLength; i++) {
-				let [year, month, day] = anniversaryFilterFindReleaseDate(dataCharReleaseItems, dataCharRelease, i);
-				if (year === "2019"
-					&& ((month === "Jul" && day > 15) || month === "Aug" || month === "Sep"
-						|| month === "Oct" || month === "Nov" || month === "Dec")) {
-					anniversaryFilterPushCharInSortedChars(sortedChars, year, month, day, temp_char, i);
-				}
-				if (year === "2020"
-					&& (month === "Jan" || month === "Feb" || month === "Mar"
-						|| month === "Apr" || month === "May" || month === "Jun"
-						|| (month === "Jul" && day < 16))) {
-					anniversaryFilterPushCharInSortedChars(sortedChars, year, month, day, temp_char, i);
-				}
-			}
-			anniversaryFilterPutCharInContainer(sortedChars, charContainerId);
-		}
-	}
-	for (let i = 0; i < filterAnniversaryUsed.length; i++) {
-		if (filterAnniversaryUsed[i] == "year-6") {
-			let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
-			const sortedChars = {};
-			for (let i = 0; i < charLength; i++) {
-				let [year, month, day] = anniversaryFilterFindReleaseDate(dataCharReleaseItems, dataCharRelease, i);
-				if (year === "2020"
-					&& ((month === "Jul" && day > 15) || month === "Aug" || month === "Sep"
-						|| month === "Oct" || month === "Nov" || month === "Dec")) {
-					anniversaryFilterPushCharInSortedChars(sortedChars, year, month, day, temp_char, i);
-				}
-				if (year === "2021"
-					&& (month === "Jan" || month === "Feb" || month === "Mar"
-						|| month === "Apr" || month === "May" || month === "Jun"
-						|| (month === "Jul" && day < 16))) {
-					anniversaryFilterPushCharInSortedChars(sortedChars, year, month, day, temp_char, i);
-				}
-			}
-			anniversaryFilterPutCharInContainer(sortedChars, charContainerId);
-		}
-	}
-	for (let i = 0; i < filterAnniversaryUsed.length; i++) {
-		if (filterAnniversaryUsed[i] == "year-7") {
-			let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
-			const sortedChars = {};
-			for (let i = 0; i < charLength; i++) {
-				let [year, month, day] = anniversaryFilterFindReleaseDate(dataCharReleaseItems, dataCharRelease, i);
-				if (year === "2021"
-					&& ((month === "Jul" && day > 15) || month === "Aug" || month === "Sep"
-						|| month === "Oct" || month === "Nov" || month === "Dec")) {
-					anniversaryFilterPushCharInSortedChars(sortedChars, year, month, day, temp_char, i);
-				}
-				if (year === "2022"
-					&& (month === "Jan" || month === "Feb" || month === "Mar"
-						|| month === "Apr" || month === "May" || month === "Jun"
-						|| (month === "Jul" && day < 16))) {
-					anniversaryFilterPushCharInSortedChars(sortedChars, year, month, day, temp_char, i);
-				}
-			}
-			anniversaryFilterPutCharInContainer(sortedChars, charContainerId);
-		}
-		for (let i = 0; i < filterAnniversaryUsed.length; i++) {
-			if (filterAnniversaryUsed[i] == "year-8") {
-				let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
-				const sortedChars = {};
-				for (let i = 0; i < charLength; i++) {
-					let [year, month, day] = anniversaryFilterFindReleaseDate(dataCharReleaseItems, dataCharRelease, i);
-					if (year === "2022"
-						&& ((month === "Jul" && day > 15) || month === "Aug" || month === "Sep"
-							|| month === "Oct" || month === "Nov" || month === "Dec")) {
-						anniversaryFilterPushCharInSortedChars(sortedChars, year, month, day, temp_char, i);
-					}
-					if (year === "2023"
-						&& (month === "Jan" || month === "Feb" || month === "Mar"
-							|| month === "Apr" || month === "May" || month === "Jun"
-							|| (month === "Jul" && day < 16))) {
-						anniversaryFilterPushCharInSortedChars(sortedChars, year, month, day, temp_char, i);
-					}
-				}
-				anniversaryFilterPutCharInContainer(sortedChars, charContainerId);
-			}
-		}
-	}
 	//sortRelease
 	const sortReleased = document.getElementById("sort-released");
 	if (sortReleased.classList.contains("checkedSortBtn")) {

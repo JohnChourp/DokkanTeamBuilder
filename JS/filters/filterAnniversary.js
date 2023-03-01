@@ -38,11 +38,10 @@ function filterAnniversaryYear8() {
 function removeAllAnniversary() {
     const anniversaryButtons = document.querySelectorAll(".anniversary-class");
     anniversaryButtons.forEach(btn => {
-      btn.classList.remove("checkedAnniversaryBtn");
-      btn.style.backgroundColor = "#ddd";
-      btn.style.cursor = "pointer";
-      btn.style.color = "black";
-      btn.removeAttribute("disabled");
+        btn.classList.remove("checkedAnniversaryBtn");
+        btn.style.backgroundColor = "#ddd";
+        btn.style.cursor = "pointer";
+        btn.style.color = "black";
+        btn.removeAttribute("disabled");
     });
-  }
-  
+}
