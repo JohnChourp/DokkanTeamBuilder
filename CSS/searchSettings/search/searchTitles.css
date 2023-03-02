@@ -1,36 +1,36 @@
 #search-titles-id {
-    height: 40px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 #search-settings-text-search-titles-id {
-    position: relative;
-    top: -16px;
+  position: relative;
+  top: -16px;
 }
 
 .titlesnBtn {
-    background-color: white;
-    color: black;
-    border: 2px solid #008CBA;
-    transition-duration: 0.4s;
-    height: 30px;
-    margin: 0px 0px 5px 10px;
+  background-color: white;
+  color: black;
+  border: 2px solid #008cba;
+  transition-duration: 0.4s;
+  height: 30px;
+  margin: 0px 0px 5px 10px;
 }
 
 .titlesnBtn:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .checkedTitlesnBtn {
-    background-color: #33ccff;
+  background-color: #33ccff;
 }
 
 .search-settings-text-class {
-    color: white;
-    font-size: 20px;
-    height: 30px;
-    white-space: nowrap;
-    margin-left: 10px;
+  color: white;
+  font-size: 20px;
+  height: 30px;
+  white-space: nowrap;
+  margin-left: 10px;
 }

@@ -1,174 +1,174 @@
 #char-container-id {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    background-color: #3b3a3a;
-    margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #3b3a3a;
+  margin-top: 10px;
 }
 
 .char {
-    width: 215px;
-    height: 200px;
-    margin-top: 10px;
+  width: 215px;
+  height: 200px;
+  margin-top: 10px;
 }
 
 .char-div-class {
-    width: 200px;
-    height: 120px;
-    position: relative;
-    left: 7.5px;
+  width: 200px;
+  height: 120px;
+  position: relative;
+  left: 7.5px;
 }
 
 .char-div-class:hover {
-    background-color: #2e2d2d;
-    cursor: pointer;
+  background-color: #2e2d2d;
+  cursor: pointer;
 }
 
 .char_display {
-    width: 200px;
-    height: 55px;
-    position: relative;
-    left: 7.5px;
-    background-size: cover;
-    background-position: center top;
+  width: 200px;
+  height: 55px;
+  position: relative;
+  left: 7.5px;
+  background-size: cover;
+  background-position: center top;
 }
 
 .char_display_text {
-    width: 200px;
-    height: 36px;
-    color: white;
-    text-align: center;
-    position: relative;
-    display: table-cell;
-    vertical-align: middle;
-    top: 10px;
-    overflow: auto;
+  width: 200px;
+  height: 36px;
+  color: white;
+  text-align: center;
+  position: relative;
+  display: table-cell;
+  vertical-align: middle;
+  top: 10px;
+  overflow: auto;
 }
 
 .char_type_base {
-    width: 100px;
-    height: 100px;
-    position: relative;
-    top: 15px;
-    left: 50px;
-    -moz-user-select: none;
-    -webkit-user-drag: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  top: 15px;
+  left: 50px;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .char_thumb {
-    width: 125px;
-    height: 125px;
-    position: relative;
-    bottom: 107px;
-    left: 37px;
-    -moz-user-select: none;
-    -webkit-user-drag: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  width: 125px;
+  height: 125px;
+  position: relative;
+  bottom: 107px;
+  left: 37px;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .char_rarity {
-    width: 60px;
-    height: 60px;
-    position: relative;
-    bottom: 100px;
-    right: 90px;
-    -moz-user-select: none;
-    -webkit-user-drag: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  width: 60px;
+  height: 60px;
+  position: relative;
+  bottom: 100px;
+  right: 90px;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .char_type {
-    width: 50px;
-    height: 50px;
-    position: relative;
-    bottom: 235px;
-    left: 120px;
-    -moz-user-select: none;
-    -webkit-user-drag: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  bottom: 235px;
+  left: 120px;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .char_eza {
-    width: 25px;
-    height: 25px;
-    position: relative;
-    left: 70px;
-    bottom: 173px;
-    -moz-user-select: none;
-    -webkit-user-drag: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  width: 25px;
+  height: 25px;
+  position: relative;
+  left: 70px;
+  bottom: 173px;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 /*Samsung Galaxy A51/A71 dimensions */
 @media only screen and (max-width: 413px) {
-    .char {
-        width: 95px;
-        height: 100px;
-    }
+  .char {
+    width: 95px;
+    height: 100px;
+  }
 
-    .char-div-class {
-        width: 80px;
-        height: 60px;
-        left: 7.5px;
-    }
+  .char-div-class {
+    width: 80px;
+    height: 60px;
+    left: 7.5px;
+  }
 
-    .char_display {
-        width: 80px;
-        height: 40px;
-        left: 7.5px;
-    }
+  .char_display {
+    width: 80px;
+    height: 40px;
+    left: 7.5px;
+  }
 
-    .char_display_text {
-        width: 70px;
-        height: 21px;
-        top: 10px;
-        font-size: xx-small;
-    }
+  .char_display_text {
+    width: 70px;
+    height: 21px;
+    top: 10px;
+    font-size: xx-small;
+  }
 
-    .char_type_base {
-        width: 50px;
-        height: 50px;
-        top: 7.5px;
-        left: 17.5px;
-    }
+  .char_type_base {
+    width: 50px;
+    height: 50px;
+    top: 7.5px;
+    left: 17.5px;
+  }
 
-    .char_thumb {
-        width: 62.5px;
-        height: 62.5px;
-        bottom: 55px;
-        left: 11.5px;
-    }
+  .char_thumb {
+    width: 62.5px;
+    height: 62.5px;
+    bottom: 55px;
+    left: 11.5px;
+  }
 
-    .char_rarity {
-        width: 30px;
-        height: 30px;
-        bottom: 85px;
-        left: 7.5px;
-    }
+  .char_rarity {
+    width: 30px;
+    height: 30px;
+    bottom: 85px;
+    left: 7.5px;
+  }
 
-    .char_type {
-        width: 25px;
-        height: 25px;
-        bottom: 126px;
-        left: 21.5px;
-    }
+  .char_type {
+    width: 25px;
+    height: 25px;
+    bottom: 126px;
+    left: 21.5px;
+  }
 
-    .char_eza {
-        width: 12.5px;
-        height: 12.5px;
-        left: 35px;
-        bottom: 95px;
-        left: -2.5px;
-    }
+  .char_eza {
+    width: 12.5px;
+    height: 12.5px;
+    left: 35px;
+    bottom: 95px;
+    left: -2.5px;
+  }
 }

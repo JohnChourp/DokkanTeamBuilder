@@ -1,24 +1,24 @@
 .super-attack-type-class {
-    background-color: transparent;
-    height: 55px;
-    margin: 0px 5px 0px 5px;
-    border: #111;
+  background-color: transparent;
+  height: 55px;
+  margin: 0px 5px 0px 5px;
+  border: #111;
 }
 
 .super-attack-type-class:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .checkedSuperAttackTypeBtn {
-    background-color: transparent;
-    height: 55px;
+  background-color: transparent;
+  height: 55px;
 }
 
 #filter_super_attack_type_ki-blast-image-id,
 #filter_super_attack_type_unarmed-image-id,
 #filter_super_attack_type_physical-image-id,
 #filter_super_attack_type_other-image-id {
-    background-color: transparent;
-    width: 50px;
-    height: 50px;
+  background-color: transparent;
+  width: 50px;
+  height: 50px;
 }
