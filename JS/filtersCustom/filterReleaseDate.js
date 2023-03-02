@@ -72,8 +72,12 @@ function addSearchBeforeEzaDropdownClass(charReleasePos) {
     "search-before-eza-dropdown-options-value"
   );
 
-  searchOneCharDropdown_btn.placeholder =
-    searchOneCharDropdownValue.item(charReleasePos).innerHTML;
+  if (charReleasePos === 0) {
+    searchOneCharDropdown_btn.placeholder = "Before EZA..";
+  } else {
+    searchOneCharDropdown_btn.placeholder =
+      searchOneCharDropdownValue.item(charReleasePos).innerHTML;
+  }
   searchOneCharDropdownValue
     .item(charReleasePos)
     .classList.add("checkedSearchBeforeEzaBtn");
@@ -88,6 +92,9 @@ function addSearchBeforeEzaDropdownClass(charReleasePos) {
 }
 function selectedBeforeEzaSearch() {
   const input = document.getElementById("search-before-eza-id");
+  if (input.value.length === 0) {
+    input.placeholder = "Before EZA..";
+  }
   const filter = input.value.toLowerCase();
   const ui = document.getElementsByClassName(
     "search-before-eza-dropdown-options-value"
@@ -179,8 +186,13 @@ function addSearchAfterEzaDropdownClass(charReleasePos) {
     "search-after-eza-dropdown-options-value"
   );
 
-  searchOneCharDropdown_btn.placeholder =
-    searchOneCharDropdownValue.item(charReleasePos).innerHTML;
+  if (charReleasePos === 0) {
+    searchOneCharDropdown_btn.placeholder = "After EZA..";
+  } else {
+    searchOneCharDropdown_btn.placeholder =
+      searchOneCharDropdownValue.item(charReleasePos).innerHTML;
+  }
+
   searchOneCharDropdownValue
     .item(charReleasePos)
     .classList.add("checkedSearchAfterEzaBtn");
@@ -195,6 +207,9 @@ function addSearchAfterEzaDropdownClass(charReleasePos) {
 }
 function selectedAfterEzaSearch() {
   const input = document.getElementById("search-after-eza-id");
+  if (input.value.length === 0) {
+    input.placeholder = "After EZA..";
+  }
   const filter = input.value.toLowerCase();
   const ui = document.getElementsByClassName(
     "search-after-eza-dropdown-options-value"

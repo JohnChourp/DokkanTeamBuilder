@@ -182,4 +182,13 @@ function removeAllFilters() {
     removeAllSortAndAddUpdated();
     removeAllAnniversary();
   }
+  const searchBeforeEzaDropdown_btn = document.getElementById(
+    "search-before-eza-id"
+  );
+  searchBeforeEzaDropdown_btn.placeholder = "Before EZA..";
+
+  const searchAfterDropdown_btn = document.getElementById(
+    "search-after-eza-id"
+  );
+  searchAfterDropdown_btn.placeholder = "After EZA..";
 }

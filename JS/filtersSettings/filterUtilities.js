@@ -219,7 +219,7 @@ function filterSumCategoryUsed(
   return [sumFilterUsed, filtersEachLengthStringUsed];
 }
 
-function anniversaryFilterFindReleaseDate(
+function filterBeforeEzaReleaseDate(
   dataCharReleaseItems,
   dataCharRelease,
   i
@@ -238,6 +238,22 @@ function anniversaryFilterFindReleaseDate(
   }
   return [year, month, day];
 }
+
+function filterAfterEzaReleaseDate(
+  dataCharReleaseItems,
+  dataCharRelease,
+  i
+) {
+  const releaseDate = dataCharReleaseItems[i].getAttribute(dataCharRelease);
+  let year, month, day;
+  if (releaseDate.length == 25) {
+    year = releaseDate.slice(-4);
+    month = releaseDate.slice(-12, -9);
+    day = parseInt(releaseDate.slice(-8, -6));
+  }
+  return [year, month, day];
+}
+
 function anniversaryFilterPutCharInContainer(sortedChars, charContainerId) {
   for (const year in sortedChars) {
     for (const month in sortedChars[year]) {

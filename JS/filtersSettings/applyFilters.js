@@ -440,7 +440,7 @@ function applyFilters() {
       );
       const sortedChars = {};
       for (let i = 0; i < charLength; i++) {
-        let [year, month, day] = anniversaryFilterFindReleaseDate(
+        let [year, month, day] = filterBeforeEzaReleaseDate(
           dataCharReleaseItems,
           dataCharRelease,
           i
@@ -736,6 +736,76 @@ function applyFilters() {
       charContainerId,
       temp_char
     );
+  }
+
+  const searchBeforeEzaDropdown_btn = document.getElementById(
+    "search-before-eza-id"
+  );
+  const searchAfterEzaDropdown_btn = document.getElementById(
+    "search-after-eza-id"
+  );
+  if (
+    searchBeforeEzaDropdown_btn.placeholder != "Before EZA.." ||
+    searchAfterEzaDropdown_btn.placeholder != "After EZA.."
+  ) {
+    const yearBeforePlaceHolder =
+      searchBeforeEzaDropdown_btn.placeholder.slice(-4);
+    const monthBeforePlaceHolder =
+      searchBeforeEzaDropdown_btn.placeholder.slice(-12, -9);
+    const dayBeforePlaceHolder = searchBeforeEzaDropdown_btn.placeholder.slice(
+      -8,
+      -6
+    );
+
+    const yearAfterPlaceHolder =
+      searchAfterEzaDropdown_btn.placeholder.slice(-4);
+    const monthAfterPlaceHolder = searchAfterEzaDropdown_btn.placeholder.slice(
+      -12,
+      -9
+    );
+    const dayAfterPlaceHolder = searchAfterEzaDropdown_btn.placeholder.slice(
+      -8,
+      -6
+    );
+    
+    let [temp_char, charLength] = sortDirectionDisplayOrder(
+      char,
+      charContainerId
+    );
+
+    const sortedChars = {};
+    for (let i = 0; i < charLength; i++) {
+      let [yearBeforeEza, monthBeforeEza, dayBeforeEza] = filterBeforeEzaReleaseDate(
+        dataCharReleaseItems,
+        dataCharRelease,
+        i
+      );
+
+      let [yearAfterEza, monthAfterEza, dayAfterEza] = filterAfterEzaReleaseDate(
+        dataCharReleaseItems,
+        dataCharRelease,
+        i
+      );
+
+      if (
+        (yearBeforeEza == yearBeforePlaceHolder.toString() &&
+          monthBeforeEza == monthBeforePlaceHolder &&
+          dayBeforeEza == dayBeforePlaceHolder.toString()) ||
+        (yearAfterEza == yearAfterPlaceHolder.toString() &&
+        monthAfterEza == monthAfterPlaceHolder &&
+        dayAfterEza == dayAfterPlaceHolder.toString())
+      ) {
+        anniversaryFilterPushCharInSortedChars(
+          sortedChars,
+          yearBeforeEza,
+          monthBeforeEza,
+          dayBeforeEza,
+          temp_char,
+          i
+        );
+      }
+    }
+    anniversaryFilterPutCharInContainer(sortedChars, charContainerId);
   }
 
   if (
