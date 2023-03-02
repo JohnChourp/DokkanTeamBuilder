@@ -1,19 +1,19 @@
 function searchTitlesYes() {
-	const buttonYes = document.getElementById("search-titles-yes-id");
-	const buttonNo = document.getElementById("search-titles-no-id");
+  const buttonYes = document.getElementById("search-titles-yes-id");
+  const buttonNo = document.getElementById("search-titles-no-id");
 
-	buttonYes.classList.add("checkedTitlesnBtn");
-	buttonNo.classList.remove("checkedTitlesnBtn");
+  buttonYes.classList.add("checkedTitlesnBtn");
+  buttonNo.classList.remove("checkedTitlesnBtn");
 
-	localStorage.setItem("nameOrTitle", 2);
+  localStorage.setItem("nameOrTitle", 2);
 }
 
 function searchTitlesNo() {
-	const buttonYes = document.getElementById("search-titles-yes-id");
-	const buttonNo = document.getElementById("search-titles-no-id");
+  const buttonYes = document.getElementById("search-titles-yes-id");
+  const buttonNo = document.getElementById("search-titles-no-id");
 
-	buttonYes.classList.remove("checkedTitlesnBtn");
-	buttonNo.classList.add("checkedTitlesnBtn");
+  buttonYes.classList.remove("checkedTitlesnBtn");
+  buttonNo.classList.add("checkedTitlesnBtn");
 
-	localStorage.setItem("nameOrTitle", 1);
+  localStorage.setItem("nameOrTitle", 1);
 }

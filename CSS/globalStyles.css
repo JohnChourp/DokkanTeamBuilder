@@ -1,17 +1,17 @@
 .my-global-styles {
-    background-color: #4b4747;
+  background-color: #4b4747;
 }
 
 #update-site-message-id {
-    font-size: 20px;
-    color: white;
+  font-size: 20px;
+  color: white;
 }
 
 #update-site-message-id a {
-    color: #00FFFF;
+  color: #00ffff;
 }
 
 li a {
-    font-size: 20px;
-    color: #00FFFF;
+  font-size: 20px;
+  color: #00ffff;
 }

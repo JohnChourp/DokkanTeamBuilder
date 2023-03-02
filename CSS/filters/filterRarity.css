@@ -1,38 +1,38 @@
 .filter-rarity-container {
-	position: relative;
-	width: 60px;
-	height: 30px;
-	left: 10px;
-	top: -25px;
-	cursor: pointer;
+  position: relative;
+  width: 60px;
+  height: 30px;
+  left: 10px;
+  top: -25px;
+  cursor: pointer;
 }
 
 .top-half-bg-color {
-	position: relative;
-	left: -1px;
-	top: 27px;
-	width: 48px;
-	height: 12px;
-	background-color: #6B6B67;
-	-moz-user-select: none;
-	-webkit-user-drag: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
+  position: relative;
+  left: -1px;
+  top: 27px;
+  width: 48px;
+  height: 12px;
+  background-color: #6b6b67;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .bottom-half-bg-color {
-	position: relative;
-	left: -1px;
-	top: 27px;
-	width: 48px;
-	height: 11px;
-	background-color: #555555;
-	-moz-user-select: none;
-	-webkit-user-drag: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
+  position: relative;
+  left: -1px;
+  top: 27px;
+  width: 48px;
+  height: 11px;
+  background-color: #555555;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .top-line,
@@ -41,76 +41,76 @@
 .bottom-line,
 .bottom-left-line-rotated,
 .bottom-right-line-rotated {
-	height: 5px;
-	position: relative;
-	border-radius: 15%;
-	-moz-user-select: none;
-	-webkit-user-drag: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
+  height: 5px;
+  position: relative;
+  border-radius: 15%;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .top-line {
-	width: 45px;
-	background-color: #CED1D0;
+  width: 45px;
+  background-color: #ced1d0;
 }
 
 .top-left-line-rotated {
-	top: 5px;
-	left: -13px;
-	width: 24px;
-	background-color: #CED1D0;
-	transform: rotate(-75deg);
+  top: 5px;
+  left: -13px;
+  width: 24px;
+  background-color: #ced1d0;
+  transform: rotate(-75deg);
 }
 
 .top-right-line-rotated {
-	top: -7px;
-	left: 41px;
-	width: 10px;
-	background-color: #CED1D0;
-	transform: rotate(50deg);
+  top: -7px;
+  left: 41px;
+  width: 10px;
+  background-color: #ced1d0;
+  transform: rotate(50deg);
 }
 
 .bottom-line {
-	top: 11px;
-	width: 47px;
-	background-color: #CED1D0;
+  top: 11px;
+  width: 47px;
+  background-color: #ced1d0;
 }
 
 .bottom-left-line-rotated {
-	top: 3px;
-	left: -6px;
-	width: 10px;
-	background-color: #CED1D0;
-	transform: rotate(50deg);
+  top: 3px;
+  left: -6px;
+  width: 10px;
+  background-color: #ced1d0;
+  transform: rotate(50deg);
 }
 
 .bottom-right-line-rotated {
-	top: -9px;
-	left: 35px;
-	width: 24px;
-	background-color: #CED1D0;
-	transform: rotate(100deg);
+  top: -9px;
+  left: 35px;
+  width: 24px;
+  background-color: #ced1d0;
+  transform: rotate(100deg);
 }
 
 .filter-rarity-container-text-class {
-	position: relative;
-	color: white;
-	top: -23px;
-	left: -6px;
-	font-weight: 750;
-	font-family: Arial, sans-serif;
-	background-image: linear-gradient(180deg, #B6B6B6, #948D87);
-	text-align: center;
-	-webkit-background-clip: text;
-	-moz-background-clip: text;
-	background-clip: text;
-	-webkit-text-fill-color: transparent;
-	-moz-text-fill-color: transparent;
-	-moz-user-select: none;
-	-webkit-user-drag: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
+  position: relative;
+  color: white;
+  top: -23px;
+  left: -6px;
+  font-weight: 750;
+  font-family: Arial, sans-serif;
+  background-image: linear-gradient(180deg, #b6b6b6, #948d87);
+  text-align: center;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
