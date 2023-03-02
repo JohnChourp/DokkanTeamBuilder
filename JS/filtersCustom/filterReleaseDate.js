@@ -1,3 +1,14 @@
+const searchAfterDropdown_btn = document.getElementById("search-after-eza-id");
+const searchAfterDropdownValue = document.getElementsByClassName(
+  "search-after-eza-dropdown-options-value"
+);
+const searchBeforeDropdown_btn = document.getElementById(
+  "search-before-eza-id"
+);
+const searchBeforeDropdownValue = document.getElementsByClassName(
+  "search-before-eza-dropdown-options-value"
+);
+
 function addAllReleaseDatesBefore() {
   const dropdowns = document.getElementsByClassName(
     "search-before-eza-dropdown-options"
@@ -64,60 +75,36 @@ function addAllReleaseDatesBefore() {
     charListDiv.appendChild(option);
   }
 }
-function addSearchBeforeEzaDropdownClass(charReleasePos) {
-  const searchOneCharDropdown_btn = document.getElementById(
-    "search-before-eza-id"
-  );
-  const searchOneCharDropdownValue = document.getElementsByClassName(
-    "search-before-eza-dropdown-options-value"
-  );
 
+function addSearchBeforeEzaDropdownClass(charReleasePos) {
+  const searchBeforeDropdownLength = searchBeforeDropdownValue.length;
+  
   if (charReleasePos === 0) {
-    searchOneCharDropdown_btn.placeholder = "Before EZA..";
+    searchBeforeDropdown_btn.placeholder = "Before EZA..";
   } else {
-    searchOneCharDropdown_btn.placeholder =
-      searchOneCharDropdownValue.item(charReleasePos).innerHTML;
+    searchBeforeDropdown_btn.placeholder =
+      searchBeforeDropdownValue.item(charReleasePos).innerHTML;
   }
-  searchOneCharDropdownValue
+
+  searchBeforeDropdownValue
     .item(charReleasePos)
     .classList.add("checkedSearchBeforeEzaBtn");
 
-  for (let i = 0; i < searchOneCharDropdownValue.length; i++) {
-    if (i != charReleasePos) {
-      searchOneCharDropdownValue
+  for (let i = 0; i < searchBeforeDropdownLength; i++) {
+    if (i !== charReleasePos) {
+      searchBeforeDropdownValue
         .item(i)
         .classList.remove("checkedSearchBeforeEzaBtn");
     }
   }
 }
-function selectedBeforeEzaSearch() {
-  const input = document.getElementById("search-before-eza-id");
-  if (input.value.length === 0) {
-    input.placeholder = "Before EZA..";
-  }
-  const filter = input.value.toLowerCase();
-  const ui = document.getElementsByClassName(
-    "search-before-eza-dropdown-options-value"
-  );
-  let uiArray = Array.from(ui);
 
-  uiArray = uiArray.filter(
-    (el) => el.textContent.toLowerCase().indexOf(filter) >= 0
-  );
-  uiArray.forEach((el) => (el.style.display = "block"));
-  uiArray = uiArray.map((el) => el.textContent);
-
-  const restOfUiArray = Array.from(ui).filter(
-    (el) => uiArray.indexOf(el.textContent) < 0
-  );
-  restOfUiArray.forEach((el) => (el.style.display = "none"));
-}
 
 function addAllReleaseDatesAfter() {
-  const dropdowns = document.getElementsByClassName(
+  const dropdownsAfter = document.getElementsByClassName(
     "search-after-eza-dropdown-options"
   );
-  dropdowns[0].innerHTML = "";
+  dropdownsAfter[0].innerHTML = "";
 
   // Add "All" option to dropdown
   addAllDropdownOptionReleaseAfter(0, "All", addSearchAfterEzaDropdownClass);
@@ -167,7 +154,7 @@ function addAllReleaseDatesAfter() {
     });
 
   function addAllDropdownOptionReleaseAfter(index, text, clickHandler) {
-    const charListDiv = dropdowns[0];
+    const charListDiv = dropdownsAfter[0];
     const option = document.createElement("a");
     option.classList.add("search-after-eza-dropdown-options-value");
     option.href = "#";
@@ -178,52 +165,59 @@ function addAllReleaseDatesAfter() {
     charListDiv.appendChild(option);
   }
 }
-function addSearchAfterEzaDropdownClass(charReleasePos) {
-  const searchOneCharDropdown_btn = document.getElementById(
-    "search-after-eza-id"
-  );
-  const searchOneCharDropdownValue = document.getElementsByClassName(
-    "search-after-eza-dropdown-options-value"
-  );
 
+function addSearchAfterEzaDropdownClass(charReleasePos) {
+  const searchAfterDropdownLength = searchAfterDropdownValue.length;
+  
   if (charReleasePos === 0) {
-    searchOneCharDropdown_btn.placeholder = "After EZA..";
+    searchAfterDropdown_btn.placeholder = "After EZA..";
   } else {
-    searchOneCharDropdown_btn.placeholder =
-      searchOneCharDropdownValue.item(charReleasePos).innerHTML;
+    searchAfterDropdown_btn.placeholder =
+      searchAfterDropdownValue.item(charReleasePos).innerHTML;
   }
 
-  searchOneCharDropdownValue
+  searchAfterDropdownValue
     .item(charReleasePos)
     .classList.add("checkedSearchAfterEzaBtn");
 
-  for (let i = 0; i < searchOneCharDropdownValue.length; i++) {
-    if (i != charReleasePos) {
-      searchOneCharDropdownValue
+  for (let i = 0; i < searchAfterDropdownLength; i++) {
+    if (i !== charReleasePos) {
+      searchAfterDropdownValue
         .item(i)
         .classList.remove("checkedSearchAfterEzaBtn");
     }
   }
 }
-function selectedAfterEzaSearch() {
-  const input = document.getElementById("search-after-eza-id");
-  if (input.value.length === 0) {
-    input.placeholder = "After EZA..";
+
+function searchDropdownBeforeAfterEza(searchType) {
+  const filterInput = document.getElementById(`search-${searchType}-eza-id`);
+  const dropdownValue = document.querySelectorAll(`.search-${searchType}-eza-dropdown-options-value`);
+  
+  if (filterInput.value.length === 0) {
+    filterInput.placeholder = `${searchType.charAt(0).toUpperCase() + searchType.slice(1)} EZA..`;
   }
-  const filter = input.value.toLowerCase();
-  const ui = document.getElementsByClassName(
-    "search-after-eza-dropdown-options-value"
-  );
-  let uiArray = Array.from(ui);
 
-  uiArray = uiArray.filter(
-    (el) => el.textContent.toLowerCase().indexOf(filter) >= 0
-  );
-  uiArray.forEach((el) => (el.style.display = "block"));
-  uiArray = uiArray.map((el) => el.textContent);
+  const filter = filterInput.value.toLowerCase();
+  const matchingUiElements = [];
 
-  const restOfUiArray = Array.from(ui).filter(
-    (el) => uiArray.indexOf(el.textContent) < 0
-  );
-  restOfUiArray.forEach((el) => (el.style.display = "none"));
+  for (const el of dropdownValue) {
+    const text = el.textContent.toLowerCase();
+    const matchesFilter = text.includes(filter);
+    if (matchesFilter) {
+      el.classList.add("visible");
+      matchingUiElements.push(text);
+    } else {
+      el.classList.remove("visible");
+    }
+  }
+
+  for (const el of dropdownValue) {
+    if (!el.classList.contains("visible")) {
+      el.style.display = "none";
+    } else {
+      el.style.display = "";
+    }
+  }
+
+  return matchingUiElements;
 }
