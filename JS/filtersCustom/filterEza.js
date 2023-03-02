@@ -1,7 +1,3 @@
-function ezaFilter() {
-  addEza("eza");
-}
-
 function addEza(ezaFilter) {
   const filterRarityId = ["n", "r", "sr", "ssr"];
   const filterAwakenId = [
@@ -9,82 +5,67 @@ function addEza(ezaFilter) {
     "pre-dokkan-awakened",
     "dokkan-awakened",
   ];
-  if (document.getElementById(ezaFilter).classList.contains("checkedEzaBtn")) {
-    document.getElementById(ezaFilter).classList.remove("checkedEzaBtn");
+  const ezaFilterEl = document.getElementById(ezaFilter);
+  const awakenEls = filterAwakenId.map((id) => document.getElementById(id));
+  const rarityEls = filterRarityId.map((id) => document.getElementById(id));
+  const checkedEzaClass = "checkedEzaBtn";
+  const checkedAwakenClass = "checkedAwakenBtn";
+  const checkedRarityClass = "checkedRarityBtn";
 
-    for (let i = 0; i < filterAwakenId.length; i++) {
-      document.getElementById(filterAwakenId[i]).style.backgroundColor = "#ddd";
-      document.getElementById(filterAwakenId[i]).style.cursor = "pointer";
-      document.getElementById(filterAwakenId[i]).style.color = "black";
-      document.getElementById(filterAwakenId[i]).removeAttribute("disabled");
+  if (ezaFilterEl.classList.contains(checkedEzaClass)) {
+    ezaFilterEl.classList.remove(checkedEzaClass);
+
+    for (let i = 0; i < awakenEls.length; i++) {
+      const el = awakenEls[i];
+      el.style.backgroundColor = "#ddd";
+      el.style.cursor = "pointer";
+      el.style.color = "black";
+      el.removeAttribute("disabled");
+      el.classList.remove(checkedAwakenClass);
     }
-    for (let i = 0; i < filterRarityId.length; i++) {
-      document.getElementById(filterRarityId[i]).style.cursor = "pointer";
-      document.getElementById(filterRarityId[i]).removeAttribute("disabled");
-      document
-        .getElementById(filterRarityId[i])
-        .children.item(0).style.backgroundColor = "#6B6B67";
-      document
-        .getElementById(filterRarityId[i])
-        .children.item(1).style.backgroundColor = "#555555";
-      document
-        .getElementById(filterRarityId[i])
-        .children.item(8).style.backgroundImage =
+
+    for (let i = 0; i < rarityEls.length; i++) {
+      const el = rarityEls[i];
+      el.style.cursor = "pointer";
+      el.removeAttribute("disabled");
+      el.children[0].style.backgroundColor = "#6B6B67";
+      el.children[1].style.backgroundColor = "#555555";
+      el.children[8].style.backgroundImage =
         "linear-gradient(180deg, #B6B6B6, #948D87)";
+      el.classList.remove(checkedRarityClass);
     }
   } else {
-    document.getElementById(ezaFilter).classList.add("checkedEzaBtn");
-    for (let i = 0; i < filterAwakenId.length; i++) {
-      document.getElementById(filterAwakenId[i]).style.backgroundColor =
-        "#343A40";
-      document.getElementById(filterAwakenId[i]).style.cursor = "not-allowed";
-      document.getElementById(filterAwakenId[i]).style.color = "#6C757D";
-      document
-        .getElementById(filterAwakenId[i])
-        .setAttribute("disabled", "enabled");
-      document
-        .getElementById(filterAwakenId[i])
-        .classList.remove("checkedAwakenBtn");
+    ezaFilterEl.classList.add(checkedEzaClass);
+
+    for (let i = 0; i < awakenEls.length; i++) {
+      const el = awakenEls[i];
+      el.style.backgroundColor = "#343A40";
+      el.style.cursor = "not-allowed";
+      el.style.color = "#6C757D";
+      el.setAttribute("disabled", "enabled");
     }
-    for (let i = 0; i < filterRarityId.length; i++) {
-      document.getElementById(filterRarityId[i]).style.cursor = "not-allowed";
-      document
-        .getElementById(filterRarityId[i])
-        .setAttribute("disabled", "enabled");
-      document
-        .getElementById(filterRarityId[i])
-        .classList.remove("checkedRarityBtn");
-      document
-        .getElementById(filterRarityId[i])
-        .children.item(0).style.backgroundColor = "#343A40";
-      document
-        .getElementById(filterRarityId[i])
-        .children.item(1).style.backgroundColor = "#343A40";
-      document
-        .getElementById(filterRarityId[i])
-        .children.item(8).style.backgroundImage =
+
+    for (let i = 0; i < rarityEls.length; i++) {
+      const el = rarityEls[i];
+      el.style.cursor = "not-allowed";
+      el.setAttribute("disabled", "enabled");
+      el.children[0].style.backgroundColor = "#343A40";
+      el.children[1].style.backgroundColor = "#343A40";
+      el.children[8].style.backgroundImage =
         "linear-gradient(180deg, #FFFFFF,#DBCEBD)";
     }
   }
 }
 
-function ezaNoFilter() {
-  addNoEza("noeza");
-}
 
 function addNoEza(ezaNoFilter) {
-  if (
-    document.getElementById(ezaNoFilter).classList.contains("checkedEzaBtn")
-  ) {
-    document.getElementById(ezaNoFilter).classList.remove("checkedEzaBtn");
-  } else {
-    document.getElementById(ezaNoFilter).classList.add("checkedEzaBtn");
-  }
+  const ezaNoFilterEl = document.getElementById(ezaNoFilter);
+  ezaNoFilterEl.classList.toggle("checkedEzaBtn");
 }
 
 function removeAllEza() {
-  const filterEza = ["eza", "noeza"];
-  for (let i = 0; i < filterEza.length; i++) {
-    document.getElementById(filterEza[i]).classList.remove("checkedEzaBtn");
-  }
+  const ezaEl = document.getElementById("eza");
+  const noezaEl = document.getElementById("noeza");
+  ezaEl.classList.remove("checkedEzaBtn");
+  noezaEl.classList.remove("checkedEzaBtn");
 }

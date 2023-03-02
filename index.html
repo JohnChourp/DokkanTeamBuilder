@@ -2487,8 +2487,8 @@
       <hr />
       <p class="filter-options-text-class">Eza</p>
       <div class="filter-class">
-        <button onclick="ezaFilter();" id="eza" type="button">EZA</button>
-        <button onclick="ezaNoFilter();" id="noeza" type="button">
+        <button onclick="addEza('eza');" id="eza" type="button">EZA</button>
+        <button onclick="addNoEza('noeza');" id="noeza" type="button">
           NO EZA
         </button>
       </div>
@@ -2514,7 +2514,7 @@
       <p class="filter-options-text-class">Anniversary Year</p>
       <div class="filter-class">
         <button
-          onclick="filterAnniversaryYear1();"
+          onclick="filterAnniversary(1);"
           id="year-1"
           class="anniversary-class"
           type="button"
@@ -2522,7 +2522,7 @@
           1 Year
         </button>
         <button
-          onclick="filterAnniversaryYear2();"
+          onclick="filterAnniversary(2);"
           id="year-2"
           class="anniversary-class"
           type="button"
@@ -2530,7 +2530,7 @@
           2 Year
         </button>
         <button
-          onclick="filterAnniversaryYear3();"
+          onclick="filterAnniversary(3);"
           id="year-3"
           class="anniversary-class"
           type="button"
@@ -2538,7 +2538,7 @@
           3 Year
         </button>
         <button
-          onclick="filterAnniversaryYear4();"
+          onclick="filterAnniversary(4);"
           id="year-4"
           class="anniversary-class"
           type="button"
@@ -2548,7 +2548,7 @@
       </div>
       <div class="filter-class">
         <button
-          onclick="filterAnniversaryYear5();"
+          onclick="filterAnniversary(5);"
           id="year-5"
           class="anniversary-class"
           type="button"
@@ -2556,7 +2556,7 @@
           5 Year
         </button>
         <button
-          onclick="filterAnniversaryYear6();"
+          onclick="filterAnniversary(6);"
           id="year-6"
           class="anniversary-class"
           type="button"
@@ -2564,7 +2564,7 @@
           6 Year
         </button>
         <button
-          onclick="filterAnniversaryYear7();"
+          onclick="filterAnniversary(7);"
           id="year-7"
           class="anniversary-class"
           type="button"
@@ -2572,7 +2572,7 @@
           7 Year
         </button>
         <button
-          onclick="filterAnniversaryYear8();"
+          onclick="filterAnniversary(8);"
           id="year-8"
           class="anniversary-class"
           type="button"
@@ -2585,7 +2585,7 @@
         <input
           type="text"
           id="search-before-eza-id"
-          onkeyup="selectedBeforeEzaSearch();"
+          onkeyup="searchDropdownBeforeAfterEza('before');"
           placeholder="Before EZA.."
           title="Before EZA"
           inputmode="search"
@@ -2593,7 +2593,7 @@
         <input
           type="text"
           id="search-after-eza-id"
-          onkeyup="selectedAfterEzaSearch();"
+          onkeyup="searchDropdownBeforeAfterEza('after');"
           placeholder="After EZA.."
           title="After EZA"
           inputmode="search"

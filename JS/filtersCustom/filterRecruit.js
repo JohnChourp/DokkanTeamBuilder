@@ -1,3 +1,6 @@
+const summonableBtn = document.getElementById("summonable");
+const freeToPlayBtn = document.getElementById("free-to-play");
+
 function filterRecruit(id) {
   const btn = document.getElementById(id);
   if (btn.classList.contains("checkedRecruitBtn")) {
@@ -18,9 +21,6 @@ function filterRecruitFreeToPlay() {
 }
 
 function removeAllRecruit() {
-  const summonableBtn = document.getElementById("summonable");
-  const freeToPlayBtn = document.getElementById("free-to-play");
-
   summonableBtn.classList.remove("checkedRecruitBtn");
   summonableBtn.style.backgroundColor = "#ddd";
   summonableBtn.style.cursor = "pointer";
