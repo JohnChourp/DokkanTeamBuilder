@@ -20,7 +20,9 @@ function addAllReleaseDatesBefore() {
 
   // Add character names to dropdown
   const charList = JSON.parse(localStorage.getItem("charList"));
-  const uniqueCharRelease = removeDuplicates(charList.map((char) => char.release));
+  const uniqueCharRelease = removeDuplicates(
+    charList.map((char) => char.release)
+  );
   let releaseDateNotEzaList = [],
     releaseDateEzaList = [];
   for (let i = 0; i < uniqueCharRelease.length; i++) {
@@ -73,7 +75,7 @@ function addAllReleaseDatesBefore() {
 
 function addSearchBeforeEzaDropdownClass(charReleasePos) {
   const searchBeforeDropdownLength = searchBeforeDropdownValue.length;
-  
+
   if (charReleasePos === 0) {
     searchBeforeDropdown_btn.placeholder = "Before EZA..";
   } else {
@@ -93,7 +95,6 @@ function addSearchBeforeEzaDropdownClass(charReleasePos) {
     }
   }
 }
-
 
 function addAllReleaseDatesAfter() {
   const dropdownsAfter = document.getElementsByClassName(
@@ -160,7 +161,7 @@ function addAllReleaseDatesAfter() {
 
 function addSearchAfterEzaDropdownClass(charReleasePos) {
   const searchAfterDropdownLength = searchAfterDropdownValue.length;
-  
+
   if (charReleasePos === 0) {
     searchAfterDropdown_btn.placeholder = "After EZA..";
   } else {
@@ -183,10 +184,14 @@ function addSearchAfterEzaDropdownClass(charReleasePos) {
 
 function searchDropdownBeforeAfterEza(searchType) {
   const filterInput = document.getElementById(`search-${searchType}-eza-id`);
-  const dropdownValue = document.querySelectorAll(`.search-${searchType}-eza-dropdown-options-value`);
-  
+  const dropdownValue = document.querySelectorAll(
+    `.search-${searchType}-eza-dropdown-options-value`
+  );
+
   if (filterInput.value.length === 0) {
-    filterInput.placeholder = `${searchType.charAt(0).toUpperCase() + searchType.slice(1)} EZA..`;
+    filterInput.placeholder = `${
+      searchType.charAt(0).toUpperCase() + searchType.slice(1)
+    } EZA..`;
   }
 
   const filter = filterInput.value.toLowerCase();

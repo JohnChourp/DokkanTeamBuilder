@@ -204,11 +204,7 @@ function filterSumCategoryUsed(
   return [sumFilterUsed, filtersEachLengthStringUsed];
 }
 
-function filterBeforeEzaReleaseDate(
-  dataCharReleaseItems,
-  dataCharRelease,
-  i
-) {
+function filterBeforeEzaReleaseDate(dataCharReleaseItems, dataCharRelease, i) {
   const releaseDate = dataCharReleaseItems[i].getAttribute(dataCharRelease);
   let year, month, day;
   if (releaseDate.length == 12) {
@@ -224,11 +220,7 @@ function filterBeforeEzaReleaseDate(
   return [year, month, day];
 }
 
-function filterAfterEzaReleaseDate(
-  dataCharReleaseItems,
-  dataCharRelease,
-  i
-) {
+function filterAfterEzaReleaseDate(dataCharReleaseItems, dataCharRelease, i) {
   const releaseDate = dataCharReleaseItems[i].getAttribute(dataCharRelease);
   let year, month, day;
   if (releaseDate.length == 25) {

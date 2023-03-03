@@ -33,54 +33,72 @@
     />
 
     <link
-      href="CSS/filters/filterAnniversary.css"
+      href="CSS/filtersInGame/filterAwakenedInfo.css"
       rel="stylesheet"
       type="text/css"
     />
     <link
-      href="CSS/filters/filterAwakenedInfo.css"
+      href="CSS/filtersInGame/filterCategory.css"
       rel="stylesheet"
       type="text/css"
     />
     <link
-      href="CSS/filters/filterCategory.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link href="CSS/filters/filterClass.css" rel="stylesheet" type="text/css" />
-    <link href="CSS/filters/filterEza.css" rel="stylesheet" type="text/css" />
-    <link
-      href="CSS/filters/filterRarity.css"
+      href="CSS/filtersInGame/filterClass.css"
       rel="stylesheet"
       type="text/css"
     />
     <link
-      href="CSS/filters/filterRecruit.css"
+      href="CSS/filtersInGame/filterRarity.css"
       rel="stylesheet"
       type="text/css"
     />
     <link
-      href="CSS/filters/filterReleaseDate.css"
+      href="CSS/filtersInGame/filterSort.css"
       rel="stylesheet"
       type="text/css"
     />
     <link
-      href="CSS/filters/filterSideNav.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link href="CSS/filters/filterSort.css" rel="stylesheet" type="text/css" />
-    <link
-      href="CSS/filters/filterSortDirection.css"
+      href="CSS/filtersInGame/filterSortDirection.css"
       rel="stylesheet"
       type="text/css"
     />
     <link
-      href="CSS/filters/filterSuperAttackType.css"
+      href="CSS/filtersInGame/filterSuperAttackType.css"
       rel="stylesheet"
       type="text/css"
     />
-    <link href="CSS/filters/filterType.css" rel="stylesheet" type="text/css" />
+    <link
+      href="CSS/filtersInGame/filterType.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <link
+      href="CSS/filtersCustom/filterAnniversary.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="CSS/filtersCustom/filterEza.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="CSS/filtersCustom/filterRecruit.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="CSS/filtersCustom/filterReleaseDate.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <link
+      href="CSS/filtersSettings/filterSideNav.css"
+      rel="stylesheet"
+      type="text/css"
+    />
 
     <link
       href="CSS/searchSettings/search/searchOneChar.css"
@@ -226,14 +244,17 @@
           id="sort-updated"
           class="filter-sort-container checkedSortBtn"
         >
-          <div class="filter-sort-container-inside">
+          <div
+            id="default-sort-container-inside-id"
+            class="filter-sort-container-inside"
+          >
             <div
+              id="default-top-half-bg-color-sort-id"
               class="top-half-bg-color-sort"
-              style="background-color: #a9c857"
             ></div>
             <div
+              id="default-bottom-half-bg-color-sort-id"
               class="bottom-half-bg-color-sort"
-              style="background-color: #77a331"
             ></div>
             <div class="filter-sort-container-inside-outline">
               <div class="top-line-sort"></div>
@@ -243,12 +264,7 @@
               <div class="bottom-left-line-rotated-sort"></div>
               <div class="bottom-right-line-rotated-sort"></div>
             </div>
-            <div
-              class="filter-sort-container-text"
-              style="
-                background-image: linear-gradient(180deg, #ffffff, #dbcebd);
-              "
-            >
+            <div id="default-sort-text-id" class="filter-sort-container-text">
               Updated
             </div>
           </div>

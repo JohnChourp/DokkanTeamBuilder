@@ -751,7 +751,7 @@ function applyFilters() {
   ) {
     saveCharListTemp();
   }
-  
+
   //sortDirection
   sortDirectionAscendingDesencding(char, charContainerId);
 

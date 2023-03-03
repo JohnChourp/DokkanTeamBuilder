@@ -57,7 +57,6 @@ function addEza(ezaFilter) {
   }
 }
 
-
 function addNoEza(ezaNoFilter) {
   const ezaNoFilterEl = document.getElementById(ezaNoFilter);
   ezaNoFilterEl.classList.toggle("checkedEzaBtn");
