@@ -361,7 +361,7 @@ function applyFilters() {
       "Turtle School",
       "World Tournament",
 
-      "Low Class Warrior",
+      "Low-Class Warrior",
       "Earth-Bred Fighters",
       "Gifted Warriors",
       "Otherworld Warriors",
@@ -427,65 +427,6 @@ function applyFilters() {
 
   //select one char
   selectOneChar(searchOneCharDropdownValue);
-
-  //anniversaryFilter
-  const dataCharReleaseItems = document.querySelectorAll(
-    "[" + dataCharRelease + "]"
-  );
-  for (let j = 0; j < filterAnniversary.length; j++) {
-    if (filterAnniversaryUsed[0] == "year-" + (j + 1)) {
-      let [temp_char, charLength] = sortDirectionDisplayOrder(
-        char,
-        charContainerId
-      );
-      const sortedChars = {};
-      for (let i = 0; i < charLength; i++) {
-        let [year, month, day] = filterBeforeEzaReleaseDate(
-          dataCharReleaseItems,
-          dataCharRelease,
-          i
-        );
-        if (
-          year === (2015 + j).toString() &&
-          ((month === "Jul" && day > 15) ||
-            month === "Aug" ||
-            month === "Sep" ||
-            month === "Oct" ||
-            month === "Nov" ||
-            month === "Dec")
-        ) {
-          anniversaryFilterPushCharInSortedChars(
-            sortedChars,
-            year,
-            month,
-            day,
-            temp_char,
-            i
-          );
-        }
-        if (
-          year === (2016 + j).toString() &&
-          (month === "Jan" ||
-            month === "Feb" ||
-            month === "Mar" ||
-            month === "Apr" ||
-            month === "May" ||
-            month === "Jun" ||
-            (month === "Jul" && day < 16))
-        ) {
-          anniversaryFilterPushCharInSortedChars(
-            sortedChars,
-            year,
-            month,
-            day,
-            temp_char,
-            i
-          );
-        }
-      }
-      anniversaryFilterPutCharInContainer(sortedChars, charContainerId);
-    }
-  }
 
   //sortRelease
   const sortReleased = document.getElementById("sort-released");
@@ -738,6 +679,7 @@ function applyFilters() {
     );
   }
 
+  //BeforeEza AfterEza
   const searchBeforeEzaDropdown_btn = document.getElementById(
     "search-before-eza-id"
   );
@@ -767,7 +709,7 @@ function applyFilters() {
       -8,
       -6
     );
-    
+
     let [temp_char, charLength] = sortDirectionDisplayOrder(
       char,
       charContainerId
@@ -775,25 +717,19 @@ function applyFilters() {
 
     const sortedChars = {};
     for (let i = 0; i < charLength; i++) {
-      let [yearBeforeEza, monthBeforeEza, dayBeforeEza] = filterBeforeEzaReleaseDate(
-        dataCharReleaseItems,
-        dataCharRelease,
-        i
-      );
+      let [yearBeforeEza, monthBeforeEza, dayBeforeEza] =
+        filterBeforeEzaReleaseDate(dataCharReleaseItems, dataCharRelease, i);
 
-      let [yearAfterEza, monthAfterEza, dayAfterEza] = filterAfterEzaReleaseDate(
-        dataCharReleaseItems,
-        dataCharRelease,
-        i
-      );
+      let [yearAfterEza, monthAfterEza, dayAfterEza] =
+        filterAfterEzaReleaseDate(dataCharReleaseItems, dataCharRelease, i);
 
       if (
         (yearBeforeEza == yearBeforePlaceHolder.toString() &&
           monthBeforeEza == monthBeforePlaceHolder &&
           dayBeforeEza == dayBeforePlaceHolder.toString()) ||
         (yearAfterEza == yearAfterPlaceHolder.toString() &&
-        monthAfterEza == monthAfterPlaceHolder &&
-        dayAfterEza == dayAfterPlaceHolder.toString())
+          monthAfterEza == monthAfterPlaceHolder &&
+          dayAfterEza == dayAfterPlaceHolder.toString())
       ) {
         anniversaryFilterPushCharInSortedChars(
           sortedChars,
@@ -805,16 +741,17 @@ function applyFilters() {
         );
       }
     }
-    anniversaryFilterPutCharInContainer(sortedChars, charContainerId);
+    filterBeforeAfterEzaPutCharInContainer(sortedChars, charContainerId);
   }
 
+  //save list to local storage
   if (
     !sortUpdated.classList.contains("checkedSortBtn") ||
     filterAnniversaryUsed.length < 0
   ) {
     saveCharListTemp();
   }
-
+  
   //sortDirection
   sortDirectionAscendingDesencding(char, charContainerId);
 
@@ -853,18 +790,84 @@ function applyFilters() {
       filtersUsed
     );
   }
-  charListDefault = cleanArray(charListDefault, undefined);
+  charListDefault = cleanArray(charListDefault);
 
-  //create pagination
-  createFilterPagination(charListDefault);
-
-  //add filter names in search one char
-  if (sumFilterUsed > 0 || filterAnniversaryUsed.length > 0) {
-    let charListFilteredNames = [];
+  //anniversaryFilter
+  if (filterAnniversaryUsed.length > 0) {
+    let dataCharReleaseItems = [],
+      charListDefaultAnniversary = [];
     for (let i = 0; i < charListDefault.length; i++) {
-      charListFilteredNames[i] =
-        charListDefault[i].getAttribute("data-char-name");
+      dataCharReleaseItems[i] =
+        charListDefault[i].getAttribute(dataCharRelease);
     }
-    addOnlyFilteredCharNames();
+
+    for (let j = 0; j < filterAnniversary.length; j++) {
+      if (filterAnniversaryUsed[0] == "year-" + (j + 1)) {
+        for (let i = 0; i < charListDefault.length; i++) {
+          let year, month, day;
+          const releaseDate = dataCharReleaseItems[i];
+          if (releaseDate.length == 12) {
+            year = releaseDate.slice(-4);
+            month = releaseDate.slice(-12, -9);
+            day = parseInt(releaseDate.slice(-8, -6));
+          }
+          if (releaseDate.length == 25) {
+            year = releaseDate.slice(-17, -13);
+            month = releaseDate.slice(-25, -22);
+            day = releaseDate.slice(-21, -19);
+          }
+          if (
+            year === (2015 + j).toString() &&
+            ((month === "Jul" && day > 15) ||
+              month === "Aug" ||
+              month === "Sep" ||
+              month === "Oct" ||
+              month === "Nov" ||
+              month === "Dec")
+          ) {
+            charListDefaultAnniversary[i] = charListDefault[i];
+          }
+          if (
+            year === (2016 + j).toString() &&
+            (month === "Jan" ||
+              month === "Feb" ||
+              month === "Mar" ||
+              month === "Apr" ||
+              month === "May" ||
+              month === "Jun" ||
+              (month === "Jul" && day < 16))
+          ) {
+            charListDefaultAnniversary[i] = charListDefault[i];
+          }
+        }
+      }
+    }
+    charListDefaultAnniversary = cleanArray(charListDefaultAnniversary);
+
+    //create pagination
+    createFilterPagination(charListDefaultAnniversary);
+
+    //add filter names in search one char
+    if (sumFilterUsed > 0 || filterAnniversaryUsed.length > 0) {
+      let charListFilteredNames = [];
+      for (let i = 0; i < charListDefaultAnniversary.length; i++) {
+        charListFilteredNames[i] =
+          charListDefaultAnniversary[i].getAttribute("data-char-name");
+      }
+      addOnlyFilteredCharNames();
+    }
+  } else {
+    //create pagination
+    createFilterPagination(charListDefault);
+
+    //add filter names in search one char
+    if (sumFilterUsed > 0 || filterAnniversaryUsed.length > 0) {
+      let charListFilteredNames = [];
+      for (let i = 0; i < charListDefault.length; i++) {
+        charListFilteredNames[i] =
+          charListDefault[i].getAttribute("data-char-name");
+      }
+      addOnlyFilteredCharNames();
+    }
   }
 }

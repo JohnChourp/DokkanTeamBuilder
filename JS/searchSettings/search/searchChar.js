@@ -158,7 +158,6 @@ function searchChar() {
       }
 
       const nameOrTitle = localStorage.getItem("nameOrTitle");
-      const charContainerId = document.getElementById("char-container-id");
       const characterSearchId = document.getElementById("char-search-id");
       const char = document.getElementsByClassName("char");
 
@@ -350,7 +349,7 @@ function searchChar() {
           "Turtle School",
           "World Tournament",
 
-          "Low Class Warrior",
+          "Low-Class Warrior",
           "Earth-Bred Fighters",
           "Gifted Warriors",
           "Otherworld Warriors",
@@ -436,9 +435,6 @@ function searchChar() {
       if (!sortUpdated.classList.contains("checkedSortBtn")) {
         saveCharListTemp();
       }
-
-      //sortDirection
-      //sortDirectionAscendingDesencdingSearchChar(char, charContainerId, dataCharNameOrTitleItems, dataCharNameOrTitle);
 
       //filter used
       const filtersUsed = filterCategoryUsed(

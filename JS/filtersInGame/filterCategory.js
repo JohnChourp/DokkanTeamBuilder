@@ -904,7 +904,7 @@ function closeCategoriesSelectBtn() {
       "Turtle School",
       "World Tournament",
 
-      "Low Class Warrior",
+      "Low-Class Warrior",
       "Earth-Bred Fighters",
       "Gifted Warriors",
       "Otherworld Warriors",

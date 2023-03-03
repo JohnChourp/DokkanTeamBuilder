@@ -20,9 +20,7 @@ function addAllReleaseDatesBefore() {
 
   // Add character names to dropdown
   const charList = JSON.parse(localStorage.getItem("charList"));
-  const uniqueCharRelease = removeDuplicates(
-    charList.map((char) => char.release)
-  );
+  const uniqueCharRelease = removeDuplicates(charList.map((char) => char.release));
   let releaseDateNotEzaList = [],
     releaseDateEzaList = [];
   for (let i = 0; i < uniqueCharRelease.length; i++) {
@@ -40,18 +38,15 @@ function addAllReleaseDatesBefore() {
       releaseDateNotEzaList[i] = uniqueCharRelease[i];
     }
   }
-  releaseDateNotEzaList = removeDuplicates(releaseDateNotEzaList, undefined);
-  releaseDateEzaList = removeDuplicates(releaseDateEzaList, undefined);
+  releaseDateNotEzaList = removeDuplicates(releaseDateNotEzaList);
+  releaseDateEzaList = removeDuplicates(releaseDateEzaList);
   let releaseDateNotEzaListFinal = [];
   for (let i = 1; i < releaseDateEzaList.length; i++) {
     let beforeEza = releaseDateEzaList[i][0];
     releaseDateNotEzaListFinal[releaseDateNotEzaList.length + i * 2] =
       beforeEza;
   }
-  releaseDateNotEzaListFinal = removeDuplicates(
-    releaseDateNotEzaListFinal,
-    undefined
-  );
+  releaseDateNotEzaListFinal = removeDuplicates(releaseDateNotEzaListFinal);
   releaseDateNotEzaListFinal
     .sort()
     .slice(0, -1)
@@ -131,17 +126,14 @@ function addAllReleaseDatesAfter() {
       releaseDateNotEzaList[i] = uniqueCharRelease[i];
     }
   }
-  releaseDateNotEzaList = removeDuplicates(releaseDateNotEzaList, undefined);
-  releaseDateEzaList = removeDuplicates(releaseDateEzaList, undefined);
+  releaseDateNotEzaList = removeDuplicates(releaseDateNotEzaList);
+  releaseDateEzaList = removeDuplicates(releaseDateEzaList);
   let releaseDateNotEzaListFinal = [];
   for (let i = 1; i < releaseDateEzaList.length; i++) {
     let afterEza = releaseDateEzaList[i][1];
     releaseDateNotEzaListFinal[releaseDateNotEzaList.length + i * 2] = afterEza;
   }
-  releaseDateNotEzaListFinal = removeDuplicates(
-    releaseDateNotEzaListFinal,
-    undefined
-  );
+  releaseDateNotEzaListFinal = removeDuplicates(releaseDateNotEzaListFinal);
   releaseDateNotEzaListFinal
     .sort()
     .slice(0, -1)
