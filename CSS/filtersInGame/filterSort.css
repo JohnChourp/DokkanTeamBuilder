@@ -2,10 +2,6 @@
   --bg-color-top-half: #6b6b67;
   --bg-color-bottom-half: #555555;
   --bi-color-text: linear-gradient(180deg, #b6b6b6, #948d87);
-
-  --bg-default-color-top-half: #a9c857;
-  --bg-default-color-bottom-half: #77a331;
-  --bi-color-text-default: linear-gradient(180deg, #ffffff, #dbcebd);
 }
 
 .filter-sort-container {
@@ -26,6 +22,18 @@
   --bg-color-top-half: #9b9b97;
   --bg-color-bottom-half: #808080;
   --bi-color-text: linear-gradient(180deg, #e6e6e6, #aba5a0);
+}
+
+.checkedSortBtnInside {
+  --bg-color-top-half: #a9c857;
+  --bg-color-bottom-half: #77a331;
+  --bi-color-text: linear-gradient(180deg, #ffffff, #dbcebd);
+}
+
+.checkedSortBtnInside:hover {
+  --bg-color-top-half: #cee09f;
+  --bg-color-bottom-half: #a6d062;
+  --bi-color-text: linear-gradient(180deg, #ffffff, #ede6de);
 }
 
 .top-half-bg-color-sort {
@@ -109,20 +117,4 @@
   -moz-text-fill-color: transparent;
 }
 
-#default-sort-text-id:hover,
-#default-sort-container-inside-id:hover {
-  --bg-default-color-top-half: #cee09f;
-  --bg-default-color-bottom-half: #a6d062;
-  --bi-color-text-default: linear-gradient(180deg, #ffffff, #ede6de);
-}
 
-#default-sort-text-id {
-  background-image: var(--bi-color-text-default);
-}
-
-#default-top-half-bg-color-sort-id {
-  background-color: var(--bg-default-color-top-half);
-}
-#default-bottom-half-bg-color-sort-id {
-  background-color: var(--bg-default-color-bottom-half);
-}

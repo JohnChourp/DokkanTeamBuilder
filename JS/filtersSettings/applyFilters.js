@@ -431,6 +431,9 @@ function applyFilters() {
   //sortRelease
   const sortReleased = document.getElementById("sort-released");
   if (sortReleased.classList.contains("checkedSortBtn")) {
+    const dataCharReleaseItems = document.querySelectorAll(
+      "[" + dataCharRelease + "]"
+    );
     let [temp_char, charLength] = sortDirectionDisplayOrder(
       char,
       charContainerId

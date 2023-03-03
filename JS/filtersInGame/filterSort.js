@@ -1,30 +1,8 @@
 function addSort(sortFilter) {
   removeAllSort();
   const element = document.getElementById(sortFilter);
-
-  if (element.classList.contains("checkedSortBtn")) {
-    element.classList.remove("checkedSortBtn");
-    setButtonStylesSort(
-      element,
-      "#6B6B67",
-      "#555555",
-      "linear-gradient(180deg, #B6B6B6, #948D87)"
-    );
-  } else {
-    element.classList.add("checkedSortBtn");
-    setButtonStylesSort(
-      element,
-      "#A9C857",
-      "#77A331",
-      "linear-gradient(180deg, #FFFFFF,#DBCEBD)"
-    );
-  }
-}
-
-function setButtonStylesSort(element, bgColor1, bgColor2, bgImage) {
-  element.children.item(0).children.item(0).style.backgroundColor = bgColor1;
-  element.children.item(0).children.item(1).style.backgroundColor = bgColor2;
-  element.children.item(0).children.item(3).style.backgroundImage = bgImage;
+  element.classList.add("checkedSortBtn");
+  element.children.item(0).classList.add("checkedSortBtnInside");
 }
 
 function filterSort(sort) {
@@ -87,16 +65,7 @@ function removeAllSort() {
     document
       .getElementById(filterType[i])
       .children.item(0)
-      .children.item(0).style.backgroundColor = "#6B6B67";
-    document
-      .getElementById(filterType[i])
-      .children.item(0)
-      .children.item(1).style.backgroundColor = "#555555";
-    document
-      .getElementById(filterType[i])
-      .children.item(0)
-      .children.item(3).style.backgroundImage =
-      "linear-gradient(180deg, #B6B6B6, #948D87)";
+      .classList.remove("checkedSortBtnInside");
   }
 }
 
@@ -118,29 +87,8 @@ function removeAllSortAndAddUpdated() {
     document
       .getElementById(filterType[i])
       .children.item(0)
-      .children.item(0).style.backgroundColor = "#6B6B67";
-    document
-      .getElementById(filterType[i])
-      .children.item(0)
-      .children.item(1).style.backgroundColor = "#555555";
-    document
-      .getElementById(filterType[i])
-      .children.item(0)
-      .children.item(3).style.backgroundImage =
-      "linear-gradient(180deg, #B6B6B6, #948D87)";
+      .classList.remove("checkedSortBtnInside");
   }
   document.getElementById("sort-updated").classList.add("checkedSortBtn");
-  document
-    .getElementById("sort-updated")
-    .children.item(0)
-    .children.item(0).style.backgroundColor = "#A9C857";
-  document
-    .getElementById("sort-updated")
-    .children.item(0)
-    .children.item(1).style.backgroundColor = "#77A331";
-  document
-    .getElementById("sort-updated")
-    .children.item(0)
-    .children.item(3).style.backgroundImage =
-    "linear-gradient(180deg, #FFFFFF,#DBCEBD)";
+  document.getElementById("sort-updated").children.item(0).classList.add("checkedSortBtnInside");
 }
