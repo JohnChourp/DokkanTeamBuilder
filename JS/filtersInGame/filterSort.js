@@ -33,8 +33,8 @@ function filterSort(sort) {
     case "sort-defense":
       addSort("sort-defense");
       break;
-    case "sort-character":
-      addSort("sort-character");
+    case "sort-alphabetical":
+      addSort("sort-alphabetical");
       break;
 
     case "sort-sp-atk-lv":
@@ -56,7 +56,7 @@ function removeAllSort() {
     "sort-hp",
     "sort-attack",
     "sort-defense",
-    "sort-character",
+    "sort-alphabetical",
     "sort-sp-atk-lv",
     "sort-max-level",
   ];
@@ -78,7 +78,7 @@ function removeAllSortAndAddUpdated() {
     "sort-hp",
     "sort-attack",
     "sort-defense",
-    "sort-character",
+    "sort-alphabetical",
     "sort-sp-atk-lv",
     "sort-max-level",
   ];

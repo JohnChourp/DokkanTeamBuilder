@@ -618,10 +618,9 @@ function applyFilters() {
       temp_char
     );
   }
-  //sortCharacter
-  //need better sort names method so thats it sorts like the in-game method
-  const sortCharacter = document.getElementById("sort-character");
-  if (sortCharacter.classList.contains("checkedSortBtn")) {
+  //sortAlphabetical
+  const sortAlphabetical = document.getElementById("sort-alphabetical");
+  if (sortAlphabetical.classList.contains("checkedSortBtn")) {
     const dataCharNameItems = document.querySelectorAll(
       "[" + dataCharName + "]"
     );
@@ -633,7 +632,7 @@ function applyFilters() {
     for (let i = 0; i < charLength; i++) {
       values[i] = dataCharNameItems[i].getAttribute(dataCharName);
     }
-    let sortedvalues = removeDuplicates(values);
+    let sortedvalues = removeDuplicates(values).sort();
 
     const fragment = document.createDocumentFragment();
     for (j = 0; j < sortedvalues.length; j++) {
