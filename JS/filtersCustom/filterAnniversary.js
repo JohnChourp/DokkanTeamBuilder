@@ -1,12 +1,15 @@
 const anniversaryButtons = document.querySelectorAll(".anniversary-class");
 
 function filterAnniversary(year) {
-  removeAllAnniversary();
   const btn = document.querySelector(`#year-${year}`);
-  btn.classList.toggle("checkedAnniversaryBtn");
-  btn.style.backgroundColor = btn.classList.contains("checkedAnniversaryBtn")
-    ? "#33ccff"
-    : "#ddd";
+  const anniversaryChecked = btn.classList.contains("checkedAnniversaryBtn");
+  if (!anniversaryChecked) {
+    btn.classList.add("checkedAnniversaryBtn");
+    btn.style.backgroundColor = "#33ccff";
+  } else {
+    btn.classList.remove("checkedAnniversaryBtn");
+    btn.style.backgroundColor = "#ddd";
+  }
 }
 
 function removeAllAnniversary() {

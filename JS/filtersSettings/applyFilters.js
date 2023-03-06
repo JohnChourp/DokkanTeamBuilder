@@ -806,47 +806,50 @@ function applyFilters() {
         charListDefault[i].getAttribute(dataCharRelease);
     }
 
-    for (let j = 0; j < filterAnniversary.length; j++) {
-      if (filterAnniversaryUsed[0] == "year-" + (j + 1)) {
-        for (let i = 0; i < charListDefault.length; i++) {
-          let year, month, day;
-          const releaseDate = dataCharReleaseItems[i];
-          if (releaseDate.length == 12) {
-            year = releaseDate.slice(-4);
-            month = releaseDate.slice(-12, -9);
-            day = parseInt(releaseDate.slice(-8, -6));
-          }
-          if (releaseDate.length == 25) {
-            year = releaseDate.slice(-17, -13);
-            month = releaseDate.slice(-25, -22);
-            day = releaseDate.slice(-21, -19);
-          }
-          if (
-            year === (2015 + j).toString() &&
-            ((month === "Jul" && day > 15) ||
-              month === "Aug" ||
-              month === "Sep" ||
-              month === "Oct" ||
-              month === "Nov" ||
-              month === "Dec")
-          ) {
-            charListDefaultAnniversary[i] = charListDefault[i];
-          }
-          if (
-            year === (2016 + j).toString() &&
-            (month === "Jan" ||
-              month === "Feb" ||
-              month === "Mar" ||
-              month === "Apr" ||
-              month === "May" ||
-              month === "Jun" ||
-              (month === "Jul" && day < 16))
-          ) {
-            charListDefaultAnniversary[i] = charListDefault[i];
+    for (let k = 0; k < filterAnniversaryUsed.length; k++) {
+      for (let j = 0; j < filterAnniversary.length; j++) {
+        if (filterAnniversaryUsed[k] == "year-" + (j + 1)) {
+          for (let i = 0; i < charListDefault.length; i++) {
+            let year, month, day;
+            const releaseDate = dataCharReleaseItems[i];
+            if (releaseDate.length == 12) {
+              year = releaseDate.slice(-4);
+              month = releaseDate.slice(-12, -9);
+              day = parseInt(releaseDate.slice(-8, -6));
+            }
+            if (releaseDate.length == 25) {
+              year = releaseDate.slice(-17, -13);
+              month = releaseDate.slice(-25, -22);
+              day = releaseDate.slice(-21, -19);
+            }
+            if (
+              year === (2015 + j).toString() &&
+              ((month === "Jul" && day > 15) ||
+                month === "Aug" ||
+                month === "Sep" ||
+                month === "Oct" ||
+                month === "Nov" ||
+                month === "Dec")
+            ) {
+              charListDefaultAnniversary[i] = charListDefault[i];
+            }
+            if (
+              year === (2016 + j).toString() &&
+              (month === "Jan" ||
+                month === "Feb" ||
+                month === "Mar" ||
+                month === "Apr" ||
+                month === "May" ||
+                month === "Jun" ||
+                (month === "Jul" && day < 16))
+            ) {
+              charListDefaultAnniversary[i] = charListDefault[i];
+            }
           }
         }
       }
     }
+    
     charListDefaultAnniversary = cleanArray(charListDefaultAnniversary);
 
     //create pagination

@@ -1,38 +1,63 @@
+:root {
+  --bg-color-top-half-class: #6b6b67;
+  --bg-color-bottom-half-class: #555555;
+  --bi-color-text-class: linear-gradient(180deg, #b6b6b6, #948d87);
+}
+
 .filter-class-container {
   position: relative;
   width: 150px;
-  height: 30px;
-  left: 10px;
-  top: -25px;
+  height: 35px;
+  margin-right: 12.5px;
+  margin-bottom: 5px;
+}
+
+.filter-class-container-inside {
+  margin-top: 5px;
   cursor: pointer;
 }
 
+.filter-class-container-inside:active:hover {
+  --bg-color-top-half-class: #19739a;
+  --bg-color-bottom-half-class: #0f4670;
+  --bi-color-text-class: linear-gradient(180deg, #ffffff, #dbcebd);
+}
+
+.filter-class-container-inside:hover {
+  --bg-color-top-half-class: #9b9b97;
+  --bg-color-bottom-half-class: #808080;
+  --bi-color-text-class: linear-gradient(180deg, #e6e6e6, #aba5a0);
+}
+
+.checkedClassBtnInside {
+  --bg-color-top-half-class: #2DA9DD;
+  --bg-color-bottom-half-class: #1B79C3;
+  --bi-color-text-class: linear-gradient(180deg, #ffffff, #dbcebd);
+}
+
+.checkedClassBtnInside:active:hover {
+  --bg-color-top-half-class: #19739a;
+  --bg-color-bottom-half-class: #0f4670;
+  --bi-color-text-class: linear-gradient(180deg, #ffffff, #dbcebd);
+}
+
+.checkedClassBtnInside:hover {
+  --bg-color-top-half-class: #7bc9ea;
+  --bg-color-bottom-half-class: #4ba3e7;
+  --bi-color-text-class: linear-gradient(180deg, #ffffff, #ede6de);
+}
+
 .top-half-bg-color-class {
-  position: relative;
-  left: -1px;
-  top: 27px;
-  width: 127px;
+  margin-left: 2.5px;
+  width:150px;
   height: 12px;
-  background-color: #6b6b67;
-  -moz-user-select: none;
-  -webkit-user-drag: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+  background-color: var(--bg-color-top-half-class);
 }
 
 .bottom-half-bg-color-class {
-  position: relative;
-  left: -1px;
-  top: 27px;
-  width: 127px;
-  height: 11px;
-  background-color: #555555;
-  -moz-user-select: none;
-  -webkit-user-drag: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+  width:150px;
+  height: 12px;
+  background-color: var(--bg-color-bottom-half-class);
 }
 
 .top-line-class,
@@ -42,81 +67,63 @@
 .bottom-left-line-rotated-class,
 .bottom-right-line-rotated-class {
   height: 5px;
-  position: relative;
-  border-radius: 5%;
-  -moz-user-select: none;
-  -webkit-user-drag: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+  background-color: #ced1d0;
+}
+
+.filter-class-container-inside-outline {
+  margin-top: -29px;
 }
 
 .top-line-class {
-  width: 125px;
-  background-color: #ced1d0;
-}
-
-.top-left-line-rotated-class {
-  top: 5px;
-  left: -13px;
-  width: 24px;
-  background-color: #ced1d0;
-  transform: rotate(-75deg);
-}
-
-.top-right-line-rotated-class {
-  top: -7px;
-  left: 121px;
-  width: 10px;
-  background-color: #ced1d0;
-  transform: rotate(50deg);
+  width: 147.5px;
+  margin-left: 3.75px;
 }
 
 .bottom-line-class {
-  top: 11px;
-  width: 127px;
-  background-color: #ced1d0;
+  width: 147.5px;
+  margin-top: 24px;
+  margin-left: 3.75px;
+}
+
+.top-left-line-rotated-class {
+  width: 27px;
+  transform: rotate(-75deg);
+  margin-top: -23px;
+  margin-left: -11px;
 }
 
 .bottom-left-line-rotated-class {
-  top: 3px;
-  left: -6px;
-  width: 10px;
-  background-color: #ced1d0;
+  width: 10.5px;
   transform: rotate(50deg);
+  margin-top: 18px;
+  margin-left: -3px;
+}
+
+.top-right-line-rotated-class {
+  width: 9px;
+  transform: rotate(50deg);
+  margin-top: -13.5px;
+  margin-left: 147.5px;
 }
 
 .bottom-right-line-rotated-class {
-  top: -9px;
-  left: 115px;
-  width: 24px;
-  background-color: #ced1d0;
+  width: 27px;
   transform: rotate(100deg);
+  margin-top: -13px;
+  margin-left: 138.5px;
 }
 
 .filter-class-container-text {
-  position: relative;
   color: white;
-  top: -23px;
-  left: -11px;
   font-weight: 750;
   font-family: Arial, sans-serif;
-  background-image: linear-gradient(180deg, #b6b6b6, #948d87);
+  background-image: var(--bi-color-text-class);
+  margin-left: 5px;
+  margin-top: -15px;
   text-align: center;
   -webkit-background-clip: text;
   -moz-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
-  -moz-user-select: none;
-  -webkit-user-drag: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-#super,
-#extreme {
-  margin-top: 15px;
-  margin-right: -5px;
 }

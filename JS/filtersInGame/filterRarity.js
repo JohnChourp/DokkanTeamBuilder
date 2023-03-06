@@ -26,19 +26,19 @@ function filterRarityEzaDependable(rarity) {
   const ezaChecked = document.getElementById("eza").classList.contains("checkedEzaBtn");
   const rarityChecked = rarityId.classList.contains("checkedRarityBtn");
   if (!ezaChecked && !rarityChecked) {
-    updateRarity(rarity, true);
+    updateRarity(rarity, false);
   } else if (!ezaChecked && rarityChecked) {
-    updateRarity(rarity, false);
-  } else if (ezaChecked && !rarityChecked) {
     updateRarity(rarity, true);
-  } else if (ezaChecked && rarityChecked) {
+  } else if (ezaChecked && !rarityChecked) {
     updateRarity(rarity, false);
+  } else if (ezaChecked && rarityChecked) {
+    updateRarity(rarity, true);
   }
 }
 
 function updateRarity(rarity,rarityChecked) {
   const element = document.getElementById(rarity);
-  if (rarityChecked) {
+  if (!rarityChecked) {
     element.classList.add("checkedRarityBtn");
     element.children.item(0).classList.add("checkedRarityBtnInside");
   } else {
