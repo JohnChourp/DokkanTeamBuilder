@@ -1,5 +1,5 @@
 function addEza(ezaFilter) {
-  const filterRarityId = ["n", "r", "sr", "ssr"];
+  const filterRarityId = ["n", "r", "sr", "ssr","ur","lr"];
   const filterAwakenId = [
     "not-dokkan-awakened",
     "pre-dokkan-awakened",
@@ -11,6 +11,9 @@ function addEza(ezaFilter) {
   const checkedEzaClass = "checkedEzaBtn";
   const checkedAwakenClass = "checkedAwakenBtn";
   const checkedRarityClass = "checkedRarityBtn";
+  const checkedRarityBtnInsideClass = "checkedRarityBtnInside";
+  const filterRarityContainerInside = "filter-rarity-container-inside";
+  const disableRarityBtnInside = "disableRarityBtnInside";
 
   if (ezaFilterEl.classList.contains(checkedEzaClass)) {
     ezaFilterEl.classList.remove(checkedEzaClass);
@@ -24,15 +27,12 @@ function addEza(ezaFilter) {
       el.classList.remove(checkedAwakenClass);
     }
 
-    for (let i = 0; i < rarityEls.length; i++) {
+    for (let i = 0; i < rarityEls.length-2; i++) {
       const el = rarityEls[i];
       el.style.cursor = "pointer";
       el.removeAttribute("disabled");
-      el.children[0].style.backgroundColor = "#6B6B67";
-      el.children[1].style.backgroundColor = "#555555";
-      el.children[8].style.backgroundImage =
-        "linear-gradient(180deg, #B6B6B6, #948D87)";
-      el.classList.remove(checkedRarityClass);
+      el.children.item(0).classList.add(filterRarityContainerInside);
+      el.children.item(0).classList.remove(disableRarityBtnInside);
     }
   } else {
     ezaFilterEl.classList.add(checkedEzaClass);
@@ -45,14 +45,14 @@ function addEza(ezaFilter) {
       el.setAttribute("disabled", "enabled");
     }
 
-    for (let i = 0; i < rarityEls.length; i++) {
+    for (let i = 0; i < rarityEls.length-2; i++) {
       const el = rarityEls[i];
       el.style.cursor = "not-allowed";
       el.setAttribute("disabled", "enabled");
-      el.children[0].style.backgroundColor = "#343A40";
-      el.children[1].style.backgroundColor = "#343A40";
-      el.children[8].style.backgroundImage =
-        "linear-gradient(180deg, #FFFFFF,#DBCEBD)";
+      el.classList.remove(checkedRarityClass);
+      el.children.item(0).classList.remove(checkedRarityBtnInsideClass);
+      el.children.item(0).classList.remove(filterRarityContainerInside);
+      el.children.item(0).classList.add(disableRarityBtnInside);
     }
   }
 }

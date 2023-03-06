@@ -692,6 +692,9 @@ function applyFilters() {
     searchBeforeEzaDropdown_btn.placeholder != "Before EZA.." ||
     searchAfterEzaDropdown_btn.placeholder != "After EZA.."
   ) {
+    const dataCharReleaseItems = document.querySelectorAll(
+      "[" + dataCharRelease + "]"
+    );
     const yearBeforePlaceHolder =
       searchBeforeEzaDropdown_btn.placeholder.slice(-4);
     const monthBeforePlaceHolder =
