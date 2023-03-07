@@ -34,9 +34,6 @@ function removeAllType() {
   const filterType = ["agl", "teq", "int", "str", "phy"];
   for (let i = 0; i < filterType.length; i++) {
     document.getElementById(filterType[i]).classList.remove("checkedTypeBtn");
-    document
-      .getElementById(filterType[i])
-      .children.item(0)
-      .classList.remove("checkedTypeBtnInside");
+    document.getElementById(filterType[i]).children.item(0).classList.remove("checkedTypeBtnInside");
   }
 }

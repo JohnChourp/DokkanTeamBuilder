@@ -20,9 +20,7 @@ function addChar(charsPerPageNumItem) {
 
   const char = document.getElementsByClassName("char");
 
-  const searchSettingsImageId = document.getElementById(
-    "search-settings-image-id"
-  );
+  const searchSettingsImageId = document.getElementById("search-settings-image-id");
   searchSettingsImageId.loading = "lazy";
   searchSettingsImageId.setAttribute("draggable", "false");
   searchSettingsImageId.alt = "search_settings_image";
@@ -44,9 +42,7 @@ function addChar(charsPerPageNumItem) {
     const char_thumb_img = document.createElement("img");
     char_thumb_img.classList.add("char_thumb");
     char_thumb_img.loading = "lazy";
-    const srcValue = dataCharIdItems[i]
-      .getAttribute(dataCharId)
-      .replace(/[^\w\s]/gi, "");
+    const srcValue = dataCharIdItems[i].getAttribute(dataCharId).replace(/[^\w\s]/gi, "");
     char_thumb_img.setAttribute("src", srcValue);
     char_thumb_img.setAttribute("draggable", "false");
     char_thumb_img.alt = "char_thumb";
@@ -90,9 +86,7 @@ function addChar(charsPerPageNumItem) {
     //char_display_text
     const char_display_text_div = document.createElement("div");
     char_display_text_div.classList.add("char_display_text");
-    char_display_text_div.appendChild(
-      document.createTextNode(dataCharNameItems[i].getAttribute(dataCharName))
-    );
+    char_display_text_div.appendChild(document.createTextNode(dataCharNameItems[i].getAttribute(dataCharName)));
     char_display_text_div.setAttribute("draggable", "false");
     char_display_text_div.alt = "char_display_text";
     char_display_div.appendChild(char_display_text_div);
@@ -146,9 +140,7 @@ function addChar(charsPerPageNumItem) {
 
     charType[i].src = charClassMap[charClassValue][charTypeValue];
     charRarity[i].src = charRarityMap[charRarityValue];
-    charThumb[i].src = `Images/char/char_thumb/char_${charThumbSrc.slice(
-      -7
-    )}_thumb.png`;
+    charThumb[i].src = `Images/char/char_thumb/char_${charThumbSrc.slice(-7)}_thumb.png`;
     if (window.matchMedia(`(device-width: 412px)`).matches) {
       charDisplay[i].style.backgroundImage = colorMapMobile[charTypeValue];
     } else {

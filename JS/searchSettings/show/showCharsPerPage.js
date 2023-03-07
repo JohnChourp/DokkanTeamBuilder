@@ -1,7 +1,5 @@
 function charsPerPageInput() {
-  const charsPerPageIdTypeBox = document.getElementById(
-    "characters-per-input-page-id"
-  );
+  const charsPerPageIdTypeBox = document.getElementById("characters-per-input-page-id");
   charsPerPageIdTypeBox.value = localStorage.getItem("charsPerPageNumItem");
 
   const charsPerPage_class = document.getElementsByClassName("charsPerPage");
@@ -47,15 +45,11 @@ function charsPerPageInput() {
 function charsPerPage(charsPerPageBtn) {
   const charsPerPage_class = document.getElementsByClassName("charsPerPage");
   const charsPerPageNum = Math.pow(2, charsPerPageBtn) * 16;
-  const charsPerPageIdTypeBox = document.getElementById(
-    "characters-per-input-page-id"
-  );
+  const charsPerPageIdTypeBox = document.getElementById("characters-per-input-page-id");
 
   charsPerPageIdTypeBox.value = charsPerPageNum;
 
-  charsPerPage_class
-    .item(charsPerPageBtn)
-    .classList.add("checkedCharsPerPageBtn");
+  charsPerPage_class.item(charsPerPageBtn).classList.add("checkedCharsPerPageBtn");
   localStorage.setItem("charsPerPageNumItem", charsPerPageNum);
   for (let i = 0; i < charsPerPage_class.length; i++) {
     if (i != charsPerPageBtn) {

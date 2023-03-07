@@ -50,12 +50,7 @@ function updateRarity(rarity, rarityChecked) {
 function removeAllRarity() {
   const filterRarity = ["n", "r", "sr", "ssr", "ur", "lr"];
   for (let i = 0; i < filterRarity.length; i++) {
-    document
-      .getElementById(filterRarity[i])
-      .classList.remove("checkedRarityBtn");
-    document
-      .getElementById(filterRarity[i])
-      .children.item(0)
-      .classList.remove("checkedRarityBtnInside");
+    document.getElementById(filterRarity[i]).classList.remove("checkedRarityBtn");
+    document.getElementById(filterRarity[i]).children.item(0).classList.remove("checkedRarityBtnInside");
   }
 }

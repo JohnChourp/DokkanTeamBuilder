@@ -4,21 +4,13 @@ function sleep(ms) {
 
 async function searchOneCharAllChars() {
   let charContainerId = document.getElementById("char-container-id");
-  let searchOneCharDropdownValue = document.getElementsByClassName(
-    "search-one-char-dropdown-options-value"
-  );
-  let charWithMostChars = 0,
-    maxcharWithMostChars,
-    allMostChars = [],
+  let searchOneCharDropdownValue = document.getElementsByClassName("search-one-char-dropdown-options-value");
+  let charWithMostChars = 0, maxcharWithMostChars, allMostChars = [],
     selectedCharName = [],
     SortedSelectedCharName = [];
 
-  let charList_dataCharNameItems = JSON.parse(
-    localStorage.getItem("charList_dataCharNameItems")
-  );
-  let SortedFormattedcharList = removeDuplicates(
-    charList_dataCharNameItems
-  ).sort();
+  let charList_dataCharNameItems = JSON.parse(localStorage.getItem("charList_dataCharNameItems"));
+  let SortedFormattedcharList = removeDuplicates(charList_dataCharNameItems).sort();
 
   for (let i = 0; i < SortedFormattedcharList.length; i++) {
     addSearchOneCharDropdownClass(i);

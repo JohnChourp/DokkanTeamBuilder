@@ -1,7 +1,5 @@
 function stickySearchSettingsYes() {
-  const searchSettingsId = document.getElementById(
-    "search-bar-and-settings-id"
-  );
+  const searchSettingsId = document.getElementById("search-bar-and-settings-id");
   const sitemapBtnId = document.getElementById("sitemap-btn-id");
   const buttonYes = document.getElementById("sticky-search-settings-yes-id");
   const buttonNo = document.getElementById("sticky-search-settings-no-id");
@@ -26,9 +24,7 @@ function stickySearchSettingsYes() {
 }
 
 function stickySearchSettingsNo() {
-  const searchSettingsId = document.getElementById(
-    "search-bar-and-settings-id"
-  );
+  const searchSettingsId = document.getElementById("search-bar-and-settings-id");
   const sitemapBtnId = document.getElementById("sitemap-btn-id");
   const buttonYes = document.getElementById("sticky-search-settings-yes-id");
   const buttonNo = document.getElementById("sticky-search-settings-no-id");
