@@ -43,6 +43,9 @@ function filterSort(sort) {
     case "sort-max-level":
       addSort("sort-max-level");
       break;
+      case "sort-char-id":
+      addSort("sort-char-id");
+      break;
   }
 }
 
@@ -59,6 +62,7 @@ function removeAllSort() {
     "sort-alphabetical",
     "sort-sp-atk-lv",
     "sort-max-level",
+    "sort-char-id"
   ];
   for (let i = 0; i < filterType.length; i++) {
     document.getElementById(filterType[i]).classList.remove("checkedSortBtn");
@@ -81,6 +85,7 @@ function removeAllSortAndAddUpdated() {
     "sort-alphabetical",
     "sort-sp-atk-lv",
     "sort-max-level",
+    "sort-char-id"
   ];
   for (let i = 0; i < filterType.length; i++) {
     document.getElementById(filterType[i]).classList.remove("checkedSortBtn");

@@ -15,6 +15,7 @@ function removeAllFilters() {
         "sort-alphabetical",
         "sort-sp-atk-lv",
         "sort-max-level",
+        "sort-char-id"
       ],
     },
     {

@@ -182,7 +182,8 @@ function applyFilters() {
     dataCharDefense = "data-char-defense",
     dataCharName = "data-char-name",
     dataCharSpAtkLv = "data-char-super-atk-level",
-    dataCharMaxLevel = "data-char-max-level";
+    dataCharMaxLevel = "data-char-max-level",
+    dataCharId = "data-char-id";
 
   const dataChars = [
     dataCharCategories,
@@ -680,7 +681,24 @@ function applyFilters() {
       temp_char
     );
   }
-
+//sortCharID
+const sortCharId = document.getElementById("sort-char-id");
+if (sortCharId.classList.contains("checkedSortBtn")) {
+  const dataCharIdItems = document.querySelectorAll(
+    "[" + dataCharId + "]"
+  );
+  let [temp_char, charLength] = sortDirectionDisplayOrder(
+    char,
+    charContainerId
+  );
+  displayOrderremoveDuplicatesAndSortValues(
+    charLength,
+    dataCharIdItems,
+    dataCharId,
+    charContainerId,
+    temp_char
+  );
+}
   //save list to local storage
   if (
     !sortUpdated.classList.contains("checkedSortBtn") ||
