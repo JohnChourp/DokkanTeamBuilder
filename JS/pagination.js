@@ -55,8 +55,9 @@ function pagination_page(start, charsPerPageNum, pageSum, pageNum, charList, pag
   const pagination_id = document.getElementById("pagination-id");
   const fragment = document.createDocumentFragment();
   let end;
-
   if (pageNum === pageSum) {
+    end = charList.length;
+  }else if (pageSum === 1) {
     end = charList.length;
   } else {
     end = charsPerPageNum;
