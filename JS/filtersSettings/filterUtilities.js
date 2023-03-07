@@ -77,11 +77,7 @@ function filterCategoryUsed(
 
   //filterCategory
   for (let i = 0; i < filterCategories.length; i++) {
-    if (
-      document
-        .getElementById(filterCategories[i])
-        .classList.contains("checkedCategoryBtn")
-    ) {
+    if (document.getElementById(filterCategories[i]).classList.contains("checkedCategoryBtn")) {
       filterCategoryUsed[i] = filterCategoriesNames[i];
     }
   }

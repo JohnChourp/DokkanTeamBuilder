@@ -49,13 +49,13 @@
 
 .top-half-bg-color-type {
   margin-left: 2.5px;
-  width:50px;
+  width: 50px;
   height: 12px;
   background-color: var(--bg-color-top-half-type);
 }
 
 .bottom-half-bg-color-type {
-  width:50px;
+  width: 51px;
   height: 12px;
   background-color: var(--bg-color-bottom-half-type);
 }

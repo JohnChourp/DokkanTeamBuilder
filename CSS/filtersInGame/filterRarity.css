@@ -56,13 +56,13 @@
 
 .top-half-bg-color-rarity {
   margin-left: 2.5px;
-  width:50px;
+  width: 50px;
   height: 12px;
   background-color: var(--bg-color-top-half-rarity);
 }
 
 .bottom-half-bg-color-rarity {
-  width:50px;
+  width: 51px;
   height: 12px;
   background-color: var(--bg-color-bottom-half-rarity);
 }

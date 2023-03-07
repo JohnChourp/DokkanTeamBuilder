@@ -36,7 +36,7 @@ function filterRarityEzaDependable(rarity) {
   }
 }
 
-function updateRarity(rarity,rarityChecked) {
+function updateRarity(rarity, rarityChecked) {
   const element = document.getElementById(rarity);
   if (!rarityChecked) {
     element.classList.add("checkedRarityBtn");

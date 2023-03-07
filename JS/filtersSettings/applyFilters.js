@@ -196,104 +196,104 @@ function applyFilters() {
   ];
 
   const filterCategories = [
-      "db-saga",
-      "saiyan-saga",
-      "planet-namek-saga",
-      "androids-cell-saga",
-      "majin-buu-saga",
-      "future-saga",
-      "universe-survival-saga",
-      "shadow-dragon-saga",
+    "db-saga",
+    "saiyan-saga",
+    "planet-namek-saga",
+    "androids-cell-saga",
+    "majin-buu-saga",
+    "future-saga",
+    "universe-survival-saga",
+    "shadow-dragon-saga",
 
-      "pure-saiyans",
-      "hybrid-saiyans",
-      "earthlings",
-      "namekians",
-      "androids",
-      "artificial-life-forms",
-      "gokus-family",
-      "vegetas-family",
-      "wicked-bloodline",
-      "youth",
-      "peppy-gals",
+    "pure-saiyans",
+    "hybrid-saiyans",
+    "earthlings",
+    "namekians",
+    "androids",
+    "artificial-life-forms",
+    "gokus-family",
+    "vegetas-family",
+    "wicked-bloodline",
+    "youth",
+    "peppy-gals",
 
-      "super-saiyans",
-      "super-saiyan-2",
-      "super-saiyan-3",
-      "power-beyond-super-saiyan",
-      "fusion",
-      "potara",
-      "fused-fighters",
-      "giant-form",
-      "transformation-boost",
-      "power-absorption",
-      "kamehameha",
+    "super-saiyans",
+    "super-saiyan-2",
+    "super-saiyan-3",
+    "power-beyond-super-saiyan",
+    "fusion",
+    "potara",
+    "fused-fighters",
+    "giant-form",
+    "transformation-boost",
+    "power-absorption",
+    "kamehameha",
 
-      "realm-of-gods",
-      "full-power",
-      "giant-ape-power",
-      "majin-power",
-      "powerful-comeback",
-      "miraculous-awakening",
-      "corroded-body-and-mind",
-      "rapid-growth",
-      "mastered-evolution",
-      "time-limit",
-      "final-trump-card",
+    "realm-of-gods",
+    "full-power",
+    "giant-ape-power",
+    "majin-power",
+    "powerful-comeback",
+    "miraculous-awakening",
+    "corroded-body-and-mind",
+    "rapid-growth",
+    "mastered-evolution",
+    "time-limit",
+    "final-trump-card",
 
-      "worthy-rivals",
-      "sworn-enemies",
-      "joined-forces",
-      "bond-of-parent-and-child",
-      "siblings-bond",
-      "bond-of-friendship",
-      "bond-of-master-and-disciple",
+    "worthy-rivals",
+    "sworn-enemies",
+    "joined-forces",
+    "bond-of-parent-and-child",
+    "siblings-bond",
+    "bond-of-friendship",
+    "bond-of-master-and-disciple",
 
-      "ginyu-force",
-      "team-bardock",
-      "universe-6",
-      "representatives-of-universe-7",
-      "universe-11",
-      "gt-heroes",
-      "gt-bosses",
-      "super-heroes",
-      "movie-heroes",
-      "movie-bosses",
-      "turtle-school",
-      "world-tournament",
+    "ginyu-force",
+    "team-bardock",
+    "universe-6",
+    "representatives-of-universe-7",
+    "universe-11",
+    "gt-heroes",
+    "gt-bosses",
+    "super-heroes",
+    "movie-heroes",
+    "movie-bosses",
+    "turtle-school",
+    "world-tournament",
 
-      "low-class-warrior",
-      "earth-bred-fighters",
-      "gifted-warriors",
-      "otherworld-warriors",
-      "resurrected-warriors",
-      "space-traveling-warriors",
-      "time-travelers",
-      "dragon-ball-seekers",
-      "storied-figures",
-      "legendary-existence",
-      "saviors",
-      "defenders-of-justice",
+    "low-class-warrior",
+    "earth-bred-fighters",
+    "gifted-warriors",
+    "otherworld-warriors",
+    "resurrected-warriors",
+    "space-traveling-warriors",
+    "time-travelers",
+    "dragon-ball-seekers",
+    "storied-figures",
+    "legendary-existence",
+    "saviors",
+    "defenders-of-justice",
 
-      "revenge",
-      "target-goku",
-      "terrifying-conquerors",
-      "inhumal-deeds",
-      "planetary-destruction",
-      "exploding-rage",
-      "connected-hope",
-      "entrusted-will",
-      "all-out-struggle",
-      "battle-of-wits",
-      "accelerated-battle",
-      "battle-of-fate",
-      "heavenly-events",
-      "special-pose",
-      "worldwide-chaos",
+    "revenge",
+    "target-goku",
+    "terrifying-conquerors",
+    "inhumal-deeds",
+    "planetary-destruction",
+    "exploding-rage",
+    "connected-hope",
+    "entrusted-will",
+    "all-out-struggle",
+    "battle-of-wits",
+    "accelerated-battle",
+    "battle-of-fate",
+    "heavenly-events",
+    "special-pose",
+    "worldwide-chaos",
 
-      "crossover",
-      "dragon-ball-heroes",
-    ],
+    "crossover",
+    "dragon-ball-heroes",
+  ],
     filterCategoriesNames = [
       "DB Saga",
       "Saiyan Saga",
@@ -414,7 +414,7 @@ function applyFilters() {
     "checkedAwakenBtn",
     "checkedSuperAttackTypeBtn",
     "checkedEzaBtn",
-    "checkedRecruitBtn",
+    "checkedRecruitBtn"
   ];
   const filtersEachLength = [];
   const filtersEachLengthString = [];
@@ -681,6 +681,14 @@ function applyFilters() {
     );
   }
 
+  //save list to local storage
+  if (
+    !sortUpdated.classList.contains("checkedSortBtn") ||
+    filterAnniversaryUsed.length < 0
+  ) {
+    saveCharListTemp();
+  }
+
   //BeforeEza AfterEza
   const searchBeforeEzaDropdown_btn = document.getElementById(
     "search-before-eza-id"
@@ -747,14 +755,6 @@ function applyFilters() {
       }
     }
     filterBeforeAfterEzaPutCharInContainer(sortedChars, charContainerId);
-  }
-
-  //save list to local storage
-  if (
-    !sortUpdated.classList.contains("checkedSortBtn") ||
-    filterAnniversaryUsed.length < 0
-  ) {
-    saveCharListTemp();
   }
 
   //sortDirection
@@ -849,7 +849,7 @@ function applyFilters() {
         }
       }
     }
-    
+
     charListDefaultAnniversary = cleanArray(charListDefaultAnniversary);
 
     //create pagination

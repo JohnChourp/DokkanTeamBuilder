@@ -189,9 +189,8 @@ function searchDropdownBeforeAfterEza(searchType) {
   );
 
   if (filterInput.value.length === 0) {
-    filterInput.placeholder = `${
-      searchType.charAt(0).toUpperCase() + searchType.slice(1)
-    } EZA..`;
+    filterInput.placeholder = `${searchType.charAt(0).toUpperCase() + searchType.slice(1)
+      } EZA..`;
   }
 
   const filter = filterInput.value.toLowerCase();

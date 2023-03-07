@@ -49,13 +49,13 @@
 
 .top-half-bg-color-sort {
   margin-left: 2.5px;
-  width:100px;
+  width: 100px;
   height: 12px;
   background-color: var(--bg-color-top-half-sort);
 }
 
 .bottom-half-bg-color-sort {
-  width:100px;
+  width: 101px;
   height: 12px;
   background-color: var(--bg-color-bottom-half-sort);
 }
@@ -127,5 +127,3 @@
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
 }
-
-

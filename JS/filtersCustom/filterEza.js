@@ -1,5 +1,5 @@
 function addEza(ezaFilter) {
-  const filterRarityId = ["n", "r", "sr", "ssr","ur","lr"];
+  const filterRarityId = ["n", "r", "sr", "ssr", "ur", "lr"];
   const filterAwakenId = [
     "not-dokkan-awakened",
     "pre-dokkan-awakened",
@@ -27,7 +27,7 @@ function addEza(ezaFilter) {
       el.classList.remove(checkedAwakenClass);
     }
 
-    for (let i = 0; i < rarityEls.length-2; i++) {
+    for (let i = 0; i < rarityEls.length - 2; i++) {
       const el = rarityEls[i];
       el.style.cursor = "pointer";
       el.removeAttribute("disabled");
@@ -45,7 +45,7 @@ function addEza(ezaFilter) {
       el.setAttribute("disabled", "enabled");
     }
 
-    for (let i = 0; i < rarityEls.length-2; i++) {
+    for (let i = 0; i < rarityEls.length - 2; i++) {
       const el = rarityEls[i];
       el.style.cursor = "not-allowed";
       el.setAttribute("disabled", "enabled");
