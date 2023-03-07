@@ -814,7 +814,7 @@ function closeCategoriesSelectBtn() {
       "filter-category-container-text-default"
     );
     filterCategoryContainerTextDefault.item(0).innerHTML =
-      "Selected: " + filterCategoryUsed.length;
+    '<span id="categories-sum-number-selected-id">'+"Selected: "+ "</span>" +'<span id="categories-sum-number-id">'+ filterCategoryUsed.length + "</span>";
   }
 }
 
