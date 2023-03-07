@@ -98,8 +98,7 @@ function filtersMultipleUsed(dataChars, filtersEachLengthString, filtersEachLeng
 }
 
 function applyFilters() {
-  const sortUpdated = document.getElementById("sort-updated");
-
+  setCharList();
   //filterAnniversary
   const filterAnniversary = [
     "year-1", "year-2", "year-3",
@@ -113,13 +112,7 @@ function applyFilters() {
   }
   filterAnniversaryUsed = cleanArray(filterAnniversaryUsed, undefined);
 
-  if (sortUpdated.classList.contains("checkedSortBtn") ||
-    filterAnniversaryUsed.length > 0) {
-    setCharList();
-    saveCharListTemp();
-  } else {
-    setCharListTemp();
-  }
+  
   const charContainerId = document.getElementById("char-container-id");
   const char = document.getElementsByClassName("char");
   const searchOneCharDropdownValue = document.getElementsByClassName("search-one-char-dropdown-options-value");
@@ -451,12 +444,7 @@ function applyFilters() {
     let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
     displayOrderremoveDuplicatesAndSortValues(charLength, dataCharIdItems, dataCharId, charContainerId, temp_char);
   }
-  //save list to local storage
-  if (!sortUpdated.classList.contains("checkedSortBtn") ||
-    filterAnniversaryUsed.length < 0
-  ) {
-    saveCharListTemp();
-  }
+  
 
   //BeforeEza AfterEza
   const searchBeforeEzaDropdown_btn = document.getElementById("search-before-eza-id");

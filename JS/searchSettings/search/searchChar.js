@@ -109,13 +109,7 @@ function searchChar() {
   characterSearchId.addEventListener("keypress", function (event) {
     if (event.key === "Enter") {
       event.preventDefault();
-      const sortUpdated = document.getElementById("sort-updated");
-      if (sortUpdated.classList.contains("checkedSortBtn")) {
-        setCharList();
-        saveCharListTemp();
-      } else {
-        setCharListTemp();
-      }
+      setCharList();
 
       const nameOrTitle = localStorage.getItem("nameOrTitle");
       const characterSearchId = document.getElementById("char-search-id");
@@ -282,10 +276,6 @@ function searchChar() {
       if (nameOrTitle == 2) {
         dataCharNameOrTitleItems = dataCharTitleItems;
         dataCharNameOrTitle = dataCharTitle;
-      }
-
-      if (!sortUpdated.classList.contains("checkedSortBtn")) {
-        saveCharListTemp();
       }
 
       //filter used
