@@ -40,18 +40,15 @@ function addAllReleaseDatesBefore() {
       releaseDateNotEzaList[i] = uniqueCharRelease[i];
     }
   }
-  releaseDateNotEzaList = removeDuplicates(releaseDateNotEzaList, undefined);
-  releaseDateEzaList = removeDuplicates(releaseDateEzaList, undefined);
+  releaseDateNotEzaList = removeDuplicates(releaseDateNotEzaList);
+  releaseDateEzaList = removeDuplicates(releaseDateEzaList);
   let releaseDateNotEzaListFinal = [];
   for (let i = 1; i < releaseDateEzaList.length; i++) {
     let beforeEza = releaseDateEzaList[i][0];
     releaseDateNotEzaListFinal[releaseDateNotEzaList.length + i * 2] =
       beforeEza;
   }
-  releaseDateNotEzaListFinal = removeDuplicates(
-    releaseDateNotEzaListFinal,
-    undefined
-  );
+  releaseDateNotEzaListFinal = removeDuplicates(releaseDateNotEzaListFinal);
   releaseDateNotEzaListFinal
     .sort()
     .slice(0, -1)
@@ -78,7 +75,7 @@ function addAllReleaseDatesBefore() {
 
 function addSearchBeforeEzaDropdownClass(charReleasePos) {
   const searchBeforeDropdownLength = searchBeforeDropdownValue.length;
-  
+
   if (charReleasePos === 0) {
     searchBeforeDropdown_btn.placeholder = "Before EZA..";
   } else {
@@ -98,7 +95,6 @@ function addSearchBeforeEzaDropdownClass(charReleasePos) {
     }
   }
 }
-
 
 function addAllReleaseDatesAfter() {
   const dropdownsAfter = document.getElementsByClassName(
@@ -131,17 +127,14 @@ function addAllReleaseDatesAfter() {
       releaseDateNotEzaList[i] = uniqueCharRelease[i];
     }
   }
-  releaseDateNotEzaList = removeDuplicates(releaseDateNotEzaList, undefined);
-  releaseDateEzaList = removeDuplicates(releaseDateEzaList, undefined);
+  releaseDateNotEzaList = removeDuplicates(releaseDateNotEzaList);
+  releaseDateEzaList = removeDuplicates(releaseDateEzaList);
   let releaseDateNotEzaListFinal = [];
   for (let i = 1; i < releaseDateEzaList.length; i++) {
     let afterEza = releaseDateEzaList[i][1];
     releaseDateNotEzaListFinal[releaseDateNotEzaList.length + i * 2] = afterEza;
   }
-  releaseDateNotEzaListFinal = removeDuplicates(
-    releaseDateNotEzaListFinal,
-    undefined
-  );
+  releaseDateNotEzaListFinal = removeDuplicates(releaseDateNotEzaListFinal);
   releaseDateNotEzaListFinal
     .sort()
     .slice(0, -1)
@@ -168,7 +161,7 @@ function addAllReleaseDatesAfter() {
 
 function addSearchAfterEzaDropdownClass(charReleasePos) {
   const searchAfterDropdownLength = searchAfterDropdownValue.length;
-  
+
   if (charReleasePos === 0) {
     searchAfterDropdown_btn.placeholder = "After EZA..";
   } else {
@@ -191,10 +184,13 @@ function addSearchAfterEzaDropdownClass(charReleasePos) {
 
 function searchDropdownBeforeAfterEza(searchType) {
   const filterInput = document.getElementById(`search-${searchType}-eza-id`);
-  const dropdownValue = document.querySelectorAll(`.search-${searchType}-eza-dropdown-options-value`);
-  
+  const dropdownValue = document.querySelectorAll(
+    `.search-${searchType}-eza-dropdown-options-value`
+  );
+
   if (filterInput.value.length === 0) {
-    filterInput.placeholder = `${searchType.charAt(0).toUpperCase() + searchType.slice(1)} EZA..`;
+    filterInput.placeholder = `${searchType.charAt(0).toUpperCase() + searchType.slice(1)
+      } EZA..`;
   }
 
   const filter = filterInput.value.toLowerCase();

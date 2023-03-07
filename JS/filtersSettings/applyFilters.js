@@ -196,104 +196,104 @@ function applyFilters() {
   ];
 
   const filterCategories = [
-      "db-saga",
-      "saiyan-saga",
-      "planet-namek-saga",
-      "androids-cell-saga",
-      "majin-buu-saga",
-      "future-saga",
-      "universe-survival-saga",
-      "shadow-dragon-saga",
+    "db-saga",
+    "saiyan-saga",
+    "planet-namek-saga",
+    "androids-cell-saga",
+    "majin-buu-saga",
+    "future-saga",
+    "universe-survival-saga",
+    "shadow-dragon-saga",
 
-      "pure-saiyans",
-      "hybrid-saiyans",
-      "earthlings",
-      "namekians",
-      "androids",
-      "artificial-life-forms",
-      "gokus-family",
-      "vegetas-family",
-      "wicked-bloodline",
-      "youth",
-      "peppy-gals",
+    "pure-saiyans",
+    "hybrid-saiyans",
+    "earthlings",
+    "namekians",
+    "androids",
+    "artificial-life-forms",
+    "gokus-family",
+    "vegetas-family",
+    "wicked-bloodline",
+    "youth",
+    "peppy-gals",
 
-      "super-saiyans",
-      "super-saiyan-2",
-      "super-saiyan-3",
-      "power-beyond-super-saiyan",
-      "fusion",
-      "potara",
-      "fused-fighters",
-      "giant-form",
-      "transformation-boost",
-      "power-absorption",
-      "kamehameha",
+    "super-saiyans",
+    "super-saiyan-2",
+    "super-saiyan-3",
+    "power-beyond-super-saiyan",
+    "fusion",
+    "potara",
+    "fused-fighters",
+    "giant-form",
+    "transformation-boost",
+    "power-absorption",
+    "kamehameha",
 
-      "realm-of-gods",
-      "full-power",
-      "giant-ape-power",
-      "majin-power",
-      "powerful-comeback",
-      "miraculous-awakening",
-      "corroded-body-and-mind",
-      "rapid-growth",
-      "mastered-evolution",
-      "time-limit",
-      "final-trump-card",
+    "realm-of-gods",
+    "full-power",
+    "giant-ape-power",
+    "majin-power",
+    "powerful-comeback",
+    "miraculous-awakening",
+    "corroded-body-and-mind",
+    "rapid-growth",
+    "mastered-evolution",
+    "time-limit",
+    "final-trump-card",
 
-      "worthy-rivals",
-      "sworn-enemies",
-      "joined-forces",
-      "bond-of-parent-and-child",
-      "siblings-bond",
-      "bond-of-friendship",
-      "bond-of-master-and-disciple",
+    "worthy-rivals",
+    "sworn-enemies",
+    "joined-forces",
+    "bond-of-parent-and-child",
+    "siblings-bond",
+    "bond-of-friendship",
+    "bond-of-master-and-disciple",
 
-      "ginyu-force",
-      "team-bardock",
-      "universe-6",
-      "representatives-of-universe-7",
-      "universe-11",
-      "gt-heroes",
-      "gt-bosses",
-      "super-heroes",
-      "movie-heroes",
-      "movie-bosses",
-      "turtle-school",
-      "world-tournament",
+    "ginyu-force",
+    "team-bardock",
+    "universe-6",
+    "representatives-of-universe-7",
+    "universe-11",
+    "gt-heroes",
+    "gt-bosses",
+    "super-heroes",
+    "movie-heroes",
+    "movie-bosses",
+    "turtle-school",
+    "world-tournament",
 
-      "low-class-warrior",
-      "earth-bred-fighters",
-      "gifted-warriors",
-      "otherworld-warriors",
-      "resurrected-warriors",
-      "space-traveling-warriors",
-      "time-travelers",
-      "dragon-ball-seekers",
-      "storied-figures",
-      "legendary-existence",
-      "saviors",
-      "defenders-of-justice",
+    "low-class-warrior",
+    "earth-bred-fighters",
+    "gifted-warriors",
+    "otherworld-warriors",
+    "resurrected-warriors",
+    "space-traveling-warriors",
+    "time-travelers",
+    "dragon-ball-seekers",
+    "storied-figures",
+    "legendary-existence",
+    "saviors",
+    "defenders-of-justice",
 
-      "revenge",
-      "target-goku",
-      "terrifying-conquerors",
-      "inhumal-deeds",
-      "planetary-destruction",
-      "exploding-rage",
-      "connected-hope",
-      "entrusted-will",
-      "all-out-struggle",
-      "battle-of-wits",
-      "accelerated-battle",
-      "battle-of-fate",
-      "heavenly-events",
-      "special-pose",
-      "worldwide-chaos",
+    "revenge",
+    "target-goku",
+    "terrifying-conquerors",
+    "inhumal-deeds",
+    "planetary-destruction",
+    "exploding-rage",
+    "connected-hope",
+    "entrusted-will",
+    "all-out-struggle",
+    "battle-of-wits",
+    "accelerated-battle",
+    "battle-of-fate",
+    "heavenly-events",
+    "special-pose",
+    "worldwide-chaos",
 
-      "crossover",
-      "dragon-ball-heroes",
-    ],
+    "crossover",
+    "dragon-ball-heroes",
+  ],
     filterCategoriesNames = [
       "DB Saga",
       "Saiyan Saga",
@@ -361,7 +361,7 @@ function applyFilters() {
       "Turtle School",
       "World Tournament",
 
-      "Low Class Warrior",
+      "Low-Class Warrior",
       "Earth-Bred Fighters",
       "Gifted Warriors",
       "Otherworld Warriors",
@@ -414,7 +414,7 @@ function applyFilters() {
     "checkedAwakenBtn",
     "checkedSuperAttackTypeBtn",
     "checkedEzaBtn",
-    "checkedRecruitBtn",
+    "checkedRecruitBtn"
   ];
   const filtersEachLength = [];
   const filtersEachLengthString = [];
@@ -428,68 +428,12 @@ function applyFilters() {
   //select one char
   selectOneChar(searchOneCharDropdownValue);
 
-  //anniversaryFilter
-  const dataCharReleaseItems = document.querySelectorAll(
-    "[" + dataCharRelease + "]"
-  );
-  for (let j = 0; j < filterAnniversary.length; j++) {
-    if (filterAnniversaryUsed[0] == "year-" + (j + 1)) {
-      let [temp_char, charLength] = sortDirectionDisplayOrder(
-        char,
-        charContainerId
-      );
-      const sortedChars = {};
-      for (let i = 0; i < charLength; i++) {
-        let [year, month, day] = filterBeforeEzaReleaseDate(
-          dataCharReleaseItems,
-          dataCharRelease,
-          i
-        );
-        if (
-          year === (2015 + j).toString() &&
-          ((month === "Jul" && day > 15) ||
-            month === "Aug" ||
-            month === "Sep" ||
-            month === "Oct" ||
-            month === "Nov" ||
-            month === "Dec")
-        ) {
-          anniversaryFilterPushCharInSortedChars(
-            sortedChars,
-            year,
-            month,
-            day,
-            temp_char,
-            i
-          );
-        }
-        if (
-          year === (2016 + j).toString() &&
-          (month === "Jan" ||
-            month === "Feb" ||
-            month === "Mar" ||
-            month === "Apr" ||
-            month === "May" ||
-            month === "Jun" ||
-            (month === "Jul" && day < 16))
-        ) {
-          anniversaryFilterPushCharInSortedChars(
-            sortedChars,
-            year,
-            month,
-            day,
-            temp_char,
-            i
-          );
-        }
-      }
-      anniversaryFilterPutCharInContainer(sortedChars, charContainerId);
-    }
-  }
-
   //sortRelease
   const sortReleased = document.getElementById("sort-released");
   if (sortReleased.classList.contains("checkedSortBtn")) {
+    const dataCharReleaseItems = document.querySelectorAll(
+      "[" + dataCharRelease + "]"
+    );
     let [temp_char, charLength] = sortDirectionDisplayOrder(
       char,
       charContainerId
@@ -674,10 +618,9 @@ function applyFilters() {
       temp_char
     );
   }
-  //sortCharacter
-  //need better sort names method so thats it sorts like the in-game method
-  const sortCharacter = document.getElementById("sort-character");
-  if (sortCharacter.classList.contains("checkedSortBtn")) {
+  //sortAlphabetical
+  const sortAlphabetical = document.getElementById("sort-alphabetical");
+  if (sortAlphabetical.classList.contains("checkedSortBtn")) {
     const dataCharNameItems = document.querySelectorAll(
       "[" + dataCharName + "]"
     );
@@ -689,7 +632,7 @@ function applyFilters() {
     for (let i = 0; i < charLength; i++) {
       values[i] = dataCharNameItems[i].getAttribute(dataCharName);
     }
-    let sortedvalues = removeDuplicates(values);
+    let sortedvalues = removeDuplicates(values).sort();
 
     const fragment = document.createDocumentFragment();
     for (j = 0; j < sortedvalues.length; j++) {
@@ -738,6 +681,15 @@ function applyFilters() {
     );
   }
 
+  //save list to local storage
+  if (
+    !sortUpdated.classList.contains("checkedSortBtn") ||
+    filterAnniversaryUsed.length < 0
+  ) {
+    saveCharListTemp();
+  }
+
+  //BeforeEza AfterEza
   const searchBeforeEzaDropdown_btn = document.getElementById(
     "search-before-eza-id"
   );
@@ -748,6 +700,9 @@ function applyFilters() {
     searchBeforeEzaDropdown_btn.placeholder != "Before EZA.." ||
     searchAfterEzaDropdown_btn.placeholder != "After EZA.."
   ) {
+    const dataCharReleaseItems = document.querySelectorAll(
+      "[" + dataCharRelease + "]"
+    );
     const yearBeforePlaceHolder =
       searchBeforeEzaDropdown_btn.placeholder.slice(-4);
     const monthBeforePlaceHolder =
@@ -767,7 +722,7 @@ function applyFilters() {
       -8,
       -6
     );
-    
+
     let [temp_char, charLength] = sortDirectionDisplayOrder(
       char,
       charContainerId
@@ -775,25 +730,19 @@ function applyFilters() {
 
     const sortedChars = {};
     for (let i = 0; i < charLength; i++) {
-      let [yearBeforeEza, monthBeforeEza, dayBeforeEza] = filterBeforeEzaReleaseDate(
-        dataCharReleaseItems,
-        dataCharRelease,
-        i
-      );
+      let [yearBeforeEza, monthBeforeEza, dayBeforeEza] =
+        filterBeforeEzaReleaseDate(dataCharReleaseItems, dataCharRelease, i);
 
-      let [yearAfterEza, monthAfterEza, dayAfterEza] = filterAfterEzaReleaseDate(
-        dataCharReleaseItems,
-        dataCharRelease,
-        i
-      );
+      let [yearAfterEza, monthAfterEza, dayAfterEza] =
+        filterAfterEzaReleaseDate(dataCharReleaseItems, dataCharRelease, i);
 
       if (
         (yearBeforeEza == yearBeforePlaceHolder.toString() &&
           monthBeforeEza == monthBeforePlaceHolder &&
           dayBeforeEza == dayBeforePlaceHolder.toString()) ||
         (yearAfterEza == yearAfterPlaceHolder.toString() &&
-        monthAfterEza == monthAfterPlaceHolder &&
-        dayAfterEza == dayAfterPlaceHolder.toString())
+          monthAfterEza == monthAfterPlaceHolder &&
+          dayAfterEza == dayAfterPlaceHolder.toString())
       ) {
         anniversaryFilterPushCharInSortedChars(
           sortedChars,
@@ -805,14 +754,7 @@ function applyFilters() {
         );
       }
     }
-    anniversaryFilterPutCharInContainer(sortedChars, charContainerId);
-  }
-
-  if (
-    !sortUpdated.classList.contains("checkedSortBtn") ||
-    filterAnniversaryUsed.length < 0
-  ) {
-    saveCharListTemp();
+    filterBeforeAfterEzaPutCharInContainer(sortedChars, charContainerId);
   }
 
   //sortDirection
@@ -853,18 +795,87 @@ function applyFilters() {
       filtersUsed
     );
   }
-  charListDefault = cleanArray(charListDefault, undefined);
+  charListDefault = cleanArray(charListDefault);
 
-  //create pagination
-  createFilterPagination(charListDefault);
-
-  //add filter names in search one char
-  if (sumFilterUsed > 0 || filterAnniversaryUsed.length > 0) {
-    let charListFilteredNames = [];
+  //anniversaryFilter
+  if (filterAnniversaryUsed.length > 0) {
+    let dataCharReleaseItems = [],
+      charListDefaultAnniversary = [];
     for (let i = 0; i < charListDefault.length; i++) {
-      charListFilteredNames[i] =
-        charListDefault[i].getAttribute("data-char-name");
+      dataCharReleaseItems[i] =
+        charListDefault[i].getAttribute(dataCharRelease);
     }
-    addOnlyFilteredCharNames();
+
+    for (let k = 0; k < filterAnniversaryUsed.length; k++) {
+      for (let j = 0; j < filterAnniversary.length; j++) {
+        if (filterAnniversaryUsed[k] == "year-" + (j + 1)) {
+          for (let i = 0; i < charListDefault.length; i++) {
+            let year, month, day;
+            const releaseDate = dataCharReleaseItems[i];
+            if (releaseDate.length == 12) {
+              year = releaseDate.slice(-4);
+              month = releaseDate.slice(-12, -9);
+              day = parseInt(releaseDate.slice(-8, -6));
+            }
+            if (releaseDate.length == 25) {
+              year = releaseDate.slice(-17, -13);
+              month = releaseDate.slice(-25, -22);
+              day = releaseDate.slice(-21, -19);
+            }
+            if (
+              year === (2015 + j).toString() &&
+              ((month === "Jul" && day > 15) ||
+                month === "Aug" ||
+                month === "Sep" ||
+                month === "Oct" ||
+                month === "Nov" ||
+                month === "Dec")
+            ) {
+              charListDefaultAnniversary[i] = charListDefault[i];
+            }
+            if (
+              year === (2016 + j).toString() &&
+              (month === "Jan" ||
+                month === "Feb" ||
+                month === "Mar" ||
+                month === "Apr" ||
+                month === "May" ||
+                month === "Jun" ||
+                (month === "Jul" && day < 16))
+            ) {
+              charListDefaultAnniversary[i] = charListDefault[i];
+            }
+          }
+        }
+      }
+    }
+
+    charListDefaultAnniversary = cleanArray(charListDefaultAnniversary);
+
+    //create pagination
+    createFilterPagination(charListDefaultAnniversary);
+
+    //add filter names in search one char
+    if (sumFilterUsed > 0 || filterAnniversaryUsed.length > 0) {
+      let charListFilteredNames = [];
+      for (let i = 0; i < charListDefaultAnniversary.length; i++) {
+        charListFilteredNames[i] =
+          charListDefaultAnniversary[i].getAttribute("data-char-name");
+      }
+      addOnlyFilteredCharNames();
+    }
+  } else {
+    //create pagination
+    createFilterPagination(charListDefault);
+
+    //add filter names in search one char
+    if (sumFilterUsed > 0 || filterAnniversaryUsed.length > 0) {
+      let charListFilteredNames = [];
+      for (let i = 0; i < charListDefault.length; i++) {
+        charListFilteredNames[i] =
+          charListDefault[i].getAttribute("data-char-name");
+      }
+      addOnlyFilteredCharNames();
+    }
   }
 }

@@ -12,7 +12,7 @@ function removeAllFilters() {
         "sort-hp",
         "sort-attack",
         "sort-defense",
-        "sort-character",
+        "sort-alphabetical",
         "sort-sp-atk-lv",
         "sort-max-level",
       ],
