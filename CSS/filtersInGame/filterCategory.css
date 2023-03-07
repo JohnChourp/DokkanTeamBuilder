@@ -664,14 +664,14 @@
 .filter-category-container-inside-dark-green:active:hover,
 .filter-category-container-inside-dark-blue:active:hover {
   text-shadow: 0px 0px 0 rgb(255, 255, 255),
-  1px 1px 0 rgba(0, 0, 0, 1),
-  1px 1px 0 rgba(0, 0, 0, 1),
-  1px -1px 0 rgba(0, 0, 0, 1),
-  1px -1px 0 rgba(0, 0, 0, 1),
-  -1px 1px 0 rgba(0, 0, 0, 1),
-  -1px 1px 0 rgba(0, 0, 0, 1),
-  -1px -1px 0 rgba(0, 0, 0, 1),
-  -1px -1px 0 rgba(0, 0, 0, 1);
+    1px 1px 0 rgba(0, 0, 0, 1),
+    1px 1px 0 rgba(0, 0, 0, 1),
+    1px -1px 0 rgba(0, 0, 0, 1),
+    1px -1px 0 rgba(0, 0, 0, 1),
+    -1px 1px 0 rgba(0, 0, 0, 1),
+    -1px 1px 0 rgba(0, 0, 0, 1),
+    -1px -1px 0 rgba(0, 0, 0, 1),
+    -1px -1px 0 rgba(0, 0, 0, 1);
 }
 
 .filter-category-container-inside-orange:hover,
@@ -684,14 +684,14 @@
 .filter-category-container-inside-dark-green:hover,
 .filter-category-container-inside-dark-blue:hover {
   text-shadow: 0px 0px 0 rgb(255, 255, 255),
-  1px 1px 0 rgba(0, 0, 0, 1),
-  1px 1px 0 rgba(0, 0, 0, 1),
-  1px -1px 0 rgba(0, 0, 0, 1),
-  1px -1px 0 rgba(0, 0, 0, 1),
-  -1px 1px 0 rgba(0, 0, 0, 1),
-  -1px 1px 0 rgba(0, 0, 0, 1),
-  -1px -1px 0 rgba(0, 0, 0, 1),
-  -1px -1px 0 rgba(0, 0, 0, 1);
+    1px 1px 0 rgba(0, 0, 0, 1),
+    1px 1px 0 rgba(0, 0, 0, 1),
+    1px -1px 0 rgba(0, 0, 0, 1),
+    1px -1px 0 rgba(0, 0, 0, 1),
+    -1px 1px 0 rgba(0, 0, 0, 1),
+    -1px 1px 0 rgba(0, 0, 0, 1),
+    -1px -1px 0 rgba(0, 0, 0, 1),
+    -1px -1px 0 rgba(0, 0, 0, 1);
 }
 
 .checkedCategoryBtnInsideOrange,
@@ -704,14 +704,14 @@
 .checkedCategoryBtnInsideDarkGreen,
 .checkedCategoryBtnInsideDarkBlue {
   text-shadow: 0px 0px 0 rgb(255, 255, 255),
-  1px 1px 0 rgba(0, 0, 0, 1),
-  1px 1px 0 rgba(0, 0, 0, 1),
-  1px -1px 0 rgba(0, 0, 0, 1),
-  1px -1px 0 rgba(0, 0, 0, 1),
-  -1px 1px 0 rgba(0, 0, 0, 1),
-  -1px 1px 0 rgba(0, 0, 0, 1),
-  -1px -1px 0 rgba(0, 0, 0, 1),
-  -1px -1px 0 rgba(0, 0, 0, 1);
+    1px 1px 0 rgba(0, 0, 0, 1),
+    1px 1px 0 rgba(0, 0, 0, 1),
+    1px -1px 0 rgba(0, 0, 0, 1),
+    1px -1px 0 rgba(0, 0, 0, 1),
+    -1px 1px 0 rgba(0, 0, 0, 1),
+    -1px 1px 0 rgba(0, 0, 0, 1),
+    -1px -1px 0 rgba(0, 0, 0, 1),
+    -1px -1px 0 rgba(0, 0, 0, 1);
 }
 
 span#categories-sum-number-id {
@@ -725,12 +725,12 @@ span#categories-sum-number-id {
 
 span#categories-sum-number-selected-id {
   text-shadow: 0px 0px 0 rgb(255, 255, 255),
-  1px 1px 0 rgba(0, 0, 0, 1),
-  1px 1px 0 rgba(0, 0, 0, 1),
-  1px -1px 0 rgba(0, 0, 0, 1),
-  1px -1px 0 rgba(0, 0, 0, 1),
-  -1px 1px 0 rgba(0, 0, 0, 1),
-  -1px 1px 0 rgba(0, 0, 0, 1),
-  -1px -1px 0 rgba(0, 0, 0, 1),
-  -1px -1px 0 rgba(0, 0, 0, 1);
+    1px 1px 0 rgba(0, 0, 0, 1),
+    1px 1px 0 rgba(0, 0, 0, 1),
+    1px -1px 0 rgba(0, 0, 0, 1),
+    1px -1px 0 rgba(0, 0, 0, 1),
+    -1px 1px 0 rgba(0, 0, 0, 1),
+    -1px 1px 0 rgba(0, 0, 0, 1),
+    -1px -1px 0 rgba(0, 0, 0, 1),
+    -1px -1px 0 rgba(0, 0, 0, 1);
 }

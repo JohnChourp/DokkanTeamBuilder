@@ -1,36 +1,51 @@
 function removeAllFilters() {
   const filters = [
-    {id: "sort-updated",
+    {
+      id: "sort-updated",
       class: "checkedSortBtn",
       list: [
-        "sort-updated","sort-released","sort-type",
-        "sort-rarity","sort-cost","sort-hp",
-        "sort-attack","sort-defense","sort-alphabetical",
-        "sort-sp-atk-lv","sort-max-level","sort-char-id"],},
-    {id: "year-1",
+        "sort-updated", "sort-released", "sort-type",
+        "sort-rarity", "sort-cost", "sort-hp",
+        "sort-attack", "sort-defense", "sort-alphabetical",
+        "sort-sp-atk-lv", "sort-max-level", "sort-char-id"],
+    },
+    {
+      id: "year-1",
       class: "checkedAnniversaryBtn",
       list: [
-        "year-1","year-2","year-3",
-        "year-4","year-5","year-6",
-        "year-7","year-8",],},
-    {id: "agl",
+        "year-1", "year-2", "year-3",
+        "year-4", "year-5", "year-6",
+        "year-7", "year-8",],
+    },
+    {
+      id: "agl",
       class: "checkedTypeBtn",
-      list: ["agl", "teq", "int", "str", "phy"],},
-    {id: "n",
+      list: ["agl", "teq", "int", "str", "phy"],
+    },
+    {
+      id: "n",
       class: "checkedRarityBtn",
-      list: ["n", "r", "sr", "ssr", "ur", "lr"],},
+      list: ["n", "r", "sr", "ssr", "ur", "lr"],
+    },
     { id: "super", class: "checkedClassBtn", list: ["super", "extreme"] },
     { id: "eza", class: "checkedEzaBtn", list: ["eza", "noeza"] },
-    {id: "not-dokkan-awakened",
+    {
+      id: "not-dokkan-awakened",
       class: "checkedAwakenBtn",
-      list: ["not-dokkan-awakened", "pre-dokkan-awakened", "dokkan-awakened"],},
-    {id: "ki-blast",
+      list: ["not-dokkan-awakened", "pre-dokkan-awakened", "dokkan-awakened"],
+    },
+    {
+      id: "ki-blast",
       class: "checkedSuperAttackTypeBtn",
-      list: ["ki-blast", "unarmed", "physical", "other"],},
-    {id: "summonable",
+      list: ["ki-blast", "unarmed", "physical", "other"],
+    },
+    {
+      id: "summonable",
       class: "checkedRecruitBtn",
-      list: ["summonable", "free-to-play"],},
-    {id: "db-saga",
+      list: ["summonable", "free-to-play"],
+    },
+    {
+      id: "db-saga",
       class: "checkedCategoryBtn",
       list: ["db-saga", "saiyan-saga",
         "planet-namek-saga", "androids-cell-saga",
@@ -86,10 +101,11 @@ function removeAllFilters() {
         "heavenly-events", "special-pose",
         "worldwide-chaos",
 
-        "crossover", "dragon-ball-heroes",],},];
+        "crossover", "dragon-ball-heroes",],
+    },];
 
   const filterIds = filters.reduce((result, filter) => {
-    const selectedIds = filter.list.filter((id) =>document.getElementById(id).classList.contains(filter.class));
+    const selectedIds = filter.list.filter((id) => document.getElementById(id).classList.contains(filter.class));
     return result.concat(selectedIds);
   }, []);
 

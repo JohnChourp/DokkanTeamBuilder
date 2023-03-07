@@ -1,6 +1,6 @@
 function mostLetterInNames() {
   let char = document.getElementsByClassName("char");
-  let charList = [],maxLettersNamesLength = 0,maxLettersNames;
+  let charList = [], maxLettersNamesLength = 0, maxLettersNames;
   let dataCharNames = "data-char-name";
 
   for (let i = 0; i < char.length; i++) {
@@ -21,7 +21,7 @@ function mostLetterInNames() {
 
 function mostLetterInLinks() {
   let char = document.getElementsByClassName("char");
-  let charList = [],maxLettersLinksLength = 0,maxLettersLinks;
+  let charList = [], maxLettersLinksLength = 0, maxLettersLinks;
   let dataCharLinks = "data-char-links";
 
   for (let i = 0; i < char.length; i++) {
@@ -42,7 +42,7 @@ function mostLetterInLinks() {
 
 function mostLetterInCategories() {
   let char = document.getElementsByClassName("char");
-  let charList = [],maxLettersCategoriesLength = 0,maxLettersCategories;
+  let charList = [], maxLettersCategoriesLength = 0, maxLettersCategories;
   let dataCharCategories = "data-char-categories";
 
   for (let i = 0; i < char.length; i++) {

@@ -53,10 +53,10 @@ function addDropdownClass(filterDisplay) {
   const dataCharLinksItems = document.querySelectorAll("[" + dataCharLinks + "]");
   const dataCharCategoriesItems = document.querySelectorAll("[" + dataCharCategories + "]");
 
-  const char_display_text =document.getElementsByClassName("char_display_text");
-  let listLinks = [],listCategories = [],listSuperAtkType = [],listRelease = [];
-  let listLinksFormattedString = [],listCategoriesFormattedString = [],listSuperAtkTypeFormattedString = [],
-    listReleaseFormattedString = [],a,b,position,temp;
+  const char_display_text = document.getElementsByClassName("char_display_text");
+  let listLinks = [], listCategories = [], listSuperAtkType = [], listRelease = [];
+  let listLinksFormattedString = [], listCategoriesFormattedString = [], listSuperAtkTypeFormattedString = [],
+    listReleaseFormattedString = [], a, b, position, temp;
 
   localStorage.setItem("filterDisplay", filterDisplay);
   selecteddropdown_btn.innerHTML = dropdownOptionsValue.item(filterDisplay).innerHTML;
@@ -169,19 +169,19 @@ function addDropdownClass(filterDisplay) {
   //Name
   if (filterDisplay == 0) {
     for (let i = 0; i < char_display_text.length; i++) {
-      char_display_text.item(i).textContent =dataCharNameItems[i].getAttribute(dataCharName);
+      char_display_text.item(i).textContent = dataCharNameItems[i].getAttribute(dataCharName);
     }
   }
   //Title
   if (filterDisplay == 1) {
     for (let i = 0; i < char_display_text.length; i++) {
-      char_display_text.item(i).textContent =dataCharTitleItems[i].getAttribute(dataCharTitle);
+      char_display_text.item(i).textContent = dataCharTitleItems[i].getAttribute(dataCharTitle);
     }
   }
   //Char ID
   if (filterDisplay == 2) {
     for (let i = 0; i < char_display_text.length; i++) {
-      char_display_text.item(i).textContent =dataCharIdItems[i].getAttribute(dataCharId);
+      char_display_text.item(i).textContent = dataCharIdItems[i].getAttribute(dataCharId);
     }
   }
   //HP
@@ -205,13 +205,13 @@ function addDropdownClass(filterDisplay) {
   //Cost
   if (filterDisplay == 6) {
     for (let i = 0; i < char_display_text.length; i++) {
-      char_display_text.item(i).textContent =dataCharCostItems[i].getAttribute(dataCharCost);
+      char_display_text.item(i).textContent = dataCharCostItems[i].getAttribute(dataCharCost);
     }
   }
   //Max Level
   if (filterDisplay == 7) {
     for (let i = 0; i < char_display_text.length; i++) {
-      char_display_text.item(i).textContent =dataCharMaxLevelItems[i].getAttribute(dataCharMaxLevel);
+      char_display_text.item(i).textContent = dataCharMaxLevelItems[i].getAttribute(dataCharMaxLevel);
     }
   }
   //Release Date
@@ -223,13 +223,13 @@ function addDropdownClass(filterDisplay) {
   //Recruit
   if (filterDisplay == 9) {
     for (let i = 0; i < char_display_text.length; i++) {
-      char_display_text.item(i).textContent =dataCharRecruitItems[i].getAttribute(dataCharRecruit);
+      char_display_text.item(i).textContent = dataCharRecruitItems[i].getAttribute(dataCharRecruit);
     }
   }
   //Awaken
   if (filterDisplay == 10) {
     for (let i = 0; i < char_display_text.length; i++) {
-      char_display_text.item(i).textContent =dataCharAwakenItems[i].getAttribute(dataCharAwaken);
+      char_display_text.item(i).textContent = dataCharAwakenItems[i].getAttribute(dataCharAwaken);
     }
   }
   //Super ATK Level
@@ -241,7 +241,7 @@ function addDropdownClass(filterDisplay) {
   //Super ATK Type
   if (filterDisplay == 12) {
     for (let i = 0; i < char_display_text.length; i++) {
-      char_display_text.item(i).textContent =listSuperAtkTypeFormattedString[i];
+      char_display_text.item(i).textContent = listSuperAtkTypeFormattedString[i];
     }
   }
   //Links

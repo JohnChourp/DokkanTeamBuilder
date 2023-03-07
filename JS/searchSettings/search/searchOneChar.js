@@ -1,7 +1,7 @@
 function searchOneCharOptions() {
   const dropdown = document.getElementsByClassName("search-one-char-dropdown-options").item(0);
   dropdown.classList.toggle("showOneCharName");
-  document.getElementById("search-one-char-menu-id").style.display =dropdown.classList.contains("showOneCharName") ? "block" : "none";
+  document.getElementById("search-one-char-menu-id").style.display = dropdown.classList.contains("showOneCharName") ? "block" : "none";
 }
 
 function addAllCharNames() {
@@ -17,7 +17,7 @@ function addAllCharNames() {
   const charList = JSON.parse(localStorage.getItem("charList"));
   const uniqueCharNames = removeDuplicates(charList.map((char) => char.name));
   uniqueCharNames.sort().forEach((charName, index) => {
-    addAllDropdownOptionNames(index + 1,charName,addSearchOneCharDropdownClass);
+    addAllDropdownOptionNames(index + 1, charName, addSearchOneCharDropdownClass);
   });
 
   function hideDropdown(event) {
@@ -29,7 +29,7 @@ function addAllCharNames() {
         const dropdown = dropdowns[i];
         if (dropdown.classList.contains("showOneCharName")) {
           dropdown.classList.remove("showOneCharName");
-          document.getElementById("search-one-char-menu-id").style.display ="none";
+          document.getElementById("search-one-char-menu-id").style.display = "none";
           break;
         }
       }
@@ -72,7 +72,7 @@ function addOnlyFilteredCharNames() {
 
   const uniqueCharNames = removeDuplicates(chars.map((char) => char.name));
   uniqueCharNames.sort().forEach((charName, index) => {
-    addAllDropdownOptionOneChar(index + 1,charName,addSearchOneCharDropdownClass);
+    addAllDropdownOptionOneChar(index + 1, charName, addSearchOneCharDropdownClass);
   });
 
   function hideDropdown(event) {
@@ -84,7 +84,7 @@ function addOnlyFilteredCharNames() {
         const dropdown = dropdowns[i];
         if (dropdown.classList.contains("showOneCharName")) {
           dropdown.classList.remove("showOneCharName");
-          document.getElementById("search-one-char-menu-id").style.display ="none";
+          document.getElementById("search-one-char-menu-id").style.display = "none";
           break;
         }
       }
@@ -108,7 +108,7 @@ function addSearchOneCharDropdownClass(charNamePos, applyfiltersRunCheck) {
   const searchOneCharDropdown_btn = document.getElementById("search-one-char-selected-dropdown");
   const searchOneCharDropdownValue = document.getElementsByClassName("search-one-char-dropdown-options-value");
 
-  searchOneCharDropdown_btn.innerHTML =searchOneCharDropdownValue.item(charNamePos).innerHTML;
+  searchOneCharDropdown_btn.innerHTML = searchOneCharDropdownValue.item(charNamePos).innerHTML;
   searchOneCharDropdownValue.item(charNamePos).classList.add("checkedSearchOneCharBtn");
 
   for (let i = 0; i < searchOneCharDropdownValue.length; i++) {
@@ -117,7 +117,7 @@ function addSearchOneCharDropdownClass(charNamePos, applyfiltersRunCheck) {
     }
   }
 
-  const selectedCharName =searchOneCharDropdownValue.item(charNamePos).innerHTML;
+  const selectedCharName = searchOneCharDropdownValue.item(charNamePos).innerHTML;
   let charListSaved = [];
   const charListLocalStorage = JSON.parse(localStorage.getItem("charList"));
   const charList_dataCharNameItems = charListLocalStorage.map((char) => char.name);
@@ -129,25 +129,25 @@ function addSearchOneCharDropdownClass(charNamePos, applyfiltersRunCheck) {
     char_div.classList.add("char");
 
     setAttributes(char_div,
-      "data-char-name",char.name,
-      "data-char-title",char.title,
-      "data-char-type",char.type,
-      "data-char-rarity",char.rarity,
-      "data-char-class",char.class,
-      "data-char-eza",char.eza,
-      "data-char-id",char.id,
-      "data-char-hp",char.hp,
-      "data-char-attack",char.attack,
-      "data-char-defense",char.defense,
-      "data-char-cost",char.cost,
-      "data-char-max-level",char.maxLevel,
-      "data-char-super-atk-level",char.superAtkLevel,
-      "data-char-recruit",char.recruit,
-      "data-char-awaken",char.awaken,
-      "data-char-release",char.release,
-      "data-char-super-atk-type",char.superAtkType,
-      "data-char-links",char.links,
-      "data-char-categories",char.categories
+      "data-char-name", char.name,
+      "data-char-title", char.title,
+      "data-char-type", char.type,
+      "data-char-rarity", char.rarity,
+      "data-char-class", char.class,
+      "data-char-eza", char.eza,
+      "data-char-id", char.id,
+      "data-char-hp", char.hp,
+      "data-char-attack", char.attack,
+      "data-char-defense", char.defense,
+      "data-char-cost", char.cost,
+      "data-char-max-level", char.maxLevel,
+      "data-char-super-atk-level", char.superAtkLevel,
+      "data-char-recruit", char.recruit,
+      "data-char-awaken", char.awaken,
+      "data-char-release", char.release,
+      "data-char-super-atk-type", char.superAtkType,
+      "data-char-links", char.links,
+      "data-char-categories", char.categories
     );
     charListSaved[i] = char_div;
   }

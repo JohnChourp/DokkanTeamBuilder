@@ -13,7 +13,7 @@ function addAllReleaseDatesBefore() {
   // Add character names to dropdown
   const charList = JSON.parse(localStorage.getItem("charList"));
   const uniqueCharRelease = removeDuplicates(charList.map((char) => char.release));
-  let releaseDateNotEzaList = [],releaseDateEzaList = [];
+  let releaseDateNotEzaList = [], releaseDateEzaList = [];
   for (let i = 0; i < uniqueCharRelease.length; i++) {
     if (uniqueCharRelease[i].length == 25) {
       releaseDateEzaList[i] = uniqueCharRelease[i].split(".");
@@ -34,12 +34,12 @@ function addAllReleaseDatesBefore() {
   let releaseDateNotEzaListFinal = [];
   for (let i = 1; i < releaseDateEzaList.length; i++) {
     let beforeEza = releaseDateEzaList[i][0];
-    releaseDateNotEzaListFinal[releaseDateNotEzaList.length + i * 2] =beforeEza;
+    releaseDateNotEzaListFinal[releaseDateNotEzaList.length + i * 2] = beforeEza;
   }
   releaseDateNotEzaListFinal = removeDuplicates(releaseDateNotEzaListFinal);
   releaseDateNotEzaListFinal.sort().slice(0, -1).forEach((charReleasePos, index) => {
-      addAllDropdownOptionReleaseBefore(index + 1,charReleasePos,addSearchBeforeEzaDropdownClass);
-    });
+    addAllDropdownOptionReleaseBefore(index + 1, charReleasePos, addSearchBeforeEzaDropdownClass);
+  });
 
   function addAllDropdownOptionReleaseBefore(index, text, clickHandler) {
     const charListDiv = dropdowns[0];
@@ -111,8 +111,8 @@ function addAllReleaseDatesAfter() {
   }
   releaseDateNotEzaListFinal = removeDuplicates(releaseDateNotEzaListFinal);
   releaseDateNotEzaListFinal.sort().slice(0, -1).forEach((charReleasePos, index) => {
-      addAllDropdownOptionReleaseAfter(index + 1,charReleasePos,addSearchAfterEzaDropdownClass);
-    });
+    addAllDropdownOptionReleaseAfter(index + 1, charReleasePos, addSearchAfterEzaDropdownClass);
+  });
 
   function addAllDropdownOptionReleaseAfter(index, text, clickHandler) {
     const charListDiv = dropdownsAfter[0];

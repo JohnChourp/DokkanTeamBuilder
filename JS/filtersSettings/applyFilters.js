@@ -255,15 +255,15 @@ function applyFilters() {
     filterRarity = ["n", "r", "sr", "ssr", "ur", "lr"],
     filterType = ["agl", "teq", "int", "str", "phy"],
     filterClass = ["super", "extreme"],
-    filterAwaken = ["not-dokkan-awakened","pre-dokkan-awakened","dokkan-awakened",],
+    filterAwaken = ["not-dokkan-awakened", "pre-dokkan-awakened", "dokkan-awakened",],
     filterSuperAttackType = ["ki-blast", "unarmed", "physical", "other"],
     filterEza = ["eza", "noeza"],
     filterRecruit = ["summonable", "free-to-play"];
 
   //checked filter Btn
-  const filterClasses = ["checkedCategoryBtn","checkedRarityBtn",
-    "checkedTypeBtn","checkedClassBtn","checkedAwakenBtn",
-    "checkedSuperAttackTypeBtn","checkedEzaBtn","checkedRecruitBtn"];
+  const filterClasses = ["checkedCategoryBtn", "checkedRarityBtn",
+    "checkedTypeBtn", "checkedClassBtn", "checkedAwakenBtn",
+    "checkedSuperAttackTypeBtn", "checkedEzaBtn", "checkedRecruitBtn"];
   const filtersEachLength = [];
   const filtersEachLengthString = [];
 
@@ -280,7 +280,7 @@ function applyFilters() {
   const sortReleased = document.getElementById("sort-released");
   if (sortReleased.classList.contains("checkedSortBtn")) {
     const dataCharReleaseItems = document.querySelectorAll("[" + dataCharRelease + "]");
-    let [temp_char, charLength] = sortDirectionDisplayOrder(char,charContainerId);
+    let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
 
     const sortedChars = {};
     for (let i = 0; i < charLength; i++) {
@@ -328,7 +328,7 @@ function applyFilters() {
   const sortType = document.getElementById("sort-type");
   if (sortType.classList.contains("checkedSortBtn")) {
     const dataCharTypeItems = document.querySelectorAll("[" + dataCharType + "]");
-    let [temp_char, charLength] = sortDirectionDisplayOrder(char,charContainerId);
+    let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
 
     const charByType = {};
     for (let i = 0; i < charLength; i++) {
@@ -355,7 +355,7 @@ function applyFilters() {
   const sortRarity = document.getElementById("sort-rarity");
   if (sortRarity.classList.contains("checkedSortBtn")) {
     const dataCharRarityItems = document.querySelectorAll("[" + dataCharRarity + "]");
-    let [temp_char, charLength] = sortDirectionDisplayOrder(char,charContainerId);
+    let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
 
     const charByRarity = {};
     for (let i = 0; i < charLength; i++) {
@@ -382,29 +382,29 @@ function applyFilters() {
   const sortCost = document.getElementById("sort-cost");
   if (sortCost.classList.contains("checkedSortBtn")) {
     const dataCharCostItems = document.querySelectorAll("[" + dataCharCost + "]");
-    let [temp_char, charLength] = sortDirectionDisplayOrder(char,charContainerId);
-    displayOrderremoveDuplicatesAndSortValues(charLength,dataCharCostItems,dataCharCost,charContainerId,temp_char);
+    let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
+    displayOrderremoveDuplicatesAndSortValues(charLength, dataCharCostItems, dataCharCost, charContainerId, temp_char);
   }
   //sortHp
   const sortHp = document.getElementById("sort-hp");
   if (sortHp.classList.contains("checkedSortBtn")) {
     const dataChaHpItems = document.querySelectorAll("[" + dataCharHp + "]");
-    let [temp_char, charLength] = sortDirectionDisplayOrder(char,charContainerId);
-    displayOrderremoveDuplicatesAndSortValues(charLength,dataChaHpItems,dataCharHp,charContainerId,temp_char);
+    let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
+    displayOrderremoveDuplicatesAndSortValues(charLength, dataChaHpItems, dataCharHp, charContainerId, temp_char);
   }
   //sortAttack
   const sortAttack = document.getElementById("sort-attack");
   if (sortAttack.classList.contains("checkedSortBtn")) {
     const dataCharAttackItems = document.querySelectorAll("[" + dataCharAttack + "]");
-    let [temp_char, charLength] = sortDirectionDisplayOrder(char,charContainerId);
-    displayOrderremoveDuplicatesAndSortValues(charLength,dataCharAttackItems,dataCharAttack,charContainerId,temp_char);
+    let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
+    displayOrderremoveDuplicatesAndSortValues(charLength, dataCharAttackItems, dataCharAttack, charContainerId, temp_char);
   }
   //sortDefense
   const sortDefense = document.getElementById("sort-defense");
   if (sortDefense.classList.contains("checkedSortBtn")) {
     const dataCharDefenseItems = document.querySelectorAll("[" + dataCharDefense + "]");
-    let [temp_char, charLength] = sortDirectionDisplayOrder(char,charContainerId);
-    displayOrderremoveDuplicatesAndSortValues(charLength,dataCharDefenseItems,dataCharDefense,charContainerId,temp_char);
+    let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
+    displayOrderremoveDuplicatesAndSortValues(charLength, dataCharDefenseItems, dataCharDefense, charContainerId, temp_char);
   }
   //sortAlphabetical
   const sortAlphabetical = document.getElementById("sort-alphabetical");
@@ -434,22 +434,22 @@ function applyFilters() {
   const sortSpAtkLv = document.getElementById("sort-sp-atk-lv");
   if (sortSpAtkLv.classList.contains("checkedSortBtn")) {
     const dataCharSpAtkLevelItems = document.querySelectorAll("[" + dataCharSpAtkLv + "]");
-    let [temp_char, charLength] = sortDirectionDisplayOrder(char,charContainerId);
-    displayOrderremoveDuplicatesAndSortValues(charLength,dataCharSpAtkLevelItems,dataCharSpAtkLv,charContainerId,temp_char);
+    let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
+    displayOrderremoveDuplicatesAndSortValues(charLength, dataCharSpAtkLevelItems, dataCharSpAtkLv, charContainerId, temp_char);
   }
   //sortMaxLevel
   const sortMaxLevel = document.getElementById("sort-max-level");
   if (sortMaxLevel.classList.contains("checkedSortBtn")) {
     const dataCharMaxLevelItems = document.querySelectorAll("[" + dataCharMaxLevel + "]");
-    let [temp_char, charLength] = sortDirectionDisplayOrder(char,charContainerId);
-    displayOrderremoveDuplicatesAndSortValues(charLength,dataCharMaxLevelItems,dataCharMaxLevel,charContainerId,temp_char);
+    let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
+    displayOrderremoveDuplicatesAndSortValues(charLength, dataCharMaxLevelItems, dataCharMaxLevel, charContainerId, temp_char);
   }
   //sortCharID
   const sortCharId = document.getElementById("sort-char-id");
   if (sortCharId.classList.contains("checkedSortBtn")) {
     const dataCharIdItems = document.querySelectorAll("[" + dataCharId + "]");
-    let [temp_char, charLength] = sortDirectionDisplayOrder(char,charContainerId);
-    displayOrderremoveDuplicatesAndSortValues(charLength,dataCharIdItems,dataCharId,charContainerId,temp_char);
+    let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
+    displayOrderremoveDuplicatesAndSortValues(charLength, dataCharIdItems, dataCharId, charContainerId, temp_char);
   }
   //save list to local storage
   if (!sortUpdated.classList.contains("checkedSortBtn") ||
@@ -464,29 +464,29 @@ function applyFilters() {
   if (searchBeforeEzaDropdown_btn.placeholder != "Before EZA.." ||
     searchAfterEzaDropdown_btn.placeholder != "After EZA..") {
     const dataCharReleaseItems = document.querySelectorAll("[" + dataCharRelease + "]");
-    const yearBeforePlaceHolder =searchBeforeEzaDropdown_btn.placeholder.slice(-4);
-    const monthBeforePlaceHolder =searchBeforeEzaDropdown_btn.placeholder.slice(-12, -9);
-    const dayBeforePlaceHolder = searchBeforeEzaDropdown_btn.placeholder.slice(-8,-6);
+    const yearBeforePlaceHolder = searchBeforeEzaDropdown_btn.placeholder.slice(-4);
+    const monthBeforePlaceHolder = searchBeforeEzaDropdown_btn.placeholder.slice(-12, -9);
+    const dayBeforePlaceHolder = searchBeforeEzaDropdown_btn.placeholder.slice(-8, -6);
 
-    const yearAfterPlaceHolder =searchAfterEzaDropdown_btn.placeholder.slice(-4);
-    const monthAfterPlaceHolder = searchAfterEzaDropdown_btn.placeholder.slice(-12,-9);
-    const dayAfterPlaceHolder = searchAfterEzaDropdown_btn.placeholder.slice(-8,-6);
+    const yearAfterPlaceHolder = searchAfterEzaDropdown_btn.placeholder.slice(-4);
+    const monthAfterPlaceHolder = searchAfterEzaDropdown_btn.placeholder.slice(-12, -9);
+    const dayAfterPlaceHolder = searchAfterEzaDropdown_btn.placeholder.slice(-8, -6);
 
-    let [temp_char, charLength] = sortDirectionDisplayOrder(char,charContainerId);
+    let [temp_char, charLength] = sortDirectionDisplayOrder(char, charContainerId);
 
     const sortedChars = {};
     for (let i = 0; i < charLength; i++) {
-      let [yearBeforeEza, monthBeforeEza, dayBeforeEza] =filterBeforeEzaReleaseDate(dataCharReleaseItems, dataCharRelease, i);
+      let [yearBeforeEza, monthBeforeEza, dayBeforeEza] = filterBeforeEzaReleaseDate(dataCharReleaseItems, dataCharRelease, i);
 
-      let [yearAfterEza, monthAfterEza, dayAfterEza] =filterAfterEzaReleaseDate(dataCharReleaseItems, dataCharRelease, i);
+      let [yearAfterEza, monthAfterEza, dayAfterEza] = filterAfterEzaReleaseDate(dataCharReleaseItems, dataCharRelease, i);
 
       if ((yearBeforeEza == yearBeforePlaceHolder.toString() &&
-          monthBeforeEza == monthBeforePlaceHolder &&
-          dayBeforeEza == dayBeforePlaceHolder.toString()) ||
+        monthBeforeEza == monthBeforePlaceHolder &&
+        dayBeforeEza == dayBeforePlaceHolder.toString()) ||
         (yearAfterEza == yearAfterPlaceHolder.toString() &&
           monthAfterEza == monthAfterPlaceHolder &&
           dayAfterEza == dayAfterPlaceHolder.toString())) {
-        anniversaryFilterPushCharInSortedChars(sortedChars,yearBeforeEza,monthBeforeEza,dayBeforeEza,temp_char,i);
+        anniversaryFilterPushCharInSortedChars(sortedChars, yearBeforeEza, monthBeforeEza, dayBeforeEza, temp_char, i);
       }
     }
     filterBeforeAfterEzaPutCharInContainer(sortedChars, charContainerId);
@@ -496,12 +496,12 @@ function applyFilters() {
   sortDirectionAscendingDesencding(char, charContainerId);
 
   //filters used
-  const filtersUsed = filterCategoryUsed(filterCategories,filterCategoriesNames,
-    filterRarity,filterType,filterClass,filterAwaken,filterSuperAttackType,
-    filterEza,filterRecruit);
+  const filtersUsed = filterCategoryUsed(filterCategories, filterCategoriesNames,
+    filterRarity, filterType, filterClass, filterAwaken, filterSuperAttackType,
+    filterEza, filterRecruit);
 
   //check how many filter are used
-  let [sumFilterUsed, filtersEachLengthStringUsed] = filterSumCategoryUsed(filtersUsed,filtersEachLength,filtersEachLengthString);
+  let [sumFilterUsed, filtersEachLengthStringUsed] = filterSumCategoryUsed(filtersUsed, filtersEachLength, filtersEachLengthString);
 
   //create list of filtered characters
   let charListDefault = [];
@@ -511,15 +511,15 @@ function applyFilters() {
     }
   }
   if (sumFilterUsed > 0) {
-    charListDefault = filtersMultipleUsed(dataChars,filtersEachLengthString,filtersEachLengthStringUsed,filtersUsed);
+    charListDefault = filtersMultipleUsed(dataChars, filtersEachLengthString, filtersEachLengthStringUsed, filtersUsed);
   }
   charListDefault = cleanArray(charListDefault);
 
   //anniversaryFilter
   if (filterAnniversaryUsed.length > 0) {
-    let dataCharReleaseItems = [],charListDefaultAnniversary = [];
+    let dataCharReleaseItems = [], charListDefaultAnniversary = [];
     for (let i = 0; i < charListDefault.length; i++) {
-      dataCharReleaseItems[i] =charListDefault[i].getAttribute(dataCharRelease);
+      dataCharReleaseItems[i] = charListDefault[i].getAttribute(dataCharRelease);
     }
 
     for (let k = 0; k < filterAnniversaryUsed.length; k++) {
@@ -571,7 +571,7 @@ function applyFilters() {
     if (sumFilterUsed > 0 || filterAnniversaryUsed.length > 0) {
       let charListFilteredNames = [];
       for (let i = 0; i < charListDefaultAnniversary.length; i++) {
-        charListFilteredNames[i] =charListDefaultAnniversary[i].getAttribute("data-char-name");
+        charListFilteredNames[i] = charListDefaultAnniversary[i].getAttribute("data-char-name");
       }
       addOnlyFilteredCharNames();
     }
@@ -583,7 +583,7 @@ function applyFilters() {
     if (sumFilterUsed > 0 || filterAnniversaryUsed.length > 0) {
       let charListFilteredNames = [];
       for (let i = 0; i < charListDefault.length; i++) {
-        charListFilteredNames[i] =charListDefault[i].getAttribute("data-char-name");
+        charListFilteredNames[i] = charListDefault[i].getAttribute("data-char-name");
       }
       addOnlyFilteredCharNames();
     }

@@ -101,7 +101,7 @@ function closeNavWhenClickedOutside() {
   const rightSidenav = document.getElementById("right-sidenav-id");
   const filterSelect = document.getElementById("filter-select-id");
   document.addEventListener("mousedown", function (event) {
-    const outsideClick =typeof event.composedPath === "function" &&
+    const outsideClick = typeof event.composedPath === "function" &&
       !event.composedPath().includes(leftSidenav) &&
       !event.composedPath().includes(rightSidenav) &&
       !event.composedPath().includes(applyFiltersId) &&
@@ -112,7 +112,7 @@ function closeNavWhenClickedOutside() {
   });
 
   document.addEventListener("mouseup", function (event) {
-    const outsideClick =typeof event.composedPath === "function" &&
+    const outsideClick = typeof event.composedPath === "function" &&
       !event.composedPath().includes(leftSidenav) &&
       !event.composedPath().includes(rightSidenav) &&
       !event.composedPath().includes(applyFiltersId) &&

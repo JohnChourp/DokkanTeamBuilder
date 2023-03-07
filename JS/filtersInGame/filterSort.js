@@ -43,7 +43,7 @@ function filterSort(sort) {
     case "sort-max-level":
       addSort("sort-max-level");
       break;
-      case "sort-char-id":
+    case "sort-char-id":
       addSort("sort-char-id");
       break;
   }
@@ -51,10 +51,10 @@ function filterSort(sort) {
 
 function removeAllSort() {
   const filterType = [
-    "sort-updated","sort-released","sort-type",
-    "sort-rarity","sort-cost","sort-hp","sort-attack",
-    "sort-defense","sort-alphabetical","sort-sp-atk-lv",
-    "sort-max-level","sort-char-id"
+    "sort-updated", "sort-released", "sort-type",
+    "sort-rarity", "sort-cost", "sort-hp", "sort-attack",
+    "sort-defense", "sort-alphabetical", "sort-sp-atk-lv",
+    "sort-max-level", "sort-char-id"
   ];
   for (let i = 0; i < filterType.length; i++) {
     document.getElementById(filterType[i]).classList.remove("checkedSortBtn");
@@ -64,10 +64,10 @@ function removeAllSort() {
 
 function removeAllSortAndAddUpdated() {
   const filterType = [
-    "sort-released","sort-type","sort-rarity",
-    "sort-cost","sort-hp","sort-attack",
-    "sort-defense","sort-alphabetical","sort-sp-atk-lv",
-    "sort-max-level","sort-char-id"
+    "sort-released", "sort-type", "sort-rarity",
+    "sort-cost", "sort-hp", "sort-attack",
+    "sort-defense", "sort-alphabetical", "sort-sp-atk-lv",
+    "sort-max-level", "sort-char-id"
   ];
   for (let i = 0; i < filterType.length; i++) {
     document.getElementById(filterType[i]).classList.remove("checkedSortBtn");

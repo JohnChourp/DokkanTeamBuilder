@@ -5,8 +5,8 @@ function sortDirectionDisplayOrder(char, charContainerId) {
   return [temp_char, charLength];
 }
 function displayOrderremoveDuplicatesAndSortValues(
-  charLength,dataCharItems,dataChar,
-  charContainerId,temp_char
+  charLength, dataCharItems, dataChar,
+  charContainerId, temp_char
 ) {
   const values = new Array(charLength);
   for (let i = 0; i < charLength; i++) {
@@ -49,13 +49,13 @@ function selectOneChar(searchOneCharDropdownValue) {
   }
 }
 function filterCategoryUsed(
-  filterCategories,filterCategoriesNames,filterRarity,
-  filterType,filterClass,filterAwaken,
-  filterSuperAttackType,filterEza,filterRecruit
+  filterCategories, filterCategoriesNames, filterRarity,
+  filterType, filterClass, filterAwaken,
+  filterSuperAttackType, filterEza, filterRecruit
 ) {
-  let filterCategoryUsed = [],filterRarityUsed = [],filterTypeUsed = [],
-    filterClassUsed = [],filterAwakenUsed = [],filterSuperAttackTypeUsed = [],
-    filterEzaUsed = [],filterRecruitUsed = [];
+  let filterCategoryUsed = [], filterRarityUsed = [], filterTypeUsed = [],
+    filterClassUsed = [], filterAwakenUsed = [], filterSuperAttackTypeUsed = [],
+    filterEzaUsed = [], filterRecruitUsed = [];
 
   //filterCategory
   for (let i = 0; i < filterCategories.length; i++) {
@@ -121,12 +121,12 @@ function filterCategoryUsed(
   }
   filterRecruitUsed = cleanArray(filterRecruitUsed, undefined);
 
-  return [filterCategoryUsed,filterRarityUsed,filterTypeUsed,
-    filterClassUsed,filterAwakenUsed,filterSuperAttackTypeUsed,
-    filterEzaUsed,filterRecruitUsed,
+  return [filterCategoryUsed, filterRarityUsed, filterTypeUsed,
+    filterClassUsed, filterAwakenUsed, filterSuperAttackTypeUsed,
+    filterEzaUsed, filterRecruitUsed,
   ];
 }
-function filterSumCategoryUsed(filtersUsed,filtersEachLength,filtersEachLengthString) {
+function filterSumCategoryUsed(filtersUsed, filtersEachLength, filtersEachLengthString) {
   let sumFilterUsed = 0;
   for (let i = 0; i < filtersUsed.length; i++) {
     if (filtersUsed[i].length > 0) {
@@ -139,7 +139,7 @@ function filterSumCategoryUsed(filtersUsed,filtersEachLength,filtersEachLengthSt
       filtersEachLengthStringUsed[i] = filtersEachLengthString[i];
     }
   }
-  filtersEachLengthStringUsed = cleanArray(filtersEachLengthStringUsed,undefined);
+  filtersEachLengthStringUsed = cleanArray(filtersEachLengthStringUsed, undefined);
   return [sumFilterUsed, filtersEachLengthStringUsed];
 }
 
@@ -181,7 +181,7 @@ function filterBeforeAfterEzaPutCharInContainer(sortedChars, charContainerId) {
   }
 }
 
-function anniversaryFilterPushCharInSortedChars(sortedChars,year,month,day,temp_char,i) {
+function anniversaryFilterPushCharInSortedChars(sortedChars, year, month, day, temp_char, i) {
   if (!sortedChars[year]) {
     sortedChars[year] = {};
   }
