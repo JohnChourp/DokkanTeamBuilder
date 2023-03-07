@@ -25,9 +25,6 @@ function removeAllClass() {
   const filterClass = ["super", "extreme"];
   for (let i = 0; i < filterClass.length; i++) {
     document.getElementById(filterClass[i]).classList.remove("checkedClassBtn");
-    document
-      .getElementById(filterClass[i])
-      .children.item(0)
-      .classList.remove("checkedClassBtnInside");
+    document.getElementById(filterClass[i]).children.item(0).classList.remove("checkedClassBtnInside");
   }
 }

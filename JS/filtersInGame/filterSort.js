@@ -51,48 +51,27 @@ function filterSort(sort) {
 
 function removeAllSort() {
   const filterType = [
-    "sort-updated",
-    "sort-released",
-    "sort-type",
-    "sort-rarity",
-    "sort-cost",
-    "sort-hp",
-    "sort-attack",
-    "sort-defense",
-    "sort-alphabetical",
-    "sort-sp-atk-lv",
-    "sort-max-level",
-    "sort-char-id"
+    "sort-updated","sort-released","sort-type",
+    "sort-rarity","sort-cost","sort-hp","sort-attack",
+    "sort-defense","sort-alphabetical","sort-sp-atk-lv",
+    "sort-max-level","sort-char-id"
   ];
   for (let i = 0; i < filterType.length; i++) {
     document.getElementById(filterType[i]).classList.remove("checkedSortBtn");
-    document
-      .getElementById(filterType[i])
-      .children.item(0)
-      .classList.remove("checkedSortBtnInside");
+    document.getElementById(filterType[i]).children.item(0).classList.remove("checkedSortBtnInside");
   }
 }
 
 function removeAllSortAndAddUpdated() {
   const filterType = [
-    "sort-released",
-    "sort-type",
-    "sort-rarity",
-    "sort-cost",
-    "sort-hp",
-    "sort-attack",
-    "sort-defense",
-    "sort-alphabetical",
-    "sort-sp-atk-lv",
-    "sort-max-level",
-    "sort-char-id"
+    "sort-released","sort-type","sort-rarity",
+    "sort-cost","sort-hp","sort-attack",
+    "sort-defense","sort-alphabetical","sort-sp-atk-lv",
+    "sort-max-level","sort-char-id"
   ];
   for (let i = 0; i < filterType.length; i++) {
     document.getElementById(filterType[i]).classList.remove("checkedSortBtn");
-    document
-      .getElementById(filterType[i])
-      .children.item(0)
-      .classList.remove("checkedSortBtnInside");
+    document.getElementById(filterType[i]).children.item(0).classList.remove("checkedSortBtnInside");
   }
   document.getElementById("sort-updated").classList.add("checkedSortBtn");
   document.getElementById("sort-updated").children.item(0).classList.add("checkedSortBtnInside");

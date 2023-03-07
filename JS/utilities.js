@@ -3,9 +3,7 @@ function removeDuplicates(arr) {
 }
 
 function create2DimensionalArray(rows, columns) {
-  return Array(rows)
-    .fill()
-    .map(() => Array(columns).fill());
+  return Array(rows).fill().map(() => Array(columns).fill());
 }
 
 function cleanArray(arr, deleteValue) {

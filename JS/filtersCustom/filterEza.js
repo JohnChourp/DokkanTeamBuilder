@@ -1,10 +1,6 @@
 function addEza(ezaFilter) {
   const filterRarityId = ["n", "r", "sr", "ssr", "ur", "lr"];
-  const filterAwakenId = [
-    "not-dokkan-awakened",
-    "pre-dokkan-awakened",
-    "dokkan-awakened",
-  ];
+  const filterAwakenId = ["not-dokkan-awakened","pre-dokkan-awakened","dokkan-awakened",];
   const ezaFilterEl = document.getElementById(ezaFilter);
   const awakenEls = filterAwakenId.map((id) => document.getElementById(id));
   const rarityEls = filterRarityId.map((id) => document.getElementById(id));

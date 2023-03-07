@@ -24,14 +24,7 @@ function createFilterPagination(charList) {
   for (let i = 1; i <= pageSum; i++) {
     const page = document.createElement("a");
     page.onclick = () =>
-      pagination_page(
-        (i - 1) * charsPerPageNum,
-        i * charsPerPageNum,
-        pageSum,
-        i,
-        charList,
-        pagesLoaded
-      );
+      pagination_page((i - 1) * charsPerPageNum,i * charsPerPageNum,pageSum,i,charList,pagesLoaded);
     page.href = "#";
     page.setAttribute("draggable", "false");
     page.innerHTML = i;
@@ -57,14 +50,7 @@ function createFilterPagination(charList) {
   pagination_page(0, charsPerPageNum, pageSum, 0, charList, pagesLoaded);
 }
 
-function pagination_page(
-  start,
-  charsPerPageNum,
-  pageSum,
-  pageNum,
-  charList,
-  pagesLoaded
-) {
+function pagination_page(start,charsPerPageNum,pageSum,pageNum,charList,pagesLoaded) {
   const char_container_id = document.getElementById("char-container-id");
   const pagination_id = document.getElementById("pagination-id");
   const fragment = document.createDocumentFragment();
@@ -81,20 +67,11 @@ function pagination_page(
 
   char_container_id.innerHTML = "";
   char_container_id.appendChild(fragment);
-  pagination_id.children.item(pageSum).innerHTML =
-    "Showing " +
-    (start + 1) +
-    " to " +
-    end +
-    " of " +
-    charList.length +
-    " Characters";
+  pagination_id.children.item(pageSum).innerHTML ="Showing " +(start + 1) +" to " +end +" of " +charList.length +" Characters";
   const pageKeys = Object.keys(pagesLoaded);
 
   for (let i = 0; i < pagination_id.children.length; i++) {
-    if (
-      pagination_id.children.item(i).classList.contains("checkedPagiantionBtn")
-    ) {
+    if (pagination_id.children.item(i).classList.contains("checkedPagiantionBtn")) {
       pagination_id.children.item(i).classList.remove("checkedPagiantionBtn");
       pagination_id.children.item(i).style.border = "1px solid #ddd";
     }

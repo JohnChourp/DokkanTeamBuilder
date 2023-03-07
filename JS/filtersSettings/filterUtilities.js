@@ -5,11 +5,8 @@ function sortDirectionDisplayOrder(char, charContainerId) {
   return [temp_char, charLength];
 }
 function displayOrderremoveDuplicatesAndSortValues(
-  charLength,
-  dataCharItems,
-  dataChar,
-  charContainerId,
-  temp_char
+  charLength,dataCharItems,dataChar,
+  charContainerId,temp_char
 ) {
   const values = new Array(charLength);
   for (let i = 0; i < charLength; i++) {
@@ -46,34 +43,19 @@ function sortDirectionAscendingDesencding(char, charContainerId) {
 
 function selectOneChar(searchOneCharDropdownValue) {
   for (let i = 1; i < searchOneCharDropdownValue.length; i++) {
-    if (
-      searchOneCharDropdownValue
-        .item(i)
-        .classList.contains("checkedSearchOneCharBtn")
-    ) {
+    if (searchOneCharDropdownValue.item(i).classList.contains("checkedSearchOneCharBtn")) {
       addSearchOneCharDropdownClass(i, 1);
     }
   }
 }
 function filterCategoryUsed(
-  filterCategories,
-  filterCategoriesNames,
-  filterRarity,
-  filterType,
-  filterClass,
-  filterAwaken,
-  filterSuperAttackType,
-  filterEza,
-  filterRecruit
+  filterCategories,filterCategoriesNames,filterRarity,
+  filterType,filterClass,filterAwaken,
+  filterSuperAttackType,filterEza,filterRecruit
 ) {
-  let filterCategoryUsed = [],
-    filterRarityUsed = [],
-    filterTypeUsed = [],
-    filterClassUsed = [],
-    filterAwakenUsed = [],
-    filterSuperAttackTypeUsed = [],
-    filterEzaUsed = [],
-    filterRecruitUsed = [];
+  let filterCategoryUsed = [],filterRarityUsed = [],filterTypeUsed = [],
+    filterClassUsed = [],filterAwakenUsed = [],filterSuperAttackTypeUsed = [],
+    filterEzaUsed = [],filterRecruitUsed = [];
 
   //filterCategory
   for (let i = 0; i < filterCategories.length; i++) {
@@ -85,11 +67,7 @@ function filterCategoryUsed(
 
   //filterRarity
   for (let i = 0; i < filterRarity.length; i++) {
-    if (
-      document
-        .getElementById(filterRarity[i])
-        .classList.contains("checkedRarityBtn")
-    ) {
+    if (document.getElementById(filterRarity[i]).classList.contains("checkedRarityBtn")) {
       filterRarityUsed[i] = filterRarity[i];
     }
   }
@@ -97,11 +75,7 @@ function filterCategoryUsed(
 
   //filterType
   for (let i = 0; i < filterType.length; i++) {
-    if (
-      document
-        .getElementById(filterType[i])
-        .classList.contains("checkedTypeBtn")
-    ) {
+    if (document.getElementById(filterType[i]).classList.contains("checkedTypeBtn")) {
       filterTypeUsed[i] = filterType[i];
     }
   }
@@ -109,11 +83,7 @@ function filterCategoryUsed(
 
   //filterClass
   for (let i = 0; i < filterClass.length; i++) {
-    if (
-      document
-        .getElementById(filterClass[i])
-        .classList.contains("checkedClassBtn")
-    ) {
+    if (document.getElementById(filterClass[i]).classList.contains("checkedClassBtn")) {
       filterClassUsed[i] = filterClass[i];
     }
   }
@@ -121,11 +91,7 @@ function filterCategoryUsed(
 
   //filterAwaken
   for (let i = 0; i < filterAwaken.length; i++) {
-    if (
-      document
-        .getElementById(filterAwaken[i])
-        .classList.contains("checkedAwakenBtn")
-    ) {
+    if (document.getElementById(filterAwaken[i]).classList.contains("checkedAwakenBtn")) {
       filterAwakenUsed[i] = filterAwaken[i];
     }
   }
@@ -133,11 +99,7 @@ function filterCategoryUsed(
 
   //filterSuperAttackType
   for (let i = 0; i < filterSuperAttackType.length; i++) {
-    if (
-      document
-        .getElementById(filterSuperAttackType[i])
-        .classList.contains("checkedSuperAttackTypeBtn")
-    ) {
+    if (document.getElementById(filterSuperAttackType[i]).classList.contains("checkedSuperAttackTypeBtn")) {
       filterSuperAttackTypeUsed[i] = filterSuperAttackType[i];
     }
   }
@@ -145,9 +107,7 @@ function filterCategoryUsed(
 
   //filterEza
   for (let i = 0; i < filterEza.length; i++) {
-    if (
-      document.getElementById(filterEza[i]).classList.contains("checkedEzaBtn")
-    ) {
+    if (document.getElementById(filterEza[i]).classList.contains("checkedEzaBtn")) {
       filterEzaUsed[i] = filterEza[i];
     }
   }
@@ -155,32 +115,18 @@ function filterCategoryUsed(
 
   //filterRecruit
   for (let i = 0; i < filterRecruit.length; i++) {
-    if (
-      document
-        .getElementById(filterRecruit[i])
-        .classList.contains("checkedRecruitBtn")
-    ) {
+    if (document.getElementById(filterRecruit[i]).classList.contains("checkedRecruitBtn")) {
       filterRecruitUsed[i] = filterRecruit[i];
     }
   }
   filterRecruitUsed = cleanArray(filterRecruitUsed, undefined);
 
-  return [
-    filterCategoryUsed,
-    filterRarityUsed,
-    filterTypeUsed,
-    filterClassUsed,
-    filterAwakenUsed,
-    filterSuperAttackTypeUsed,
-    filterEzaUsed,
-    filterRecruitUsed,
+  return [filterCategoryUsed,filterRarityUsed,filterTypeUsed,
+    filterClassUsed,filterAwakenUsed,filterSuperAttackTypeUsed,
+    filterEzaUsed,filterRecruitUsed,
   ];
 }
-function filterSumCategoryUsed(
-  filtersUsed,
-  filtersEachLength,
-  filtersEachLengthString
-) {
+function filterSumCategoryUsed(filtersUsed,filtersEachLength,filtersEachLengthString) {
   let sumFilterUsed = 0;
   for (let i = 0; i < filtersUsed.length; i++) {
     if (filtersUsed[i].length > 0) {
@@ -193,10 +139,7 @@ function filterSumCategoryUsed(
       filtersEachLengthStringUsed[i] = filtersEachLengthString[i];
     }
   }
-  filtersEachLengthStringUsed = cleanArray(
-    filtersEachLengthStringUsed,
-    undefined
-  );
+  filtersEachLengthStringUsed = cleanArray(filtersEachLengthStringUsed,undefined);
   return [sumFilterUsed, filtersEachLengthStringUsed];
 }
 
@@ -238,14 +181,7 @@ function filterBeforeAfterEzaPutCharInContainer(sortedChars, charContainerId) {
   }
 }
 
-function anniversaryFilterPushCharInSortedChars(
-  sortedChars,
-  year,
-  month,
-  day,
-  temp_char,
-  i
-) {
+function anniversaryFilterPushCharInSortedChars(sortedChars,year,month,day,temp_char,i) {
   if (!sortedChars[year]) {
     sortedChars[year] = {};
   }
