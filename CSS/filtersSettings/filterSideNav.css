@@ -113,7 +113,6 @@
   font-size: 26px;
   color: rgb(255, 255, 255);
   text-align: center;
-  margin-top: 10px;
 }
 
 .filter-class {
@@ -146,7 +145,7 @@
 
 #apply-filters-text-id {
   position: relative;
-  left: -70px;
+  left: -150px;
 }
 
 #ok {
