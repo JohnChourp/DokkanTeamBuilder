@@ -1,70 +1,70 @@
 :root {
-  --bg-color-top-half-rarity: #6b6b67;
-  --bg-color-bottom-half-rarity: #555555;
-  --bi-color-text-rarity: linear-gradient(180deg, #b6b6b6, #948d87);
+    --bg-color-top-half-rarity: #6b6b67;
+    --bg-color-bottom-half-rarity: #555555;
+    --bi-color-text-rarity: linear-gradient(180deg, #b6b6b6, #948d87);
 }
 
 .filter-rarity-container {
-  position: relative;
-  width: 50px;
-  height: 35px;
-  margin-right: 12.5px;
-  margin-bottom: 5px;
+    position: relative;
+    width: 50px;
+    height: 35px;
+    margin-right: 12.5px;
+    margin-bottom: 5px;
 }
 
 .filter-rarity-container-inside {
-  margin-top: 5px;
-  cursor: pointer;
+    margin-top: 5px;
+    cursor: pointer;
 }
 
 .filter-rarity-container-inside:active:hover {
-  --bg-color-top-half-rarity: #19739a;
-  --bg-color-bottom-half-rarity: #0f4670;
-  --bi-color-text-rarity: linear-gradient(180deg, #ffffff, #dbcebd);
+    --bg-color-top-half-rarity: #19739a;
+    --bg-color-bottom-half-rarity: #0f4670;
+    --bi-color-text-rarity: linear-gradient(180deg, #ffffff, #dbcebd);
 }
 
 .filter-rarity-container-inside:hover {
-  --bg-color-top-half-rarity: #9b9b97;
-  --bg-color-bottom-half-rarity: #808080;
-  --bi-color-text-rarity: linear-gradient(180deg, #e6e6e6, #aba5a0);
+    --bg-color-top-half-rarity: #9b9b97;
+    --bg-color-bottom-half-rarity: #808080;
+    --bi-color-text-rarity: linear-gradient(180deg, #e6e6e6, #aba5a0);
 }
 
 .checkedRarityBtnInside {
-  --bg-color-top-half-rarity: #2DA9DD;
-  --bg-color-bottom-half-rarity: #1B79C3;
-  --bi-color-text-rarity: linear-gradient(180deg, #ffffff, #dbcebd);
+    --bg-color-top-half-rarity: #2DA9DD;
+    --bg-color-bottom-half-rarity: #1B79C3;
+    --bi-color-text-rarity: linear-gradient(180deg, #ffffff, #dbcebd);
 }
 
 .checkedRarityBtnInside:active:hover {
-  --bg-color-top-half-rarity: #19739a;
-  --bg-color-bottom-half-rarity: #0f4670;
-  --bi-color-text-rarity: linear-gradient(180deg, #ffffff, #dbcebd);
+    --bg-color-top-half-rarity: #19739a;
+    --bg-color-bottom-half-rarity: #0f4670;
+    --bi-color-text-rarity: linear-gradient(180deg, #ffffff, #dbcebd);
 }
 
 .checkedRarityBtnInside:hover {
-  --bg-color-top-half-rarity: #7bc9ea;
-  --bg-color-bottom-half-rarity: #4ba3e7;
-  --bi-color-text-rarity: linear-gradient(180deg, #ffffff, #ede6de);
+    --bg-color-top-half-rarity: #7bc9ea;
+    --bg-color-bottom-half-rarity: #4ba3e7;
+    --bi-color-text-rarity: linear-gradient(180deg, #ffffff, #ede6de);
 }
 
 .disableRarityBtnInside {
-  margin-top: 5px;
-  --bg-color-top-half-rarity: #0b3142;
-  --bg-color-bottom-half-rarity: #030e16;
-  --bi-color-text-rarity: linear-gradient(180deg, #ffffff, #dbcebd);
+    margin-top: 5px;
+    --bg-color-top-half-rarity: #0b3142;
+    --bg-color-bottom-half-rarity: #030e16;
+    --bi-color-text-rarity: linear-gradient(180deg, #ffffff, #dbcebd);
 }
 
 .top-half-bg-color-rarity {
-  margin-left: 2.5px;
-  width: 50px;
-  height: 12px;
-  background-color: var(--bg-color-top-half-rarity);
+    margin-left: 2.5px;
+    width: 50px;
+    height: 12px;
+    background-color: var(--bg-color-top-half-rarity);
 }
 
 .bottom-half-bg-color-rarity {
-  width: 51px;
-  height: 12px;
-  background-color: var(--bg-color-bottom-half-rarity);
+    width: 51px;
+    height: 12px;
+    background-color: var(--bg-color-bottom-half-rarity);
 }
 
 .top-line-rarity,
@@ -73,64 +73,64 @@
 .bottom-line-rarity,
 .bottom-left-line-rotated-rarity,
 .bottom-right-line-rotated-rarity {
-  height: 5px;
-  background-color: #ced1d0;
+    height: 5px;
+    background-color: #ced1d0;
 }
 
 .filter-rarity-container-inside-outline {
-  margin-top: -29px;
+    margin-top: -29px;
 }
 
 .top-line-rarity {
-  width: 47.5px;
-  margin-left: 3.75px;
+    width: 47.5px;
+    margin-left: 3.75px;
 }
 
 .bottom-line-rarity {
-  width: 47.5px;
-  margin-top: 24px;
-  margin-left: 3.75px;
+    width: 47.5px;
+    margin-top: 24px;
+    margin-left: 3.75px;
 }
 
 .top-left-line-rotated-rarity {
-  width: 27px;
-  transform: rotate(-75deg);
-  margin-top: -23px;
-  margin-left: -11px;
+    width: 27px;
+    transform: rotate(-75deg);
+    margin-top: -23px;
+    margin-left: -11px;
 }
 
 .bottom-left-line-rotated-rarity {
-  width: 10.5px;
-  transform: rotate(50deg);
-  margin-top: 18px;
-  margin-left: -3px;
+    width: 10.5px;
+    transform: rotate(50deg);
+    margin-top: 18px;
+    margin-left: -3px;
 }
 
 .top-right-line-rotated-rarity {
-  width: 9px;
-  transform: rotate(50deg);
-  margin-top: -13.5px;
-  margin-left: 47.5px;
+    width: 9px;
+    transform: rotate(50deg);
+    margin-top: -13.5px;
+    margin-left: 47.5px;
 }
 
 .bottom-right-line-rotated-rarity {
-  width: 27px;
-  transform: rotate(100deg);
-  margin-top: -13px;
-  margin-left: 38.5px;
+    width: 27px;
+    transform: rotate(100deg);
+    margin-top: -13px;
+    margin-left: 38.5px;
 }
 
 .filter-rarity-container-text {
-  color: white;
-  font-weight: 750;
-  font-family: Arial, sans-serif;
-  background-image: var(--bi-color-text-rarity);
-  margin-left: 5px;
-  margin-top: -15px;
-  text-align: center;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
+    color: white;
+    font-weight: 750;
+    font-family: Arial, sans-serif;
+    background-image: var(--bi-color-text-rarity);
+    margin-left: 5px;
+    margin-top: -15px;
+    text-align: center;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
 }

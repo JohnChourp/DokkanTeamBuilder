@@ -1,61 +1,52 @@
 #search-before-eza-id,
 #search-after-eza-id {
-  width: 180px;
-  height: 30px;
-  margin-left: 5px;
-  margin-right: 5px;
+    width: 140px;
+    height: 30px;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
+/* before eza */
 .search-before-eza-dropdown-options {
-  display: none;
-  background-color: #f1f1f1;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  overflow: auto;
-  width: 182px;
-  height: 200px;
+    display: block;
+    background-color: #f1f1f1;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    overflow: auto;
+    width: 147px;
+    height: 200px;
+    margin-right: 15px;
 }
 
 .search-before-eza-dropdown-options a {
-  color: black;
-  padding: 5px 16px;
-  text-decoration: none;
-  display: block;
+    color: black;
+    padding: 5px 16px;
+    text-decoration: none;
+    display: block;
 }
 
 .search-before-eza-dropdown-options a:hover {
-  background-color: #ddd;
+    background-color: #ddd;
 }
 
-.showBeforeEza {
-  display: block;
-  position: absolute;
-  left: 6px;
-}
 
+/* after eza */
 .search-after-eza-dropdown-options {
-  display: none;
-  background-color: #f1f1f1;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  overflow: auto;
-  width: 182px;
-  height: 200px;
+    display: block;
+    background-color: #f1f1f1;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    overflow: auto;
+    width: 147px;
+    height: 200px;
+    margin-left: 15px;
 }
 
 .search-after-eza-dropdown-options a {
-  color: black;
-  padding: 5px 16px;
-  text-decoration: none;
-  display: block;
+    color: black;
+    padding: 5px 16px;
+    text-decoration: none;
+    display: block;
 }
 
 .search-after-eza-dropdown-options a:hover {
-  background-color: #ddd;
-}
-
-.showAfterEza {
-  display: block;
-  position: absolute;
-  right: 6px;
+    background-color: #ddd;
 }

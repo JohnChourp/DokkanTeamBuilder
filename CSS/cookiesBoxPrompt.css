@@ -1,117 +1,117 @@
 #cookies-prompt {
-  background-color: white;
-  position: fixed;
-  bottom: 0px;
-  left: 0px;
-  z-index: 1;
-  width: 100%;
-  animation: fadeInAnimation ease 1s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-  display: none;
+    background-color: white;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    z-index: 1;
+    width: 100%;
+    animation: fadeInAnimation ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    display: none;
 }
 
 @keyframes fadeInAnimation {
-  0% {
-    opacity: 0;
-  }
+    0% {
+        opacity: 0;
+    }
 
-  100% {
-    opacity: 1;
-  }
+    100% {
+        opacity: 1;
+    }
 }
 
 #cookies-prompt-flex-id {
-  display: flex;
-  margin-left: 10px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+    display: flex;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 #cookies-prompt-title-id {
-  font-family: "Poppins", sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 24px;
-  margin-left: 10px;
-  margin-top: 10px;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    margin-left: 10px;
+    margin-top: 10px;
 }
 
 #cookies-prompt-text-id {
-  font-family: "Poppins", sans-serif;
-  font-size: 14px;
-  line-height: 24px;
-  font-weight: 400;
-  width: 100%;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+    width: 100%;
 }
 
 #cookies-prompt-btn-id {
-  position: fixed;
-  right: 10px;
+    position: fixed;
+    right: 10px;
 }
 
 #cookies-prompt-accept-id,
 #cookies-prompt-reject-id {
-  transition-duration: 0.3s;
-  height: 45px;
-  position: relative;
-  top: -10px;
-  border: 2px solid black;
-  font-size: 24px;
-  font-family: "Poppins", sans-serif;
-  text-align: center;
-  vertical-align: middle;
-  margin-left: 5px;
-  margin-right: 5px;
+    transition-duration: 0.3s;
+    height: 45px;
+    position: relative;
+    top: -10px;
+    border: 2px solid black;
+    font-size: 24px;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    vertical-align: middle;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 #cookies-prompt-accept-id {
-  background-color: black;
-  color: white;
+    background-color: black;
+    color: white;
 }
 
 #cookies-prompt-reject-id {
-  background-color: white;
-  color: black;
+    background-color: white;
+    color: black;
 }
 
 #cookies-prompt-accept-id:hover {
-  background-color: black;
-  color: rgba(255, 255, 255, 0.678);
-  cursor: pointer;
+    background-color: black;
+    color: rgba(255, 255, 255, 0.678);
+    cursor: pointer;
 }
 
 #cookies-prompt-reject-id:hover {
-  background-color: black;
-  color: white;
-  cursor: pointer;
+    background-color: black;
+    color: white;
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 950px) {
-  #cookies-prompt-btn-id {
-    right: 10px;
-    margin-top: 10px;
-  }
+    #cookies-prompt-btn-id {
+        right: 10px;
+        margin-top: 10px;
+    }
 
-  #cookies-prompt-text-id {
-    width: 60%;
-  }
+    #cookies-prompt-text-id {
+        width: 60%;
+    }
 }
 
 @media only screen and (max-width: 741px) {
-  #cookies-prompt-btn-id {
-    right: 10px;
-    margin-top: 20px;
-  }
+    #cookies-prompt-btn-id {
+        right: 10px;
+        margin-top: 20px;
+    }
 }
 
 @media only screen and (max-width: 520px) {
-  #cookies-prompt-btn-id {
-    right: 10px;
-    margin-top: 60px;
-  }
+    #cookies-prompt-btn-id {
+        right: 10px;
+        margin-top: 60px;
+    }
 
-  #cookies-prompt-text-id {
-    width: 50%;
-  }
+    #cookies-prompt-text-id {
+        width: 50%;
+    }
 }

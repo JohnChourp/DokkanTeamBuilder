@@ -1,0 +1,38 @@
+#characters-per-page-id {
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+}
+
+#characters-per-page-text-id {
+    margin-top: 4px;
+}
+
+#characters-per-input-page-id {
+    width: 90px;
+    height: 25px;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+#characters-per-page-pages-id {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 6px;
+    margin-bottom: 10px;
+}
+
+.charsPerPage {
+    background-color: white;
+    border: 2px solid #008cba;
+    cursor: pointer;
+    height: 30px;
+    width: 40px;
+    margin: 0px 4px 0px 4px;
+    font-size: 15px;
+}
+
+.checkedCharsPerPageBtn {
+    background-color: #33ccff;
+}

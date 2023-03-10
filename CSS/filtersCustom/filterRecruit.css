@@ -1,20 +1,20 @@
 .recruit-class {
-  background-color: #ddd;
-  color: black;
-  border: 2px solid #008cba;
-  transition-duration: 0.4s;
-  height: 30px;
-  margin: 0px 5px 0px 5px;
+    background-color: #ddd;
+    color: black;
+    border: 2px solid #008cba;
+    transition-duration: 0.4s;
+    height: 30px;
+    margin: 0px 5px 0px 5px;
 }
 
 .recruit-class:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .checkedRecruitBtn {
-  background-color: #33ccff;
-  color: black;
-  border: 2px solid #008cba;
-  transition-duration: 0.4s;
-  height: 30px;
+    background-color: #33ccff;
+    color: black;
+    border: 2px solid #008cba;
+    transition-duration: 0.4s;
+    height: 30px;
 }
