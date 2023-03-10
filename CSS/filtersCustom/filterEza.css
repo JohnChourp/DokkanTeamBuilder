@@ -1,31 +1,31 @@
 #eza,
 #noeza {
-  background-color: #7d8e93;
-  cursor: pointer;
-  height: 40px;
-  font-size: 18px;
-  margin-left: 10px;
+    background-color: #7d8e93;
+    cursor: pointer;
+    height: 40px;
+    font-size: 18px;
+    margin-left: 10px;
 }
 
 .checkedEzaBtn {
-  --angle: 0deg;
-  height: 45px;
-  border: 5px solid;
-  border-image: conic-gradient(red, yellow, lime, aqua, blue, magenta, red) 1;
+    --angle: 0deg;
+    height: 45px;
+    border: 5px solid;
+    border-image: conic-gradient(red, yellow, lime, aqua, blue, magenta, red) 1;
 }
 
 .filterBtn {
-  border: 2px solid #343a40;
-  color: #6c757d;
-  padding: 6px 15px;
-  text-align: center;
-  border-radius: 15px;
-  font-size: 14px;
-  cursor: pointer;
-  outline: none;
-  background-color: #ddd;
+    border: 2px solid #343a40;
+    color: #6c757d;
+    padding: 6px 15px;
+    text-align: center;
+    border-radius: 15px;
+    font-size: 14px;
+    cursor: pointer;
+    outline: none;
+    background-color: #ddd;
 }
 
 .not-allowed {
-  cursor: not-allowed;
+    cursor: not-allowed;
 }

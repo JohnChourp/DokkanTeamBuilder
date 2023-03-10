@@ -1,39 +1,39 @@
 .filter-direction-class {
-  background-color: #ddd;
-  color: black;
-  border: 2px solid #008cba;
-  transition-duration: 0.4s;
-  height: 30px;
-  margin: 0px 5px 15px 5px;
-  position: relative;
+    background-color: #ddd;
+    color: black;
+    border: 2px solid #008cba;
+    transition-duration: 0.4s;
+    height: 30px;
+    margin: 0px 5px 15px 5px;
+    position: relative;
 }
 
 .filter-direction-class:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 #filter-direction-down-id {
-  background-color: #33ccff;
-  color: black;
-  border: 2px solid #008cba;
-  transition-duration: 0.4s;
-  height: 30px;
-  position: relative;
+    background-color: #33ccff;
+    color: black;
+    border: 2px solid #008cba;
+    transition-duration: 0.4s;
+    height: 30px;
+    position: relative;
 }
 
 #filter-direction-down-id:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 #filter-direction-up-id {
-  background-color: white;
-  color: black;
-  border: 2px solid #008cba;
-  transition-duration: 0.4s;
-  height: 30px;
-  position: relative;
+    background-color: white;
+    color: black;
+    border: 2px solid #008cba;
+    transition-duration: 0.4s;
+    height: 30px;
+    position: relative;
 }
 
 #filter-direction-up-id:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
