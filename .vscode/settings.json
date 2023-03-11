@@ -1,0 +1,6 @@
+{
+    "checkpoints.showActiveFileOnly": false,
+    "checkpoints.addCheckpointOnSave": true,
+    "checkpoints.locale":"gr-GR",
+    "checkpoints.askForCheckpointName":false
+}
