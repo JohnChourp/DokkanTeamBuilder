@@ -295,10 +295,7 @@ function addHidePaginationPages(pageSum, pageNum, pagination_id) {
             }
             //lastPageToShowHidePages
             let lastPageToShowHideDescending = paginationDivLength - paginationDivLengthEvenOrOdd * 2 + 2;
-            console.log(lastPageToShowHideDescending);
             if (pageNum == lastPageToShowHideDescending) {
-                console.log(pagination_id.children.item(lastPageToShowHideDescending + 7));
-                console.log(pagination_id.children.item(lastPageToShowHideDescending + 8));
                 pagination_id.children.item(lastPageToShowHideDescending + 9).classList.remove("hidePaginationBtn");
 
                 pagination_id.children.item(lastPageToShowHideDescending + 7).classList.add("hidePaginationBtn");
