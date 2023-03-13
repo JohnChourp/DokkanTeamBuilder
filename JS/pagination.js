@@ -101,6 +101,8 @@ function pagination_page(start, charsPerPageNum, pageSum, pageNum, charList, pag
         pagination_id.children.item(pageSum + 2).innerHTML = "Showing " + (start + 1) + " to " + end + " of " + charList.length + " Characters";
     } else if (pageSum < 12 && pageSum != 1) {
         pagination_id.children.item(pageSum + 2).innerHTML = "Showing " + (start + 1) + " to " + end + " of " + charList.length + " Characters";
+    } else if (pageSum == 12) {
+        pagination_id.children.item(pageSum + 2).innerHTML = "Showing " + (start + 1) + " to " + end + " of " + charList.length + " Characters";
     } else {
         pagination_id.children.item(pageSum + 1).innerHTML = "Showing " + (start + 1) + " to " + end + " of " + charList.length + " Characters";
     }
@@ -163,7 +165,7 @@ function pagination_page(start, charsPerPageNum, pageSum, pageNum, charList, pag
 
 function addHidePaginationPages(pageSum, pageNum, pagination_id) {
     const paginationDivLength = pagination_id.children.length;
-    if (pageSum > 11) {
+    if (pageSum > 12) {
         //first page click
         if (pageNum == 1) {
             for (let i = 0; i < paginationDivLength; i++) {
@@ -326,8 +328,8 @@ function addHidePaginationPages(pageSum, pageNum, pagination_id) {
             }
         }
     }
-    //pages are less that 12
-    if (pageSum < 12 && pageSum != 1) {
+    //pages are 12
+    if(pageSum == 12){
         for (let i = 0; i < paginationDivLength; i++) {
             pagination_id.children.item(i).classList.remove("hidePaginationBtn");
             if (i == 1 || i == paginationDivLength - 3) {
@@ -335,4 +337,15 @@ function addHidePaginationPages(pageSum, pageNum, pagination_id) {
             }
         }
     }
+
+    //pages are less that 13
+    if (pageSum > 1 && pageSum < 12) {
+        for (let i = 0; i < paginationDivLength; i++) {
+            pagination_id.children.item(i).classList.remove("hidePaginationBtn");
+            if (i == 1 || i == paginationDivLength - 3) {
+                pagination_id.children.item(i).classList.add("hidePaginationBtn");
+            }
+        }
+    }
+    
 }
