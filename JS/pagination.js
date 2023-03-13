@@ -347,5 +347,4 @@ function addHidePaginationPages(pageSum, pageNum, pagination_id) {
             }
         }
     }
-    
 }
