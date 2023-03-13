@@ -5,8 +5,19 @@
     flex-wrap: wrap;
 }
 
-#pagination-id a {
+#pagination-id a{
     color: white;
+    width:15px;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+#pagination-id a:last-child {
+    color: white;
+    width:auto;
     padding: 8px 16px;
     text-decoration: none;
     transition: background-color 0.3s;
@@ -27,4 +38,8 @@
     white-space: nowrap;
     -webkit-user-select: text;
     user-select: text;
+}
+
+.hidePaginationBtn {
+    display: none;
 }
