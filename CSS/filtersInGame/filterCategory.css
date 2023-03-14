@@ -769,8 +769,8 @@ span#categories-sum-number-selected-id {
     background-image: transparent;
     position: relative;
     border:#bec2c1 2px solid;
-    top:-47%;
-    left:7%;
+    top:-19px;
+    left:3px;
 }
 .inner-line-category-partial-match {
     width: 20px;
@@ -808,4 +808,5 @@ span#categories-sum-number-selected-id {
     justify-content: center;
     flex-direction: row;
     border:#E27800 2px solid;
+    border-radius: 15px;
 }
