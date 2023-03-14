@@ -563,6 +563,7 @@ function applyFilters() {
             charListFilteredNames[i] = charListDefaultAnniversary[i].getAttribute("data-char-name");
         }
         addOnlyFilteredCharNames(charListDefaultAnniversary);
+        saveCharListTemp(charListDefaultAnniversary);
     } else {
         //create createFilterPagination
         createFilterPagination(charListDefault);
@@ -572,5 +573,6 @@ function applyFilters() {
             charListFilteredNames[i] = charListDefault[i].getAttribute("data-char-name");
         }
         addOnlyFilteredCharNames(charListDefault);
+        saveCharListTemp(charListDefault);
     }
 }
