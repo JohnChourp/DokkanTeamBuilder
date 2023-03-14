@@ -2,7 +2,7 @@ function filtersMultipleUsed(dataChars, filtersEachLengthString, filtersEachLeng
     const char = document.getElementsByClassName("char");
 
     let filters = [], filterCharItems = [], filterChars = [],
-        filterCharItemsTemp = [], maxSuperAttackTypes = 0, maxCategories = 0,
+        filterCharItemsTemp = [], maxSuperAttackTypes = 0,
         charListAll = create2DimensionalArray(filtersEachLengthStringUsed.length, 1);
 
     for (j = 0; j < filtersEachLengthStringUsed.length; j++) {
@@ -16,23 +16,8 @@ function filtersMultipleUsed(dataChars, filtersEachLengthString, filtersEachLeng
     }
 
     let filterSuperAttackTypeItems = create2DimensionalArray(filterCharItems[0].length, 1);
-    let filterCategoryItems = create2DimensionalArray(filterCharItems[0].length, 1);
-
     for (k = 0; k < filtersEachLengthStringUsed.length; k++) {
-        if (filtersUsed[0].length > 0) {
-            for (let i = 0; i < filterCharItems[k].length; i++) {
-                filterCharItemsTemp[i] = filterCharItems[k][i].getAttribute(filterChars[k]).split(",");
-                if (filterCharItemsTemp[i].length > maxCategories) {
-                    maxCategories = filterCharItemsTemp[i].length;
-                }
-            }
-            for (let j = 0; j < maxCategories; j++) {
-                for (let i = 0; i < filterCharItems[k].length; i++) {
-                    filterCategoryItems[i][j] = filterCharItemsTemp[i][j];
-                }
-            }
-        }
-        if (filtersUsed[5].length > 0) {
+        if (filtersUsed[4].length > 0) {
             for (let i = 0; i < filterCharItems[k].length; i++) {
                 filterCharItemsTemp[i] = filterCharItems[k][i].getAttribute(filterChars[k]).split(",");
                 if (filterCharItemsTemp[i].length > maxSuperAttackTypes) {
@@ -49,14 +34,7 @@ function filtersMultipleUsed(dataChars, filtersEachLengthString, filtersEachLeng
         if (k == 0) {
             for (let j = 0; j < filters[k].length; j++) {
                 for (let i = 0; i < char.length; i++) {
-                    if (filtersUsed[0].length > 0) {
-                        for (let l = 0; l < maxCategories; l++) {
-                            if (filterCategoryItems[i][l] == filters[k][j]) {
-                                charListAll[0][i] = char.item(i);
-                            }
-                        }
-                    }
-                    if (filtersUsed[5].length > 0) {
+                    if (filtersUsed[4].length > 0) {
                         for (let l = 0; l < maxSuperAttackTypes / 2; l++) {
                             if (filterSuperAttackTypeItems[i][l] == filters[k][j]) {
                                 charListAll[0][i] = char.item(i);
@@ -72,14 +50,7 @@ function filtersMultipleUsed(dataChars, filtersEachLengthString, filtersEachLeng
             for (let j = 0; j < filters[k].length; j++) {
                 for (let i = 0; i < charListAll[k - 1].length; i++) {
                     if (charListAll[k - 1][i] != undefined) {
-                        if (filtersUsed[0].length > 0) {
-                            for (let l = 0; l < maxCategories; l++) {
-                                if (filterCategoryItems[i][l] == filters[k][j]) {
-                                    charListAll[k][i] = char.item(i);
-                                }
-                            }
-                        }
-                        if (filtersUsed[5].length > 0) {
+                        if (filtersUsed[4].length > 0) {
                             for (let l = 0; l < maxSuperAttackTypes / 2; l++) {
                                 if (filterSuperAttackTypeItems[i][l] == filters[k][j]) {
                                     charListAll[k][i] = char.item(i);
@@ -127,7 +98,7 @@ function applyFilters() {
         dataCharSpAtkLv = "data-char-super-atk-level", dataCharMaxLevel = "data-char-max-level",
         dataCharId = "data-char-id";
 
-    const dataChars = [dataCharCategories, dataCharRarity, dataCharType,
+    const dataChars = [dataCharRarity, dataCharType,
         dataCharClass, dataCharAwaken, dataCharSuperAtkType,
         dataCharEza, dataCharRecruit,
     ];
@@ -254,7 +225,7 @@ function applyFilters() {
         filterRecruit = ["summonable", "free-to-play"];
 
     //checked filter Btn
-    const filterClasses = ["checkedCategoryBtn", "checkedRarityBtn",
+    const filterClasses = ["checkedRarityBtn",
         "checkedTypeBtn", "checkedClassBtn", "checkedAwakenBtn",
         "checkedSuperAttackTypeBtn", "checkedEzaBtn", "checkedRecruitBtn"];
     const filtersEachLength = [];
@@ -480,8 +451,7 @@ function applyFilters() {
     sortDirectionAscendingDesencding(char, charContainerId);
 
     //filters used
-    const filtersUsed = filterCategoryUsed(filterCategories, filterCategoriesNames,
-        filterRarity, filterType, filterClass, filterAwaken, filterSuperAttackType,
+    const filtersUsed = filtersUsedFunc(filterRarity, filterType, filterClass, filterAwaken, filterSuperAttackType,
         filterEza, filterRecruit);
 
     //check how many filter are used
@@ -498,6 +468,34 @@ function applyFilters() {
         charListDefault = filtersMultipleUsed(dataChars, filtersEachLengthString, filtersEachLengthStringUsed, filtersUsed);
     }
     charListDefault = cleanArray(charListDefault);
+
+    //------------category filter------------
+    //filterCategory
+    let filterCategoryUsed = [],charListDefaultCategory = [];
+    for (let i = 0; i < filterCategories.length; i++) {
+        if (document.getElementById(filterCategories[i]).classList.contains("checkedCategoryBtn")) {
+            filterCategoryUsed[i] = filterCategoriesNames[i];
+        }
+    }
+    filterCategoryUsed = cleanArray(filterCategoryUsed, undefined);
+
+    if (filterCategoryUsed.length > 0 && document.getElementById("partial-match-category").classList.contains("checkedCategoryBtnInsidePatialFullMatch")) {
+        let filterCharCategoryItemsTemp = [];
+        //find witch character has the most categories and save the number of maximun categories a character can have
+        for (let k = 0; k < charListDefault.length; k++) {
+            filterCharCategoryItemsTemp[k] = charListDefault[k].getAttribute(dataCharCategories).split(",");
+            for (let i = 0; i < filterCategoryUsed.length; i++) {
+                for (j = 0; j < filterCharCategoryItemsTemp[k].length; j++) {
+                    if (filterCharCategoryItemsTemp[k][j] == filterCategoryUsed[i]) {
+                        charListDefaultCategory[k] = charListDefault[k];
+                    }
+                }
+            }
+        }
+        charListDefault = cleanArray(charListDefaultCategory);
+    }
+    
+    //------------category filter------------
 
     //select one char
     for (let i = 0; i < searchOneCharDropdownValue.length; i++) {

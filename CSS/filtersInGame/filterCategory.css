@@ -760,6 +760,7 @@ span#categories-sum-number-selected-id {
     border-radius: 50%;
     background-image: linear-gradient(180deg, #A7A0A0, #A7A0A0, #A7A0A0, #A7A0A0, #A7A0A0, #D0D0CC, #D0D0CC, #D0D0CC, #D0D0CC, #D0D0CC);
     position: relative;
+    cursor: pointer;
 }
 
 .outer-line-design-category-partial-full-match {
