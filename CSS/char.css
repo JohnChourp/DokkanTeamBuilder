@@ -43,6 +43,7 @@
     vertical-align: middle;
     top: 10px;
     overflow: auto;
+    white-space: pre-line;
 }
 
 .char_type_base {

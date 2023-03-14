@@ -855,3 +855,17 @@ function removeCategoriesSelectIdStylesBtn(categoriesSelectId, categoryColor) {
             break;
     }
 }
+
+function filterPartialMatchCategory(){
+    if(!document.getElementById("partial-match-category").classList.contains("checkedCategoryBtnInsidePatialFullMatch")){
+        document.getElementById("partial-match-category").classList.add("checkedCategoryBtnInsidePatialFullMatch");
+        document.getElementById("full-match-category").classList.remove("checkedCategoryBtnInsidePatialFullMatch");
+    }
+}
+
+function filterFullMatchCategory(){
+    if(!document.getElementById("full-match-category").classList.contains("checkedCategoryBtnInsidePatialFullMatch")){
+        document.getElementById("full-match-category").classList.add("checkedCategoryBtnInsidePatialFullMatch");
+        document.getElementById("partial-match-category").classList.remove("checkedCategoryBtnInsidePatialFullMatch");
+    }
+}

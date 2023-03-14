@@ -41,22 +41,13 @@ function sortDirectionAscendingDesencding(char, charContainerId) {
     }
 }
 
-function filterCategoryUsed(
-    filterCategories, filterCategoriesNames, filterRarity,
-    filterType, filterClass, filterAwaken,
+function filtersUsedFunc(
+    filterRarity,filterType, filterClass, filterAwaken,
     filterSuperAttackType, filterEza, filterRecruit
 ) {
-    let filterCategoryUsed = [], filterRarityUsed = [], filterTypeUsed = [],
+    let filterRarityUsed = [], filterTypeUsed = [],
         filterClassUsed = [], filterAwakenUsed = [], filterSuperAttackTypeUsed = [],
         filterEzaUsed = [], filterRecruitUsed = [];
-
-    //filterCategory
-    for (let i = 0; i < filterCategories.length; i++) {
-        if (document.getElementById(filterCategories[i]).classList.contains("checkedCategoryBtn")) {
-            filterCategoryUsed[i] = filterCategoriesNames[i];
-        }
-    }
-    filterCategoryUsed = cleanArray(filterCategoryUsed, undefined);
 
     //filterRarity
     for (let i = 0; i < filterRarity.length; i++) {
@@ -114,7 +105,7 @@ function filterCategoryUsed(
     }
     filterRecruitUsed = cleanArray(filterRecruitUsed, undefined);
 
-    return [filterCategoryUsed, filterRarityUsed, filterTypeUsed,
+    return [filterRarityUsed, filterTypeUsed,
         filterClassUsed, filterAwakenUsed, filterSuperAttackTypeUsed,
         filterEzaUsed, filterRecruitUsed,
     ];
