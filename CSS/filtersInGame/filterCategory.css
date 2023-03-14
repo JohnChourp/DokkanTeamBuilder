@@ -21,6 +21,8 @@
     --bg-color-bottom-half-category-dark-blue: #0a093c;
     --bi-color-text-category: linear-gradient(180deg, #b6b6b6, #948d87);
     --bi-color-text-category-categories: linear-gradient(180deg, #b6b6b6, #948d87);
+    --inner-line-category-partial-match: linear-gradient(180deg, #767776, #767776, #767776, #767776, #767776, #979597, #979597, #979597, #979597, #979597);
+    --inner-line-category-full-match: linear-gradient(180deg, #767776, #767776, #767776, #767776, #767776, #979597, #979597, #979597, #979597, #979597);
 }
 
 #categories-select-id {
@@ -733,4 +735,77 @@ span#categories-sum-number-selected-id {
         -1px 1px 0 rgba(0, 0, 0, 1),
         -1px -1px 0 rgba(0, 0, 0, 1),
         -1px -1px 0 rgba(0, 0, 0, 1);
+}
+
+
+
+
+/* partial-full match */
+.filter-category-container-partial-full-match {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    left:15px;
+    top:10px;
+}
+
+.checkedCategoryBtnInsidePatialFullMatch {
+    --inner-line-category-partial-match: linear-gradient(180deg, #00DE00, #00DE00, #00DE00, #00DE00, #00DE00, #00E200,#00E200,#00E200,#00E200,#00E200);
+    --inner-line-category-full-match: linear-gradient(180deg, #00DE00, #00DE00, #00DE00, #00DE00, #00DE00, #00E200,#00E200,#00E200,#00E200,#00E200);
+}
+
+.outer-line-category-partial-full-match {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-image: linear-gradient(180deg, #A7A0A0, #A7A0A0, #A7A0A0, #A7A0A0, #A7A0A0, #D0D0CC, #D0D0CC, #D0D0CC, #D0D0CC, #D0D0CC);
+    position: relative;
+}
+
+.outer-line-design-category-partial-full-match {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-image: transparent;
+    position: relative;
+    border:#bec2c1 2px solid;
+    top:-47%;
+    left:7%;
+}
+.inner-line-category-partial-match {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-image:var(--inner-line-category-partial-match);
+    border:#000000 1px solid;
+    position: relative;
+    top: 23%;
+    left: 23%;
+}
+
+.inner-line-category-full-match {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-image:var(--inner-line-category-full-match);
+    border:#000000 1px solid;
+    position: relative;
+    top: 23%;
+    left: 23%;
+}
+
+.filter-options-text-category-partial-full-class {
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    position: relative;
+    left:25px;
+    margin-right:40px;
+}
+
+#category-partial-full-match-border{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    border:#E27800 2px solid;
 }
