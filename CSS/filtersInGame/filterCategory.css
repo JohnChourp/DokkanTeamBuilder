@@ -664,10 +664,10 @@
 }
 
 span#categories-sum-number-id {
-    background: linear-gradient(180deg, #8F6E17, #BE9223, #D4A52F, #DDAB38, #D8B532, #FFEC53, #FFEC53, #FFEC53, #F0DD54, #BDA941, #CBA42E, #D7A62C, #CD9927, #C69621, #886317);
+    background: linear-gradient(180deg, rgba(143,110,23,1) 0%, rgba(255,236,83,1) 50%, rgba(143,110,23,1) 100%);
+    background-clip: text;
     -webkit-background-clip: text;
     -moz-background-clip: text;
-    background-clip: text;
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
 }
