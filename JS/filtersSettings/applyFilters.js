@@ -507,14 +507,13 @@ function applyFilters() {
     //----------------------category filter partial match----------------------
     if (filterCategoryUsed.length > 0 && document.getElementById("partial-match-category").classList.contains("checkedCategoryBtnInsidePatialFullMatch")) {
         let filterCharCategoryItemsTemp = [];
-        //find witch character has the most categories and save the number of maximun categories a character can have
+        //find which character has the most categories and save the number of maximum categories a character can have
         for (let k = 0; k < charListDefault.length; k++) {
             filterCharCategoryItemsTemp[k] = charListDefault[k].getAttribute(dataCharCategories).split(",");
             for (let i = 0; i < filterCategoryUsed.length; i++) {
-                for (j = 0; j < filterCharCategoryItemsTemp[k].length; j++) {
-                    if (filterCharCategoryItemsTemp[k][j] == filterCategoryUsed[i]) {
-                        charListDefaultCategory[k] = charListDefault[k];
-                    }
+                if (filterCharCategoryItemsTemp[k].includes(filterCategoryUsed[i])) {
+                    charListDefaultCategory[k] = charListDefault[k];
+                    break;
                 }
             }
         }
