@@ -7,6 +7,7 @@ function filterClass(classFilter) {
             addClass("extreme");
             break;
     }
+    checkFilterClassUsed();
 }
 
 function addClass(classFilter) {

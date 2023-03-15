@@ -16,6 +16,7 @@ function filterType(type) {
             addType("phy");
             break;
     }
+    checkFilterTypeUsed();
 }
 
 function addType(type) {

@@ -40,6 +40,7 @@
     <link href="CSS/filtersCustom/filterRecruit.css" rel="stylesheet" type="text/css" />
     <link href="CSS/filtersCustom/filterReleaseDate.css" rel="stylesheet" type="text/css" />
 
+    <link href="CSS/filtersSettings/applyFiltersBtn.css" rel="stylesheet" type="text/css" />
     <link href="CSS/filtersSettings/filterSideNav.css" rel="stylesheet" type="text/css" />
 
     <link href="CSS/searchSettings/searchOneChar.css" rel="stylesheet" type="text/css" />
@@ -2265,16 +2266,37 @@
     </div>
     <div id="apply-filters-bg-id"></div>
     <div id="apply-filters-id">
-        <p id="apply-filters-text-id" class="filter-options-text-class">
-            Apply Filters
-        </p>
         <div class="filter-class">
-            <button onclick="applyFilters(); closeNav();" id="ok" type="button">
-                OK
-            </button>
-            <button onclick="removeAllFilters();" id="remove-all-id" type="button">
-                Remove All
-            </button>
+            <div onclick="applyFilters(); closeNav();" id="ok" class="filter-apply-container">
+                <div class="filter-apply-container-inside">
+                    <div class="top-half-bg-color-apply"></div>
+                    <div class="bottom-half-bg-color-apply"></div>
+                    <div class="filter-apply-container-inside-outline">
+                        <div class="top-line-apply"></div>
+                        <div class="bottom-line-apply"></div>
+                        <div class="top-left-line-rotated-apply"></div>
+                        <div class="top-right-line-rotated-apply"></div>
+                        <div class="bottom-left-line-rotated-apply"></div>
+                        <div class="bottom-right-line-rotated-apply"></div>
+                    </div>
+                    <div class="filter-apply-container-text">OK</div>
+                </div>
+            </div>
+            <div onclick="removeAllFilters();" id="remove-all-id" class="filter-remove-all-container">
+                <div class="filter-remove-all-container-inside">
+                    <div class="top-half-bg-color-remove-all"></div>
+                    <div class="bottom-half-bg-color-remove-all"></div>
+                    <div class="filter-remove-all-container-inside-outline">
+                        <div class="top-line-remove-all"></div>
+                        <div class="bottom-line-remove-all"></div>
+                        <div class="top-left-line-rotated-remove-all"></div>
+                        <div class="top-right-line-rotated-remove-all"></div>
+                        <div class="bottom-left-line-rotated-remove-all"></div>
+                        <div class="bottom-right-line-rotated-remove-all"></div>
+                    </div>
+                    <div class="filter-remove-all-container-text">Remove All</div>
+                </div>
+            </div>
         </div>
     </div>
 

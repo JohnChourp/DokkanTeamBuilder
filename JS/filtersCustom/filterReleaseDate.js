@@ -71,6 +71,7 @@ function addSearchBeforeEzaDropdownClass(charReleasePos) {
             searchBeforeDropdownValue.item(i).classList.remove("checkedSearchBeforeEzaBtn");
         }
     }
+    document.getElementsByClassName("filter-remove-all-container-inside").item(0).classList.add("checkedRemoveAllBtnInside");
 }
 
 function addAllReleaseDatesAfter() {
@@ -144,6 +145,7 @@ function addSearchAfterEzaDropdownClass(charReleasePos) {
             searchAfterDropdownValue.item(i).classList.remove("checkedSearchAfterEzaBtn");
         }
     }
+    document.getElementsByClassName("filter-remove-all-container-inside").item(0).classList.add("checkedRemoveAllBtnInside");
 }
 
 function searchDropdownBeforeAfterEza(searchType) {

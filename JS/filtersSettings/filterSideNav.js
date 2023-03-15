@@ -2,27 +2,20 @@ function openNav() {
     const applyFiltersBg = document.getElementById("apply-filters-bg-id");
     const applyFilters = document.getElementById("apply-filters-id");
     const leftSidenav = document.getElementById("left-sidenav-id");
-    const applyFiltersText = document.getElementById("apply-filters-text-id");
     const ok = document.getElementById("ok");
     const removeAll = document.getElementById("remove-all-id");
     const mainPage = document.getElementById("main-page-id");
 
     let width = "400px";
 
-    for (let i = 100; i < 416; i++) {
-        if (window.matchMedia(`(max-device-width: ${i}px)`).matches) {
-            width = i - 1 + "px";
-            break;
-        }
-    }
+    
 
     applyFiltersBg.style.width = width;
-    applyFiltersBg.style.left = "-10px";
+    applyFiltersBg.style.left = "-12px";
     applyFilters.style.width = width;
 
     leftSidenav.style.width = width;
 
-    applyFiltersText.style.left = "-10px";
     ok.style.left = "-10px";
     removeAll.style.left = "-10px";
 
@@ -73,7 +66,6 @@ function closeNav() {
     const rightSidenavFilters = document.getElementById("right-sidenav-filters-id");
     const applyFiltersBg = document.getElementById("apply-filters-bg-id");
     const applyFilters = document.getElementById("apply-filters-id");
-    const applyFiltersText = document.getElementById("apply-filters-text-id");
     const ok = document.getElementById("ok");
     const removeAll = document.getElementById("remove-all-id");
     const mainPage = document.getElementById("main-page-id");
@@ -91,10 +83,9 @@ function closeNav() {
 
     applyFiltersBg.style.width = "0";
     applyFilters.style.width = "0";
-    applyFiltersText.style.left = "-70px";
 
     ok.style.left = "-30px";
-    removeAll.style.left = "-120px";
+    removeAll.style.left = "-150px";
 
     mainPage.style.opacity = "1";
     mainPage.style.pointerEvents = "auto";

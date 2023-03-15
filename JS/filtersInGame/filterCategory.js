@@ -125,6 +125,7 @@ function filterCategory(categoryFilter) {
             categoryId.children.item(0).classList.remove("checkedCategoryBtnInsideDarkBlue");
         }
     }
+    checkFilterCategoryUsed();
 }
 
 function removeAllCategory() {
@@ -261,14 +262,9 @@ function openCategories() {
 
     let width = "400px";
 
-    for (let i = 100; i < 416; i++) {
-        if (window.matchMedia(`(max-device-width: ${i}px)`).matches) {
-            width = i - 1 + "px";
-            break;
-        }
-    }
-
+    
     applyCategoriesBgId.style.width = width;
+    applyCategoriesBgId.style.left = "-12px";
     allCategoriesId.style.width = width;
     applyCategoriesId.style.width = width;
     applyCategoriesTextId.style.left = "0";
@@ -277,12 +273,10 @@ function openCategories() {
 
     const applyFiltersBg = document.getElementById("apply-filters-bg-id");
     const applyFilters = document.getElementById("apply-filters-id");
-    const applyFiltersText = document.getElementById("apply-filters-text-id");
     const ok = document.getElementById("ok");
     const removeAll = document.getElementById("remove-all-id");
     applyFiltersBg.style.width = "0";
     applyFilters.style.width = "0";
-    applyFiltersText.style.left = "-70px";
 
     ok.style.left = "-30px";
     removeAll.style.left = "-120px";
@@ -311,23 +305,15 @@ function closeCategories() {
 
     const applyFiltersBg = document.getElementById("apply-filters-bg-id");
     const applyFilters = document.getElementById("apply-filters-id");
-    const applyFiltersText = document.getElementById("apply-filters-text-id");
     const ok = document.getElementById("ok");
     const removeAll = document.getElementById("remove-all-id");
 
     let width = "400px";
 
-    for (let i = 100; i < 416; i++) {
-        if (window.matchMedia(`(max-device-width: ${i}px)`).matches) {
-            width = i - 1 + "px";
-            break;
-        }
-    }
     applyFiltersBg.style.width = width;
-    applyFiltersBg.style.left = "-10px";
+    applyFiltersBg.style.left = "-12px";
     applyFilters.style.width = width;
 
-    applyFiltersText.style.left = "-10px";
     ok.style.left = "-10px";
     removeAll.style.left = "-10px";
     closeCategoriesSelectBtn();
