@@ -102,14 +102,36 @@
         <hr />
         <p class="filter-options-text-big-class">Please Choose Display Order</p>
         <div class="filter-class">
-            <button onclick="toggleDirection('down');" id="filter-direction-down-id"
-                class="filter-direction-class checkedDirectionBtn" type="button">
-                Descending Order
-            </button>
-            <button onclick="toggleDirection('up');" id="filter-direction-up-id" class="filter-direction-class"
-                type="button">
-                Ascending Order
-            </button>
+            <div onclick="toggleDirection('down');" id="filter-direction-down-id" class="filter-descending-container checkedDirectionBtn">
+                <div class="filter-descending-container-inside checkedAscendingDescendingBtnInside">
+                    <div class="top-half-bg-color-descending"></div>
+                    <div class="bottom-half-bg-color-descending"></div>
+                    <div class="filter-descending-container-inside-outline">
+                        <div class="top-line-descending"></div>
+                        <div class="bottom-line-descending"></div>
+                        <div class="top-left-line-rotated-descending"></div>
+                        <div class="top-right-line-rotated-descending"></div>
+                        <div class="bottom-left-line-rotated-descending"></div>
+                        <div class="bottom-right-line-rotated-descending"></div>
+                    </div>
+                    <div class="filter-descending-container-text">Descending Order</div>
+                </div>
+            </div>
+            <div onclick="toggleDirection('up');" id="filter-direction-up-id" class="filter-ascending-container">
+                <div class="filter-ascending-container-inside">
+                    <div class="top-half-bg-color-ascending"></div>
+                    <div class="bottom-half-bg-color-ascending"></div>
+                    <div class="filter-ascending-container-inside-outline">
+                        <div class="top-line-ascending"></div>
+                        <div class="bottom-line-ascending"></div>
+                        <div class="top-left-line-rotated-ascending"></div>
+                        <div class="top-right-line-rotated-ascending"></div>
+                        <div class="bottom-left-line-rotated-ascending"></div>
+                        <div class="bottom-right-line-rotated-ascending"></div>
+                    </div>
+                    <div class="filter-ascending-container-text">Ascending Order</div>
+                </div>
+            </div>
         </div>
         <div class="filter-class">
             <div onclick="filterSort('sort-updated');" id="sort-updated" class="filter-sort-container checkedSortBtn">

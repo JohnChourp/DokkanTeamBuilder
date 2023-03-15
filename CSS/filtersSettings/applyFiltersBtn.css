@@ -34,7 +34,7 @@
 .top-half-bg-color-apply {
     margin-left: 2.5px;
     width: 150px;
-    height: 14px;
+    height: 13px;
     background-color: var(--bg-color-top-half-apply);
 }
 
@@ -60,27 +60,27 @@
 
 .top-line-apply {
     width: 145px;
-    margin-left: 3.75px;
+    margin-left: 4px;
 }
 
 .bottom-line-apply {
-    width: 147.5px;
+    width: 147px;
     margin-top: 28px;
-    margin-left: 3.75px;
+    margin-left: 4px;
 }
 
 .top-left-line-rotated-apply {
     width: 29px;
     transform: rotate(-75deg);
     margin-top: -26px;
-    margin-left: -12px;
+    margin-left: -12.5px;
 }
 
 .bottom-left-line-rotated-apply {
-    width: 12px;
+    width: 13px;
     transform: rotate(50deg);
-    margin-top: 20px;
-    margin-left: -4px;
+    margin-top: 20.5px;
+    margin-left: -4.5px;
 }
 
 .top-right-line-rotated-apply {
