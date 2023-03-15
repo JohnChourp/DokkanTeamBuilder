@@ -2,8 +2,8 @@
     --bg-color-top-half-apply: #F4AF68;
     --bg-color-bottom-half-apply: #E87110;
     --bi-color-text-apply: linear-gradient(180deg, #FFFFFF, #CFC3B5);
-    --bg-color-top-half-remove-all: #848284;
-    --bg-color-bottom-half-remove-all: #848284;
+    --bg-color-top-half-remove-all: #6b6b67;
+    --bg-color-bottom-half-remove-all: #555555;
     --bi-color-text-remove-all: linear-gradient(180deg, #A9A5A9,#A9A5A9,#A9A5A9,#A9A5A9,#A9A5A9, #8C857B, #8C857B, #8C857B, #8C857B, #8C857B);
 }
 
@@ -128,14 +128,14 @@
 }
 
 .filter-remove-all-container-inside:active:hover {
-    --bg-color-top-half-remove-all: #5a585a;
-    --bg-color-bottom-half-remove-all: #5a585a;
+    --bg-color-top-half-remove-all: #41413e;
+    --bg-color-bottom-half-remove-all: #262626;
     --bi-color-text-remove-all: linear-gradient(180deg, #ffffff, #dbcebd);
 }
 
 .filter-remove-all-container-inside:hover {
-    --bg-color-top-half-remove-all: #b3b2b3;
-    --bg-color-bottom-half-remove-all: #b3b2b3;
+    --bg-color-top-half-remove-all: #9b9b97;
+    --bg-color-bottom-half-remove-all: #808080;
     --bi-color-text-remove-all: linear-gradient(180deg, #e6e6e6, #aba5a0);
 }
 

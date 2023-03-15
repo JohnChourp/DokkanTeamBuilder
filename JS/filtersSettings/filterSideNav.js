@@ -32,20 +32,6 @@ function openNavRight() {
 
     let width = "401px";
 
-    for (let i = 100; i < 416; i++) {
-        if (i > 400) {
-            if (window.matchMedia(`(max-device-width: ${i}px)`).matches) {
-                width = i - 1 + "px";
-                break;
-            }
-        } else {
-            if (window.matchMedia(`(max-device-width: ${i}px)`).matches) {
-                width = "401px";
-                break;
-            }
-        }
-    }
-
     rightSidenav.style.width = width;
     closeRightSidenavBtnId.style.left = "10px";
     rightSidenavFilters.style.width = width;

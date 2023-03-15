@@ -244,7 +244,8 @@ function removeAllCategory() {
     let filterCategoryContainerTextDefault = document.getElementsByClassName(
         "filter-category-container-text-default"
     );
-    filterCategoryContainerTextDefault.item(0).innerHTML = "Select Category";
+    filterCategoryContainerTextDefault.item(0).innerHTML = '<span id="categories-sum-number-selected-id">'+"Select Category"+"</span>";
+    document.getElementsByClassName("filter-remove-all-container-inside").item(0).classList.remove("checkedRemoveAllBtnInside");
 }
 
 function openCategories() {
@@ -463,7 +464,7 @@ function closeCategoriesSelectBtn() {
         const filterCategoryContainerTextDefault = document.getElementsByClassName(
             "filter-category-container-text-default"
         );
-        filterCategoryContainerTextDefault.item(0).innerHTML = "Select Category";
+        filterCategoryContainerTextDefault.item(0).innerHTML = '<span id="categories-sum-number-selected-id">'+"Select Category"+"</span>";
     }
 
     if (filterCategoryUsed.length == 1) {
