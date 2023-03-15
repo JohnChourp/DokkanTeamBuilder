@@ -261,7 +261,6 @@ function openCategories() {
     const okCategories = document.getElementById("ok-categories-id");
 
     let width = "400px";
-
     
     applyCategoriesBgId.style.width = width;
     applyCategoriesBgId.style.left = "-12px";
