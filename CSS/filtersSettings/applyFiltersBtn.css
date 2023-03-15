@@ -10,14 +10,12 @@
 /* apply button */
 .filter-apply-container {
     position: relative;
-    width: 100px;
+    width: 170px;
     height: 35px;
-    margin-right: 12.5px;
-    margin-bottom: 5px;
+    margin-left:110px;
 }
 
 .filter-apply-container-inside {
-    margin-top: 5px;
     cursor: pointer;
 }
 
@@ -35,14 +33,14 @@
 
 .top-half-bg-color-apply {
     margin-left: 2.5px;
-    width: 100px;
-    height: 12px;
+    width: 150px;
+    height: 14px;
     background-color: var(--bg-color-top-half-apply);
 }
 
 .bottom-half-bg-color-apply {
-    width: 101px;
-    height: 12px;
+    width: 151px;
+    height: 15px;
     background-color: var(--bg-color-bottom-half-apply);
 }
 
@@ -57,46 +55,46 @@
 }
 
 .filter-apply-container-inside-outline {
-    margin-top: -29px;
+    margin-top: -33px;
 }
 
 .top-line-apply {
-    width: 97.5px;
+    width: 145px;
     margin-left: 3.75px;
 }
 
 .bottom-line-apply {
-    width: 97.5px;
-    margin-top: 24px;
+    width: 147.5px;
+    margin-top: 28px;
     margin-left: 3.75px;
 }
 
 .top-left-line-rotated-apply {
-    width: 27px;
+    width: 29px;
     transform: rotate(-75deg);
-    margin-top: -23px;
-    margin-left: -11px;
+    margin-top: -26px;
+    margin-left: -12px;
 }
 
 .bottom-left-line-rotated-apply {
-    width: 10.5px;
+    width: 12px;
     transform: rotate(50deg);
-    margin-top: 18px;
-    margin-left: -3px;
+    margin-top: 20px;
+    margin-left: -4px;
 }
 
 .top-right-line-rotated-apply {
-    width: 9px;
+    width: 12px;
     transform: rotate(50deg);
     margin-top: -13.5px;
-    margin-left: 97.5px;
+    margin-left: 144.5px;
 }
 
 .bottom-right-line-rotated-apply {
-    width: 27px;
+    width: 29px;
     transform: rotate(100deg);
     margin-top: -13px;
-    margin-left: 88.5px;
+    margin-left: 137px;
 }
 
 .filter-apply-container-text {
@@ -104,8 +102,8 @@
     font-weight: 750;
     font-family: Arial, sans-serif;
     background-image: var(--bi-color-text-apply);
-    margin-left: 5px;
     margin-top: -15px;
+    margin-left: -10px;
     text-align: center;
     -webkit-background-clip: text;
     -moz-background-clip: text;
@@ -118,7 +116,7 @@
 /* remove all button */
 .filter-remove-all-container {
     position: relative;
-    width: 100px;
+    width: 95px;
     height: 35px;
     margin-right: 12.5px;
     margin-bottom: 5px;
@@ -161,13 +159,13 @@
 
 .top-half-bg-color-remove-all {
     margin-left: 2.5px;
-    width: 100px;
+    width: 95px;
     height: 12px;
     background-color: var(--bg-color-top-half-remove-all);
 }
 
 .bottom-half-bg-color-remove-all {
-    width: 101px;
+    width: 96px;
     height: 12px;
     background-color: var(--bg-color-bottom-half-remove-all);
 }
@@ -187,12 +185,12 @@
 }
 
 .top-line-remove-all {
-    width: 97.5px;
+    width: 92.5px;
     margin-left: 3.75px;
 }
 
 .bottom-line-remove-all {
-    width: 97.5px;
+    width: 92.5px;
     margin-top: 24px;
     margin-left: 3.75px;
 }
@@ -215,14 +213,14 @@
     width: 9px;
     transform: rotate(50deg);
     margin-top: -13.5px;
-    margin-left: 97.5px;
+    margin-left: 92.5px;
 }
 
 .bottom-right-line-rotated-remove-all {
     width: 27px;
     transform: rotate(100deg);
     margin-top: -13px;
-    margin-left: 88.5px;
+    margin-left: 83.5px;
 }
 
 .filter-remove-all-container-text {
@@ -320,13 +318,13 @@
 #ok {
     position: relative;
     margin-top:20px;
-    left: -150px;
+    left: -250px;
 }
 
 #remove-all-id {
     position: relative;
-    margin-left: 20px;
+    margin-left:-5px;
     margin-top:20px;
-    left: -150px;
+    left: -250px;
 }
 /* ok remove all filter selection */

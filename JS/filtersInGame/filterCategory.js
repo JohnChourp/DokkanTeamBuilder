@@ -278,8 +278,8 @@ function openCategories() {
     applyFiltersBg.style.width = "0";
     applyFilters.style.width = "0";
 
-    ok.style.left = "-30px";
-    removeAll.style.left = "-120px";
+    ok.style.left = "-250px";
+    removeAll.style.left = "-250px";
 }
 
 function closeCategories() {

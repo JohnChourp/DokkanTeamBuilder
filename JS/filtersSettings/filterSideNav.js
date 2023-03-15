@@ -84,8 +84,8 @@ function closeNav() {
     applyFiltersBg.style.width = "0";
     applyFilters.style.width = "0";
 
-    ok.style.left = "-30px";
-    removeAll.style.left = "-150px";
+    ok.style.left = "-250px";
+    removeAll.style.left = "-250px";
 
     mainPage.style.opacity = "1";
     mainPage.style.pointerEvents = "auto";
