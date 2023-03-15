@@ -246,6 +246,7 @@ function removeAllCategory() {
     );
     filterCategoryContainerTextDefault.item(0).innerHTML = '<span id="categories-sum-number-selected-id">'+"Select Category"+"</span>";
     document.getElementsByClassName("filter-remove-all-container-inside").item(0).classList.remove("checkedRemoveAllBtnInside");
+    document.getElementsByClassName("filter-remove-all-category-container-inside").item(0).classList.remove("checkedRemoveAllCategoryBtnInside");
 }
 
 function openCategories() {
@@ -253,9 +254,6 @@ function openCategories() {
 
     const applyCategoriesBgId = document.getElementById("apply-categories-bg-id");
     const applyCategoriesId = document.getElementById("apply-categories-id");
-    const applyCategoriesTextId = document.getElementById(
-        "apply-categories-text-id"
-    );
     const removeAllCategories = document.getElementById(
         "remove-all-categories-id"
     );
@@ -267,7 +265,6 @@ function openCategories() {
     applyCategoriesBgId.style.left = "-12px";
     allCategoriesId.style.width = width;
     applyCategoriesId.style.width = width;
-    applyCategoriesTextId.style.left = "0";
     removeAllCategories.style.left = "0";
     okCategories.style.left = "0";
 
@@ -287,9 +284,6 @@ function closeCategories() {
 
     const applyCategoriesBgId = document.getElementById("apply-categories-bg-id");
     const applyCategoriesId = document.getElementById("apply-categories-id");
-    const applyCategoriesTextId = document.getElementById(
-        "apply-categories-text-id"
-    );
     const okCategories = document.getElementById("ok-categories-id");
     const removeAllCategories = document.getElementById(
         "remove-all-categories-id"
@@ -299,7 +293,6 @@ function closeCategories() {
     allCategoriesId.style.width = "0";
     applyCategoriesId.style.width = "0";
 
-    applyCategoriesTextId.style.left = "-400px";
     okCategories.style.left = "-300px";
     removeAllCategories.style.left = "-400px";
 

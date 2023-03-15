@@ -45,8 +45,8 @@ function closeNav() {
     const allCategoriesId = document.getElementById("all-categories-id");
     const applyCategoriesId = document.getElementById("apply-categories-id");
     const applyCategoriesBgId = document.getElementById("apply-categories-bg-id");
-    const applyCategoriesTextId = document.getElementById("apply-categories-text-id");
-    const removeAllCategories = document.getElementById("remove-all-categories-id");const leftSidenav = document.getElementById("left-sidenav-id");
+    const removeAllCategories = document.getElementById("remove-all-categories-id");
+    const leftSidenav = document.getElementById("left-sidenav-id");
     const rightSidenav = document.getElementById("right-sidenav-id");
     const closeRightSidenavBtnId = document.getElementById("close-right-sidenav-btn-id");
     const rightSidenavFilters = document.getElementById("right-sidenav-filters-id");
@@ -54,12 +54,13 @@ function closeNav() {
     const applyFilters = document.getElementById("apply-filters-id");
     const ok = document.getElementById("ok");
     const removeAll = document.getElementById("remove-all-id");
+    const okCategoriesId = document.getElementById("ok-categories-id");
+    const removeAllCategoriesId = document.getElementById("remove-all-categories-id");
     const mainPage = document.getElementById("main-page-id");
 
     allCategoriesId.style.width = "0";
     applyCategoriesId.style.width = "0";
     applyCategoriesBgId.style.width = "0";
-    applyCategoriesTextId.style.left = "-400px";
     removeAllCategories.style.left = "-400px";
     leftSidenav.style.width = "0";
 
@@ -72,6 +73,8 @@ function closeNav() {
 
     ok.style.left = "-250px";
     removeAll.style.left = "-250px";
+    okCategoriesId.style.left = "-250px";
+    removeAllCategoriesId.style.left = "-250px";
 
     mainPage.style.opacity = "1";
     mainPage.style.pointerEvents = "auto";

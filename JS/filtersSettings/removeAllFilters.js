@@ -400,8 +400,10 @@ function checkFilterCategoryUsed() {
     }, []);
 
     if (filterIds.length > 0) {
+        document.getElementsByClassName("filter-remove-all-category-container-inside").item(0).classList.add("checkedRemoveAllCategoryBtnInside");
         document.getElementsByClassName("filter-remove-all-container-inside").item(0).classList.add("checkedRemoveAllBtnInside");
     } else {
+        document.getElementsByClassName("filter-remove-all-category-container-inside").item(0).classList.remove("checkedRemoveAllCategoryBtnInside");
         document.getElementsByClassName("filter-remove-all-container-inside").item(0).classList.remove("checkedRemoveAllBtnInside");
     }
 }
