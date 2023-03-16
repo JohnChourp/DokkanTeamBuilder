@@ -121,13 +121,22 @@
     flex-direction: row;
 }
 
-
-
-
+.filter-ascending-container,
+.filter-descending-container,
+.filter-sort-container,
 .filter-type-container,
 .filter-rarity-container,
 .filter-class-container,
-.filter-category-container {
+.filter-category-container,
+.filter-category-container-categories,
+.super-attack-type-class,
+#full-match-category,
+#partial-match-category,
+#close-left-sidenav-btn-id,
+#ok,
+#remove-all-id,
+#ok-categories-id,
+#remove-all-categories-id {
     -webkit-tap-highlight-color: transparent;
     -tap-highlight-color: transparent;
 }
