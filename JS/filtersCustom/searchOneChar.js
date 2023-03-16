@@ -46,6 +46,7 @@ function addSearchOneCharPlaceHolder(text, searchOneCharMenuId, searchOneCharDro
         }
     }
     searchOneCharDropdownValue.item(charNamePos).classList.add("checkedSearchOneCharBtn");
+    document.getElementsByClassName("filter-remove-all-container-inside").item(0).classList.add("checkedRemoveAllBtnInside");
 }
 
 function addSearchOneCharDropdownClass(charNamePos, charListDefault) {

@@ -54,6 +54,20 @@
     --bi-color-text-rarity: linear-gradient(180deg, #ffffff, #dbcebd);
 }
 
+.filter-rarity-container-inside,
+.checkedRarityBtnInside,
+.disableRarityBtnInside {
+    text-shadow: 0px 0px 0 rgb(255, 255, 255),
+        1px 1px 0 rgba(0, 0, 0, 1),
+        1px 1px 0 rgba(0, 0, 0, 1),
+        1px -1px 0 rgba(0, 0, 0, 1),
+        1px -1px 0 rgba(0, 0, 0, 1),
+        -1px 1px 0 rgba(0, 0, 0, 1),
+        -1px 1px 0 rgba(0, 0, 0, 1),
+        -1px -1px 0 rgba(0, 0, 0, 1),
+        -1px -1px 0 rgba(0, 0, 0, 1);
+}
+
 .top-half-bg-color-rarity {
     margin-left: 2.5px;
     width: 50px;

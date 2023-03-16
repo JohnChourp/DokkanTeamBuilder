@@ -7,7 +7,7 @@
     left: 0;
     background-color: #111;
     overflow-x: hidden;
-    transition: 0.5s;
+    transition: 0.2s;
 }
 
 #right-sidenav-id {
@@ -19,7 +19,7 @@
     right: 0;
     background-color: #111;
     overflow-x: hidden;
-    transition: 0.5s;
+    transition: 0.2s;
 }
 
 #close-left-sidenav-btn-id {
@@ -42,7 +42,7 @@
     text-decoration: none;
     color: #818181;
     display: block;
-    transition: 0.3s;
+    transition: 0.2s;
 }
 
 #left-sidenav-id a:hover,
@@ -59,7 +59,7 @@
     right: 0;
     background-color: #111;
     overflow-x: hidden;
-    transition: 0.5s;
+    transition: 0.2s;
 }
 
 /*filter select button*/
@@ -72,7 +72,7 @@
     font-size: 20px;
     padding: 10px;
     width: 200px;
-    transition: all 0.5s;
+    transition: all 0.2s;
     cursor: pointer;
 }
 
@@ -80,7 +80,7 @@
     cursor: pointer;
     display: inline-block;
     position: relative;
-    transition: 0.5s;
+    transition: 0.2s;
 }
 
 #filter-select-id span:after {
@@ -89,7 +89,7 @@
     opacity: 0;
     top: 0;
     left: -20px;
-    transition: 0.5s;
+    transition: 0.2s;
 }
 
 #filter-select-id:hover span {
@@ -121,62 +121,22 @@
     flex-direction: row;
 }
 
-#apply-filters-bg-id {
-    z-index: 1;
-    width: 0;
-    height: 110px;
-    position: fixed;
-    bottom: 0;
-    background-color: #494141;
-    opacity: 0.8;
-    transition: 0.5s;
-}
-
-#apply-filters-id {
-    z-index: 1;
-    width: 0;
-    height: 110px;
-    position: fixed;
-    bottom: 0;
-    display: flex;
-    flex-direction: column;
-    transition: 0.5s;
-}
-
-#apply-filters-text-id {
-    position: relative;
-    left: -150px;
-}
-
-#ok {
-    cursor: pointer;
-    height: 40px;
-    width: 50px;
-    font-size: 18px;
-    background-color: #df8611;
-    font-weight: 800;
-    color: aliceblue;
-    position: relative;
-    left: -30px;
-}
-
-#remove-all-id {
-    cursor: pointer;
-    height: 40px;
-    width: 130px;
-    font-size: 18px;
-    background-color: #df8611;
-    font-weight: 800;
-    color: aliceblue;
-    position: relative;
-    margin-left: 20px;
-    left: -120px;
-}
-
+.filter-ascending-container,
+.filter-descending-container,
+.filter-sort-container,
 .filter-type-container,
 .filter-rarity-container,
 .filter-class-container,
-.filter-category-container {
+.filter-category-container,
+.filter-category-container-categories,
+.super-attack-type-class,
+#full-match-category,
+#partial-match-category,
+#close-left-sidenav-btn-id,
+#ok,
+#remove-all-id,
+#ok-categories-id,
+#remove-all-categories-id {
     -webkit-tap-highlight-color: transparent;
     -tap-highlight-color: transparent;
 }

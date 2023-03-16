@@ -11,14 +11,17 @@ function filterAwakened(id) {
 
 function filterNotDokkanAwakened() {
     filterAwakened("not-dokkan-awakened");
+    checkFilterAwakenUsed();
 }
 
 function filterPreDokkanAwakened() {
     filterAwakened("pre-dokkan-awakened");
+    checkFilterAwakenUsed();
 }
 
 function filterDokkanAwakened() {
     filterAwakened("dokkan-awakened");
+    checkFilterAwakenUsed();
 }
 
 function removeAllDokkanAwaken() {

@@ -14,18 +14,22 @@ function filterSuperAttackType(id) {
 
 function filterSuperAttackTypeKiBlast() {
     filterSuperAttackType("ki-blast");
+    checkFilterSuperAttackTypeUsed();
 }
 
 function filterSuperAttackTypeUnarmed() {
     filterSuperAttackType("unarmed");
+    checkFilterSuperAttackTypeUsed();
 }
 
 function filterSuperAttackTypePhysical() {
     filterSuperAttackType("physical");
+    checkFilterSuperAttackTypeUsed();
 }
 
 function filterSuperAttackTypeOther() {
     filterSuperAttackType("other");
+    checkFilterSuperAttackTypeUsed();
 }
 
 function removeAllSuperAttackType() {

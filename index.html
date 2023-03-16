@@ -40,6 +40,8 @@
     <link href="CSS/filtersCustom/filterRecruit.css" rel="stylesheet" type="text/css" />
     <link href="CSS/filtersCustom/filterReleaseDate.css" rel="stylesheet" type="text/css" />
 
+    <link href="CSS/filtersSettings/applyFiltersBtn.css" rel="stylesheet" type="text/css" />
+    <link href="CSS/filtersSettings/categoryFiltersBtn.css" rel="stylesheet" type="text/css" />
     <link href="CSS/filtersSettings/filterSideNav.css" rel="stylesheet" type="text/css" />
 
     <link href="CSS/searchSettings/searchOneChar.css" rel="stylesheet" type="text/css" />
@@ -100,14 +102,36 @@
         <hr />
         <p class="filter-options-text-big-class">Please Choose Display Order</p>
         <div class="filter-class">
-            <button onclick="toggleDirection('down');" id="filter-direction-down-id"
-                class="filter-direction-class checkedDirectionBtn" type="button">
-                Descending Order
-            </button>
-            <button onclick="toggleDirection('up');" id="filter-direction-up-id" class="filter-direction-class"
-                type="button">
-                Ascending Order
-            </button>
+            <div onclick="toggleDirection('down');" id="filter-direction-down-id" class="filter-descending-container checkedDirectionBtn">
+                <div class="filter-descending-container-inside checkedDescendingBtnInside">
+                    <div class="top-half-bg-color-descending"></div>
+                    <div class="bottom-half-bg-color-descending"></div>
+                    <div class="filter-descending-container-inside-outline">
+                        <div class="top-line-descending"></div>
+                        <div class="bottom-line-descending"></div>
+                        <div class="top-left-line-rotated-descending"></div>
+                        <div class="top-right-line-rotated-descending"></div>
+                        <div class="bottom-left-line-rotated-descending"></div>
+                        <div class="bottom-right-line-rotated-descending"></div>
+                    </div>
+                    <div class="filter-descending-container-text">Descending Order</div>
+                </div>
+            </div>
+            <div onclick="toggleDirection('up');" id="filter-direction-up-id" class="filter-ascending-container">
+                <div class="filter-ascending-container-inside">
+                    <div class="top-half-bg-color-ascending"></div>
+                    <div class="bottom-half-bg-color-ascending"></div>
+                    <div class="filter-ascending-container-inside-outline">
+                        <div class="top-line-ascending"></div>
+                        <div class="bottom-line-ascending"></div>
+                        <div class="top-left-line-rotated-ascending"></div>
+                        <div class="top-right-line-rotated-ascending"></div>
+                        <div class="bottom-left-line-rotated-ascending"></div>
+                        <div class="bottom-right-line-rotated-ascending"></div>
+                    </div>
+                    <div class="filter-ascending-container-text">Ascending Order</div>
+                </div>
+            </div>
         </div>
         <div class="filter-class">
             <div onclick="filterSort('sort-updated');" id="sort-updated" class="filter-sort-container checkedSortBtn">
@@ -314,12 +338,13 @@
                         <div class="bottom-right-line-rotated-category"></div>
                     </div>
                     <div class="filter-category-container-text-default">
-                        Select Category
+                        <span id="categories-sum-number-selected-id">Select Category</span>
                     </div>
                 </div>
             </div>
         </div>
         <div id="all-categories-id">
+            <a href="#" id="close-left-sidenav-btn-id" onclick="closeCategories();">&times;</a>
             <p class="filter-options-text-big-class">Category Selection</p>
             <div class="filter-class">
                 <div id="category-partial-full-match-border">
@@ -2251,33 +2276,74 @@
     </div>
     <div id="apply-categories-bg-id"></div>
     <div id="apply-categories-id">
-        <p id="apply-categories-text-id" class="filter-options-text-class">
-            Apply Categories
-        </p>
         <div class="filter-class">
-            <button onclick="closeCategories();" id="ok-categories-id" type="button">
-                OK
-            </button>
-            <button onclick="removeAllCategory();" id="remove-all-categories-id" type="button">
-                Remove All
-            </button>
+            <div onclick="closeCategories();" id="ok-categories-id" class="filter-apply-category-container">
+                <div class="filter-apply-category-container-inside">
+                    <div class="top-half-bg-color-apply-category"></div>
+                    <div class="bottom-half-bg-color-apply-category"></div>
+                    <div class="filter-apply-category-container-inside-outline">
+                        <div class="top-line-apply-category"></div>
+                        <div class="bottom-line-apply-category"></div>
+                        <div class="top-left-line-rotated-apply-category"></div>
+                        <div class="top-right-line-rotated-apply-category"></div>
+                        <div class="bottom-left-line-rotated-apply-category"></div>
+                        <div class="bottom-right-line-rotated-apply-category"></div>
+                    </div>
+                    <div class="filter-apply-category-container-text">OK</div>
+                </div>
+            </div>
+            <div onclick="removeAllCategory();" id="remove-all-categories-id" class="filter-remove-all-category-container">
+                <div class="filter-remove-all-category-container-inside">
+                    <div class="top-half-bg-color-remove-all-category"></div>
+                    <div class="bottom-half-bg-color-remove-all-category"></div>
+                    <div class="filter-remove-all-category-container-inside-outline">
+                        <div class="top-line-remove-all-category"></div>
+                        <div class="bottom-line-remove-all-category"></div>
+                        <div class="top-left-line-rotated-remove-all-category"></div>
+                        <div class="top-right-line-rotated-remove-all-category"></div>
+                        <div class="bottom-left-line-rotated-remove-all-category"></div>
+                        <div class="bottom-right-line-rotated-remove-all-category"></div>
+                    </div>
+                    <div class="filter-remove-all-category-container-text">Cancel</div>
+                </div>
+            </div>
         </div>
     </div>
     <div id="apply-filters-bg-id"></div>
     <div id="apply-filters-id">
-        <p id="apply-filters-text-id" class="filter-options-text-class">
-            Apply Filters
-        </p>
         <div class="filter-class">
-            <button onclick="applyFilters(); closeNav();" id="ok" type="button">
-                OK
-            </button>
-            <button onclick="removeAllFilters();" id="remove-all-id" type="button">
-                Remove All
-            </button>
+            <div onclick="applyFilters(); closeNav();" id="ok" class="filter-apply-container">
+                <div class="filter-apply-container-inside">
+                    <div class="top-half-bg-color-apply"></div>
+                    <div class="bottom-half-bg-color-apply"></div>
+                    <div class="filter-apply-container-inside-outline">
+                        <div class="top-line-apply"></div>
+                        <div class="bottom-line-apply"></div>
+                        <div class="top-left-line-rotated-apply"></div>
+                        <div class="top-right-line-rotated-apply"></div>
+                        <div class="bottom-left-line-rotated-apply"></div>
+                        <div class="bottom-right-line-rotated-apply"></div>
+                    </div>
+                    <div class="filter-apply-container-text">OK</div>
+                </div>
+            </div>
+            <div onclick="removeAllFilters();" id="remove-all-id" class="filter-remove-all-container">
+                <div class="filter-remove-all-container-inside">
+                    <div class="top-half-bg-color-remove-all"></div>
+                    <div class="bottom-half-bg-color-remove-all"></div>
+                    <div class="filter-remove-all-container-inside-outline">
+                        <div class="top-line-remove-all"></div>
+                        <div class="bottom-line-remove-all"></div>
+                        <div class="top-left-line-rotated-remove-all"></div>
+                        <div class="top-right-line-rotated-remove-all"></div>
+                        <div class="bottom-left-line-rotated-remove-all"></div>
+                        <div class="bottom-right-line-rotated-remove-all"></div>
+                    </div>
+                    <div class="filter-remove-all-container-text">Remove All</div>
+                </div>
+            </div>
         </div>
     </div>
-
     <div id="right-sidenav-id">
         <div id="right-sidenav-filters-id">
             <a href="#" id="close-right-sidenav-btn-id" onclick="closeNav();">&times;</a>

@@ -19,6 +19,7 @@ function filterRarity(rarity) {
             filterRarityEzaDependable("lr");
             break;
     }
+    checkFilterRarityUsed();
 }
 
 function filterRarityEzaDependable(rarity) {

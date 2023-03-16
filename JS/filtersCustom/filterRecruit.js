@@ -14,10 +14,12 @@ function filterRecruit(id) {
 
 function filterRecruitSummonable() {
     filterRecruit("summonable");
+    checkFilterRecruitUsed();
 }
 
 function filterRecruitFreeToPlay() {
     filterRecruit("free-to-play");
+    checkFilterRecruitUsed();
 }
 
 function removeAllRecruit() {

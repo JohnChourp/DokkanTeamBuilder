@@ -4,15 +4,15 @@ function toggleDirection(direction) {
 
     if (direction === "down") {
         buttonDescending.classList.add("checkedDirectionBtn");
-        buttonDescending.style.backgroundColor = "#33ccff";
+        buttonDescending.children.item(0).classList.add("checkedDescendingBtnInside");
 
         buttonAscending.classList.remove("checkedDirectionBtn");
-        buttonAscending.style.backgroundColor = "white";
+        buttonAscending.children.item(0).classList.remove("checkedAscendingBtnInside");
     } else if (direction === "up") {
         buttonDescending.classList.remove("checkedDirectionBtn");
-        buttonDescending.style.backgroundColor = "white";
+        buttonDescending.children.item(0).classList.remove("checkedDescendingBtnInside");
 
         buttonAscending.classList.add("checkedDirectionBtn");
-        buttonAscending.style.backgroundColor = "#33ccff";
+        buttonAscending.children.item(0).classList.add("checkedAscendingBtnInside");
     }
 }

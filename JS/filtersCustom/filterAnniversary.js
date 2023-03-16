@@ -10,6 +10,7 @@ function filterAnniversary(year) {
         btn.classList.remove("checkedAnniversaryBtn");
         btn.style.backgroundColor = "#ddd";
     }
+    checkFilterAnniversaryUsed();
 }
 
 function removeAllAnniversary() {

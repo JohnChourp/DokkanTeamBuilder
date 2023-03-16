@@ -125,6 +125,7 @@ function filterCategory(categoryFilter) {
             categoryId.children.item(0).classList.remove("checkedCategoryBtnInsideDarkBlue");
         }
     }
+    checkFilterCategoryUsed();
 }
 
 function removeAllCategory() {
@@ -243,7 +244,9 @@ function removeAllCategory() {
     let filterCategoryContainerTextDefault = document.getElementsByClassName(
         "filter-category-container-text-default"
     );
-    filterCategoryContainerTextDefault.item(0).innerHTML = "Select Category";
+    filterCategoryContainerTextDefault.item(0).innerHTML = '<span id="categories-sum-number-selected-id">' + "Select Category" + "</span>";
+    document.getElementsByClassName("filter-remove-all-category-container-inside").item(0).classList.remove("checkedRemoveAllCategoryBtnInside");
+    checkFiltersUsed();
 }
 
 function openCategories() {
@@ -251,9 +254,6 @@ function openCategories() {
 
     const applyCategoriesBgId = document.getElementById("apply-categories-bg-id");
     const applyCategoriesId = document.getElementById("apply-categories-id");
-    const applyCategoriesTextId = document.getElementById(
-        "apply-categories-text-id"
-    );
     const removeAllCategories = document.getElementById(
         "remove-all-categories-id"
     );
@@ -261,31 +261,22 @@ function openCategories() {
 
     let width = "400px";
 
-    for (let i = 100; i < 416; i++) {
-        if (window.matchMedia(`(max-device-width: ${i}px)`).matches) {
-            width = i - 1 + "px";
-            break;
-        }
-    }
-
     applyCategoriesBgId.style.width = width;
+    applyCategoriesBgId.style.left = "-12px";
     allCategoriesId.style.width = width;
     applyCategoriesId.style.width = width;
-    applyCategoriesTextId.style.left = "0";
     removeAllCategories.style.left = "0";
     okCategories.style.left = "0";
 
     const applyFiltersBg = document.getElementById("apply-filters-bg-id");
     const applyFilters = document.getElementById("apply-filters-id");
-    const applyFiltersText = document.getElementById("apply-filters-text-id");
     const ok = document.getElementById("ok");
     const removeAll = document.getElementById("remove-all-id");
     applyFiltersBg.style.width = "0";
     applyFilters.style.width = "0";
-    applyFiltersText.style.left = "-70px";
 
-    ok.style.left = "-30px";
-    removeAll.style.left = "-120px";
+    ok.style.left = "-250px";
+    removeAll.style.left = "-250px";
 }
 
 function closeCategories() {
@@ -293,9 +284,6 @@ function closeCategories() {
 
     const applyCategoriesBgId = document.getElementById("apply-categories-bg-id");
     const applyCategoriesId = document.getElementById("apply-categories-id");
-    const applyCategoriesTextId = document.getElementById(
-        "apply-categories-text-id"
-    );
     const okCategories = document.getElementById("ok-categories-id");
     const removeAllCategories = document.getElementById(
         "remove-all-categories-id"
@@ -305,29 +293,20 @@ function closeCategories() {
     allCategoriesId.style.width = "0";
     applyCategoriesId.style.width = "0";
 
-    applyCategoriesTextId.style.left = "-400px";
     okCategories.style.left = "-300px";
     removeAllCategories.style.left = "-400px";
 
     const applyFiltersBg = document.getElementById("apply-filters-bg-id");
     const applyFilters = document.getElementById("apply-filters-id");
-    const applyFiltersText = document.getElementById("apply-filters-text-id");
     const ok = document.getElementById("ok");
     const removeAll = document.getElementById("remove-all-id");
 
     let width = "400px";
 
-    for (let i = 100; i < 416; i++) {
-        if (window.matchMedia(`(max-device-width: ${i}px)`).matches) {
-            width = i - 1 + "px";
-            break;
-        }
-    }
     applyFiltersBg.style.width = width;
-    applyFiltersBg.style.left = "-10px";
+    applyFiltersBg.style.left = "-12px";
     applyFilters.style.width = width;
 
-    applyFiltersText.style.left = "-10px";
     ok.style.left = "-10px";
     removeAll.style.left = "-10px";
     closeCategoriesSelectBtn();
@@ -478,7 +457,7 @@ function closeCategoriesSelectBtn() {
         const filterCategoryContainerTextDefault = document.getElementsByClassName(
             "filter-category-container-text-default"
         );
-        filterCategoryContainerTextDefault.item(0).innerHTML = "Select Category";
+        filterCategoryContainerTextDefault.item(0).innerHTML = '<span id="categories-sum-number-selected-id">' + "Select Category" + "</span>";
     }
 
     if (filterCategoryUsed.length == 1) {
@@ -612,34 +591,60 @@ function closeCategoriesSelectBtn() {
     }
 
     if (filterCategoryUsed.length > 1) {
-        if (filterCategoryUsedPos > -1 && filterCategoryUsedPos < 8) {
-            removeCategoriesSelectIdStylesBtn(categoriesSelectId, "orange");
-        }
-        if (filterCategoryUsedPos > 7 && filterCategoryUsedPos < 19) {
-            removeCategoriesSelectIdStylesBtn(categoriesSelectId, "green");
-        }
-        if (filterCategoryUsedPos > 18 && filterCategoryUsedPos < 30) {
-            removeCategoriesSelectIdStylesBtn(categoriesSelectId, "yellow");
-        }
-        if (filterCategoryUsedPos > 29 && filterCategoryUsedPos < 41) {
-            removeCategoriesSelectIdStylesBtn(categoriesSelectId, "cyan");
-        }
-        if (filterCategoryUsedPos > 40 && filterCategoryUsedPos < 48) {
-            removeCategoriesSelectIdStylesBtn(categoriesSelectId, "blue");
-        }
-        if (filterCategoryUsedPos > 47 && filterCategoryUsedPos < 60) {
-            removeCategoriesSelectIdStylesBtn(categoriesSelectId, "purple");
-        }
-        if (filterCategoryUsedPos > 59 && filterCategoryUsedPos < 72) {
-            removeCategoriesSelectIdStylesBtn(categoriesSelectId, "roze");
-        }
-        if (filterCategoryUsedPos > 71 && filterCategoryUsedPos < 87) {
-            removeCategoriesSelectIdStylesBtn(categoriesSelectId, "dark-green");
-        }
-        if (filterCategoryUsedPos > 86 && filterCategoryUsedPos < 89) {
-            removeCategoriesSelectIdStylesBtn(categoriesSelectId, "dark-blue");
-        }
+        //remove each color
+        categoriesSelectId.children.item(0).classList.remove("checkedCategoryBtnInsideOrange");
+        categoriesSelectId.children.item(0).classList.remove("checkedCategoryBtnInsideYellow");
+        categoriesSelectId.children.item(0).classList.remove("checkedCategoryBtnInsideCyan");
+        categoriesSelectId.children.item(0).classList.remove("checkedCategoryBtnInsideBlue");
+        categoriesSelectId.children.item(0).classList.remove("checkedCategoryBtnInsidePurple");
+        categoriesSelectId.children.item(0).classList.remove("checkedCategoryBtnInsideRoze");
+        categoriesSelectId.children.item(0).classList.remove("checkedCategoryBtnInsideDarkGreen");
+        categoriesSelectId.children.item(0).classList.remove("checkedCategoryBtnInsideDarkBlue");
+        categoriesSelectId.children.item(0).children.item(3).classList.remove("filter-category-container-text-categories");
 
+        categoriesSelectId.children.item(0).classList.remove("filter-category-container-inside-orange");
+        categoriesSelectId.children.item(0).children.item(0).classList.remove("top-half-bg-color-category-orange");
+        categoriesSelectId.children.item(0).children.item(1).classList.remove("bottom-half-bg-color-category-orange");
+
+        categoriesSelectId.children.item(0).classList.remove("filter-category-container-inside-yellow");
+        categoriesSelectId.children.item(0).children.item(0).classList.remove("top-half-bg-color-category-yellow");
+        categoriesSelectId.children.item(0).children.item(1).classList.remove("bottom-half-bg-color-category-yellow");
+
+        categoriesSelectId.children.item(0).classList.remove("filter-category-container-inside-cyan");
+        categoriesSelectId.children.item(0).children.item(0).classList.remove("top-half-bg-color-category-cyan");
+        categoriesSelectId.children.item(0).children.item(1).classList.remove("bottom-half-bg-color-category-cyan");
+
+        categoriesSelectId.children.item(0).classList.remove("filter-category-container-inside-blue");
+        categoriesSelectId.children.item(0).children.item(0).classList.remove("top-half-bg-color-category-blue");
+        categoriesSelectId.children.item(0).children.item(1).classList.remove("bottom-half-bg-color-category-blue");
+
+        categoriesSelectId.children.item(0).classList.remove("filter-category-container-inside-purple");
+        categoriesSelectId.children.item(0).children.item(0).classList.remove("top-half-bg-color-category-purple");
+        categoriesSelectId.children.item(0).children.item(1).classList.remove("bottom-half-bg-color-category-purple");
+
+        categoriesSelectId.children.item(0).classList.remove("filter-category-container-inside-roze");
+        categoriesSelectId.children.item(0).children.item(0).classList.remove("top-half-bg-color-category-roze");
+        categoriesSelectId.children.item(0).children.item(1).classList.remove("bottom-half-bg-color-category-roze");
+
+        categoriesSelectId.children.item(0).classList.remove("filter-category-container-inside-dark-green");
+        categoriesSelectId.children.item(0).children.item(0).classList.remove("top-half-bg-color-category-dark-green");
+        categoriesSelectId.children.item(0).children.item(1).classList.remove("bottom-half-bg-color-category-dark-green");
+
+        categoriesSelectId.children.item(0).classList.remove("filter-category-container-inside-dark-blue");
+        categoriesSelectId.children.item(0).children.item(0).classList.remove("top-half-bg-color-category-dark-blue");
+        categoriesSelectId.children.item(0).children.item(1).classList.remove("bottom-half-bg-color-category-dark-blue");
+
+        //default
+        categoriesSelectId.children.item(0).classList.add("filter-category-container-inside");
+        categoriesSelectId.children.item(0).children.item(0).classList.add("top-half-bg-color-category");
+        categoriesSelectId.children.item(0).children.item(0).classList.add("top-half-bg-color-category");
+        categoriesSelectId.children.item(0).children.item(1).classList.add("bottom-half-bg-color-category");
+        categoriesSelectId.children.item(0).children.item(3).classList.add("filter-category-container-text-default");
+        
+        categoriesSelectId.children.item(0).classList.remove("checkedCategoryBtnInsideGreen");
+        categoriesSelectId.children.item(0).classList.add("filter-category-container-inside-green");
+        categoriesSelectId.children.item(0).children.item(0).classList.add("top-half-bg-color-category-green");
+        categoriesSelectId.children.item(0).children.item(1).classList.add("bottom-half-bg-color-category-green");
         const filterCategoryContainerTextDefault = document.getElementsByClassName(
             "filter-category-container-text-default"
         );
@@ -856,15 +861,15 @@ function removeCategoriesSelectIdStylesBtn(categoriesSelectId, categoryColor) {
     }
 }
 
-function filterPartialMatchCategory(){
-    if(!document.getElementById("partial-match-category").classList.contains("checkedCategoryBtnInsidePatialFullMatch")){
+function filterPartialMatchCategory() {
+    if (!document.getElementById("partial-match-category").classList.contains("checkedCategoryBtnInsidePatialFullMatch")) {
         document.getElementById("partial-match-category").classList.add("checkedCategoryBtnInsidePatialFullMatch");
         document.getElementById("full-match-category").classList.remove("checkedCategoryBtnInsidePatialFullMatch");
     }
 }
 
-function filterFullMatchCategory(){
-    if(!document.getElementById("full-match-category").classList.contains("checkedCategoryBtnInsidePatialFullMatch")){
+function filterFullMatchCategory() {
+    if (!document.getElementById("full-match-category").classList.contains("checkedCategoryBtnInsidePatialFullMatch")) {
         document.getElementById("full-match-category").classList.add("checkedCategoryBtnInsidePatialFullMatch");
         document.getElementById("partial-match-category").classList.remove("checkedCategoryBtnInsidePatialFullMatch");
     }

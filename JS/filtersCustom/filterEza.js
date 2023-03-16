@@ -51,11 +51,13 @@ function addEza(ezaFilter) {
             el.children.item(0).classList.add(disableRarityBtnInside);
         }
     }
+    checkFilterEzaUsed();
 }
 
 function addNoEza(ezaNoFilter) {
     const ezaNoFilterEl = document.getElementById(ezaNoFilter);
     ezaNoFilterEl.classList.toggle("checkedEzaBtn");
+    checkFilterEzaUsed();
 }
 
 function removeAllEza() {

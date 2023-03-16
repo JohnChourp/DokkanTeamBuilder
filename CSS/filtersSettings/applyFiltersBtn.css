@@ -1,0 +1,329 @@
+:root {
+    --bg-color-top-half-apply: #F4AF68;
+    --bg-color-bottom-half-apply: #E87110;
+    --bi-color-text-apply: linear-gradient(180deg, #FFFFFF, #CFC3B5);
+    --bg-color-top-half-remove-all: #6b6b67;
+    --bg-color-bottom-half-remove-all: #555555;
+    --bi-color-text-remove-all: linear-gradient(180deg, #A9A5A9,#A9A5A9,#A9A5A9,#A9A5A9,#A9A5A9, #8C857B, #8C857B, #8C857B, #8C857B, #8C857B);
+}
+
+/* apply button */
+.filter-apply-container {
+    position: relative;
+    width: 170px;
+    height: 35px;
+    margin-left:110px;
+}
+
+.filter-apply-container-inside {
+    cursor: pointer;
+}
+
+.filter-apply-container-inside:active:hover {
+    --bg-color-top-half-apply:  #ed8012;
+    --bg-color-bottom-half-apply: #8f460a;
+    --bi-color-text-apply: linear-gradient(180deg, #ffffff, #dbcebd);
+}
+
+.filter-apply-container-inside:hover {
+    --bg-color-top-half-apply: #fad9b8;
+    --bg-color-bottom-half-apply: #f39e58;
+    --bi-color-text-apply: linear-gradient(180deg, #e6e6e6, #aba5a0);
+}
+
+.top-half-bg-color-apply {
+    margin-left: 2.5px;
+    width: 150px;
+    height: 13px;
+    background-color: var(--bg-color-top-half-apply);
+}
+
+.bottom-half-bg-color-apply {
+    width: 151px;
+    height: 15px;
+    background-color: var(--bg-color-bottom-half-apply);
+}
+
+.top-line-apply,
+.top-left-line-rotated-apply,
+.top-right-line-rotated-apply,
+.bottom-line-apply,
+.bottom-left-line-rotated-apply,
+.bottom-right-line-rotated-apply {
+    height: 5px;
+    background-color: #ced1d0;
+}
+
+.filter-apply-container-inside-outline {
+    margin-top: -33px;
+}
+
+.top-line-apply {
+    width: 145px;
+    margin-left: 4px;
+}
+
+.bottom-line-apply {
+    width: 147px;
+    margin-top: 28px;
+    margin-left: 4px;
+}
+
+.top-left-line-rotated-apply {
+    width: 29px;
+    transform: rotate(-75deg);
+    margin-top: -26px;
+    margin-left: -12.5px;
+}
+
+.bottom-left-line-rotated-apply {
+    width: 13px;
+    transform: rotate(50deg);
+    margin-top: 20.5px;
+    margin-left: -4.5px;
+}
+
+.top-right-line-rotated-apply {
+    width: 12px;
+    transform: rotate(50deg);
+    margin-top: -13.5px;
+    margin-left: 144.5px;
+}
+
+.bottom-right-line-rotated-apply {
+    width: 29px;
+    transform: rotate(100deg);
+    margin-top: -13px;
+    margin-left: 137px;
+}
+
+.filter-apply-container-text {
+    color: white;
+    font-weight: 750;
+    font-family: Arial, sans-serif;
+    background-image: var(--bi-color-text-apply);
+    margin-top: -15px;
+    margin-left: -10px;
+    text-align: center;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+/* apply button */
+
+/* remove all button */
+.filter-remove-all-container {
+    position: relative;
+    width: 95px;
+    height: 35px;
+    margin-right: 12.5px;
+    margin-bottom: 5px;
+}
+
+.filter-remove-all-container-inside {
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.filter-remove-all-container-inside:active:hover {
+    --bg-color-top-half-remove-all: #41413e;
+    --bg-color-bottom-half-remove-all: #262626;
+    --bi-color-text-remove-all: linear-gradient(180deg, #ffffff, #dbcebd);
+}
+
+.filter-remove-all-container-inside:hover {
+    --bg-color-top-half-remove-all: #9b9b97;
+    --bg-color-bottom-half-remove-all: #808080;
+    --bi-color-text-remove-all: linear-gradient(180deg, #e6e6e6, #aba5a0);
+}
+
+.checkedRemoveAllBtnInside {
+    --bg-color-top-half-remove-all: #D3CC81;
+    --bg-color-bottom-half-remove-all: #B5A43E;
+    --bi-color-text-remove-all: linear-gradient(180deg, #ffffff, #dbcebd);
+}
+
+.checkedRemoveAllBtnInside:active:hover {
+    --bg-color-top-half-remove-all: #bdb342;
+    --bg-color-bottom-half-remove-all: #726727;
+    --bi-color-text-remove-all: linear-gradient(180deg, #ffffff, #dbcebd);
+}
+
+.checkedRemoveAllBtnInside:hover {
+    --bg-color-top-half-remove-all: #ebe8c6;
+    --bg-color-bottom-half-remove-all: #d1c47a;
+    --bi-color-text-remove-all: linear-gradient(180deg, #ffffff, #ede6de);
+}
+
+.top-half-bg-color-remove-all {
+    margin-left: 2.5px;
+    width: 95px;
+    height: 12px;
+    background-color: var(--bg-color-top-half-remove-all);
+}
+
+.bottom-half-bg-color-remove-all {
+    width: 96px;
+    height: 12px;
+    background-color: var(--bg-color-bottom-half-remove-all);
+}
+
+.top-line-remove-all,
+.top-left-line-rotated-remove-all,
+.top-right-line-rotated-remove-all,
+.bottom-line-remove-all,
+.bottom-left-line-rotated-remove-all,
+.bottom-right-line-rotated-remove-all {
+    height: 5px;
+    background-color: #ced1d0;
+}
+
+.filter-remove-all-container-inside-outline {
+    margin-top: -29px;
+}
+
+.top-line-remove-all {
+    width: 92.5px;
+    margin-left: 3.75px;
+}
+
+.bottom-line-remove-all {
+    width: 92.5px;
+    margin-top: 24px;
+    margin-left: 3.75px;
+}
+
+.top-left-line-rotated-remove-all {
+    width: 27px;
+    transform: rotate(-75deg);
+    margin-top: -23px;
+    margin-left: -11px;
+}
+
+.bottom-left-line-rotated-remove-all {
+    width: 10.5px;
+    transform: rotate(50deg);
+    margin-top: 18px;
+    margin-left: -3px;
+}
+
+.top-right-line-rotated-remove-all {
+    width: 9px;
+    transform: rotate(50deg);
+    margin-top: -13.5px;
+    margin-left: 92.5px;
+}
+
+.bottom-right-line-rotated-remove-all {
+    width: 27px;
+    transform: rotate(100deg);
+    margin-top: -13px;
+    margin-left: 83.5px;
+}
+
+.filter-remove-all-container-text {
+    color: white;
+    font-weight: 750;
+    font-family: Arial, sans-serif;
+    background-image: var(--bi-color-text-remove-all);
+    margin-left: 5px;
+    margin-top: -15px;
+    text-align: center;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+/* remove all button */
+
+.filter-apply-container-inside,
+.filter-remove-all-container-inside {
+    text-shadow: 0px 0px 0 rgb(255, 255, 255),
+        1px 1px 0 rgba(0, 0, 0, 1),
+        1px 1px 0 rgba(0, 0, 0, 1),
+        1px -1px 0 rgba(0, 0, 0, 1),
+        1px -1px 0 rgba(0, 0, 0, 1),
+        -1px 1px 0 rgba(0, 0, 0, 1),
+        -1px 1px 0 rgba(0, 0, 0, 1),
+        -1px -1px 0 rgba(0, 0, 0, 1),
+        -1px -1px 0 rgba(0, 0, 0, 1);
+}
+
+.filter-apply-container-inside:active:hover,
+.filter-remove-all-container-inside:active:hover {
+    text-shadow: 0px 0px 0 rgb(255, 255, 255),
+        1px 1px 0 rgba(0, 0, 0, 1),
+        1px 1px 0 rgba(0, 0, 0, 1),
+        1px -1px 0 rgba(0, 0, 0, 1),
+        1px -1px 0 rgba(0, 0, 0, 1),
+        -1px 1px 0 rgba(0, 0, 0, 1),
+        -1px 1px 0 rgba(0, 0, 0, 1),
+        -1px -1px 0 rgba(0, 0, 0, 1),
+        -1px -1px 0 rgba(0, 0, 0, 1);
+}
+
+.filter-apply-container-inside:hover,
+.filter-remove-all-container-inside:hover {
+    text-shadow: 0px 0px 0 rgb(255, 255, 255),
+        1px 1px 0 rgba(0, 0, 0, 1),
+        1px 1px 0 rgba(0, 0, 0, 1),
+        1px -1px 0 rgba(0, 0, 0, 1),
+        1px -1px 0 rgba(0, 0, 0, 1),
+        -1px 1px 0 rgba(0, 0, 0, 1),
+        -1px 1px 0 rgba(0, 0, 0, 1),
+        -1px -1px 0 rgba(0, 0, 0, 1),
+        -1px -1px 0 rgba(0, 0, 0, 1);
+}
+
+.checkedApplyBtnInside,
+.checkedRemoveAllBtnInside {
+    text-shadow: 0px 0px 0 rgb(255, 255, 255),
+        1px 1px 0 rgba(0, 0, 0, 1),
+        1px 1px 0 rgba(0, 0, 0, 1),
+        1px -1px 0 rgba(0, 0, 0, 1),
+        1px -1px 0 rgba(0, 0, 0, 1),
+        -1px 1px 0 rgba(0, 0, 0, 1),
+        -1px 1px 0 rgba(0, 0, 0, 1),
+        -1px -1px 0 rgba(0, 0, 0, 1),
+        -1px -1px 0 rgba(0, 0, 0, 1);
+}
+
+
+/* ok remove all filter selection */
+#apply-filters-bg-id {
+    z-index: 1;
+    width: 0;
+    height: 70px;
+    position: fixed;
+    bottom: 0;
+    background-color: #000000;
+    transition: 0.2s;
+}
+
+#apply-filters-id {
+    z-index: 1;
+    width: 0;
+    height: 70px;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    transition: 0.2s;
+}
+
+#ok {
+    position: relative;
+    margin-top:20px;
+    left: -250px;
+}
+
+#remove-all-id {
+    position: relative;
+    margin-left:-5px;
+    margin-top:20px;
+    left: -250px;
+}
+/* ok remove all filter selection */

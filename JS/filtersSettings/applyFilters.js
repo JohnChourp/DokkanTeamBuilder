@@ -480,93 +480,26 @@ function applyFilters() {
 
     //----------------------category filter full match----------------------
     if (filterCategoryUsed.length > 0 && document.getElementById("full-match-category").classList.contains("checkedCategoryBtnInsidePatialFullMatch")) {
-        let filterCharCategoryItemsTemp = [];
-        //find witch character has the most categories and save the number of maximun categories a character can have
-        for (let k = 0; k < charListDefault.length; k++) {
-            filterCharCategoryItemsTemp[k] = charListDefault[k].getAttribute(dataCharCategories).split(",");
-            for (let i = 0; i < filterCategoryUsed.length; i++) {
+        let charListDefaultCategory = [];
+        const filterCategorySet = new Set(filterCategoryUsed);
 
-                if (filterCategoryUsed.length == 1) {
-                    for (j = 0; j < filterCharCategoryItemsTemp[k].length; j++) {
-                        if (filterCharCategoryItemsTemp[k][j] == filterCategoryUsed[0]) {
-                            charListDefaultCategory[k] = charListDefault[k];
-                        }
-                    }
-                }
+        charListDefault.forEach((char, index) => {
+            const categories = char.getAttribute(dataCharCategories).split(",");
+            const categorySet = new Set(categories);
 
-                if (filterCategoryUsed.length == 2) {
-                    for (j = 0; j < filterCharCategoryItemsTemp[k].length; j++) {
-                        if (filterCharCategoryItemsTemp[k][j] == filterCategoryUsed[0]) {
-                            for (l = 0; l < filterCharCategoryItemsTemp[k].length; l++) {
-                                if (filterCharCategoryItemsTemp[k][l] == filterCategoryUsed[1]) {
-                                    charListDefaultCategory[k] = charListDefault[k];
-                                }
-                            }
-                        }
-                    }
-                }
-
-                if (filterCategoryUsed.length == 3) {
-                    for (j = 0; j < filterCharCategoryItemsTemp[k].length; j++) {
-                        if (filterCharCategoryItemsTemp[k][j] == filterCategoryUsed[0]) {
-                            for (l = 0; l < filterCharCategoryItemsTemp[k].length; l++) {
-                                if (filterCharCategoryItemsTemp[k][l] == filterCategoryUsed[1]) {
-                                    for (o = 0; o < filterCharCategoryItemsTemp[k].length; o++) {
-                                        if (filterCharCategoryItemsTemp[k][o] == filterCategoryUsed[2]) {
-                                            charListDefaultCategory[k] = charListDefault[k];
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-
-                if (filterCategoryUsed.length == 4) {
-                    for (j = 0; j < filterCharCategoryItemsTemp[k].length; j++) {
-                        if (filterCharCategoryItemsTemp[k][j] == filterCategoryUsed[0]) {
-                            for (l = 0; l < filterCharCategoryItemsTemp[k].length; l++) {
-                                if (filterCharCategoryItemsTemp[k][l] == filterCategoryUsed[1]) {
-                                    for (o = 0; o < filterCharCategoryItemsTemp[k].length; o++) {
-                                        if (filterCharCategoryItemsTemp[k][o] == filterCategoryUsed[2]) {
-                                            for (p = 0; p < filterCharCategoryItemsTemp[k].length; p++) {
-                                                if (filterCharCategoryItemsTemp[k][p] == filterCategoryUsed[3]) {
-                                                    charListDefaultCategory[k] = charListDefault[k];
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-
-                if (filterCategoryUsed.length == 5) {
-                    for (j = 0; j < filterCharCategoryItemsTemp[k].length; j++) {
-                        if (filterCharCategoryItemsTemp[k][j] == filterCategoryUsed[0]) {
-                            for (l = 0; l < filterCharCategoryItemsTemp[k].length; l++) {
-                                if (filterCharCategoryItemsTemp[k][l] == filterCategoryUsed[1]) {
-                                    for (o = 0; o < filterCharCategoryItemsTemp[k].length; o++) {
-                                        if (filterCharCategoryItemsTemp[k][o] == filterCategoryUsed[2]) {
-                                            for (p = 0; p < filterCharCategoryItemsTemp[k].length; p++) {
-                                                if (filterCharCategoryItemsTemp[k][p] == filterCategoryUsed[3]) {
-                                                    for (r = 0; r < filterCharCategoryItemsTemp[k].length; r++) {
-                                                        if (filterCharCategoryItemsTemp[k][r] == filterCategoryUsed[4]) {
-                                                            charListDefaultCategory[k] = charListDefault[k];
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
+            let match = true;
+            for (const filterCategory of filterCategorySet) {
+                if (!categorySet.has(filterCategory)) {
+                    match = false;
+                    break;
                 }
             }
-        }
+
+            if (match) {
+                charListDefaultCategory[index] = char;
+            }
+        });
+
         charListDefault = cleanArray(charListDefaultCategory);
     }
     //----------------------category filter full match----------------------
@@ -574,14 +507,13 @@ function applyFilters() {
     //----------------------category filter partial match----------------------
     if (filterCategoryUsed.length > 0 && document.getElementById("partial-match-category").classList.contains("checkedCategoryBtnInsidePatialFullMatch")) {
         let filterCharCategoryItemsTemp = [];
-        //find witch character has the most categories and save the number of maximun categories a character can have
+        //find which character has the most categories and save the number of maximum categories a character can have
         for (let k = 0; k < charListDefault.length; k++) {
             filterCharCategoryItemsTemp[k] = charListDefault[k].getAttribute(dataCharCategories).split(",");
             for (let i = 0; i < filterCategoryUsed.length; i++) {
-                for (j = 0; j < filterCharCategoryItemsTemp[k].length; j++) {
-                    if (filterCharCategoryItemsTemp[k][j] == filterCategoryUsed[i]) {
-                        charListDefaultCategory[k] = charListDefault[k];
-                    }
+                if (filterCharCategoryItemsTemp[k].includes(filterCategoryUsed[i])) {
+                    charListDefaultCategory[k] = charListDefault[k];
+                    break;
                 }
             }
         }
