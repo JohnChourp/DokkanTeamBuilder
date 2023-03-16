@@ -245,8 +245,8 @@ function removeAllCategory() {
         "filter-category-container-text-default"
     );
     filterCategoryContainerTextDefault.item(0).innerHTML = '<span id="categories-sum-number-selected-id">'+"Select Category"+"</span>";
-    checkFiltersUsed();
     document.getElementsByClassName("filter-remove-all-category-container-inside").item(0).classList.remove("checkedRemoveAllCategoryBtnInside");
+    checkFiltersUsed();
 }
 
 function openCategories() {

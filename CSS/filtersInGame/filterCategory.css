@@ -106,8 +106,8 @@
 }
 
 .filter-category-container-inside:active:hover {
-    --bg-color-top-half-category: #7e9a32;
-    --bg-color-bottom-half-category: #48621d;
+    --bg-color-top-half-category: #41413e;
+    --bg-color-bottom-half-category: #262626;
     --bi-color-text-category: linear-gradient(180deg, #ffffff, #dbcebd);
 }
 

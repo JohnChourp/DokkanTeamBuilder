@@ -175,15 +175,6 @@ function removeAllFilters() {
 function checkFiltersUsed() {
     const filters = [
         {
-            id: "sort-updated",
-            class: "checkedSortBtn",
-            list: [
-                "sort-updated", "sort-released", "sort-type",
-                "sort-rarity", "sort-cost", "sort-hp",
-                "sort-attack", "sort-defense", "sort-alphabetical",
-                "sort-sp-atk-lv", "sort-max-level", "sort-char-id"],
-        },
-        {
             id: "year-1",
             class: "checkedAnniversaryBtn",
             list: [
