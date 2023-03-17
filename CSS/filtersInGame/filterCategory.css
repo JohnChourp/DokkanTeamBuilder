@@ -758,8 +758,18 @@ span#categories-sum-number-selected-id {
 }
 
 #search-one-category-menu-id {
+    padding-left: 35px;
     margin-left:20px;
+    margin-top:-10px;
     margin-bottom:10px;
     height: 30px;
-    width: 340px;
+    width: 300px;
+}
+
+#search-one-category-menu-image-id {
+    position: absolute;
+    width:30px;
+    height:30px;
+    margin-left:25px;
+    margin-top:-5px;
 }

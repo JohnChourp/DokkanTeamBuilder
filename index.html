@@ -347,8 +347,10 @@
         <div id="all-categories-id">
             <a href="#" id="close-left-sidenav-categories-btn-id" onclick="closeCategories();">&times;</a>
             <p class="filter-options-text-big-class">Category Selection</p>
+            <img id="search-one-category-menu-image-id" src="Images/searchSettings/small_search_image.png"
+                alt="Search Category Image">
             <input type="text" id="search-one-category-menu-id" onkeyup="selectedCategoryNameSearch();"
-                    placeholder="Enter Category name.." title="Type in a search category" inputmode="search" />
+                placeholder="Enter Category name.." title="Type in a search category" inputmode="search" />
             <div class="filter-class">
                 <div id="category-partial-full-match-border">
                     <div onclick="filterFullMatchCategory();" id="full-match-category"
@@ -2257,8 +2259,12 @@
         </div>
         <p class="filter-options-text-class">Release Date</p>
         <div class="filter-class">
+            <img id="search-before-eza-image-id" src="Images/searchSettings/small_search_image.png"
+                alt="Search Before Eza Image">
             <input type="text" id="search-before-eza-id" onkeyup="searchDropdownBeforeAfterEza('before');"
                 placeholder="Before EZA.." title="Before EZA" inputmode="search" />
+            <img id="search-after-eza-image-id" src="Images/searchSettings/small_search_image.png"
+                alt="Search After Eza Image">
             <input type="text" id="search-after-eza-id" onkeyup="searchDropdownBeforeAfterEza('after');"
                 placeholder="After EZA.." title="After EZA" inputmode="search" />
         </div>
@@ -2269,6 +2275,8 @@
         <p class="filter-options-text-class">Select Character</p>
         <div class="filter-class">
             <div id="character-diplay-id">
+                <img id="search-one-char-menu-image-id" src="Images/searchSettings/small_search_image.png"
+                alt="Search One Character Image">
                 <input type="text" id="search-one-char-menu-id" onkeyup="selectedCharNameSearch();"
                     placeholder="Search Name.." title="Type in a search name" inputmode="search" />
                 <div class="search-one-char-dropdown-options"></div>
@@ -2362,6 +2370,8 @@
                 <span>Filter Select</span>
             </button>
             <div id="search-bar-id">
+                <img id="search-all-char-menu-image-id" src="Images/searchSettings/normal_search_category_image.png"
+                alt="Search Character Image">
                 <input id="char-search-id" placeholder="Enter Character Name..." title="Type in a name" type="text"
                     inputmode="search" />
                 <button onclick="searchSettings();" id="search-settings-btn-id" type="button">

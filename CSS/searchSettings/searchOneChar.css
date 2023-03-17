@@ -1,7 +1,17 @@
 #search-one-char-menu-id {
+    padding-left: 35px;
     height: 30px;
-    width: 370px;
+    width: 336px;
 }
+
+#search-one-char-menu-image-id {
+    position: absolute;
+    width:30px;
+    height:30px;
+    margin-top:3px;
+    margin-left:2px;
+}
+
 
 .search-one-char-dropdown-options {
     background-color: #f1f1f1;
