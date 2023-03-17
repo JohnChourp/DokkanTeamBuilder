@@ -640,7 +640,7 @@ function closeCategoriesSelectBtn() {
         categoriesSelectId.children.item(0).children.item(0).classList.add("top-half-bg-color-category");
         categoriesSelectId.children.item(0).children.item(1).classList.add("bottom-half-bg-color-category");
         categoriesSelectId.children.item(0).children.item(3).classList.add("filter-category-container-text-default");
-        
+
         categoriesSelectId.children.item(0).classList.remove("checkedCategoryBtnInsideGreen");
         categoriesSelectId.children.item(0).classList.add("filter-category-container-inside-green");
         categoriesSelectId.children.item(0).children.item(0).classList.add("top-half-bg-color-category-green");

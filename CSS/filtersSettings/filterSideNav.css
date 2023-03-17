@@ -29,6 +29,12 @@
     cursor: pointer;
 }
 
+#close-left-sidenav-categories-btn-id {
+    position: absolute;
+    font-size: 36px;
+    right: 10px;
+    cursor: pointer;
+}
 #close-right-sidenav-btn-id {
     position: absolute;
     font-size: 36px;
@@ -133,11 +139,14 @@
 #full-match-category,
 #partial-match-category,
 #close-left-sidenav-btn-id,
+#close-left-sidenav-categories-btn-id,
 #ok,
 #remove-all-id,
 #ok-categories-id,
 #remove-all-categories-id {
-    -webkit-tap-highlight-color: transparent;
+    -moz-tap-highlight-color: transparent;
+    -ms-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color:transparent;
     -tap-highlight-color: transparent;
 }
 

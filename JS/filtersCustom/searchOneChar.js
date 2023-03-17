@@ -131,3 +131,17 @@ function selectedCharNameSearch() {
     const restOfUiArray = Array.from(ui).filter((el) => uiArray.indexOf(el.textContent) < 0);
     restOfUiArray.forEach((el) => (el.style.display = "none"));
 }
+
+function selectedCategoryNameSearch() {
+    const input = document.getElementById("search-one-category-menu-id");
+    const filter = input.value.toLowerCase();
+    const ui = document.getElementsByClassName("filter-category-container-categories");
+    let uiArray = Array.from(ui);
+
+    uiArray = uiArray.filter((el) => el.textContent.toLowerCase().indexOf(filter) >= 0);
+    uiArray.forEach((el) => (el.style.display = "block"));
+    uiArray = uiArray.map((el) => el.textContent);
+
+    const restOfUiArray = Array.from(ui).filter((el) => uiArray.indexOf(el.textContent) < 0);
+    restOfUiArray.forEach((el) => (el.style.display = "none"));
+}

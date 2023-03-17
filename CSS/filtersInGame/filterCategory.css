@@ -665,9 +665,9 @@
 
 span#categories-sum-number-id {
     background: linear-gradient(180deg, rgba(143,110,23,1) 0%, rgba(255,236,83,1) 50%, rgba(143,110,23,1) 100%);
-    background-clip: text;
     -webkit-background-clip: text;
     -moz-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
 }
@@ -741,7 +741,7 @@ span#categories-sum-number-selected-id {
 }
 
 .filter-options-text-category-partial-full-class {
-    font-size: 20px;
+    font-size: 19px;
     color: rgb(255, 255, 255);
     text-align: center;
     position: relative;
@@ -755,4 +755,21 @@ span#categories-sum-number-selected-id {
     flex-direction: row;
     border: #E27800 2px solid;
     border-radius: 15px;
+}
+
+#search-one-category-menu-id {
+    padding-left: 35px;
+    margin-left:20px;
+    margin-top:-10px;
+    margin-bottom:10px;
+    height: 30px;
+    width: 300px;
+}
+
+#search-one-category-menu-image-id {
+    position: absolute;
+    width:30px;
+    height:30px;
+    margin-left:25px;
+    margin-top:-5px;
 }

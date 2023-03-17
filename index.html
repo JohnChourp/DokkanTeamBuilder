@@ -2,7 +2,7 @@
 <html lang="en" class="my-global-styles" dir="ltr">
 
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
     <meta name="robots" content="index, follow" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="description"
@@ -102,7 +102,8 @@
         <hr />
         <p class="filter-options-text-big-class">Please Choose Display Order</p>
         <div class="filter-class">
-            <div onclick="toggleDirection('down');" id="filter-direction-down-id" class="filter-descending-container checkedDirectionBtn">
+            <div onclick="toggleDirection('down');" id="filter-direction-down-id"
+                class="filter-descending-container checkedDirectionBtn">
                 <div class="filter-descending-container-inside checkedDescendingBtnInside">
                     <div class="top-half-bg-color-descending"></div>
                     <div class="bottom-half-bg-color-descending"></div>
@@ -344,8 +345,12 @@
             </div>
         </div>
         <div id="all-categories-id">
-            <a href="#" id="close-left-sidenav-btn-id" onclick="closeCategories();">&times;</a>
+            <a href="#" id="close-left-sidenav-categories-btn-id" onclick="closeCategories();">&times;</a>
             <p class="filter-options-text-big-class">Category Selection</p>
+            <img id="search-one-category-menu-image-id" src="Images/searchSettings/small_search_image.png"
+                alt="Search Category Image">
+            <input type="text" id="search-one-category-menu-id" onkeyup="selectedCategoryNameSearch();"
+                placeholder="Enter Category name.." title="Type in a search category" inputmode="search" />
             <div class="filter-class">
                 <div id="category-partial-full-match-border">
                     <div onclick="filterFullMatchCategory();" id="full-match-category"
@@ -2254,8 +2259,12 @@
         </div>
         <p class="filter-options-text-class">Release Date</p>
         <div class="filter-class">
+            <img id="search-before-eza-image-id" src="Images/searchSettings/small_search_image.png"
+                alt="Search Before Eza Image">
             <input type="text" id="search-before-eza-id" onkeyup="searchDropdownBeforeAfterEza('before');"
                 placeholder="Before EZA.." title="Before EZA" inputmode="search" />
+            <img id="search-after-eza-image-id" src="Images/searchSettings/small_search_image.png"
+                alt="Search After Eza Image">
             <input type="text" id="search-after-eza-id" onkeyup="searchDropdownBeforeAfterEza('after');"
                 placeholder="After EZA.." title="After EZA" inputmode="search" />
         </div>
@@ -2266,6 +2275,8 @@
         <p class="filter-options-text-class">Select Character</p>
         <div class="filter-class">
             <div id="character-diplay-id">
+                <img id="search-one-char-menu-image-id" src="Images/searchSettings/small_search_image.png"
+                alt="Search One Character Image">
                 <input type="text" id="search-one-char-menu-id" onkeyup="selectedCharNameSearch();"
                     placeholder="Search Name.." title="Type in a search name" inputmode="search" />
                 <div class="search-one-char-dropdown-options"></div>
@@ -2292,7 +2303,8 @@
                     <div class="filter-apply-category-container-text">OK</div>
                 </div>
             </div>
-            <div onclick="removeAllCategory();" id="remove-all-categories-id" class="filter-remove-all-category-container">
+            <div onclick="removeAllCategory();" id="remove-all-categories-id"
+                class="filter-remove-all-category-container">
                 <div class="filter-remove-all-category-container-inside">
                     <div class="top-half-bg-color-remove-all-category"></div>
                     <div class="bottom-half-bg-color-remove-all-category"></div>
@@ -2358,6 +2370,8 @@
                 <span>Filter Select</span>
             </button>
             <div id="search-bar-id">
+                <img id="search-all-char-menu-image-id" src="Images/searchSettings/normal_search_category_image.png"
+                alt="Search Character Image">
                 <input id="char-search-id" placeholder="Enter Character Name..." title="Type in a name" type="text"
                     inputmode="search" />
                 <button onclick="searchSettings();" id="search-settings-btn-id" type="button">

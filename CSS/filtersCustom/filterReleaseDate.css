@@ -1,6 +1,7 @@
 #search-before-eza-id,
 #search-after-eza-id {
-    width: 140px;
+    padding-left: 35px;
+    width: 107px;
     height: 30px;
     margin-left: 15px;
     margin-right: 15px;
@@ -28,6 +29,11 @@
     background-color: #ddd;
 }
 
+#search-before-eza-image-id {
+    position: absolute;
+    margin-left:-290px;
+    margin-top:3px;
+}
 
 /* after eza */
 .search-after-eza-dropdown-options {
@@ -49,4 +55,10 @@
 
 .search-after-eza-dropdown-options a:hover {
     background-color: #ddd;
+}
+
+#search-after-eza-image-id {
+    position: absolute;
+    margin-left:70px;
+    margin-top:3px;
 }
