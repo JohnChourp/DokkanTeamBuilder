@@ -741,7 +741,7 @@ span#categories-sum-number-selected-id {
 }
 
 .filter-options-text-category-partial-full-class {
-    font-size: 20px;
+    font-size: 19px;
     color: rgb(255, 255, 255);
     text-align: center;
     position: relative;
@@ -755,4 +755,11 @@ span#categories-sum-number-selected-id {
     flex-direction: row;
     border: #E27800 2px solid;
     border-radius: 15px;
+}
+
+#search-one-category-menu-id {
+    margin-left:20px;
+    margin-bottom:10px;
+    height: 30px;
+    width: 340px;
 }
