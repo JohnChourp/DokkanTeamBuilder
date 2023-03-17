@@ -665,9 +665,9 @@
 
 span#categories-sum-number-id {
     background: linear-gradient(180deg, rgba(143,110,23,1) 0%, rgba(255,236,83,1) 50%, rgba(143,110,23,1) 100%);
-    background-clip: text;
     -webkit-background-clip: text;
     -moz-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
 }
