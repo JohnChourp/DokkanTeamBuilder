@@ -68,7 +68,7 @@ function removeAllFilters() {
 
                 "realm-of-gods", "full-power",
                 "giant-ape-power", "majin-power",
-                "powerful-comeback", "miraculous-awakening",
+                "powerful-comeback","power-of-wishes", "miraculous-awakening",
                 "corroded-body-and-mind", "rapid-growth",
                 "mastered-evolution", "time-limit",
                 "final-trump-card",
@@ -233,7 +233,7 @@ function checkFiltersUsed() {
 
                 "realm-of-gods", "full-power",
                 "giant-ape-power", "majin-power",
-                "powerful-comeback", "miraculous-awakening",
+                "powerful-comeback","power-of-wishes", "miraculous-awakening",
                 "corroded-body-and-mind", "rapid-growth",
                 "mastered-evolution", "time-limit",
                 "final-trump-card",
@@ -467,7 +467,7 @@ function checkFilterCategoryUsed() {
 
                 "realm-of-gods", "full-power",
                 "giant-ape-power", "majin-power",
-                "powerful-comeback", "miraculous-awakening",
+                "powerful-comeback","power-of-wishes", "miraculous-awakening",
                 "corroded-body-and-mind", "rapid-growth",
                 "mastered-evolution", "time-limit",
                 "final-trump-card",
