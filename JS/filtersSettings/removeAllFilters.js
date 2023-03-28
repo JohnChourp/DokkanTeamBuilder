@@ -169,7 +169,10 @@ function removeAllFilters() {
             addOnlyFilteredCharNames(charListSaved);
         }
     }
-    document.getElementsByClassName("filter-remove-all-container-inside").item(0).classList.remove("checkedRemoveAllBtnInside");
+    const categoriesSelectId = document.getElementById("categories-select-id");
+    categoriesSelectId.children.item(0).classList.remove("filter-category-container-inside-green");
+    categoriesSelectId.children.item(0).children.item(0).classList.remove("top-half-bg-color-category-green");
+    categoriesSelectId.children.item(0).children.item(1).classList.remove("bottom-half-bg-color-category-green");
 }
 
 function checkFiltersUsed() {
