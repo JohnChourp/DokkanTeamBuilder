@@ -22,13 +22,6 @@ function addAllReleaseDatesBefore() {
         }
     }
 
-    for (let i = 0; i < uniqueCharRelease.length; i++) {
-        if (uniqueCharRelease[i].length == 25) {
-            releaseDateEzaList[i] = uniqueCharRelease[i].split(".");
-        } else {
-            releaseDateNotEzaList[i] = uniqueCharRelease[i];
-        }
-    }
     releaseDateNotEzaList = removeDuplicates(releaseDateNotEzaList);
     releaseDateEzaList = removeDuplicates(releaseDateEzaList);
     let releaseDateNotEzaListFinal = [];
@@ -95,14 +88,7 @@ function addAllReleaseDatesAfter() {
             releaseDateNotEzaList[i] = uniqueCharRelease[i];
         }
     }
-
-    for (let i = 0; i < uniqueCharRelease.length; i++) {
-        if (uniqueCharRelease[i].length == 25) {
-            releaseDateEzaList[i] = uniqueCharRelease[i].split(".");
-        } else {
-            releaseDateNotEzaList[i] = uniqueCharRelease[i];
-        }
-    }
+    
     releaseDateNotEzaList = removeDuplicates(releaseDateNotEzaList);
     releaseDateEzaList = removeDuplicates(releaseDateEzaList);
     let releaseDateNotEzaListFinal = [];
