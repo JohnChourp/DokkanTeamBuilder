@@ -83,7 +83,6 @@ function applyFilters() {
     }
     filterAnniversaryUsed = cleanArray(filterAnniversaryUsed, undefined);
 
-
     const charContainerId = document.getElementById("char-container-id");
     const char = document.getElementsByClassName("char");
     const searchOneCharDropdownValue = document.getElementsByClassName("search-one-char-dropdown-options-value");

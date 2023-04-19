@@ -149,7 +149,6 @@ function pagination_page(start, charsPerPageNum, pageSum, pageNum, charList, pag
                 addChar(localStorage.getItem("charsPerPageNumItem"));
             }
         }
-
     }
 
     if (pagination_id.children.length == 1) {
@@ -160,7 +159,6 @@ function pagination_page(start, charsPerPageNum, pageSum, pageNum, charList, pag
     addDropdownClass(localStorage.getItem("filterDisplay"));
 
     addHidePaginationPages(pageSum, pageNum, pagination_id);
-
 }
 
 function addHidePaginationPages(pageSum, pageNum, pagination_id) {

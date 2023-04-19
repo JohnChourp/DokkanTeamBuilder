@@ -17,17 +17,17 @@
     cursor: pointer;
 }
 
-.filter-type-container-inside:active:hover {
-    --bg-color-top-half-type: #19739a;
-    --bg-color-bottom-half-type: #0f4670;
-    --bi-color-text-type: linear-gradient(180deg, #ffffff, #dbcebd);
-}
+    .filter-type-container-inside:active:hover {
+        --bg-color-top-half-type: #19739a;
+        --bg-color-bottom-half-type: #0f4670;
+        --bi-color-text-type: linear-gradient(180deg, #ffffff, #dbcebd);
+    }
 
-.filter-type-container-inside:hover {
-    --bg-color-top-half-type: #9b9b97;
-    --bg-color-bottom-half-type: #808080;
-    --bi-color-text-type: linear-gradient(180deg, #e6e6e6, #aba5a0);
-}
+    .filter-type-container-inside:hover {
+        --bg-color-top-half-type: #9b9b97;
+        --bg-color-bottom-half-type: #808080;
+        --bi-color-text-type: linear-gradient(180deg, #e6e6e6, #aba5a0);
+    }
 
 .checkedTypeBtnInside {
     --bg-color-top-half-type: #2DA9DD;
@@ -35,29 +35,21 @@
     --bi-color-text-type: linear-gradient(180deg, #ffffff, #dbcebd);
 }
 
-.checkedTypeBtnInside:active:hover {
-    --bg-color-top-half-type: #19739a;
-    --bg-color-bottom-half-type: #0f4670;
-    --bi-color-text-type: linear-gradient(180deg, #ffffff, #dbcebd);
-}
+    .checkedTypeBtnInside:active:hover {
+        --bg-color-top-half-type: #19739a;
+        --bg-color-bottom-half-type: #0f4670;
+        --bi-color-text-type: linear-gradient(180deg, #ffffff, #dbcebd);
+    }
 
-.checkedTypeBtnInside:hover {
-    --bg-color-top-half-type: #7bc9ea;
-    --bg-color-bottom-half-type: #4ba3e7;
-    --bi-color-text-type: linear-gradient(180deg, #ffffff, #ede6de);
-}
+    .checkedTypeBtnInside:hover {
+        --bg-color-top-half-type: #7bc9ea;
+        --bg-color-bottom-half-type: #4ba3e7;
+        --bi-color-text-type: linear-gradient(180deg, #ffffff, #ede6de);
+    }
 
 .filter-type-container-inside,
 .checkedTypeBtnInside {
-    text-shadow: 0px 0px 0 rgb(255, 255, 255),
-        1px 1px 0 rgba(0, 0, 0, 1),
-        1px 1px 0 rgba(0, 0, 0, 1),
-        1px -1px 0 rgba(0, 0, 0, 1),
-        1px -1px 0 rgba(0, 0, 0, 1),
-        -1px 1px 0 rgba(0, 0, 0, 1),
-        -1px 1px 0 rgba(0, 0, 0, 1),
-        -1px -1px 0 rgba(0, 0, 0, 1),
-        -1px -1px 0 rgba(0, 0, 0, 1);
+    text-shadow: 0px 0px 0 rgb(255, 255, 255), 1px 1px 0 rgba(0, 0, 0, 1), 1px 1px 0 rgba(0, 0, 0, 1), 1px -1px 0 rgba(0, 0, 0, 1), 1px -1px 0 rgba(0, 0, 0, 1), -1px 1px 0 rgba(0, 0, 0, 1), -1px 1px 0 rgba(0, 0, 0, 1), -1px -1px 0 rgba(0, 0, 0, 1), -1px -1px 0 rgba(0, 0, 0, 1);
 }
 
 .top-half-bg-color-type {

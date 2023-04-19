@@ -86,7 +86,6 @@ function setCharList() {
     }
 }
 
-
 function saveCharListTemp(charList) {
     const charListSaved = Array.from(charList).map((c) => ({
         name: c.getAttribute("data-char-name"),
@@ -111,7 +110,6 @@ function saveCharListTemp(charList) {
     }));
     localStorage.setItem("charListTemp", JSON.stringify(charListSaved));
 }
-
 
 function setCharListTemp() {
     const char_container_id = document.getElementById("char-container-id");

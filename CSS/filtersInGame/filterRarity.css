@@ -17,17 +17,17 @@
     cursor: pointer;
 }
 
-.filter-rarity-container-inside:active:hover {
-    --bg-color-top-half-rarity: #19739a;
-    --bg-color-bottom-half-rarity: #0f4670;
-    --bi-color-text-rarity: linear-gradient(180deg, #ffffff, #dbcebd);
-}
+    .filter-rarity-container-inside:active:hover {
+        --bg-color-top-half-rarity: #19739a;
+        --bg-color-bottom-half-rarity: #0f4670;
+        --bi-color-text-rarity: linear-gradient(180deg, #ffffff, #dbcebd);
+    }
 
-.filter-rarity-container-inside:hover {
-    --bg-color-top-half-rarity: #9b9b97;
-    --bg-color-bottom-half-rarity: #808080;
-    --bi-color-text-rarity: linear-gradient(180deg, #e6e6e6, #aba5a0);
-}
+    .filter-rarity-container-inside:hover {
+        --bg-color-top-half-rarity: #9b9b97;
+        --bg-color-bottom-half-rarity: #808080;
+        --bi-color-text-rarity: linear-gradient(180deg, #e6e6e6, #aba5a0);
+    }
 
 .checkedRarityBtnInside {
     --bg-color-top-half-rarity: #2DA9DD;
@@ -35,17 +35,17 @@
     --bi-color-text-rarity: linear-gradient(180deg, #ffffff, #dbcebd);
 }
 
-.checkedRarityBtnInside:active:hover {
-    --bg-color-top-half-rarity: #19739a;
-    --bg-color-bottom-half-rarity: #0f4670;
-    --bi-color-text-rarity: linear-gradient(180deg, #ffffff, #dbcebd);
-}
+    .checkedRarityBtnInside:active:hover {
+        --bg-color-top-half-rarity: #19739a;
+        --bg-color-bottom-half-rarity: #0f4670;
+        --bi-color-text-rarity: linear-gradient(180deg, #ffffff, #dbcebd);
+    }
 
-.checkedRarityBtnInside:hover {
-    --bg-color-top-half-rarity: #7bc9ea;
-    --bg-color-bottom-half-rarity: #4ba3e7;
-    --bi-color-text-rarity: linear-gradient(180deg, #ffffff, #ede6de);
-}
+    .checkedRarityBtnInside:hover {
+        --bg-color-top-half-rarity: #7bc9ea;
+        --bg-color-bottom-half-rarity: #4ba3e7;
+        --bi-color-text-rarity: linear-gradient(180deg, #ffffff, #ede6de);
+    }
 
 .disableRarityBtnInside {
     margin-top: 5px;
@@ -57,15 +57,7 @@
 .filter-rarity-container-inside,
 .checkedRarityBtnInside,
 .disableRarityBtnInside {
-    text-shadow: 0px 0px 0 rgb(255, 255, 255),
-        1px 1px 0 rgba(0, 0, 0, 1),
-        1px 1px 0 rgba(0, 0, 0, 1),
-        1px -1px 0 rgba(0, 0, 0, 1),
-        1px -1px 0 rgba(0, 0, 0, 1),
-        -1px 1px 0 rgba(0, 0, 0, 1),
-        -1px 1px 0 rgba(0, 0, 0, 1),
-        -1px -1px 0 rgba(0, 0, 0, 1),
-        -1px -1px 0 rgba(0, 0, 0, 1);
+    text-shadow: 0px 0px 0 rgb(255, 255, 255), 1px 1px 0 rgba(0, 0, 0, 1), 1px 1px 0 rgba(0, 0, 0, 1), 1px -1px 0 rgba(0, 0, 0, 1), 1px -1px 0 rgba(0, 0, 0, 1), -1px 1px 0 rgba(0, 0, 0, 1), -1px 1px 0 rgba(0, 0, 0, 1), -1px -1px 0 rgba(0, 0, 0, 1), -1px -1px 0 rgba(0, 0, 0, 1);
 }
 
 .top-half-bg-color-rarity {

@@ -5,9 +5,9 @@
     border: #111;
 }
 
-.super-attack-type-class:hover {
-    cursor: pointer;
-}
+    .super-attack-type-class:hover {
+        cursor: pointer;
+    }
 
 .checkedSuperAttackTypeBtn {
     background-color: transparent;

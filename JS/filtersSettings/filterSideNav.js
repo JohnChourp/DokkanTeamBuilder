@@ -8,8 +8,6 @@ function openNav() {
 
     let width = "400px";
 
-    
-
     applyFiltersBg.style.width = width;
     applyFiltersBg.style.left = "-12px";
     applyFilters.style.width = width;

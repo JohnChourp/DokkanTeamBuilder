@@ -88,7 +88,7 @@ function addAllReleaseDatesAfter() {
             releaseDateNotEzaList[i] = uniqueCharRelease[i];
         }
     }
-    
+
     releaseDateNotEzaList = removeDuplicates(releaseDateNotEzaList);
     releaseDateEzaList = removeDuplicates(releaseDateEzaList);
     let releaseDateNotEzaListFinal = [];

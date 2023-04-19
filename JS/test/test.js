@@ -1,3 +1,17 @@
+function deviceWidthAndHeight() {
+    let widthDevice = window.screen.width;
+    let heighthDevice = window.screen.height;
+    document.getElementById("test-device-id").innerHTML = "width device:" + widthDevice + "height device:" + heighthDevice;
+    /* <div id="test-device-id"></div> */
+}
+
+function windowWidthAndHeight() {
+    let widthWindow = window.innerWidth;
+    let heighthWindow = window.innerHeight;
+    document.getElementById("test-window-id").innerHTML = "width window:" + widthWindow + "height window:" + heighthWindow;
+    /* <div id="test-window-id"></div> */
+}
+
 function mostLetterInNames() {
     let char = document.getElementsByClassName("char");
     let charList = [], maxLettersNamesLength = 0, maxLettersNames;
@@ -60,8 +74,6 @@ function mostLetterInCategories() {
     console.log(maxLettersCategoriesLength);
     console.log(maxLettersCategories);
 }
-
-
 
 function CheckIfAllStringAndNotSameTitle() {
     let char = document.getElementsByClassName("char");
@@ -140,7 +152,6 @@ function CheckIfNotHaveDataCharType() {
     console.log(charListProblem);
 }
 
-
 function CheckIfDuplicateDataCharAtribute() {
     const divs = document.querySelectorAll('.char');
     let count = 0;
@@ -162,7 +173,6 @@ function CheckIfDuplicateDataCharAtribute() {
     } else {
         console.log(`The "data-char-max-level" attribute appears twice in ${count} divs.`);
     }
-
 }
 
 function CheckIfCharContainerClean() {
@@ -170,14 +180,81 @@ function CheckIfCharContainerClean() {
 
     // Remove div elements with class "char"
     parentDiv.querySelectorAll('div.char').forEach(div => {
-      div.remove();
+        div.remove();
     });
-    
+
     // Show everything that is left inside the parent div
     const remainingContent = parentDiv.innerHTML;
-    
+
     // Create a new window to display the remaining content
     const newWindow = window.open();
     newWindow.document.write(`<html><body>${remainingContent}</body></html>`);
-    
+}
+
+function releaseDateTest() {
+    const dataCharRelease = "data-char-release";
+    const charContainerId = document.getElementById("char-container-id");
+    const char = document.getElementsByClassName("char");
+    const sortReleased = document.getElementById("sort-released");
+
+    if (sortReleased.classList.contains("checkedSortBtn")) {
+        const dataCharReleaseItems = document.querySelectorAll("[" + dataCharRelease + "]");
+        let temp_char = [];
+        for (let i = 0; i < char.length; i++) {
+            temp_char[i] = char.item(i);
+        }
+        const charLength = char.length;
+        charContainerId.innerHTML = "";
+        for (let i = 0; i < charLength; i++) {
+            if (dataCharReleaseItems[i].getAttribute(dataCharRelease).slice(-4) != "2023" &&
+                dataCharReleaseItems[i].getAttribute(dataCharRelease).slice(-4) != "2022" &&
+                dataCharReleaseItems[i].getAttribute(dataCharRelease).slice(-4) != "2021" &&
+                dataCharReleaseItems[i].getAttribute(dataCharRelease).slice(-4) != "2020" &&
+                dataCharReleaseItems[i].getAttribute(dataCharRelease).slice(-4) != "2019" &&
+                dataCharReleaseItems[i].getAttribute(dataCharRelease).slice(-4) != "2018" &&
+                dataCharReleaseItems[i].getAttribute(dataCharRelease).slice(-4) != "2017" &&
+                dataCharReleaseItems[i].getAttribute(dataCharRelease).slice(-4) != "2016" &&
+                dataCharReleaseItems[i].getAttribute(dataCharRelease).slice(-4) != "2015") {
+                console.log(temp_char[i]);
+            }
+        }
+    }
+}
+
+function sleep(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function searchOneCharAllChars() {
+    let charContainerId = document.getElementById("char-container-id");
+    let searchOneCharDropdownValue = document.getElementsByClassName("search-one-char-dropdown-options-value");
+    let charWithMostChars = 0, maxcharWithMostChars, allMostChars = [],
+        selectedCharName = [],
+        SortedSelectedCharName = [];
+
+    let charList_dataCharNameItems = JSON.parse(localStorage.getItem("charList_dataCharNameItems"));
+    let SortedFormattedcharList = removeDuplicates(charList_dataCharNameItems).sort();
+
+    for (let i = 0; i < SortedFormattedcharList.length; i++) {
+        addSearchOneCharDropdownClass(i);
+        if (charContainerId.children.length == 0) {
+            console.log("error in character name= " + i);
+        }
+        if (charContainerId.children.length > charWithMostChars) {
+            charWithMostChars = charContainerId.children.length;
+            maxcharWithMostChars = charWithMostChars;
+        }
+        allMostChars[i] = charContainerId.children.length;
+        await sleep(1);
+    }
+
+    for (let i = 0; i < allMostChars.length; i++) {
+        if (allMostChars[i] == maxcharWithMostChars) {
+            selectedCharName[i] = searchOneCharDropdownValue.item(i).innerHTML;
+        }
+    }
+
+    SortedSelectedCharName = removeDuplicates(selectedCharName).sort();
+    console.log(maxcharWithMostChars);
+    console.log(SortedSelectedCharName);
 }
