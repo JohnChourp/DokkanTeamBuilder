@@ -38,6 +38,7 @@ function saveCharList() {
         superAtkType: c.getAttribute("data-char-super-atk-type"),
         links: c.getAttribute("data-char-links"),
         categories: c.getAttribute("data-char-categories"),
+        skills: c.getAttribute("data-char-skills"),
     }));
     localStorage.setItem("charList", JSON.stringify(charList));
 }
@@ -75,7 +76,8 @@ function setCharList() {
             "data-char-release", data.release,
             "data-char-super-atk-type", data.superAtkType,
             "data-char-links", data.links,
-            "data-char-categories", data.categories
+            "data-char-categories", data.categories,
+            "data-char-skills", data.skills
         );
         charListSaved[i] = char_div;
     }
@@ -107,6 +109,7 @@ function saveCharListTemp(charList) {
         superAtkType: c.getAttribute("data-char-super-atk-type"),
         links: c.getAttribute("data-char-links"),
         categories: c.getAttribute("data-char-categories"),
+        skills: c.getAttribute("data-char-skills"),
     }));
     localStorage.setItem("charListTemp", JSON.stringify(charListSaved));
 }
@@ -144,7 +147,8 @@ function setCharListTemp() {
             "data-char-release", data.release,
             "data-char-super-atk-type", data.superAtkType,
             "data-char-links", data.links,
-            "data-char-categories", data.categories
+            "data-char-categories", data.categories,
+            "data-char-skills", data.skills
         );
         charListSaved[i] = char_div;
     }

@@ -34,7 +34,8 @@ function addDropdownClass(filterDisplay) {
         dataCharSuperAtkLevel = "data-char-super-atk-level",
         dataCharSuperAtkType = "data-char-super-atk-type",
         dataCharLinks = "data-char-links",
-        dataCharCategories = "data-char-categories";
+        dataCharCategories = "data-char-categories",
+        dataCharSkills = "data-char-skills";
 
     const dataCharNameItems = document.querySelectorAll("[" + dataCharName + "]");
     const dataCharTitleItems = document.querySelectorAll("[" + dataCharTitle + "]");
@@ -52,10 +53,11 @@ function addDropdownClass(filterDisplay) {
     const dataCharSuperAtkTypeItems = document.querySelectorAll("[" + dataCharSuperAtkType + "]");
     const dataCharLinksItems = document.querySelectorAll("[" + dataCharLinks + "]");
     const dataCharCategoriesItems = document.querySelectorAll("[" + dataCharCategories + "]");
+    const dataCharSkillsItems = document.querySelectorAll("[" + dataCharSkills + "]");
 
     const char_display_text = document.getElementsByClassName("char_display_text");
-    let listLinks = [], listCategories = [], listSuperAtkType = [], listRelease = [];
-    let listLinksFormattedString = [], listCategoriesFormattedString = [], listSuperAtkTypeFormattedString = [],
+    let listLinks = [], listCategories = [], listSkills = [], listSuperAtkType = [], listRelease = [];
+    let listLinksFormattedString = [], listCategoriesFormattedString = [], listSkillsFormattedString = [], listSuperAtkTypeFormattedString = [],
         listReleaseFormattedString = [], a, b, position, temp;
 
     localStorage.setItem("filterDisplay", filterDisplay);
@@ -90,6 +92,11 @@ function addDropdownClass(filterDisplay) {
     for (let i = 0; i < dataCharCategoriesItems.length; i++) {
         listCategories[i] = dataCharCategoriesItems[i].getAttribute(dataCharCategories).split(",");
         listCategoriesFormattedString[i] = listCategories[i].join("\n");
+    }
+
+    for (let i = 0; i < dataCharSkillsItems.length; i++) {
+        listSkills[i] = dataCharSkillsItems[i].getAttribute(dataCharSkills).split(",");
+        listSkillsFormattedString[i] = listSkills[i].join("\n");
     }
 
     if (filterDisplay >= 0 && filterDisplay <= 7) {
@@ -153,7 +160,7 @@ function addDropdownClass(filterDisplay) {
             }
         }
     }
-    if (filterDisplay == 13 || filterDisplay == 14) {
+    if (filterDisplay == 13 || filterDisplay == 14 || filterDisplay == 15) {
         for (let i = 0; i < char_display_text.length; i++) {
             char_display_text.item(i).style.display = "block";
             char_display_text.item(i).style.removeProperty("top");
@@ -254,6 +261,13 @@ function addDropdownClass(filterDisplay) {
     if (filterDisplay == 14) {
         for (let i = 0; i < char_display_text.length; i++) {
             char_display_text.item(i).textContent = listCategoriesFormattedString[i];
+        }
+    }
+
+    //Skills
+    if (filterDisplay == 15) {
+        for (let i = 0; i < char_display_text.length; i++) {
+            char_display_text.item(i).textContent = listSkillsFormattedString[i];
         }
     }
 }
