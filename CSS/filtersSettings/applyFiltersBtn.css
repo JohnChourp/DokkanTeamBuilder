@@ -12,24 +12,24 @@
     position: relative;
     width: 170px;
     height: 35px;
-    margin-left:110px;
+    margin-left: 110px;
 }
 
 .filter-apply-container-inside {
     cursor: pointer;
 }
 
-.filter-apply-container-inside:active:hover {
-    --bg-color-top-half-apply:  #ed8012;
-    --bg-color-bottom-half-apply: #8f460a;
-    --bi-color-text-apply: linear-gradient(180deg, #ffffff, #dbcebd);
-}
+    .filter-apply-container-inside:active:hover {
+        --bg-color-top-half-apply: #ed8012;
+        --bg-color-bottom-half-apply: #8f460a;
+        --bi-color-text-apply: linear-gradient(180deg, #ffffff, #dbcebd);
+    }
 
-.filter-apply-container-inside:hover {
-    --bg-color-top-half-apply: #fad9b8;
-    --bg-color-bottom-half-apply: #f39e58;
-    --bi-color-text-apply: linear-gradient(180deg, #e6e6e6, #aba5a0);
-}
+    .filter-apply-container-inside:hover {
+        --bg-color-top-half-apply: #fad9b8;
+        --bg-color-bottom-half-apply: #f39e58;
+        --bi-color-text-apply: linear-gradient(180deg, #e6e6e6, #aba5a0);
+    }
 
 .top-half-bg-color-apply {
     margin-left: 2.5px;
@@ -127,17 +127,17 @@
     cursor: pointer;
 }
 
-.filter-remove-all-container-inside:active:hover {
-    --bg-color-top-half-remove-all: #41413e;
-    --bg-color-bottom-half-remove-all: #262626;
-    --bi-color-text-remove-all: linear-gradient(180deg, #ffffff, #dbcebd);
-}
+    .filter-remove-all-container-inside:active:hover {
+        --bg-color-top-half-remove-all: #41413e;
+        --bg-color-bottom-half-remove-all: #262626;
+        --bi-color-text-remove-all: linear-gradient(180deg, #ffffff, #dbcebd);
+    }
 
-.filter-remove-all-container-inside:hover {
-    --bg-color-top-half-remove-all: #9b9b97;
-    --bg-color-bottom-half-remove-all: #808080;
-    --bi-color-text-remove-all: linear-gradient(180deg, #e6e6e6, #aba5a0);
-}
+    .filter-remove-all-container-inside:hover {
+        --bg-color-top-half-remove-all: #9b9b97;
+        --bg-color-bottom-half-remove-all: #808080;
+        --bi-color-text-remove-all: linear-gradient(180deg, #e6e6e6, #aba5a0);
+    }
 
 .checkedRemoveAllBtnInside {
     --bg-color-top-half-remove-all: #D3CC81;
@@ -145,17 +145,17 @@
     --bi-color-text-remove-all: linear-gradient(180deg, #ffffff, #dbcebd);
 }
 
-.checkedRemoveAllBtnInside:active:hover {
-    --bg-color-top-half-remove-all: #bdb342;
-    --bg-color-bottom-half-remove-all: #726727;
-    --bi-color-text-remove-all: linear-gradient(180deg, #ffffff, #dbcebd);
-}
+    .checkedRemoveAllBtnInside:active:hover {
+        --bg-color-top-half-remove-all: #bdb342;
+        --bg-color-bottom-half-remove-all: #726727;
+        --bi-color-text-remove-all: linear-gradient(180deg, #ffffff, #dbcebd);
+    }
 
-.checkedRemoveAllBtnInside:hover {
-    --bg-color-top-half-remove-all: #ebe8c6;
-    --bg-color-bottom-half-remove-all: #d1c47a;
-    --bi-color-text-remove-all: linear-gradient(180deg, #ffffff, #ede6de);
-}
+    .checkedRemoveAllBtnInside:hover {
+        --bg-color-top-half-remove-all: #ebe8c6;
+        --bg-color-bottom-half-remove-all: #d1c47a;
+        --bi-color-text-remove-all: linear-gradient(180deg, #ffffff, #ede6de);
+    }
 
 .top-half-bg-color-remove-all {
     margin-left: 2.5px;
@@ -241,56 +241,23 @@
 
 .filter-apply-container-inside,
 .filter-remove-all-container-inside {
-    text-shadow: 0px 0px 0 rgb(255, 255, 255),
-        1px 1px 0 rgba(0, 0, 0, 1),
-        1px 1px 0 rgba(0, 0, 0, 1),
-        1px -1px 0 rgba(0, 0, 0, 1),
-        1px -1px 0 rgba(0, 0, 0, 1),
-        -1px 1px 0 rgba(0, 0, 0, 1),
-        -1px 1px 0 rgba(0, 0, 0, 1),
-        -1px -1px 0 rgba(0, 0, 0, 1),
-        -1px -1px 0 rgba(0, 0, 0, 1);
+    text-shadow: 0px 0px 0 rgb(255, 255, 255), 1px 1px 0 rgba(0, 0, 0, 1), 1px 1px 0 rgba(0, 0, 0, 1), 1px -1px 0 rgba(0, 0, 0, 1), 1px -1px 0 rgba(0, 0, 0, 1), -1px 1px 0 rgba(0, 0, 0, 1), -1px 1px 0 rgba(0, 0, 0, 1), -1px -1px 0 rgba(0, 0, 0, 1), -1px -1px 0 rgba(0, 0, 0, 1);
 }
 
-.filter-apply-container-inside:active:hover,
-.filter-remove-all-container-inside:active:hover {
-    text-shadow: 0px 0px 0 rgb(255, 255, 255),
-        1px 1px 0 rgba(0, 0, 0, 1),
-        1px 1px 0 rgba(0, 0, 0, 1),
-        1px -1px 0 rgba(0, 0, 0, 1),
-        1px -1px 0 rgba(0, 0, 0, 1),
-        -1px 1px 0 rgba(0, 0, 0, 1),
-        -1px 1px 0 rgba(0, 0, 0, 1),
-        -1px -1px 0 rgba(0, 0, 0, 1),
-        -1px -1px 0 rgba(0, 0, 0, 1);
-}
+    .filter-apply-container-inside:active:hover,
+    .filter-remove-all-container-inside:active:hover {
+        text-shadow: 0px 0px 0 rgb(255, 255, 255), 1px 1px 0 rgba(0, 0, 0, 1), 1px 1px 0 rgba(0, 0, 0, 1), 1px -1px 0 rgba(0, 0, 0, 1), 1px -1px 0 rgba(0, 0, 0, 1), -1px 1px 0 rgba(0, 0, 0, 1), -1px 1px 0 rgba(0, 0, 0, 1), -1px -1px 0 rgba(0, 0, 0, 1), -1px -1px 0 rgba(0, 0, 0, 1);
+    }
 
-.filter-apply-container-inside:hover,
-.filter-remove-all-container-inside:hover {
-    text-shadow: 0px 0px 0 rgb(255, 255, 255),
-        1px 1px 0 rgba(0, 0, 0, 1),
-        1px 1px 0 rgba(0, 0, 0, 1),
-        1px -1px 0 rgba(0, 0, 0, 1),
-        1px -1px 0 rgba(0, 0, 0, 1),
-        -1px 1px 0 rgba(0, 0, 0, 1),
-        -1px 1px 0 rgba(0, 0, 0, 1),
-        -1px -1px 0 rgba(0, 0, 0, 1),
-        -1px -1px 0 rgba(0, 0, 0, 1);
-}
+    .filter-apply-container-inside:hover,
+    .filter-remove-all-container-inside:hover {
+        text-shadow: 0px 0px 0 rgb(255, 255, 255), 1px 1px 0 rgba(0, 0, 0, 1), 1px 1px 0 rgba(0, 0, 0, 1), 1px -1px 0 rgba(0, 0, 0, 1), 1px -1px 0 rgba(0, 0, 0, 1), -1px 1px 0 rgba(0, 0, 0, 1), -1px 1px 0 rgba(0, 0, 0, 1), -1px -1px 0 rgba(0, 0, 0, 1), -1px -1px 0 rgba(0, 0, 0, 1);
+    }
 
 .checkedApplyBtnInside,
 .checkedRemoveAllBtnInside {
-    text-shadow: 0px 0px 0 rgb(255, 255, 255),
-        1px 1px 0 rgba(0, 0, 0, 1),
-        1px 1px 0 rgba(0, 0, 0, 1),
-        1px -1px 0 rgba(0, 0, 0, 1),
-        1px -1px 0 rgba(0, 0, 0, 1),
-        -1px 1px 0 rgba(0, 0, 0, 1),
-        -1px 1px 0 rgba(0, 0, 0, 1),
-        -1px -1px 0 rgba(0, 0, 0, 1),
-        -1px -1px 0 rgba(0, 0, 0, 1);
+    text-shadow: 0px 0px 0 rgb(255, 255, 255), 1px 1px 0 rgba(0, 0, 0, 1), 1px 1px 0 rgba(0, 0, 0, 1), 1px -1px 0 rgba(0, 0, 0, 1), 1px -1px 0 rgba(0, 0, 0, 1), -1px 1px 0 rgba(0, 0, 0, 1), -1px 1px 0 rgba(0, 0, 0, 1), -1px -1px 0 rgba(0, 0, 0, 1), -1px -1px 0 rgba(0, 0, 0, 1);
 }
-
 
 /* ok remove all filter selection */
 #apply-filters-bg-id {
@@ -316,14 +283,14 @@
 
 #ok {
     position: relative;
-    margin-top:20px;
+    margin-top: 20px;
     left: -250px;
 }
 
 #remove-all-id {
     position: relative;
-    margin-left:-5px;
-    margin-top:20px;
+    margin-left: -5px;
+    margin-top: 20px;
     left: -250px;
 }
 /* ok remove all filter selection */

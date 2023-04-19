@@ -35,6 +35,7 @@
     right: 10px;
     cursor: pointer;
 }
+
 #close-right-sidenav-btn-id {
     position: absolute;
     font-size: 36px;
@@ -51,10 +52,10 @@
     transition: 0.2s;
 }
 
-#left-sidenav-id a:hover,
-#right-sidenav-id a:hover {
-    color: #f1f1f1;
-}
+    #left-sidenav-id a:hover,
+    #right-sidenav-id a:hover {
+        color: #f1f1f1;
+    }
 
 #right-sidenav-filters-id {
     height: 100%;
@@ -82,30 +83,30 @@
     cursor: pointer;
 }
 
-#filter-select-id span {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.2s;
-}
+    #filter-select-id span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.2s;
+    }
 
-#filter-select-id span:after {
-    content: "\00ab";
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    left: -20px;
-    transition: 0.2s;
-}
+        #filter-select-id span:after {
+            content: "\00ab";
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            left: -20px;
+            transition: 0.2s;
+        }
 
-#filter-select-id:hover span {
-    padding-left: 25px;
-}
+    #filter-select-id:hover span {
+        padding-left: 25px;
+    }
 
-#filter-select-id:hover span:after {
-    opacity: 1;
-    left: 0;
-}
+        #filter-select-id:hover span:after {
+            opacity: 1;
+            left: 0;
+        }
 
 /*filter select button*/
 
@@ -146,7 +147,7 @@
 #remove-all-categories-id {
     -moz-tap-highlight-color: transparent;
     -ms-tap-highlight-color: transparent;
-    -webkit-tap-highlight-color:transparent;
+    -webkit-tap-highlight-color: transparent;
     -tap-highlight-color: transparent;
 }
 

@@ -7,9 +7,9 @@
     margin: 0px 5px 0px 5px;
 }
 
-.recruit-class:hover {
-    cursor: pointer;
-}
+    .recruit-class:hover {
+        cursor: pointer;
+    }
 
 .checkedRecruitBtn {
     background-color: #33ccff;

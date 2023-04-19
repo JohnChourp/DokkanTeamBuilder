@@ -8,9 +8,9 @@
     white-space: nowrap;
 }
 
-.anniversary-class:hover {
-    cursor: pointer;
-}
+    .anniversary-class:hover {
+        cursor: pointer;
+    }
 
 .checkedAnniversaryBtn {
     background-color: #33ccff;
@@ -20,8 +20,8 @@
     height: 30px;
 }
 
-#year-3,#year-4,
-#year-5,#year-6,
-#year-7,#year-8 {
+#year-3, #year-4,
+#year-5, #year-6,
+#year-7, #year-8 {
     margin-top: 15px;
 }

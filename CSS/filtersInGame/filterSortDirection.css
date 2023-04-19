@@ -14,24 +14,24 @@
 }
 
 .filter-descending-container-inside {
-    margin-left:10px;
-    margin-top:15px;
+    margin-left: 10px;
+    margin-top: 15px;
     width: 110px;
     height: 45px;
     cursor: pointer;
 }
 
-.filter-descending-container-inside:active:hover {
-    --bg-color-top-half-descending: #c6b839;
-    --bg-color-bottom-half-descending: #746e25;
-    --bi-color-text-descending: linear-gradient(180deg, #ffffff, #dbcebd);
-}
+    .filter-descending-container-inside:active:hover {
+        --bg-color-top-half-descending: #c6b839;
+        --bg-color-bottom-half-descending: #746e25;
+        --bi-color-text-descending: linear-gradient(180deg, #ffffff, #dbcebd);
+    }
 
-.filter-descending-container-inside:hover {
-    --bg-color-top-half-descending: #9b9b97;
-    --bg-color-bottom-half-descending: #808080;
-    --bi-color-text-descending: linear-gradient(180deg, #e6e6e6, #aba5a0);
-}
+    .filter-descending-container-inside:hover {
+        --bg-color-top-half-descending: #9b9b97;
+        --bg-color-bottom-half-descending: #808080;
+        --bi-color-text-descending: linear-gradient(180deg, #e6e6e6, #aba5a0);
+    }
 
 .checkedDescendingBtnInside {
     --bg-color-top-half-descending: #D9D07C;
@@ -39,40 +39,32 @@
     --bi-color-text-descending: linear-gradient(180deg, #ffffff, #dbcebd);
 }
 
-.checkedDescendingBtnInside:active:hover {
-    --bg-color-top-half-descending: #c6b839;
-    --bg-color-bottom-half-descending: #746e25;
-    --bi-color-text-descending: linear-gradient(180deg, #ffffff, #dbcebd);
-}
+    .checkedDescendingBtnInside:active:hover {
+        --bg-color-top-half-descending: #c6b839;
+        --bg-color-bottom-half-descending: #746e25;
+        --bi-color-text-descending: linear-gradient(180deg, #ffffff, #dbcebd);
+    }
 
-.checkedDescendingBtnInside:hover {
-    --bg-color-top-half-descending:  #eeeac4;
-    --bg-color-bottom-half-descending: #d4cc77;
-    --bi-color-text-descending: linear-gradient(180deg, #ffffff, #ede6de);
-}
+    .checkedDescendingBtnInside:hover {
+        --bg-color-top-half-descending: #eeeac4;
+        --bg-color-bottom-half-descending: #d4cc77;
+        --bi-color-text-descending: linear-gradient(180deg, #ffffff, #ede6de);
+    }
 
 .filter-descending-container-inside,
 .checkedDescendingBtnInside {
-    text-shadow: 0px 0px 0 rgb(255, 255, 255),
-        1px 1px 0 rgba(0, 0, 0, 1),
-        1px 1px 0 rgba(0, 0, 0, 1),
-        1px -1px 0 rgba(0, 0, 0, 1),
-        1px -1px 0 rgba(0, 0, 0, 1),
-        -1px 1px 0 rgba(0, 0, 0, 1),
-        -1px 1px 0 rgba(0, 0, 0, 1),
-        -1px -1px 0 rgba(0, 0, 0, 1),
-        -1px -1px 0 rgba(0, 0, 0, 1);
+    text-shadow: 0px 0px 0 rgb(255, 255, 255), 1px 1px 0 rgba(0, 0, 0, 1), 1px 1px 0 rgba(0, 0, 0, 1), 1px -1px 0 rgba(0, 0, 0, 1), 1px -1px 0 rgba(0, 0, 0, 1), -1px 1px 0 rgba(0, 0, 0, 1), -1px 1px 0 rgba(0, 0, 0, 1), -1px -1px 0 rgba(0, 0, 0, 1), -1px -1px 0 rgba(0, 0, 0, 1);
 }
 
 .top-half-bg-color-descending {
-    margin-left:0.5px;
+    margin-left: 0.5px;
     width: 107.5px;
     height: 20px;
     background-color: var(--bg-color-top-half-descending);
 }
 
 .bottom-half-bg-color-descending {
-    margin-left:-2px;
+    margin-left: -2px;
     width: 108px;
     height: 16px;
     background-color: var(--bg-color-bottom-half-descending);
@@ -154,24 +146,24 @@
 }
 
 .filter-ascending-container-inside {
-    margin-left:10px;
-    margin-top:15px;
+    margin-left: 10px;
+    margin-top: 15px;
     width: 110px;
     height: 45px;
     cursor: pointer;
 }
 
-.filter-ascending-container-inside:active:hover {
-    --bg-color-top-half-ascending: #c6b839;
-    --bg-color-bottom-half-ascending: #746e25;
-    --bi-color-text-ascending: linear-gradient(180deg, #ffffff, #dbcebd);
-}
+    .filter-ascending-container-inside:active:hover {
+        --bg-color-top-half-ascending: #c6b839;
+        --bg-color-bottom-half-ascending: #746e25;
+        --bi-color-text-ascending: linear-gradient(180deg, #ffffff, #dbcebd);
+    }
 
-.filter-ascending-container-inside:hover {
-    --bg-color-top-half-ascending: #9b9b97;
-    --bg-color-bottom-half-ascending: #808080;
-    --bi-color-text-ascending: linear-gradient(180deg, #e6e6e6, #aba5a0);
-}
+    .filter-ascending-container-inside:hover {
+        --bg-color-top-half-ascending: #9b9b97;
+        --bg-color-bottom-half-ascending: #808080;
+        --bi-color-text-ascending: linear-gradient(180deg, #e6e6e6, #aba5a0);
+    }
 
 .checkedAscendingBtnInside {
     --bg-color-top-half-ascending: #D9D07C;
@@ -179,40 +171,32 @@
     --bi-color-text-ascending: linear-gradient(180deg, #ffffff, #dbcebd);
 }
 
-.checkedAscendingBtnInside:active:hover {
-    --bg-color-top-half-ascending: #c6b839;
-    --bg-color-bottom-half-ascending: #746e25;
-    --bi-color-text-ascending: linear-gradient(180deg, #ffffff, #dbcebd);
-}
+    .checkedAscendingBtnInside:active:hover {
+        --bg-color-top-half-ascending: #c6b839;
+        --bg-color-bottom-half-ascending: #746e25;
+        --bi-color-text-ascending: linear-gradient(180deg, #ffffff, #dbcebd);
+    }
 
-.checkedAscendingBtnInside:hover {
-    --bg-color-top-half-ascending:  #eeeac4;
-    --bg-color-bottom-half-ascending: #d4cc77;
-    --bi-color-text-ascending: linear-gradient(180deg, #ffffff, #ede6de);
-}
+    .checkedAscendingBtnInside:hover {
+        --bg-color-top-half-ascending: #eeeac4;
+        --bg-color-bottom-half-ascending: #d4cc77;
+        --bi-color-text-ascending: linear-gradient(180deg, #ffffff, #ede6de);
+    }
 
 .filter-ascending-container-inside,
 .checkedAscendingBtnInside {
-    text-shadow: 0px 0px 0 rgb(255, 255, 255),
-        1px 1px 0 rgba(0, 0, 0, 1),
-        1px 1px 0 rgba(0, 0, 0, 1),
-        1px -1px 0 rgba(0, 0, 0, 1),
-        1px -1px 0 rgba(0, 0, 0, 1),
-        -1px 1px 0 rgba(0, 0, 0, 1),
-        -1px 1px 0 rgba(0, 0, 0, 1),
-        -1px -1px 0 rgba(0, 0, 0, 1),
-        -1px -1px 0 rgba(0, 0, 0, 1);
+    text-shadow: 0px 0px 0 rgb(255, 255, 255), 1px 1px 0 rgba(0, 0, 0, 1), 1px 1px 0 rgba(0, 0, 0, 1), 1px -1px 0 rgba(0, 0, 0, 1), 1px -1px 0 rgba(0, 0, 0, 1), -1px 1px 0 rgba(0, 0, 0, 1), -1px 1px 0 rgba(0, 0, 0, 1), -1px -1px 0 rgba(0, 0, 0, 1), -1px -1px 0 rgba(0, 0, 0, 1);
 }
 
 .top-half-bg-color-ascending {
-    margin-left:0.5px;
+    margin-left: 0.5px;
     width: 107.5px;
     height: 20px;
     background-color: var(--bg-color-top-half-ascending);
 }
 
 .bottom-half-bg-color-ascending {
-    margin-left:-2px;
+    margin-left: -2px;
     width: 108px;
     height: 16px;
     background-color: var(--bg-color-bottom-half-ascending);
@@ -289,5 +273,5 @@
 
 #filter-direction-down-id,
 #filter-direction-up-id {
-    margin-bottom:20px;
+    margin-bottom: 20px;
 }

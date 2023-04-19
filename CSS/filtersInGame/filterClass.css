@@ -18,17 +18,17 @@
     cursor: pointer;
 }
 
-.filter-class-container-inside:active:hover {
-    --bg-color-top-half-class: #19739a;
-    --bg-color-bottom-half-class: #0f4670;
-    --bi-color-text-class: linear-gradient(180deg, #ffffff, #dbcebd);
-}
+    .filter-class-container-inside:active:hover {
+        --bg-color-top-half-class: #19739a;
+        --bg-color-bottom-half-class: #0f4670;
+        --bi-color-text-class: linear-gradient(180deg, #ffffff, #dbcebd);
+    }
 
-.filter-class-container-inside:hover {
-    --bg-color-top-half-class: #9b9b97;
-    --bg-color-bottom-half-class: #808080;
-    --bi-color-text-class: linear-gradient(180deg, #e6e6e6, #aba5a0);
-}
+    .filter-class-container-inside:hover {
+        --bg-color-top-half-class: #9b9b97;
+        --bg-color-bottom-half-class: #808080;
+        --bi-color-text-class: linear-gradient(180deg, #e6e6e6, #aba5a0);
+    }
 
 .checkedClassBtnInside {
     --bg-color-top-half-class: #2da9dd;
@@ -36,29 +36,21 @@
     --bi-color-text-class: linear-gradient(180deg, #ffffff, #dbcebd);
 }
 
-.checkedClassBtnInside:active:hover {
-    --bg-color-top-half-class: #19739a;
-    --bg-color-bottom-half-class: #0f4670;
-    --bi-color-text-class: linear-gradient(180deg, #ffffff, #dbcebd);
-}
+    .checkedClassBtnInside:active:hover {
+        --bg-color-top-half-class: #19739a;
+        --bg-color-bottom-half-class: #0f4670;
+        --bi-color-text-class: linear-gradient(180deg, #ffffff, #dbcebd);
+    }
 
-.checkedClassBtnInside:hover {
-    --bg-color-top-half-class: #7bc9ea;
-    --bg-color-bottom-half-class: #4ba3e7;
-    --bi-color-text-class: linear-gradient(180deg, #ffffff, #ede6de);
-}
+    .checkedClassBtnInside:hover {
+        --bg-color-top-half-class: #7bc9ea;
+        --bg-color-bottom-half-class: #4ba3e7;
+        --bi-color-text-class: linear-gradient(180deg, #ffffff, #ede6de);
+    }
 
 .filter-class-container-inside,
 .checkedClassBtnInside {
-    text-shadow: 0px 0px 0 rgb(255, 255, 255),
-        1px 1px 0 rgba(0, 0, 0, 1),
-        1px 1px 0 rgba(0, 0, 0, 1),
-        1px -1px 0 rgba(0, 0, 0, 1),
-        1px -1px 0 rgba(0, 0, 0, 1),
-        -1px 1px 0 rgba(0, 0, 0, 1),
-        -1px 1px 0 rgba(0, 0, 0, 1),
-        -1px -1px 0 rgba(0, 0, 0, 1),
-        -1px -1px 0 rgba(0, 0, 0, 1);
+    text-shadow: 0px 0px 0 rgb(255, 255, 255), 1px 1px 0 rgba(0, 0, 0, 1), 1px 1px 0 rgba(0, 0, 0, 1), 1px -1px 0 rgba(0, 0, 0, 1), 1px -1px 0 rgba(0, 0, 0, 1), -1px 1px 0 rgba(0, 0, 0, 1), -1px 1px 0 rgba(0, 0, 0, 1), -1px -1px 0 rgba(0, 0, 0, 1), -1px -1px 0 rgba(0, 0, 0, 1);
 }
 
 .top-half-bg-color-class {

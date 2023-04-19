@@ -19,10 +19,10 @@
     left: 7.5px;
 }
 
-.char-div-class:hover {
-    background-color: #2e2d2d;
-    cursor: pointer;
-}
+    .char-div-class:hover {
+        background-color: #2e2d2d;
+        cursor: pointer;
+    }
 
 .char_display {
     width: 200px;

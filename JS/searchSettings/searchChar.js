@@ -9,7 +9,7 @@ function searchChar() {
             const characterSearchId = document.getElementById("char-search-id");
             const char = document.getElementsByClassName("char");
 
-            const dataCharTitle = "data-char-title", dataCharName = "data-char-name";               
+            const dataCharTitle = "data-char-title", dataCharName = "data-char-name";
 
             const dataCharNameItems = document.querySelectorAll("[" + dataCharName + "]");
             const dataCharTitleItems = document.querySelectorAll("[" + dataCharTitle + "]");

@@ -22,10 +22,10 @@
     margin-left: 10px;
 }
 
-#selected-dropdown:hover,
-#selected-dropdown:focus {
-    background-color: #2980b9;
-}
+    #selected-dropdown:hover,
+    #selected-dropdown:focus {
+        background-color: #2980b9;
+    }
 
 .dropdown-options {
     display: none;
@@ -38,16 +38,16 @@
     overflow: auto;
 }
 
-.dropdown-options a {
-    color: black;
-    padding: 5px 16px;
-    text-decoration: none;
-    display: block;
-}
+    .dropdown-options a {
+        color: black;
+        padding: 5px 16px;
+        text-decoration: none;
+        display: block;
+    }
 
-.dropdown-options a:hover {
-    background-color: #ddd;
-}
+        .dropdown-options a:hover {
+            background-color: #ddd;
+        }
 
 .dropdown-options-value {
     -moz-user-select: none;
